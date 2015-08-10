@@ -1,0 +1,48 @@
+{
+    "-default":[
+        "Toolkit %v",
+        "",
+        "使用说明：",
+        "nei [命令] [参数]",
+        "",
+        "参数说明：",
+        "-v, --version      显示工具版本信息",
+        "-h, --help         显示指定命令的帮助信息",
+        "",
+        "命令说明：",
+        "build              根据NEI平台信息构建项目结构",
+        "update             更新通过 'nej build' 构建的项目"
+    ],
+    "build":[
+        "使用说明：",
+        "nei build <ID> [参数]",
+        "",
+        "<ID>               NEI平台中对应的项目ID，必须输入",
+        "",
+        "参数说明：",
+        "-h, --help         显示build命令帮助信息",
+        "-p, --project      指定项目目录，默认为当前目录",
+        "-t, --template     指定用于构建的模板实现文件，默认使用内建的webapp模板构建",
+        "-w, --overwrite    是否覆盖已存在的MOCK数据文件，默认不覆盖",
+        "--webRoot          如果使用内建的webapp模板构建，此参数用于指定WEBROOT目录，默认根据maven目录结构规范，相对于 -p 路径的 src/main/webapp/",
+        "--viewRoot         如果使用内建的webapp模板构建，此参数用于指定服务器端视图模板目录，默认根据maven目录结构规范，相对于 -p 路径的 src/main/views/",
+        "",
+        "使用举例：",
+        "nei build 23456798 -w",
+        "nei build 23456798 -p /path/to/project/"
+    ],
+    "update":[
+        "使用说明：",
+        "nei update [参数]",
+        "",
+        "参数说明：",
+        "-h, --help         显示update命令帮助信息",
+        "-p, --project      指定项目目录，默认为当前目录",
+        "-t, --template     指定用于构建的模板实现文件，默认使用内建的webapp模板构建",
+        "-w, --overwrite    是否覆盖已存在的MOCK数据文件，默认不覆盖",
+        "",
+        "使用举例：",
+        "nei update",
+        "nei update -p /path/to/project/"
+    ]
+}

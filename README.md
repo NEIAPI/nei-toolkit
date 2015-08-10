@@ -1,2 +1,2 @@
-# NEIBuilder
+# nei
 Builder for NEI Platform

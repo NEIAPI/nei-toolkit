@@ -1,0 +1,8 @@
+{
+    "name": "auto-{{PRO_NAME}}",
+    "version": "0.0.1",
+    "dependencies": {
+        "nej": "master",
+        "regularjs": "~0.3.0"
+    }
+}
