@@ -1,6 +1,6 @@
 {
   "input": "./src/mcss/",
-  "outport": "./src/css",
+  "outport": "./src/css/",
   "format": 3,
   "watch": true,
   "exclude": "(\\\\|\\/)_"
