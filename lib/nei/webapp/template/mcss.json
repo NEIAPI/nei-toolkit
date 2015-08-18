@@ -1,0 +1,7 @@
+{
+  "input": "./src/mcss/",
+  "outport": "./src/css",
+  "format": 3,
+  "watch": true,
+  "exclude": "(\\\\|\\/)_"
+}

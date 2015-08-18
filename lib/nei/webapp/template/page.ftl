@@ -3,8 +3,8 @@
 <html>
   <head>
 
-    <#include "/wrap/config.ftl">
-    <#include "/wrap/macro.ftl">
+    <#include "/common/config.ftl">
+    <#include "/common/macro.ftl">
 
     <title>{{title}}</title>
     <meta charset="utf-8"/>
