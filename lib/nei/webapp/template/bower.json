@@ -6,6 +6,6 @@
         "express-freemarker": ">=0.1.3",
         {%- endif %}
         "nej": "master",
-        "regularjs": "~0.3.0"
+        "regularjs": ">=0.3.0"
     }
 }
