@@ -17,9 +17,9 @@ describe('nei/webapp',function(){
             this.timeout(40000);
             var root = path.normalize(__dirname+'/');
             (new WebApp({
-                id:10681,
+                id:10680,
                 overwrite:true,
-                proRoot:root+'pro/',
+                proRoot:root+'../pro/',
                 debug:log.bind(log,'debug'),
                 info:log.bind(log,'info'),
                 warn:log.bind(log,'warn'),
@@ -29,6 +29,39 @@ describe('nei/webapp',function(){
                 }
             })).build();
         });
+
+        it('should ok to build webapp',function(done){
+            this.timeout(40000);
+            var root = path.normalize(__dirname+'/');
+            (new WebApp({
+                id:10681,
+                overwrite:true,
+                proRoot:root+'../pro/',
+                debug:log.bind(log,'debug'),
+                info:log.bind(log,'info'),
+                warn:log.bind(log,'warn'),
+                error:log.bind(log,'error'),
+                done:function(){
+                    done();
+                }
+            })).build();
+        });
+
+        //it('should ok to update webapp with id',function(done){
+        //    this.timeout(40000);
+        //    var root = path.normalize(__dirname+'/');
+        //    (new WebApp({
+        //        id:10680,
+        //        proRoot:root+'../pro/',
+        //        debug:log.bind(log,'debug'),
+        //        info:log.bind(log,'info'),
+        //        warn:log.bind(log,'warn'),
+        //        error:log.bind(log,'error'),
+        //        done:function(){
+        //            done();
+        //        }
+        //    })).update();
+        //});
 
     });
 

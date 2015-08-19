@@ -50,7 +50,8 @@ global(KLASS);
 global(API);
 
 // bin api
-var _fs     = require('./lib/util/file.js'),
+var fs      = require('fs'),
+    _fs     = require('./lib/util/file.js'),
     _path   = require('./lib/util/path.js'),
     _util   = require('./lib/util/util.js'),
     _log    = require('./lib/util/logger.js'),
@@ -71,42 +72,45 @@ exports.nei = function(config,callback){
         project = _path.absolute(
             config.project+'/',cwd
         ),
-        neiconf = project+'nei/nei.json',
+        neiconf = project+'nei.'+config.id+'/nei.json',
         action = config.action||'build';
     // check nei.json file
     var msg;
     if (_fs.exist(neiconf)){
         if (action==='build'){
-            msg = 'use "nei update" to update nei project';
+            msg = 'use "nei update" to update nei project with id[%s]';
         }
     }else{
         if (action==='update'){
-            msg = 'use "nei build" to build nei project';
+            msg = 'use "nei build" to build nei project with id[%s]';
         }
     }
     if (!!msg){
-        _logger.error(msg);
+        _logger.error(msg,config.id);
         process.exit(1);
         return;
     }
-    // generator builder
-    var bmap = {
-            webapp:'./lib/nei/webapp.js'
-        },
-        name = bmap[config.template]||bmap.webapp;
-    var Builder;
-    try{
-        Builder = require(name);
-    }catch(ex){
-        Builder = require(bmap.webapp);
-    }
     // generator config
-    var conf = config;
+    var conf = _util.merge(
+        {},config
+    );
     if (action==='update'){
         conf = require(neiconf);
         conf.overwrite = !!config.overwrite;
     }else{
         conf.updateTime = 0;
+    }
+    // generator builder
+    var bmap = {
+            webapp:'./lib/nei/webapp.js'
+        },
+        name = bmap[config.template]||
+               bmap[conf.template]||bmap.webapp;
+    var Builder;
+    try{
+        Builder = require(name);
+    }catch(ex){
+        Builder = require(bmap.webapp);
     }
     conf = _util.merge(conf,{
         proRoot:project,
@@ -124,4 +128,35 @@ exports.nei = function(config,callback){
     }else{
         _logger.error('not supported action %s',action);
     }
+};
+/**
+ * update nei project
+ * @param  {Object} config - config object
+ * @param  {String} config.action    - builder action
+ * @param  {String} config.project   - path to project root
+ * @param  {String} config.template  - path to template output
+ * @param  {String} config.overwrite - whether overwrite files existed
+ * @param  {Function} callback - build finish callback
+ * @return {Void}
+ */
+exports.update = function(config,callback){
+    var cwd = process.cwd()+'/',
+        project = _path.absolute(
+            config.project+'/',cwd
+        ),
+        list = fs.readdirSync(project);
+    if (!list||!list.length){
+        _logger.error('no nei project found in %s',project);
+        process.exit(1);
+        return;
+    }
+    _logger.error('check to update all nei project');
+    // check nei config directory
+    var reg = /^nei\.([\d]+)$/;
+    list.forEach(function(name){
+        if (_fs.isdir(project+name+'/')&&reg.test(name)){
+            config.id = RegExp.$1;
+            this.nei(config);
+        }
+    },this);
 };

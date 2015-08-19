@@ -15,9 +15,9 @@
     ],
     "build":[
         "使用说明：",
-        "nei build <ID> [参数]",
+        "nei build <IDS> [参数]",
         "",
-        "<ID>               NEI平台中对应的项目ID，必须输入",
+        "<IDS>              NEI平台中对应的项目ID，必须输入，多个项目ID用逗号分隔",
         "",
         "参数说明：",
         "-h, --help         显示build命令帮助信息",
@@ -29,12 +29,14 @@
         "--viewRoot         如果使用内建的webapp模板构建，此参数用于指定服务器端视图模板目录，默认根据maven目录结构规范，相对于 -p 路径的 src/main/views/",
         "",
         "使用举例：",
-        "nei build 23456798 -w",
+        "nei build 23456798,452178 -w",
         "nei build 23456798 -p /path/to/project/"
     ],
     "update":[
         "使用说明：",
-        "nei update [参数]",
+        "nei update [IDS] [参数]",
+        "",
+        "<IDS>              NEI平台中对应的项目ID，多个项目ID用逗号分隔，不传则表示更新所有已生成的项目",
         "",
         "参数说明：",
         "-h, --help         显示update命令帮助信息",

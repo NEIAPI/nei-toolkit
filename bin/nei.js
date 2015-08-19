@@ -16,22 +16,33 @@ var main = require('../main.js');
             this.show('build');
             process.exit(0);
         }else{
-            opt.id = id;
             opt.action = 'build';
             opt.project = opt.p||opt.project||'./';
             opt.overwrite = opt.w||opt.overwrite||!1;
             opt.template = opt.t||opt.template||'';
-            main.nei(opt);
+            id.split(/[,;]/).forEach(function(it){
+                opt.id = it;
+                main.nei(opt);
+            });
         }
     },
     update:function(event){
         event.stopped = !0;
-        var opt = event.options||{};
+        var opt = event.options||{},
+            id = (event.args||[])[0]||'';
         opt.action = 'update';
         opt.project = opt.p||opt.project||'./';
         opt.overwrite = opt.w||opt.overwrite||!1;
         opt.template = opt.t||opt.template||'';
-        main.nei(opt);
+        if (!!id){
+            id.split(/[,;]/).forEach(function(it){
+                opt.id = it;
+                main.nei(opt);
+            });
+        }else{
+            // update all project
+            main.update(opt);
+        }
     }
 })).exec(
     process.argv.slice(2)

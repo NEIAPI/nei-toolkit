@@ -1,1 +1,1 @@
-puer -c %~dp0/nei/puer.js
+puer -c %~dp0/puer.js
