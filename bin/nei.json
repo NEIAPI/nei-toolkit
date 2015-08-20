@@ -11,7 +11,8 @@
         "",
         "命令说明：",
         "build              根据NEI平台信息构建项目结构",
-        "update             更新通过 'nej build' 构建的项目"
+        "update             更新通过 'nej build' 构建的项目",
+        "mock               根据NEI平台信息生成测试数据"
     ],
     "build":[
         "使用说明：",
@@ -46,5 +47,22 @@
         "使用举例：",
         "nei update 23456798",
         "nei update -p /path/to/project/"
+    ],
+    "mock":[
+        "使用说明：",
+        "nei mock <ID> [参数]",
+        "",
+        "<ID>               NEI平台中对应的项目ID，必须输入",
+        "",
+        "参数说明：",
+        "-h, --help         显示mock命令帮助信息",
+        "-o, --output       指定输出目录，默认为当前目录",
+        "-w, --overwrite    是否覆盖已存在的MOCK数据文件，默认不覆盖",
+        "-t, --type         要导出的数据类型，0：模板+接口，1：模板，2：接口，默认为0",
+        "-f, --fiddler      如果type是0或者2的情况可以用此参数配置是否导出fiddler配置文件，默认不导出",
+        "",
+        "使用举例：",
+        "nei mock 23456798",
+        "nei mock 23456798 -o /path/to/output/"
     ]
 }

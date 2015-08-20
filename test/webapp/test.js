@@ -13,22 +13,22 @@ describe('nei/webapp',function(){
 
     describe('new WebApp',function(){
 
-        it('should ok to build webapp',function(done){
-            this.timeout(40000);
-            var root = path.normalize(__dirname+'/');
-            (new WebApp({
-                id:10680,
-                overwrite:true,
-                proRoot:root+'../pro/',
-                debug:log.bind(log,'debug'),
-                info:log.bind(log,'info'),
-                warn:log.bind(log,'warn'),
-                error:log.bind(log,'error'),
-                done:function(){
-                    done();
-                }
-            })).build();
-        });
+        //it('should ok to build webapp',function(done){
+        //    this.timeout(40000);
+        //    var root = path.normalize(__dirname+'/');
+        //    (new WebApp({
+        //        id:10680,
+        //        overwrite:true,
+        //        proRoot:root+'../pro/',
+        //        debug:log.bind(log,'debug'),
+        //        info:log.bind(log,'info'),
+        //        warn:log.bind(log,'warn'),
+        //        error:log.bind(log,'error'),
+        //        done:function(){
+        //            done();
+        //        }
+        //    })).build();
+        //});
 
         it('should ok to build webapp',function(done){
             this.timeout(40000);
@@ -64,5 +64,6 @@ describe('nei/webapp',function(){
         //});
 
     });
+
 
 });

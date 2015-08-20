@@ -58,12 +58,12 @@ var fs      = require('fs'),
     _logger = _log.logger;
 /**
  * build nei project
- * @param  {Object} config - config object
- * @param  {String} config.action    - builder action
- * @param  {String} config.id        - nei project id
- * @param  {String} config.project   - path to project root
- * @param  {String} config.template  - path to template output
- * @param  {String} config.overwrite - whether overwrite files existed
+ * @param  {Object}  config - config object
+ * @param  {String}  config.action    - builder action
+ * @param  {String}  config.id        - nei project id
+ * @param  {String}  config.project   - path to project root
+ * @param  {String}  config.template  - path to template output
+ * @param  {Boolean} config.overwrite - whether overwrite files existed
  * @param  {Function} callback - build finish callback
  * @return {Void}
  */
@@ -131,11 +131,11 @@ exports.nei = function(config,callback){
 };
 /**
  * update nei project
- * @param  {Object} config - config object
- * @param  {String} config.action    - builder action
- * @param  {String} config.project   - path to project root
- * @param  {String} config.template  - path to template output
- * @param  {String} config.overwrite - whether overwrite files existed
+ * @param  {Object}  config - config object
+ * @param  {String}  config.action    - builder action
+ * @param  {String}  config.project   - path to project root
+ * @param  {String}  config.template  - path to template output
+ * @param  {Boolean} config.overwrite - whether overwrite files existed
  * @param  {Function} callback - build finish callback
  * @return {Void}
  */
@@ -159,4 +159,33 @@ exports.update = function(config,callback){
             this.nei(config);
         }
     },this);
+};
+/**
+ * generator mock data
+ * @param  {Object}  config - config object
+ * @param  {String}  config.id        - nei project id
+ * @param  {String}  config.output    - path to output
+ * @param  {Number}  config.type      - mock data type
+ * @param  {Boolean} config.fiddler   - whether export fiddler config file
+ * @param  {Boolean} config.overwrite - whether overwrite files existed
+ * @param  {Function} callback - build finish callback
+ */
+exports.mock = function(config,callback){
+    var cwd = process.cwd()+'/',
+        output = _path.absolute(
+            config.output+'/',cwd
+        );
+    (new (require('./lib/nei/builder.js'))({
+        id:config.id,
+        proRoot:output,
+        overwrite:config.overwrite,
+        done:callback||function(){},
+        debug:_log.log.bind(_log,'debug'),
+        info:_log.log.bind(_log,'info'),
+        warn:_log.log.bind(_log,'warn'),
+        error:_log.log.bind(_log,'error')
+    })).mock({
+        type:config.type,
+        fiddler:config.fiddler
+    });
 };

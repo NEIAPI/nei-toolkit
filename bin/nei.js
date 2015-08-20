@@ -43,6 +43,22 @@ var main = require('../main.js');
             // update all project
             main.update(opt);
         }
+    },
+    mock:function(event){
+        event.stopped = !0;
+        var opt = event.options||{},
+            id = (event.args||[])[0];
+        if (!id){
+            this.show('mock');
+            process.exit(0);
+        }else{
+            opt.id = id;
+            opt.output = opt.o||opt.output||'./';
+            opt.overwrite = opt.w||opt.overwrite||!1;
+            opt.fiddler = opt.f||opt.fiddler||!1;
+            opt.type = parseInt(opt.t,10)||parseInt(opt.template,10)||0;
+            main.mock(opt);
+        }
     }
 })).exec(
     process.argv.slice(2)
