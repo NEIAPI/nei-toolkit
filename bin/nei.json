@@ -27,7 +27,7 @@
         "-w, --overwrite    是否覆盖已存在的MOCK数据文件，默认不覆盖",
         "--engine           如果使用内建的webapp模板构建，此参数用于指定使用的模板引擎，支持内建模板引擎：freemarker、velocity、其他nodejs模板引擎，默认为freemarker引擎",
         "--webRoot          如果使用内建的webapp模板构建，此参数用于指定WEBROOT目录，默认根据maven目录结构规范，相对于 -p 路径的 src/main/webapp/",
-        "--viewRoot         如果使用内建的webapp模板构建，此参数用于指定服务器端视图模板目录，默认根据maven目录结构规范，相对于 -p 路径的 src/main/views/",
+        "--viewRoot         如果使用内建的webapp模板构建，此参数用于指定服务器端视图模板目录，默认根据maven目录结构规范，相对于 -p 路径的 src/main/webapp/WEB-INF/views/",
         "",
         "使用举例：",
         "nei build 23456798,452178 -w",
