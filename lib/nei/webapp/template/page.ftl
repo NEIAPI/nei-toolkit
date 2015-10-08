@@ -3,7 +3,6 @@
 <html>
   <head>
 
-    <#include "/common/config.ftl">
     <#include "/common/macro.ftl">
 
     <title>{{title}}</title>
