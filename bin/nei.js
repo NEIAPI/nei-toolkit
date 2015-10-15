@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-var main = require('../main.js');
+var main = require('../main.js'),
+    ut = require('../lib/util/util.js');
 
 (new (require('../lib/util/args.js'))({
     message:require('./nei.json'),
@@ -17,6 +18,9 @@ var main = require('../main.js');
             process.exit(0);
         }else{
             opt.action = 'build';
+            ut.complete(opt,{
+
+            });
             opt.project = opt.p||opt.project||'./';
             opt.overwrite = opt.w||opt.overwrite||!1;
             opt.template = opt.t||opt.template||'';
@@ -59,6 +63,10 @@ var main = require('../main.js');
             opt.type = parseInt(opt.t,10)||parseInt(opt.template,10)||0;
             main.mock(opt);
         }
+    },
+    start:function(event){
+        event.stopped = !0;
+
     }
 })).exec(
     process.argv.slice(2)
