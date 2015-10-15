@@ -11,8 +11,7 @@
         "命令说明：",
         "build\t\t\t根据NEI平台信息构建项目结构",
         "update\t\t\t更新通过 'nej build' 构建的项目",
-        "mock\t\t\t根据NEI平台信息生成测试数据",
-        "start\t\t\t启本地模拟容器"
+        "mock\t\t\t根据NEI平台信息生成测试数据"
     ],
     "-default-params":[
         {"j":"v","q":"version","m":"显示工具版本信息"},
@@ -33,9 +32,9 @@
     ],
     "build-params":[
         {"j":"h","q":"help","m":"显示build命令帮助信息"},
-        {"j":"p","q":"project","m":"指定项目目录，默认为当前目录"},
-        {"j":"t","q":"template","m":"指定用于构建的模板实现文件，默认使用内建的webapp模板构建"},
-        {"j":"w","q":"overwrite","m":"是否覆盖已存在的MOCK数据文件，默认不覆盖"},
+        {"j":"p","q":"project","d":"./","m":"指定项目目录，默认为当前目录"},
+        {"j":"t","q":"template","d":"webapp","m":"指定用于构建的模板实现文件，默认使用内建的webapp模板构建"},
+        {"j":"w","q":"overwrite","d":false,"m":"是否覆盖已存在的MOCK数据文件，默认不覆盖"},
         {"q":"engine","m":"如果使用内建的webapp模板构建，此参数用于指定使用的模板引擎，支持内建模板引擎：freemarker、velocity、其他nodejs模板引擎，默认为freemarker引擎"},
         {"q":"webRoot","m":"如果使用内建的webapp模板构建，此参数用于指定WEBROOT目录，默认根据maven目录结构规范，相对于 -p 路径的 src/main/webapp/"},
         {"q":"viewRoot","m":"如果使用内建的webapp模板构建，此参数用于指定服务器端视图模板目录，默认根据maven目录结构规范，相对于 -p 路径的 src/main/webapp/WEB-INF/views/"}
@@ -55,8 +54,8 @@
     ],
     "update-params":[
         {"j":"h","q":"help","m":"显示update命令帮助信息"},
-        {"j":"p","q":"project","m":"指定项目目录，默认为当前目录"},
-        {"j":"w","q":"overwrite","m":"是否覆盖已存在的MOCK数据文件，默认不覆盖"}
+        {"j":"p","q":"project","d":"./","m":"指定项目目录，默认为当前目录"},
+        {"j":"w","q":"overwrite","d":false,"m":"是否覆盖已存在的MOCK数据文件，默认不覆盖"}
     ],
     "mock":[
         "使用说明：",
@@ -73,21 +72,9 @@
     ],
     "mock-params":[
         {"j":"h","q":"help","m":"显示mock命令帮助信息"},
-        {"j":"o","q":"output","m":"指定输出目录，默认为当前目录"},
-        {"j":"w","q":"overwrite","m":"是否覆盖已存在的MOCK数据文件，默认不覆盖"},
-        {"j":"t","q":"type","m":"要导出的数据类型，0：模板+接口，1：模板，2：接口，默认为0"},
-        {"j":"f","q":"fiddler","m":"如果type是0或者2的情况可以用此参数配置是否导出fiddler配置文件，默认不导出"}
-    ],
-    "start":[
-        "使用说明：",
-        "nei start [配置文件] [参数]",
-        "",
-        "[配置文件]         服务配置文件地址，默认尝试读取当前目录下的puer.js文件",
-        "",
-        "参数说明：",
-        "",
-        "使用举例：",
-        "nei start",
-        "nei start /path/to/puer.js"
+        {"j":"o","q":"output","d":"./","m":"指定输出目录，默认为当前目录"},
+        {"j":"w","q":"overwrite","d":false,"m":"是否覆盖已存在的MOCK数据文件，默认不覆盖"},
+        {"j":"t","q":"type","d":0,"m":"要导出的数据类型，0：模板+接口，1：模板，2：接口，默认为0"},
+        {"j":"f","q":"fiddler","d":false,"m":"如果type是0或者2的情况可以用此参数配置是否导出fiddler配置文件，默认不导出"}
     ]
 }

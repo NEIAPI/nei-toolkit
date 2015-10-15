@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-var main = require('../main.js'),
-    ut = require('../lib/util/util.js');
+var main = require('../main.js');
 
 (new (require('../lib/util/args.js'))({
     message:require('./nei.json'),
@@ -18,12 +17,7 @@ var main = require('../main.js'),
             process.exit(0);
         }else{
             opt.action = 'build';
-            ut.complete(opt,{
-
-            });
-            opt.project = opt.p||opt.project||'./';
-            opt.overwrite = opt.w||opt.overwrite||!1;
-            opt.template = opt.t||opt.template||'';
+            this.format(opt.action,opt);
             id.split(/[,;]/).forEach(function(it){
                 opt.id = it;
                 main.nei(opt);
@@ -35,9 +29,7 @@ var main = require('../main.js'),
         var opt = event.options||{},
             id = (event.args||[])[0]||'';
         opt.action = 'update';
-        opt.project = opt.p||opt.project||'./';
-        opt.overwrite = opt.w||opt.overwrite||!1;
-        opt.template = opt.t||opt.template||'';
+        this.format(opt.action,opt);
         if (!!id){
             id.split(/[,;]/).forEach(function(it){
                 opt.id = it;
@@ -57,16 +49,9 @@ var main = require('../main.js'),
             process.exit(0);
         }else{
             opt.id = id;
-            opt.output = opt.o||opt.output||'./';
-            opt.overwrite = opt.w||opt.overwrite||!1;
-            opt.fiddler = opt.f||opt.fiddler||!1;
-            opt.type = parseInt(opt.t,10)||parseInt(opt.template,10)||0;
+            this.format('mock',opt);
             main.mock(opt);
         }
-    },
-    start:function(event){
-        event.stopped = !0;
-
     }
 })).exec(
     process.argv.slice(2)
