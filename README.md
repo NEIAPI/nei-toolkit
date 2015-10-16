@@ -186,10 +186,53 @@ nei mock <ID> [参数]
 | -t | --type | 要导出的数据类型，0：模板+接口，1：模板，2：接口，默认为0 |
 | -f | --fiddler | 如果type是0或者2的情况可以用此参数配置是否导出fiddler配置文件，默认不导出 |
 
+使用范例：
+
+在当前目录下生成项目106764的模版和接口的模拟数据
+
+```bash
+nei mock 106764
+```
+
+在指定目录/path/to/output/下生成接口的模拟数据和Fiddler工具的配置文件
+
+```bash
+nei mock 233454 -t 2 -o /path/to/output/
+```
+
 ## export
 
+导出第三方工具的配置文件，指令的运行格式为：
 
+```bash
+nei export <IDS> [参数]
+```
 
+其中<IDS>表示NEI平台中对应的项目ID，多个项目ID用逗号分隔，必须输入
+
+针对nei export指令可用的参数包括：
+
+| 简写 | 全称 | 描述 |
+| :--- | :--- | :--- |
+| -h | --help    | 显示指定命令的帮助信息 |
+| -d | --domain  | 指定服务器的域名、端口，默认为localhost |
+| -o | --output  | 指定输出目录，默认为当前目录 |
+| -w | --overwrite | 是否覆盖已存在的配置文件，默认不覆盖 |
+| -t | --type    | 要导出的配置文件类型，后续扩展，0：POSTMAN，默认为0 |
+
+使用范例：
+
+在当前目录下导出项目2345,6798的postman工具接口配置文件
+
+```bash
+nei export 2345,6798
+```
+
+在/path/to/output/目录下导出项目23456798的postman工具接口配置文件
+
+```bash
+nei export 23456798 -d https://10.256.7.23:8080 -o /path/to/output/
+```
 
 # 版本历史
 
