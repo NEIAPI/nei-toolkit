@@ -189,8 +189,32 @@ exports.mock = function(config,callback){
         fiddler:config.fiddler
     });
 };
-
-
-exports.start = function(){
-
+/**
+ * export toolkit config file
+ * @param  {Object}  config - config object
+ * @param  {String}  config.id        - nei project id
+ * @param  {String}  config.output    - path to output
+ * @param  {Number}  config.type      - mock data type
+ * @param  {Boolean} config.overwrite - whether overwrite files existed
+ * @param  {String}  config.domain    - server domain
+ * @param  {Function} callback - build finish callback
+ */
+exports.export = function(config,callback){
+    var cwd = process.cwd()+'/',
+        output = _path.absolute(
+            config.output+'/',cwd
+        );
+    (new (require('./lib/nei/builder.js'))({
+        id:config.id,
+        proRoot:output,
+        overwrite:config.overwrite,
+        done:callback||function(){},
+        debug:_log.log.bind(_log,'debug'),
+        info:_log.log.bind(_log,'info'),
+        warn:_log.log.bind(_log,'warn'),
+        error:_log.log.bind(_log,'error')
+    })).export({
+        type:config.type,
+        domain:config.domain
+    });
 };

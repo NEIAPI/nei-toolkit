@@ -1,0 +1,28 @@
+{
+    "id":"nei-auto-{{project.id}}",
+    "name":"{{project.name}}",
+    "description":"NEI平台\"{{project.group}}\"项目组下的\"{{project.name}}\"项目",
+    "timestamp":{{timestamp}},
+    "requests":[
+        {%- for api in apis %}
+        {
+            "version": 2,
+            "name":"{{api.name}}({{api.path}})",
+            "description":"{{api.description}}\n\n{{api.tag}}",
+            "descriptionFormat":"markdown",
+            "id":"nei-auto-{{project.id}}-{{api.id}}",
+            "url":"{{domain}}{{api.path}}",
+            "method":"{{api.method}}",
+            "collectionId":"nei-auto-{{project.id}}",
+            "time":{{api.updateTime}},
+            {%- if api.method=='POST' %}
+            "dataMode":"urlencoded",
+            "data":{{api.mock}}
+            {%- else %}
+            "dataMode":"params",
+            "pathVariables":{{api.mock}}
+            {%- endif -%}
+        }{%- if !loop.last %},{%- endif %}
+        {%- endfor %}
+    ]
+}

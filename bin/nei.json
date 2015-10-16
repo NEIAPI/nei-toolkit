@@ -11,6 +11,7 @@
         "命令说明：",
         "build\t\t\t根据NEI平台信息构建项目结构",
         "update\t\t\t更新通过 'nej build' 构建的项目",
+        "export\t\t\t导出第三方工具的配置文件",
         "mock\t\t\t根据NEI平台信息生成测试数据"
     ],
     "-default-params":[
@@ -43,7 +44,7 @@
         "使用说明：",
         "nei update [IDS] [参数]",
         "",
-        "<IDS>\t\t\tNEI平台中对应的项目ID，多个项目ID用逗号分隔，不传则表示更新所有已生成的项目",
+        "[IDS]\t\t\tNEI平台中对应的项目ID，多个项目ID用逗号分隔，不传则表示更新所有已生成的项目",
         "",
         "参数说明：",
         "%p",
@@ -76,5 +77,25 @@
         {"j":"w","q":"overwrite","d":false,"m":"是否覆盖已存在的MOCK数据文件，默认不覆盖"},
         {"j":"t","q":"type","d":0,"m":"要导出的数据类型，0：模板+接口，1：模板，2：接口，默认为0"},
         {"j":"f","q":"fiddler","d":false,"m":"如果type是0或者2的情况可以用此参数配置是否导出fiddler配置文件，默认不导出"}
+    ],
+    "export":[
+        "使用说明：",
+        "nei export <IDS> [参数]",
+        "",
+        "<IDS>\t\t\tNEI平台中对应的项目ID，多个项目ID用逗号分隔，必须输入",
+        "",
+        "参数说明：",
+        "%p",
+        "",
+        "使用举例：",
+        "nei export 2345,6798",
+        "nei export 23456798 -d https://10.256.7.23:8080 -o /path/to/output/"
+    ],
+    "export-params":[
+        {"j":"h","q":"help","m":"显示export命令帮助信息"},
+        {"j":"d","q":"domain","d":"localhost","m":"指定服务器的域名、端口，默认为localhost"},
+        {"j":"o","q":"output","d":"./","m":"指定输出目录，默认为当前目录"},
+        {"j":"w","q":"overwrite","d":false,"m":"是否覆盖已存在的配置文件，默认不覆盖"},
+        {"j":"t","q":"type","d":0,"m":"要导出的配置文件类型，后续扩展，0：POSTMAN，默认为0"}
     ]
 }

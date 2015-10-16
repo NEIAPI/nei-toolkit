@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-var main = require('../main.js');
+var main = require('../main.js'),
+    split = /[,;，；]/;
 
 (new (require('../lib/util/args.js'))({
     message:require('./nei.json'),
@@ -18,7 +19,7 @@ var main = require('../main.js');
         }else{
             opt.action = 'build';
             this.format(opt.action,opt);
-            id.split(/[,;]/).forEach(function(it){
+            id.split(split).forEach(function(it){
                 opt.id = it;
                 main.nei(opt);
             });
@@ -31,13 +32,28 @@ var main = require('../main.js');
         opt.action = 'update';
         this.format(opt.action,opt);
         if (!!id){
-            id.split(/[,;]/).forEach(function(it){
+            id.split(split).forEach(function(it){
                 opt.id = it;
                 main.nei(opt);
             });
         }else{
             // update all project
             main.update(opt);
+        }
+    },
+    export:function(event){
+        event.stopped = !0;
+        var opt = event.options||{},
+            id = (event.args||[])[0]||'';
+        if (!id){
+            this.show('export');
+            process.exit(0);
+        }else{
+            this.format('export',opt);
+            id.split(split).forEach(function(it){
+                opt.id = it;
+                main.export(opt);
+            });
         }
     },
     mock:function(event){
