@@ -1,0 +1,4693 @@
+{
+  "pages": [
+    {
+      "id": 10464,
+      "name": "客服系统 - 当前会话",
+      "path": "/chat/",
+      "description": "客服系统入口",
+      "updateTime": 1440646380000,
+      "creatorName": "蔡剑飞",
+      "interfaces": [
+        13132,
+        13138
+      ],
+      "templates": [
+        10475
+      ],
+      "parameters": []
+    },
+    {
+      "id": 10488,
+      "name": "客服系统 - 历史会话",
+      "path": "/chat/session/",
+      "description": "客服系统 当前会话",
+      "updateTime": 1440646384000,
+      "creatorName": "蔡剑飞",
+      "interfaces": [
+        13136,
+        13138
+      ],
+      "templates": [
+        10475
+      ],
+      "parameters": []
+    },
+    {
+      "id": 10489,
+      "name": "客服系统 - 系统设置",
+      "path": "/chat/setting/",
+      "description": "客服系统 基本资料",
+      "updateTime": 1440646392000,
+      "creatorName": "蔡剑飞",
+      "interfaces": [],
+      "templates": [
+        10475
+      ],
+      "parameters": []
+    },
+    {
+      "id": 10507,
+      "name": "系统登录",
+      "path": "/login",
+      "description": "系统登陆，登录后根据账户的权限判断跳转到客服系统还是管理系统",
+      "updateTime": 1440641170000,
+      "creatorName": "蔡剑飞",
+      "interfaces": [
+        13164
+      ],
+      "templates": [
+        10514
+      ],
+      "parameters": [
+        {
+          "id": 24873,
+          "name": "target",
+          "type": 10001,
+          "isPrimite": 0,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "登录后的转向地址",
+          "updateTime": 1442388970000
+        }
+      ]
+    },
+    {
+      "id": 10531,
+      "name": "页面未找到",
+      "path": "/404",
+      "description": "页面未找到",
+      "updateTime": 1442825390000,
+      "creatorName": "蔡剑飞",
+      "interfaces": [],
+      "templates": [
+        10537
+      ],
+      "parameters": []
+    }
+  ],
+  "interfaces": [
+    {
+      "id": 13173,
+      "name": "添加咨询分类",
+      "tag": "类目",
+      "path": "/api/category/add",
+      "method": 0,
+      "isRest": 0,
+      "description": "添加类目",
+      "updateTime": 1440487404000,
+      "creatorName": "方波",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 24292,
+          "name": "parent",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "所属的上一级分类标识，一级类目不传此参数",
+          "updateTime": 1440487386000
+        },
+        {
+          "id": 24311,
+          "name": "name",
+          "type": 10001,
+          "isPrimite": 0,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "类目名称",
+          "updateTime": 1440484982000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 13930,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1440484993000
+        },
+        {
+          "id": 13931,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "响应码对应的描述信息",
+          "updateTime": 1440484993000
+        },
+        {
+          "id": 13932,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10735,
+          "typeName": "Category",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求结果",
+          "updateTime": 1440485001000
+        }
+      ]
+    },
+    {
+      "id": 13182,
+      "name": "删除类目",
+      "tag": "类目",
+      "path": "/api/category/delete",
+      "method": 0,
+      "isRest": 0,
+      "description": "删除类目，如果类目包含子类目则同时删除子类目",
+      "updateTime": 1441552529000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "hzlantian",
+      "inputs": [
+        {
+          "id": 24316,
+          "name": "id",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "类目标识",
+          "updateTime": 1440487457000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 13930,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1440487457000
+        },
+        {
+          "id": 13931,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "响应码对应的描述信息",
+          "updateTime": 1440487457000
+        },
+        {
+          "id": 13932,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10003,
+          "typeName": "Boolean",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "是否删除成功",
+          "updateTime": 1440487457000
+        }
+      ]
+    },
+    {
+      "id": 13181,
+      "name": "取类目列表",
+      "tag": "类目",
+      "path": "/api/category/list",
+      "method": 1,
+      "isRest": 1,
+      "description": "取类目列表",
+      "updateTime": 1440487334000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [],
+      "outputs": [
+        {
+          "id": 13930,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1440487334000
+        },
+        {
+          "id": 13931,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "响应码对应的描述信息",
+          "updateTime": 1440487334000
+        },
+        {
+          "id": 13932,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10735,
+          "typeName": "Category",
+          "isSysType": 0,
+          "isArray": 1,
+          "description": "类目列表",
+          "updateTime": 1440487334000
+        }
+      ]
+    },
+    {
+      "id": 13183,
+      "name": "更新类目",
+      "tag": "类目",
+      "path": "/api/category/update",
+      "method": 0,
+      "isRest": 0,
+      "description": "更新类目，输入参数不传子类目child属性",
+      "updateTime": 1441552536000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "hzlantian",
+      "inputs": [
+        {
+          "id": 24492,
+          "name": "id",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "类目标识",
+          "updateTime": 1441174815000
+        },
+        {
+          "id": 24493,
+          "name": "name",
+          "type": 10001,
+          "isPrimite": 0,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "类目名称",
+          "updateTime": 1441174834000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 13930,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1440487532000
+        },
+        {
+          "id": 13931,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "响应码对应的描述信息",
+          "updateTime": 1440487532000
+        },
+        {
+          "id": 13932,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10735,
+          "typeName": "Category",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "修改后的类目信息对象",
+          "updateTime": 1440487532000
+        }
+      ]
+    },
+    {
+      "id": 13152,
+      "name": "导出问题反馈",
+      "tag": "导出",
+      "path": "/api/export/questionFeedback",
+      "method": 1,
+      "isRest": 0,
+      "description": "",
+      "updateTime": 1440209920000,
+      "creatorName": "方波",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 24235,
+          "name": "cId",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "客服Id",
+          "updateTime": 1440129258000
+        },
+        {
+          "id": 24236,
+          "name": "startTime",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "开始时间",
+          "updateTime": 1440145742000
+        },
+        {
+          "id": 24257,
+          "name": "endTime",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "结束时间",
+          "updateTime": 1440145736000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 13930,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1440148974000
+        },
+        {
+          "id": 13931,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "响应码对应的描述信息",
+          "updateTime": 1440148974000
+        },
+        {
+          "id": 13932,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10000,
+          "typeName": "Variable",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "请求结果",
+          "updateTime": 1440148974000
+        }
+      ]
+    },
+    {
+      "id": 13151,
+      "name": "导出会话报表",
+      "tag": "导出",
+      "path": "/api/export/sessionReport",
+      "method": 1,
+      "isRest": 0,
+      "description": "",
+      "updateTime": 1440209920000,
+      "creatorName": "方波",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 24233,
+          "name": "cId",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "客服Id",
+          "updateTime": 1440129183000
+        },
+        {
+          "id": 24234,
+          "name": "startTime",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "开始时间",
+          "updateTime": 1440145618000
+        },
+        {
+          "id": 24253,
+          "name": "endTime",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "结束时间",
+          "updateTime": 1440145610000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 13930,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1440148991000
+        },
+        {
+          "id": 13931,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "响应码对应的描述信息",
+          "updateTime": 1440148991000
+        },
+        {
+          "id": 13932,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10000,
+          "typeName": "Variable",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "请求结果",
+          "updateTime": 1440148991000
+        }
+      ]
+    },
+    {
+      "id": 13155,
+      "name": "新建客服",
+      "tag": "客服,v1.0",
+      "path": "/api/kefu/add",
+      "method": 0,
+      "isRest": 0,
+      "description": "新建客服，输入参数中的id为空",
+      "updateTime": 1444300800000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 14042,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "id",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "客服标识",
+          "updateTime": 1440292968000
+        },
+        {
+          "id": 14043,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "username",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "用户名称",
+          "updateTime": 1440292968000
+        },
+        {
+          "id": 14044,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "realname",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "真实姓名",
+          "updateTime": 1440292968000
+        },
+        {
+          "id": 14045,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "nickname",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "用户昵称",
+          "updateTime": 1440292968000
+        },
+        {
+          "id": 14046,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "role",
+          "originalType": 10760,
+          "type": 10760,
+          "typeName": "KefuRole",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "客服角色，超级管理员、管理员、普通客服等",
+          "updateTime": 1440292968000
+        },
+        {
+          "id": 14047,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "mobile",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "手机号码",
+          "updateTime": 1440292968000
+        },
+        {
+          "id": 14048,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "email",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "邮箱地址",
+          "updateTime": 1440292968000
+        },
+        {
+          "id": 14052,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "theme",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "账号使用的主题风格标识",
+          "updateTime": 1440292968000
+        },
+        {
+          "id": 14053,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "password",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "密码，MD加密",
+          "updateTime": 1440292968000
+        },
+        {
+          "id": 14054,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "pinyin",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "真实姓名拼音首字母",
+          "updateTime": 1440292968000
+        },
+        {
+          "id": 14057,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "portrait",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "头像地址",
+          "updateTime": 1440292968000
+        },
+        {
+          "id": 14477,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "onlineStatus",
+          "originalType": 10763,
+          "type": 10763,
+          "typeName": "KefuStatus",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "客服在线状态",
+          "updateTime": 1440292968000
+        },
+        {
+          "id": 14850,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "disabled",
+          "originalType": 10906,
+          "type": 10906,
+          "typeName": "KefuDisabled",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "客服启停状态",
+          "updateTime": 1440292968000
+        },
+        {
+          "id": 14857,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "maxSession",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "最大接待数量",
+          "updateTime": 1440292968000
+        },
+        {
+          "id": 14923,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "campany",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "服务企业",
+          "updateTime": 1440292968000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 13930,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1440293326000
+        },
+        {
+          "id": 13931,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "响应码对应的描述信息",
+          "updateTime": 1440293326000
+        },
+        {
+          "id": 13932,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10759,
+          "typeName": "Kefu",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求结果",
+          "updateTime": 1440293334000
+        }
+      ]
+    },
+    {
+      "id": 13156,
+      "name": "删除客服",
+      "tag": "客服",
+      "path": "/api/kefu/delete",
+      "method": 0,
+      "isRest": 0,
+      "description": "删除客服",
+      "updateTime": 1440293209000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 24259,
+          "name": "id",
+          "type": 10001,
+          "isPrimite": 0,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "客服ID",
+          "updateTime": 1440156948000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 13930,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1440156948000
+        },
+        {
+          "id": 13931,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "响应码对应的描述信息",
+          "updateTime": 1440156948000
+        },
+        {
+          "id": 13932,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10003,
+          "typeName": "Boolean",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "是否成功删除客服",
+          "updateTime": 1440156948000
+        }
+      ]
+    },
+    {
+      "id": 13417,
+      "name": "启停外包客服",
+      "tag": "客服,v1.0",
+      "path": "/api/kefu/disable",
+      "method": 0,
+      "isRest": 1,
+      "description": "启停外包客服",
+      "updateTime": 1444306414000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 25306,
+          "name": "id",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "客服标识",
+          "updateTime": 1444290711000
+        },
+        {
+          "id": 25307,
+          "name": "disabled",
+          "type": 10906,
+          "isPrimite": 0,
+          "typeName": "KefuDisabled",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "客服启停状态",
+          "updateTime": 1444290711000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 13930,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1444290711000
+        },
+        {
+          "id": 13931,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "响应码对应的描述信息",
+          "updateTime": 1444290711000
+        },
+        {
+          "id": 13932,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10906,
+          "typeName": "KefuDisabled",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "外包客服最终的启停状态",
+          "updateTime": 1444290741000
+        }
+      ]
+    },
+    {
+      "id": 13158,
+      "name": "查询客服列表",
+      "tag": "客服",
+      "path": "/api/kefu/list",
+      "method": 1,
+      "isRest": 0,
+      "description": "查询客服列表，拉取全部客服",
+      "updateTime": 1440294463000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 24901,
+          "name": "role",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "按角色筛选",
+          "updateTime": 1442457540000
+        },
+        {
+          "id": 13941,
+          "datatypeId": 10733,
+          "datatypeName": "PageFragment",
+          "projectId": 10679,
+          "name": "offset",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "偏移量",
+          "updateTime": 1440840872000
+        },
+        {
+          "id": 13942,
+          "datatypeId": 10733,
+          "datatypeName": "PageFragment",
+          "projectId": 10679,
+          "name": "limit",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "请求数量",
+          "updateTime": 1440840872000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 13951,
+          "datatypeId": 10734,
+          "datatypeName": "ResultFragment",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1440293027000
+        },
+        {
+          "id": 13952,
+          "datatypeId": 10734,
+          "datatypeName": "ResultFragment",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "请求响应信息",
+          "updateTime": 1440293027000
+        },
+        {
+          "id": 13953,
+          "datatypeId": 10734,
+          "datatypeName": "ResultFragment",
+          "projectId": 10679,
+          "name": "total",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "记录总数",
+          "updateTime": 1440293027000
+        },
+        {
+          "id": 13954,
+          "datatypeId": 10734,
+          "datatypeName": "ResultFragment",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10759,
+          "typeName": "Kefu",
+          "isSysType": 0,
+          "isArray": 1,
+          "description": "数据列表",
+          "updateTime": 1440293034000
+        }
+      ]
+    },
+    {
+      "id": 13164,
+      "name": "系统登录",
+      "tag": "客服",
+      "path": "/api/kefu/login",
+      "method": 0,
+      "isRest": 1,
+      "description": "用户登录，表单POST，登录后自动转向到管理系统（如果是管理员）或者客服系统",
+      "updateTime": 1440293231000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 24269,
+          "name": "username",
+          "type": 10001,
+          "isPrimite": 0,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "账号名称",
+          "updateTime": 1440237866000
+        },
+        {
+          "id": 24270,
+          "name": "password",
+          "type": 10001,
+          "isPrimite": 0,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "登录密码，MD加密",
+          "updateTime": 1440237866000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 24353,
+          "name": "code",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1440578795000
+        },
+        {
+          "id": 24354,
+          "name": "result",
+          "type": 10759,
+          "isPrimite": 0,
+          "typeName": "Kefu",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "结果",
+          "updateTime": 1440578820000
+        },
+        {
+          "id": 24355,
+          "name": "message",
+          "type": 10001,
+          "isPrimite": 0,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "请求响应结果",
+          "updateTime": 1440578834000
+        }
+      ]
+    },
+    {
+      "id": 13165,
+      "name": "退出登录",
+      "tag": "客服",
+      "path": "/api/kefu/logout",
+      "method": 1,
+      "isRest": 1,
+      "description": "退出登录，清除登录相关的Session和Cookie信息，自动转向到登录页面",
+      "updateTime": 1440293240000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [],
+      "outputs": []
+    },
+    {
+      "id": 13166,
+      "name": "修改密码",
+      "tag": "客服",
+      "path": "/api/kefu/password",
+      "method": 0,
+      "isRest": 0,
+      "description": "修改客服密码",
+      "updateTime": 1440293722000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 24275,
+          "name": "password",
+          "type": 10001,
+          "isPrimite": 0,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "新密码，MD5加密",
+          "updateTime": 1440293722000
+        },
+        {
+          "id": 24276,
+          "name": "origin",
+          "type": 10001,
+          "isPrimite": 0,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "原始密码，MD5加密",
+          "updateTime": 1440293722000
+        },
+        {
+          "id": 24317,
+          "name": "id",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "客服标识",
+          "updateTime": 1440488263000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 13930,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1440293722000
+        },
+        {
+          "id": 13931,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "响应码对应的描述信息",
+          "updateTime": 1440293722000
+        },
+        {
+          "id": 13932,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10003,
+          "typeName": "Boolean",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "是否修改成功",
+          "updateTime": 1440293722000
+        }
+      ]
+    },
+    {
+      "id": 13167,
+      "name": "客服状态调整",
+      "tag": "客服",
+      "path": "/api/kefu/status",
+      "method": 0,
+      "isRest": 0,
+      "description": "调整客服在线状态，包括：在线、挂起、离线等",
+      "updateTime": 1440379163000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 24277,
+          "name": "status",
+          "type": 10763,
+          "isPrimite": 0,
+          "typeName": "KefuStatus",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "客服状态",
+          "updateTime": 1440568430000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 13930,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1440833126000
+        },
+        {
+          "id": 13931,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "响应码对应的描述信息",
+          "updateTime": 1440833126000
+        },
+        {
+          "id": 13932,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10763,
+          "typeName": "KefuStatus",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "客服在线状态",
+          "updateTime": 1442220194000
+        }
+      ]
+    },
+    {
+      "id": 13157,
+      "name": "修改客服信息",
+      "tag": "客服,v1.0",
+      "path": "/api/kefu/update",
+      "method": 0,
+      "isRest": 0,
+      "description": "更新客服信息，输入的数据有什么字段更新什么字段",
+      "updateTime": 1444300782000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 14042,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "id",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "客服标识",
+          "updateTime": 1440293056000
+        },
+        {
+          "id": 14043,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "username",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "用户名称",
+          "updateTime": 1440293056000
+        },
+        {
+          "id": 14044,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "realname",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "真实姓名",
+          "updateTime": 1440293056000
+        },
+        {
+          "id": 14045,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "nickname",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "用户昵称",
+          "updateTime": 1440293056000
+        },
+        {
+          "id": 14046,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "role",
+          "originalType": 10760,
+          "type": 10760,
+          "typeName": "KefuRole",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "客服角色，超级管理员、管理员、普通客服等",
+          "updateTime": 1440293056000
+        },
+        {
+          "id": 14047,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "mobile",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "手机号码",
+          "updateTime": 1440293056000
+        },
+        {
+          "id": 14048,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "email",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "邮箱地址",
+          "updateTime": 1440293056000
+        },
+        {
+          "id": 14052,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "theme",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "账号使用的主题风格标识",
+          "updateTime": 1440293056000
+        },
+        {
+          "id": 14053,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "password",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "密码，MD加密",
+          "updateTime": 1440293056000
+        },
+        {
+          "id": 14054,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "pinyin",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "真实姓名拼音首字母",
+          "updateTime": 1440293056000
+        },
+        {
+          "id": 14057,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "portrait",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "头像地址",
+          "updateTime": 1440293056000
+        },
+        {
+          "id": 14477,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "onlineStatus",
+          "originalType": 10763,
+          "type": 10763,
+          "typeName": "KefuStatus",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "客服在线状态",
+          "updateTime": 1440293056000
+        },
+        {
+          "id": 14850,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "disabled",
+          "originalType": 10906,
+          "type": 10906,
+          "typeName": "KefuDisabled",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "客服启停状态",
+          "updateTime": 1440293056000
+        },
+        {
+          "id": 14857,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "maxSession",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "最大接待数量",
+          "updateTime": 1440293056000
+        },
+        {
+          "id": 14923,
+          "datatypeId": 10759,
+          "datatypeName": "Kefu",
+          "projectId": 10679,
+          "name": "campany",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "服务企业",
+          "updateTime": 1440293056000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 13930,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1440293385000
+        },
+        {
+          "id": 13931,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "响应码对应的描述信息",
+          "updateTime": 1440293385000
+        },
+        {
+          "id": 13932,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10759,
+          "typeName": "Kefu",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求结果",
+          "updateTime": 1440293392000
+        }
+      ]
+    },
+    {
+      "id": 13138,
+      "name": "获取消息列表",
+      "tag": "消息",
+      "path": "/api/message/list",
+      "method": 1,
+      "isRest": 0,
+      "description": "获取指定会话的消息列表",
+      "updateTime": 1440068111000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 24181,
+          "name": "id",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "会话标识",
+          "updateTime": 1440067771000
+        },
+        {
+          "id": 13941,
+          "datatypeId": 10733,
+          "datatypeName": "PageFragment",
+          "projectId": 10679,
+          "name": "offset",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "偏移量",
+          "updateTime": 1440067771000
+        },
+        {
+          "id": 13942,
+          "datatypeId": 10733,
+          "datatypeName": "PageFragment",
+          "projectId": 10679,
+          "name": "limit",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "请求数量",
+          "updateTime": 1440067771000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 13951,
+          "datatypeId": 10734,
+          "datatypeName": "ResultFragment",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1440067771000
+        },
+        {
+          "id": 13952,
+          "datatypeId": 10734,
+          "datatypeName": "ResultFragment",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "请求响应信息",
+          "updateTime": 1440067771000
+        },
+        {
+          "id": 13953,
+          "datatypeId": 10734,
+          "datatypeName": "ResultFragment",
+          "projectId": 10679,
+          "name": "total",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "记录总数",
+          "updateTime": 1440067771000
+        },
+        {
+          "id": 13954,
+          "datatypeId": 10734,
+          "datatypeName": "ResultFragment",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10706,
+          "typeName": "Message",
+          "isSysType": 0,
+          "isArray": 1,
+          "description": "数据列表",
+          "updateTime": 1444614210000
+        }
+      ]
+    },
+    {
+      "id": 13161,
+      "name": "轮询接口",
+      "tag": "数据",
+      "path": "/api/polling",
+      "method": 1,
+      "isRest": 1,
+      "description": "实时信息轮询接口，此接口服务器端实现时注意以下几点： 1. 响应都的Content-Type必须设置为text/event-stream  2. 响应数据类型用 event: EVENT_TYPE 行标识 2. 数据行用 data:JSON_STRING 行标识  3. 数据行后输出一个空行",
+      "updateTime": 1440227373000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 25568,
+          "name": "queue",
+          "type": 10001,
+          "isPrimite": 0,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "如果传入此参数则只轮询排队信息",
+          "updateTime": 1444887986000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 24267,
+          "name": "statistic",
+          "type": 10738,
+          "isPrimite": 0,
+          "typeName": "LineData",
+          "isSysType": 0,
+          "isArray": 1,
+          "description": "对于statistic事件返回的数据结构",
+          "updateTime": 1440231224000
+        },
+        {
+          "id": 24268,
+          "name": "status",
+          "type": 10757,
+          "isPrimite": 0,
+          "typeName": "StatusData",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "对于status事件返回的数据结构",
+          "updateTime": 1440231207000
+        },
+        {
+          "id": 25569,
+          "name": "queue",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "当前排队总数",
+          "updateTime": 1444888008000
+        }
+      ]
+    },
+    {
+      "id": 13142,
+      "name": "获取订单列表",
+      "tag": "产品",
+      "path": "/api/product/order",
+      "method": 0,
+      "isRest": 0,
+      "description": "获取某个用户的订单列表",
+      "updateTime": 1442214885000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 24188,
+          "name": "token",
+          "type": 10001,
+          "isPrimite": 0,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "用户标识",
+          "updateTime": 1442212378000
+        },
+        {
+          "id": 24792,
+          "name": "from",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "列表起始位置",
+          "updateTime": 1442212369000
+        },
+        {
+          "id": 24793,
+          "name": "count",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "列表数量",
+          "updateTime": 1442212389000
+        },
+        {
+          "id": 25111,
+          "name": "appid",
+          "type": 10001,
+          "isPrimite": 0,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "产品标识",
+          "updateTime": 1442811933000
+        },
+        {
+          "id": 25112,
+          "name": "uid",
+          "type": 10001,
+          "isPrimite": 0,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "用户标识",
+          "updateTime": 1442811947000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 24794,
+          "name": "rlt",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "返回结果",
+          "updateTime": 1442212414000
+        },
+        {
+          "id": 24801,
+          "name": "orders",
+          "type": 10878,
+          "isPrimite": 0,
+          "typeName": "PrdOrderItem",
+          "isSysType": 0,
+          "isArray": 1,
+          "description": "数据",
+          "updateTime": 1442811426000
+        }
+      ]
+    },
+    {
+      "id": 13316,
+      "name": "获取用户验证信息",
+      "tag": "产品",
+      "path": "/api/product/token",
+      "method": 1,
+      "isRest": 1,
+      "description": "获取用户验证信息",
+      "updateTime": 1442317887000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [],
+      "outputs": [
+        {
+          "id": 13930,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1442317887000
+        },
+        {
+          "id": 13931,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "响应码对应的描述信息",
+          "updateTime": 1442317887000
+        },
+        {
+          "id": 13932,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10849,
+          "typeName": "PrdToken",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "第三方用户验证信息",
+          "updateTime": 1442317887000
+        }
+      ]
+    },
+    {
+      "id": 13306,
+      "name": "第三方用户信息",
+      "tag": "产品",
+      "path": "/api/product/user",
+      "method": 0,
+      "isRest": 1,
+      "description": "取第三方用户信息",
+      "updateTime": 1442212827000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 24802,
+          "name": "token",
+          "type": 10001,
+          "isPrimite": 0,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "标识",
+          "updateTime": 1442212827000
+        },
+        {
+          "id": 25109,
+          "name": "appid",
+          "type": 10001,
+          "isPrimite": 0,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "产品标识",
+          "updateTime": 1442811892000
+        },
+        {
+          "id": 25110,
+          "name": "uid",
+          "type": 10001,
+          "isPrimite": 0,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "用户标识",
+          "updateTime": 1442811901000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 24803,
+          "name": "rlt",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "请求结果",
+          "updateTime": 1442212827000
+        },
+        {
+          "id": 24804,
+          "name": "data",
+          "type": 10834,
+          "isPrimite": 0,
+          "typeName": "PrdUnitItem",
+          "isSysType": 0,
+          "isArray": 1,
+          "description": "用户项信息",
+          "updateTime": 1442212827000
+        }
+      ]
+    },
+    {
+      "id": 13420,
+      "name": "工作报表-客服列表",
+      "tag": "v1.0,工作报表",
+      "path": "/api/report/kefuList",
+      "method": 0,
+      "isRest": 0,
+      "description": "",
+      "updateTime": 1444302393000,
+      "creatorName": "方波",
+      "updatorName": "方波",
+      "inputs": [
+        {
+          "id": 25312,
+          "name": "startTime",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "开始时间",
+          "updateTime": 1444302038000
+        },
+        {
+          "id": 25313,
+          "name": "endTime",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "结束时间",
+          "updateTime": 1444302038000
+        },
+        {
+          "id": 25314,
+          "name": "cId",
+          "type": 10001,
+          "isPrimite": 0,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "0 - 所有客服",
+          "updateTime": 1444302038000
+        },
+        {
+          "id": 25315,
+          "name": "orderBy",
+          "type": 10001,
+          "isPrimite": 0,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "空格隔开，例如按消息数降序： msgNumbers desc",
+          "updateTime": 1444302038000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 25330,
+          "name": "total",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "总数",
+          "updateTime": 1444303045000
+        },
+        {
+          "id": 13930,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1444302410000
+        },
+        {
+          "id": 13931,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "响应码对应的描述信息",
+          "updateTime": 1444302410000
+        },
+        {
+          "id": 13932,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10912,
+          "typeName": "KefuList",
+          "isSysType": 0,
+          "isArray": 1,
+          "description": "请求结果",
+          "updateTime": 1444303066000
+        }
+      ]
+    },
+    {
+      "id": 13175,
+      "name": "取单条会话信息",
+      "tag": "会话",
+      "path": "/api/session/get",
+      "method": 1,
+      "isRest": 1,
+      "description": "取单条会话信息",
+      "updateTime": 1440475500000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 24302,
+          "name": "id",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "会话标识",
+          "updateTime": 1440475500000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 13930,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1440475500000
+        },
+        {
+          "id": 13931,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "响应码对应的描述信息",
+          "updateTime": 1440475500000
+        },
+        {
+          "id": 13932,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10707,
+          "typeName": "Session",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "会话详情",
+          "updateTime": 1440475500000
+        }
+      ]
+    },
+    {
+      "id": 13136,
+      "name": "获取历史会话列表",
+      "tag": "会话",
+      "path": "/api/session/history",
+      "method": 1,
+      "isRest": 0,
+      "description": "获取当前登录用户历史会话列表，此列表包含所有发起过咨询的会话，不管是否有消息，如果没有kid，则认为是管理员拉所有客服的会话历史（注意先判断权限）",
+      "updateTime": 1441186243000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 24179,
+          "name": "startTime",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "查询起始时间戳，包含",
+          "updateTime": 1440065892000
+        },
+        {
+          "id": 24180,
+          "name": "endTime",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "查询结束时间，不包含",
+          "updateTime": 1440065888000
+        },
+        {
+          "id": 24191,
+          "name": "kid",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "客服标识，如果有此参数则返回该客服对应的历史会话列表",
+          "updateTime": 1440070901000
+        },
+        {
+          "id": 24260,
+          "name": "category",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "类目标识，不同级别类目之间用逗号分隔，如1,2,3 表示一级类目标识为1，二级类目标识为2，三级类目标识为3",
+          "updateTime": 1442393167000
+        },
+        {
+          "id": 13941,
+          "datatypeId": 10733,
+          "datatypeName": "PageFragment",
+          "projectId": 10679,
+          "name": "offset",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "偏移量",
+          "updateTime": 1440065521000
+        },
+        {
+          "id": 13942,
+          "datatypeId": 10733,
+          "datatypeName": "PageFragment",
+          "projectId": 10679,
+          "name": "limit",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "请求数量",
+          "updateTime": 1440065521000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 13951,
+          "datatypeId": 10734,
+          "datatypeName": "ResultFragment",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1440065600000
+        },
+        {
+          "id": 13952,
+          "datatypeId": 10734,
+          "datatypeName": "ResultFragment",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "请求响应信息",
+          "updateTime": 1440065600000
+        },
+        {
+          "id": 13953,
+          "datatypeId": 10734,
+          "datatypeName": "ResultFragment",
+          "projectId": 10679,
+          "name": "total",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "记录总数",
+          "updateTime": 1440065600000
+        },
+        {
+          "id": 13954,
+          "datatypeId": 10734,
+          "datatypeName": "ResultFragment",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10707,
+          "typeName": "Session",
+          "isSysType": 0,
+          "isArray": 1,
+          "description": "数据列表",
+          "updateTime": 1440065611000
+        }
+      ]
+    },
+    {
+      "id": 13132,
+      "name": "获取在线会话列表",
+      "tag": "会话",
+      "path": "/api/session/online",
+      "method": 1,
+      "isRest": 0,
+      "description": "获取当前登录客服的在线会话列表，该列表主要包括当前在线的会话和客服之前尚未执行关闭操作的会话",
+      "updateTime": 1440067635000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [],
+      "outputs": [
+        {
+          "id": 13930,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1440062961000
+        },
+        {
+          "id": 13931,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "响应码对应的描述信息",
+          "updateTime": 1440062961000
+        },
+        {
+          "id": 13932,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10707,
+          "typeName": "Session",
+          "isSysType": 0,
+          "isArray": 1,
+          "description": "在线会话列表",
+          "updateTime": 1440062961000
+        }
+      ]
+    },
+    {
+      "id": 13160,
+      "name": "更新会话信息",
+      "tag": "会话",
+      "path": "/api/session/update",
+      "method": 0,
+      "isRest": 0,
+      "description": "更新会话信息，主要包括类目和备注",
+      "updateTime": 1440160958000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 14015,
+          "datatypeId": 10751,
+          "datatypeName": "SessionEditable",
+          "projectId": 10679,
+          "name": "id",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "会话标识",
+          "updateTime": 1440161082000
+        },
+        {
+          "id": 14016,
+          "datatypeId": 10751,
+          "datatypeName": "SessionEditable",
+          "projectId": 10679,
+          "name": "category",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "会话归属类目标识",
+          "updateTime": 1440161082000
+        },
+        {
+          "id": 14017,
+          "datatypeId": 10751,
+          "datatypeName": "SessionEditable",
+          "projectId": 10679,
+          "name": "description",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "会话备注信息",
+          "updateTime": 1440161082000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 13930,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1440160958000
+        },
+        {
+          "id": 13931,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "响应码对应的描述信息",
+          "updateTime": 1440160958000
+        },
+        {
+          "id": 13932,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10707,
+          "typeName": "Session",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "修改后的会话信息",
+          "updateTime": 1440160958000
+        }
+      ]
+    },
+    {
+      "id": 13235,
+      "name": "获取某个用户的会话历史",
+      "tag": "会话",
+      "path": "/api/session/user",
+      "method": 1,
+      "isRest": 1,
+      "description": "获取某个用户的会话历史，包括这个用户跟所有客服的会话",
+      "updateTime": 1441186365000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 24503,
+          "name": "id",
+          "type": 10002,
+          "isPrimite": 0,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "访客标识",
+          "updateTime": 1441518040000
+        },
+        {
+          "id": 13941,
+          "datatypeId": 10733,
+          "datatypeName": "PageFragment",
+          "projectId": 10679,
+          "name": "offset",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "偏移量",
+          "updateTime": 1441186332000
+        },
+        {
+          "id": 13942,
+          "datatypeId": 10733,
+          "datatypeName": "PageFragment",
+          "projectId": 10679,
+          "name": "limit",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "请求数量",
+          "updateTime": 1441186332000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 13951,
+          "datatypeId": 10734,
+          "datatypeName": "ResultFragment",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1441186332000
+        },
+        {
+          "id": 13952,
+          "datatypeId": 10734,
+          "datatypeName": "ResultFragment",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "请求响应信息",
+          "updateTime": 1441186332000
+        },
+        {
+          "id": 13953,
+          "datatypeId": 10734,
+          "datatypeName": "ResultFragment",
+          "projectId": 10679,
+          "name": "total",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "记录总数",
+          "updateTime": 1441186332000
+        },
+        {
+          "id": 13954,
+          "datatypeId": 10734,
+          "datatypeName": "ResultFragment",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10707,
+          "typeName": "Session",
+          "isSysType": 0,
+          "isArray": 1,
+          "description": "用户相关的会话列表",
+          "updateTime": 1441186332000
+        }
+      ]
+    },
+    {
+      "id": 13159,
+      "name": "用户资料更新",
+      "tag": "用户",
+      "path": "/api/user/update",
+      "method": 0,
+      "isRest": 0,
+      "description": "访客用户资料更新，有什么字段更新什么字段",
+      "updateTime": 1440160792000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "inputs": [
+        {
+          "id": 14018,
+          "datatypeId": 10752,
+          "datatypeName": "UserEditable",
+          "projectId": 10679,
+          "name": "id",
+          "originalType": 10002,
+          "type": 10002,
+          "typeName": "Number",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "用户标识",
+          "updateTime": 1440161235000
+        },
+        {
+          "id": 14019,
+          "datatypeId": 10752,
+          "datatypeName": "UserEditable",
+          "projectId": 10679,
+          "name": "realname",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "用户姓名",
+          "updateTime": 1440161235000
+        },
+        {
+          "id": 14020,
+          "datatypeId": 10752,
+          "datatypeName": "UserEditable",
+          "projectId": 10679,
+          "name": "mobile",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "手机号码",
+          "updateTime": 1440161235000
+        },
+        {
+          "id": 14021,
+          "datatypeId": 10752,
+          "datatypeName": "UserEditable",
+          "projectId": 10679,
+          "name": "email",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "邮箱地址",
+          "updateTime": 1440161235000
+        }
+      ],
+      "outputs": [
+        {
+          "id": 13930,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "code",
+          "originalType": 10728,
+          "type": 10728,
+          "typeName": "ResultCode",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "请求响应码",
+          "updateTime": 1440160754000
+        },
+        {
+          "id": 13931,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "message",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "响应码对应的描述信息",
+          "updateTime": 1440160754000
+        },
+        {
+          "id": 13932,
+          "datatypeId": 10729,
+          "datatypeName": "ResultData",
+          "projectId": 10679,
+          "name": "result",
+          "originalType": 10000,
+          "type": 10705,
+          "typeName": "Visitor",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "更新后的用户信息",
+          "updateTime": 1440160754000
+        }
+      ]
+    }
+  ],
+  "templates": [
+    {
+      "id": 10475,
+      "name": "客服系统",
+      "tag": "",
+      "path": "/kefu/index.ftl",
+      "description": "客服系统入口",
+      "updateTime": 1439862725000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "parameters": [
+        {
+          "id": 24273,
+          "name": "yunxin",
+          "type": 10758,
+          "isPrimite": 0,
+          "typeName": "YXAccount",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "云信账号信息",
+          "updateTime": 1440239204000
+        },
+        {
+          "id": 24770,
+          "name": "setting",
+          "type": 10831,
+          "isPrimite": 0,
+          "typeName": "CorpSetting",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "企业设置信息",
+          "updateTime": 1442043984000
+        },
+        {
+          "id": 14004,
+          "datatypeId": 10749,
+          "datatypeName": "PageInitData",
+          "projectId": 10679,
+          "name": "user",
+          "originalType": 10759,
+          "type": 10759,
+          "typeName": "Kefu",
+          "isSysType": 0,
+          "isArray": 0,
+          "description": "当前登录客服信息",
+          "updateTime": 1440144405000
+        },
+        {
+          "id": 14678,
+          "datatypeId": 10749,
+          "datatypeName": "PageInitData",
+          "projectId": 10679,
+          "name": "token",
+          "originalType": 10001,
+          "type": 10001,
+          "typeName": "String",
+          "isSysType": 1,
+          "isArray": 0,
+          "description": "页面请求标识，防止不同账号操作串掉",
+          "updateTime": 1440144405000
+        }
+      ]
+    },
+    {
+      "id": 10514,
+      "name": "系统登录",
+      "tag": "",
+      "path": "/login/login.ftl",
+      "description": "系统登陆，登录后根据账户的权限判断跳转到客服系统还是管理系统",
+      "updateTime": 1440645772000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "parameters": []
+    },
+    {
+      "id": 10537,
+      "name": "页面未找到",
+      "tag": "错误",
+      "path": "/error/404.ftl",
+      "description": "页面未找到",
+      "updateTime": 1442825372000,
+      "creatorName": "蔡剑飞",
+      "updatorName": "蔡剑飞",
+      "parameters": []
+    }
+  ],
+  "datatypes": [
+    {
+      "id": 10000,
+      "name": "Variable",
+      "tag": "系统类型",
+      "subtype": 0,
+      "format": 0,
+      "description": "可变类型",
+      "updateTime": 1438339452000,
+      "creatorName": "系统管理员"
+    },
+    {
+      "id": 10001,
+      "name": "String",
+      "tag": "系统类型",
+      "subtype": 0,
+      "format": 0,
+      "description": "字符串",
+      "updateTime": 1438339452000,
+      "creatorName": "系统管理员"
+    },
+    {
+      "id": 10002,
+      "name": "Number",
+      "tag": "系统类型",
+      "subtype": 0,
+      "format": 0,
+      "description": "数值",
+      "updateTime": 1438339452000,
+      "creatorName": "系统管理员"
+    },
+    {
+      "id": 10003,
+      "name": "Boolean",
+      "tag": "系统类型",
+      "subtype": 0,
+      "format": 0,
+      "description": "布尔",
+      "updateTime": 1438339452000,
+      "creatorName": "系统管理员"
+    },
+    {
+      "id": 10705,
+      "name": "Visitor",
+      "tag": "客服",
+      "subtype": 0,
+      "format": 0,
+      "description": "访客对象",
+      "updateTime": 1440296462000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10706,
+      "name": "Message",
+      "tag": "客服,v1.0",
+      "subtype": 0,
+      "format": 0,
+      "description": "消息对象",
+      "updateTime": 1444306295000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10707,
+      "name": "Session",
+      "tag": "客服",
+      "subtype": 0,
+      "format": 0,
+      "description": "会话对象",
+      "updateTime": 1440070795000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10709,
+      "name": "Referrer",
+      "tag": "客服",
+      "subtype": 0,
+      "format": 0,
+      "description": "会话来源",
+      "updateTime": 1439865327000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10728,
+      "name": "ResultCode",
+      "tag": "通用",
+      "subtype": 0,
+      "format": 1,
+      "description": "请求返回响应码",
+      "updateTime": 1440813815000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10729,
+      "name": "ResultData",
+      "tag": "通用",
+      "subtype": 0,
+      "format": 0,
+      "description": "请求返回结果对象",
+      "updateTime": 1440813828000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10733,
+      "name": "PageFragment",
+      "tag": "通用",
+      "subtype": 0,
+      "format": 0,
+      "description": "分页请求通用数据",
+      "updateTime": 1440813838000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10734,
+      "name": "ResultFragment",
+      "tag": "通用",
+      "subtype": 0,
+      "format": 0,
+      "description": "分页数据返回结果",
+      "updateTime": 1440813846000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10735,
+      "name": "Category",
+      "tag": "客服,会话",
+      "subtype": 0,
+      "format": 0,
+      "description": "咨询类目",
+      "updateTime": 1440813920000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10737,
+      "name": "Order",
+      "tag": "会话",
+      "subtype": 0,
+      "format": 0,
+      "description": "订单信息",
+      "updateTime": 1440813875000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10738,
+      "name": "LineData",
+      "tag": "统计",
+      "subtype": 0,
+      "format": 0,
+      "description": "折线图统计数据",
+      "updateTime": 1440231090000,
+      "creatorName": "方波"
+    },
+    {
+      "id": 10745,
+      "name": "PieData",
+      "tag": "统计",
+      "subtype": 0,
+      "format": 0,
+      "description": "饼图数据",
+      "updateTime": 1444368173000,
+      "creatorName": "方波"
+    },
+    {
+      "id": 10749,
+      "name": "PageInitData",
+      "tag": "模板",
+      "subtype": 0,
+      "format": 0,
+      "description": "模板通用初始预填数据",
+      "updateTime": 1440157663000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10750,
+      "name": "QuestionFeedbackResult",
+      "tag": "统计",
+      "subtype": 0,
+      "format": 0,
+      "description": "问题反馈饼图",
+      "updateTime": 1444368163000,
+      "creatorName": "方波"
+    },
+    {
+      "id": 10751,
+      "name": "SessionEditable",
+      "tag": "客服",
+      "subtype": 0,
+      "format": 0,
+      "description": "可更新的会话信息",
+      "updateTime": 1440161046000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10752,
+      "name": "UserEditable",
+      "tag": "客服",
+      "subtype": 0,
+      "format": 0,
+      "description": "可更新的用户信息",
+      "updateTime": 1440161209000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10757,
+      "name": "StatusData",
+      "tag": "统计",
+      "subtype": 0,
+      "format": 0,
+      "description": "在线状态统计数据",
+      "updateTime": 1440813888000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10758,
+      "name": "YXAccount",
+      "tag": "",
+      "subtype": 0,
+      "format": 0,
+      "description": "云信账号信息",
+      "updateTime": 1442231713000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10759,
+      "name": "Kefu",
+      "tag": "客服,外包,v1.0",
+      "subtype": 0,
+      "format": 0,
+      "description": "客服用户对象",
+      "updateTime": 1444300615000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10760,
+      "name": "KefuRole",
+      "tag": "客服,外包,v1.0",
+      "subtype": 0,
+      "format": 1,
+      "description": "客服角色",
+      "updateTime": 1444300600000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10761,
+      "name": "SessionStatus",
+      "tag": "会话",
+      "subtype": 0,
+      "format": 1,
+      "description": "会话状态",
+      "updateTime": 1440296518000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10763,
+      "name": "KefuStatus",
+      "tag": "客服",
+      "subtype": 0,
+      "format": 1,
+      "description": "客服状态",
+      "updateTime": 1440379137000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10795,
+      "name": "MessageState",
+      "tag": "消息",
+      "subtype": 0,
+      "format": 1,
+      "description": "消息状态",
+      "updateTime": 1441023483000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10810,
+      "name": "MessageFrom",
+      "tag": "消息",
+      "subtype": 0,
+      "format": 1,
+      "description": "消息方向",
+      "updateTime": 1442026717000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10830,
+      "name": "SessionPlatform",
+      "tag": "会话",
+      "subtype": 0,
+      "format": 1,
+      "description": "会话发生时的平台信息",
+      "updateTime": 1442026734000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10831,
+      "name": "CorpSetting",
+      "tag": "会话",
+      "subtype": 0,
+      "format": 0,
+      "description": "企业设置信息",
+      "updateTime": 1442043939000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10834,
+      "name": "PrdUnitItem",
+      "tag": "产品",
+      "subtype": 0,
+      "format": 0,
+      "description": "第三方产品数据项",
+      "updateTime": 1442212588000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10835,
+      "name": "PrdBlockItem",
+      "tag": "产品",
+      "subtype": 0,
+      "format": 0,
+      "description": "订单块列表项",
+      "updateTime": 1442811405000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10836,
+      "name": "PrdApiConfig",
+      "tag": "订单,历史会话",
+      "subtype": 0,
+      "format": 0,
+      "description": "订单接口和用户信息配置接口",
+      "updateTime": 1442231436000,
+      "creatorName": "谢晋"
+    },
+    {
+      "id": 10841,
+      "name": "HistogramLine",
+      "tag": "统计",
+      "subtype": 10002,
+      "format": 2,
+      "description": "直方图纵坐标",
+      "updateTime": 1442305675000,
+      "creatorName": "张晋"
+    },
+    {
+      "id": 10849,
+      "name": "PrdToken",
+      "tag": "产品",
+      "subtype": 0,
+      "format": 0,
+      "description": "产品方验证信息",
+      "updateTime": 1442317838000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10878,
+      "name": "PrdOrderItem",
+      "tag": "产品",
+      "subtype": 0,
+      "format": 0,
+      "description": "订单列表项数据结构",
+      "updateTime": 1442811391000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10900,
+      "name": "SupKefu",
+      "tag": "外包",
+      "subtype": 0,
+      "format": 0,
+      "description": "外包客服",
+      "updateTime": 1444306720000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10902,
+      "name": "SupCorp",
+      "tag": "外包",
+      "subtype": 0,
+      "format": 0,
+      "description": "外包企业信息",
+      "updateTime": 1444306720000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10903,
+      "name": "SupKefuItem",
+      "tag": "外包",
+      "subtype": 0,
+      "format": 0,
+      "description": "外包客服列表项",
+      "updateTime": 1444306720000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10906,
+      "name": "KefuDisabled",
+      "tag": "外包,客服,v1.0",
+      "subtype": 0,
+      "format": 1,
+      "description": "客服启停状态",
+      "updateTime": 1444300647000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10912,
+      "name": "KefuList",
+      "tag": "工作报表,v1.0",
+      "subtype": 0,
+      "format": 0,
+      "description": "客服列表字段",
+      "updateTime": 1444361230000,
+      "creatorName": "方波"
+    },
+    {
+      "id": 10914,
+      "name": "SalaryList",
+      "tag": "工作报表,v1.0",
+      "subtype": 0,
+      "format": 0,
+      "description": "工作报表-考勤信息字段",
+      "updateTime": 1444361257000,
+      "creatorName": "方波"
+    },
+    {
+      "id": 10916,
+      "name": "SalaryDetail",
+      "tag": "工作报表,v1.0",
+      "subtype": 0,
+      "format": 0,
+      "description": "首次上线时间  —最后离线时间  明细",
+      "updateTime": 1444361276000,
+      "creatorName": "方波"
+    },
+    {
+      "id": 10919,
+      "name": "MessageType",
+      "tag": "v1.0,消息",
+      "subtype": 0,
+      "format": 1,
+      "description": "消息类型",
+      "updateTime": 1444306287000,
+      "creatorName": "蔡剑飞"
+    },
+    {
+      "id": 10923,
+      "name": "Campany",
+      "tag": "客服管理,v1.0",
+      "subtype": 0,
+      "format": 0,
+      "description": "企业列表对象",
+      "updateTime": 1444367303000,
+      "creatorName": "方波"
+    },
+    {
+      "id": 10924,
+      "name": "SessionChart",
+      "tag": "v1.0,图表",
+      "subtype": 0,
+      "format": 0,
+      "description": "总咨询数",
+      "updateTime": 1444367291000,
+      "creatorName": "方波"
+    },
+    {
+      "id": 10925,
+      "name": "MessageChart",
+      "tag": "图表,v1.0",
+      "subtype": 0,
+      "format": 0,
+      "description": "总消息数",
+      "updateTime": 1444367291000,
+      "creatorName": "方波"
+    },
+    {
+      "id": 10927,
+      "name": "ReponseTimeChart",
+      "tag": "图表,v1.0",
+      "subtype": 0,
+      "format": 0,
+      "description": "响应时间",
+      "updateTime": 1444367691000,
+      "creatorName": "方波"
+    },
+    {
+      "id": 10928,
+      "name": "SessionDurationChart",
+      "tag": "图表,v1.0",
+      "subtype": 0,
+      "format": 0,
+      "description": "会话时长",
+      "updateTime": 1444367252000,
+      "creatorName": "方波"
+    },
+    {
+      "id": 10929,
+      "name": "StatisticsReqParam",
+      "tag": "统计,v1.0",
+      "subtype": 0,
+      "format": 0,
+      "description": "统计请求参数",
+      "updateTime": 1444367275000,
+      "creatorName": "方波"
+    },
+    {
+      "id": 10930,
+      "name": "PieChart",
+      "tag": "统计,v1.0",
+      "subtype": 0,
+      "format": 0,
+      "description": "饼图数据",
+      "updateTime": 1444368163000,
+      "creatorName": "方波"
+    }
+  ],
+  "attributeList": [
+    {
+      "id": 14207,
+      "name": "1",
+      "type": 10000,
+      "isArray": 0,
+      "description": "发送中",
+      "parentId": 10795
+    },
+    {
+      "id": 14208,
+      "name": "-1",
+      "type": 10000,
+      "isArray": 0,
+      "description": "发送失败",
+      "parentId": 10795
+    },
+    {
+      "id": 14209,
+      "name": "0",
+      "type": 10000,
+      "isArray": 0,
+      "description": "发送成功",
+      "parentId": 10795
+    },
+    {
+      "id": 13730,
+      "name": "id",
+      "type": 10002,
+      "isArray": 0,
+      "description": "用户标识",
+      "parentId": 10705
+    },
+    {
+      "id": 13731,
+      "name": "username",
+      "type": 10001,
+      "isArray": 0,
+      "description": "用户名称",
+      "parentId": 10705
+    },
+    {
+      "id": 13732,
+      "name": "realname",
+      "type": 10001,
+      "isArray": 0,
+      "description": "用户姓名",
+      "parentId": 10705
+    },
+    {
+      "id": 13739,
+      "name": "mobile",
+      "type": 10001,
+      "isArray": 0,
+      "description": "手机号码",
+      "parentId": 10705
+    },
+    {
+      "id": 13740,
+      "name": "email",
+      "type": 10001,
+      "isArray": 0,
+      "description": "邮箱地址",
+      "parentId": 10705
+    },
+    {
+      "id": 14326,
+      "name": "yxId",
+      "type": 10002,
+      "isArray": 0,
+      "description": "云信ID",
+      "parentId": 10705
+    },
+    {
+      "id": 14346,
+      "name": "address",
+      "type": 10001,
+      "isArray": 0,
+      "description": "用户的地理位置",
+      "parentId": 10705
+    },
+    {
+      "id": 13733,
+      "name": "id",
+      "type": 10002,
+      "isArray": 0,
+      "description": "消息标识",
+      "parentId": 10706
+    },
+    {
+      "id": 13734,
+      "name": "content",
+      "type": 10001,
+      "isArray": 0,
+      "description": "消息内容",
+      "parentId": 10706
+    },
+    {
+      "id": 13735,
+      "name": "type",
+      "type": 10919,
+      "isArray": 0,
+      "description": "消息类型",
+      "parentId": 10706
+    },
+    {
+      "id": 13736,
+      "name": "time",
+      "type": 10002,
+      "isArray": 0,
+      "description": "消息发布时间戳",
+      "parentId": 10706
+    },
+    {
+      "id": 13967,
+      "name": "user",
+      "type": 10705,
+      "isArray": 0,
+      "description": "发布消息的用户信息",
+      "parentId": 10706
+    },
+    {
+      "id": 14060,
+      "name": "kefu",
+      "type": 10759,
+      "isArray": 0,
+      "description": "接收消息的用户",
+      "parentId": 10706
+    },
+    {
+      "id": 14205,
+      "name": "state",
+      "type": 10795,
+      "isArray": 0,
+      "description": "客户端消息发送状态，没有该字段表示成功消息，1表示发送中，-1表示失败",
+      "parentId": 10706
+    },
+    {
+      "id": 14323,
+      "name": "fromUser",
+      "type": 10810,
+      "isArray": 0,
+      "description": "消息方向",
+      "parentId": 10706
+    },
+    {
+      "id": 13737,
+      "name": "id",
+      "type": 10002,
+      "isArray": 0,
+      "description": "会话标识",
+      "parentId": 10707
+    },
+    {
+      "id": 13738,
+      "name": "description",
+      "type": 10001,
+      "isArray": 0,
+      "description": "会话备注",
+      "parentId": 10707
+    },
+    {
+      "id": 13755,
+      "name": "referrer",
+      "type": 10709,
+      "isArray": 0,
+      "description": "来源页面信息",
+      "parentId": 10707
+    },
+    {
+      "id": 13943,
+      "name": "status",
+      "type": 10761,
+      "isArray": 0,
+      "description": "会话状态",
+      "parentId": 10707
+    },
+    {
+      "id": 13947,
+      "name": "startTime",
+      "type": 10002,
+      "isArray": 0,
+      "description": "会话开始时间戳",
+      "parentId": 10707
+    },
+    {
+      "id": 13948,
+      "name": "closeTime",
+      "type": 10002,
+      "isArray": 0,
+      "description": "会话结束时间戳",
+      "parentId": 10707
+    },
+    {
+      "id": 13949,
+      "name": "user",
+      "type": 10705,
+      "isArray": 0,
+      "description": "访客信息",
+      "parentId": 10707
+    },
+    {
+      "id": 13950,
+      "name": "kefu",
+      "type": 10759,
+      "isArray": 0,
+      "description": "接待的客服信息",
+      "parentId": 10707
+    },
+    {
+      "id": 13959,
+      "name": "category",
+      "type": 10735,
+      "isArray": 0,
+      "description": "咨询分类",
+      "parentId": 10707
+    },
+    {
+      "id": 14058,
+      "name": "userAgent",
+      "type": 10001,
+      "isArray": 0,
+      "description": "浏览器信息",
+      "parentId": 10707
+    },
+    {
+      "id": 14059,
+      "name": "platform",
+      "type": 10830,
+      "isArray": 0,
+      "description": "操作系统信息",
+      "parentId": 10707
+    },
+    {
+      "id": 14092,
+      "name": "lastMessage",
+      "type": 10706,
+      "isArray": 0,
+      "description": "最后一条消息内容，只有取当前会话列表时带上此信息，只要id和content",
+      "parentId": 10707
+    },
+    {
+      "id": 14347,
+      "name": "address",
+      "type": 10001,
+      "isArray": 0,
+      "description": "会话发生时的用户地理位置",
+      "parentId": 10707
+    },
+    {
+      "id": 14356,
+      "name": "unread",
+      "type": 10002,
+      "isArray": 0,
+      "description": "未读消息数",
+      "parentId": 10707
+    },
+    {
+      "id": 14463,
+      "name": "foreignId",
+      "type": 10001,
+      "isArray": 0,
+      "description": "第三方用户标识信息",
+      "parentId": 10707
+    },
+    {
+      "id": 13752,
+      "name": "title",
+      "type": 10001,
+      "isArray": 0,
+      "description": "页面标题",
+      "parentId": 10709
+    },
+    {
+      "id": 13753,
+      "name": "url",
+      "type": 10001,
+      "isArray": 0,
+      "description": "访问地址",
+      "parentId": 10709
+    },
+    {
+      "id": 13928,
+      "name": "200",
+      "type": 10000,
+      "isArray": 0,
+      "description": "操作成功",
+      "parentId": 10728
+    },
+    {
+      "id": 13930,
+      "name": "code",
+      "type": 10728,
+      "isArray": 0,
+      "description": "请求响应码",
+      "parentId": 10729
+    },
+    {
+      "id": 13931,
+      "name": "message",
+      "type": 10001,
+      "isArray": 0,
+      "description": "响应码对应的描述信息",
+      "parentId": 10729
+    },
+    {
+      "id": 13932,
+      "name": "result",
+      "type": 10000,
+      "isArray": 0,
+      "description": "请求结果",
+      "parentId": 10729
+    },
+    {
+      "id": 13941,
+      "name": "offset",
+      "type": 10002,
+      "isArray": 0,
+      "description": "偏移量",
+      "parentId": 10733
+    },
+    {
+      "id": 13942,
+      "name": "limit",
+      "type": 10002,
+      "isArray": 0,
+      "description": "请求数量",
+      "parentId": 10733
+    },
+    {
+      "id": 13951,
+      "name": "code",
+      "type": 10728,
+      "isArray": 0,
+      "description": "请求响应码",
+      "parentId": 10734
+    },
+    {
+      "id": 13952,
+      "name": "message",
+      "type": 10001,
+      "isArray": 0,
+      "description": "请求响应信息",
+      "parentId": 10734
+    },
+    {
+      "id": 13953,
+      "name": "total",
+      "type": 10002,
+      "isArray": 0,
+      "description": "记录总数",
+      "parentId": 10734
+    },
+    {
+      "id": 13954,
+      "name": "result",
+      "type": 10000,
+      "isArray": 1,
+      "description": "数据列表",
+      "parentId": 10734
+    },
+    {
+      "id": 13956,
+      "name": "id",
+      "type": 10002,
+      "isArray": 0,
+      "description": "类目标识",
+      "parentId": 10735
+    },
+    {
+      "id": 13957,
+      "name": "name",
+      "type": 10001,
+      "isArray": 0,
+      "description": "类目名称",
+      "parentId": 10735
+    },
+    {
+      "id": 13958,
+      "name": "parent",
+      "type": 10002,
+      "isArray": 0,
+      "description": "父类目标识，一级类目此字段为空",
+      "parentId": 10735
+    },
+    {
+      "id": 13964,
+      "name": "id",
+      "type": 10002,
+      "isArray": 0,
+      "description": "订单号",
+      "parentId": 10737
+    },
+    {
+      "id": 13965,
+      "name": "url",
+      "type": 10001,
+      "isArray": 0,
+      "description": "订单详情地址",
+      "parentId": 10737
+    },
+    {
+      "id": 13966,
+      "name": "time",
+      "type": 10002,
+      "isArray": 0,
+      "description": "订单时间戳",
+      "parentId": 10737
+    },
+    {
+      "id": 13968,
+      "name": "data",
+      "type": 10841,
+      "isArray": 1,
+      "description": "数据",
+      "parentId": 10738
+    },
+    {
+      "id": 13969,
+      "name": "name",
+      "type": 10001,
+      "isArray": 0,
+      "description": "名称",
+      "parentId": 10738
+    },
+    {
+      "id": 13994,
+      "name": "value",
+      "type": 10002,
+      "isArray": 0,
+      "description": "项值",
+      "parentId": 10745
+    },
+    {
+      "id": 13999,
+      "name": "name",
+      "type": 10001,
+      "isArray": 0,
+      "description": "项名称",
+      "parentId": 10745
+    },
+    {
+      "id": 14008,
+      "name": "series",
+      "type": 10930,
+      "isArray": 1,
+      "description": "一级目录",
+      "parentId": 10750
+    },
+    {
+      "id": 14009,
+      "name": "subSeries",
+      "type": 10930,
+      "isArray": 1,
+      "description": "二级子目录",
+      "parentId": 10750
+    },
+    {
+      "id": 14015,
+      "name": "id",
+      "type": 10002,
+      "isArray": 0,
+      "description": "会话标识",
+      "parentId": 10751
+    },
+    {
+      "id": 14016,
+      "name": "category",
+      "type": 10002,
+      "isArray": 0,
+      "description": "会话归属类目标识",
+      "parentId": 10751
+    },
+    {
+      "id": 14017,
+      "name": "description",
+      "type": 10001,
+      "isArray": 0,
+      "description": "会话备注信息",
+      "parentId": 10751
+    },
+    {
+      "id": 14018,
+      "name": "id",
+      "type": 10002,
+      "isArray": 0,
+      "description": "用户标识",
+      "parentId": 10752
+    },
+    {
+      "id": 14019,
+      "name": "realname",
+      "type": 10001,
+      "isArray": 0,
+      "description": "用户姓名",
+      "parentId": 10752
+    },
+    {
+      "id": 14020,
+      "name": "mobile",
+      "type": 10001,
+      "isArray": 0,
+      "description": "手机号码",
+      "parentId": 10752
+    },
+    {
+      "id": 14021,
+      "name": "email",
+      "type": 10001,
+      "isArray": 0,
+      "description": "邮箱地址",
+      "parentId": 10752
+    },
+    {
+      "id": 14036,
+      "name": "sessionCount",
+      "type": 10002,
+      "isArray": 0,
+      "description": "会话总数",
+      "parentId": 10757
+    },
+    {
+      "id": 14037,
+      "name": "kefuCount",
+      "type": 10002,
+      "isArray": 0,
+      "description": "客服总数",
+      "parentId": 10757
+    },
+    {
+      "id": 14039,
+      "name": "account",
+      "type": 10001,
+      "isArray": 0,
+      "description": "账号",
+      "parentId": 10758
+    },
+    {
+      "id": 14040,
+      "name": "token",
+      "type": 10001,
+      "isArray": 0,
+      "description": "密码",
+      "parentId": 10758
+    },
+    {
+      "id": 14041,
+      "name": "appKey",
+      "type": 10001,
+      "isArray": 0,
+      "description": "应用标识",
+      "parentId": 10758
+    },
+    {
+      "id": 14042,
+      "name": "id",
+      "type": 10002,
+      "isArray": 0,
+      "description": "客服标识",
+      "parentId": 10759
+    },
+    {
+      "id": 14043,
+      "name": "username",
+      "type": 10001,
+      "isArray": 0,
+      "description": "用户名称",
+      "parentId": 10759
+    },
+    {
+      "id": 14044,
+      "name": "realname",
+      "type": 10001,
+      "isArray": 0,
+      "description": "真实姓名",
+      "parentId": 10759
+    },
+    {
+      "id": 14045,
+      "name": "nickname",
+      "type": 10001,
+      "isArray": 0,
+      "description": "用户昵称",
+      "parentId": 10759
+    },
+    {
+      "id": 14046,
+      "name": "role",
+      "type": 10760,
+      "isArray": 0,
+      "description": "客服角色，超级管理员、管理员、普通客服等",
+      "parentId": 10759
+    },
+    {
+      "id": 14047,
+      "name": "mobile",
+      "type": 10001,
+      "isArray": 0,
+      "description": "手机号码",
+      "parentId": 10759
+    },
+    {
+      "id": 14048,
+      "name": "email",
+      "type": 10001,
+      "isArray": 0,
+      "description": "邮箱地址",
+      "parentId": 10759
+    },
+    {
+      "id": 14052,
+      "name": "theme",
+      "type": 10002,
+      "isArray": 0,
+      "description": "账号使用的主题风格标识",
+      "parentId": 10759
+    },
+    {
+      "id": 14053,
+      "name": "password",
+      "type": 10001,
+      "isArray": 0,
+      "description": "密码，MD加密",
+      "parentId": 10759
+    },
+    {
+      "id": 14054,
+      "name": "pinyin",
+      "type": 10001,
+      "isArray": 0,
+      "description": "真实姓名拼音首字母",
+      "parentId": 10759
+    },
+    {
+      "id": 14057,
+      "name": "portrait",
+      "type": 10001,
+      "isArray": 0,
+      "description": "头像地址",
+      "parentId": 10759
+    },
+    {
+      "id": 14477,
+      "name": "onlineStatus",
+      "type": 10763,
+      "isArray": 0,
+      "description": "客服在线状态",
+      "parentId": 10759
+    },
+    {
+      "id": 14850,
+      "name": "disabled",
+      "type": 10906,
+      "isArray": 0,
+      "description": "客服启停状态",
+      "parentId": 10759
+    },
+    {
+      "id": 14857,
+      "name": "maxSession",
+      "type": 10002,
+      "isArray": 0,
+      "description": "最大接待数量",
+      "parentId": 10759
+    },
+    {
+      "id": 14923,
+      "name": "campany",
+      "type": 10001,
+      "isArray": 0,
+      "description": "服务企业",
+      "parentId": 10759
+    },
+    {
+      "id": 14049,
+      "name": "0",
+      "type": 10000,
+      "isArray": 0,
+      "description": "普通客服",
+      "parentId": 10760
+    },
+    {
+      "id": 14050,
+      "name": "1",
+      "type": 10000,
+      "isArray": 0,
+      "description": "管理员",
+      "parentId": 10760
+    },
+    {
+      "id": 14051,
+      "name": "2",
+      "type": 10000,
+      "isArray": 0,
+      "description": "超级管理员",
+      "parentId": 10760
+    },
+    {
+      "id": 14063,
+      "name": "0",
+      "type": 10000,
+      "isArray": 0,
+      "description": "离线",
+      "parentId": 10763
+    },
+    {
+      "id": 14064,
+      "name": "1",
+      "type": 10000,
+      "isArray": 0,
+      "description": "在线",
+      "parentId": 10763
+    },
+    {
+      "id": 14065,
+      "name": "2",
+      "type": 10000,
+      "isArray": 0,
+      "description": "挂起",
+      "parentId": 10763
+    },
+    {
+      "id": 14055,
+      "name": "0",
+      "type": 10000,
+      "isArray": 0,
+      "description": "未解决",
+      "parentId": 10761
+    },
+    {
+      "id": 14056,
+      "name": "1",
+      "type": 10000,
+      "isArray": 0,
+      "description": "已解决",
+      "parentId": 10761
+    },
+    {
+      "id": 14004,
+      "name": "user",
+      "type": 10759,
+      "isArray": 0,
+      "description": "当前登录客服信息",
+      "parentId": 10749
+    },
+    {
+      "id": 14678,
+      "name": "token",
+      "type": 10001,
+      "isArray": 0,
+      "description": "页面请求标识，防止不同账号操作串掉",
+      "parentId": 10749
+    },
+    {
+      "id": 14324,
+      "name": "1",
+      "type": 10000,
+      "isArray": 0,
+      "description": "从用户到客服",
+      "parentId": 10810
+    },
+    {
+      "id": 14325,
+      "name": "0",
+      "type": 10000,
+      "isArray": 0,
+      "description": "从客服到用户",
+      "parentId": 10810
+    },
+    {
+      "id": 14439,
+      "name": "ios",
+      "type": 10000,
+      "isArray": 0,
+      "description": "IOS平台",
+      "parentId": 10830
+    },
+    {
+      "id": 14440,
+      "name": "android",
+      "type": 10000,
+      "isArray": 0,
+      "description": "Android平台",
+      "parentId": 10830
+    },
+    {
+      "id": 14441,
+      "name": "web",
+      "type": 10000,
+      "isArray": 0,
+      "description": "WEB平台",
+      "parentId": 10830
+    },
+    {
+      "id": 14452,
+      "name": "label",
+      "type": 10001,
+      "isArray": 0,
+      "description": "标签",
+      "parentId": 10834
+    },
+    {
+      "id": 14453,
+      "name": "value",
+      "type": 10001,
+      "isArray": 0,
+      "description": "值",
+      "parentId": 10834
+    },
+    {
+      "id": 14454,
+      "name": "edit",
+      "type": 10003,
+      "isArray": 0,
+      "description": "是否可编辑，如果可编辑则显示输入框",
+      "parentId": 10834
+    },
+    {
+      "id": 14702,
+      "name": "index",
+      "type": 10002,
+      "isArray": 0,
+      "description": "排序字段",
+      "parentId": 10834
+    },
+    {
+      "id": 14703,
+      "name": "modify_cb",
+      "type": 10001,
+      "isArray": 0,
+      "description": "编辑更新地址",
+      "parentId": 10834
+    },
+    {
+      "id": 14721,
+      "name": "key",
+      "type": 10001,
+      "isArray": 0,
+      "description": "字段标识",
+      "parentId": 10834
+    },
+    {
+      "id": 14722,
+      "name": "href",
+      "type": 10001,
+      "isArray": 0,
+      "description": "字段外链信息",
+      "parentId": 10834
+    },
+    {
+      "id": 14455,
+      "name": "data",
+      "type": 10834,
+      "isArray": 1,
+      "description": "订单项",
+      "parentId": 10835
+    },
+    {
+      "id": 14723,
+      "name": "index",
+      "type": 10002,
+      "isArray": 0,
+      "description": "排序索引值",
+      "parentId": 10835
+    },
+    {
+      "id": 14724,
+      "name": "is_title",
+      "type": 10003,
+      "isArray": 0,
+      "description": "是否标题项",
+      "parentId": 10835
+    },
+    {
+      "id": 14469,
+      "name": "userApi",
+      "type": 10001,
+      "isArray": 0,
+      "description": "用户信息配置接口",
+      "parentId": 10836
+    },
+    {
+      "id": 14470,
+      "name": "orderApi",
+      "type": 10001,
+      "isArray": 0,
+      "description": "订单信息接口",
+      "parentId": 10836
+    },
+    {
+      "id": 14725,
+      "name": "index",
+      "type": 10002,
+      "isArray": 0,
+      "description": "订单排序字段",
+      "parentId": 10878
+    },
+    {
+      "id": 14726,
+      "name": "blocks",
+      "type": 10835,
+      "isArray": 1,
+      "description": "订单块列表",
+      "parentId": 10878
+    },
+    {
+      "id": 14827,
+      "name": "id",
+      "type": 10002,
+      "isArray": 0,
+      "description": "客服标识",
+      "parentId": 10900
+    },
+    {
+      "id": 14828,
+      "name": "realname",
+      "type": 10001,
+      "isArray": 0,
+      "description": "客服姓名",
+      "parentId": 10900
+    },
+    {
+      "id": 14829,
+      "name": "mobile",
+      "type": 10001,
+      "isArray": 0,
+      "description": "手机号码",
+      "parentId": 10900
+    },
+    {
+      "id": 14830,
+      "name": "password",
+      "type": 10001,
+      "isArray": 0,
+      "description": "密码",
+      "parentId": 10900
+    },
+    {
+      "id": 14831,
+      "name": "corps",
+      "type": 10001,
+      "isArray": 0,
+      "description": "服务的企业ID列表，多个ID之间用逗号分隔",
+      "parentId": 10900
+    },
+    {
+      "id": 14840,
+      "name": "username",
+      "type": 10001,
+      "isArray": 0,
+      "description": "客服账号",
+      "parentId": 10900
+    },
+    {
+      "id": 14500,
+      "name": "appid",
+      "type": 10001,
+      "isArray": 0,
+      "description": "应用标识",
+      "parentId": 10849
+    },
+    {
+      "id": 14501,
+      "name": "secret",
+      "type": 10001,
+      "isArray": 0,
+      "description": "密钥信息",
+      "parentId": 10849
+    },
+    {
+      "id": 14502,
+      "name": "token",
+      "type": 10001,
+      "isArray": 0,
+      "description": "登录密码",
+      "parentId": 10849
+    },
+    {
+      "id": 14841,
+      "name": "id",
+      "type": 10002,
+      "isArray": 0,
+      "description": "客服标识",
+      "parentId": 10903
+    },
+    {
+      "id": 14842,
+      "name": "username",
+      "type": 10001,
+      "isArray": 0,
+      "description": "账号名称",
+      "parentId": 10903
+    },
+    {
+      "id": 14843,
+      "name": "mobile",
+      "type": 10001,
+      "isArray": 0,
+      "description": "手机号码",
+      "parentId": 10903
+    },
+    {
+      "id": 14844,
+      "name": "corps",
+      "type": 10902,
+      "isArray": 1,
+      "description": "所在企业列表",
+      "parentId": 10903
+    },
+    {
+      "id": 14960,
+      "name": "realname",
+      "type": 10001,
+      "isArray": 0,
+      "description": "客服姓名",
+      "parentId": 10903
+    },
+    {
+      "id": 14442,
+      "name": "logo",
+      "type": 10001,
+      "isArray": 0,
+      "description": "企业LOGO图片地址",
+      "parentId": 10831
+    },
+    {
+      "id": 14443,
+      "name": "welcome",
+      "type": 10001,
+      "isArray": 0,
+      "description": "企业设置的欢迎语",
+      "parentId": 10831
+    },
+    {
+      "id": 14471,
+      "name": "userApi",
+      "type": 10001,
+      "isArray": 0,
+      "description": "企业获取用户信息接口",
+      "parentId": 10831
+    },
+    {
+      "id": 14472,
+      "name": "orderApi",
+      "type": 10001,
+      "isArray": 0,
+      "description": "企业获取订单列表接口",
+      "parentId": 10831
+    },
+    {
+      "id": 14778,
+      "name": "name",
+      "type": 10001,
+      "isArray": 0,
+      "description": "企业名称",
+      "parentId": 10831
+    },
+    {
+      "id": 14924,
+      "name": "pinyin",
+      "type": 10001,
+      "isArray": 0,
+      "description": "",
+      "parentId": 10923
+    },
+    {
+      "id": 14925,
+      "name": "id",
+      "type": 10001,
+      "isArray": 0,
+      "description": "",
+      "parentId": 10923
+    },
+    {
+      "id": 14926,
+      "name": "name",
+      "type": 10001,
+      "isArray": 0,
+      "description": "",
+      "parentId": 10923
+    },
+    {
+      "id": 14885,
+      "name": "loginTime",
+      "type": 10002,
+      "isArray": 0,
+      "description": "登录时间",
+      "parentId": 10916
+    },
+    {
+      "id": 14886,
+      "name": "logoutTime",
+      "type": 10002,
+      "isArray": 0,
+      "description": "登出时间",
+      "parentId": 10916
+    },
+    {
+      "id": 14863,
+      "name": "realname",
+      "type": 10001,
+      "isArray": 0,
+      "description": "姓名",
+      "parentId": 10912
+    },
+    {
+      "id": 14864,
+      "name": "totalSession",
+      "type": 10001,
+      "isArray": 0,
+      "description": "总会话数",
+      "parentId": 10912
+    },
+    {
+      "id": 14865,
+      "name": "totalMessage",
+      "type": 10001,
+      "isArray": 0,
+      "description": "总消息数",
+      "parentId": 10912
+    },
+    {
+      "id": 14866,
+      "name": "firstReponseTime",
+      "type": 10002,
+      "isArray": 0,
+      "description": "首次响应时间",
+      "parentId": 10912
+    },
+    {
+      "id": 14867,
+      "name": "responseTime",
+      "type": 10002,
+      "isArray": 0,
+      "description": "响应时间",
+      "parentId": 10912
+    },
+    {
+      "id": 14868,
+      "name": "sessionDuration",
+      "type": 10002,
+      "isArray": 0,
+      "description": "会话时长",
+      "parentId": 10912
+    },
+    {
+      "id": 14869,
+      "name": "totalLogin",
+      "type": 10002,
+      "isArray": 0,
+      "description": "登入总时长",
+      "parentId": 10912
+    },
+    {
+      "id": 14927,
+      "name": "id",
+      "type": 10002,
+      "isArray": 0,
+      "description": "id",
+      "parentId": 10912
+    },
+    {
+      "id": 14950,
+      "name": "onlineStatus",
+      "type": 10002,
+      "isArray": 0,
+      "description": "在线状态 1 在线 0 离线",
+      "parentId": 10912
+    },
+    {
+      "id": 14935,
+      "name": "kefu",
+      "type": 10002,
+      "isArray": 1,
+      "description": "客服发出消息",
+      "parentId": 10925
+    },
+    {
+      "id": 14936,
+      "name": "guest",
+      "type": 10002,
+      "isArray": 1,
+      "description": "访客发出消息",
+      "parentId": 10925
+    },
+    {
+      "id": 14898,
+      "name": "text",
+      "type": 10000,
+      "isArray": 0,
+      "description": "文本类型",
+      "parentId": 10919
+    },
+    {
+      "id": 14899,
+      "name": "image",
+      "type": 10000,
+      "isArray": 0,
+      "description": "图片类型",
+      "parentId": 10919
+    },
+    {
+      "id": 14939,
+      "name": "sessionDuration",
+      "type": 10000,
+      "isArray": 1,
+      "description": "会话时长",
+      "parentId": 10928
+    },
+    {
+      "id": 14933,
+      "name": "\bpicked",
+      "type": 10002,
+      "isArray": 1,
+      "description": "已接待会话数",
+      "parentId": 10924
+    },
+    {
+      "id": 14934,
+      "name": "unpick",
+      "type": 10002,
+      "isArray": 1,
+      "description": "未接待会话数",
+      "parentId": 10924
+    },
+    {
+      "id": 14944,
+      "name": "name",
+      "type": 10001,
+      "isArray": 0,
+      "description": "产品名称",
+      "parentId": 10930
+    },
+    {
+      "id": 14945,
+      "name": "value",
+      "type": 10002,
+      "isArray": 0,
+      "description": "当前值",
+      "parentId": 10930
+    },
+    {
+      "id": 14946,
+      "name": "preValue",
+      "type": 10002,
+      "isArray": 0,
+      "description": "之前值",
+      "parentId": 10930
+    },
+    {
+      "id": 14947,
+      "name": "flag",
+      "type": 10002,
+      "isArray": 0,
+      "description": "true 未分类，",
+      "parentId": 10930
+    },
+    {
+      "id": 14838,
+      "name": "id",
+      "type": 10002,
+      "isArray": 0,
+      "description": "企业标识",
+      "parentId": 10902
+    },
+    {
+      "id": 14839,
+      "name": "name",
+      "type": 10001,
+      "isArray": 0,
+      "description": "企业名称",
+      "parentId": 10902
+    },
+    {
+      "id": 14940,
+      "name": "pId",
+      "type": 10002,
+      "isArray": 0,
+      "description": "企业Id",
+      "parentId": 10929
+    },
+    {
+      "id": 14941,
+      "name": "startTime",
+      "type": 10002,
+      "isArray": 0,
+      "description": "开始时间戳",
+      "parentId": 10929
+    },
+    {
+      "id": 14942,
+      "name": "endTime",
+      "type": 10002,
+      "isArray": 0,
+      "description": "结束时间戳",
+      "parentId": 10929
+    },
+    {
+      "id": 14875,
+      "name": "date",
+      "type": 10002,
+      "isArray": 0,
+      "description": "日期",
+      "parentId": 10914
+    },
+    {
+      "id": 14876,
+      "name": "totalLogin",
+      "type": 10002,
+      "isArray": 0,
+      "description": "登入时长",
+      "parentId": 10914
+    },
+    {
+      "id": 14877,
+      "name": "totalOnline",
+      "type": 10002,
+      "isArray": 0,
+      "description": "在线时长",
+      "parentId": 10914
+    },
+    {
+      "id": 14878,
+      "name": "totalHandup",
+      "type": 10002,
+      "isArray": 0,
+      "description": "挂起时长",
+      "parentId": 10914
+    },
+    {
+      "id": 14879,
+      "name": "firstOnline",
+      "type": 10002,
+      "isArray": 0,
+      "description": "首次上线时间",
+      "parentId": 10914
+    },
+    {
+      "id": 14880,
+      "name": "lastOutline",
+      "type": 10002,
+      "isArray": 0,
+      "description": "最后离线时间",
+      "parentId": 10914
+    },
+    {
+      "id": 14881,
+      "name": "ratioOnline",
+      "type": 10001,
+      "isArray": 0,
+      "description": "在线时长占比",
+      "parentId": 10914
+    },
+    {
+      "id": 14928,
+      "name": "id",
+      "type": 10002,
+      "isArray": 0,
+      "description": "id",
+      "parentId": 10914
+    },
+    {
+      "id": 14938,
+      "name": "firstReponseTime",
+      "type": 10002,
+      "isArray": 1,
+      "description": "首次响应时间",
+      "parentId": 10927
+    },
+    {
+      "id": 14943,
+      "name": "reponseTime",
+      "type": 10002,
+      "isArray": 1,
+      "description": "响应时间",
+      "parentId": 10927
+    },
+    {
+      "id": 14848,
+      "name": "0",
+      "type": 10000,
+      "isArray": 0,
+      "description": "停用",
+      "parentId": 10906
+    },
+    {
+      "id": 14849,
+      "name": "1",
+      "type": 10000,
+      "isArray": 0,
+      "description": "启用",
+      "parentId": 10906
+    }
+  ],
+  "timestamp": 1444967230333
+}

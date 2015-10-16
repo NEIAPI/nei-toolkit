@@ -10,7 +10,7 @@
         "",
         "命令说明：",
         "build\t\t\t根据NEI平台信息构建项目结构",
-        "update\t\t\t更新通过 'nej build' 构建的项目",
+        "update\t\t\t更新通过 'nei build' 构建的项目",
         "export\t\t\t导出第三方工具的配置文件",
         "mock\t\t\t根据NEI平台信息生成测试数据"
     ],

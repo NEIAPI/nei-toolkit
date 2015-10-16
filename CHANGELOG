@@ -1,46 +1,49 @@
+0.1.4   (2015-10-16)
 0.1.3
-    - ¸üÐÂrelease.confÄ£°å
-    - µ÷Õûutil.jsÄ£°åÖÐÊ¹ÓÃµÄÄ£°åÂ·¾¶ÓÃpuer.jsµÄÅäÖÃ
-    - µ÷ÕûDIR_SOURCE_TP,DIR_OUTPUT_TPÂ·¾¶µÄÊä³ö¸ñÊ½
-    - ÖØÐ´²ÎÊý½âÎö¹æÔò£¬¼òÐ´²ÉÓÃÅäÖÃÐÎÊ½
-    - Ö§³ÖexportÖ¸Áî£¬Ä¬ÈÏµ¼³öPOSTMANÅäÖÃÎÄ¼þ
+    - æ›´æ–°release.confæ¨¡æ¿
+    - è°ƒæ•´util.jsæ¨¡æ¿ä¸­ä½¿ç”¨çš„æ¨¡æ¿è·¯å¾„ç”¨puer.jsçš„é…ç½®
+    - è°ƒæ•´DIR_SOURCE_TP,DIR_OUTPUT_TPè·¯å¾„çš„è¾“å‡ºæ ¼å¼
+    - é‡å†™å‚æ•°è§£æžè§„åˆ™ï¼Œç®€å†™é‡‡ç”¨é…ç½®å½¢å¼
+    - æ”¯æŒexportæŒ‡ä»¤ï¼Œé»˜è®¤å¯¼å‡ºPOSTMANé…ç½®æ–‡ä»¶
+    - NEIå¹³å°æ•°æ®å¯¼å‡ºæŽ¥å£å…¼å®¹æ€§è°ƒæ•´
+    - å¢žåŠ ç¦»çº¿é…ç½®
 
 0.1.2   (2015-08-29)
-    - ÐÞÕýNEI»ñÈ¡Êý¾Ý½á¹ûµÄ´íÎó
-    - ¸üÐÂrelease.confÄ£°åÎÄ¼þ
-    - ¸üÐÂmcssÄ¬ÈÏÅäÖÃ
+    - ä¿®æ­£NEIèŽ·å–æ•°æ®ç»“æžœçš„é”™è¯¯
+    - æ›´æ–°release.confæ¨¡æ¿æ–‡ä»¶
+    - æ›´æ–°mcssé»˜è®¤é…ç½®
 
 0.1.1   (2015-08-25)
-    - ÐÞÕýÒ³ÃæÈë¿ÚÄ£°å´íÎó
-    - ÐÞÕýpuerÂ·ÓÉÅäÖÃÒì³£
-    - ÐÞÕýÊý×éÑ­»·ÒýÓÃ´íÎó
+    - ä¿®æ­£é¡µé¢å…¥å£æ¨¡æ¿é”™è¯¯
+    - ä¿®æ­£puerè·¯ç”±é…ç½®å¼‚å¸¸
+    - ä¿®æ­£æ•°ç»„å¾ªçŽ¯å¼•ç”¨é”™è¯¯
 
 0.1.0   (2015-08-22)
 0.0.9
-    - µ÷ÕûwebappÏµÍ³Ä¬ÈÏÄ£°åÊä³öÂ·¾¶
-    - updateÊ±²»ÔÙÖØÐÂÉú³Érelease.confÎÄ¼þ
-    - ÐÞÕýÇëÇómethodÒì³£
-    - ±¾µØÈÝÆ÷ÅäÖÃÊä³öÏÈcheckÎÄ¼þÊÇ·ñ´æÔÚ
+    - è°ƒæ•´webappç³»ç»Ÿé»˜è®¤æ¨¡æ¿è¾“å‡ºè·¯å¾„
+    - updateæ—¶ä¸å†é‡æ–°ç”Ÿæˆrelease.confæ–‡ä»¶
+    - ä¿®æ­£è¯·æ±‚methodå¼‚å¸¸
+    - æœ¬åœ°å®¹å™¨é…ç½®è¾“å‡ºå…ˆcheckæ–‡ä»¶æ˜¯å¦å­˜åœ¨
 
 0.0.8   (2015-08-20)
-    - Ôö¼ÓmockÖ¸Áîµ¥¶Àµ¼³öÄ£ÄâÊý¾Ý
-    - Ôö¼ÓfiddlerÅäÖÃÖ§³ÖÅäÖÃÎÄ¼þµ¼³ö
+    - å¢žåŠ mockæŒ‡ä»¤å•ç‹¬å¯¼å‡ºæ¨¡æ‹Ÿæ•°æ®
+    - å¢žåŠ fiddleré…ç½®æ”¯æŒé…ç½®æ–‡ä»¶å¯¼å‡º
 
 0.0.7   (2015-08-19)
 0.0.6
 0.0.5
-    - Ö§³Ö¶à¸öNEIÏîÄ¿buildÔÚÏàÍ¬Ä¿Â¼ÏÂ
-    - ÐÞÕýÅäÖÃÎÄ¼þÒì³£
-    - ·þÎñÆ÷Æô¶¯½Å±¾Ôö¼ÓmcssÆô¶¯
+    - æ”¯æŒå¤šä¸ªNEIé¡¹ç›®buildåœ¨ç›¸åŒç›®å½•ä¸‹
+    - ä¿®æ­£é…ç½®æ–‡ä»¶å¼‚å¸¸
+    - æœåŠ¡å™¨å¯åŠ¨è„šæœ¬å¢žåŠ mcsså¯åŠ¨
 
 0.0.4   (2015-08-18)
 0.0.3
 0.0.2
-    - ÐÞÕýÈÝÆ÷ÅäÖÃÎÄ¼þÉú³ÉÄ£°å
-    - Ôö¼ÓÄ£°åÒýÇæÊäÈëÖ§³Ö
-    - Ôö¼Ómcss´úÂë
-    - ÖØÖÃÈÝÆ÷ÅäÖÃÐÅÏ¢
-    - ÐÞ¸ÄÈÝÆ÷Â·ÓÉÉú³ÉÒì³£
+    - ä¿®æ­£å®¹å™¨é…ç½®æ–‡ä»¶ç”Ÿæˆæ¨¡æ¿
+    - å¢žåŠ æ¨¡æ¿å¼•æ“Žè¾“å…¥æ”¯æŒ
+    - å¢žåŠ mcssä»£ç 
+    - é‡ç½®å®¹å™¨é…ç½®ä¿¡æ¯
+    - ä¿®æ”¹å®¹å™¨è·¯ç”±ç”Ÿæˆå¼‚å¸¸
 
 0.0.1
-    - ³õÊ¼°æ±¾
+    - åˆå§‹ç‰ˆæœ¬
