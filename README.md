@@ -236,6 +236,10 @@ nei export 23456798 -d https://10.256.7.23:8080 -o /path/to/output/
 
 # 版本历史
 
+# 0.1.5   (2015-10-17)
+
+* 修正GET请求postman配置文件错误
+
 # 0.1.4   (2015-10-16)
 
 * 更新release.conf模板

@@ -11,16 +11,15 @@
             "description":"{{api.description}}\n\n{{api.tag}}",
             "descriptionFormat":"markdown",
             "id":"nei-auto-{{project.id}}-{{api.id}}",
-            "url":"{{domain}}{{api.path}}",
             "method":"{{api.method}}",
             "collectionId":"nei-auto-{{project.id}}",
             "time":{{api.updateTime}},
             {%- if api.method=='POST' %}
+            "url":"{{domain}}{{api.path}}",
             "dataMode":"urlencoded",
             "data":{{api.mock}}
             {%- else %}
-            "dataMode":"params",
-            "pathVariables":{{api.mock}}
+            "url":"{{domain}}{{api.path}}{{api.query}}"
             {%- endif -%}
         }{%- if !loop.last %},{%- endif %}
         {%- endfor %}
