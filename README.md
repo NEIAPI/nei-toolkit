@@ -238,7 +238,17 @@ nei export 2345,6798
 nei export 23456798 -d https://10.256.7.23:8080 -o /path/to/output/
 ```
 
+导出的postman配置文件可以通过以下方式导入[POSTMAN](https://www.getpostman.com/)工具
+
+![POSTMAN导入配置](./doc/res/postman.png)
+
 # 版本历史
+
+# 0.1.6   (2015-10-23)
+
+* 更新时不重新构建WEBAPP目录
+* 更新release.conf模板
+* 修正postman导出没有updateTime异常
 
 # 0.1.5   (2015-10-17)
 
