@@ -13,7 +13,7 @@
             "id":"nei-auto-{{project.id}}-{{api.id}}",
             "method":"{{api.method}}",
             "collectionId":"nei-auto-{{project.id}}",
-            "time":{{api.updateTime}},
+            "time":{{api.updateTime||timestamp}},
             {%- if api.method=='POST' %}
             "url":"{{domain}}{{api.path}}",
             "dataMode":"urlencoded",
