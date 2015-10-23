@@ -200,6 +200,10 @@ nei mock 106764
 nei mock 233454 -t 2 -o /path/to/output/
 ```
 
+导出的fiddler配置文件可以通过以下方式导入[Fiddler](http://www.telerik.com/fiddler)工具
+
+![Fiddler导入配置](./doc/res/fiddler.png)
+
 ## export
 
 导出第三方工具的配置文件，指令的运行格式为：
