@@ -1,3 +1,6 @@
+0.1.7
+    - 输出release.conf文件名带NEI ID
+
 0.1.6   (2015-10-23)
     - 更新时不重新构建WEBAPP目录
     - 更新release.conf模板

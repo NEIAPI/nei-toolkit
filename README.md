@@ -244,6 +244,10 @@ nei export 23456798 -d https://10.256.7.23:8080 -o /path/to/output/
 
 # 版本历史
 
+# 0.1.7
+
+* 输出release.conf文件名带NEI ID
+
 # 0.1.6   (2015-10-23)
 
 * 更新时不重新构建WEBAPP目录
