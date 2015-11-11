@@ -244,7 +244,7 @@ nei export 23456798 -d https://10.256.7.23:8080 -o /path/to/output/
 
 # 版本历史
 
-# 0.1.7
+# 0.1.7   (2015-11-05)
 
 * 输出release.conf文件名带NEI ID
 * 修正循环引用识别异常
