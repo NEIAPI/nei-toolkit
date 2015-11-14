@@ -2,7 +2,37 @@
 
 var main = require('../main.js'),
     split = /[,;，；]/;
-
+// run command for single id
+var run = function(name,event){
+    event.stopped = !0;
+    var opt = event.options||{},
+        id = (event.args||[])[0];
+    if (!id){
+        this.show(name);
+        process.exit(0);
+    }else{
+        opt.id = id;
+        this.format(name,opt);
+        main[name](opt);
+    }
+};
+// run command for batch ids
+var batch = function(name,event){
+    event.stopped = !0;
+    var opt = event.options||{},
+        id = (event.args||[])[0]||'';
+    if (!id){
+        this.show(name);
+        process.exit(0);
+    }else{
+        this.format(name,opt);
+        id.split(split).forEach(function(it){
+            opt.id = it;
+            main[name](opt);
+        });
+    }
+};
+// do command
 (new (require('../lib/util/args.js'))({
     message:require('./nei.json'),
     package:require('../package.json'),
@@ -42,32 +72,13 @@ var main = require('../main.js'),
         }
     },
     export:function(event){
-        event.stopped = !0;
-        var opt = event.options||{},
-            id = (event.args||[])[0]||'';
-        if (!id){
-            this.show('export');
-            process.exit(0);
-        }else{
-            this.format('export',opt);
-            id.split(split).forEach(function(it){
-                opt.id = it;
-                main.export(opt);
-            });
-        }
+        batch.call(this,'export',event);
     },
     mock:function(event){
-        event.stopped = !0;
-        var opt = event.options||{},
-            id = (event.args||[])[0];
-        if (!id){
-            this.show('mock');
-            process.exit(0);
-        }else{
-            opt.id = id;
-            this.format('mock',opt);
-            main.mock(opt);
-        }
+        run.call(this,'mock',event);
+    },
+    mobile:function(event){
+        run.call(this,'mobile',event);
     }
 })).exec(
     process.argv.slice(2)

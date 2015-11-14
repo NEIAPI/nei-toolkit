@@ -12,7 +12,8 @@
         "build\t\t\t根据NEI平台信息构建项目结构",
         "update\t\t\t更新通过 'nei build' 构建的项目",
         "export\t\t\t导出第三方工具的配置文件",
-        "mock\t\t\t根据NEI平台信息生成测试数据"
+        "mock\t\t\t根据NEI平台信息生成测试数据",
+        "mobile\t\t\t生成移动平台代码"
     ],
     "-default-params":[
         {"j":"v","q":"version","m":"显示工具版本信息"},
@@ -97,5 +98,27 @@
         {"j":"o","q":"output","d":"./","m":"指定输出目录，默认为当前目录"},
         {"j":"w","q":"overwrite","d":false,"m":"是否覆盖已存在的配置文件，默认不覆盖"},
         {"j":"t","q":"type","d":0,"m":"要导出的配置文件类型，后续扩展，0：POSTMAN，默认为0"}
+    ],
+    "mobile":[
+        "使用说明：",
+        "nei mobile <ID> [参数]",
+        "",
+        "<ID>\t\t\tNEI平台中对应的项目ID，必须输入",
+        "",
+        "参数说明：",
+        "%p",
+        "",
+        "使用举例：",
+        "nei mobile 2345",
+        "nei mobile 23456798 -l java -o /path/to/output/"
+    ],
+    "mobile-params":[
+        {"j":"h","q":"help","m":"显示mobile命令帮助信息"},
+        {"j":"o","q":"output","d":"./","m":"指定输出目录，默认为当前目录"},
+        {"j":"w","q":"overwrite","d":false,"m":"是否覆盖已存在的配置文件，默认不覆盖"},
+        {"j":"l","q":"lang","d":"oc","m":"要导出的语言标识，默认为oc，可选oc、java等"},
+        {"q":"author","d":"netease","m":"构建者名称，默认为netease"},
+        {"q":"namePrefix","d":"HT","m":"生成的文件名、类名的前缀，默认为HT"},
+        {"q":"reqAbstract","d":"BaseRequest","m":"请求基类名称，不带类名的前缀，默认为 BaseRequest"}
     ]
 }

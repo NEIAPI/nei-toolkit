@@ -9,7 +9,8 @@ var KLASS = {
     Logger:'util/logger#Logger',
     // nei builder
     NEI_Builder:'nei/builder',
-    NEI_WebApp:'nei/webapp'
+    NEI_WebApp:'nei/webapp',
+    NEI_Mobile:'nei/mobile'
 };
 // api exports map
 var API = {
@@ -165,9 +166,9 @@ exports.update = function(config,callback){
  * @param  {Object}  config - config object
  * @param  {String}  config.id        - nei project id
  * @param  {String}  config.output    - path to output
+ * @param  {Boolean} config.overwrite - whether overwrite files existed
  * @param  {Number}  config.type      - mock data type
  * @param  {Boolean} config.fiddler   - whether export fiddler config file
- * @param  {Boolean} config.overwrite - whether overwrite files existed
  * @param  {Function} callback - build finish callback
  */
 exports.mock = function(config,callback){
@@ -194,8 +195,8 @@ exports.mock = function(config,callback){
  * @param  {Object}  config - config object
  * @param  {String}  config.id        - nei project id
  * @param  {String}  config.output    - path to output
- * @param  {Number}  config.type      - mock data type
  * @param  {Boolean} config.overwrite - whether overwrite files existed
+ * @param  {Number}  config.type      - mock data type
  * @param  {String}  config.domain    - server domain
  * @param  {Function} callback - build finish callback
  */
@@ -218,3 +219,34 @@ exports.export = function(config,callback){
         domain:config.domain
     });
 };
+/**
+ * export mobile model
+ * @param  {Object}  config - config object
+ * @param  {String}  config.id          - nei project id
+ * @param  {String}  config.output      - path to output
+ * @param  {Boolean} config.overwrite   - whether overwrite files existed
+ * @param  {Number}  config.lang        - export language
+ * @param  {String}  config.author      - author name
+ * @param  {String}  config.namePrefix  - class name prefix
+ * @param  {String}  config.reqAbstract - request abstract class name
+ * @param  {Function} callback - build finish callback
+ */
+exports.mobile = function(config,callback){
+    var cwd = process.cwd()+'/',
+        output = _path.absolute(
+            config.output+'/',cwd
+        );
+    (new (require('./lib/nei/mobile.js'))({
+        id:config.id,
+        proRoot:output,
+        overwrite:config.overwrite,
+        done:callback||function(){},
+        debug:_log.log.bind(_log,'debug'),
+        info:_log.log.bind(_log,'info'),
+        warn:_log.log.bind(_log,'warn'),
+        error:_log.log.bind(_log,'error')
+    })).model(
+        config
+    );
+};
+
