@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 {%- if type.hasEnum %}
-{{enumStr}}
+#import "Enum.h";
 {%- endif %}
 
 /**
