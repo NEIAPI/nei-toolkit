@@ -18,6 +18,6 @@
 /**
  *  {{attr.description}}
  */
-@property (nonatomic, {{attr.refName}}) {{attr.typeName}}* {{attr.name}};
+@property (nonatomic, {{attr.refName}}) {{attr.typeName}} {% if !attr.noStar -%}*{%- endif -%}{{attr.name}};
 {% endfor %}
 @end
