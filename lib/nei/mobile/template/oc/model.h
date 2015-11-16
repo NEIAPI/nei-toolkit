@@ -7,11 +7,17 @@
 //  Auto build by NEI Builder
 
 #import <Foundation/Foundation.h>
+{%- if type.hasEnum %}
+{{enumStr}}
+{%- endif %}
 
 /**
  *  {{type.description}}
  */
 @class {{conf.prefix}}{{type.name}};
+{%- for kls in type.klses %}
+@class {{conf.prefix}}{{kls}};
+{%- endfor %}
 
 @interface {{conf.prefix}}{{type.name}} : NSObject
 {% for attr in type.props %}
