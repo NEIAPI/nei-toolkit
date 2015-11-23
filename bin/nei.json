@@ -117,8 +117,11 @@
         {"j":"o","q":"output","d":"./","m":"指定输出目录，默认为当前目录"},
         {"j":"w","q":"overwrite","d":false,"m":"是否覆盖已存在的配置文件，默认不覆盖"},
         {"j":"l","q":"lang","d":"oc","m":"要导出的语言标识，默认为oc，可选oc、java等"},
-        {"q":"author","d":"netease","m":"构建者名称，默认为netease"},
-        {"q":"namePrefix","d":"HT","m":"生成的文件名、类名的前缀，默认为HT"},
-        {"q":"reqAbstract","d":"BaseRequest","m":"请求基类名称，不带类名的前缀，默认为 BaseRequest"}
+        {"q":"author","d":"netease","m":"构建者名称，默认为 netease"},
+        {"q":"namePrefix","d":"HT","m":"生成的文件名、类名的前缀，默认为 HT"},
+        {"q":"reqAbstract","d":"BaseRequest","m":"请求基类名称，不带类名的前缀，默认为 BaseRequest"},
+        {"q":"reqHeaders","d":"Reqeusts","m":"包含所有数据请求的头文件名称，不带类名的前缀，默认为 Reqeusts"},
+        {"q":"modelAbstract","d":"HTTPModel","m":"数据模型基类名称，不带类名的前缀，默认为 HTTPModel"},
+        {"q":"modelHeaders","d":"Models","m":"包含所有数据模型的头文件名称，不带类名的前缀，默认为 Models"}
     ]
 }

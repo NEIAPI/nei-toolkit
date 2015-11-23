@@ -6,20 +6,19 @@
 //
 //  Auto build by NEI Builder
 
-#import <Foundation/Foundation.h>
+#import "{{conf.prefix}}{{conf.model}}.h"
 {%- if type.hasEnum %}
 #import "Enum.h";
 {%- endif %}
 
-/**
- *  {{type.description}}
- */
-@class {{conf.prefix}}{{type.name}};
 {%- for kls in type.klses %}
 @class {{conf.prefix}}{{kls}};
 {%- endfor %}
 
-@interface {{conf.prefix}}{{type.name}} : NSObject
+/**
+ *  {{type.description}}
+ */
+@interface {{conf.prefix}}{{type.name}} : {{conf.prefix}}{{conf.model}}
 {% for attr in type.props %}
 /**
  *  {{attr.description}}
