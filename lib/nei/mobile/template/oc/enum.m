@@ -1,12 +1,12 @@
 //
-//  Enum.h
+//  Enum.m
 //
 //  Created by {{conf.author}} on {{conf.month}}/{{conf.day}}/{{conf.year}}.
 //  Copyright © {{conf.year}} NetEase. All rights reserved.
 //
 //  Auto build by NEI Builder
 
-#import <Foundation/Foundation.h>
+#import "Enum.h"
 
 {% for enu in enums -%}
 /**
@@ -14,6 +14,6 @@
  */
 {% for attr in enu.pairs -%}
 // {{attr.desc}}
-extern NSString * const {{conf.prefix}}{{enu.name}}{{attr.key}};
+NSString * const {{conf.prefix}}{{enu.name}}{{attr.key}} = @"{{attr.value}}";
 {%- endfor %}
 {% endfor %}

@@ -7,9 +7,6 @@
 //  Auto build by NEI Builder
 
 #import "{{conf.prefix}}{{conf.model}}.h"
-{%- if type.hasEnum %}
-#import "Enum.h";
-{%- endif %}
 
 {%- for kls in type.klses %}
 @class {{conf.prefix}}{{kls}};

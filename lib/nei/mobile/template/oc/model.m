@@ -13,4 +13,12 @@
  */
 @implementation {{conf.prefix}}{{type.name}}
 
++ (NSDictionary *)customTypePropertyDic {
+    return @{ {{type.dictStr}} };
+}
+
++ (NSArray *)baseTypePropertyList {
+    return @[ {{type.baseStr}} ];
+}
+
 @end
