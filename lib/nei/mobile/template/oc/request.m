@@ -7,9 +7,7 @@
 //  Auto build by NEI Builder
 
 #import "{{conf.prefix}}{{req.name}}Request.h"
-{% for model in req.models %}
-#import "{{conf.prefix}}{{model.name}}.h"
-{% endfor %}
+#import "{{conf.prefix}}{{req.model}}.h"
 
 /**
  *  {{req.description}}
@@ -24,20 +22,12 @@
     return @"{{req.url}}";
 }
 
-+ (RKResponseDescriptor *)responseDescriptor {
-    RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[HTArticle class]];
-    [mapping addAttributeMappingsFromArray:@[@"title", @"body", @"publicationDate"]];
++ (RKMapping *)responseMapping {
+    return [{{conf.prefix}}{{req.model}} defaultResponseMapping];
+}
 
-    RKObjectMapping *relationShipMapping = [RKObjectMapping mappingForClass:[HTAuthor class]];
-    [relationShipMapping addAttributeMappingsFromArray:@[@"name", @"email"]];
-
-    [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"author"
-                                                                            toKeyPath:@"author"
-                                                                          withMapping:relationShipMapping]];
-
-    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping method:[self requestMethod] pathPattern:[self requestUrl] keyPath:@"data" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-
-    return responseDescriptor;
++ (NSString *)keyPath {
+    return {% if req.output %}@"{{req.output}}" {% else %} nil {% endif%};
 }
 
 @end

@@ -120,7 +120,7 @@
         {"q":"author","d":"netease","m":"构建者名称，默认为 netease"},
         {"q":"namePrefix","d":"HT","m":"生成的文件名、类名的前缀，默认为 HT"},
         {"q":"reqAbstract","d":"BaseRequest","m":"请求基类名称，不带类名的前缀，默认为 BaseRequest"},
-        {"q":"reqHeaders","d":"Reqeusts","m":"包含所有数据请求的头文件名称，不带类名的前缀，默认为 Reqeusts"},
+        {"q":"reqHeaders","d":"Requests","m":"包含所有数据请求的头文件名称，不带类名的前缀，默认为 Requests"},
         {"q":"modelAbstract","d":"HTTPModel","m":"数据模型基类名称，不带类名的前缀，默认为 HTTPModel"},
         {"q":"modelHeaders","d":"Models","m":"包含所有数据模型的头文件名称，不带类名的前缀，默认为 Models"}
     ]
