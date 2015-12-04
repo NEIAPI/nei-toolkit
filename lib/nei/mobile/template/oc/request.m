@@ -7,7 +7,7 @@
 //  Auto build by NEI Builder
 
 #import "{{conf.prefix}}{{req.name}}Request.h"
-#import "{{conf.prefix}}{{req.model}}.h"
+#import "{{conf.prefix}}{{req.resModel}}.h"
 
 /**
  *  {{req.description}}
@@ -23,11 +23,20 @@
 }
 
 + (RKMapping *)responseMapping {
-    return [{{conf.prefix}}{{req.model}} defaultResponseMapping];
+    return [{{conf.prefix}}{{req.resModel}} defaultResponseMapping];
 }
 
 + (NSString *)keyPath {
-    return {% if req.output %}@"{{req.output}}" {% else %} nil {% endif%};
+    return {% if req.resName %}@"{{req.resName}}" {% else %}nil{% endif%};
+}
+
+- (NSDictionary *)requestParams {
+    NSDictionary *dic = [self ht_modelToJSONObject];
+    if ([dic isKindOfClass:[NSDictionary class]] && [dic count] > 0) {
+        return dic;
+    }
+
+    return nil;
 }
 
 @end

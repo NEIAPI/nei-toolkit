@@ -1,37 +1,44 @@
 {
-    "name": "nei",
-    "description": "builder for nei platform",
-    "version": "0.1.9",
-    "license": "MIT",
-    "keywords": ["nei","web","builder","interface","automation"],
-    "author": "genify <caijf@corp.netease.com> (http://genify.blog.163.com/)",
-    "main": "./main.js",
-    "bin": {
-        "nei":"./bin/nei.js"
-    },
-    "homepage": "https://github.com/genify/toolkit2",
-    "scripts": {
-        "test": "node test/run_tests.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/genify/nei.git"
-    },
-    "engines":{
-        "node":">=0.12"
-    },
-    "bugs": {
-        "url": "https://github.com/genify/nei/issues"
-    },
-    "devDependencies": {
-        "mocha": ">=2.0.1",
-        "should": "^4.3.0"
-    },
-    "dependencies": {
-        "swig":">=1.4.2"
-    },
-    "nei":{
-        "mock":"http://nei.hz.netease.com/api/parameter/getTestData?type=%s&id=%s",
-        "api":"http://nei.hz.netease.com/api/projectView/getByProjectId?pid=%s"
-    }
+  "name": "nei",
+  "description": "builder for nei platform",
+  "version": "0.1.9",
+  "license": "MIT",
+  "keywords": [
+    "nei",
+    "web",
+    "builder",
+    "interface",
+    "automation"
+  ],
+  "author": "genify <caijf@corp.netease.com> (http://genify.blog.163.com/)",
+  "main": "./main.js",
+  "bin": {
+    "nei": "./bin/nei.js"
+  },
+  "homepage": "https://github.com/genify/toolkit2",
+  "scripts": {
+    "test": "node test/run_tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/genify/nei.git"
+  },
+  "engines": {
+    "node": ">=0.12"
+  },
+  "bugs": {
+    "url": "https://github.com/genify/nei/issues"
+  },
+  "devDependencies": {
+    "mocha": ">=2.0.1",
+    "should": "^4.3.0"
+  },
+  "dependencies": {
+    "lodash": "^3.10.1",
+    "swig": ">=1.4.2"
+  },
+  "nei": {
+    "mock": "http://nei.hz.netease.com/api/parameter/getTestData?type=%s&id=%s",
+    "api": "http://nei.hz.netease.com/api/projectView/getByProjectId?pid=%s"
+  }
 }
