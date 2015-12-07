@@ -7,7 +7,7 @@
 //  Auto build by NEI Builder
 
 #import "{{conf.prefix}}{{conf.model}}.h"
-
+{# pre classes #}
 {%- for kls in type.klses %}
 @class {{conf.prefix}}{{kls}};
 {%- endfor %}

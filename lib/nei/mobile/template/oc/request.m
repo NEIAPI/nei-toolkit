@@ -27,7 +27,7 @@
 }
 
 + (NSString *)keyPath {
-    return {% if req.resName %}@"{{req.resName}}" {% else %}nil{% endif%};
+    return {% if req.resName %}@"{{req.resName}}"{% else %}nil{% endif%};
 }
 
 - (NSDictionary *)requestParams {
