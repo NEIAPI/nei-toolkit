@@ -8,20 +8,16 @@ Model 与 NEI 中的自定义数据类型一一对应，对每一个自定义的
 
 类型的对应关系以及属性修饰符描述如下：
 
-```objective-c
-
-	NEI 数据类型       OC 数据类型	        注释
-	
-	自定义类型         同名自定义类型          属性修饰符为 strong, 带*
-	String			  NSString			 	属性修饰符为 copy, 带*
-	Number			  CGFloat			 	属性修饰符为 assign, 为统一，转为 OC 数据类型时都用 CGFloat, 不带*
-	Boolean			  BOOL			 		属性修饰符为 assign, 不带*
-	枚举类型           NSString              属性修饰符为 copy, 带*
-	Array    		  NSArray           	属性修饰符为 strong, 并且带上类型信息, 详见下一行, 带*
-	Array<SpecVO>     NSArray<SpecVO *>	    属性修饰符为 strong, 带上类型信息, 带*
-	Variable 		  id				 	尽量避免可变类型, 属性修饰符为 strong, 不带*
-
-```
+| NEI 数据类型  | OC 数据类型 | 注释 |
+| :--- | :--- | :---
+| 自定义类型  | 同名自定义类型 | 属性修饰符为 strong, 带* |
+| String | NSString | 属性修饰符为 copy, 带* | 
+| Number | CGFloat | 属性修饰符为 assign, 为统一，转为 OC 数据类型时都用 CGFloat, 不带* |
+| Boolean | BOOL | 属性修饰符为 assign, 不带* |
+| 枚举类型 | NSString | 属性修饰符为 copy, 带* |
+| Array | NSArray | 属性修饰符为 strong, 并且带上类型信息, 详见下一行, 带* |
+| Array<SpecVO> | NSArray<SpecVO *> | 属性修饰符为 strong, 带上类型信息, 带* |
+| Variable | id | 尽量避免可变类型, 属性修饰符为 strong, 不带* |
 	
 对应类型的生成结果如下：
 
@@ -270,7 +266,7 @@ NEI 类型名为 `Campany`, 则生成的类型名字 `HTCompany`, 头文件为 `
 
 ```objective-c
 
-		参数名：data 	类型：Comment
+		参数名：data 	   类型：Comment
 		
 		参数名: data    类型：Array<Comment>
 
@@ -402,45 +398,34 @@ TODO: NEI 上提供对应的测试接口。
 ### 输入参数的特殊处理
 输入参数存在一种特殊情况，并且需要与正常情况作区分，假定存在数据类型 `Address`，其描述如下：
 
-```objective-c
+| 属性名称  | 类型 |
+| :--- | :--- |
+| province  | String |
+| city | String |
 
-		属性名称				类型		
-		province			String
-		city				String
-		
-```
-
-然后输入参数的如下三种描述都可以表示一个Address:
+然后输入参数的如下三种描述都可以表示一个 `Address`:
 
 描述一：
 
-```objective-c
-
-		参数名				类型		
-		province			String
-		city				String
-
-```
+| 参数名  | 类型 |
+| :--- | :--- |
+| province  | String |
+| city | String |
 
 描述二：
 	
-```objective-c
+| 参数名  | 类型 |
+| :--- | :--- |
+| address  | Address |
+
+
+描述三： 本质和描述一一样，但是在 NEI 接口中可能会简化描述成为一个对象。
 	
-		参数名				类型		
-		address			    Address
+| 参数名  | 类型 |
+| :--- | :--- |
+| province  | String |
+| city  | String |
 
-```
-
-描述三： 本质和描述一一样，但是在NEI接口中可能会简化描述成为一个对象。
-		
-```objective-c
-
-		参数名				类型		
-		province			String     -------|
-											  | ---- Address
-		city				String     -------|
-
-```
 
 描述一和描述三实际生成的字典相同，和描述二生成的字典不同。
 
