@@ -34,7 +34,6 @@
     "should": "^4.3.0"
   },
   "dependencies": {
-    "lodash": "^3.10.1",
     "swig": ">=1.4.2"
   },
   "nei": {
