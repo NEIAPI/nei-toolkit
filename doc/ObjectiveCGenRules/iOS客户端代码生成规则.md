@@ -346,16 +346,16 @@ NEI 上的类型名为 `Company`, 则生成的类型名字 `HTCompany`, 头文�
 
 ![image](输出参数Case4.jpg)
 
-此时没有 Model 对应关系，实现文件如下：
+例如，这种情况下，仅对 `Category` 进行映射，实现文件为：
 
 ```objective-c
 
 	+ (RKMapping *)responseMapping {
-		return nil;
+		return [HTCategory defaultResponseMapping];
 	}
 	
 	+ (NSString *)keyPath {
-		return nil;
+		return @"result";
 	}
 
 ```
