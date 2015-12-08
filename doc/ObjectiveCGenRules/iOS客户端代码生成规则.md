@@ -275,7 +275,7 @@ NEI 上的类型名为 `Company`, 则生成的类型名字 `HTCompany`, 头文�
 + `requestParams` 方法描述输入参数信息，除了后面一节中提到的特殊处理 case 外，保持不变即可。
 + 在实现文件中用到的 Model 类，主要是 `responseMapping` 方法中会用到，例如这里用到了 `HTComment`，那么需要加上头文件 **`#import "HTComment.h"`**
 	
-### 输出参数
+### 输出参数的情况
 #### Case 1： NEI 只对结果或者数据进行描述，一定会对应单一的 Model
 
 这是默认 Case，也就是结果一定是被封装成了一个 Model。
@@ -284,12 +284,12 @@ NEI 上的类型名为 `Company`, 则生成的类型名字 `HTCompany`, 头文�
 
 ![image](输出参数Case1.jpg)
 
-可以看出，参数名称为 `result`，类型为 `Array`，`Array` 中对应的 Model 类型为 `ItemCommentVO`，则实现文件结果为：
+可以看出，参数名称为 `result`，类型为 `Array`，`Array` 中对应的 Model 类型为 `Comment`，则实现文件结果为：
 
 ```objective-c
 
 	+ (RKMapping *)responseMapping {
-	    return [HTItemCommentVO defaultResponseMapping];
+	    return [HTComment defaultResponseMapping];
 	}
 	
 	+ (NSString *)keyPath {
@@ -309,7 +309,7 @@ NEI 上的类型名为 `Company`, 则生成的类型名字 `HTCompany`, 头文�
 ```objective-c
 
 	+ (RKMapping *)responseMapping {
-	    return [HTResultData defaultResponseMapping];
+	    return [HTAddress defaultResponseMapping];
 	}
 	
 	+ (NSString *)keyPath {
@@ -346,16 +346,16 @@ NEI 上的类型名为 `Company`, 则生成的类型名字 `HTCompany`, 头文�
 
 ![image](输出参数Case4.jpg)
 
-例如，这种情况下，仅对 `cartItemList` 进行映射，实现文件为：
+此时没有 Model 对应关系，实现文件如下：
 
 ```objective-c
 
 	+ (RKMapping *)responseMapping {
-	    return [HTCartItemVO defaultResponseMapping];
+		return nil;
 	}
 	
 	+ (NSString *)keyPath {
-	    return @"cartItemList";
+		return nil;
 	}
 
 ```
@@ -449,6 +449,10 @@ NEI 上的类型名为 `Company`, 则生成的类型名字 `HTCompany`, 头文�
 	@property (nonatomic, copy) NSString *province;
 	@property (nonatomic, copy) NSString *city;
 	
+```
+
+```objective-c
+
 	- (NSDictionary *)requestParams {
 	    NSDictionary *dic = [self ht_modelToJSONObject];
 	    if ([dic isKindOfClass:[NSDictionary class]] && [dic count] > 0) {
@@ -465,7 +469,11 @@ NEI 上的类型名为 `Company`, 则生成的类型名字 `HTCompany`, 头文�
 ```objective-c
 
 	@property (nonatomic, strong) HTAddress *address;
-	
+		
+```
+
+```objective-c
+
 	- (NSDictionary *)requestParams {
 	    NSDictionary *dic = [self ht_modelToJSONObject];
 	    if ([dic isKindOfClass:[NSDictionary class]] && [dic count] > 0) {
@@ -482,7 +490,11 @@ NEI 上的类型名为 `Company`, 则生成的类型名字 `HTCompany`, 头文�
 ```objective-c
 
 	@property (nonatomic, strong) HTAddress *address;
-	
+		
+```
+
+```objective-c
+
 	- (NSDictionary *)requestParams {
 	    NSDictionary *dic = [self.address ht_modelToJSONObject];
 	    if ([dic isKindOfClass:[NSDictionary class]] && [dic count] > 0) {

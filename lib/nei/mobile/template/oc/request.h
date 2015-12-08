@@ -11,6 +11,7 @@
 {%- for model in req.reqModels %}
 @class {{conf.prefix}}{{model}};
 {%- endfor %}
+
 /**
  *  {{req.description}}
  */
