@@ -7,6 +7,7 @@
 * 支持[NEJ发布工具](https://github.com/genify/toolkit2)配置文件自动生成
 * 支持[Fiddler](http://www.telerik.com/fiddler)工具代理本地模拟数据，接口配置文件导出
 * 支持[POSTMAN](https://www.getpostman.com/)工具接口配置文件导出
+* 支持自动生成移动端数据模型、请求类代码
 * 支持自动导出模拟数据
 
 # 工具使用
@@ -68,6 +69,7 @@ nei [指令] [参数]
 | update | 更新通过 'nei build' 构建的项目 |
 | export | 导出第三方工具的配置文件 |
 | mock   | 根据NEI平台信息生成测试数据 |
+| mobile | 根据NEI平台信息生成移动平台模型和请求代码 |
 
 其中针对nei可用的参数包括：
 
@@ -112,7 +114,7 @@ nei build <IDS> [参数]
 
 | 简写 | 全称 | 描述 |
 | :--- | :--- | :--- |
-| -h | --help    | 显示指定命令的帮助信息 |
+| -h | --help    | 显示build命令的帮助信息 |
 | -p | --project | 指定项目目录，默认为当前目录 |
 | -t | --template | 指定用于构建的模板实现文件，默认使用内建的webapp模板构建 |
 | -w | --overwrite | 是否覆盖已存在的MOCK数据文件，默认不覆盖 |
@@ -148,7 +150,7 @@ nei update [IDS] [参数]
 
 | 简写 | 全称 | 描述 |
 | :--- | :--- | :--- |
-| -h | --help    | 显示指定命令的帮助信息 |
+| -h | --help    | 显示update命令的帮助信息 |
 | -p | --project | 指定项目目录，默认为当前目录 |
 | -w | --overwrite | 是否覆盖已存在的MOCK数据文件，默认不覆盖 |
 
@@ -180,7 +182,7 @@ nei mock <ID> [参数]
 
 | 简写 | 全称 | 描述 |
 | :--- | :--- | :--- |
-| -h | --help    | 显示指定命令的帮助信息 |
+| -h | --help    | 显示mock命令的帮助信息 |
 | -o | --output | 指定输出目录，默认为当前目录 |
 | -w | --overwrite | 是否覆盖已存在的MOCK数据文件，默认不覆盖 |
 | -t | --type | 要导出的数据类型，0：模板+接口，1：模板，2：接口，默认为0 |
@@ -212,13 +214,13 @@ nei mock 233454 -t 2 -o /path/to/output/
 nei export <IDS> [参数]
 ```
 
-其中<IDS>表示NEI平台中对应的项目ID，多个项目ID用逗号分隔，必须输入
+其中&lt;IDS&gt;表示NEI平台中对应的项目ID，多个项目ID用逗号分隔，必须输入
 
 针对nei export指令可用的参数包括：
 
 | 简写 | 全称 | 描述 |
 | :--- | :--- | :--- |
-| -h | --help    | 显示指定命令的帮助信息 |
+| -h | --help    | 显示export命令的帮助信息 |
 | -d | --domain  | 指定服务器的域名、端口，默认为localhost |
 | -o | --output  | 指定输出目录，默认为当前目录 |
 | -w | --overwrite | 是否覆盖已存在的配置文件，默认不覆盖 |
@@ -242,7 +244,51 @@ nei export 23456798 -d https://10.256.7.23:8080 -o /path/to/output/
 
 ![POSTMAN导入配置](./doc/res/postman.png)
 
+## mobile
+
+自动生成移动平台数据模型和请求类代码
+
+```bash
+nei mobile <ID> [参数]
+```
+
+其中&lt;ID&gt;NEI平台中对应的项目ID，必须输入
+
+针对nei export指令可用的参数包括：
+
+| 简写 | 全称 | 描述 |
+| :--- | :--- | :--- |
+| -h | --help    | 显示mobile命令帮助信息 |
+| -o | --output  | 指定输出目录，默认为当前目录 |
+| -w | --overwrite | 是否覆盖已存在的配置文件，默认不覆盖 |
+| -l | --lang    | 要导出的语言标识，默认为oc，可选oc、java等 |
+| 无 | --author  | 注释中作者姓名，默认netease |
+| 无 | --namePrefix  | 生成的文件名、类名的前缀，默认为 HT |
+| 无 | --reqAbstract  | 请求基类名称，不带类名的前缀，默认为 BaseRequest |
+| 无 | --reqHeaders  | 包含所有数据请求的头文件名称，不带类名的前缀，默认为 Requests |
+| 无 | --modelAbstract  | 数据模型基类名称，不带类名的前缀，默认为 HTTPModel |
+| 无 | --modelHeaders  | 包含所有数据模型的头文件名称，不带类名的前缀，默认为 Models |
+
+使用范例
+
+在当前目录下导出项目2345的Object-C语言的数据模型和请求对象
+
+```bash
+nei mobile 2345
+```
+
+在/path/to/output/下导出项目23456798的Java语言的数据模型和请求对象
+
+```bash
+nei mobile 23456798 -l java -o /path/to/output/
+```
+
 # 版本历史
+
+# 0.2.0   (2015-12-08)
+
+* 支持Object-C语言Mobile数据模型导出
+* 支持Object-C语言Mobile请求对象导出
 
 # 0.1.9   (2015-11-11)
 
