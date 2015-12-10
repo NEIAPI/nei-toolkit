@@ -122,6 +122,9 @@
         {"q":"reqAbstract","d":"BaseRequest","m":"请求基类名称，不带类名的前缀，默认为 BaseRequest"},
         {"q":"reqHeaders","d":"Requests","m":"包含所有数据请求的头文件名称，不带类名的前缀，默认为 Requests"},
         {"q":"modelAbstract","d":"HTTPModel","m":"数据模型基类名称，不带类名的前缀，默认为 HTTPModel"},
-        {"q":"modelHeaders","d":"Models","m":"包含所有数据模型的头文件名称，不带类名的前缀，默认为 Models"}
+        {"q":"modelHeaders","d":"Models","m":"包含所有数据模型的头文件名称，不带类名的前缀，默认为 Models"},
+        {"q":"appPackage","d":"com.netease","m":"应用的包名，默认为 com.netease，Java 专用"},
+        {"q":"modelPackage","d":"hthttp.model","m":"模型的相对包名，默认为 hthttp.model，Java 专用"},
+        {"q":"reqPackage","d":"hthttp.httptask","m":"http请求的相对包名，默认为 hthttp.httptask，Java 专用"}
     ]
 }
