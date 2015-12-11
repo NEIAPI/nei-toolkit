@@ -1,33 +1,33 @@
-# Android ¿Í»§¶Ë´úÂë×Ô¶¯Éú³É¹æÔò
-## Ò»¡¢Model Éú³É¹æÔò
-### 1. ÀàĞÍ¶ÔÓ¦¹ØÏµÓëÊôĞÔĞŞÊÎ·û
+# Android å®¢æˆ·ç«¯ä»£ç è‡ªåŠ¨ç”Ÿæˆè§„åˆ™
+## ä¸€ã€Model ç”Ÿæˆè§„åˆ™
+### 1. ç±»å‹å¯¹åº”å…³ç³»ä¸å±æ€§ä¿®é¥°ç¬¦
 
-Model Óë NEI ÖĞµÄ×Ô¶¨ÒåÊı¾İÀàĞÍÒ»Ò»¶ÔÓ¦£¬¶ÔÃ¿Ò»¸ö×Ô¶¨ÒåµÄÊı¾İÀàĞÍ£¬¶¼ĞèÒªÉú³É¶ÔÓ¦µÄ Model¡£Ã¿¸ömodel¶¼¼Ì³Ğ×ÔHTBaseModel, »ùÀàÖĞº¬ÓĞ°æ±¾ºÅµÈ¹²ÓĞ×Ö¶Î£¬ÁíÍâĞèÒªÔÚÃ¿¸ömodel¶¨ÒåÎÄ¼şµÄÉÏÃæ `import com.netease.hthttp.model.HTBaseModel;`
+Model ä¸ NEI ä¸­çš„è‡ªå®šä¹‰æ•°æ®ç±»å‹ä¸€ä¸€å¯¹åº”ï¼Œå¯¹æ¯ä¸€ä¸ªè‡ªå®šä¹‰çš„æ•°æ®ç±»å‹ï¼Œéƒ½éœ€è¦ç”Ÿæˆå¯¹åº”çš„ Modelã€‚æ¯ä¸ªmodeléƒ½ç»§æ‰¿è‡ªHTBaseModel, åŸºç±»ä¸­å«æœ‰ç‰ˆæœ¬å·ç­‰å…±æœ‰å­—æ®µï¼Œå¦å¤–éœ€è¦åœ¨æ¯ä¸ªmodelå®šä¹‰æ–‡ä»¶çš„ä¸Šé¢ `import com.netease.hthttp.model.HTBaseModel;`
 
-ÀàĞÍµÄ¶ÔÓ¦¹ØÏµÒÔ¼°ÊôĞÔĞŞÊÎ·ûÃèÊöÈçÏÂ£º
+ç±»å‹çš„å¯¹åº”å…³ç³»ä»¥åŠå±æ€§ä¿®é¥°ç¬¦æè¿°å¦‚ä¸‹ï¼š
 
-| NEI Êı¾İÀàĞÍ  | Java Êı¾İÀàĞÍ | ×¢ÊÍ |
+| NEI æ•°æ®ç±»å‹  | Java æ•°æ®ç±»å‹ | æ³¨é‡Š |
 | :--- | :--- | :---
-| ×Ô¶¨ÒåÀàĞÍ  | Í¬Ãû×Ô¶¨ÒåÀàĞÍ | ÊôĞÔĞŞÊÎ·ûÈ«²¿Îªprivate£¬ÁíÍâÌá¹©get¡¢set·½·¨ |
-| String | String |  | 
-| Number | double | ×îºÃNEIÄÜÇø·ÖÕûĞÎºÍ¸¡µãÀàĞÍµÄÊı¾İ |
-| Boolean | boolean | ÊôĞÔÃû³ÆÎªisXXXÀàĞÍµÄ£¬get·½·¨Îª public String isXXX(){ return this.isXXX; } |
-| Array | java.util.List | Êı¾İ×ÓÔªËØµÄÀàĞÍ¼ÙÉèÎªT£¬ÔòÎªList\<T\>£¬ÈçList\<String\>£¬List\<Double\>£¬List\<Boolean\> |
-| Variable | Object | ¾¡Á¿±ÜÃâ¿É±äÀàĞÍ |
-	
-¶ÔÓ¦ÀàĞÍµÄÉú³É½á¹ûÈçÏÂ£º
+| è‡ªå®šä¹‰ç±»å‹  | åŒåè‡ªå®šä¹‰ç±»å‹ | å±æ€§ä¿®é¥°ç¬¦å…¨éƒ¨ä¸ºprivateï¼Œå¦å¤–æä¾›getã€setæ–¹æ³• |
+| String | String |  |
+| Number | double | æœ€å¥½NEIèƒ½åŒºåˆ†æ•´å½¢å’Œæµ®ç‚¹ç±»å‹çš„æ•°æ® |
+| Boolean | boolean | å±æ€§åç§°ä¸ºisXXXç±»å‹çš„ï¼Œgetæ–¹æ³•ä¸º public String isXXX(){ return this.isXXX; } |
+| Array | java.util.List | æ•°æ®å­å…ƒç´ çš„ç±»å‹å‡è®¾ä¸ºTï¼Œåˆ™ä¸ºList\<T\>ï¼Œå¦‚List\<String\>ï¼ŒList\<Double\>ï¼ŒList\<Boolean\> |
+| Variable | Object | å°½é‡é¿å…å¯å˜ç±»å‹ |
+
+<!-- å¯¹åº”ç±»å‹çš„ç”Ÿæˆç»“æœå¦‚ä¸‹ï¼š -->
 
 ```java
 
 package com.netease.yanxuan.hthttp.model;
-// com.netease.yanxuan ÊÇ°üÃû
-// Éú³ÉµÄÎÄ¼şTestModel.javaÔÚcom/netease/yanxuan/hthttp/model/ÎÄ¼ş¼ĞÏÂ
-// ÕâÀïhthttp.model²¿·Ö¿ÉÒÔÓÉÓÃ»§¶¨ÖÆ
+// com.netease.yanxuan æ˜¯åŒ…å
+// ç”Ÿæˆçš„æ–‡ä»¶TestModel.javaåœ¨com/netease/yanxuan/hthttp/model/æ–‡ä»¶å¤¹ä¸‹
+// è¿™é‡Œhthttp.modeléƒ¨åˆ†å¯ä»¥ç”±ç”¨æˆ·å®šåˆ¶
 
 import com.netease.hthttp.model.HTBaseModel;
 import java.util.List;
 
-/** Ê¾Àı
+/** ç¤ºä¾‹
 {
 	  number : 1,
 	  isMine : true,
@@ -42,16 +42,16 @@ import java.util.List;
  */
 
 public class TestModel extends HTBaseModel {
-	// NumberÊı¾İÀàĞÍ
+	// Numberæ•°æ®ç±»å‹
     private double number;
     private boolean isMine;
     private String string;
-	// Êı×éÀàĞÍµÄÊı¾İ£¬ĞèÒª¸ù¾İÊı×éÄÚÈİ¶¨ÒåÄ£°å
-	// Êı×éÖĞµÄÊı¾İÀàĞÍÊÇnumberÀàĞÍ£¬ÔòÓ¦¸ÃĞ´³ÉDouble
-	// Êı×éÖĞµÄÊı¾İÀàĞÍÊÇ²¼¶ûÀàĞÍ£¬ÔòÓ¦¸ÃĞ´³ÉBoolean
+	// æ•°ç»„ç±»å‹çš„æ•°æ®ï¼Œéœ€è¦æ ¹æ®æ•°ç»„å†…å®¹å®šä¹‰æ¨¡æ¿
+	// æ•°ç»„ä¸­çš„æ•°æ®ç±»å‹æ˜¯numberç±»å‹ï¼Œåˆ™åº”è¯¥å†™æˆDouble
+	// æ•°ç»„ä¸­çš„æ•°æ®ç±»å‹æ˜¯å¸ƒå°”ç±»å‹ï¼Œåˆ™åº”è¯¥å†™æˆBoolean
     private List<String> array;
     private Object variable;
-    // ÒòÎªÈ«²¿modelÀà¶¼Éú³ÉÔÚÍ¬Ò»¸öÎÄ¼ş¼ĞÏÂ£¬ËùÒÔ¾Í²»ÓÃÊ¹ÓÃÈ«°üÃûÁË
+    // å› ä¸ºå…¨éƒ¨modelç±»éƒ½ç”Ÿæˆåœ¨åŒä¸€ä¸ªæ–‡ä»¶å¤¹ä¸‹ï¼Œæ‰€ä»¥å°±ä¸ç”¨ä½¿ç”¨å…¨åŒ…åäº†
     private InnerModel customModel;
 
     public double getNumber() {
@@ -102,55 +102,55 @@ public class TestModel extends HTBaseModel {
         this.customModel = customModel;
     }
 }
-	
+
 ```
 
 
-#### Ã¶¾ÙµÄ´¦Àí
+#### æšä¸¾çš„å¤„ç†
 
-Model ÖĞµÄÃ¶¾ÙÀàĞÍÈ«²¿¶ÔÓ¦µ½ `String`
+Model ä¸­çš„æšä¸¾ç±»å‹å…¨éƒ¨å¯¹åº”åˆ° `String`
 
-ÀıÈçNEIÖĞ¶¨ÒåÃ¶¾ÙÀàĞÍ£º
+ä¾‹å¦‚NEIä¸­å®šä¹‰æšä¸¾ç±»å‹ï¼š
 
-![image](Ã¶¾ÙÀàĞÍNEI.png)
+![image](æšä¸¾ç±»å‹NEI.png)
 
-Éú³ÉµÄjava´úÂë£º
+ç”Ÿæˆçš„javaä»£ç ï¼š
 
 ```java
 
 package com.netease.yanxuan.hthttp.model;
 
 public interface DayEnum {
-    // ĞÇÆÚÒ» /* NEIÉÏµÄÃèÊö */
+    // æ˜ŸæœŸä¸€ /* NEIä¸Šçš„æè¿° */
     public static final String MONDAY = "monday";
 
-    // ĞÇÆÚ¶ş
+    // æ˜ŸæœŸäºŒ
     public static final String TUESDAY = "tuesday";
 
-    // ĞÇÆÚÈı
+    // æ˜ŸæœŸä¸‰
     public static final String WEDNESDAT = "wednesday";
 
-    // ĞÇÆÚËÄ
+    // æ˜ŸæœŸå››
     public static final String THUSDAY = "thusday";
 
-    // ĞÇÆÚÎå
+    // æ˜ŸæœŸäº”
     public static final String FRIDAY = "friday";
 
-    // ĞÇÆÚÁù
+    // æ˜ŸæœŸå…­
     public static final String SATUSDAY = "satusday";
 
-    // ĞÇÆÚÌì
+    // æ˜ŸæœŸå¤©
     public static final String SUNDAY = "sunday";
 }
 
 ```
 
->×¢Òâ£º ¶¨ÒåÃ¶¾ÙÀàĞÍµÄÊÇinterface£¬¶ø²»ÊÇclass£¬Ò²²»ÊÇenum
+>æ³¨æ„ï¼š å®šä¹‰æšä¸¾ç±»å‹çš„æ˜¯interfaceï¼Œè€Œä¸æ˜¯classï¼Œä¹Ÿä¸æ˜¯enum
 
 
-* Ã¶¾ÙÀàĞÍÔÚÊä³ö´úÂëÖĞµÄÊ¹ÓÃ
+* æšä¸¾ç±»å‹åœ¨è¾“å‡ºä»£ç ä¸­çš„ä½¿ç”¨
 
-![image](Ã¶¾ÙÀàĞÍÊä³öCase.png)
+![image](æšä¸¾ç±»å‹è¾“å‡ºCase.png)
 
 
 ```java
@@ -168,44 +168,44 @@ public void setDay(String day) {
 
 ```
 
->¶ÔÓÚ¶¨ÒåÃ¶¾ÙÀàĞÍµÄ±äÁ¿£¬ÔÚÊä³öµÄjava´úÂë¶¨ÒåÎªString
+>å¯¹äºå®šä¹‰æšä¸¾ç±»å‹çš„å˜é‡ï¼Œåœ¨è¾“å‡ºçš„javaä»£ç å®šä¹‰ä¸ºString
 
-#### ²»Ö§³ÖµÄ Case
+#### ä¸æ”¯æŒçš„ Case
 
-NEI ¶¨ÒåÖĞ²»°üÀ¨×ÖµäÀàĞÍ(¸÷ÖÖ`Map`¡¢`SparseArray`)¡¢`Date` ÀàĞÍ£¬²»ĞèÒª¶îÍâ´¦Àí¡£×ÖµäÀàĞÍÒ»¶¨»á×é×°³ÉÎªÒ»¸ö Model; `Date` »áÓÉ `Number` »òÕß `String` À´±í´ï¡£
+NEI å®šä¹‰ä¸­ä¸åŒ…æ‹¬å­—å…¸ç±»å‹(å„ç§`Map`ã€`SparseArray`)ã€`Date` ç±»å‹ï¼Œä¸éœ€è¦é¢å¤–å¤„ç†ã€‚å­—å…¸ç±»å‹ä¸€å®šä¼šç»„è£…æˆä¸ºä¸€ä¸ª Model; `Date` ä¼šç”± `Number` æˆ–è€… `String` æ¥è¡¨è¾¾ã€‚
 
-### 2. Model ÀàµÄÉú³É¹æÔò
+### 2. Model ç±»çš„ç”Ÿæˆè§„åˆ™
 
-#### ÃüÃû¹æÔò
+#### å‘½åè§„åˆ™
 
-- ÊôĞÔÃû×ÖÓë NEI ÉÏµÄ±äÁ¿ÃüÃûÏàÍ¬
-- »ù±¾ÀàĞÍ×ñÑ­ÉÏÊöµÚ 1 ½ÚµÄ¹æÔò
-- ×Ô¶¨ÒåÀàĞÍÃû£¬¼´Éú³ÉµÄ Model Ãû£¬¾ÍÊÇ NEI ÉÏµÄÀàĞÍÃû£¬¸ÃÎÄ¼şµÄ°üÃûÄ¬ÈÏÎª${Ó¦ÓÃ°üÃû}.hthttp.model£¬ÆäÖĞhthttp.model²¿·ÖÓÃ»§¿ÉÒÔÅäÖÃ
-- Éú³ÉµÄ Model ÎÄ¼şÃûºÍÀàÃûÒ»ÖÂ
-- Éú³ÉµÄ Model ÎÄ¼şÔÚ°üÃû¶¨ÒåµÄÎÄ¼ş¼ĞÄ¿Â¼ÏÂ
+- å±æ€§åå­—ä¸ NEI ä¸Šçš„å˜é‡å‘½åç›¸åŒ
+- åŸºæœ¬ç±»å‹éµå¾ªä¸Šè¿°ç¬¬ 1 èŠ‚çš„è§„åˆ™
+- è‡ªå®šä¹‰ç±»å‹åï¼Œå³ç”Ÿæˆçš„ Model åï¼Œå°±æ˜¯ NEI ä¸Šçš„ç±»å‹åï¼Œè¯¥æ–‡ä»¶çš„åŒ…åé»˜è®¤ä¸º${åº”ç”¨åŒ…å}.hthttp.modelï¼Œå…¶ä¸­hthttp.modeléƒ¨åˆ†ç”¨æˆ·å¯ä»¥é…ç½®
+- ç”Ÿæˆçš„ Model æ–‡ä»¶åå’Œç±»åä¸€è‡´
+- ç”Ÿæˆçš„ Model æ–‡ä»¶åœ¨åŒ…åå®šä¹‰çš„æ–‡ä»¶å¤¹ç›®å½•ä¸‹
 
-ÀıÈç£º
+ä¾‹å¦‚ï¼š
 
-NEI ÉÏµÄÀàĞÍÃûÎª `Company`, ÔòÉú³ÉµÄÀàĞÍÃû×Ö `Company`, ÎÄ¼şÃûÎª `Company.java`, °üÃûÎª`com.netease.yanxuan.hthttp.model`, ÔòÎÄ¼şÎ»ÖÃ`com/netease/yanxuan/hthttp/model/Company.java`
+NEI ä¸Šçš„ç±»å‹åä¸º `Company`, åˆ™ç”Ÿæˆçš„ç±»å‹åå­— `Company`, æ–‡ä»¶åä¸º `Company.java`, åŒ…åä¸º`com.netease.yanxuan.hthttp.model`, åˆ™æ–‡ä»¶ä½ç½®`com/netease/yanxuan/hthttp/model/Company.java`
 
-#### ×¢ÊÍ¹æÔò
+#### æ³¨é‡Šè§„åˆ™
 
-- ÔÚÀàĞÍ¶¨ÒåÇ°ÃæÌí¼ÓjsonÊ¾Àı
-- ÔÚÃ¿¸ö±äÁ¿Ç°ÃæÌí¼ÓÃ¿¸ö²ÎÊıµÄ×¢ÊÍ£¬´Ó NEI ÖĞµÄ²ÎÊıÃèÊöÖĞ¿½±´¹ıÀ´
+- åœ¨ç±»å‹å®šä¹‰å‰é¢æ·»åŠ jsonç¤ºä¾‹
+- åœ¨æ¯ä¸ªå˜é‡å‰é¢æ·»åŠ æ¯ä¸ªå‚æ•°çš„æ³¨é‡Šï¼Œä» NEI ä¸­çš„å‚æ•°æè¿°ä¸­æ‹·è´è¿‡æ¥
 
-## ¶ş¡¢HttpTask Éú³É¹æÔò
+## äºŒã€HttpTask ç”Ÿæˆè§„åˆ™
 
-### ÃüÃû¹æÔò
+### å‘½åè§„åˆ™
 
-+ HttpTask ÀàÃû´Ó NEI ÖĞµÄ½Ó¿ÚÃû×ÖÖĞÈ¡£¬ÈçNEIÉÏµÄ½Ó¿ÚÃû³ÆÎª `Login`£¬ÔòÀàÃûÎª `LoginHttpTask`
-+ Ä¬ÈÏ°üÃûÎª ${Ó¦ÓÃ°üÃû}.hthttp.httptask£¬ÎÄ¼şÎ»ÖÃºÍÃû³ÆÎª ${Ó¦ÓÃ°üÃûÖ¸¶¨µÄÄ¿Â¼}/hthttp/httptask£¬ÆäÖĞ `hthttp.httptask` ÓÃ»§¿ÉÅäÖÃ
-+ Èç¹û½Ó¿ÚÃû×Öº¬ÓĞÖĞÎÄ£¬ÔòÊ¹ÓÃ½Ó¿ÚµØÖ·µÄ camelCase ¸ñÊ½
-+ Request ÀàÃûºÍÎÄ¼şÃû±£³ÖÒ»ÖÂ
++ HttpTask ç±»åä» NEI ä¸­çš„æ¥å£åå­—ä¸­å–ï¼Œå¦‚NEIä¸Šçš„æ¥å£åç§°ä¸º `Login`ï¼Œåˆ™ç±»åä¸º `LoginHttpTask`
++ é»˜è®¤åŒ…åä¸º ${åº”ç”¨åŒ…å}.hthttp.httptaskï¼Œæ–‡ä»¶ä½ç½®å’Œåç§°ä¸º ${åº”ç”¨åŒ…åæŒ‡å®šçš„ç›®å½•}/hthttp/httptaskï¼Œå…¶ä¸­ `hthttp.httptask` ç”¨æˆ·å¯é…ç½®
++ å¦‚æœæ¥å£åå­—å«æœ‰ä¸­æ–‡ï¼Œåˆ™ä½¿ç”¨æ¥å£åœ°å€çš„ camelCase æ ¼å¼
++ Request ç±»åå’Œæ–‡ä»¶åä¿æŒä¸€è‡´
 
 
-### javaÎÄ¼ş
+### javaæ–‡ä»¶
 
-getÇëÇóÊ¾Àı£º
+getè¯·æ±‚ç¤ºä¾‹ï¼š
 
 ```java
 
@@ -222,15 +222,15 @@ import java.util.List;
 
 public class GetExampleHttpTask extends BaseHttpStringRequestTask {
 
-    public GetExampleHttpTask(double param1,      // ×¢ÊÍ£¬NEIÉÏµÄ±äÁ¿ÃèÊö   /* number ÀàĞÍµÄÊäÈë */
-                              String param2,      // ×¢ÊÍ£¬NEIÉÏµÄ±äÁ¿ÃèÊö   /* string ÀàĞÍµÄÊäÈë */
-                              Boolean param3,     // ×¢ÊÍ£¬NEIÉÏµÄ±äÁ¿ÃèÊö   /* boolean ÀàĞÍµÄÊäÈë */
-                              InnerModel param4,  // ×¢ÊÍ£¬NEIÉÏµÄ±äÁ¿ÃèÊö   /* ×Ô¶¨ÒåÀàĞÍ ÀàĞÍµÄÊäÈë */
-                              List<String> param5) { // ×¢ÊÍ£¬NEIÉÏµÄ±äÁ¿ÃèÊö   /* Êı×é ÀàĞÍµÄÊäÈë */
+    public GetExampleHttpTask(double param1,      // æ³¨é‡Šï¼ŒNEIä¸Šçš„å˜é‡æè¿°   /* number ç±»å‹çš„è¾“å…¥ */
+                              String param2,      // æ³¨é‡Šï¼ŒNEIä¸Šçš„å˜é‡æè¿°   /* string ç±»å‹çš„è¾“å…¥ */
+                              Boolean param3,     // æ³¨é‡Šï¼ŒNEIä¸Šçš„å˜é‡æè¿°   /* boolean ç±»å‹çš„è¾“å…¥ */
+                              InnerModel param4,  // æ³¨é‡Šï¼ŒNEIä¸Šçš„å˜é‡æè¿°   /* è‡ªå®šä¹‰ç±»å‹ ç±»å‹çš„è¾“å…¥ */
+                              List<String> param5) { // æ³¨é‡Šï¼ŒNEIä¸Šçš„å˜é‡æè¿°   /* æ•°ç»„ ç±»å‹çš„è¾“å…¥ */
 
-        /* ÇëÇó·½·¨ÀàĞÍ */
+        /* è¯·æ±‚æ–¹æ³•ç±»å‹ */
         super(HttpMethod.GET);
-        /* ÔÚurlºóÃæÌí¼Ó²ÎÊı */
+        /* åœ¨urlåé¢æ·»åŠ å‚æ•° */
         mQueryParamsMap.put("param1", Double.toString(param1));
         mQueryParamsMap.put("param2", param2);
         mQueryParamsMap.put("param3", Boolean.toString(param3));
@@ -239,7 +239,7 @@ public class GetExampleHttpTask extends BaseHttpStringRequestTask {
     }
 
 
-    /* ÇëÇóÍêÕûurl£¬²»°üº¬urlºóÃæµÄ²ÎÊı */
+    /* è¯·æ±‚å®Œæ•´urlï¼Œä¸åŒ…å«urlåé¢çš„å‚æ•° */
     /*
     @Override
     public String getUrl() {
@@ -247,7 +247,7 @@ public class GetExampleHttpTask extends BaseHttpStringRequestTask {
     }
     */
 
-    /* ÇëÇóurl£¬²»°üº¬Ç°ÃæµÄhost£¬²»°üº¬urlºóÃæµÄ²ÎÊı */
+    /* è¯·æ±‚urlï¼Œä¸åŒ…å«å‰é¢çš„hostï¼Œä¸åŒ…å«urlåé¢çš„å‚æ•° */
     @Override
     protected String getApi() {
         return "/xhr/mobile/getexample.json";
@@ -262,20 +262,20 @@ public class GetExampleHttpTask extends BaseHttpStringRequestTask {
 
 ```
 
-ËµÃ÷
+è¯´æ˜
 
-- `BaseHttpStringRequestTask` ÊÇÄ¬ÈÏ»ùÀà£¬ÓÃ»§¿ÉÅäÖÃ, ĞèÒªÌí¼Ó `import com.netease.hthttp.BaseHttpStringRequestTask;`
+- `BaseHttpStringRequestTask` æ˜¯é»˜è®¤åŸºç±»ï¼Œç”¨æˆ·å¯é…ç½®, éœ€è¦æ·»åŠ  `import com.netease.hthttp.BaseHttpStringRequestTask;`
 
-- ÈçÓÃ»§ÅäÖÃµÄÊÇÈ«Â·¾¶, `com.netease.yanxuan.http.wzp.BaseWzpRequestTask`£¬ÔòĞèÒªĞŞ¸ÄÎª `extends BaseWzpRequestTask`; Ìí¼Ó `import com.netease.yanxuan.http.wzp.BaseWzpRequestTask;`
+- å¦‚ç”¨æˆ·é…ç½®çš„æ˜¯å…¨è·¯å¾„, `com.netease.yanxuan.http.wzp.BaseWzpRequestTask`ï¼Œåˆ™éœ€è¦ä¿®æ”¹ä¸º `extends BaseWzpRequestTask`; æ·»åŠ  `import com.netease.yanxuan.http.wzp.BaseWzpRequestTask;`
 
-- Èç¹ûÊäÈë²ÎÊı ( url ²ÎÊı»òÕß header ) ÖĞÓĞ»ù±¾ÀàĞÍ: `double`¡¢`boolean`, Ôòµ¼Èë
+- å¦‚æœè¾“å…¥å‚æ•° ( url å‚æ•°æˆ–è€… header ) ä¸­æœ‰åŸºæœ¬ç±»å‹: `double`ã€`boolean`, åˆ™å¯¼å…¥
 `import com.alibaba.fastjson.JSONObject;`
 
-- Èç¹ûÊäÈë²ÎÊı£¨url²ÎÊı»òÕßheader£©ÖĞÓĞÊı×éÀàĞÍ : `List`, Ôòµ¼Èë?`import com.alibaba.fastjson.JSONArray;`
+- å¦‚æœè¾“å…¥å‚æ•°ï¼ˆurlå‚æ•°æˆ–è€…headerï¼‰ä¸­æœ‰æ•°ç»„ç±»å‹ : `List`, åˆ™å¯¼å…¥?`import com.alibaba.fastjson.JSONArray;`
 
-- ÆäËû×Ô¶¨ÒåÀàĞÍ£¬ĞèÒªµ¼Èë¶ÔÓ¦µÄ°üÃû£¬Èç `import com.netease.yanxuan.hthttp.model.TestModel;`
+- å…¶ä»–è‡ªå®šä¹‰ç±»å‹ï¼Œéœ€è¦å¯¼å…¥å¯¹åº”çš„åŒ…åï¼Œå¦‚ `import com.netease.yanxuan.hthttp.model.TestModel;`
 
-postÇëÇóÊ¾Àı£º
+postè¯·æ±‚ç¤ºä¾‹ï¼š
 
 ```java
 
@@ -291,12 +291,12 @@ import com.netease.yanxuan.hthttp.model.TestModel;
 import java.util.List;
 
 public class PostExampleHttpTask extends BaseHttpStringRequestTask {
-    public PostExampleHttpTask(double param1,      // ×¢ÊÍ£¬NEIÉÏµÄ±äÁ¿ÃèÊö   /* number ÀàĞÍµÄÊäÈë */
-                               String param2,      // ×¢ÊÍ£¬NEIÉÏµÄ±äÁ¿ÃèÊö   /* string ÀàĞÍµÄÊäÈë */
-                               Boolean param3,     // ×¢ÊÍ£¬NEIÉÏµÄ±äÁ¿ÃèÊö   /* boolean ÀàĞÍµÄÊäÈë */
-                               InnerModel param4,  // ×¢ÊÍ£¬NEIÉÏµÄ±äÁ¿ÃèÊö   /* ×Ô¶¨ÒåÀàĞÍ ÀàĞÍµÄÊäÈë */
-                               List<String> param5,// ×¢ÊÍ£¬NEIÉÏµÄ±äÁ¿ÃèÊö   /* Êı×é ÀàĞÍµÄÊäÈë */
-                               List<Double> param6) { // ×¢ÊÍ£¬NEIÉÏµÄ±äÁ¿ÃèÊö   /* Êı×é ÀàĞÍµÄÊäÈë */
+    public PostExampleHttpTask(double param1,      // æ³¨é‡Šï¼ŒNEIä¸Šçš„å˜é‡æè¿°   /* number ç±»å‹çš„è¾“å…¥ */
+                               String param2,      // æ³¨é‡Šï¼ŒNEIä¸Šçš„å˜é‡æè¿°   /* string ç±»å‹çš„è¾“å…¥ */
+                               Boolean param3,     // æ³¨é‡Šï¼ŒNEIä¸Šçš„å˜é‡æè¿°   /* boolean ç±»å‹çš„è¾“å…¥ */
+                               InnerModel param4,  // æ³¨é‡Šï¼ŒNEIä¸Šçš„å˜é‡æè¿°   /* è‡ªå®šä¹‰ç±»å‹ ç±»å‹çš„è¾“å…¥ */
+                               List<String> param5,// æ³¨é‡Šï¼ŒNEIä¸Šçš„å˜é‡æè¿°   /* æ•°ç»„ ç±»å‹çš„è¾“å…¥ */
+                               List<Double> param6) { // æ³¨é‡Šï¼ŒNEIä¸Šçš„å˜é‡æè¿°   /* æ•°ç»„ ç±»å‹çš„è¾“å…¥ */
 
         super(HttpMethod.POST);
         mHeaderMap.put("param1", Double.toString(param1));
@@ -307,7 +307,7 @@ public class PostExampleHttpTask extends BaseHttpStringRequestTask {
         mBodyMap.put("param6", param6);
     }
 
-    /* ÇëÇóÍêÕûurl£¬²»°üº¬urlºóÃæµÄ²ÎÊı */
+    /* è¯·æ±‚å®Œæ•´urlï¼Œä¸åŒ…å«urlåé¢çš„å‚æ•° */
     /*
     @Override
     public String getUrl() {
@@ -315,7 +315,7 @@ public class PostExampleHttpTask extends BaseHttpStringRequestTask {
     }
     */
 
-    /* ÇëÇóurl£¬²»°üº¬Ç°ÃæµÄhost£¬²»°üº¬urlºóÃæµÄ²ÎÊı */
+    /* è¯·æ±‚urlï¼Œä¸åŒ…å«å‰é¢çš„hostï¼Œä¸åŒ…å«urlåé¢çš„å‚æ•° */
     @Override
     protected String getApi() {
         return "/xhr/mobile/postexample.json";
@@ -330,7 +330,7 @@ public class PostExampleHttpTask extends BaseHttpStringRequestTask {
 
 ```
 
-ÉÏ´«ÇëÇóÊ¾Àı£º
+ä¸Šä¼ è¯·æ±‚ç¤ºä¾‹ï¼š
 
 ```java
 
@@ -343,25 +343,25 @@ import com.netease.yanxuan.hthttp.model.TestModel;
 import java.io.File;
 import java.util.HashMap;
 
-// ÏÈ²»ÊµÏÖ
-/* BaseFileUploadHttpRequestTask£¬ÓÃ»§¿ÉÅäÖÃ
- * ÈçÓÃ»§ÅäÖÃµÄÊÇÈ«Â·¾¶£¬com.netease.yanxuan.http.wzp.BaseWzpRequestTask£¬ÔòĞèÒªĞŞ¸ÄÎª
+// å…ˆä¸å®ç°
+/* BaseFileUploadHttpRequestTaskï¼Œç”¨æˆ·å¯é…ç½®
+ * å¦‚ç”¨æˆ·é…ç½®çš„æ˜¯å…¨è·¯å¾„ï¼Œcom.netease.yanxuan.http.wzp.BaseWzpRequestTaskï¼Œåˆ™éœ€è¦ä¿®æ”¹ä¸º
   * 1. extends BaseWzpRequestTask
-  * 2. Ìí¼Ó import com.netease.yanxuan.http.wzp.BaseWzpRequestTask; */
-  
+  * 2. æ·»åŠ  import com.netease.yanxuan.http.wzp.BaseWzpRequestTask; */
+
 public class UploadExampleHttpTask extends BaseFileUploadHttpRequestTask {
     public UploadExampleHttpTask(File imageFile1, File imageFile2) {
 
         super(HttpMethod.PUT, new HashMap<String, File>(), null);
         mBodyContentType = "multipart/form-data";
-        // Ó¦ÓÃ°üÃû + UPLOAD_FILE_BOUNDARY, µãºÅ×ª³ÉÏÂ»®Ïß
+        // åº”ç”¨åŒ…å + UPLOAD_FILE_BOUNDARY, ç‚¹å·è½¬æˆä¸‹åˆ’çº¿
         mBoundary = "COM_NETEASE_YANXUAN_UPLOAD_IMAGE_BOUNDARY";
-        
+
         mFiles.put("imageFile1", imageFile1);
         mFiles.put("imageFile2", imageFile2);
     }
 
-    /* ÇëÇóÍêÕûurl£¬²»°üº¬urlºóÃæµÄ²ÎÊı */
+    /* è¯·æ±‚å®Œæ•´urlï¼Œä¸åŒ…å«urlåé¢çš„å‚æ•° */
     /*
     @Override
     public String getUrl() {
@@ -369,7 +369,7 @@ public class UploadExampleHttpTask extends BaseFileUploadHttpRequestTask {
     }
     */
 
-    /* ÇëÇóurl£¬²»°üº¬Ç°ÃæµÄhost£¬²»°üº¬urlºóÃæµÄ²ÎÊı */
+    /* è¯·æ±‚urlï¼Œä¸åŒ…å«å‰é¢çš„hostï¼Œä¸åŒ…å«urlåé¢çš„å‚æ•° */
     protected String getApi() {
         return "api/v1/image/upload";
     }
@@ -382,32 +382,32 @@ public class UploadExampleHttpTask extends BaseFileUploadHttpRequestTask {
 ```
 
 
-ËµÃ÷£º
+è¯´æ˜ï¼š
 
-+ ÀàÃû°´ÕÕÃüÃû¹æÔòÎª `${NEI½Ó¿ÚÃû}HttpTask`£¬ÎÄ¼şÃûÎª `${NEI½Ó¿ÚÃû}HttpTask.java`
++ ç±»åæŒ‰ç…§å‘½åè§„åˆ™ä¸º `${NEIæ¥å£å}HttpTask`ï¼Œæ–‡ä»¶åä¸º `${NEIæ¥å£å}HttpTask.java`
 
-+ Ä¬ÈÏ°üÃûÎª `${Ó¦ÓÃ°üÃû}.hthttp.httptask`£¬ÎÄ¼şÂ·¾¶Îª `${Ó¦ÓÃ°üÃûÈ·¶¨µÄÂ·¾¶}/hthttp/httptask/`
++ é»˜è®¤åŒ…åä¸º `${åº”ç”¨åŒ…å}.hthttp.httptask`ï¼Œæ–‡ä»¶è·¯å¾„ä¸º `${åº”ç”¨åŒ…åç¡®å®šçš„è·¯å¾„}/hthttp/httptask/`
 
-+ ÆÕÍ¨ÇëÇóµÄÄ¬ÈÏ»ùÀàÎª `BaseHttpStringRequestTask `, ĞèÒªµ¼ÈëÀà **`import com.netease.hthttp.BaseHttpStringRequestTask;`**
++ æ™®é€šè¯·æ±‚çš„é»˜è®¤åŸºç±»ä¸º `BaseHttpStringRequestTask `, éœ€è¦å¯¼å…¥ç±» **`import com.netease.hthttp.BaseHttpStringRequestTask;`**
 
-+ ÎÄ¼şÉÏ´«µÄÄ¬ÈÏ»ùÀàÎª `BaseFileUploadHttpRequestTask`, ĞèÒªµ¼ÈëÀà **`import com.netease.hthttp.multipart.fileupload.http.BaseFileUploadHttpRequestTask;`**
++ æ–‡ä»¶ä¸Šä¼ çš„é»˜è®¤åŸºç±»ä¸º `BaseFileUploadHttpRequestTask`, éœ€è¦å¯¼å…¥ç±» **`import com.netease.hthttp.multipart.fileupload.http.BaseFileUploadHttpRequestTask;`**
 
-+ »ùÀàÈ«°üÃûĞèÒª¿ÉÅäÖÃ£¬ÈçÅäÖÃµÄ»ùÀàÎª `com.netease.yanxuan.wzp.BaseWzpHttpTask`£¬ÔòĞèÒªĞŞ¸Ä»ùÀàÎª `BaseWzpHttpTask`£¬Ìí¼ÓÒ»¾ä import : `import com.netease.yanxuan.wzp.BaseWzpHttpTask;`
++ åŸºç±»å…¨åŒ…åéœ€è¦å¯é…ç½®ï¼Œå¦‚é…ç½®çš„åŸºç±»ä¸º `com.netease.yanxuan.wzp.BaseWzpHttpTask`ï¼Œåˆ™éœ€è¦ä¿®æ”¹åŸºç±»ä¸º `BaseWzpHttpTask`ï¼Œæ·»åŠ ä¸€å¥ import : `import com.netease.yanxuan.wzp.BaseWzpHttpTask;`
 
-+ Èç¹û NEI ÖĞÊäÈëµÄ½Ó¿Ú url ÊÇ²»°üº¬ host µÄ£¬ÔòÊµÏÖ `getApi`, ·ñÔòÊµÏÖ `getUrl`¡£Á½ÕßÈ¡ÆäÒ»¡£ÖµÊÇ NEI ½Ó¿ÚµÄ `path` ÊôĞÔ
++ å¦‚æœ NEI ä¸­è¾“å…¥çš„æ¥å£ url æ˜¯ä¸åŒ…å« host çš„ï¼Œåˆ™å®ç° `getApi`, å¦åˆ™å®ç° `getUrl`ã€‚ä¸¤è€…å–å…¶ä¸€ã€‚å€¼æ˜¯ NEI æ¥å£çš„ `path` å±æ€§
 
-+ ĞèÒªÔÚ url ºóÃæÌí¼Ó²ÎÊı£¬Ôò½«²ÎÊıÌí¼ÓÖÁ `mQueryParamsMap`, ¸÷ÖÖÊı¾İÀàĞÍµÄĞ´·¨²Î¼û **getÇëÇóÊ¾Àı**
++ éœ€è¦åœ¨ url åé¢æ·»åŠ å‚æ•°ï¼Œåˆ™å°†å‚æ•°æ·»åŠ è‡³ `mQueryParamsMap`, å„ç§æ•°æ®ç±»å‹çš„å†™æ³•å‚è§ **getè¯·æ±‚ç¤ºä¾‹**
 
-+ ĞèÒªÔÚ header ÖĞÌí¼Ó²ÎÊı£¬Ôò½«²ÎÊıÌí¼ÓÖÁ `mHeaderMap`, ¸÷ÖÖÊı¾İÀàĞÍµÄĞ´·¨²Î¼û **postÇëÇóÊ¾Àı**
++ éœ€è¦åœ¨ header ä¸­æ·»åŠ å‚æ•°ï¼Œåˆ™å°†å‚æ•°æ·»åŠ è‡³ `mHeaderMap`, å„ç§æ•°æ®ç±»å‹çš„å†™æ³•å‚è§ **postè¯·æ±‚ç¤ºä¾‹**
 
-+ ĞèÒªÔÚ body ÖĞÌí¼Ó²ÎÊı£¬Ôò½«²ÎÊıÌí¼ÓÖÁ `mBodyMap`, ¸÷ÖÖÊı¾İÀàĞÍµÄĞ´·¨²Î¼û **postÇëÇóÊ¾Àı**
++ éœ€è¦åœ¨ body ä¸­æ·»åŠ å‚æ•°ï¼Œåˆ™å°†å‚æ•°æ·»åŠ è‡³ `mBodyMap`, å„ç§æ•°æ®ç±»å‹çš„å†™æ³•å‚è§ **postè¯·æ±‚ç¤ºä¾‹**
 
-+ ÇëÇó·½·¨ÀàĞÍÔÚ super ¹¹Ôìº¯ÊıÖĞÉèÖÃ£¬Èç `super(Request.Method.POST);` ÁíÍâĞèÒªÌí¼Ó `import com.netease.hthttp.HttpMethod;`
++ è¯·æ±‚æ–¹æ³•ç±»å‹åœ¨ super æ„é€ å‡½æ•°ä¸­è®¾ç½®ï¼Œå¦‚ `super(Request.Method.POST);` å¦å¤–éœ€è¦æ·»åŠ  `import com.netease.hthttp.HttpMethod;`
 
-+ ¸÷ÖÖÇëÇó·½·¨¶ÔÓ¦µÄjava´úÂë¼ûÏÂ±í
++ å„ç§è¯·æ±‚æ–¹æ³•å¯¹åº”çš„javaä»£ç è§ä¸‹è¡¨
 
 
-| ÇëÇó·½·¨  | java´úÂë |
+| è¯·æ±‚æ–¹æ³•  | javaä»£ç  |
 | :--- | :--- |
 | get | Request.Method.GET |
 | post | Request.Method.POST |
@@ -416,17 +416,17 @@ public class UploadExampleHttpTask extends BaseFileUploadHttpRequestTask {
 | put | Request.Method.PUT |
 
 
-### Êä³ö²ÎÊıµÄÇé¿ö
+### è¾“å‡ºå‚æ•°çš„æƒ…å†µ
 
-#### Case 1£º NEI ½á¹ûÊä³ö²ÎÊıÓĞ¶àÌõ£¬½öÓĞÒ»¸ö¶ÔÓ¦¿É±äÀàĞÍ£¨·ÇÊı×éÀàĞÍ£©, ËùÓĞÊä³ö²ÎÊıÓëº¬ÓĞ¿É±äÀàĞÍµÄ NEI Êı¾İÀàĞÍÆ¥Åä
+#### Case 1ï¼š NEI ç»“æœè¾“å‡ºå‚æ•°æœ‰å¤šæ¡ï¼Œä»…æœ‰ä¸€ä¸ªå¯¹åº”å¯å˜ç±»å‹ï¼ˆéæ•°ç»„ç±»å‹ï¼‰, æ‰€æœ‰è¾“å‡ºå‚æ•°ä¸å«æœ‰å¯å˜ç±»å‹çš„ NEI æ•°æ®ç±»å‹åŒ¹é…
 
-Ê¾Àı£º
+ç¤ºä¾‹ï¼š
 
-![image](Êä³ö²ÎÊıCase1.png)
+![image](è¾“å‡ºå‚æ•°Case1.png)
 
-ÀıÈç£¬Êä³ö²ÎÊı `JsonObject` µÄ×îºóÒ»¸öÊôĞÔ `result` ÊÇÒ»¸ö¿É±äÀàĞÍ£¬ÄÇÃ´ÕâÊ±ºòÖ»ĞèÒªÓ³ÉäÕâ¸ö¿É±äÀàĞÍ¶ÔÓ¦µÄĞÅÏ¢£¬²¢ÇÒ¸ø³öÌáÊ¾¼´¿É¡£
+ä¾‹å¦‚ï¼Œè¾“å‡ºå‚æ•° `JsonObject` çš„æœ€åä¸€ä¸ªå±æ€§ `result` æ˜¯ä¸€ä¸ªå¯å˜ç±»å‹ï¼Œé‚£ä¹ˆè¿™æ—¶å€™åªéœ€è¦æ˜ å°„è¿™ä¸ªå¯å˜ç±»å‹å¯¹åº”çš„ä¿¡æ¯ï¼Œå¹¶ä¸”ç»™å‡ºæç¤ºå³å¯ã€‚
 
-Êä³ö½á¹ûÎª£º
+è¾“å‡ºç»“æœä¸ºï¼š
 
 ```java
 
@@ -436,9 +436,9 @@ public class UploadExampleHttpTask extends BaseFileUploadHttpRequestTask {
 
 ```
 
-Èç¹û·ûºÏÕâÖÖÇé¿öµ«ÊÇ²¢Ã»ÓĞÏàÓ¦µÄresultÊı¾İ
+å¦‚æœç¬¦åˆè¿™ç§æƒ…å†µä½†æ˜¯å¹¶æ²¡æœ‰ç›¸åº”çš„resultæ•°æ®
 
-![image](Êä³ö²ÎÊıCase1-null.png)
+![image](è¾“å‡ºå‚æ•°Case1-null.png)
 
 ```java
 
@@ -448,34 +448,34 @@ public class UploadExampleHttpTask extends BaseFileUploadHttpRequestTask {
 
 ```
 
-#### Case 2£º NEI ½á¹ûÊä³ö²ÎÊıÓĞ¶àÌõ£¬½öÓĞÒ»¸ö¶ÔÓ¦¿É±äÀàĞÍ£¨Êı×éÀàĞÍ£©, ËùÓĞÊä³ö²ÎÊıÓëº¬ÓĞ¿É±äÀàĞÍµÄ NEI Êı¾İÀàĞÍÆ¥Åä
-Ê¾Àı£º
+#### Case 2ï¼š NEI ç»“æœè¾“å‡ºå‚æ•°æœ‰å¤šæ¡ï¼Œä»…æœ‰ä¸€ä¸ªå¯¹åº”å¯å˜ç±»å‹ï¼ˆæ•°ç»„ç±»å‹ï¼‰, æ‰€æœ‰è¾“å‡ºå‚æ•°ä¸å«æœ‰å¯å˜ç±»å‹çš„ NEI æ•°æ®ç±»å‹åŒ¹é…
+ç¤ºä¾‹ï¼š
 
-![image](Êä³ö²ÎÊıCase2.png)
+![image](è¾“å‡ºå‚æ•°Case2.png)
 
-ÀıÈç£¬Êä³ö²ÎÊı `JsonObject` µÄ×îºóÒ»¸öÊôĞÔ `result` ÊÇÒ»¸öÊı×éÀàĞÍ£¬ÄÇÃ´ÕâÊ±ºòÖ»ĞèÒªÓ³ÉäÕâ¸öÊı×éÀàĞÍÖĞµÄÔªËØ¶ÔÓ¦µÄĞÅÏ¢£¬²¢ÇÒ¸ø³öÌáÊ¾¼´¿É¡£
+ä¾‹å¦‚ï¼Œè¾“å‡ºå‚æ•° `JsonObject` çš„æœ€åä¸€ä¸ªå±æ€§ `result` æ˜¯ä¸€ä¸ªæ•°ç»„ç±»å‹ï¼Œé‚£ä¹ˆè¿™æ—¶å€™åªéœ€è¦æ˜ å°„è¿™ä¸ªæ•°ç»„ç±»å‹ä¸­çš„å…ƒç´ å¯¹åº”çš„ä¿¡æ¯ï¼Œå¹¶ä¸”ç»™å‡ºæç¤ºå³å¯ã€‚
 
-Êä³ö½á¹ûÎª£º
+è¾“å‡ºç»“æœä¸ºï¼š
 
 ```java
 
-	/* ×¢Òâ²¢²»ÊÇList.class */
+	/* æ³¨æ„å¹¶ä¸æ˜¯List.class */
 	public Class getModelClass() {
         return TestModel.class;
     }
 
 ```
 
-#### Case 3£º NEI ½á¹ûÊä³ö²ÎÊıÓĞÒ»Ìõ(·ÇÊı×é)»ò¶àÌõ£¬µ«²¢²»·ûºÏÖ®Ç°µÄcode¡¢message¡¢result½á¹¹£¬ËùÓĞÊä³ö²ÎÊıÓëÕû¸ö·µ»ØÊı¾İ½øĞĞ¶ÔÓ¦
+#### Case 3ï¼š NEI ç»“æœè¾“å‡ºå‚æ•°æœ‰ä¸€æ¡(éæ•°ç»„)æˆ–å¤šæ¡ï¼Œä½†å¹¶ä¸ç¬¦åˆä¹‹å‰çš„codeã€messageã€resultç»“æ„ï¼Œæ‰€æœ‰è¾“å‡ºå‚æ•°ä¸æ•´ä¸ªè¿”å›æ•°æ®è¿›è¡Œå¯¹åº”
 
 
-`Address` Ê¾Àı£º
+`Address` ç¤ºä¾‹ï¼š
 
-![image](Êä³ö²ÎÊıCase3.jpg)
+![image](è¾“å‡ºå‚æ•°Case3.jpg)
 
-ÈçÍ¼£¬Êı¾İÀàĞÍ `Address` °üº¬ÊôĞÔ `province` ºÍ `city`, ¼´ËùÓĞµÄÊä³öÄÚÈİÓë `Address` µÄ¶¨ÒåÆ¥Åä. ÄÇÃ´ÊµÏÖÎÄ¼şµÄ½á¹ûÎª£º
+å¦‚å›¾ï¼Œæ•°æ®ç±»å‹ `Address` åŒ…å«å±æ€§ `province` å’Œ `city`, å³æ‰€æœ‰çš„è¾“å‡ºå†…å®¹ä¸ `Address` çš„å®šä¹‰åŒ¹é…. é‚£ä¹ˆå®ç°æ–‡ä»¶çš„ç»“æœä¸ºï¼š
 
-Êä³ö½á¹ûÎª£º
+è¾“å‡ºç»“æœä¸ºï¼š
 
 ```java
 
@@ -486,13 +486,13 @@ public class UploadExampleHttpTask extends BaseFileUploadHttpRequestTask {
 ```
 
 
-`String` Ê¾Àı£º
+`String` ç¤ºä¾‹ï¼š
 
-![image](Êä³ö²ÎÊıCase4.png)
+![image](è¾“å‡ºå‚æ•°Case4.png)
 
-ÈçÍ¼£¬Êı¾İÀàĞÍÎª `String`. ÄÇÃ´ÊµÏÖÎÄ¼şµÄ½á¹ûÎª£º
+å¦‚å›¾ï¼Œæ•°æ®ç±»å‹ä¸º `String`. é‚£ä¹ˆå®ç°æ–‡ä»¶çš„ç»“æœä¸ºï¼š
 
-Êä³ö½á¹ûÎª£º
+è¾“å‡ºç»“æœä¸ºï¼š
 
 ```java
 
@@ -502,13 +502,13 @@ public class UploadExampleHttpTask extends BaseFileUploadHttpRequestTask {
 
 ```
 
-`Number` Ê¾Àı£º
+`Number` ç¤ºä¾‹ï¼š
 
-![image](Êä³ö²ÎÊıCase5.png)
+![image](è¾“å‡ºå‚æ•°Case5.png)
 
-ÈçÍ¼£¬Êı¾İÀàĞÍÎª `Number`. ÄÇÃ´ÊµÏÖÎÄ¼şµÄ½á¹ûÎª£º
+å¦‚å›¾ï¼Œæ•°æ®ç±»å‹ä¸º `Number`. é‚£ä¹ˆå®ç°æ–‡ä»¶çš„ç»“æœä¸ºï¼š
 
-Êä³ö½á¹ûÎª£º
+è¾“å‡ºç»“æœä¸ºï¼š
 
 ```java
 
@@ -518,13 +518,13 @@ public class UploadExampleHttpTask extends BaseFileUploadHttpRequestTask {
 
 ```
 
-`Boolean` Ê¾Àı£º
+`Boolean` ç¤ºä¾‹ï¼š
 
-![image](Êä³ö²ÎÊıCase6.png)
+![image](è¾“å‡ºå‚æ•°Case6.png)
 
-ÈçÍ¼£¬Êı¾İÀàĞÍÎª `Boolean`. ÄÇÃ´ÊµÏÖÎÄ¼şµÄ½á¹ûÎª£º
+å¦‚å›¾ï¼Œæ•°æ®ç±»å‹ä¸º `Boolean`. é‚£ä¹ˆå®ç°æ–‡ä»¶çš„ç»“æœä¸ºï¼š
 
-Êä³ö½á¹ûÎª£º
+è¾“å‡ºç»“æœä¸ºï¼š
 
 ```java
 
@@ -535,9 +535,9 @@ public class UploadExampleHttpTask extends BaseFileUploadHttpRequestTask {
 ```
 
 
-ÈçÍ¼£¬Èç¹û²¢Ã»ÓĞ·µ»ØÊı¾İ
+å¦‚å›¾ï¼Œå¦‚æœå¹¶æ²¡æœ‰è¿”å›æ•°æ®
 
-![image](Êä³ö²ÎÊıCase3-null.png)
+![image](è¾“å‡ºå‚æ•°Case3-null.png)
 
 
 ```java
@@ -548,15 +548,15 @@ public class UploadExampleHttpTask extends BaseFileUploadHttpRequestTask {
 
 ```
 
-#### Case 3£º NEI ½á¹ûÊä³ö²ÎÊı½öÓĞÒ»Ìõ£¬ÇÒÎªÊı×éÀàĞÍ£¬ËùÓĞÊä³ö²ÎÊıÓë·µ»ØÊı×éµÄÔªËØ½øĞĞ¶ÔÓ¦
+#### Case 3ï¼š NEI ç»“æœè¾“å‡ºå‚æ•°ä»…æœ‰ä¸€æ¡ï¼Œä¸”ä¸ºæ•°ç»„ç±»å‹ï¼Œæ‰€æœ‰è¾“å‡ºå‚æ•°ä¸è¿”å›æ•°ç»„çš„å…ƒç´ è¿›è¡Œå¯¹åº”
 
-`List<Address>` Ê¾Àı£º
+`List<Address>` ç¤ºä¾‹ï¼š
 
-![image](Êä³ö²ÎÊıCase7.png)
+![image](è¾“å‡ºå‚æ•°Case7.png)
 
-ÈçÍ¼£¬Êı¾İÀàĞÍ `Address` °üº¬ÊôĞÔ `province` ºÍ `city`, ¼´ËùÓĞµÄÊä³öÄÚÈİÓë `Address` µÄ¶¨ÒåÆ¥Åä. ÄÇÃ´ÊµÏÖÎÄ¼şµÄ½á¹ûÎª£º
+å¦‚å›¾ï¼Œæ•°æ®ç±»å‹ `Address` åŒ…å«å±æ€§ `province` å’Œ `city`, å³æ‰€æœ‰çš„è¾“å‡ºå†…å®¹ä¸ `Address` çš„å®šä¹‰åŒ¹é…. é‚£ä¹ˆå®ç°æ–‡ä»¶çš„ç»“æœä¸ºï¼š
 
-Êä³ö½á¹ûÎª£º
+è¾“å‡ºç»“æœä¸ºï¼š
 
 ```java
 
@@ -566,4 +566,4 @@ public class UploadExampleHttpTask extends BaseFileUploadHttpRequestTask {
 
 ```
 
-ÆäËû `List<Boolean>`, `List<Double>`, `List<String>`ÀàËÆ
+å…¶ä»– `List<Boolean>`, `List<Double>`, `List<String>`ç±»ä¼¼

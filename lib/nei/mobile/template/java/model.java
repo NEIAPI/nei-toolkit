@@ -16,7 +16,7 @@ import {{loop.key}};
 /**
  *  {{type.description}}
  */
-public class {{type.name}} {
+public class {{type.name}} extends HTBaseModel {
     {% for attr in type.props %}
     {%- if attr.description -%}
     /**
