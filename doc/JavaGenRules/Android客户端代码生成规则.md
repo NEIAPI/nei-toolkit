@@ -229,7 +229,7 @@ public class GetExampleHttpTask extends BaseHttpStringRequestTask {
                               List<String> param5) { // 注释，NEI上的变量描述   /* 数组 类型的输入 */
 
         /* 请求方法类型 */
-        super(Request.Method.GET);
+        super(HttpMethod.GET);
         /* 在url后面添加参数 */
         mQueryParamsMap.put("param1", Double.toString(param1));
         mQueryParamsMap.put("param2", param2);
@@ -298,7 +298,7 @@ public class PostExampleHttpTask extends BaseHttpStringRequestTask {
                                List<String> param5,// 注释，NEI上的变量描述   /* 数组 类型的输入 */
                                List<Double> param6) { // 注释，NEI上的变量描述   /* 数组 类型的输入 */
 
-        super(Request.Method.POST);
+        super(HttpMethod.POST);
         mHeaderMap.put("param1", Double.toString(param1));
         mHeaderMap.put("param2", param2);
         mHeaderMap.put("param3", Boolean.toString(param3));
@@ -343,21 +343,22 @@ import com.netease.yanxuan.hthttp.model.TestModel;
 import java.io.File;
 import java.util.HashMap;
 
+// 先不实现
 /* BaseFileUploadHttpRequestTask，用户可配置
  * 如用户配置的是全路径，com.netease.yanxuan.http.wzp.BaseWzpRequestTask，则需要修改为
   * 1. extends BaseWzpRequestTask
   * 2. 添加 import com.netease.yanxuan.http.wzp.BaseWzpRequestTask; */
+  
 public class UploadExampleHttpTask extends BaseFileUploadHttpRequestTask {
-    public UploadExampleHttpTask(File imageFile) {
+    public UploadExampleHttpTask(File imageFile1, File imageFile2) {
 
         super(HttpMethod.PUT, new HashMap<String, File>(), null);
-        mFiles.put("file", imageFile);
         mBodyContentType = "multipart/form-data";
-
-        /* 将应用包名 com.netease.yanxuan 转为 COM_NETEASE_YANXUAN */
+        // 应用包名 + UPLOAD_FILE_BOUNDARY, 点号转成下划线
         mBoundary = "COM_NETEASE_YANXUAN_UPLOAD_IMAGE_BOUNDARY";
-        /* "image/" 用户可配置 */
-        mFileMinetype = "image/" + getFileType(imageFile);
+        
+        mFiles.put("imageFile1", imageFile1);
+        mFiles.put("imageFile2", imageFile2);
     }
 
     /* 请求完整url，不包含url后面的参数 */

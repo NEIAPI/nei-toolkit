@@ -14,19 +14,21 @@ import {{pkg}};
 /**
  *  {{req.desc}}
  */
-public class {{req.name}} extends {{conf.base}} {
+public class {{req.name}} extends BaseFileUploadHttpRequestTask {
 
     public {{req.name}}(
     {%- if req.inputs.length > 0 -%}
     {%- for input in req.inputs -%}
-    {{input.whiteSpace}}{{input.typeName}} {{input.name}}{% if loop.last%}) {{'{'}}{% else %},{% endif %}{% if input.description %} // {{input.description}} {% endif %}
+    {{input.whiteSpace}}File {{input.name}}{% if loop.last%}) {{'{'}}{% else %},{% endif %}{% if input.description %} // {{input.description}} {% endif %}
     {%- endfor %}{% else %}{{') {'}}{% endif %}
-        super(HttpMethod.{{req.method}});
+        super(HttpMethod.PUT, new HashMap<String, File>(), null);
+        mBodyContentType = "multipart/form-data";
+        mBoundary = "{{req.mBoundary}}";
 
-        {% for param in req.params -%}
-        {{param.container}}.put("{{param.key}}", {{param.valueExp}});{% if param.desc %} // {{param.desc}} {% endif %}
+        {% for input in req.inputs -%}
+        mFiles.put("{{input.name}}", {{input.name}});{% if input.description %} // {{input.description}} {% endif %}
         {% endfor %}
-        {%- if req.hasHost %}
+        {% if req.hasHost %}
         @Override
         public String getUrl() {
         {%- else %}
