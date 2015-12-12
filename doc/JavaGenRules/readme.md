@@ -22,14 +22,15 @@
 
 ### 二、Model 生成规则
 
-1. 自定义数据类型才会生成相应的 Model 文件。
-2. 如果自定义数据类型中有可变类型的属性，则忽略该数据类型，即不生成相应的 Model 文件。
+1. 只生成自定义数据类型的 Model 文件，文件名为数据类型名，路径为包名，符合 Java 语言规范。
+2. 如果自定义数据类型的某个属性为可变类型，则忽略该数据类型，即不生成相应的 Model 文件。
 3. 属性有 `getter` 和 `setter` 方法。如果类型是 `Boolean`，则 `getter` 的方法名直接使用属性名。
-4. 属性的修饰符为 `private`，`getter` 的修饰符为 `public`，`setter` 的修饰符是 `public void`。
+4. 属性的修饰符为 `private`，`getter` 和 `setter` 的修饰符是 `public`。
 5. 属性如果是枚举类型，则将其转换为 `String` 类型（待测试）。
-5. 枚举类型的生成规则稍有不同，详见示例 2。
+6. 枚举类型的生成规则稍有不同，详见 `枚举类型的生成规则`。
+7. 每个属性之前加上注释，内容为 NEI 上对应的描述信息。
 
-示例 1：
+##### `hash` 类型的生成规则
 
 ```java
 
@@ -40,10 +41,13 @@ import com.netease.hthttp.model.HTBaseModel;
 // 如果有数组类型，就导入下面这个包
 import java.util.List;
 
-public class TestModel extends HTBaseModel {
-    private double number;
+public class {{数据类型名}} extends HTBaseModel {
+    // 每个属性对应 NEI 上该数据类型的属性，修饰符为 private
+    // 每个属性的前面加上注释，内容为 NEI 上该属性的描述信息
+    private double id;
     private boolean isMine;
-    private String string;
+    private String name;
+    // 因为所有的 Model 都在同个目录中，所以不需要导入 CustomModel
     private CustomModel customModel;
     // 其他情况：List<Double>, List<Boolean>, List<Author>, etc...
     // 注意：数组元素的类型如果是数字或者布尔，则首字母大写
@@ -51,89 +55,37 @@ public class TestModel extends HTBaseModel {
     // day 在 NEI 中定义为枚举类型，将其转换为 `String`
     private String day;
 
-    public double getNumber() {
-        return number;
+    // getter 方法，修饰符为 public
+    public double getId() {
+        return id;
     }
 
+    // 布尔类型的 getter 方法
     public boolean isMine() {
         return isMine;
     }
 
-    public String getString() {
-        return string;
+    ...
+
+    // setter 方法，修饰符为 public，返回类型为 void
+    public void setId(double id) {
+        this.id = id;
     }
 
-    public CustomModel getCustomModel() {
-        return customModel;
-    }
-
-    public void setNumber(double number) {
-        this.number = number;
-    }
-
-    public List<String> getArray() {
-        return array;
-    }
-
-    public String getDay() {
-    	return day;
-    }
-
-    public void setIsMine(boolean isMine) {
-        this.isMine = isMine;
-    }
-
-    public void setString(String string) {
-        this.string = string;
-    }
-
-    public void setCustomModel(CustomModel customModel) {
-        this.customModel = customModel;
-    }
-
-    public void setArray(List<String> array) {
-        this.array = array;
-    }
-
-    public void setDay(String day) {
-    	this.day = day;
-    }
+    ...
 }
 
 ```
 
-示例 2，枚举类型：
+##### 枚举类型的生成规则
 
-假设在 NEI 中定义的枚举类型如下图所示：
-
-![image](enum-nei.png)
-
-则生成的 Java 代码如下：
 ```java
 
 package {{appPackage}}.{{modelPackage}};
 
-public interface DayEnum {
-    // 星期一 /* 此处为 NEI 上的描述 */
+public interface {{数据类型名}} {
+    // 每个属性对应 NEI 上该数据类型的属性，修饰符为 public static final，类型为 String
     public static final String MONDAY = "monday";
-
-    // 星期二
-    public static final String TUESDAY = "tuesday";
-
-    // 星期三
-    public static final String WEDNESDAT = "wednesday";
-
-    // 星期四
-    public static final String THUSDAY = "thusday";
-
-    // 星期五
-    public static final String FRIDAY = "friday";
-
-    // 星期六
-    public static final String SATURDAY = "saturday";
-
-    // 星期天
-    public static final String SUNDAY = "sunday";
 }
 
 ```
