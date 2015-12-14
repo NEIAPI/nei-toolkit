@@ -7,8 +7,8 @@
 3. `{{appPackage}}`，应用包名，通过命令行参数传入，默认值为 `com.netease`。
 4. `{{modelPackage}}`，模型的相对包名，通过命令行参数传入，默认值为 `hthttp.model`。
 5. `{{reqPackage}}`，请求的相对包名，通过命令行参数传入，默认值为 `hthttp.httptask`。
-6. `{{reqAbstract}}`，请求的基类，通过命令行参数传入。
-7. `{{modelAbstract}}`，模型的基类，通过命令行参数传入。
+6. `{{reqAbstract}}`，请求的基类，通过命令行参数传入，默认值应为 `BaseHttpStringRequestTask`。
+7. `{{modelAbstract}}`，模型的基类，通过命令行参数传入，默认值应为 `HTBaseModel`。
 
 ### 一、NEI 中的数据类型和 Java 语言中的数据类型的对应关系
 | NEI 数据类型  | Java 数据类型 | 说明 |
@@ -26,7 +26,7 @@
 2. 如果自定义数据类型的某个属性为可变类型，则忽略该数据类型，即不生成相应的 Model 文件。
 3. 属性有 `getter` 和 `setter` 方法。如果类型是 `Boolean`，则 `getter` 的方法名直接使用属性名。
 4. 属性的修饰符为 `private`，`getter` 和 `setter` 的修饰符是 `public`。
-5. 属性如果是枚举类型，则将其转换为 `String` 类型。
+5. 属性如果是枚举类型，则将其转换为 `String` 类型（待测试）。
 6. 枚举类型的生成规则稍有不同，详见 `枚举类型的生成规则`。
 7. 每个属性之前加上注释，内容为 NEI 上对应的描述信息。
 8. `ResultData` 是约定的应该使用的返回值类型，它包含三个字段：`code(Number)`、`message(String)` 和 `result(Variable)`，其中定义数据类型的时候 `result` 是可变类型，因此不会生成 `ResultData` 的模型文件。在接口中使用该数据类型时，则需要指定 `result` 的类型。
@@ -101,7 +101,7 @@ NEI 定义中不包括字典类型(各种`Map`、`SparseArray`)、`Date` 类型�
 ### 三、HttpTask 生成规则
 
 1. HttpTask 类名为 NEI 中的接口类名加 `HttpTask` 的形式，如 NEI 上的接口类名为 `Login`，则类名为 `LoginHttpTask`。
-2. 默认包名为 ${应用包名}.hthttp.httptask，文件位置为 ${应用包名指定的目录}/hthttp/httptask，其中 `hthttp.httptask` 用户可配置，即命令行传入的 `reqPackage` 参数。
+2. 默认包名为 {{appPackage}}.hthttp.httptask，文件位置为 {{appPackage目录}}/hthttp/httptask，其中 `hthttp.httptask` 用户可配置，即命令行传入的 `reqPackage` 参数。
 3. 由于在 NEI 中无法定义特殊的文件上传请求，故在此先约定 `put` 请求为文件上传。
 
 ##### 普通请求生成规则
