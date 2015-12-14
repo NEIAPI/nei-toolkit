@@ -215,7 +215,7 @@ NEI 定义中不包括字典类型( `Hash` 表)、`NSDate` 类型，不需要额
     // 即如果类型为 Address，则 reqAutoAddedName 的值为 address，最终内容为：
     // NSDictionary *dic = [self.address ht_modelToJSONObject]
     // 其他情况 reqAutoAddedName 没有值
-    NSDictionary *dic = [self{% if req.reqAutoAddedName %}.{{req.reqAutoAddedName}}{%endif%} ht_modelToJSONObject];
+    NSDictionary *dic = [self{%if reqAutoAddedName %}.{{reqAutoAddedName}}{%endif%} ht_modelToJSONObject];
     if ([dic isKindOfClass:[NSDictionary class]] && [dic count] > 0) {
         return dic;
     }
