@@ -26,7 +26,7 @@
 2. 如果自定义数据类型的某个属性为可变类型，则忽略该数据类型，即不生成相应的 Model 文件。
 3. 属性有 `getter` 和 `setter` 方法。如果类型是 `Boolean`，则 `getter` 的方法名直接使用属性名。
 4. 属性的修饰符为 `private`，`getter` 和 `setter` 的修饰符是 `public`。
-5. 属性如果是枚举类型，则将其转换为 `String` 类型（待测试）。
+5. 属性如果是枚举类型，则将其转换为 `String` 类型。
 6. 枚举类型的生成规则稍有不同，详见 `枚举类型的生成规则`。
 7. 每个属性之前加上注释，内容为 NEI 上对应的描述信息。
 8. `ResultData` 是约定的应该使用的返回值类型，它包含三个字段：`code(Number)`、`message(String)` 和 `result(Variable)`，其中定义数据类型的时候 `result` 是可变类型，因此不会生成 `ResultData` 的模型文件。在接口中使用该数据类型时，则需要指定 `result` 的类型。
