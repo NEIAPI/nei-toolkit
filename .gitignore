@@ -2,3 +2,4 @@
 .project
 node_modules
 test
+doc/**/bak.zip

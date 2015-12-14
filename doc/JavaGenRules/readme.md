@@ -29,6 +29,7 @@
 5. 属性如果是枚举类型，则将其转换为 `String` 类型（待测试）。
 6. 枚举类型的生成规则稍有不同，详见 `枚举类型的生成规则`。
 7. 每个属性之前加上注释，内容为 NEI 上对应的描述信息。
+8. `ResultData` 是约定的应该使用的返回值类型，它包含三个字段：`code(Number)`、`message(String)` 和 `result(Variable)`，其中定义数据类型的时候 `result` 是可变类型，因此不会生成 `ResultData` 的模型文件。在接口中使用该数据类型时，则需要指定 `result` 的类型。
 
 ##### `hash` 类型的生成规则
 
@@ -93,23 +94,25 @@ public interface {{数据类型名}} {
 
 >注意: 定义枚举类型时使用 `interface`，而不是 `class`，也不是 `enum`。
 
-#### 不支持的 Case
+#### 不支持的情形
 
 NEI 定义中不包括字典类型(各种`Map`、`SparseArray`)、`Date` 类型，不需要额外处理。字典类型一定会组装成为一个 Model; `Date` 会由 `Number` 或者 `String` 来表达。
 
 ### 三、HttpTask 生成规则
 
-1. HttpTask 类名为 NEI 中的接口名加 `HttpTask` 的形式，如 NEI 上的接口名称为 `Login`，则类名为 `LoginHttpTask`。
+1. HttpTask 类名为 NEI 中的接口类名加 `HttpTask` 的形式，如 NEI 上的接口类名为 `Login`，则类名为 `LoginHttpTask`。
 2. 默认包名为 ${应用包名}.hthttp.httptask，文件位置为 ${应用包名指定的目录}/hthttp/httptask，其中 `hthttp.httptask` 用户可配置，即命令行传入的 `reqPackage` 参数。
 3. 由于在 NEI 中无法定义特殊的文件上传请求，故在此先约定 `put` 请求为文件上传。
 
-##### 非 `put` 请求生成规则
+##### 普通请求生成规则
 
 ```java
 
 // 包名
 package {{appPackage}}.{{reqPackage}};
 
+// 固定要导入的包
+import com.netease.hthttp.HttpMethod;
 // 如果输入参数（url 参数或者 header）中有数组类型 `List`, 则导入下面这个包。
 import com.alibaba.fastjson.JSONArray;
 // 如果输入参数 ( url 参数或者 header ) 中有基本类型 `double` 或者 `boolean`, 则导入下面这个包。
@@ -117,47 +120,99 @@ import com.alibaba.fastjson.JSONObject;
 // 默认请求基类
 import com.netease.hthttp.BaseHttpStringRequestTask;
 
-// 导入需要的包，完整路径，如用到的模型文件等。
-import {{customModel}};
+// 其他需要导入的包，完整路径，如用到的模型文件等。
+import {{CustomModel}};
 
-public class {{NEI 中定义的请求名}}HttpTask extends BaseHttpStringRequestTask {
+// `请求类名` 在 NEI 中定义
+public class {{请求类名}}HttpTask extends BaseHttpStringRequestTask {
 
-    public GetExampleHttpTask(double param1,      // 注释，NEI上的变量描述   /* number 类型的输入 */
-                              String param2,      // 注释，NEI上的变量描述   /* string 类型的输入 */
-                              Boolean param3,     // 注释，NEI上的变量描述   /* boolean 类型的输入 */
-                              InnerModel param4,  // 注释，NEI上的变量描述   /* 自定义类型 类型的输入 */
-                              List<String> param5) { // 注释，NEI上的变量描述   /* 数组 类型的输入 */
+    public {{请求类名}}HttpTask(double param1, // 注释，NEI上的变量描述，下同
+                               String param2,
+                               boolean param3,
+                               CustomModel param4,
+                               List<String> param5) {
 
-        /* 请求方法类型 */
-        super(HttpMethod.GET);
-        /* 在url后面添加参数 */
-        mQueryParamsMap.put("param1", Double.toString(param1));
-        mQueryParamsMap.put("param2", param2);
-        mQueryParamsMap.put("param3", Boolean.toString(param3));
-        mQueryParamsMap.put("param4", JSONObject.toJSONString(param4));
-        mQueryParamsMap.put("param5", JSONArray.toJSONString(param5));
+        // MethodType，请求方法类型，所有可能取值为：GET、POST、HEAD、DELETE 和 PUT
+        super(HttpMethod.{{MethodType}});
+        // paramContainer，参数容器。
+        // GET 和 HEAD 请求，参数添加到 mQueryParamsMap 对象中。
+        // POST 和 DELETE 请求，参数添加到 mBodyMap 对象中。
+        // 请求头参数添加到 mHeaderMap 对象中。注意，请求头的值类型只支持 String 类型。
+        {{paramContainer}}.put("param1", Double.toString(param1));
+        {{paramContainer}}.put("param2", param2);
+        {{paramContainer}}.put("param3", Boolean.toString(param3));
+        {{paramContainer}}.put("param4", JSONObject.toJSONString(param4));
+        // 只要是数组就这么写，不用管数组元素是何类型
+        {{paramContainer}}.put("param5", JSONArray.toJSONString(param5));
     }
 
-
-    /* 请求完整url，不包含url后面的参数 */
-    /*
+    // getUrl 和 getApi 方法只实现一个。
+    // 如果 NEI 中定义的 url 是完整的，即包含了 host 信息，只实现 getUrl 方法，否则实现 getApi 方法。
     @Override
     public String getUrl() {
-        return "/xhr/mobile/getexample.json";
+        return {{requestUrl}};
     }
-    */
 
-    /* 请求url，不包含前面的host，不包含url后面的参数 */
     @Override
     protected String getApi() {
-        return "/xhr/mobile/getexample.json";
+        return {{requestUrl}};
     }
 
-
+    // 根据返回值的类型，需返回不同的值，规则如下：
+    // 1. 如果没有定义返回值，则返回: null。
+    // 2. 如果返回值为一个导入的 `ResultData`，根据 result 字段的类型，则返回：
+    //    a. 如果 result 为 String 类型，则返回 String.class。
+    //    b. 如果 result 为 Number 类型，则返回 Number.class。
+    //    c. 如果 result 为 Boolean 类型，则返回 Boolean.class。
+    //    d. 如果 result 为自定义类型 CustomModel，则返回 CustomModel.class。
+    //    e. 如果 result 是数组，则根据数组元素的类型，执行上述规则。
+    // 3. 如果返回值为一个导入的自定义类型 CustomModel（但不是 ResultData），则返回：CustomModel.class。
+    // 4. 如果返回值只有一个字段，则根据它的类型，按规则 2 执行。
+    // 5. 其他情况返回：null。
     @Override
     public Class getModelClass() {
-        return TestModel.class;
+        return {{返回信息见上述说明}};
     }
+}
+
+```
+
+##### `put` 请求生成规则
+
+根据约定，`put` 请求表示文件上传，实现规则和普通请求不同，规则如下：
+
+```java
+
+// 包名
+package {{appPackage}}.{{reqPackage}};
+
+// 固定需要导入的包
+import com.netease.hthttp.HttpMethod;
+import com.netease.hthttp.multipart.fileupload.http.BaseFileUploadHttpRequestTask;
+import java.io.File;
+import java.util.HashMap;
+
+// 其他需要导入的包，完整路径，如用到的模型文件等。
+import {{CustomModel}};
+
+// `请求类名` 在 NEI 中定义
+public class {{请求类名}}HttpTask extends BaseFileUploadHttpRequestTask {
+    // 可能需要上传多个文件，NEI 中定义的每个字段都默认为 File 类型。
+    public {{请求类名}}HttpTask(File imageFile1,
+                               File imageFile2) {
+        // 以下内容固定写死
+        super(HttpMethod.PUT, new HashMap<String, File>(), null);
+        mBodyContentType = "multipart/form-data";
+        // 值为：应用包名 + UPLOAD_FILE_BOUNDARY, 包名中的点号转成下划线
+        mBoundary = "{{appPackage}}_UPLOAD_IMAGE_BOUNDARY";
+
+        // 参数放到 mFiles 对象中。
+        mFiles.put("imageFile1", imageFile1);
+        mFiles.put("imageFile2", imageFile2);
+    }
+
+    // 其他信息，即 getUrl 或者 getApi 方法和 getModelClass，规则同 `普通请求` 的规则
+    ...
 }
 
 ```

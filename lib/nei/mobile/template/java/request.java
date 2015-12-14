@@ -26,8 +26,8 @@ public class {{req.name}} extends {{conf.base}} {
         {% for param in req.params -%}
         {{param.container}}.put("{{param.key}}", {{param.valueExp}});{% if param.desc %} // {{param.desc}} {% endif %}
         {% endfor %}
-        {%- if req.hasHost %}
         @Override
+        {%- if req.hasHost %}
         public String getUrl() {
         {%- else %}
         protected String getApi() {
