@@ -211,8 +211,9 @@ NEI 定义中不包括字典类型( `Hash` 表)、`NSDate` 类型，不需要额
 
 // 该方法描述输入参数信息
 - (NSDictionary *)requestParams {
-    // 如果输入参数是一个导入类型，需要给该类型生成一个属性名，目前实现为该类型的首字母小写形式。即如果类型为 Address，那么属性名为 address。
-    // 此时 reqAutoAddedName 的值为 address，即最终的内容为：NSDictionary *dic = [self.address ht_modelToJSONObject]
+    // 如果输入参数是一个导入类型，需要给该类型生成一个属性名，目前实现为该类型的首字母小写形式。
+    // 即如果类型为 Address，则 reqAutoAddedName 的值为 address，最终内容为：
+    // NSDictionary *dic = [self.address ht_modelToJSONObject]
     // 其他情况 reqAutoAddedName 没有值
     NSDictionary *dic = [self{% if req.reqAutoAddedName %}.{{req.reqAutoAddedName}}{%endif%} ht_modelToJSONObject];
     if ([dic isKindOfClass:[NSDictionary class]] && [dic count] > 0) {
