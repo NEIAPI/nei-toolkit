@@ -6,13 +6,14 @@
 //
 //  Auto build by NEI Builder
 
-#import "{{conf.prefix}}{{req.name}}Request.h"
+#import "{{conf.prefix}}{{req.name}}.h"
+#import "NSObject+HTModel.h"
 {% if req.resModel %}#import "{{conf.prefix}}{{req.resModel}}.h"{% endif%}
 
 /**
  *  {{req.description}}
  */
-@implementation {{conf.prefix}}{{req.name}}Request
+@implementation {{conf.prefix}}{{req.name}}
 
 + (RKRequestMethod)requestMethod {
     return RKRequestMethod{{req.method}};

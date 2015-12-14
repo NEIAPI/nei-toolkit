@@ -15,7 +15,7 @@
 /**
  *  {{req.description}}
  */
-@interface {{conf.prefix}}{{req.name}}Request : {{conf.prefix}}{{conf.base}}
+@interface {{conf.prefix}}{{req.name}} : {{conf.prefix}}{{conf.base}}
 {% for dt in req.reqDataTypes %}
 /**
  *  {{dt.description}}
