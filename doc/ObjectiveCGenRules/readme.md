@@ -256,9 +256,9 @@ NEI 定义中不包括字典类型( `Hash` 表)、`NSDate` 类型，不需要额
 其中，`Content-Type` 是请求头名字，`application/json` 是设置的请求头的值；如果有多个，则存在多个类似 `[dic setObject:@"application/json" forKey:@"Content-Type"];` 的语句。
 
 ##### 2. 含有变量请求头的请求
-2.1 在请求的头文件中，根据每个变量请求头的名称生成一个 `NSString *` `的属性：
-+ 变量名从变量请求头名字中转变过来，命名规范: 首字母小写，去掉连字符 - , 转化过的变量名不可以与输入参数同名（工具不检查，由用户自己保证）。
-+ 变量属性描述统一为 `@property (nonatomic, copy) NSString *cookie;` ; 最后面是属性名。
+2.1 在请求的头文件中，根据每个变量请求头的名称生成一个 `NSString *` 的属性：
++ 变量名从变量请求头名字中转变过来，命名规范: 首字母小写，去掉连字符 - ，转化过的变量名不可以与输入参数同名（工具不检查，由用户自己保证）。
++ 变量属性描述统一为 `@property (nonatomic, copy) NSString *cookie;` ，最后面是属性名。
 例如, `Content-Type` 对应 `contentType`。
 
 以上述表格为例，头文件中应该新增两个变量：
@@ -314,7 +314,7 @@ NEI 定义中不包括字典类型( `Hash` 表)、`NSDate` 类型，不需要额
 
 改动信息对比如下：
 
->不含有变量请求头:
+>不含有变量请求头：
 
 ```objective-c
 
@@ -322,11 +322,11 @@ NSDictionary *dic = [self ht_modelToJSONObject];
 
 ```
 
->有变量请求头:
+>有变量请求头：
 
 ```objective-c
 
-NSDictionary *dic = [self ht_modelToJSONObject:[self headerPropertyList]];  
+NSDictionary *dic = [self ht_modelToJSONObject:[self headerPropertyList]];
 
 ```
 
