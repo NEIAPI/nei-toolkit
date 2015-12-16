@@ -113,18 +113,20 @@
         "nei mobile 23456798 -l java -o /path/to/output/"
     ],
     "mobile-params":[
-        {"j":"h","q":"help","m":"显示mobile命令帮助信息"},
+        {"j":"h","q":"help","m":"显示 mobile 命令帮助信息"},
         {"j":"o","q":"output","d":"./","m":"指定输出目录，默认为当前目录"},
         {"j":"w","q":"overwrite","d":false,"m":"是否覆盖已存在的配置文件，默认不覆盖"},
-        {"j":"l","q":"lang","d":"oc","m":"要导出的语言标识，默认为oc，可选oc、java等"},
+        {"j":"l","q":"lang","d":"oc","m":"要导出的语言标识，默认为 oc，可选 oc、java 等"},
         {"q":"author","d":"netease","m":"构建者名称，默认为 netease"},
-        {"q":"namePrefix","d":"HT","m":"生成的文件名、类名的前缀，默认为 HT"},
         {"q":"reqAbstract","d":"BaseRequest","m":"请求基类名称，不带类名的前缀，默认为 BaseRequest"},
-        {"q":"reqHeaders","d":"Requests","m":"包含所有数据请求的头文件名称，不带类名的前缀，默认为 Requests"},
         {"q":"modelAbstract","d":"HTTPModel","m":"数据模型基类名称，不带类名的前缀，默认为 HTTPModel"},
+        "以下参数 Objective-C 特有：",
+        {"q":"namePrefix","d":"HT","m":"生成的文件名、类名的前缀，默认为 HT"},
+        {"q":"reqHeaders","d":"Requests","m":"包含所有数据请求的头文件名称，不带类名的前缀，默认为 Requests"},
         {"q":"modelHeaders","d":"Models","m":"包含所有数据模型的头文件名称，不带类名的前缀，默认为 Models"},
-        {"q":"appPackage","d":"com.netease","m":"应用的包名，默认为 com.netease，Java 专用"},
-        {"q":"modelPackage","d":"hthttp.model","m":"模型的相对包名，默认为 hthttp.model，Java 专用"},
-        {"q":"reqPackage","d":"hthttp.httptask","m":"http请求的相对包名，默认为 hthttp.httptask，Java 专用"}
+        "以下参数 Java 特有：",
+        {"q":"appPackage","d":"com.netease","m":"应用的包名，默认为 com.netease"},
+        {"q":"modelPackage","d":"hthttp.model","m":"模型的相对包名，默认为 hthttp.model"},
+        {"q":"reqPackage","d":"hthttp.httptask","m":"http请求的相对包名，默认为 hthttp.httptask"}
     ]
 }
