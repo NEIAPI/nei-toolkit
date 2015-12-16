@@ -241,7 +241,7 @@ NEI 定义中不包括字典类型( `Hash` 表)、`NSDate` 类型，不需要额
 
 ##### 1. 不含有变量请求头的请求
 
-对于不含有变量请求头的请求, 请求头文件不需要任何更改，在 .m 实现文件中实现方法：
+对于不含有变量请求头的请求，请求头文件不需要任何更改，在 .m 实现文件中实现方法：
 
 ```objective-c
 
@@ -257,9 +257,9 @@ NEI 定义中不包括字典类型( `Hash` 表)、`NSDate` 类型，不需要额
 
 ##### 2. 含有变量请求头的请求
 2.1 在请求的头文件中，根据每个变量请求头的名称生成一个 `NSString *` 的属性：
-+ 变量名从变量请求头名字中转变过来，命名规范: 首字母小写，去掉连字符 - ，转化过的变量名不可以与输入参数同名（工具不检查，由用户自己保证）。
++ 变量名从变量请求头名字中转变过来，命名规范：首字母小写，去掉连字符 - ，转化过的变量名不可以与输入参数同名（工具不检查，由用户自己保证）。
 + 变量属性描述统一为 `@property (nonatomic, copy) NSString *cookie;` ，最后面是属性名。
-例如, `Content-Type` 对应 `contentType`。
+例如，`Content-Type` 对应 `contentType`。
 
 以上述表格为例，头文件中应该新增两个变量：
 
@@ -295,7 +295,7 @@ NEI 定义中不包括字典类型( `Hash` 表)、`NSDate` 类型，不需要额
 ```
 
 其中，`headerPropertyList` 方法返回一个数组，对应与变量请求头相关的属性信息。
-`requestHeaderFieldValueDictionary` 将变量请求头添加到 dic 中，object 为 _  加上属性名; Key 为 NEI 上对应的变量请求头名字。
+`requestHeaderFieldValueDictionary` 将变量请求头添加到 dic 中，object 为 _  加上属性名，Key 为 NEI 上对应的变量请求头名字。
 
 2.3 在请求的实现文件中，对方法 `- (NSDictionary *)requestParams` 作如下修改：
 
