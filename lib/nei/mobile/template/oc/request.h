@@ -16,6 +16,12 @@
  *  {{req.description}}
  */
 @interface {{conf.prefix}}{{req.name}} : {{conf.prefix}}{{conf.base}}
+{% for header in req.reqVarHeaders %}
+/**
+ *  {{header.desc}}
+ */
+@property (nonatomic, copy) NSString *{{header.varName}};
+{% endfor -%}
 {% for dt in req.reqDataTypes %}
 /**
  *  {{dt.description}}

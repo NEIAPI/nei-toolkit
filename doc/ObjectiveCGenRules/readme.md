@@ -227,7 +227,110 @@ NEI 定义中不包括字典类型( `Hash` 表)、`NSDate` 类型，不需要额
 
 ```
 
-### 四、枚举和公共头文件
+### 四、请求头参数
+
+假设在 NEI 中填写的请求头参数如下所示（“/” 表示空值）：
+
+| 名称  | 值 | 描述 |
+| :--- | :--- | :---
+| `Content-Type` | `application/json` | / |
+| `Cookie` | / | / |
+| `UserInfo` | / | / |
+
+> 如果指定了值，则为常量请求头；否则为变量请求头。 如 `Content-Type` 是一个常量的请求头; 而 `Cookie` 和 `UserInfo` 都是变量的请求头。
+
+##### 1. 不含有变量请求头的请求
+
+对于不含有变量请求头的请求, 请求头文件不需要任何更改，在 .m 实现文件中实现方法：
+
+```objective-c
+
+- (NSDictionary *)requestHeaderFieldValueDictionary {
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:@"application/json" forKey:@"Content-Type"];
+    return dic;
+}
+
+```
+
+其中，`Content-Type` 是请求头名字，`application/json` 是设置的请求头的值；如果有多个，则存在多个类似 `[dic setObject:@"application/json" forKey:@"Content-Type"];` 的语句。
+
+##### 2. 含有变量请求头的请求
+2.1 在请求的头文件中，根据每个变量请求头的名称生成一个 `NSString *` `的属性：
++ 变量名从变量请求头名字中转变过来，命名规范: 首字母小写，去掉连字符 - , 转化过的变量名不可以与输入参数同名（工具不检查，由用户自己保证）。
++ 变量属性描述统一为 `@property (nonatomic, copy) NSString *cookie;` ; 最后面是属性名。
+例如, `Content-Type` 对应 `contentType`。
+
+以上述表格为例，头文件中应该新增两个变量：
+
+```objective-c    
+
+@property (nonatomic, copy) NSString *cookie;
+@property (nonatomic, copy) NSString *userInfo;
+
+```
+
+2.2 在请求的实现文件中，添加方法 `- (NSArray *)headerPropertyList` 与 `- (NSDictionary *)requestHeaderFieldValueDictionary` 如下方法：
+
+```objective-c
+
+- (NSArray *)headerPropertyList {
+    return @[@"cookie", @"userInfo"];
+}
+
+- (NSDictionary *)requestHeaderFieldValueDictionary {
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:@"application/json" forKey:@"Content-Type"];
+    if (nil != _cookie) {
+        [dic setObject:_cookie forKey:@"Cookie"];
+    }
+
+    if (nil != _userInfo) {
+        [dic setObject:_userInfo forKey:@"UserInfo"];
+    }
+
+    return dic;
+}
+
+```
+
+其中，`headerPropertyList` 方法返回一个数组，对应与变量请求头相关的属性信息。
+`requestHeaderFieldValueDictionary` 将变量请求头添加到 dic 中，object 为 _  加上属性名; Key 为 NEI 上对应的变量请求头名字。
+
+2.3 在请求的实现文件中，对方法 `- (NSDictionary *)requestParams` 作如下修改：
+
+```objective-c
+
+- (NSDictionary *)requestParams {
+    NSDictionary *dic = [self ht_modelToJSONObject:[self headerPropertyList]];
+    if ([dic isKindOfClass:[NSDictionary class]] && [dic count] > 0) {
+        return dic;
+    }
+
+    return nil;
+}
+
+```
+
+改动信息对比如下：
+
+>不含有变量请求头:
+
+```objective-c
+
+NSDictionary *dic = [self ht_modelToJSONObject];
+
+```
+
+>有变量请求头:
+
+```objective-c
+
+NSDictionary *dic = [self ht_modelToJSONObject:[self headerPropertyList]];  
+
+```
+
+### 五、枚举和公共头文件
 
 1. 枚举统一放在一个文件中描述，头文件为 `HTModelEnums.h`，实现文件为 `HTModelEnums.m`，HT 为默认前缀。
 2. 生成两个头文件：`HTModels.h` 和 `HTRequests.h`，前者包含所有生成的 Model 的头文件，后者包括所有生成的 `Request` 的头文件。

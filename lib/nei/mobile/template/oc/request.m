@@ -32,12 +32,31 @@
 }
 
 - (NSDictionary *)requestParams {
-    NSDictionary *dic = [self{% if req.reqAutoAddedName %}.{{req.reqAutoAddedName}}{%endif%} ht_modelToJSONObject];
+    NSDictionary *dic = [self{% if req.reqAutoAddedName %}.{{req.reqAutoAddedName}}{%endif%} ht_modelToJSONObject{% if req.reqVarHeaders.length %}:[self headerPropertyList]{% endif %}];
     if ([dic isKindOfClass:[NSDictionary class]] && [dic count] > 0) {
         return dic;
     }
 
     return nil;
 }
+{% if req.reqVarHeaders.length %}
+- (NSArray *)headerPropertyList {
+    return @[{% for header in req.reqVarHeaders %}@"{{header.varName}}"{% if !loop.last%}, {% endif %}{% endfor %}];
+}
+{% endif -%}
+{% if req.reqConstHeaders.length %}
+- (NSDictionary *)requestHeaderFieldValueDictionary {
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    {%- for header in req.reqConstHeaders %}
+    [dic setObject:@"{{header.value}}" forKey:@"{{header.key}}"];{% if header.desc %} // {{header.desc}} {% endif -%}
+    {%- endfor %}
+    {% for header in req.reqVarHeaders %}
+    if (nil != _{{header.varName}}) {
+        [dic setObject:_cookie forKey:@"{{header.key}}"];
+    }
+    {% endfor -%}
+    return dic;
+}
+{% endif %}
 
 @end
