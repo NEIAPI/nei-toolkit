@@ -28,6 +28,7 @@ public class {{req.name}} extends BaseFileUploadHttpRequestTask {
         {% for input in req.inputs -%}
         mFiles.put("{{input.name}}", {{input.name}});{% if input.description %} // {{input.description}} {% endif %}
         {% endfor %}
+        initMimeType(mFiles);
         {% if req.hasHost %}
         @Override
         public String getUrl() {

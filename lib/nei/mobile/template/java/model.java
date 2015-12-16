@@ -27,7 +27,7 @@ public class {{type.name}} extends HTBaseModel {
     {% endfor -%}
     {# getter #}
     {%- for attr in type.props %}
-    public {{attr.typeName}} {% if attr.typeName === "boolean" %}{{attr.name}}{% else %}get{{attr.capName}}{% endif %}() {
+    public {{attr.typeName}} {% if attr.typeName === "boolean" %}{% if attr.name.substr(0,2)==='is' %}{{attr.name}}{% else %}is{{attr.capName}}{% endif %}{% else %}get{{attr.capName}}{% endif %}() {
         return {{attr.name}};
     }
     {% endfor -%}

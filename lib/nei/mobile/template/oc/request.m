@@ -44,7 +44,7 @@
     return @[{% for header in req.reqVarHeaders %}@"{{header.varName}}"{% if !loop.last%}, {% endif %}{% endfor %}];
 }
 {% endif -%}
-{% if req.reqConstHeaders.length %}
+{% if req.reqConstHeaders.length || req.reqVarHeaders.length %}
 - (NSDictionary *)requestHeaderFieldValueDictionary {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     {%- for header in req.reqConstHeaders %}
@@ -52,9 +52,9 @@
     {%- endfor %}
     {% for header in req.reqVarHeaders %}
     if (nil != _{{header.varName}}) {
-        [dic setObject:_cookie forKey:@"{{header.key}}"];
+        [dic setObject:_{{header.varName}} forKey:@"{{header.key}}"];
     }
-    {% endfor -%}
+    {% endfor %}
     return dic;
 }
 {% endif %}

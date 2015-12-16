@@ -14,7 +14,7 @@ import {{pkg}};
 /**
  *  {{req.desc}}
  */
-public class {{req.name}} extends {{conf.base}} {
+public class {{req.name}} extends {{req.baseClass}} {
 
     public {{req.name}}(
     {%- if req.inputs.length > 0 -%}

@@ -24,7 +24,7 @@
 
 1. 只生成自定义数据类型的 Model 文件，文件名为数据类型名，路径为包名。例如：NEI 上的类型名为 `Company`，则生成的类型名字 `Company`, 文件名为 `Company.java`，默认包名为`com.netease.hthttp.model`，文件位置为 `com/netease/hthttp/model/Company.java`。
 2. 如果自定义数据类型的某个属性为可变类型，则忽略该数据类型，即不生成相应的 Model 文件。
-3. 属性有 `getter` 和 `setter` 方法。如果类型是 `Boolean`，则 `getter` 的方法名直接使用属性名。
+3. 属性有 `getter` 和 `setter` 方法。如果类型是 `Boolean` 并且变量名以 `is`开头，则 `getter` 的方法名直接使用属性名。
 4. 属性的修饰符为 `private`，`getter` 和 `setter` 的修饰符是 `public`。
 5. 属性如果是枚举类型，则将其转换为 `String` 类型。
 6. 枚举类型的生成规则稍有不同，详见 `枚举类型的生成规则`。
@@ -48,6 +48,7 @@ public class {{数据类型名}} extends HTBaseModel {
     // 每个属性的前面加上注释，内容为 NEI 上该属性的描述信息
     private double id;
     private boolean isMine;
+    private boolean hasMore;
     private String name;
     // 因为所有的 Model 都在同个目录中，所以不需要导入 CustomModel
     private CustomModel customModel;
@@ -63,8 +64,14 @@ public class {{数据类型名}} extends HTBaseModel {
     }
 
     // 布尔类型的 getter 方法
+    // 以 `is` 开头的布尔类型
     public boolean isMine() {
         return isMine;
+    }
+    
+    // 不是以 `is` 开头的布尔类型
+    public boolean isHasMore() {
+        return hasMore;
     }
 
     ...
@@ -87,7 +94,12 @@ package {{appPackage}}.{{modelPackage}};
 
 public interface {{数据类型名}} {
     // 每个属性对应 NEI 上该数据类型的属性，修饰符为 public static final，类型为 String
+    
+    // 依次输出所有枚举项
     public static final String MONDAY = "monday";
+    public static final String TUESDAY = "tuesday";
+    
+    ......
 }
 
 ```
@@ -111,6 +123,10 @@ NEI 定义中不包括字典类型(各种`Map`、`SparseArray`)、`Date` 类型�
 // 包名
 package {{appPackage}}.{{reqPackage}};
 
+// 导入基类的包，`BaseHttpStringRequestTask` 是默认基类，可以配置。
+// 如果传入的是全路径（即包含了 `.` 号，那包名使用该全路径，基类为路径以 `.` 号分割的最后一个名称）。
+// 如果传入的不是全路径，则包名前缀是 `com.netease.hthttp`。
+import com.netease.hthttp.BaseHttpStringRequestTask;
 // 固定要导入的包
 import com.netease.hthttp.HttpMethod;
 // 如果输入参数（url 参数或者 header）中有数组类型 `List`, 则导入下面这个包。
@@ -162,7 +178,7 @@ public class {{请求类名}}HttpTask extends BaseHttpStringRequestTask {
     // 1. 如果没有定义返回值，则返回: null。
     // 2. 如果返回值为一个导入的 `ResultData`，根据 result 字段的类型，则返回：
     //    a. 如果 result 为 String 类型，则返回 String.class。
-    //    b. 如果 result 为 Number 类型，则返回 Number.class。
+    //    b. 如果 result 为 Number 类型，则返回 Double.class。
     //    c. 如果 result 为 Boolean 类型，则返回 Boolean.class。
     //    d. 如果 result 为自定义类型 CustomModel，则返回 CustomModel.class。
     //    e. 如果 result 是数组，则根据数组元素的类型，执行上述规则。
@@ -209,6 +225,8 @@ public class {{请求类名}}HttpTask extends BaseFileUploadHttpRequestTask {
         // 参数放到 mFiles 对象中。
         mFiles.put("imageFile1", imageFile1);
         mFiles.put("imageFile2", imageFile2);
+        
+        initMimeType(mFiles);
     }
 
     // 其他信息，即 getUrl 或者 getApi 方法和 getModelClass，规则同 `普通请求` 的规则
