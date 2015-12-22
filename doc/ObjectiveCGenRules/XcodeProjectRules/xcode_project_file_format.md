@@ -555,16 +555,6 @@ TODO: 待完善.
 TODO: 待完善.
 
 ## 参考资料
-### 示例说明
-每个Section的示例中并没有列出所有种类的文件，可以参考示例工程的设置看到完整的例子，本文档中涉及到的工程文件如下：
-
-Empty Project: 
-https://git.hz.netease.com/hzwangliping/ResearchResult/tree/master/AutoGenerate/HTProductName/HTProductName.xcodeproj
-
-Single View Project: 
-https://git.hz.netease.com/hzwangliping/ResearchResult/tree/master/AutoGenerate/SingleView/HTProductName/HTProductName.xcodeproj
-
-代码模板中的固定字段直接参照该工程文件, 仅产品名字`HTProductName`可变, 上述工程均为支持单元测试，公司名字为Netease的默认Objetive-C工程.
 
 ### 参考文档
 
