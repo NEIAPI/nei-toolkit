@@ -103,7 +103,8 @@ exports.nei = function(config,callback){
     }
     // generator builder
     var bmap = {
-            webapp:'./lib/nei/webapp.js'
+            webapp:'./lib/nei/webapp.js',
+            mobile:'./lib/nei/mobile.js'
         },
         name = bmap[config.template]||
                bmap[conf.template]||bmap.webapp;
