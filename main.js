@@ -52,6 +52,7 @@ global(API);
 
 // bin api
 var fs      = require('fs'),
+    util     = require('util'),
     _fs     = require('./lib/util/file.js'),
     _path   = require('./lib/util/path.js'),
     _util   = require('./lib/util/util.js'),
@@ -104,10 +105,17 @@ exports.nei = function(config,callback){
     // generator builder
     var bmap = {
             webapp:'./lib/nei/webapp.js',
-            mobile:'./lib/nei/mobile.js'
+            mobile:'./lib/nei/mobile.%s.js'
         },
         name = bmap[config.template]||
                bmap[conf.template]||bmap.webapp;
+
+    if (config.template === 'mobile') {
+        name = util.format(name, config.l);
+    } else if (conf.template === 'mobile') {
+        name = util.format(name, conf.l);
+    }
+
     var Builder;
     try{
         Builder = require(name);
@@ -226,7 +234,7 @@ exports.export = function(config,callback){
  * @param  {String}  config.id          - nei project id
  * @param  {String}  config.output      - path to output
  * @param  {Boolean} config.overwrite   - whether overwrite files existed
- * @param  {Number}  config.lang        - export language
+ * @param  {String}  config.lang        - export language
  * @param  {String}  config.author      - author name
  * @param  {String}  config.namePrefix  - class name prefix
  * @param  {String}  config.reqAbstract - request abstract class name
@@ -237,7 +245,18 @@ exports.mobile = function(config,callback){
         output = _path.absolute(
             config.output+'/',cwd
         );
-    (new (require('./lib/nei/mobile.js'))({
+    var lang = config.lang;
+    // check language
+    if(!/^(oc|java)$/.test(lang)) {
+        _log.log('error', {
+            data: [lang],
+            message: 'not supported language %s'
+        });
+        return _log.log('info', {
+            message: 'done'
+        });
+    }
+    (new (require(util.format('./lib/nei/mobile.%s.js', lang)))({
         id:config.id,
         proRoot:output,
         overwrite:config.overwrite,
