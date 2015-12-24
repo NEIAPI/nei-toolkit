@@ -41,7 +41,12 @@
         "以下参数对于使用 webapp 模板的项目特有：",
         {"q":"engine","m":"如果使用内建的webapp模板构建，此参数用于指定使用的模板引擎，支持内建模板引擎：freemarker、velocity、其他nodejs模板引擎，默认为freemarker引擎"},
         {"q":"webRoot","m":"如果使用内建的webapp模板构建，此参数用于指定WEBROOT目录，默认根据maven目录结构规范，相对于 -p 路径的 src/main/webapp/"},
-        {"q":"viewRoot","m":"如果使用内建的webapp模板构建，此参数用于指定服务器端视图模板目录，默认根据maven目录结构规范，相对于 -p 路径的 src/main/webapp/WEB-INF/views/"}
+        {"q":"viewRoot","m":"如果使用内建的webapp模板构建，此参数用于指定服务器端视图模板目录，默认根据maven目录结构规范，相对于 -p 路径的 src/main/webapp/WEB-INF/views/"},
+        "",
+        "以下参数对于使用 Java 模板的项目特有：",
+        {"q":"packageName","d":"com.netease.template","m":"template包的包名，默认为 com.netease.template"},
+        {"q":"shortPackageName","d":"template","m":"应用标识，默认为 template"},
+        {"q":"applicationClass","d":"YXApplication","m":"应用入口类名，默认为 YXApplication"}
     ],
     "update":[
         "使用说明：",
@@ -123,12 +128,12 @@
         {"q":"reqAbstract","d":"BaseRequest","m":"请求基类名称，不带类名的前缀，默认为 BaseRequest"},
         {"q":"modelAbstract","d":"HTTPModel","m":"数据模型基类名称，不带类名的前缀，默认为 HTTPModel"},
         "",
-        "以下参数 Objective-C 特有：",
+        "以下参数在生成 Objective-C 模型和请求文件时特有：",
         {"q":"namePrefix","d":"HT","m":"生成的文件名、类名的前缀，默认为 HT"},
         {"q":"reqHeaders","d":"Requests","m":"包含所有数据请求的头文件名称，不带类名的前缀，默认为 Requests"},
         {"q":"modelHeaders","d":"Models","m":"包含所有数据模型的头文件名称，不带类名的前缀，默认为 Models"},
         "",
-        "以下参数 Java 特有：",
+        "以下参数在生成 Java 模型和请求文件时特有：",
         {"q":"appPackage","d":"com.netease","m":"应用的包名，默认为 com.netease"},
         {"q":"modelPackage","d":"hthttp.model","m":"模型的相对包名，默认为 hthttp.model"},
         {"q":"reqPackage","d":"hthttp.httptask","m":"http请求的相对包名，默认为 hthttp.httptask"}
