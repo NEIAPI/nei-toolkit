@@ -1,3 +1,6 @@
+0.2.1
+    - 修正WEBAPP模板中模块基类的JS错误
+
 0.2.0   (2015-12-08)
     - 支持Object-C语言Mobile数据模型导出
     - 支持Object-C语言Mobile请求对象导出
