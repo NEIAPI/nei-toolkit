@@ -112,15 +112,32 @@ nei build <IDS> [参数]
 
 针对nei build指令可用的参数包括：
 
-| 简写 | 全称 | 描述 |
-| :--- | :--- | :--- |
-| -h | --help    | 显示build命令的帮助信息 |
-| -p | --project | 指定项目目录，默认为当前目录 |
-| -t | --template | 指定用于构建的模板实现文件，默认使用内建的webapp模板构建 |
-| -w | --overwrite | 是否覆盖已存在的MOCK数据文件，默认不覆盖 |
-| 无 | --engine | 如果使用内建的webapp模板构建，此参数用于指定使用的模板引擎，支持内建模板引擎：freemarker、velocity、其他nodejs模板引擎，默认为freemarker引擎 |
-| 无 | --webRoot | 如果使用内建的webapp模板构建，此参数用于指定WEBROOT目录，默认根据maven目录结构规范，相对于 -p 路径的 src/main/webapp/ |
-| 无 | --viewRoot | 如果使用内建的webapp模板构建，此参数用于指定服务器端视图模板目录，默认根据maven目录结构规范，相对于 -p 路径的 src/main/webapp/WEB-INF/views/ |
+| 简写 | 全称 | 默认值 | 描述 |
+| :--- | :--- | :--- | :--- |
+| -h | --help |  | 显示build命令的帮助信息 |
+| -p | --project | ./ | 指定项目目录，默认为当前目录 |
+| -t | --template | webapp | 指定用于构建的模板实现文件 |
+| -w | --overwrite | false | 是否覆盖已存在的 MOCK 数据文件 |
+| -c | --config | | 参数配置文件路径，避免命令行参数太多导致书写不便 |
+| -tp | --templatePath | | 模板路径，默认为空，使用时必须指定 |
+| -tdp | --templateDataPath | | 模板的数据文件路径，默认为空，文件内容须是有效的 json |
+| -pt | --projectType | hz.netease | 项目类型 |
+| 以下参数对于使用 webapp 模板的项目特有： |
+| 无 | --engine | | 如果使用内建的webapp模板构建，此参数用于指定使用的模板引擎，支持内建模板引擎：freemarker、velocity、其他nodejs模板引擎，默认为freemarker引擎 |
+| 无 | --webRoot | | 如果使用内建的webapp模板构建，此参数用于指定WEBROOT目录，默认根据maven目录结构规范，相对于 -p 路径的 src/main/webapp/ |
+| 无 | --viewRoot | | 如果使用内建的webapp模板构建，此参数用于指定服务器端视图模板目录，默认根据maven目录结构规范，相对于 -p 路径的 src/main/webapp/WEB-INF/views/ |
+| 以下参数对于使用 mobile 模板的项目特有：|
+| l | --lang | oc | 要导出的语言标识，支持的语言有 oc、java 等 |
+| 无 | --reqAbstract | BaseRequest | 请求基类名称，不带类名的前缀 |
+| 无 | --modelAbstract | HTTPModel | 数据模型基类名称，不带类名的前缀 |
+| 以下参数在生成 mobile 项目的 Objective-C 模型和请求文件时特有：|
+| 无 | --namePrefix | HT | 生成的文件名、类名的前缀，默认为 HT |
+| 无 | --reqHeaders | Requests | 包含所有数据请求的头文件名称，不带类名的前缀 |
+| 无 | --modelHeaders | Models | 包含所有数据模型的头文件名称，不带类名的前缀 |
+| 以下参数在生成 mobile 项目的 Java 模型和请求文件时特有：|
+| 无 | --appPackage | com.netease | 应用的包名 |
+| 无 | --modelPackage | hthttp.model | 模型的相对包名 |
+| 无 | --reqPackage | hthttp.httptask | http请求的相对包名 |
 
 使用范例：
 
@@ -257,17 +274,22 @@ nei mobile <ID> [参数]
 针对nei export指令可用的参数包括：
 
 | 简写 | 全称 | 描述 |
-| :--- | :--- | :--- |
-| -h | --help    | 显示mobile命令帮助信息 |
-| -o | --output  | 指定输出目录，默认为当前目录 |
-| -w | --overwrite | 是否覆盖已存在的配置文件，默认不覆盖 |
-| -l | --lang    | 要导出的语言标识，默认为oc，可选oc、java等 |
-| 无 | --author  | 注释中作者姓名，默认netease |
-| 无 | --namePrefix  | 生成的文件名、类名的前缀，默认为 HT |
-| 无 | --reqAbstract  | 请求基类名称，不带类名的前缀，默认为 BaseRequest |
-| 无 | --reqHeaders  | 包含所有数据请求的头文件名称，不带类名的前缀，默认为 Requests |
-| 无 | --modelAbstract  | 数据模型基类名称，不带类名的前缀，默认为 HTTPModel |
-| 无 | --modelHeaders  | 包含所有数据模型的头文件名称，不带类名的前缀，默认为 Models |
+| :--- | :--- | :--- | :--- |
+| -h | --help | | 显示mobile命令帮助信息 |
+| -o | --output | | 指定输出目录，默认为当前目录 |
+| -w | --overwrite | false | 是否覆盖已存在的配置文件，默认不覆盖 |
+| l | --lang | oc | 要导出的语言标识，支持的语言有 oc、java 等 |
+| 无 | --reqAbstract | BaseRequest | 请求基类名称，不带类名的前缀 |
+| 无 | --modelAbstract | HTTPModel | 数据模型基类名称，不带类名的前缀 |
+| 无 | --author | 默认netease | 注释中作者姓名 |
+| 以下参数在生成 Objective-C 模型和请求文件时特有：|
+| 无 | --namePrefix | HT | 生成的文件名、类名的前缀，默认为 HT |
+| 无 | --reqHeaders | Requests | 包含所有数据请求的头文件名称，不带类名的前缀 |
+| 无 | --modelHeaders | Models | 包含所有数据模型的头文件名称，不带类名的前缀 |
+| 以下参数在生成 Java 模型和请求文件时特有：|
+| 无 | --appPackage | com.netease | 应用的包名 |
+| 无 | --modelPackage | hthttp.model | 模型的相对包名 |
+| 无 | --reqPackage | hthttp.httptask | http请求的相对包名 |
 
 使用范例
 
