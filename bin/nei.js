@@ -78,7 +78,11 @@ var batch = function(name,event){
         run.call(this,'mock',event);
     },
     mobile:function(event){
-        run.call(this,'mobile',event);
+        event.stopped = !0;
+        var opt = event.options||{};
+        opt.action = 'mobile';
+        this.format(opt.action,opt);
+        run.call(this,opt.action,event);
     }
 })).exec(
     process.argv.slice(2)

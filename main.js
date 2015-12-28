@@ -89,8 +89,7 @@ exports.nei = function(config,callback){
     }
     if (!!msg){
         _logger.error(msg,config.id);
-        process.exit(1);
-        return;
+        return process.exit(1);
     }
     // generator config
     var conf = _util.merge(
@@ -111,9 +110,9 @@ exports.nei = function(config,callback){
                bmap[conf.template]||bmap.webapp;
 
     if (config.template === 'mobile') {
-        name = util.format(name, config.l);
+        name = util.format(name, config.lang);
     } else if (conf.template === 'mobile') {
-        name = util.format(name, conf.l);
+        name = util.format(name, conf.lang);
     }
 
     var Builder;
@@ -229,7 +228,7 @@ exports.export = function(config,callback){
     });
 };
 /**
- * export mobile model
+ * export mobile model and requests
  * @param  {Object}  config - config object
  * @param  {String}  config.id          - nei project id
  * @param  {String}  config.output      - path to output
