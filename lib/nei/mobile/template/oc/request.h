@@ -6,7 +6,7 @@
 //
 //  Auto build by NEI Builder
 
-#import "{{conf.prefix}}{{conf.base}}.h"
+#import "{{conf.base}}.h"
 {# pre classes #}
 {%- for model in req.reqModels %}
 @class {{conf.prefix}}{{model}};
@@ -15,7 +15,7 @@
 /**
  *  {{req.description}}
  */
-@interface {{conf.prefix}}{{req.name}} : {{conf.prefix}}{{conf.base}}
+@interface {{conf.prefix}}{{req.name}} : {{conf.base}}
 {% for header in req.reqVarHeaders %}
 /**
  *  {{header.desc}}

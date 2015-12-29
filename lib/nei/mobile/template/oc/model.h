@@ -6,7 +6,7 @@
 //
 //  Auto build by NEI Builder
 
-#import "{{conf.prefix}}{{conf.model}}.h"
+#import "{{conf.model}}.h"
 {# pre classes #}
 {%- for kls in type.klses %}
 @class {{conf.prefix}}{{kls}};
@@ -15,7 +15,7 @@
 /**
  *  {{type.description}}
  */
-@interface {{conf.prefix}}{{type.name}} : {{conf.prefix}}{{conf.model}}
+@interface {{conf.prefix}}{{type.name}} : {{conf.model}}
 {% for attr in type.props %}
 /**
  *  {{attr.description}}
