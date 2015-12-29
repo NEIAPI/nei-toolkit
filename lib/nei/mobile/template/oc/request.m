@@ -1,19 +1,22 @@
 //
-//  {{conf.prefix}}{{req.name}}Request.m
+//  {{conf.prefix}}{{req.className}}Request.m
 //
 //  Created by {{conf.author}} on {{conf.month}}/{{conf.day}}/{{conf.year}}.
 //  Copyright © {{conf.year}} NetEase. All rights reserved.
 //
 //  Auto build by NEI Builder
 
-#import "{{conf.prefix}}{{req.name}}.h"
+#import "{{conf.prefix}}{{req.className}}.h"
 #import "NSObject+HTModel.h"
 {% if req.resModel %}#import "{{conf.prefix}}{{req.resModel}}.h"{% endif%}
 
+@class "{{conf.prefix}}{{req.className}}.h";
+
 /**
- *  {{req.description}}
+ *  name: {{req.name}}
+ *  description: {{req.description}}
  */
-@implementation {{conf.prefix}}{{req.name}}
+@implementation {{conf.prefix}}{{req.className}}
 
 + (RKRequestMethod)requestMethod {
     return RKRequestMethod{{req.method}};

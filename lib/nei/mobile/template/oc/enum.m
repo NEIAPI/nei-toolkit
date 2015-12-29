@@ -6,7 +6,7 @@
 //
 //  Auto build by NEI Builder
 
-#import "Enum.h"
+#import "{{conf.prefix}}ModelEnums.h"
 
 {% for enu in enums -%}
 /**

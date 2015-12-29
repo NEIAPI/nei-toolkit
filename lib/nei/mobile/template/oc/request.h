@@ -1,5 +1,5 @@
 //
-//  {{conf.prefix}}{{req.name}}Request.h
+//  {{conf.prefix}}{{req.className}}Request.h
 //
 //  Created by {{conf.author}} on {{conf.month}}/{{conf.day}}/{{conf.year}}.
 //  Copyright © {{conf.year}} NetEase. All rights reserved.
@@ -13,9 +13,10 @@
 {%- endfor %}
 
 /**
- *  {{req.description}}
+ *  name: {{req.name}}
+ *  description: {{req.description}}
  */
-@interface {{conf.prefix}}{{req.name}} : {{conf.base}}
+@interface {{conf.prefix}}{{req.className}} : {{conf.base}}
 {% for header in req.reqVarHeaders %}
 /**
  *  {{header.desc}}

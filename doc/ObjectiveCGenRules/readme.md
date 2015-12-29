@@ -115,8 +115,7 @@ extern NSString * const {{namePrefix}}{{类型名}}{{枚举的 key2}};
 
 ```objective-c
 
-// 固定写死
-#import "Enum.h"
+#import "{{namePrefix}}ModelEnums.h"
 
 // NEI 中的描述信息
 // 循环输出所有枚举项
@@ -184,7 +183,7 @@ NEI 定义中不包括字典类型( `Hash` 表)、`NSDate` 类型，不需要额
 //     a. responseMapping 方法返回：[{{namePrefix}}{{自定义类型名}} defaultResponseMapping]
 //     b. keyPath 方法返回：@"{{参数名}}"
 //
-//  2. 如果输出参数是自定义类型 ResultData，则：
+//  2. 如果输出参数是自定义类型 ResultData 并且 result 字段的类型不是基本类型，则：
 //     a. responseMapping 方法返回：[{{namePrefix}}{{result 字段的类型名}} defaultResponseMapping]
 //     b. keyPath 方法返回：@"result"
 //
@@ -335,5 +334,3 @@ NSDictionary *dic = [self ht_modelToJSONObject:[self headerPropertyList]];
 1. 枚举统一放在一个文件中描述，头文件为 `HTModelEnums.h`，实现文件为 `HTModelEnums.m`，HT 为默认前缀。
 2. 生成两个头文件：`HTModels.h` 和 `HTRequests.h`，前者包含所有生成的 Model 的头文件，后者包括所有生成的 `Request` 的头文件。
 
-
-### 完

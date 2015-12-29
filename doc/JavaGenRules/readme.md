@@ -234,6 +234,3 @@ public class {{请求类名}}HttpTask extends BaseFileUploadHttpRequestTask {
 }
 
 ```
-
-
-### 完
