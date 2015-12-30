@@ -13,10 +13,6 @@
 {%- endfor %}
 {% if req.resModel && req.reqModels.indexOf(req.resModel) == -1 %}#import "{{conf.prefix}}{{req.resModel}}.h"{% endif%}
 
-/**
- *  name: {{req.name}}
- *  description: {{req.description}}
- */
 @implementation {{conf.prefix}}{{req.className}}
 
 + (RKRequestMethod)requestMethod {
