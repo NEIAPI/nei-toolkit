@@ -50,7 +50,7 @@
         "以下参数对于使用 mobile 模板的项目特有：",
         {"j":"l","q":"lang","d":"oc","m":"要导出的语言标识，支持的语言有 oc、java 等"},
         {"q":"author","d":"netease","m":"构建者名称"},
-        {"q":"reqAbstract","d":"HTBaseRequest","m":"请求基类名称，不带类名的前缀"},
+        {"q":"reqAbstract","d":"HTBaseRequest","m":"请求基类名称，不带类名的前缀。如果指定语言是 java，它的默认值为BaseHttpStringRequestTask"},
         {"q":"modelAbstract","d":"HTHTTPModel","m":"数据模型基类名称，不带类名的前缀"},
         "",
         "以下参数在生成 mobile 项目的 Objective-C 模型和请求文件时特有：",

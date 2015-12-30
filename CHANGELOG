@@ -1,3 +1,7 @@
+0.2.2
+    - mock data 优先使用 defaultValue
+    - 生成 java 工程模板并集成 Requests 和 Models 文件
+    - 生成 iOS 工程模板并集成 Requests 和 Models 文件
 0.2.1
     - 修正WEBAPP模板中模块基类的JS错误
 
