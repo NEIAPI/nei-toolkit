@@ -8,7 +8,6 @@
 
 package {{conf.aPkg}}.{{conf.mPkg}};
 
-import com.netease.hthttp.model.HTBaseModel;
 {%- for pkg in type.pkgs %}
 import {{loop.key}};
 {%- endfor %}
@@ -16,7 +15,7 @@ import {{loop.key}};
 /**
  *  {{type.description}}
  */
-public class {{type.name}} extends HTBaseModel {
+public class {{type.name}} {
     {% for attr in type.props %}
     {%- if attr.description -%}
     /**
