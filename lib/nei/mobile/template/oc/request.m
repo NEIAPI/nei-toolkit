@@ -9,7 +9,7 @@
 #import "{{conf.prefix}}{{req.className}}.h"
 #import "NSObject+HTModel.h"
 {%- for model in req.reqModels %}
-#import "{{conf.prefix}}{{model}}.h";
+#import "{{conf.prefix}}{{model}}.h"
 {%- endfor %}
 {% if req.resModel && req.reqModels.indexOf(req.resModel) == -1 %}#import "{{conf.prefix}}{{req.resModel}}.h"{% endif%}
 

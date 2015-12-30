@@ -136,7 +136,7 @@ nei build <IDS> [参数]
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
 | l | --lang | oc | 要导出的语言标识，支持的语言有 oc、java 等 |
-| 无 | --reqAbstract | BaseRequest | 请求基类名称，不带类名的前缀 |
+| 无 | --reqAbstract | BaseRequest | 请求基类名称，不带类名的前缀。如果语言是 java，则默认值为 BaseHttpStringRequestTask |
 | 无 | --modelAbstract | HTTPModel | 数据模型基类名称，不带类名的前缀 |
 
 >以下参数在生成 mobile 项目的 Objective-C 模型和请求文件时特有：
