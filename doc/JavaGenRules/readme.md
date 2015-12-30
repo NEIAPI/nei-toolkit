@@ -38,12 +38,10 @@
 // 文件包名
 package {{appPackage}}.{{modelPackage}};
 
-// Model 基类，固定写死
-import com.netease.hthttp.model.HTBaseModel;
 // 如果有数组类型，就导入下面这个包
 import java.util.List;
 
-public class {{数据类型名}} extends HTBaseModel {
+public class {{数据类型名}} {
     // 每个属性对应 NEI 上该数据类型的属性，修饰符为 private
     // 每个属性的前面加上注释，内容为 NEI 上该属性的描述信息
     private double id;
@@ -125,16 +123,16 @@ package {{appPackage}}.{{reqPackage}};
 
 // 导入基类的包，`BaseHttpStringRequestTask` 是默认基类，可以配置。
 // 如果传入的是全路径（即包含了 `.` 号，那包名使用该全路径，基类为路径以 `.` 号分割的最后一个名称）。
-// 如果传入的不是全路径，则包名前缀是 `com.netease.hthttp`。
-import com.netease.hthttp.BaseHttpStringRequestTask;
+// 如果传入的不是全路径，则包名前缀是 `com.netease.hearttouch.hthttp`。
+import com.netease.hearttouch.hthttp.BaseHttpStringRequestTask;
 // 固定要导入的包
-import com.netease.hthttp.HttpMethod;
+import com.netease.hearttouch.hthttp.HttpMethod;
 // 如果输入参数（url 参数或者 header）中有数组类型 `List`, 则导入下面这个包。
 import com.alibaba.fastjson.JSONArray;
 // 如果输入参数 ( url 参数或者 header ) 中有基本类型 `double` 或者 `boolean`, 则导入下面这个包。
 import com.alibaba.fastjson.JSONObject;
 // 默认请求基类
-import com.netease.hthttp.BaseHttpStringRequestTask;
+import com.netease.hearttouch.hthttp.BaseHttpStringRequestTask;
 
 // 其他需要导入的包，完整路径，如用到的模型文件等。
 import {{CustomModel}};
@@ -203,8 +201,8 @@ public class {{请求类名}}HttpTask extends BaseHttpStringRequestTask {
 package {{appPackage}}.{{reqPackage}};
 
 // 固定需要导入的包
-import com.netease.hthttp.HttpMethod;
-import com.netease.hthttp.multipart.fileupload.http.BaseFileUploadHttpRequestTask;
+import com.netease.hearttouch.hthttp.HttpMethod;
+import com.netease.hearttouch.hthttp.multipart.fileupload.http.BaseFileUploadHttpRequestTask;
 import java.io.File;
 import java.util.HashMap;
 

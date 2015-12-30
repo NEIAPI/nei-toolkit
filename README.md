@@ -295,7 +295,7 @@ nei mobile <ID> [参数]
 | -o | --output | | 指定输出目录，默认为当前目录 |
 | -w | --overwrite | false | 是否覆盖已存在的配置文件，默认不覆盖 |
 | l | --lang | oc | 要导出的语言标识，支持的语言有 oc、java 等 |
-| 无 | --reqAbstract | BaseRequest | 请求基类名称，不带类名的前缀 |
+| 无 | --reqAbstract | BaseRequest | 请求基类名称，不带类名的前缀。如果语言是 java，则默认值为 BaseHttpStringRequestTask |
 | 无 | --modelAbstract | HTTPModel | 数据模型基类名称，不带类名的前缀 |
 | 无 | --author | 默认netease | 注释中作者姓名 |
 
