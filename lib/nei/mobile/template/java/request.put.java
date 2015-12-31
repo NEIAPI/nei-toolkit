@@ -30,16 +30,21 @@ public class {{req.name}} extends BaseFileUploadHttpRequestTask {
         {% endfor %}
         initMimeType(mFiles);
         {% if req.hasHost %}
-        @Override
-        public String getUrl() {
-        {%- else %}
-        protected String getApi() {
-        {%- endif %}
-            return "{{req.path}}";
-        }
+    }
 
-        public Class getModelClass() {
-            return {{req.outputModel}};
-        }
+    {%- if req.hasHost %}
+    @Override
+    public String getUrl() {
+        return "{{req.path}}";
+    }
+    {%- endif %}
+
+    @Override
+    protected String getApi() {
+        return {% if req.hasHost %}null{% else %}"{{req.path}}"{% endif %};
+    }
+
+    public Class getModelClass() {
+        return {{req.outputModel}};
     }
 }

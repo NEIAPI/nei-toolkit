@@ -26,17 +26,21 @@ public class {{req.name}} extends {{req.baseClass}} {
         {% for param in req.params -%}
         {{param.container}}.put("{{param.key}}", {{param.valueExp}});{% if param.desc %} // {{param.desc}} {% endif %}
         {% endfor %}
-        @Override
-        {%- if req.hasHost %}
-        public String getUrl() {
-        {%- else %}
-        protected String getApi() {
-        {%- endif %}
-            return "{{req.path}}";
-        }
+    }
 
-        public Class getModelClass() {
-            return {{req.outputModel}};
-        }
+    {%- if req.hasHost %}
+    @Override
+    public String getUrl() {
+        return "{{req.path}}";
+    }
+    {%- endif %}
+
+    @Override
+    protected String getApi() {
+        return {% if req.hasHost %}null{% else %}"{{req.path}}"{% endif %};
+    }
+
+    public Class getModelClass() {
+        return {{req.outputModel}};
     }
 }

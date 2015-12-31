@@ -129,7 +129,7 @@ import com.netease.hearttouch.hthttp.BaseHttpStringRequestTask;
 import com.netease.hearttouch.hthttp.HttpMethod;
 // 如果输入参数（url 参数或者 header）中有数组类型 `List`, 则导入下面这个包。
 import com.alibaba.fastjson.JSONArray;
-// 如果输入参数 ( url 参数或者 header ) 中有基本类型 `double` 或者 `boolean`, 则导入下面这个包。
+// 如果输入参数 ( url 参数或者 header ) 中有自定义类型时, 则导入下面这个包。
 import com.alibaba.fastjson.JSONObject;
 // 默认请求基类
 import com.netease.hearttouch.hthttp.BaseHttpStringRequestTask;
@@ -139,7 +139,8 @@ import {{CustomModel}};
 
 // `请求类名` 在 NEI 中定义
 public class {{请求类名}}HttpTask extends BaseHttpStringRequestTask {
-
+    
+    //如果输入参数是一个导入的类型，则参数名称为"导入类型名称的首字母小写形式"
     public {{请求类名}}HttpTask(double param1, // 注释，NEI上的变量描述，下同
                                String param2,
                                boolean param3,
