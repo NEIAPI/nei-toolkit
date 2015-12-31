@@ -138,7 +138,7 @@ nei build <IDS> [参数]
 | l | --lang | oc | 要导出的语言标识，支持的语言有 oc、java 等 |
 | 无 | --reqAbstract | BaseRequest | 请求基类名称，不带类名的前缀。如果语言是 java，则默认值为 BaseHttpStringRequestTask |
 | 无 | --modelAbstract | HTTPModel | 数据模型基类名称，不带类名的前缀 |
-| 无 | --resOut |  | 生成的 NEI 资源相对工程的路径，如不指定，语言为 Java 是值为'app/src/main/hthttp-gen/'，语言为 Objective-C 时值为'{产品名}+/NetWork/' |
+| 无 | --resOut |  | 生成的 NEI 资源相对工程的路径，如不指定，语言为 Java 时值为'app/src/main/hthttp-gen/'，语言为 Objective-C 时值为'{产品名}+/NetWork/' |
 
 >以下参数在生成 mobile 项目的 Objective-C 模型和请求文件时特有：
 
@@ -299,7 +299,7 @@ nei mobile <ID> [参数]
 | 无 | --author | 默认netease | 注释中作者姓名 |
 | 无 | --reqAbstract | BaseRequest | 请求基类名称，不带类名的前缀。如果语言是 java，则默认值为 BaseHttpStringRequestTask |
 | 无 | --modelAbstract | HTTPModel | 数据模型基类名称，不带类名的前缀 |
-| 无 | --resOut |  | 生成的 NEI 资源相对工程的路径，如不指定，语言为 Java 是值为'app/src/main/hthttp-gen/'，语言为 Objective-C 时值为'{产品名}+/NetWork/' |
+| 无 | --resOut |  | 生成的 NEI 资源相对工程的路径，如不指定，语言为 Java 时值为'app/src/main/hthttp-gen/'，语言为 Objective-C 时值为'{产品名}+/NetWork/' |
 
 >以下参数在生成 Objective-C 模型和请求文件时特有：
 
