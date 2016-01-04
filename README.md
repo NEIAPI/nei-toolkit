@@ -2,18 +2,20 @@
 
 本工具提供了[NEI平台](http://nei.hz.netease.com/)配套的自动化功能，本工具的主要特性有：
 
-* 支持根据[NEI平台](http://nei.hz.netease.com/)定制生成项目初始结构及代码
-* 支持[本地容器PUER](https://github.com/leeluolee/puer)运行配置自动生成
-* 支持[NEJ发布工具](https://github.com/genify/toolkit2)配置文件自动生成
-* 支持[Fiddler](http://www.telerik.com/fiddler)工具代理本地模拟数据，接口配置文件导出
-* 支持[POSTMAN](https://www.getpostman.com/)工具接口配置文件导出
+* 支持根据 [NEI平台](http://nei.hz.netease.com/) 定制生成项目初始结构及代码
+* 支持 [本地容器PUER](https://github.com/leeluolee/puer) 运行配置自动生成
+* 支持 [NEJ发布工具](https://github.com/genify/toolkit2) 配置文件自动生成
+* 支持 [Fiddler](http://www.telerik.com/fiddler) 工具代理本地模拟数据，接口配置文件导出
+* 支持 [POSTMAN](https://www.getpostman.com/) 工具接口配置文件导出
 * 支持自动生成移动端数据模型、请求类代码
 * 支持自动导出模拟数据
 
 # 工具使用
 
 ## 环境配置
-构建工具基于[nodejs](http://nodejs.org/)平台，因此需要使用者先安装nodejs环境，[nodejs](http://nodejs.org/)在各平台下的安装配置请参阅官方说明。
+构建工具基于[Node.js](http://nodejs.org/)平台，因此需要使用者先安装 Node.js 环境，[Node.js](http://nodejs.org/)在各平台下的安装配置请参阅官方说明。
+
+>需要安装的 Node.js 版本须为 V4.2 以上
 
 ## 使用说明
 
