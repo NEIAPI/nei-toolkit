@@ -13,7 +13,7 @@
 # 工具使用
 
 ## 环境配置
-构建工具基于 [Node.js](http://nodejs.org/) 平台，因此需要使用者先安装 [Node.js](http://nodejs.org/) 环境，[Node.js](http://nodejs.org/) 在各平台下的安装配置请参阅官方说明。
+构建工具基于 [Node.js](http://nodejs.org/) 平台，因此需要使用者先安装 Node.js 环境，Node.js 在各平台下的安装配置请参阅官方说明。
 
 >需要安装的 Node.js 版本须为 v4.2 及以上
 
@@ -112,7 +112,7 @@ nei build <IDS> [参数]
 
 ![查看NEI平台ID信息](./doc/res/pid.png)
 
->针对nei build指令可用的参数包括：
+>针对 nei build 指令可用的参数包括：
 
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
@@ -121,9 +121,6 @@ nei build <IDS> [参数]
 | -t | --template | webapp | 指定用于构建的模板实现文件 |
 | -w | --overwrite | false | 是否覆盖已存在的 MOCK 数据文件 |
 | -c | --config | | 参数配置文件路径，避免命令行参数太多导致书写不便 |
-| -tp | --templatePath | | 模板路径，默认为空，使用时必须指定 |
-| -tdp | --templateDataPath | | 模板的数据文件路径，默认为空，文件内容须是有效的 json |
-| -pt | --projectType | hz.netease | 项目类型 |
 
 >以下参数对于使用 webapp 模板的项目特有：
 
@@ -137,6 +134,9 @@ nei build <IDS> [参数]
 
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
+| -tp | --templatePath | | 模板路径，默认为空，使用时必须指定 |
+| -tdp | --templateDataPath | | 模板的数据文件路径，默认为空，文件内容须是有效的 json |
+| -pt | --projectType | hz.netease | 项目类型 |
 | l | --lang | oc | 要导出的语言标识，支持的语言有 oc、java 等 |
 | 无 | --reqAbstract | BaseRequest | 请求基类名称，不带类名的前缀。如果语言是 java，则默认值为 BaseHttpStringRequestTask |
 | 无 | --modelAbstract | HTTPModel | 数据模型基类名称，不带类名的前缀 |
@@ -180,7 +180,7 @@ nei build 23456798 -p /path/to/project/
 nei update [IDS] [参数]
 ``` 
 
-其中 [IDS] 表示 NEI 平台中对应的项目 ID，多个项目 ID 用逗号分隔，不传则表示更新所有已通过 “nei build” 生成的项目
+其中 [IDS] 表示 NEI 平台中对应的项目 ID，多个项目 ID 用逗号分隔，不传则表示更新所有已通过 'nei build' 生成的项目
 
 针对 nei update 指令可用的参数包括：
 
@@ -192,7 +192,7 @@ nei update [IDS] [参数]
 
 使用范例：
 
-更新当前目录下所有通过 “nei build” 生成的项目
+更新当前目录下所有通过 'nei build' 生成的项目
 
 ```bash
 nei update
@@ -337,10 +337,10 @@ nei mobile 23456798 -l java -o /path/to/output/
 
 ## 0.2.1   (2015-12-30)
 
-* mock 数据优先使用NEI上配置的默认值
-* 生成 Java 工程模板并集成 Requests 和 Models 文件
+* mock 数据优先使用 NEI 上配置的默认值
+* 生成 Android 工程模板并集成 Requests 和 Models 文件
 * 生成 iOS 工程模板并集成 Requests 和 Models 文件
-* 修正 WEBAPP 模板中模块基类的 JS 错误
+* 修正 webapp 模板中模块基类的 JS 错误
 
 ## 0.2.0   (2015-12-08)
 

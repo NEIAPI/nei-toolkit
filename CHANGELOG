@@ -1,6 +1,9 @@
+0.2.2   (2016-1-6)
+    - 生成 iOS 工程模板时，自动更新项目的 pbxproj 文件
+
 0.2.1   (2015-12-30)
     - mock data 优先使用 defaultValue
-    - 生成 java 工程模板并集成 Requests 和 Models 文件
+    - 生成 Java 工程模板并集成 Requests 和 Models 文件
     - 生成 iOS 工程模板并集成 Requests 和 Models 文件
     - 修正WEBAPP模板中模块基类的JS错误
 
