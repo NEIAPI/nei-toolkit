@@ -335,6 +335,11 @@ nei mobile 23456798 -l java -o /path/to/output/
 
 # 版本历史
 
+## 0.2.2   (2016-01-06)
+
+* 生成 iOS 工程模板时，自动更新项目的 pbxproj 文件
+* 更新 bower.json 模板中 express-freemarker 下载地址
+
 ## 0.2.1   (2015-12-30)
 
 * mock 数据优先使用 NEI 上配置的默认值
