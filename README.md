@@ -223,6 +223,7 @@ nei mock <ID> [参数]
 | -w | --overwrite | false | 是否覆盖已存在的 MOCK 数据文件，默认不覆盖 |
 | -t | --type | 0 | 要导出的数据类型，0：模板+接口，1：模板，2：接口，默认为 0 |
 | -f | --fiddler | false | 如果 type 是 0 或者 2 的情况可以用此参数配置是否导出 fiddler 配置文件，默认不导出 |
+| -c | --charles | false | 如果 type 是 0 或者 2 的情况可以用此参数配置是否导出 charles 配置文件，默认不导出 |
 
 使用范例：
 
