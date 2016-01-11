@@ -193,10 +193,7 @@ exports.mock = function(config,callback){
         info:_log.log.bind(_log,'info'),
         warn:_log.log.bind(_log,'warn'),
         error:_log.log.bind(_log,'error')
-    })).mock({
-        type:config.type,
-        fiddler:config.fiddler
-    });
+    })).mock(config);
 };
 /**
  * export toolkit config file

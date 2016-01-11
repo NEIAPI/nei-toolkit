@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<?charles serialisation-version='2.0' ?>
+<mapLocal>
+    <toolEnabled>true</toolEnabled>
+    <mappings>
+        {%- for rule in rules %}
+        <mapLocalMapping>
+            <sourceLocation>
+                <protocol></protocol>
+                <host></host>
+                <port></port>
+                <path>{{rule.path}}</path>
+            </sourceLocation>
+            <dest>{{root}}{{rule.mock}}.json</dest>
+            <enabled>true</enabled>
+            <caseSensitive>true</caseSensitive>
+        </mapLocalMapping>
+        {%- endfor %}
+    </mappings>
+</mapLocal>

@@ -1,3 +1,5 @@
+0.2.3   (2016-01-11)
+    - mock 命令增加 charles 参数，支持配置文件导出
 0.2.2   (2016-01-06)
     - 生成 iOS 工程模板时，自动更新项目的 pbxproj 文件
     - 更新 bower.json 模板中 express-freemarker 下载地址
