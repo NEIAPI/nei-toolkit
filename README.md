@@ -243,6 +243,12 @@ nei mock 233454 -t 2 -o /path/to/output/
 
 ![Fiddler导入配置](./doc/res/fiddler.png)
 
+导出的 Charles 配置文件可以通过以下方式导入 [Charles](https://www.charlesproxy.com/) 工具:
+
+选择 Tools --> Map Local...
+
+![Charles导入配置](./doc/res/charles.png)
+
 ## export
 
 导出第三方工具的配置文件，指令的运行格式为：
