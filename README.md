@@ -342,6 +342,11 @@ nei mobile 23456798 -l java -o /path/to/output/
 
 # 版本历史
 
+## 0.2.3   (2016-01-12)
+
+* 使用 mobile 命令第一次导出 iOS 资源文件时，需要更新 pbx 文件
+* mock 命令增加 charles 参数，支持配置文件导出
+
 ## 0.2.2   (2016-01-06)
 
 * 生成 iOS 工程模板时，自动更新项目的 pbxproj 文件
