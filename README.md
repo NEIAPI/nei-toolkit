@@ -120,7 +120,7 @@ nei build <IDS> [参数]
 | -p | --project | ./ | 指定项目目录，默认为当前目录 |
 | -t | --template | webapp | 指定用于构建的模板实现文件 |
 | -w | --overwrite | false | 是否覆盖已存在的 MOCK 数据文件 |
-| -c | --config | | 参数配置文件路径，避免命令行参数太多导致书写不便 |
+| -c | --config | | 参数配置文件路径，优先级低于命令行中的参数 |
 
 >以下参数对于使用 webapp 模板的项目特有：
 
@@ -149,6 +149,7 @@ nei build <IDS> [参数]
 | 无 | --namePrefix | HT | 生成的文件名、类名的前缀，默认为 HT |
 | 无 | --reqHeaders | Requests | 包含所有数据请求的头文件名称，不带类名的前缀 |
 | 无 | --modelHeaders | Models | 包含所有数据模型的头文件名称，不带类名的前缀 |
+| 无 | --resOnly |  | 更新项目文件时，是否只更新 NEI 上的资源文件 |
 
 >以下参数在生成 mobile 项目的 Java 模型和请求文件时特有： 
 
@@ -303,7 +304,7 @@ nei mobile <ID> [参数]
 | :--- | :--- | :--- | :--- |
 | -h | --help | | 显示 mobile 命令帮助信息 |
 | -o | --output | | 指定输出目录，默认为当前目录 |
-| -c | --config | | 参数配置文件路径，避免命令行参数太多导致书写不便 |
+| -c | --config | | 参数配置文件路径，优先级低于命令行中的参数 |
 | -l | --lang | oc | 要导出的语言标识，支持的语言有 oc、java 等 |
 | -f | --force | false | 是否强制更新 OC 工程的 .pbxproj 文件 |
 | 无 | --author | netease | 注释中作者姓名 |
