@@ -303,6 +303,7 @@ nei mobile <ID> [参数]
 | :--- | :--- | :--- | :--- |
 | -h | --help | | 显示 mobile 命令帮助信息 |
 | -o | --output | | 指定输出目录，默认为当前目录 |
+| -c | --config | | 参数配置文件路径，避免命令行参数太多导致书写不便 |
 | -w | --overwrite | false | 是否覆盖已存在的配置文件，默认不覆盖 |
 | -l | --lang | oc | 要导出的语言标识，支持的语言有 oc、java 等 |
 | -f | --force | false | 是否强制更新 OC 工程的 .pbxproj 文件 |
