@@ -240,10 +240,10 @@ exports.export = function (config, callback) {
  * @param  {Function} callback - build finish callback
  */
 exports.mobile = function (config, callback) {
-    var cwd = process.cwd() + '/',
-        output = _path.absolute(
-            config.output + '/', cwd
-        );
+    var cwd = process.cwd() + '/';
+    var output = _path.absolute(
+        config.output + '/', cwd
+    );
     var lang = config.lang;
     // check language
     if (!/^(oc|java)$/.test(lang)) {
@@ -255,7 +255,7 @@ exports.mobile = function (config, callback) {
             message: 'done'
         });
     }
-    (new (require(util.format('./lib/nei/mobile.%s.js', lang)))({
+    (new (require(`./lib/nei/mobile.${lang}.js`))({
         id: config.id,
         proRoot: output,
         overwrite: config.overwrite,
