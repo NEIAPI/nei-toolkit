@@ -175,12 +175,12 @@ public class {{请求类名}}HttpTask extends BaseHttpStringRequestTask {
 
     // 根据返回值的类型，需返回不同的值，规则如下：
     // 1. 如果没有定义返回值，则返回: null。
-    // 2. 如果返回值为一个导入的 `ResultData`，根据 result 字段的类型，则返回：
-    //    a. 如果 result 为 String 类型，则返回 String.class。
-    //    b. 如果 result 为 Number 类型，则返回 Double.class。
-    //    c. 如果 result 为 Boolean 类型，则返回 Boolean.class。
-    //    d. 如果 result 为自定义类型 CustomModel，则返回 CustomModel.class。
-    //    e. 如果 result 是数组，则根据数组元素的类型，执行上述规则。
+    // 2. 如果返回值为一个导入的 `ResultData`（即只有一个可变类型字段），根据可变类型字段可变类型字段的类型，则返回：
+    //    a. 如果可变类型字段为 String 类型，则返回 String.class。
+    //    b. 如果可变类型字段为 Number 类型，则返回 Double.class。
+    //    c. 如果可变类型字段为 Boolean 类型，则返回 Boolean.class。
+    //    d. 如果可变类型字段为自定义类型 CustomModel，则返回 CustomModel.class。
+    //    e. 如果可变类型字段是数组，则根据数组元素的类型，执行上述规则。
     // 3. 如果返回值为一个导入的自定义类型 CustomModel（但不是 ResultData），则返回：CustomModel.class。
     // 4. 如果返回值只有一个字段，则根据它的类型，按规则 2 执行。
     // 5. 其他情况返回：null。

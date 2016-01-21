@@ -183,11 +183,11 @@ NEI 定义中不包括字典类型( `Hash` 表)、`NSDate` 类型，不需要额
 //     a. responseMapping 方法返回：[{{namePrefix}}{{自定义类型名}} defaultResponseMapping]
 //     b. keyPath 方法返回：@"{{参数名}}"
 //
-//  2. 如果输出参数是自定义类型 ResultData 并且 result 字段的类型不是基本类型，则：
-//     a. responseMapping 方法返回：[{{namePrefix}}{{result 字段的类型名}} defaultResponseMapping]
-//     b. keyPath 方法返回：@"result"
+//  2. 如果输出参数一个导入的 `ResultData`（即只有一个可变类型字段），则：
+//     a. responseMapping 方法返回：[{{namePrefix}}{{可变类型字段的类型名}} defaultResponseMapping]
+//     b. keyPath 方法返回：@"{{可变类型字段的名称}}"
 //
-//  3. 如果输出参数是一个导入的自定义类型（但不是 ResultData），则：
+//  3. 如果输出参数是一个导入的自定义类型（但不是 `ResultData`），则：
 //     a. responseMapping 方法返回：[{{namePrefix}}{{自定义类型名}} defaultResponseMapping]
 //     b. keyPath 方法返回：nil
 //
