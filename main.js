@@ -25,9 +25,9 @@ var API = {
 // export klass or api
 function global(map) {
     Object.keys(map).forEach(function (key) {
-        var file = map[key],
-            arr = file.split('#'),
-            mdl = require('./lib/' + arr[0] + '.js');
+        var file = map[key];
+        var arr = file.split('#');
+        var mdl = require('./lib/' + arr[0] + '.js');
         // for util/logger#Logger
         if (!!arr[1]) {
             // for util/logger#level,logger
@@ -44,20 +44,20 @@ function global(map) {
         }
         exports[key] = mdl;
     });
-};
+}
 // export constructor
 // export api
 global(KLASS);
 global(API);
 
 // bin api
-var fs = require('fs'),
-    util = require('util'),
-    _fs = require('./lib/util/file.js'),
-    _path = require('./lib/util/path.js'),
-    _util = require('./lib/util/util.js'),
-    _log = require('./lib/util/logger.js'),
-    _logger = _log.logger;
+var fs = require('fs');
+var util = require('util');
+var _fs = require('./lib/util/file.js');
+var _path = require('./lib/util/path.js');
+var _util = require('./lib/util/util.js');
+var _log = require('./lib/util/logger.js');
+var _logger = _log.logger;
 /**
  * build nei project
  * @param  {Object}  config - config object
@@ -66,19 +66,21 @@ var fs = require('fs'),
  * @param  {String}  config.project   - path to project root
  * @param  {String}  config.template  - path to template output
  * @param  {Boolean} config.overwrite - whether overwrite files existed
- * @param  {Function} callback - build finish callback
+ * @param  {String} config.lang - language
+ * @param  {Object} [argInstance] - Arg Class instance
+ * @param  {Function} [callback] - build finish callback
  * @return {Void}
  */
-exports.nei = function (config, callback) {
-    var cwd = process.cwd() + '/',
-        project = _path.absolute(
-            config.project + '/', cwd
-        ),
-        neiconf = project + 'nei.' + config.id + '/nei.json',
-        action = config.action || 'build';
+exports.nei = function (config, argInstance, callback) {
+    var cwd = process.cwd() + '/';
+    var project = _path.absolute(
+        config.project + '/', cwd
+    );
+    var existNeiConf = `${project}nei.${config.id}/nei.json'`;
+    var action = config.action || 'build';
     // check nei.json file
     var msg;
-    if (_fs.exist(neiconf)) {
+    if (_fs.exist(existNeiConf)) {
         if (action === 'build') {
             msg = 'use "nei update" to update nei project with id[%s]';
         }
@@ -87,7 +89,7 @@ exports.nei = function (config, callback) {
             msg = 'use "nei build" to build nei project with id[%s]';
         }
     }
-    if (!!msg) {
+    if (msg) {
         _logger.error(msg, config.id);
         return process.exit(1);
     }
@@ -96,18 +98,17 @@ exports.nei = function (config, callback) {
         {}, config
     );
     if (action === 'update') {
-        conf = require(neiconf);
+        conf = require(existNeiConf);
         conf.overwrite = !!config.overwrite;
     } else {
         conf.updateTime = 0;
     }
     // generator builder
     var bmap = {
-            webapp: './lib/nei/webapp.js',
-            mobile: './lib/nei/mobile.%s.js'
-        },
-        name = bmap[config.template] ||
-            bmap[conf.template] || bmap.webapp;
+        webapp: './lib/nei/webapp.js',
+        mobile: './lib/nei/mobile.%s.js'
+    };
+    var name = bmap[config.template] || bmap[conf.template] || bmap.webapp;
 
     if (config.template === 'mobile') {
         name = util.format(name, config.lang);
@@ -121,7 +122,7 @@ exports.nei = function (config, callback) {
     } catch (ex) {
         Builder = require(bmap.webapp);
     }
-    conf = _util.merge(conf, {
+    conf = Object.assign(conf, {
         proRoot: project,
         done: callback || function () {
         },
@@ -131,9 +132,9 @@ exports.nei = function (config, callback) {
         error: _log.log.bind(_log, 'error')
     });
     // do build or update
-    var builder = new Builder(conf),
-        handler = builder[action];
-    if (!!handler) {
+    var builder = new Builder(conf, argInstance);
+    var handler = builder[action];
+    if (handler) {
         handler.call(builder);
     } else {
         _logger.error('not supported action %s', action);
@@ -146,15 +147,15 @@ exports.nei = function (config, callback) {
  * @param  {String}  config.project   - path to project root
  * @param  {String}  config.template  - path to template output
  * @param  {Boolean} config.overwrite - whether overwrite files existed
- * @param  {Function} callback - build finish callback
+ * @param  {Function} [callback] - build finish callback
  * @return {Void}
  */
 exports.update = function (config, callback) {
-    var cwd = process.cwd() + '/',
-        project = _path.absolute(
-            config.project + '/', cwd
-        ),
-        list = fs.readdirSync(project);
+    var cwd = process.cwd() + '/';
+    var project = _path.absolute(
+        config.project + '/', cwd
+    );
+    var list = fs.readdirSync(project);
     if (!list || !list.length) {
         _logger.error('no nei project found in %s', project);
         process.exit(1);
@@ -181,10 +182,10 @@ exports.update = function (config, callback) {
  * @param  {Function} callback - build finish callback
  */
 exports.mock = function (config, callback) {
-    var cwd = process.cwd() + '/',
-        output = _path.absolute(
-            config.output + '/', cwd
-        );
+    var cwd = process.cwd() + '/';
+    var output = _path.absolute(
+        config.output + '/', cwd
+    );
     (new (require('./lib/nei/builder.js'))({
         id: config.id,
         proRoot: output,
@@ -208,10 +209,10 @@ exports.mock = function (config, callback) {
  * @param  {Function} callback - build finish callback
  */
 exports.export = function (config, callback) {
-    var cwd = process.cwd() + '/',
-        output = _path.absolute(
-            config.output + '/', cwd
-        );
+    var cwd = process.cwd() + '/';
+    var output = _path.absolute(
+        config.output + '/', cwd
+    );
     (new (require('./lib/nei/builder.js'))({
         id: config.id,
         proRoot: output,
@@ -251,9 +252,7 @@ exports.mobile = function (config, callback) {
             data: [lang],
             message: 'not supported language %s'
         });
-        return _log.log('info', {
-            message: 'done'
-        });
+        return process.exit(1);
     }
     (new (require(`./lib/nei/mobile.${lang}.js`))({
         id: config.id,

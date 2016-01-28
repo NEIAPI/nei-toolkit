@@ -96,15 +96,18 @@
     "以下参数对于使用 webapp 模板的项目特有：",
     {
       "q": "engine",
-      "m": "如果使用内建的 webapp 模板构建，此参数用于指定使用的模板引擎，支持内建模板引擎：freemarker、velocity、其他nodejs模板引擎，默认为freemarker引擎"
+      "m": "如果使用内建的 webapp 模板构建，此参数用于指定使用的模板引擎，支持内建模板引擎：freemarker、velocity、其他nodejs模板引擎，默认为freemarker引擎",
+      "f": "w"
     },
     {
       "q": "webRoot",
-      "m": "如果使用内建的 webapp 模板构建，此参数用于指定 WEBROOT 目录，默认根据 maven 目录结构规范，相对于 -p 路径的 src/main/webapp/"
+      "m": "如果使用内建的 webapp 模板构建，此参数用于指定 WEBROOT 目录，默认根据 maven 目录结构规范，相对于 -p 路径的 src/main/webapp/",
+      "f": "w"
     },
     {
       "q": "viewRoot",
-      "m": "如果使用内建的 webapp模板构建，此参数用于指定服务器端视图模板目录，默认根据 maven 目录结构规范，相对于 -p 路径的 src/main/webapp/WEB-INF/views/"
+      "m": "如果使用内建的 webapp模板构建，此参数用于指定服务器端视图模板目录，默认根据 maven 目录结构规范，相对于 -p 路径的 src/main/webapp/WEB-INF/views/",
+      "f": "w"
     },
     "",
     "以下参数对于使用 mobile 模板的项目特有：",
@@ -112,64 +115,76 @@
       "j": "l",
       "q": "lang",
       "d": "oc",
-      "m": "要导出的语言标识，支持的语言有 oc、java 等"
+      "m": "要导出的语言标识，支持的语言有 oc、java 等",
+      "f": "m"
     },
     {
       "q": "author",
       "d": "netease",
-      "m": "构建者名称"
+      "m": "构建者名称",
+      "f": "m"
     },
     {
       "q": "reqAbstract",
       "d": "HTBaseRequest",
-      "m": "请求基类名称，不带类名的前缀。如果指定语言是 Java，它的默认值为BaseHttpStringRequestTask"
+      "m": "请求基类名称，不带类名的前缀。如果指定语言是 Java，它的默认值为BaseHttpStringRequestTask",
+      "f": "m"
     },
     {
       "q": "modelAbstract",
       "d": "HTHTTPModel",
-      "m": "数据模型基类名称，不带类名的前缀"
+      "m": "数据模型基类名称，不带类名的前缀",
+      "f": "m"
     },
     {
       "q": "resOut",
-      "m": "生成的 NEI 资源相对工程的路径，如不指定，语言为 Java 是值为'app/src/main/hthttp-gen/'，语言为 Objective-C 时值为'{产品名}+/NetWork/'"
+      "m": "生成的 NEI 资源相对工程的路径，如不指定，语言为 Java 是值为'app/src/main/hthttp-gen/'，语言为 Objective-C 时值为'{产品名}+/NetWork/'",
+      "f": "m"
     },
     "",
     "以下参数在生成 mobile 项目的 Objective-C 模型和请求文件时特有：",
     {
       "q": "namePrefix",
       "d": "HT",
-      "m": "生成的文件名、类名的前缀，默认为 HT"
+      "m": "生成的文件名、类名的前缀，默认为 HT",
+      "f": "mo"
     },
     {
       "q": "reqHeaders",
       "d": "Requests",
-      "m": "包含所有数据请求的头文件名称，不带类名的前缀"
+      "m": "包含所有数据请求的头文件名称，不带类名的前缀",
+      "f": "mo"
     },
     {
       "q": "modelHeaders",
       "d": "Models",
-      "m": "包含所有数据模型的头文件名称，不带类名的前缀"
+      "m": "包含所有数据模型的头文件名称，不带类名的前缀",
+      "f": "mo"
     },
     {
       "q": "resOnly",
-      "m": "更新项目文件时，是否只更新 NEI 上的资源文件"
+      "m": "更新项目文件时，是否只更新 NEI 上的资源文件",
+      "f": "mo"
     },
     "",
     "以下参数在生成 mobile 项目的 Java 模型和请求文件时特有：",
     {
       "q": "appPackage",
       "d": "com.netease",
-      "m": "应用的包名"
+      "m": "应用的包名",
+      "f": "mj"
     },
     {
       "q": "modelPackage",
       "d": "hthttp.model",
-      "m": "模型的相对包名"
+      "m": "模型的相对包名",
+      "f": "mj"
     },
     {
       "q": "reqPackage",
       "d": "hthttp.httptask",
-      "m": "http请求的相对包名"
+      "m": "http请求的相对包名",
+      "f": "mj"
     }
   ],
   "update": [

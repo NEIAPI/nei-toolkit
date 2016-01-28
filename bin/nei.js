@@ -1,12 +1,16 @@
 #!/usr/bin/env node
 
-var main = require('../main.js'),
-    split = /[,;，；]/;
+'use strict';
+
+let main = require('../main.js');
+let Args = require('../lib/util/args.js');
+let splitChars = /[,;，；]/;
+
 // run command for single id
-var run = function (name, event) {
-    event.stopped = !0;
-    var opt = event.options || {},
-        id = (event.args || [])[0];
+let run = function (name, event) {
+    event.stopped = true;
+    let opt = event.options || {};
+    let id = (event.args || [])[0];
     if (!id) {
         this.show(name);
         process.exit(0);
@@ -17,52 +21,52 @@ var run = function (name, event) {
     }
 };
 // run command for batch ids
-var batch = function (name, event) {
-    event.stopped = !0;
-    var opt = event.options || {},
-        id = (event.args || [])[0] || '';
+let batch = function (name, event) {
+    event.stopped = true;
+    let opt = event.options || {};
+    let id = (event.args || [])[0] || '';
     if (!id) {
         this.show(name);
         process.exit(0);
     } else {
         this.format(name, opt);
-        id.split(split).forEach(function (it) {
+        id.split(splitChars).forEach(function (it) {
             opt.id = it;
             main[name](opt);
         });
     }
 };
 // do command
-(new (require('../lib/util/args.js'))({
+let options = {
     message: require('./nei.json'),
     package: require('../package.json'),
     msg: function () {
         process.exit(0);
     },
     build: function (event) {
-        event.stopped = !0;
-        var opt = event.options || {},
-            id = (event.args || [])[0];
+        event.stopped = true;
+        let opt = event.options || {};
+        let id = (event.args || [])[0];
         if (!id) {
             this.show('build');
             process.exit(0);
         } else {
             opt.action = 'build';
             this.format(opt.action, opt);
-            id.split(split).forEach(function (it) {
+            id.split(splitChars).forEach((it) => {
                 opt.id = it;
-                main.nei(opt);
+                main.nei(opt, this);
             });
         }
     },
     update: function (event) {
-        event.stopped = !0;
-        var opt = event.options || {},
-            id = (event.args || [])[0] || '';
+        event.stopped = true;
+        let opt = event.options || {};
+        let id = (event.args || [])[0] || '';
         opt.action = 'update';
         this.format(opt.action, opt);
         if (!!id) {
-            id.split(split).forEach(function (it) {
+            id.split(splitChars).forEach(function (it) {
                 opt.id = it;
                 main.nei(opt);
             });
@@ -78,12 +82,12 @@ var batch = function (name, event) {
         run.call(this, 'mock', event);
     },
     mobile: function (event) {
-        event.stopped = !0;
-        var opt = event.options || {};
+        event.stopped = true;
+        let opt = event.options || {};
         opt.action = 'mobile';
         this.format(opt.action, opt);
         run.call(this, opt.action, event);
     }
-})).exec(
-    process.argv.slice(2)
-);
+};
+let args = new Args(options);
+args.exec(process.argv.slice(2));
