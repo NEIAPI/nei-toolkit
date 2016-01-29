@@ -11,6 +11,7 @@ let _fs = require('./lib/util/file');
 let _path = require('./lib/util/path');
 let _io = require('./lib/util/io');
 let _log = require('./lib/util/logger');
+let Builder = require('./lib/nei/builder');
 let _logger = _log.logger;
 
 class Main {
@@ -36,28 +37,28 @@ class Main {
         });
     }
     /**
-     * parse nei config object
+     * parse nei content to json
      * @param  {string} content - nei config string
      * @return {object|undefined}
      */
     parseData(content) {
-        _logger.info('parse nei config');
+        _logger.info('parse nei content');
         let ret;
         // parse content to json
         try {
             ret = JSON.parse(content);
         } catch (ex) {
             _logger.debug('content from nei \n%s', content);
-            _logger.error('nei config parse error\n%s', ex.stack);
+            _logger.error('nei content parse error\n%s', ex.stack);
             return;
         }
         if (ret.code !== 200) {
-            return _logger.error('illegal config data from nei %j', ret);
+            return _logger.error('illegal content from nei %j', ret);
         }
         // check result
         ret = ret.result;
         if (!ret.timestamp) {
-            return _logger.error('illegal config data from nei %j', ret);
+            return _logger.error('illegal content from nei %j', ret);
         }
         return ret;
     }
@@ -68,15 +69,8 @@ class Main {
      */
     build(config) {
         let cwd = process.cwd() + '/';
-        let outPath;
-        if (config.project !== './') {
-            // check `project` first, not default value
-            outPath = config.project;
-        } else {
-            outPath = config.out;
-        }
-        config.outRoot = _path.absolute(outPath + '/', cwd);
-        let existNeiConf = `${config.outRoot}nei.${config.id}/nei.json`;
+        config.outputRoot = _path.absolute(config.project + '/', cwd);
+        let existNeiConf = `${config.outputRoot}nei.${config.id}/nei.json`;
         let action = config.action;
         // check nei.json file
         let msg;
@@ -111,7 +105,7 @@ class Main {
         let builder = new Builder(config);
         this.loadData(config.id, (data) => {
             builder[action](data);
-        })
+        });
     }
 
     /**
@@ -135,7 +129,7 @@ class Main {
         list.forEach((name) => {
             if (_fs.isdir(project + name + '/') && reg.test(name)) {
                 config.id = RegExp.$1;
-                this.nei(config);
+                this.build(config);
             }
         });
     }
@@ -143,24 +137,18 @@ class Main {
     /**
      * generator mock data
      * @param  {object}  config - config object
-     * @param  {Function} callback - build finish callback
+     * @return {undefined}
      */
-    mock(config, callback) {
+    mock(config) {
         let cwd = process.cwd() + '/';
-        let output = _path.absolute(
+        let outputRoot = _path.absolute(
             config.output + '/', cwd
         );
-        (new (require('./lib/nei/builder.js'))({
-            id: config.id,
-            outRoot: output,
-            overwrite: config.overwrite,
-            done: callback || function () {
-            },
-            debug: _log.log.bind(_log, 'debug'),
-            info: _log.log.bind(_log, 'info'),
-            warn: _log.log.bind(_log, 'warn'),
-            error: _log.log.bind(_log, 'error')
-        })).mock(config);
+        config.outputRoot = outputRoot;
+        let builder = new Builder(config);
+        this.loadData(config.id, (data) => {
+            builder.mock(data);
+        });
     }
 
     /**
@@ -175,7 +163,7 @@ class Main {
         );
         (new (require('./lib/nei/builder.js'))({
             id: config.id,
-            outRoot: output,
+            outputRoot: output,
             overwrite: config.overwrite,
             done: callback || function () {
             },
@@ -210,7 +198,7 @@ class Main {
         }
         (new (require(`./lib/nei/mobile.${lang}.js`))({
             id: config.id,
-            outRoot: output,
+            outputRoot: output,
             overwrite: config.overwrite,
             done: callback || function () {
             },
