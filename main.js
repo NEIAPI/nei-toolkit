@@ -154,27 +154,18 @@ class Main {
     /**
      * export toolkit config file
      * @param  {object}  config - config object
-     * @param  {Function} callback - build finish callback
+     * @return {undefined}
      */
-    export(config, callback) {
+    export(config) {
         let cwd = process.cwd() + '/';
-        let output = _path.absolute(
+        let outputRoot = _path.absolute(
             config.output + '/', cwd
         );
-        (new (require('./lib/nei/builder.js'))({
-            id: config.id,
-            outputRoot: output,
-            overwrite: config.overwrite,
-            done: callback || function () {
-            },
-            debug: _log.log.bind(_log, 'debug'),
-            info: _log.log.bind(_log, 'info'),
-            warn: _log.log.bind(_log, 'warn'),
-            error: _log.log.bind(_log, 'error')
-        })).export({
-                type: config.type,
-                domain: config.domain
-            });
+        config.outputRoot = outputRoot;
+        let builder = new Builder(config);
+        this.loadData(config.id, (data) => {
+            builder.export(data);
+        });
     }
 
     /**
