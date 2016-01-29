@@ -65,10 +65,9 @@ class Main {
      * build nei project
      * @param  {Object}  config - config object
      * @param  {Args} [argsInstance] - Args Class instance
-     * @param  {Function} [callback] - build finish callback
      * @return {Undefined}
      */
-    build(config, argsInstance, callback) {
+    build(config, argsInstance) {
         let cwd = process.cwd() + '/';
         let project = _path.absolute(
             config.project + '/', cwd
@@ -118,16 +117,11 @@ class Main {
             Builder = require(bmap.webapp);
         }
         conf = Object.assign(conf, {
-            proRoot: project,
-            done: callback || function () {
-            },
-            debug: _log.log.bind(_log, 'debug'),
-            info: _log.log.bind(_log, 'info'),
-            warn: _log.log.bind(_log, 'warn'),
-            error: _log.log.bind(_log, 'error')
+            proRoot: project
         });
+        conf = argsInstance.filterConfig(conf);
         // do build or update
-        let builder = new Builder(conf, argsInstance);
+        let builder = new Builder(conf);
         let handler = builder[action];
         if (handler) {
             handler.call(builder);
