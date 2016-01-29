@@ -43,17 +43,18 @@ let options = {
         process.exit(0);
     },
     build: function (event) {
-        let opt = event.options || {};
+        const action = 'build';
+        let config = event.options || {};
         let id = (event.args || [])[0];
         if (!id) {
-            this.show('build');
+            this.show(action);
             process.exit(0);
         } else {
-            opt.action = 'build';
-            this.format(opt.action, opt);
+            config = this.format(action, config);
+            config.action = action;
             id.split(splitChars).forEach((it) => {
-                opt.id = it;
-                main.build(opt, this);
+                config.id = it;
+                main.build(config);
             });
         }
     },

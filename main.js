@@ -64,15 +64,14 @@ class Main {
     /**
      * build nei project
      * @param  {Object}  config - config object
-     * @param  {Args} [argsInstance] - Args Class instance
      * @return {Undefined}
      */
-    build(config, argsInstance) {
+    build(config) {
         let cwd = process.cwd() + '/';
-        let project = _path.absolute(
+        config.proRoot = _path.absolute(
             config.project + '/', cwd
         );
-        let existNeiConf = `${project}nei.${config.id}/nei.json'`;
+        let existNeiConf = `${config.proRoot}nei.${config.id}/nei.json'`;
         let action = config.action;
         // check nei.json file
         let msg;
@@ -90,44 +89,25 @@ class Main {
             return process.exit(1);
         }
         // generator config
-        let conf = Object.assign({}, config);
+        let existConf = {};
         if (action === 'update') {
-            conf = require(existNeiConf);
-            conf.overwrite = !!config.overwrite;
+            existConf = require(existNeiConf);
         } else {
-            conf.updateTime = 0;
+            existConf.updateTime = 0;
         }
-        // generator builder
-        let bmap = {
-            webapp: './lib/nei/webapp.js',
-            mobile: './lib/nei/mobile.%s.js'
-        };
-        let name = bmap[config.template] || bmap[conf.template] || bmap.webapp;
-
+        config = Object.assign(existConf, config);
+        let name;
         if (config.template === 'mobile') {
-            name = util.format(name, config.lang);
-        } else if (conf.template === 'mobile') {
-            name = util.format(name, conf.lang);
-        }
-
-        let Builder;
-        try {
-            Builder = require(name);
-        } catch (ex) {
-            Builder = require(bmap.webapp);
-        }
-        conf = Object.assign(conf, {
-            proRoot: project
-        });
-        conf = argsInstance.filterConfig(conf);
-        // do build or update
-        let builder = new Builder(conf);
-        let handler = builder[action];
-        if (handler) {
-            handler.call(builder);
+            name = `./lib/nei/mobile.${config.lang}.js`;
         } else {
-            _logger.error('not supported action %s', action);
+            name = './lib/nei/webapp.js';
         }
+        let Builder = require(name);
+        let builder = new Builder(config);
+        builder.on('done', () => {
+            process.exit(0);
+        });
+        builder[action]();
     }
 
     /**
