@@ -59,18 +59,19 @@ let options = {
         }
     },
     update: function (event) {
-        let opt = event.options || {};
+        let config = event.options || {};
         let id = (event.args || [])[0] || '';
-        opt.action = 'update';
-        this.format(opt.action, opt);
+        let action = 'update';
+        config = this.format(action, config);
+        config.action = action;
         if (id) {
             id.split(splitChars).forEach(function (it) {
-                opt.id = it;
-                main.build(opt);
+                config.id = it;
+                main.build(config);
             });
         } else {
             // update all project
-            main.update(opt);
+            main.update(config);
         }
     },
     export: function (event) {

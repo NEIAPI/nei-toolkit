@@ -3,75 +3,80 @@
  * @author  genify(caijf@corp.netease.com)
  * @author  huntbao
  */
-// klass exports map
-//let KLASS = {
-//    // base klass
-//    Event: 'util/event',
-//    Logger: 'util/logger#Logger',
-//    // nei builder
-//    NEI_Builder: 'nei/builder',
-//    NEI_WebApp: 'nei/webapp',
-//    NEI_Mobile: 'nei/mobile'
-//};
-//// api exports map
-//let API = {
-//    io: 'util/io',
-//    rg: 'util/args',
-//    fs: 'util/file',
-//    ps: 'util/path',
-//    ut: 'util/util',
-//    ks: 'util/klass',
-//    lg: 'util/logger#level,logger,log'
-//};
-//// export klass or api
-//function global(map) {
-//    Object.keys(map).forEach(function (key) {
-//        let file = map[key];
-//        let arr = file.split('#');
-//        let mdl = require('./lib/' + arr[0] + '.js');
-//        // for util/logger#Logger
-//        if (!!arr[1]) {
-//            // for util/logger#level,logger
-//            let brr = arr[1].split(',');
-//            if (brr.length > 1) {
-//                let ret = {};
-//                brr.forEach(function (name) {
-//                    ret[name] = mdl[name];
-//                });
-//                mdl = ret;
-//            } else {
-//                mdl = mdl[brr[0]];
-//            }
-//        }
-//        exports[key] = mdl;
-//    });
-//}
-//// export constructor
-//// export api
-//global(KLASS);
-//global(API);
-
 'use strict';
-// bin api
+
 let fs = require('fs');
 let util = require('util');
-let _fs = require('./lib/util/file.js');
-let _path = require('./lib/util/path.js');
-let _log = require('./lib/util/logger.js');
+let _fs = require('./lib/util/file');
+let _path = require('./lib/util/path');
+let _io = require('./lib/util/io');
+let _log = require('./lib/util/logger');
 let _logger = _log.logger;
 
 class Main {
+
+    /**
+     * load data from nei server
+     * @param {string} pid - nei project id
+     * @return {undefined}
+     */
+    loadData(pid, callback) {
+        let api = util.format(
+            (require('./package.json').nei || {}).api,
+            pid
+        );
+        _logger.info('load nei config from %s', api);
+        _io.download(api, (content) => {
+            let data = this.parseData(content);
+            if (data) {
+                callback(data);
+            } else {
+                process.exit(1);
+            }
+        });
+    }
+    /**
+     * parse nei config object
+     * @param  {string} content - nei config string
+     * @return {object|undefined}
+     */
+    parseData(content) {
+        _logger.info('parse nei config');
+        let ret;
+        // parse content to json
+        try {
+            ret = JSON.parse(content);
+        } catch (ex) {
+            _logger.debug('content from nei \n%s', content);
+            _logger.error('nei config parse error\n%s', ex.stack);
+            return;
+        }
+        if (ret.code !== 200) {
+            return _logger.error('illegal config data from nei %j', ret);
+        }
+        // check result
+        ret = ret.result;
+        if (!ret.timestamp) {
+            return _logger.error('illegal config data from nei %j', ret);
+        }
+        return ret;
+    }
     /**
      * build nei project
-     * @param  {Object}  config - config object
-     * @return {Undefined}
+     * @param  {object}  config - config object
+     * @return {undefined}
      */
     build(config) {
         let cwd = process.cwd() + '/';
-        config.proRoot = _path.absolute(
-            config.project + '/', cwd
-        );
-        let existNeiConf = `${config.proRoot}nei.${config.id}/nei.json'`;
+        let outPath;
+        if (config.project !== './') {
+            // check `project` first, not default value
+            outPath = config.project;
+        } else {
+            outPath = config.out;
+        }
+        config.outRoot = _path.absolute(outPath + '/', cwd);
+        let existNeiConf = `${config.outRoot}nei.${config.id}/nei.json`;
         let action = config.action;
         // check nei.json file
         let msg;
@@ -104,16 +109,15 @@ class Main {
         }
         let Builder = require(name);
         let builder = new Builder(config);
-        builder.on('done', () => {
-            process.exit(0);
-        });
-        builder[action]();
+        this.loadData(config.id, (data) => {
+            builder[action](data);
+        })
     }
 
     /**
      * update nei project
-     * @param  {Object}  config - config object
-     * @return {Void}
+     * @param  {object}  config - config object
+     * @return {undefined}
      */
     update(config) {
         let cwd = process.cwd() + '/';
@@ -138,7 +142,7 @@ class Main {
 
     /**
      * generator mock data
-     * @param  {Object}  config - config object
+     * @param  {object}  config - config object
      * @param  {Function} callback - build finish callback
      */
     mock(config, callback) {
@@ -148,7 +152,7 @@ class Main {
         );
         (new (require('./lib/nei/builder.js'))({
             id: config.id,
-            proRoot: output,
+            outRoot: output,
             overwrite: config.overwrite,
             done: callback || function () {
             },
@@ -161,7 +165,7 @@ class Main {
 
     /**
      * export toolkit config file
-     * @param  {Object}  config - config object
+     * @param  {object}  config - config object
      * @param  {Function} callback - build finish callback
      */
     export(config, callback) {
@@ -171,7 +175,7 @@ class Main {
         );
         (new (require('./lib/nei/builder.js'))({
             id: config.id,
-            proRoot: output,
+            outRoot: output,
             overwrite: config.overwrite,
             done: callback || function () {
             },
@@ -187,7 +191,7 @@ class Main {
 
     /**
      * export mobile model and requests
-     * @param  {Object}  config - config object
+     * @param  {object}  config - config object
      * @param  {Function} callback - build finish callback
      */
     mobile(config, callback) {
@@ -206,7 +210,7 @@ class Main {
         }
         (new (require(`./lib/nei/mobile.${lang}.js`))({
             id: config.id,
-            proRoot: output,
+            outRoot: output,
             overwrite: config.overwrite,
             done: callback || function () {
             },
