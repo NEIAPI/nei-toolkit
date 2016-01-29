@@ -141,10 +141,9 @@ class Main {
      */
     mock(config) {
         let cwd = process.cwd() + '/';
-        let outputRoot = _path.absolute(
+        config.outputRoot = _path.absolute(
             config.output + '/', cwd
         );
-        config.outputRoot = outputRoot;
         let builder = new Builder(config);
         this.loadData(config.id, (data) => {
             builder.mock(data);
@@ -158,10 +157,9 @@ class Main {
      */
     export(config) {
         let cwd = process.cwd() + '/';
-        let outputRoot = _path.absolute(
+        config.outputRoot = _path.absolute(
             config.output + '/', cwd
         );
-        config.outputRoot = outputRoot;
         let builder = new Builder(config);
         this.loadData(config.id, (data) => {
             builder.export(data);
@@ -173,9 +171,9 @@ class Main {
      * @param  {object}  config - config object
      * @param  {Function} callback - build finish callback
      */
-    mobile(config, callback) {
+    mobile(config) {
         let cwd = process.cwd() + '/';
-        let output = _path.absolute(
+        config.outputRoot = _path.absolute(
             config.output + '/', cwd
         );
         let lang = config.lang;
@@ -187,19 +185,10 @@ class Main {
             });
             return process.exit(1);
         }
-        (new (require(`./lib/nei/mobile.${lang}.js`))({
-            id: config.id,
-            outputRoot: output,
-            overwrite: config.overwrite,
-            done: callback || function () {
-            },
-            debug: _log.log.bind(_log, 'debug'),
-            info: _log.log.bind(_log, 'info'),
-            warn: _log.log.bind(_log, 'warn'),
-            error: _log.log.bind(_log, 'error')
-        })).model(
-            config
-        );
+        let builder = new (require(`./lib/nei/mobile.${lang}.js`))(config);
+        this.loadData(config.id, (data) => {
+            builder.model(data);
+        });
     }
 }
 
