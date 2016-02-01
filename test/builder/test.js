@@ -1,5 +1,4 @@
 'use strict';
-let should = require('should');
 let assert = require('assert');
 let _path = require('../../lib/util/path');
 let _fs = require('../../lib/util/file');
