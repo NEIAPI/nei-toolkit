@@ -36,6 +36,7 @@ class Main {
             }
         });
     }
+
     /**
      * parse nei content to json
      * @param  {string} content - nei config string
@@ -62,6 +63,7 @@ class Main {
         }
         return ret;
     }
+
     /**
      * build nei project
      * @param  {object}  config - config object
@@ -101,9 +103,9 @@ class Main {
         } else {
             name = './lib/nei/webapp.js';
         }
-        let Builder = require(name);
-        let builder = new Builder(config);
         this.loadData(config.id, (data) => {
+            let Builder = require(name);
+            let builder = new Builder(config);
             builder[action](data);
         });
     }
@@ -144,8 +146,8 @@ class Main {
         config.outputRoot = _path.absolute(
             config.output + '/', cwd
         );
-        let builder = new Builder(config);
         this.loadData(config.id, (data) => {
+            let builder = new Builder(config);
             builder.mock(data);
         });
     }
@@ -160,8 +162,8 @@ class Main {
         config.outputRoot = _path.absolute(
             config.output + '/', cwd
         );
-        let builder = new Builder(config);
         this.loadData(config.id, (data) => {
+            let builder = new Builder(config);
             builder.export(data);
         });
     }
@@ -185,8 +187,8 @@ class Main {
             });
             return process.exit(1);
         }
-        let builder = new (require(`./lib/nei/mobile.${lang}.js`))(config);
         this.loadData(config.id, (data) => {
+            let builder = new (require(`./lib/nei/mobile.${lang}.js`))(config);
             builder.model(data);
         });
     }

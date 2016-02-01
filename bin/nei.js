@@ -37,7 +37,7 @@ let batch = function (name, event) {
 };
 
 let options = {
-    message: require('./nei.json'),
+    message: require('./config.js'),
     package: require('../package.json'),
     exit: function () {
         process.exit(0);
