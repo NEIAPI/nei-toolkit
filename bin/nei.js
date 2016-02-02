@@ -2,8 +2,8 @@
 
 'use strict';
 
-let main = require('../main.js');
-let Args = require('../lib/util/args.js');
+let main = require('../main');
+let Args = require('../lib/util/args');
 let splitChars = /[,;，；]/;
 
 // run command for single id
