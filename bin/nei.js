@@ -1,15 +1,18 @@
 #!/usr/bin/env node
 
 'use strict';
-
-let main = require('../main');
-let Args = require('../lib/util/args');
-let splitChars = /[,;，；]/;
+if (process.version < 'v4.2.1') {
+    console.log('请将Node更新至4.2.1及以上版本，可以使用nvm在本地安装并管理多个Node版本。');
+    process.exit(1);
+}
+var main = require('../main');
+var Args = require('../lib/util/args');
+var splitChars = /[,;，；]/;
 
 // run command for single id
-let run = function (name, event) {
-    let opt = event.options || {};
-    let id = (event.args || [])[0];
+var run = function (name, event) {
+    var opt = event.options || {};
+    var id = (event.args || [])[0];
     if (!id) {
         this.show(name);
         process.exit(0);
@@ -21,9 +24,9 @@ let run = function (name, event) {
 };
 
 // run command for batch ids
-let batch = function (name, event) {
-    let opt = event.options || {};
-    let id = (event.args || [])[0] || '';
+var batch = function (name, event) {
+    var opt = event.options || {};
+    var id = (event.args || [])[0] || '';
     if (!id) {
         this.show(name);
         process.exit(0);
@@ -36,32 +39,32 @@ let batch = function (name, event) {
     }
 };
 
-let options = {
+var options = {
     message: require('./config.js'),
     package: require('../package.json'),
     exit: function () {
         process.exit(0);
     },
     build: function (event) {
-        const action = 'build';
-        let config = event.options || {};
-        let id = (event.args || [])[0];
+        var action = 'build';
+        var config = event.options || {};
+        var id = (event.args || [])[0];
         if (!id) {
             this.show(action);
             process.exit(0);
         } else {
             config = this.format(action, config);
             config.action = action;
-            id.split(splitChars).forEach((it) => {
+            id.split(splitChars).forEach(function (it) {
                 config.id = it;
                 main.build(config);
             });
         }
     },
     update: function (event) {
-        let config = event.options || {};
-        let id = (event.args || [])[0] || '';
-        let action = 'update';
+        var config = event.options || {};
+        var id = (event.args || [])[0] || '';
+        var action = 'update';
         config = this.format(action, config);
         config.action = action;
         if (id) {
@@ -81,13 +84,13 @@ let options = {
         run.call(this, 'mock', event);
     },
     mobile: function (event) {
-        let opt = event.options || {};
+        var opt = event.options || {};
         opt.action = 'mobile';
         this.format(opt.action, opt);
         run.call(this, opt.action, event);
     }
 };
 
-let args = new Args(options);
+var args = new Args(options);
 // do command
 args.exec(process.argv.slice(2));
