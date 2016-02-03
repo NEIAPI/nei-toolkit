@@ -1,16 +1,19 @@
 #!/usr/bin/env node
 
 'use strict';
-
-let main = require('../main.js');
-let Args = require('../lib/util/args.js');
-let splitChars = /[,;，；]/;
+if (process.version < 'v4.2.1') {
+    console.log('请将Node更新至4.2及以上版本，可以使用nvm安装并管理多个Node版本。');
+    process.exit(1);
+}
+var main = require('../main.js');
+var Args = require('../lib/util/args.js');
+var splitChars = /[,;，；]/;
 
 // run command for single id
-let run = function (name, event) {
+var run = function (name, event) {
     event.stopped = true;
-    let opt = event.options || {};
-    let id = (event.args || [])[0];
+    var opt = event.options || {};
+    var id = (event.args || [])[0];
     if (!id) {
         this.show(name);
         process.exit(0);
@@ -21,10 +24,10 @@ let run = function (name, event) {
     }
 };
 // run command for batch ids
-let batch = function (name, event) {
+var batch = function (name, event) {
     event.stopped = true;
-    let opt = event.options || {};
-    let id = (event.args || [])[0] || '';
+    var opt = event.options || {};
+    var id = (event.args || [])[0] || '';
     if (!id) {
         this.show(name);
         process.exit(0);
@@ -37,7 +40,7 @@ let batch = function (name, event) {
     }
 };
 // do command
-let options = {
+var options = {
     message: require('./nei.json'),
     package: require('../package.json'),
     msg: function () {
@@ -45,15 +48,15 @@ let options = {
     },
     build: function (event) {
         event.stopped = true;
-        let opt = event.options || {};
-        let id = (event.args || [])[0];
+        var opt = event.options || {};
+        var id = (event.args || [])[0];
         if (!id) {
             this.show('build');
             process.exit(0);
         } else {
             opt.action = 'build';
             this.format(opt.action, opt);
-            id.split(splitChars).forEach((it) => {
+            id.split(splitChars).forEach(function (it) {
                 opt.id = it;
                 main.nei(opt, this);
             });
@@ -61,8 +64,8 @@ let options = {
     },
     update: function (event) {
         event.stopped = true;
-        let opt = event.options || {};
-        let id = (event.args || [])[0] || '';
+        var opt = event.options || {};
+        var id = (event.args || [])[0] || '';
         opt.action = 'update';
         this.format(opt.action, opt);
         if (!!id) {
@@ -83,11 +86,11 @@ let options = {
     },
     mobile: function (event) {
         event.stopped = true;
-        let opt = event.options || {};
+        var opt = event.options || {};
         opt.action = 'mobile';
         this.format(opt.action, opt);
         run.call(this, opt.action, event);
     }
 };
-let args = new Args(options);
+var args = new Args(options);
 args.exec(process.argv.slice(2));
