@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
 'use strict';
+// check node version
 if (process.version < 'v4.2.1') {
-    console.log('请将Node更新至4.2及以上版本，可以使用nvm安装并管理多个Node版本。');
+    console.log('请将Node更新至4.2.1及以上版本，可以使用nvm在本地安装并管理多个Node版本。');
     process.exit(1);
 }
 var main = require('../main.js');
