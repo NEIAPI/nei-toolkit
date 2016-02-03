@@ -1,15 +1,20 @@
 #!/usr/bin/env node
 
 'use strict';
-
-let main = require('../main');
-let Args = require('../lib/util/args');
-let splitChars = /[,;，；]/;
+// check node version
+if (process.version < 'v4.2.1') {
+    console.log('请将Node更新至4.2.1及以上版本，可以使用nvm在本地安装并管理多个Node版本。');
+    process.exit(1);
+}
+var main = require('../main.js');
+var Args = require('../lib/util/args.js');
+var splitChars = /[,;，；]/;
 
 // run command for single id
-let run = function (name, event) {
-    let opt = event.options || {};
-    let id = (event.args || [])[0];
+var run = function (name, event) {
+    event.stopped = true;
+    var opt = event.options || {};
+    var id = (event.args || [])[0];
     if (!id) {
         this.show(name);
         process.exit(0);
@@ -19,11 +24,11 @@ let run = function (name, event) {
         main[name](opt);
     }
 };
-
 // run command for batch ids
-let batch = function (name, event) {
-    let opt = event.options || {};
-    let id = (event.args || [])[0] || '';
+var batch = function (name, event) {
+    event.stopped = true;
+    var opt = event.options || {};
+    var id = (event.args || [])[0] || '';
     if (!id) {
         this.show(name);
         process.exit(0);
@@ -35,43 +40,43 @@ let batch = function (name, event) {
         });
     }
 };
-
-let options = {
-    message: require('./config.js'),
+// do command
+var options = {
+    message: require('./nei.json'),
     package: require('../package.json'),
-    exit: function () {
+    msg: function () {
         process.exit(0);
     },
     build: function (event) {
-        const action = 'build';
-        let config = event.options || {};
-        let id = (event.args || [])[0];
+        event.stopped = true;
+        var opt = event.options || {};
+        var id = (event.args || [])[0];
         if (!id) {
-            this.show(action);
+            this.show('build');
             process.exit(0);
         } else {
-            config = this.format(action, config);
-            config.action = action;
-            id.split(splitChars).forEach((it) => {
-                config.id = it;
-                main.build(config);
+            opt.action = 'build';
+            this.format(opt.action, opt);
+            id.split(splitChars).forEach(function (it) {
+                opt.id = it;
+                main.nei(opt, this);
             });
         }
     },
     update: function (event) {
-        let config = event.options || {};
-        let id = (event.args || [])[0] || '';
-        let action = 'update';
-        config = this.format(action, config);
-        config.action = action;
-        if (id) {
+        event.stopped = true;
+        var opt = event.options || {};
+        var id = (event.args || [])[0] || '';
+        opt.action = 'update';
+        this.format(opt.action, opt);
+        if (!!id) {
             id.split(splitChars).forEach(function (it) {
-                config.id = it;
-                main.build(config);
+                opt.id = it;
+                main.nei(opt);
             });
         } else {
             // update all project
-            main.update(config);
+            main.update(opt);
         }
     },
     export: function (event) {
@@ -81,13 +86,12 @@ let options = {
         run.call(this, 'mock', event);
     },
     mobile: function (event) {
-        let opt = event.options || {};
+        event.stopped = true;
+        var opt = event.options || {};
         opt.action = 'mobile';
         this.format(opt.action, opt);
         run.call(this, opt.action, event);
     }
 };
-
-let args = new Args(options);
-// do command
+var args = new Args(options);
 args.exec(process.argv.slice(2));
