@@ -30,7 +30,7 @@ describe('nei/mobile', function () {
 
         it('Build OC project -> case 1', function (done) {
             let config = {
-                config: './iostpl/build.json'
+                config: './project_template/iostpl/build.json'
             };
             let options = {
                 message: require('../../bin/config'),
@@ -95,7 +95,7 @@ describe('nei/mobile', function () {
 
         it('Build Java project -> case 1', function (done) {
             let config = {
-                config: './javatpl/build.json'
+                config: './project_template/javatpl/build.json'
             };
             let options = {
                 message: require('../../bin/config'),
@@ -116,7 +116,6 @@ describe('nei/mobile', function () {
             assert.equal(true, _fs.exist(`${outputRoot}/nei.${pid}/JSON/nei-latest.json`));
             assert.equal(true, _fs.exist(`${outputRoot}/app/src/main/hthttp-gen/com/google/template/hthttp/httptask/AddAddressInfoCase2HttpTask.java`));
             assert.equal(true, _fs.exist(`${outputRoot}/app/src/main/hthttp-gen/com/google/template/hthttp/model/Address.java`));
-            assert.equal(true, _fs.exist(`${outputRoot}/settings.gradle`));
 
             done();
         });

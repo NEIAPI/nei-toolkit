@@ -18,10 +18,12 @@ class Main {
 
     /**
      * load data from nei server
-     * @param {string} pid - nei project id
+     * @param {string|number} pid - nei project id
+     * @param {function} callback - load success callback
+     * @param {function} [errorCallback] - load error callback
      * @return {undefined}
      */
-    loadData(pid, callback) {
+    loadData(pid, callback, errorCallback) {
         let api = util.format(
             (require('./package.json').nei || {}).api,
             pid
@@ -32,7 +34,11 @@ class Main {
             if (data) {
                 callback(data);
             } else {
-                process.exit(1);
+                if (errorCallback) {
+                    errorCallback();
+                } else {
+                    process.exit(1);
+                }
             }
         });
     }

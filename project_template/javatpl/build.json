@@ -1,0 +1,9 @@
+{
+	"t": "mobile",
+	"l": "java",
+	"p": "../genresult",
+	"o": "../genresult",
+	"tp": "java/",
+	"tdp": "nei.json",
+	"appPackage": "com.google.template"
+}

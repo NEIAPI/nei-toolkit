@@ -1,0 +1,10 @@
+{
+	"t": "mobile",
+	"l": "oc",
+	"w": true,
+	"p": "../genresult",
+	"o": "../genresult",
+	"tp": "HTSingleView/",
+	"tdp": "NEIKey.json",
+	"resOut": "Yanxuan/Common/Network/"
+}

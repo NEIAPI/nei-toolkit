@@ -4,5 +4,3 @@ node_modules
 build
 doc/**/bak.zip
 lib/nei/mobile/java
-iostpl
-javatpl

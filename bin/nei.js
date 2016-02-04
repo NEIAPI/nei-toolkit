@@ -42,8 +42,14 @@ var batch = function (name, event) {
 var options = {
     message: require('./config.js'),
     package: require('../package.json'),
-    exit: function () {
-        process.exit(0);
+    exit: function (code) {
+        if (typeof(code) === 'undefined') {
+            code = 0;
+        }
+        process.exit(code);
+    },
+    log: function (msg) {
+        console.log(msg);
     },
     build: function (event) {
         var action = 'build';
@@ -51,7 +57,7 @@ var options = {
         var id = (event.args || [])[0];
         if (!id) {
             this.show(action);
-            process.exit(0);
+            this.emit('exit', 0);
         } else {
             config = this.format(action, config);
             config.action = action;
