@@ -60,7 +60,7 @@ var options = {
             id.split(splitChars).forEach(function (it) {
                 opt.id = it;
                 main.nei(opt, this);
-            });
+            }, this);
         }
     },
     update: function (event) {
@@ -73,7 +73,7 @@ var options = {
             id.split(splitChars).forEach(function (it) {
                 opt.id = it;
                 main.nei(opt);
-            });
+            }, this);
         } else {
             // update all project
             main.update(opt);
