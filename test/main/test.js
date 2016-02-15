@@ -1,7 +1,5 @@
 'use strict';
 let assert = require('assert');
-let _path = require('../../lib/util/path');
-let _fs = require('../../lib/util/file');
 let main = require('../../main');
 
 describe('nei/main', function () {
@@ -17,6 +15,13 @@ describe('nei/main', function () {
             }, function () {
                 done();
             });
+        });
+
+        it('main `parseData` -> case 2', function (done) {
+            let str = '{"result":{"timestamp":111}, "code":200}';
+            let json = main.parseData(str);
+            assert.equal(1, Object.keys(json).length);
+            done();
         });
 
     });

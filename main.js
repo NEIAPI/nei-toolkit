@@ -28,11 +28,11 @@ class Main {
             (require('./package.json').nei || {}).api,
             pid
         );
-        _logger.info('load nei config from %s', api);
-        _io.download(api, (content) => {
-            let data = this.parseData(content);
-            if (data) {
-                callback(data);
+        _logger.info('load nei data from %s', api);
+        _io.download(api, (data) => {
+            let json = this.parseData(data);
+            if (json) {
+                callback(json);
             } else {
                 if (errorCallback) {
                     errorCallback();
@@ -44,30 +44,27 @@ class Main {
     }
 
     /**
-     * parse nei content to json
-     * @param  {string} content - nei config string
+     * parse nei string data to json
+     * @param  {string} data - nei string data
      * @return {object|undefined}
      */
-    parseData(content) {
-        _logger.info('parse nei content');
-        let ret;
-        // parse content to json
+    parseData(data) {
+        _logger.info('parse nei string data');
+        let json;
         try {
-            ret = JSON.parse(content);
+            json = JSON.parse(data);
         } catch (ex) {
-            _logger.debug('content from nei \n%s', content);
-            _logger.error('nei content parse error\n%s', ex.stack);
-            return;
+            _logger.debug('string data from nei \n%s', data);
+            return _logger.error('nei string data parsing error\n%s', ex.stack);
         }
-        if (ret.code !== 200) {
-            return _logger.error('illegal content from nei %j', ret);
+        if (json.code !== 200) {
+            return _logger.error('illegal string data from nei %j', json);
         }
-        // check result
-        ret = ret.result;
-        if (!ret.timestamp) {
-            return _logger.error('illegal content from nei %j', ret);
+        json = json.result;
+        if (!json.timestamp) {
+            return _logger.error('illegal string data from nei %j', json);
         }
-        return ret;
+        return json;
     }
 
     /**
@@ -80,7 +77,7 @@ class Main {
         config.outputRoot = _path.absolute(config.project + '/', cwd);
         let existNeiConf = `${config.outputRoot}nei.${config.id}/nei.json`;
         let action = config.action;
-        // check nei.json file
+        // check if exists nei.json file
         let msg;
         if (_fs.exist(existNeiConf)) {
             if (action === 'build') {
@@ -95,7 +92,6 @@ class Main {
             _logger.error(msg, config.id);
             return process.exit(1);
         }
-        // generator config
         let existConf = {};
         if (action === 'update') {
             existConf = require(existNeiConf);
@@ -128,8 +124,7 @@ class Main {
         );
         let list = fs.readdirSync(project);
         if (!list || !list.length) {
-            _logger.error('no nei project found in %s', project);
-            return process.exit(1);
+            return _logger.error('no nei project found in %s', project);
         }
         _logger.error('check to update all nei project');
         // check nei config directory
@@ -143,7 +138,7 @@ class Main {
     }
 
     /**
-     * generator mock data
+     * generate mock data
      * @param  {object}  config - config object
      * @return {undefined}
      */
@@ -175,9 +170,9 @@ class Main {
     }
 
     /**
-     * export mobile model and requests
+     * export mobile models and requests
      * @param  {object}  config - config object
-     * @param  {Function} callback - build finish callback
+     * @return {undefined}
      */
     mobile(config) {
         let cwd = process.cwd() + '/';
@@ -185,13 +180,8 @@ class Main {
             config.output + '/', cwd
         );
         let lang = config.lang;
-        // check language
         if (!/^(oc|java)$/.test(lang)) {
-            _log.log('error', {
-                data: [lang],
-                message: 'not supported language %s'
-            });
-            return process.exit(1);
+            return _logger.error('not supported language %s', lang);
         }
         this.loadData(config.id, (data) => {
             let builder = new (require(`./lib/nei/mobile.${lang}.js`))(config);

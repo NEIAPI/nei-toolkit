@@ -1,7 +1,5 @@
 'use strict';
 let assert = require('assert');
-let _path = require('../../lib/util/path');
-let _fs = require('../../lib/util/file');
 let Args = require('../../lib/util/args');
 const ARGS_CONFIG = require('../../bin/config.js');
 const PACKAGE_JSON = require('../../package.json');
@@ -156,6 +154,64 @@ describe('nei/args', function () {
             assert.equal(true, config.project === './project');
             assert.equal(true, config.template === 'webapp');
             assert.equal(true, config.overwrite === false);
+
+            done();
+        });
+
+        it('Args `parse(argv)` -> case 11', function (done) {
+            let args = new Args(options);
+            let argsArr = ['build', '-o', '/path/to/output/'];
+            let result = args.parse(argsArr);
+            assert.equal('build', result.command);
+            assert.equal('/path/to/output/', result.options.o);
+            assert.equal(true, Array.isArray(result.args));
+            assert.equal(0, result.args.length);
+
+            done();
+        });
+
+        it('Args `parse(argv)` -> case 12', function (done) {
+            let args = new Args(options);
+            let argsArr = ['build', 'file.js', '-o', '/path/to/output/'];
+            let result = args.parse(argsArr);
+            assert.equal('build', result.command);
+            assert.equal('/path/to/output/', result.options.o);
+            assert.equal(true, Array.isArray(result.args));
+            assert.equal('file.js', result.args[0]);
+
+            done();
+        });
+
+        it('Args `params(key)` -> case 13', function (done) {
+            let args = new Args(options);
+            let result = args.params('key is not exist');
+            assert.equal('', result);
+
+            done();
+        });
+
+        it('Args `params(key)` -> case 14', function (done) {
+            let args = new Args(options);
+            let result = args.params('-default').split('\n');
+            assert.equal('-v, --version\t\t显示工具版本信息', result[0]);
+            assert.equal('-h, --help\t\t显示指定命令的帮助信息', result[1]);
+
+            done();
+        });
+
+        it('Args `filterConfig(key, config)` -> case 15', function (done) {
+            let args = new Args(options);
+            let result = args.filterConfig('build', {
+                project: './project',
+                template: 'mobile',
+                engine: 'freemarker',
+                lang: 'oc'
+            });
+            assert.equal('./project', result.project);
+            assert.equal('mobile', result.template);
+            // engine is for `webapp` only
+            assert.equal(undefined, result.engine);
+            assert.equal('oc', result.lang);
 
             done();
         });

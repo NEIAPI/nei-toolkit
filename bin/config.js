@@ -100,7 +100,7 @@ module.exports = {
         "以下参数对于使用 webapp 模板的项目特有：",
         {
             "q": "engine",
-            "m": "如果使用内建的 webapp 模板构建，此参数用于指定使用的模板引擎，支持内建模板引擎：freemarker、velocity、其他nodejs模板引擎，默认为freemarker引擎",
+            "m": "如果使用内建的 webapp 模板构建，此参数用于指定使用的模板引擎，支持内建模板引擎：freemarker、velocity、其他 nodejs 模板引擎，默认为 freemarker 引擎",
             "f": "w" // `for` `webapp` only
         },
         {
@@ -131,7 +131,7 @@ module.exports = {
         {
             "q": "reqAbstract",
             "d": "HTBaseRequest",
-            "m": "请求基类名称，不带类名的前缀。如果指定语言是 Java，它的默认值为BaseHttpStringRequestTask",
+            "m": "请求基类名称，不带类名的前缀。如果指定语言是 Java，它的默认值为 BaseHttpStringRequestTask",
             "f": "m"
         },
         {
