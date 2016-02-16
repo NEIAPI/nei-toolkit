@@ -362,6 +362,13 @@ nei mobile 23456798 -l java -o /path/to/output/
 
 # 版本历史
 
+## 0.3.1   (2016-02-16)
+
+* build 命令添加 deployRoot, tMockRoot 和 iMockRoot 参数
+* update 命令添加 tag 参数
+* 只生成被页面引用的模板
+* 修正 -v 和 -h 命令的 bug
+
 ## 0.3.0   (2016-02-05)
 
 * 使用 ES6 重构代码
