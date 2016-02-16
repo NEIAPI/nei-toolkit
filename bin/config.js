@@ -113,6 +113,21 @@ module.exports = {
             "m": "如果使用内建的 webapp模板构建，此参数用于指定服务器端视图模板目录，默认根据 maven 目录结构规范，相对于 -p 路径的 src/main/webapp/WEB-INF/views/",
             "f": "w"
         },
+        {
+            "q": "deployRoot",
+            "m": "deploy 文件夹的路径, 相对于 project 参数, 默认放在 project 指定路径的根目录",
+            "f": "w"
+        },
+        {
+            "q": "tMockRoot",
+            "m": "template mock 数据文件夹的路径, 相对于 project 参数, 默认放在 src/main/webapp/src/mock/",
+            "f": "w"
+        },
+        {
+            "q": "iMockRoot",
+            "m": "interface mock 数据文件夹的路径, 相对于 project 参数, 默认放在 src/main/webapp/WEB_INF/views/mock/",
+            "f": "w"
+        },
         "",
         "以下参数对于使用 mobile 模板的项目特有：",
         {
@@ -208,19 +223,23 @@ module.exports = {
         {
             "j": "h",
             "q": "help",
-            "m": "显示update命令帮助信息"
+            "m": "显示 update 命令帮助信息"
         },
         {
             "j": "p",
             "q": "project",
             "d": "./",
-            "m": "指定项目目录，默认为当前目录。不推荐，请使用 -o 参数"
+            "m": "指定项目目录，默认为当前目录。"
         },
         {
             "j": "w",
             "q": "overwrite",
             "d": false,
             "m": "是否覆盖已存在的 MOCK 数据文件，默认不覆盖"
+        },
+        {
+            "q": "tag",
+            "m": "只更新含有指定 tag 的模板, 默认全部更新"
         }
     ],
     "mock": [

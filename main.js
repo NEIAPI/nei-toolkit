@@ -75,6 +75,15 @@ class Main {
     build(config) {
         let cwd = process.cwd() + '/';
         config.outputRoot = _path.absolute(config.project + '/', cwd);
+        if (config.deployRoot) {
+            config.deployRoot = _path.absolute(config.deployRoot + '/', config.outputRoot);
+        }
+        if (config.tMockRoot) {
+            config.tMockRoot = _path.absolute(config.tMockRoot + '/', config.outputRoot);
+        }
+        if (config.iMockRoot) {
+            config.iMockRoot = _path.absolute(config.iMockRoot + '/', config.outputRoot);
+        }
         let existNeiConf = `${config.outputRoot}nei.${config.id}/nei.json`;
         let action = config.action;
         // check if exists nei.json file
