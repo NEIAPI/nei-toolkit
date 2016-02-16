@@ -129,6 +129,9 @@ nei build <IDS> [参数]
 | 无 | --engine | | 如果使用内建的 webapp 模板构建，此参数用于指定使用的模板引擎，支持内建模板引擎：freemarker、velocity、其他 Node.js 模板引擎，默认为 freemarker 引擎 |
 | 无 | --webRoot | | 如果使用内建的 webapp 模板构建，此参数用于指定 WEBROOT 目录，默认根据 maven 目录结构规范，相对于 -p 路径的 src/main/webapp/ |
 | 无 | --viewRoot | | 如果使用内建的 webapp 模板构建，此参数用于指定服务器端视图模板目录，默认根据 maven 目录结构规范，相对于 -p 路径的 src/main/webapp/WEB-INF/views/ |
+| 无 | --deployRoot | | deploy 文件夹的路径, 相对于 project 参数, 默认放在 project 指定路径的根目录 |
+| 无 | --tMockRoot | | template mock 数据文件夹的路径, 相对于 project 参数, 默认放在 src/main/webapp/src/mock/ |
+| 无 | --iMockRoot | | interface mock 数据文件夹的路径, 相对于 project 参数, 默认放在 src/main/webapp/WEB_INF/views/mock/ |
 
 >以下参数对于使用 mobile 模板的项目特有：
 
@@ -190,6 +193,7 @@ nei update [IDS] [参数]
 | -h | --help    | 显示 update 命令的帮助信息 |
 | -p | --project | 指定项目目录，默认为当前目录 |
 | -w | --overwrite | 是否覆盖已存在的 MOCK 数据文件，默认不覆盖 |
+| 无 | --tag | 只更新含有指定 tag 的模板, 默认全部更新 |
 
 使用范例：
 

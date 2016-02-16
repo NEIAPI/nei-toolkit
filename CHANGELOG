@@ -1,3 +1,8 @@
+0.3.1   (2016-02-16)
+    - build 命令添加 deployRoot, tMockRoot 和 iMockRoot 参数
+    - update 命令添加 tag 参数
+    - 只生成被页面引用的模板
+
 0.3.0   (2016-02-05)
     - 使用 ES6 重构代码
 
