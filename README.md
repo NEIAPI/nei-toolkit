@@ -122,6 +122,20 @@ nei build <IDS> [参数]
 | -w | --overwrite | false | 是否覆盖已存在的 MOCK 数据文件 |
 | -c | --config | | 参数配置文件路径，优先级低于命令行中的参数 |
 
+>config 参数指定的是一个文件路径, 该文件的内容必须是一个合法的 JSON, 比如:
+
+```javascript
+{
+	"t": "mobile",
+	"l": "java",
+	"p": "../genresult",
+	"o": "../genresult",
+	"tp": "java/",
+	"tdp": "nei.json",
+	"appPackage": "com.google.template"
+}
+```
+
 >以下参数对于使用 webapp 模板的项目特有：
 
 | 简写 | 全称 | 默认值 | 描述 |
