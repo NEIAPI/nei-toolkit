@@ -3,7 +3,7 @@ let assert = require('assert');
 let _path = require('../../lib/util/path');
 let _fs = require('../../lib/util/file');
 let Builder = require('../../lib/nei/builder');
-let testData = require('../test_data');
+let testData = require('../test_data.json');
 
 describe('nei/builder', function () {
 

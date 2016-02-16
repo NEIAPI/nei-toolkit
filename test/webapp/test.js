@@ -4,7 +4,7 @@ let fs = require('fs');
 let _path = require('../../lib/util/path');
 let _fs = require('../../lib/util/file');
 let WebAppBuilder = require('../../lib/nei/webapp');
-let testData = require('../test_data');
+let testData = require('../test_data.json');
 
 describe('nei/webapp', function () {
     // 在测试过程中，测试数据会被更改，所以每个测试用例都使用原始数据的拷贝

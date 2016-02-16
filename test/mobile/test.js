@@ -8,7 +8,7 @@ let MobileOCBuilder = require('../../lib/nei/mobile.oc');
 let MobileJavaBuilder = require('../../lib/nei/mobile.java');
 let PbxProj = require('../../lib/nei/mobile.oc.pbx');
 let Args = require('../../lib/util/args');
-let testData = require('../test_data');
+let testData = require('../test_data.json');
 
 describe('nei/mobile', function () {
     // 在测试过程中，测试数据会被更改，所以每个测试用例都使用原始数据的拷贝
