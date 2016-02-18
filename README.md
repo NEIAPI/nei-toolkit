@@ -19,7 +19,7 @@
 
 ## 使用说明
 
-1.  执行以下命令安装构建工具，如果已安装构建工具可忽略此步骤
+1. 执行以下命令安装构建工具，如果已安装构建工具可忽略此步骤
 
     ```bash
     npm install nei –g
@@ -127,8 +127,8 @@ nei build <IDS> [参数]
 ```javascript
 {
   "project": "./myproject",
-  "tMockRoot": "./mock/template",
-  "iMockRoot": "./mock/interface"
+  "tMockRoot": "./mock/template", // 相对于 project 的路径
+  "iMockRoot": "./mock/interface" // 相对于 project 的路径
 }
 ```
 
@@ -267,7 +267,7 @@ nei mock 233454 -t 2 -o /path/to/output/
 
 ## export
 
-从 `v0.3.2` 开始, 不再支持导出 POSTMAN 配置的功能, 推荐使用 [Phosphorus](https://chrome.google.com/webstore/detail/piaeaaejbhdohaihefehocabkanhlpoh/) 接口测试工具.
+从 `v0.3.2` 开始, 不再支持该功能.
 
 ## mobile
 
@@ -279,7 +279,7 @@ nei mobile <ID> [参数]
 
 其中 &lt;ID&gt; 是 NEI 平台中对应的项目 ID，必须输入
 
->针对nei mobile指令可用的参数包括：
+>针对 nei mobile 指令可用的参数包括：
 
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
@@ -324,6 +324,12 @@ nei mobile 23456798 -l java -o /path/to/output/
 ```
 
 # 版本历史
+
+## 0.3.2   (2016-02-18)
+
+* 修复 viewRoot 和 webRoot 错误的 bug
+* build 命令增加 engineRoot 参数
+* 移除 export 命令
 
 ## 0.3.1   (2016-02-16)
 
