@@ -126,13 +126,9 @@ nei build <IDS> [参数]
 
 ```javascript
 {
-	"t": "mobile",
-	"l": "java",
-	"p": "../genresult",
-	"o": "../genresult",
-	"tp": "java/",
-	"tdp": "nei.json",
-	"appPackage": "com.google.template"
+  "project": "./myproject",
+  "tMockRoot": "./mock/template",
+  "iMockRoot": "./mock/interface"
 }
 ```
 
@@ -141,6 +137,7 @@ nei build <IDS> [参数]
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
 | 无 | --engine | | 如果使用内建的 webapp 模板构建，此参数用于指定使用的模板引擎，支持内建模板引擎：freemarker、velocity、其他 Node.js 模板引擎，默认为 freemarker 引擎 |
+| 无 | --engineRoot | | engine 文件路径, 默认通过 bower 安装 |
 | 无 | --webRoot | | 如果使用内建的 webapp 模板构建，此参数用于指定 WEBROOT 目录，默认根据 maven 目录结构规范，相对于 -p 路径的 src/main/webapp/ |
 | 无 | --viewRoot | | 如果使用内建的 webapp 模板构建，此参数用于指定服务器端视图模板目录，默认根据 maven 目录结构规范，相对于 -p 路径的 src/main/webapp/WEB-INF/views/ |
 | 无 | --deployRoot | | deploy 文件夹的路径, 相对于 project 参数, 默认放在 project 指定路径的根目录 |
@@ -270,41 +267,7 @@ nei mock 233454 -t 2 -o /path/to/output/
 
 ## export
 
-导出第三方工具的配置文件，指令的运行格式为：
-
-```bash
-nei export <IDS> [参数]
-```
-
-其中 &lt;IDS&gt; 表示 NEI 平台中对应的项目 ID，多个项目 ID 用逗号分隔，必须输入
-
-针对 nei export 指令可用的参数包括：
-
-| 简写 | 全称 | 描述 |
-| :--- | :--- | :--- |
-| -h | --help    | 显示 export 命令的帮助信息 |
-| -d | --domain  | 指定服务器的域名、端口，默认为 localhost |
-| -o | --output  | 指定输出目录，默认为当前目录 |
-| -w | --overwrite | 是否覆盖已存在的配置文件，默认不覆盖 |
-| -t | --type    | 要导出的配置文件类型，后续扩展，0：POSTMAN，默认为 0 |
-
-使用范例：
-
-在当前目录下导出项目 2345,6798 的 postman 工具接口配置文件
-
-```bash
-nei export 2345,6798
-```
-
-在 /path/to/output/ 目录下导出项目 23456798 的 postman 工具接口配置文件
-
-```bash
-nei export 23456798 -d https://10.256.7.23:8080 -o /path/to/output/
-```
-
-导出的 postman 配置文件可以通过以下方式导入 [POSTMAN](https://www.getpostman.com/) 工具
-
-![POSTMAN导入配置](./doc/res/postman.png)
+从 `v0.3.2` 开始, 不再支持导出 POSTMAN 配置的功能, 推荐使用 [Phosphorus](https://chrome.google.com/webstore/detail/piaeaaejbhdohaihefehocabkanhlpoh/) 接口测试工具.
 
 ## mobile
 

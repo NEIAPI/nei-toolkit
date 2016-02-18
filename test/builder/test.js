@@ -85,29 +85,5 @@ describe('nei/builder', function () {
         });
     });
 
-    describe('Export data', function () {
-        this.timeout(40000);
-
-        const outputRoot = `${_path.normalize(__dirname + '/')}export/`;
-
-        afterEach(function () {
-            _fs.rmdir(outputRoot);
-        });
-
-        it('Export data -> case 1', function (done) {
-            let config = {
-                id: pid,
-                outputRoot: outputRoot
-            };
-            let builder = new Builder(config);
-            builder.export(getTestDataCopy());
-
-            assert.equal(true, _fs.exist(`${outputRoot}/nei-${pid}-postman.json`));
-
-            done();
-        });
-
-    });
-
 
 });

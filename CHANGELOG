@@ -1,8 +1,13 @@
+0.3.2   (2016-02-18)
+    - 修复 viewRoot 和 webRoot 错误的 bug
+    - build 命令增加 engineRoot 参数
+    - 移除 export 命令
+
 0.3.1   (2016-02-16)
-    - build 命令添加 deployRoot, tMockRoot 和 iMockRoot 参数
-    - update 命令添加 tag 参数
+    - build 命令增加 deployRoot, tMockRoot 和 iMockRoot 参数
+    - update 命令增加 tag 参数
     - 只生成被页面引用的模板
-    - 修正 -v 和 -h 命令的 bug
+    - 修复 -v 和 -h 命令的 bug
 
 0.3.0   (2016-02-05)
     - 使用 ES6 重构代码

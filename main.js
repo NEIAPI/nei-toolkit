@@ -168,14 +168,7 @@ class Main {
      * @return {undefined}
      */
     export(config) {
-        let cwd = process.cwd() + '/';
-        config.outputRoot = _path.absolute(
-            config.output + '/', cwd
-        );
-        this.loadData(config.id, (data) => {
-            let builder = new Builder(config);
-            builder.export(data);
-        });
+        _logger.warn('command is not supported anymore since v0.3.2');
     }
 
     /**
