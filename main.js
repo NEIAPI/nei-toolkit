@@ -163,15 +163,6 @@ class Main {
     }
 
     /**
-     * export toolkit config file
-     * @param  {object}  config - config object
-     * @return {undefined}
-     */
-    export(config) {
-        _logger.warn('command is not supported anymore since v0.3.2');
-    }
-
-    /**
      * export mobile models and requests
      * @param  {object}  config - config object
      * @return {undefined}

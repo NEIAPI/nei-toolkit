@@ -231,6 +231,13 @@ module.exports = {
             "m": "显示 update 命令帮助信息"
         },
         {
+            "j": "c",
+            "q": "config",
+            "d": "",
+            "p": true,
+            "m": "参数配置文件路径，避免命令行参数太多导致书写不便"
+        },
+        {
             "j": "p",
             "q": "project",
             "d": "./",
@@ -267,6 +274,13 @@ module.exports = {
             "m": "显示mock命令帮助信息"
         },
         {
+            "j": "c",
+            "q": "config",
+            "d": "",
+            "p": true,
+            "m": "参数配置文件路径，避免命令行参数太多导致书写不便"
+        },
+        {
             "j": "o",
             "q": "output",
             "d": "./",
@@ -291,54 +305,10 @@ module.exports = {
             "m": "如果type是0或者2的情况可以用此参数配置是否导出fiddler配置文件，默认不导出"
         },
         {
-            "j": "c",
+            "j": "ch",
             "q": "charles",
             "d": false,
             "m": "如果type是0或者2的情况可以用此参数配置是否导出charles配置文件，默认不导出"
-        }
-    ],
-    "export": [
-        "使用说明：",
-        "nei export <IDS> [参数]",
-        "",
-        "<IDS>\t\t\tNEI平台中对应的项目ID，多个项目ID用逗号分隔，必须输入",
-        "",
-        "参数说明：",
-        "%p",
-        "",
-        "使用举例：",
-        "nei export 2345,6798",
-        "nei export 23456798 -d https://10.256.7.23:8080 -o /path/to/output/"
-    ],
-    "export-params": [
-        {
-            "j": "h",
-            "q": "help",
-            "m": "显示export命令帮助信息"
-        },
-        {
-            "j": "d",
-            "q": "domain",
-            "d": "localhost",
-            "m": "指定服务器的域名、端口，默认为localhost"
-        },
-        {
-            "j": "o",
-            "q": "output",
-            "d": "./",
-            "m": "指定输出目录，默认为当前目录"
-        },
-        {
-            "j": "w",
-            "q": "overwrite",
-            "d": false,
-            "m": "是否覆盖已存在的配置文件，默认不覆盖"
-        },
-        {
-            "j": "t",
-            "q": "type",
-            "d": 0,
-            "m": "要导出的配置文件类型，后续扩展，0：POSTMAN，默认为0"
         }
     ],
     "mobile": [

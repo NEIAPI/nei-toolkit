@@ -23,22 +23,6 @@ var run = function (name, event) {
     }
 };
 
-// run command for batch ids
-var batch = function (name, event) {
-    var opt = event.options || {};
-    var id = (event.args || [])[0] || '';
-    if (!id) {
-        this.show(name);
-        process.exit(0);
-    } else {
-        this.format(name, opt);
-        id.split(splitChars).forEach(function (it) {
-            opt.id = it;
-            main[name](opt);
-        });
-    }
-};
-
 var options = {
     message: require('./config.js'),
     package: require('../package.json'),
@@ -82,9 +66,6 @@ var options = {
             // update all project
             main.update(config);
         }
-    },
-    export: function (event) {
-        batch.call(this, 'export', event);
     },
     mock: function (event) {
         run.call(this, 'mock', event);
