@@ -1,6 +1,0 @@
-{
-  "project": "./myproject",
-  "tMockRoot": "./mock/template",
-  "iMockRoot": "./mock/interface",
-  "engineRoot": "../../node_modules/freemarker.js"
-}
