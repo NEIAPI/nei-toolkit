@@ -214,7 +214,7 @@ nei update
 nei update 1245687 -p /path/to/project/
 ```
 
->提示: 可以先在本地创建项目目录, 这样在使用 build 和 update 命令的时候可以使用默认值, 比较方便.
+>提示: 可以先在本地创建项目目录, 然后在该目录下使用 build 和 update 命令, 使用默认值即可, 比较方便.
 
 ## mock
 
