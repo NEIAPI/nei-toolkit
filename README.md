@@ -12,9 +12,9 @@
 # 工具使用
 
 ## 环境配置
-构建工具基于 [Node.js](http://nodejs.org/) 平台，因此需要使用者先安装 Node.js 环境，Node.js 在各平台下的安装配置请参阅官方说明。
+构建工具基于 [Node.js](http://nodejs.org/) 平台，因此需要先安装 Node.js 环境，Node.js 在各平台上的安装配置请参阅官方说明。
 
->需要安装的 Node.js 版本须为 v4.2 及以上
+>安装的 Node.js 版本须为 v4.2 及以上
 
 ## 使用说明
 
@@ -66,7 +66,7 @@ nei [指令] [参数]
 | mock   | 根据 NEI 平台信息生成测试数据 |
 | mobile | 根据 NEI 平台信息生成移动平台模型和请求代码 |
 
-其中针对nei可用的参数包括：
+其中针对 nei 可用的参数包括：
 
 | 简写 | 全称 | 描述 |
 | :--- | :--- | :--- |
@@ -75,19 +75,19 @@ nei [指令] [参数]
 
 使用范例：
 
-查看工具版本信息
+查看工具版本信息：
 
 ```bash
 nei -v
 ```
 
-显示工具帮助信息
+显示工具帮助信息：
 
 ```bash
 nei -h
 ```
 
-查看build指令帮助信息
+查看 build 指令帮助信息：
 
 ```bash
 nei build -h
@@ -101,7 +101,7 @@ nei build -h
 nei build <IDS> [参数]
 ``` 
 
-其中 <IDS> 表示用户在 NEI 平台上定义的项目，必须输入，多个 ID 用逗号或者分号分隔，项目的 ID 可以通过 NEI 平台的访问地址栏的 pid 取到，如下图所示
+其中 &lt;IDS&gt; 表示用户在 NEI 平台上定义的项目，必须输入，多个 ID 用逗号或者分号分隔，项目的 ID 可以通过 NEI 平台的访问地址栏的 pid 取到，如下图所示
 
 ![查看NEI平台ID信息](./doc/res/pid.png)
 
@@ -109,13 +109,13 @@ nei build <IDS> [参数]
 
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
-| -h | --help |  | 显示build命令的帮助信息 |
+| -h | --help |  | 显示 build 命令的帮助信息 |
 | -c | --config | | 参数配置文件路径，优先级低于命令行中的参数 |
 | -p | --project | ./ | 指定项目目录，默认为当前目录 |
 | -t | --template | webapp | 指定用于构建的模板实现文件 |
-| -w | --overwrite | false | 是否覆盖已存在的 MOCK 数据文件 |
+| -w | --overwrite | false | 是否覆盖已存在的测试数据文件 |
 
->config 参数指定的是一个文件路径, 该文件的内容必须是一个合法的 JSON, 比如:
+>config 参数指定的是一个文件路径, 该文件的内容必须是有效的 json, 比如:
 
 ```javascript
 {
@@ -181,15 +181,15 @@ nei build 23456798 -p /path/to/project/
 
 ## update
 
-更新通过 'nei build' 构建的项目，指令的运行格式为：
+更新通过 `nei build` 构建的项目，指令的运行格式为：
 
 ```bash
-nei update [IDS] [参数]
+nei update <IDS> [参数]
 ``` 
 
-其中 [IDS] 表示 NEI 平台中对应的项目 ID，多个项目 ID 用逗号分隔，不传则表示更新所有已通过 'nei build' 生成的项目
+其中 &lt;IDS&gt; 表示 NEI 平台中对应的项目 ID，多个项目 ID 用逗号分隔，不传则表示更新所有已通过 `nei build` 生成的项目
 
-针对 nei update 指令可用的参数包括：
+针对 `nei update` 指令可用的参数包括：
 
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
@@ -206,7 +206,7 @@ nei update [IDS] [参数]
 nei update
 ```
 
->注意, 如果在 build 的时候指定了项目目录, 则需要先进入该目录再运行 'nei update' 命令, 或者也可以通过下面的命令来更新.
+>注意, 如果在 build 的时候指定了项目目录, 则需要先进入该目录再运行 `nei update` 命令, 或者也可以通过下面的命令来更新.
 
 更新指定目录 /path/to/project/ 下 ID 为 1245687 的项目
 
@@ -214,7 +214,7 @@ nei update
 nei update 1245687 -p /path/to/project/
 ```
 
->提示: 可以先在本地创建项目目录, 然后在该目录下使用 build 和 update 命令, 使用默认值即可, 比较方便.
+>提示: 可以先在本地创建项目目录, 然后在该目录下使用 build 和 update 命令, 使用默认值即可.
 
 ## mock
 
@@ -224,9 +224,9 @@ nei update 1245687 -p /path/to/project/
 nei mock <ID> [参数]
 ```
 
-其中 <ID> 为 NEI 平台中对应的项目 ID，必须输入
+其中 &lt;ID&gt; 为 NEI 平台中对应的项目 ID，必须输入
 
-针对 nei mock 指令可用的参数包括：
+针对 `nei mock` 指令可用的参数包括：
 
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
@@ -275,7 +275,7 @@ nei mobile <ID> [参数]
 
 其中 &lt;ID&gt; 是 NEI 平台中对应的项目 ID，必须输入
 
->针对 nei mobile 指令可用的参数包括：
+>针对 `nei mobile` 指令可用的参数包括：
 
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
@@ -307,13 +307,13 @@ nei mobile <ID> [参数]
 
 使用范例
 
-在当前目录下导出项目 2345 的 Objective-C 语言的数据模型和请求对象
+在当前目录下导出项目 2345 的 Objective-C 语言的数据模型和请求对象：
 
 ```bash
 nei mobile 2345
 ```
 
-在 /path/to/output/ 下导出项目 23456798 的 Java 语言的数据模型和请求对象
+在 /path/to/output/ 下导出项目 23456798 的 Java 语言的数据模型和请求对象：
 
 ```bash
 nei mobile 23456798 -l java -o /path/to/output/
