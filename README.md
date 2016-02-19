@@ -136,7 +136,6 @@ nei build <IDS> [参数]
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
 | 无 | --engine | | 如果使用内建的 webapp 模板构建，此参数用于指定使用的模板引擎，支持内建模板引擎：freemarker、velocity、其他 Node.js 模板引擎，默认为 freemarker 引擎 |
-| 无 | --engineRoot | | engine 文件路径, 默认通过 bower 安装 |
 | 无 | --webRoot | | 如果使用内建的 webapp 模板构建，此参数用于指定 WEBROOT 目录，默认根据 maven 目录结构规范，相对于 -p 路径的 src/main/webapp/ |
 | 无 | --viewRoot | | 如果使用内建的 webapp 模板构建，此参数用于指定服务器端视图模板目录，默认根据 maven 目录结构规范，相对于 -p 路径的 src/main/webapp/WEB-INF/views/ |
 | 无 | --deployRoot | | deploy 文件夹的路径, 相对于 project 参数, 默认放在 project 指定路径的根目录 |
@@ -211,7 +210,9 @@ nei update [IDS] [参数]
 
 ```bash
 nei update
-``` 
+```
+
+>注意, 如果在 build 的时候指定了项目目录, 则需要先进入该目录再运行 'nei update' 命令, 或者也可以通过下面的命令来更新.
 
 更新指定目录 /path/to/project/ 下 ID 为 1245687 的项目
 
