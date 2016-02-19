@@ -101,11 +101,11 @@ nei build -h
 nei build [IDS] [参数]
 ``` 
 
-其中 [IDS] 表示用户在 NEI 平台上定义的项目，必须输入，多个 ID 用逗号或者分号分隔，项目的 ID 可以通过 NEI 平台的访问地址栏的 pid 取到，如下图所示
+其中 [IDS] 表示用户在 NEI 平台上定义的项目 id，必须输入，多个 id 用逗号或者分号分隔，项目的 id 可以通过 NEI 平台的访问地址栏的 pid 取到，如下图所示
 
 ![查看NEI平台ID信息](./doc/res/pid.png)
 
->针对 nei build 指令可用的参数包括：
+>针对 `nei build` 指令可用的参数包括：
 
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
@@ -120,8 +120,8 @@ nei build [IDS] [参数]
 ```javascript
 {
   "project": "./myproject",
-  "tMockRoot": "./mock/template", // 相对于 project 的路径
-  "iMockRoot": "./mock/interface" // 相对于 project 的路径
+  "tMockRoot": "./mock/template", // 相对于 project 参数的路径
+  "iMockRoot": "./mock/interface" // 相对于 project 参数的路径
 }
 ```
 
@@ -146,7 +146,7 @@ nei build [IDS] [参数]
 | l | --lang | oc | 要导出的语言标识，支持的语言有 oc、java 等 |
 | 无 | --reqAbstract | BaseRequest | 请求基类名称，不带类名的前缀。如果语言是 java，则默认值为 BaseHttpStringRequestTask |
 | 无 | --modelAbstract | HTTPModel | 数据模型基类名称，不带类名的前缀 |
-| 无 | --resOut |  | 生成的 NEI 资源相对工程的路径，如不指定，语言为 Java 时值为 'app/src/main/hthttp-gen/'，语言为 Objective-C 时值为'{产品名}+/NetWork/' |
+| 无 | --resOut |  | 生成的 NEI 资源相对工程的路径，如不指定，语言为 java 时值为 `app/src/main/hthttp-gen/`，语言为 oc 时值为 `{产品名}+/NetWork/` |
 
 >以下参数在生成 mobile 项目的 Objective-C 模型和请求文件时特有：
 
@@ -167,13 +167,13 @@ nei build [IDS] [参数]
 
 使用范例：
 
-在当前目录下构建两个项目（id 为 23456798 和 452178），并强行覆盖本地模拟数据文件
+在当前目录下构建两个项目（id 为 23456798 和 452178），并强行覆盖本地模拟数据文件：
 
 ```bash
 nei build 23456798,452178 -w
 ```
 
-在指定的目录 /path/to/project/ 下生成 id 为 23456798 的项目结构
+在指定的目录 /path/to/project/ 下生成 id 为 23456798 的项目结构：
 
 ```bash
 nei build 23456798 -p /path/to/project/
@@ -195,7 +195,7 @@ nei update [IDS] [参数]
 | :--- | :--- | :--- | :--- |
 | -h | --help  | | 显示 update 命令的帮助信息 |
 | -p | --project | ./ | 指定项目目录，默认为当前目录 |
-| -w | --overwrite | false | 是否覆盖已存在的 MOCK 数据文件，默认不覆盖 |
+| -w | --overwrite | false | 是否覆盖已存在的测试数据文件，默认不覆盖 |
 | 无 | --tag | | 只更新含有指定 tag 的模板, 默认全部更新 |
 
 使用范例：
@@ -214,7 +214,7 @@ nei update
 nei update 1245687 -p /path/to/project/
 ```
 
->提示: 可以先在本地创建项目目录, 然后在该目录下使用 build 和 update 命令, 使用默认值即可.
+>提示: 可以先在本地创建项目目录, 然后在该目录下使用 `nei build` 和 `nei update` 命令, 使用默认值即可.
 
 ## mock
 
@@ -224,7 +224,7 @@ nei update 1245687 -p /path/to/project/
 nei mock [ID] [参数]
 ```
 
-其中 [ID] 为 NEI 平台中对应的项目 ID，必须输入
+其中 [ID] 为 NEI 平台中对应的项目 id，必须输入
 
 针对 `nei mock` 指令可用的参数包括：
 
@@ -273,7 +273,7 @@ nei mock 233454 -t 2 -o /path/to/output/
 nei mobile [ID] [参数]
 ```
 
-其中 [ID] 是 NEI 平台中对应的项目 ID，必须输入
+其中 [ID] 是 NEI 平台中对应的项目 id，必须输入
 
 >针对 `nei mobile` 指令可用的参数包括：
 
@@ -287,7 +287,7 @@ nei mobile [ID] [参数]
 | 无 | --author | netease | 注释中作者姓名 |
 | 无 | --reqAbstract | BaseRequest | 请求基类名称，不带类名的前缀。如果语言是 java，则默认值为 BaseHttpStringRequestTask |
 | 无 | --modelAbstract | HTTPModel | 数据模型基类名称，不带类名的前缀 |
-| 无 | --resOut |  | 生成的 NEI 资源相对工程的路径，如不指定，语言为 Java 时值为 'app/src/main/hthttp-gen/'，语言为 Objective-C 时值为'{产品名}+/NetWork/' |
+| 无 | --resOut |  | 生成的 NEI 资源相对工程的路径，如不指定，语言为 java 时值为 `app/src/main/hthttp-gen/`，语言为 oc 时值为 `{产品名}+/NetWork/` |
 
 >以下参数在生成 Objective-C 模型和请求文件时特有：
 
