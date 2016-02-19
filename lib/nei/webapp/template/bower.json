@@ -2,7 +2,7 @@
     "name": "auto-{{PRO_NAME}}",
     "version": "0.0.1",
     "dependencies": {
-        {%- if !!freemarker && !engineRoot %}
+        {%- if !!freemarker %}
         "express-freemarker": "https://github.com/leeluolee/express-freemarker.git",
         {%- endif %}
         "nej": "master",

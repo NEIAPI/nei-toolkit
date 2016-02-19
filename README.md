@@ -201,7 +201,6 @@ nei update [IDS] [参数]
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
 | -h | --help  | | 显示 update 命令的帮助信息 |
-| -c | --config | | 参数配置文件路径，优先级低于命令行中的参数 |
 | -p | --project | ./ | 指定项目目录，默认为当前目录 |
 | -w | --overwrite | false | 是否覆盖已存在的 MOCK 数据文件，默认不覆盖 |
 | 无 | --tag | | 只更新含有指定 tag 的模板, 默认全部更新 |
@@ -235,12 +234,11 @@ nei mock <ID> [参数]
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
 | -h | --help | | 显示 mock 命令的帮助信息 |
-| -c | --config | | 参数配置文件路径，优先级低于命令行中的参数 |
 | -o | --output | ./ | 指定输出目录，默认为当前目录 |
 | -w | --overwrite | false | 是否覆盖已存在的 MOCK 数据文件，默认不覆盖 |
 | -t | --type | 0 | 要导出的数据类型，0：模板+接口，1：模板，2：接口，默认为 0 |
 | -f | --fiddler | false | 如果 type 是 0 或者 2 的情况可以用此参数配置是否导出 fiddler 配置文件，默认不导出 |
-| -cs | --charles | false | 如果 type 是 0 或者 2 的情况可以用此参数配置是否导出 charles 配置文件，默认不导出 |
+| -c | --charles | false | 如果 type 是 0 或者 2 的情况可以用此参数配置是否导出 charles 配置文件，默认不导出 |
 
 使用范例：
 
@@ -329,7 +327,6 @@ nei mobile 23456798 -l java -o /path/to/output/
 ## 0.3.2   (2016-02-18)
 
 * 修复 viewRoot 和 webRoot 错误的 bug
-* build 命令增加 engineRoot 参数
 * 移除 export 命令
 
 ## 0.3.1   (2016-02-16)
