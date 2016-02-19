@@ -61,7 +61,7 @@ nei [指令] [参数]
 | 指令  | 描述 |
 | :--- | :--- |
 | build  | 根据 NEI 平台信息构建项目结构 |
-| update | 更新通过 'nei build' 构建的项目 |
+| update | 更新通过 `nei build` 构建的项目 |
 | export | 已移除, 不再支持 |
 | mock   | 根据 NEI 平台信息生成测试数据 |
 | mobile | 根据 NEI 平台信息生成移动平台模型和请求代码 |
@@ -98,10 +98,10 @@ nei build -h
 根据 NEI 平台信息构建项目结构，指令的运行格式为：
 
 ```bash
-nei build <IDS> [参数]
+nei build [IDS] [参数]
 ``` 
 
-其中 &lt;IDS&gt; 表示用户在 NEI 平台上定义的项目，必须输入，多个 ID 用逗号或者分号分隔，项目的 ID 可以通过 NEI 平台的访问地址栏的 pid 取到，如下图所示
+其中 [IDS] 表示用户在 NEI 平台上定义的项目，必须输入，多个 ID 用逗号或者分号分隔，项目的 ID 可以通过 NEI 平台的访问地址栏的 pid 取到，如下图所示
 
 ![查看NEI平台ID信息](./doc/res/pid.png)
 
@@ -184,10 +184,10 @@ nei build 23456798 -p /path/to/project/
 更新通过 `nei build` 构建的项目，指令的运行格式为：
 
 ```bash
-nei update <IDS> [参数]
+nei update [IDS] [参数]
 ``` 
 
-其中 &lt;IDS&gt; 表示 NEI 平台中对应的项目 ID，多个项目 ID 用逗号分隔，不传则表示更新所有已通过 `nei build` 生成的项目
+其中 [IDS] 表示 NEI 平台中对应的项目 ID，多个项目 ID 用逗号分隔，不传则表示更新所有已通过 `nei build` 生成的项目
 
 针对 `nei update` 指令可用的参数包括：
 
@@ -200,7 +200,7 @@ nei update <IDS> [参数]
 
 使用范例：
 
-更新当前目录下所有通过 'nei build' 生成的项目
+更新当前目录下所有通过 `nei build` 生成的项目
 
 ```bash
 nei update
@@ -221,10 +221,10 @@ nei update 1245687 -p /path/to/project/
 根据 NEI 平台信息生成测试数据，指令的运行格式为：
 
 ```bash
-nei mock <ID> [参数]
+nei mock [ID] [参数]
 ```
 
-其中 &lt;ID&gt; 为 NEI 平台中对应的项目 ID，必须输入
+其中 [ID] 为 NEI 平台中对应的项目 ID，必须输入
 
 针对 `nei mock` 指令可用的参数包括：
 
@@ -270,10 +270,10 @@ nei mock 233454 -t 2 -o /path/to/output/
 自动生成移动平台数据模型和请求类代码
 
 ```bash
-nei mobile <ID> [参数]
+nei mobile [ID] [参数]
 ```
 
-其中 &lt;ID&gt; 是 NEI 平台中对应的项目 ID，必须输入
+其中 [ID] 是 NEI 平台中对应的项目 ID，必须输入
 
 >针对 `nei mobile` 指令可用的参数包括：
 
