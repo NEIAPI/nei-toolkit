@@ -129,12 +129,12 @@ nei build [IDS] [参数]
 
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
-| 无 | --engine | | 如果使用内建的 webapp 模板构建，此参数用于指定使用的模板引擎，支持内建模板引擎：freemarker、velocity、其他 Node.js 模板引擎，默认为 freemarker 引擎 |
-| 无 | --webRoot | | 如果使用内建的 webapp 模板构建，此参数用于指定 WEBROOT 目录，默认根据 maven 目录结构规范，相对于 -p 路径的 src/main/webapp/ |
-| 无 | --viewRoot | | 如果使用内建的 webapp 模板构建，此参数用于指定服务器端视图模板目录，默认根据 maven 目录结构规范，相对于 -p 路径的 src/main/webapp/WEB-INF/views/ |
-| 无 | --deployRoot | | deploy 文件夹的路径, 相对于 project 参数, 默认放在 project 指定路径的根目录 |
-| 无 | --tMockRoot | | template mock 数据文件夹的路径, 相对于 project 参数, 默认放在 src/main/webapp/src/mock/ |
-| 无 | --iMockRoot | | interface mock 数据文件夹的路径, 相对于 project 参数, 默认放在 src/main/webapp/WEB_INF/views/mock/ |
+| 无 | --engine | | 如果使用内建的 webapp 模板构建，此参数用于指定使用的模板引擎，支持内建模板引擎：freemarker、velocity、其他 Node.js 模板引擎，默认为 `freemarker` 引擎 |
+| 无 | --webRoot | | 如果使用内建的 webapp 模板构建，此参数用于指定 WEBROOT 目录，默认根据 maven 目录结构规范，相对于 -p 路径的 `src/main/webapp/` |
+| 无 | --viewRoot | | 如果使用内建的 webapp 模板构建，此参数用于指定服务器端视图模板目录，默认根据 maven 目录结构规范，相对于 -p 路径的 `src/main/webapp/WEB-INF/views/` |
+| 无 | --deployRoot | | deploy 文件夹的路径, 相对于 -p 路径, 默认放在 -p 指定路径的根目录 |
+| 无 | --tMockRoot | | template mock 数据文件夹的路径, 相对于 -p 路径, 默认放在 `src/main/webapp/src/mock/` |
+| 无 | --iMockRoot | | interface mock 数据文件夹的路径, 相对于 -p 路径, 默认放在 `src/main/webapp/WEB_INF/views/mock/` |
 
 >以下参数对于使用 mobile 模板的项目特有：
 
@@ -144,7 +144,7 @@ nei build [IDS] [参数]
 | -tdp | --templateDataPath | | 模板的数据文件路径，默认为空，文件内容须是有效的 json |
 | -pt | --projectType | hz.netease | 项目类型 |
 | l | --lang | oc | 要导出的语言标识，支持的语言有 oc、java 等 |
-| 无 | --reqAbstract | BaseRequest | 请求基类名称，不带类名的前缀。如果语言是 java，则默认值为 BaseHttpStringRequestTask |
+| 无 | --reqAbstract | BaseRequest | 请求基类名称，不带类名的前缀。如果语言是 java，则默认值为 `BaseHttpStringRequestTask` |
 | 无 | --modelAbstract | HTTPModel | 数据模型基类名称，不带类名的前缀 |
 | 无 | --resOut |  | 生成的 NEI 资源相对工程的路径，如不指定，语言为 java 时值为 `app/src/main/hthttp-gen/`，语言为 oc 时值为 `{产品名}+/NetWork/` |
 
@@ -163,7 +163,7 @@ nei build [IDS] [参数]
 | :--- | :--- | :--- | :--- |
 | 无 | --appPackage | com.netease | 应用的包名 |
 | 无 | --modelPackage | hthttp.model | 模型的相对包名 |
-| 无 | --reqPackage | hthttp.httptask | http请求的相对包名 |
+| 无 | --reqPackage | hthttp.httptask | http 请求的相对包名 |
 
 使用范例：
 
@@ -285,7 +285,7 @@ nei mobile [ID] [参数]
 | -l | --lang | oc | 要导出的语言标识，支持的语言有 oc、java 等 |
 | -f | --force | false | 是否强制更新 OC 工程的 .pbxproj 文件 |
 | 无 | --author | netease | 注释中作者姓名 |
-| 无 | --reqAbstract | BaseRequest | 请求基类名称，不带类名的前缀。如果语言是 java，则默认值为 BaseHttpStringRequestTask |
+| 无 | --reqAbstract | BaseRequest | 请求基类名称，不带类名的前缀。如果语言是 java，则默认值为 `BaseHttpStringRequestTask` |
 | 无 | --modelAbstract | HTTPModel | 数据模型基类名称，不带类名的前缀 |
 | 无 | --resOut |  | 生成的 NEI 资源相对工程的路径，如不指定，语言为 java 时值为 `app/src/main/hthttp-gen/`，语言为 oc 时值为 `{产品名}+/NetWork/` |
 
@@ -303,7 +303,7 @@ nei mobile [ID] [参数]
 | :--- | :--- | :--- | :--- |
 | 无 | --appPackage | com.netease | 应用的包名 |
 | 无 | --modelPackage | hthttp.model | 模型的相对包名 |
-| 无 | --reqPackage | hthttp.httptask | http请求的相对包名 |
+| 无 | --reqPackage | hthttp.httptask | http 请求的相对包名 |
 
 使用范例
 
