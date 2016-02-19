@@ -48,12 +48,6 @@
 	nei mock 10680
 	```
 
-5. 如果只需要导出 NEI 平台定义的接口的 POSTMAN 工具的配置文件，则可以使用以下指令
-
-	```bash
-	nei export 10680
-	```
-
 # 指令说明
 
 本工具使用时在终端或者命令行输入以下格式指令运行
@@ -219,6 +213,8 @@ nei update
 ```bash
 nei update 1245687 -p /path/to/project/
 ```
+
+>提示: 可以先在本地创建项目目录, 这样在使用 build 和 update 命令的时候可以使用默认值, 比较方便.
 
 ## mock
 
