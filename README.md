@@ -6,7 +6,6 @@
 * 支持 [本地容器 PUER](https://github.com/leeluolee/puer) 运行配置自动生成
 * 支持 [NEJ 发布工具](https://github.com/genify/toolkit2) 配置文件自动生成
 * 支持 [Fiddler](http://www.telerik.com/fiddler) 工具代理本地模拟数据，接口配置文件导出
-* 支持 [POSTMAN](https://www.getpostman.com/) 工具接口配置文件导出
 * 支持自动生成移动端数据模型、请求类代码
 * 支持自动导出模拟数据
 
@@ -203,8 +202,8 @@ nei update [IDS] [参数]
 | :--- | :--- | :--- | :--- |
 | -h | --help  | | 显示 update 命令的帮助信息 |
 | -c | --config | | 参数配置文件路径，优先级低于命令行中的参数 |
-| -p | --project | | 指定项目目录，默认为当前目录 |
-| -w | --overwrite | | 是否覆盖已存在的 MOCK 数据文件，默认不覆盖 |
+| -p | --project | ./ | 指定项目目录，默认为当前目录 |
+| -w | --overwrite | false | 是否覆盖已存在的 MOCK 数据文件，默认不覆盖 |
 | 无 | --tag | | 只更新含有指定 tag 的模板, 默认全部更新 |
 
 使用范例：
@@ -287,7 +286,7 @@ nei mobile <ID> [参数]
 | :--- | :--- | :--- | :--- |
 | -h | --help | | 显示 mobile 命令帮助信息 |
 | -c | --config | | 参数配置文件路径，优先级低于命令行中的参数 |
-| -o | --output | | 指定输出目录，默认为当前目录 |
+| -o | --output | ./ | 指定输出目录，默认为当前目录 |
 | -l | --lang | oc | 要导出的语言标识，支持的语言有 oc、java 等 |
 | -f | --force | false | 是否强制更新 OC 工程的 .pbxproj 文件 |
 | 无 | --author | netease | 注释中作者姓名 |
