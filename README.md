@@ -30,7 +30,7 @@
     npm update nei –g
     ```
 
-2. 执行以下指令根据 NEI 平台定义的项目 ID，构建项目目录结构、模拟容器配置、模拟数据及数据过滤器
+2. 执行以下指令根据 NEI 平台定义的项目 id，构建项目目录结构、模拟容器配置、模拟数据及数据过滤器
 
 	```bash
 	nei build 10680
@@ -187,7 +187,7 @@ nei build 23456798 -p /path/to/project/
 nei update [IDS] [参数]
 ``` 
 
-其中 [IDS] 表示 NEI 平台中对应的项目 ID，多个项目 ID 用逗号分隔，不传则表示更新所有已通过 `nei build` 生成的项目
+其中 [IDS] 表示 NEI 平台中对应的项目 id，多个项目 id 用逗号分隔，不传则表示更新所有已通过 `nei build` 生成的项目
 
 针对 `nei update` 指令可用的参数包括：
 
@@ -208,7 +208,7 @@ nei update
 
 >注意, 如果在 build 的时候指定了项目目录, 则需要先进入该目录再运行 `nei update` 命令, 或者也可以通过下面的命令来更新.
 
-更新指定目录 /path/to/project/ 下 ID 为 1245687 的项目
+更新指定目录 /path/to/project/ 下 id 为 1245687 的项目
 
 ```bash
 nei update 1245687 -p /path/to/project/
@@ -377,7 +377,7 @@ nei mobile 23456798 -l java -o /path/to/output/
 
 ## 0.1.7   (2015-11-05)
 
-* 输出 release.conf 文件名带 NEI ID
+* 输出 release.conf 文件名带 NEI id
 * 修正循环引用识别异常
 
 ## 0.1.6   (2015-10-23)
