@@ -305,7 +305,7 @@ module.exports = {
             "m": "如果type是0或者2的情况可以用此参数配置是否导出fiddler配置文件，默认不导出"
         },
         {
-            "j": "ch",
+            "j": "cs",
             "q": "charles",
             "d": false,
             "m": "如果type是0或者2的情况可以用此参数配置是否导出charles配置文件，默认不导出"

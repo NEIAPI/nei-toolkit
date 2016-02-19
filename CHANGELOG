@@ -3,7 +3,7 @@
     - build 命令增加 engineRoot 参数
     - 移除 export 命令
     - 所有命令都支持 config 参数
-    - mock 命令的 charles 参数的小写形式变更为 ch
+    - mock 命令的 charles 参数的小写形式变更为 cs
 
 0.3.1   (2016-02-16)
     - build 命令增加 deployRoot, tMockRoot 和 iMockRoot 参数
