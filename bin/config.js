@@ -104,11 +104,6 @@ module.exports = {
             "f": "w" // `for` `webapp` only
         },
         {
-            "q": "engineRoot",
-            "m": "engine 文件路径, 默认通过 bower 安装",
-            "f": "w"
-        },
-        {
             "q": "webRoot",
             "m": "如果使用内建的 webapp 模板构建，此参数用于指定 WEBROOT 目录，默认根据 maven 目录结构规范，相对于 -p 路径的 src/main/webapp/",
             "f": "w"
