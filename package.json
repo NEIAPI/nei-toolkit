@@ -38,7 +38,7 @@
     "xcode": "^0.8.2"
   },
   "nei": {
-    "mock": "http://nei.hz.netease.com/api/parameter/getTestData?type=%s&id=%s",
+    "mock": "http://nei.hz.netease.com/api/parameter/getTestData?api&type=%s&id=%s",
     "api": "http://nei.hz.netease.com/api/projectView/getByProjectId?pid=%s"
   }
 }
