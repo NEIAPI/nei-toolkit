@@ -283,7 +283,6 @@ nei mobile [ID] [参数]
 | -c | --config | | 参数配置文件路径，优先级低于命令行中的参数 |
 | -o | --output | ./ | 指定输出目录，默认为当前目录 |
 | -l | --lang | oc | 要导出的语言标识，支持的语言有 oc、java 等 |
-| -f | --force | false | 是否强制更新 OC 工程的 .pbxproj 文件 |
 | 无 | --author | netease | 注释中作者姓名 |
 | 无 | --reqAbstract | BaseRequest | 请求基类名称，不带类名的前缀。如果语言是 java，则默认值为 `BaseHttpStringRequestTask` |
 | 无 | --modelAbstract | HTTPModel | 数据模型基类名称，不带类名的前缀 |
@@ -293,6 +292,7 @@ nei mobile [ID] [参数]
 
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
+| -f | --force | false | 是否强制更新 OC 工程的 .pbxproj 文件 |
 | 无 | --namePrefix | HT | 生成的文件名、类名的前缀，默认为 HT |
 | 无 | --reqHeaders | Requests | 包含所有数据请求的头文件名称，不带类名的前缀 |
 | 无 | --modelHeaders | Models | 包含所有数据模型的头文件名称，不带类名的前缀 |
