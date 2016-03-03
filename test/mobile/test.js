@@ -53,8 +53,9 @@ describe('nei/mobile', function () {
             assert.equal(true, _fs.exist(`${outputRoot}/nei.${pid}/JSON/nei-latest.json`));
             assert.equal(true, _fs.exist(`${outputRoot}/${projectName}/info.plist`));
 
-            let projectFilePath = `${outputRoot}/${projectName}`;
-            let pbxProj = new PbxProj(projectName, projectFilePath);
+            let projectPath = `${outputRoot}/${projectName}`;
+            let projectFilePath = `${projectPath}.xcodeproj/project.pbxproj`;
+            let pbxProj = new PbxProj(projectName, projectPath, projectFilePath);
             let rootGroup = pbxProj.getPBXGroupByPath(true, projectName);
 
             // root group has 9 resources(files plus directories)
