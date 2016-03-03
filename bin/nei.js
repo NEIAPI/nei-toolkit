@@ -39,12 +39,17 @@ var options = {
         var action = 'build';
         var config = event.options || {};
         var id = (event.args || [])[0];
+        config = this.format(action, config);
+        config.action = action;
         if (!id) {
-            this.show(action);
-            this.emit('exit', 0);
+            if (config.template === 'mobile') {
+                // build empty mobile project
+                main.buildEmpty(config);
+            } else {
+                this.show(action);
+                this.emit('exit', 0);
+            }
         } else {
-            config = this.format(action, config);
-            config.action = action;
             id.split(splitChars).forEach(function (it) {
                 config.id = it;
                 main.build(config);

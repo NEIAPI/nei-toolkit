@@ -1,5 +1,5 @@
 /*
- * arguments config ported from nei.json
+ * arguments config
  * @author  huntbao
  */
 module.exports = {

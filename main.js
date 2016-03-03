@@ -122,6 +122,20 @@ class Main {
     }
 
     /**
+     * build empty mobile project
+     * @param  {object}  config - config object
+     * @return {undefined}
+     */
+    buildEmpty(config) {
+        let cwd = process.cwd() + '/';
+        config.outputRoot = _path.absolute(config.project + '/', cwd);
+        let name = `./lib/nei/mobile.${config.lang}.js`;
+        let Builder = require(name);
+        let builder = new Builder(config);
+        builder.build();
+    }
+
+    /**
      * update nei project
      * @param  {object}  config - config object
      * @return {undefined}
