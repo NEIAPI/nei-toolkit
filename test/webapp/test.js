@@ -27,7 +27,8 @@ describe('nei/webapp', function () {
         it('Build webapp -> case 1', function (done) {
             let config = {
                 id: pid,
-                outputRoot: outputRoot
+                outputRoot: outputRoot,
+                mcss: true
             };
             let builder = new WebAppBuilder(config);
             builder.build(getTestDataCopy());
@@ -49,7 +50,8 @@ describe('nei/webapp', function () {
         it('Build and update webapp -> case 1', function (done) {
             let config = {
                 id: pid,
-                outputRoot: outputRoot
+                outputRoot: outputRoot,
+                mcss: true
             };
             let builder = new WebAppBuilder(config);
             builder.build(getTestDataCopy());
