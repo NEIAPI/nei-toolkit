@@ -128,6 +128,12 @@ module.exports = {
             "m": "interface mock 数据文件夹的路径, 相对于 project 参数, 默认放在 src/main/webapp/WEB_INF/views/mock/",
             "f": "w"
         },
+        {
+            "q": "mcss",
+            "m": "是否需要生成 mcss 代码, 默认生成",
+            "d": true,
+            "f": "w"
+        },
         "",
         "以下参数对于使用 mobile 模板的项目特有：",
         {
