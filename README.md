@@ -135,6 +135,7 @@ nei build [IDS] [参数]
 | 无 | --deployRoot | | deploy 文件夹的路径, 相对于 -p 路径, 默认放在 -p 指定路径的根目录 |
 | 无 | --tMockRoot | | template mock 数据文件夹的路径, 相对于 -p 路径, 默认放在 `src/main/webapp/src/mock/` |
 | 无 | --iMockRoot | | interface mock 数据文件夹的路径, 相对于 -p 路径, 默认放在 `src/main/webapp/WEB_INF/views/mock/` |
+| 无 | --mcss | | 是否需要生成 mcss 代码, 默认是 true |
 
 >以下参数对于使用 mobile 模板的项目特有：
 

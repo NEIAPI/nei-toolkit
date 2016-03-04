@@ -130,7 +130,7 @@ module.exports = {
         },
         {
             "q": "mcss",
-            "m": "是否需要生成 mcss 代码, 默认生成",
+            "m": "是否需要生成 mcss 代码, 默认是 true",
             "d": true,
             "f": "w"
         },
