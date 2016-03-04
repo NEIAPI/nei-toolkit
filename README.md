@@ -322,6 +322,13 @@ nei mobile 23456798 -l java -o /path/to/output/
 
 # 版本历史
 
+## 0.3.4   (2016-03-04)
+* 构建移动端项目时可以不输入项目id
+* nei mock 时生成地址指向 nei 服务器的 fiddler 配置文件
+* 移除模板文件中的时间信息
+* nei build 命令构建 webapp 项目时支持 mcss 可配置
+* 修正 server.bat(.sh) 中 mcss 的命令参数: -w 修改为 -w 1
+
 ## 0.3.3   (2016-02-25)
 
 * 修复接口及模板的 mock 文件夹路径的错误问题
