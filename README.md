@@ -323,7 +323,7 @@ nei mobile 23456798 -l java -o /path/to/output/
 # 版本历史
 
 ## 0.3.5   (2016-03-07)
-* 生成 Java 代码时, 将 `double` 改成 `Double`
+* 生成 Java 代码时, 将和 NEI 中对应的 `Number` 类型从 `double` 修改为 `Double`
 
 ## 0.3.4   (2016-03-04)
 * 构建移动端项目时可以不输入项目id
