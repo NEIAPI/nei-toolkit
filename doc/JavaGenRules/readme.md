@@ -183,7 +183,8 @@ public class {{请求类名}}HttpTask extends BaseHttpStringRequestTask {
     //    e. 如果可变类型字段是数组，则根据数组元素的类型，执行上述规则。
     // 3. 如果返回值为一个导入的自定义类型 CustomModel（但不是 ResultData），则返回：CustomModel.class。
     // 4. 如果返回值只有一个字段，则根据它的类型，按规则 2 执行。
-    // 5. 其他情况返回：null。
+    // 5. 如果返回值的字段个数大于 1, 则返回 `Object.class`。
+    // 6. 其他情况返回：null。
     @Override
     public Class getModelClass() {
         return {{返回信息见上述说明}};
