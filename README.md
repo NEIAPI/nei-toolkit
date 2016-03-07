@@ -322,6 +322,9 @@ nei mobile 23456798 -l java -o /path/to/output/
 
 # 版本历史
 
+## 0.3.5   (2016-03-07)
+* 生成 Java 代码时, 将 `double` 改成 `Double`
+
 ## 0.3.4   (2016-03-04)
 * 构建移动端项目时可以不输入项目id
 * nei mock 时生成地址指向 nei 服务器的 fiddler 配置文件
