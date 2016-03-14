@@ -22,7 +22,7 @@
 
 ### 二、Model 生成规则
 
-1. 只生成自定义数据类型的 Model 文件，文件名为数据类型名，路径为包名。例如：NEI 上的类型名为 `Company`，则生成的类型名字 `Company`, 文件名为 `Company.java`，默认包名为`com.netease.hthttp.model`，文件位置为 `com/netease/hthttp/model/Company.java`。
+1. 只生成自定义数据类型的 Model 文件，文件名为数据类型名，路径为包名。例如：NEI 上的类型名为 `Company`，则生成的类型名字 `Company`，文件名为 `Company.java`，默认包名为`com.netease.hthttp.model`，文件位置为 `com/netease/hthttp/model/Company.java`。
 2. 如果自定义数据类型的某个属性为可变类型，则忽略该数据类型，即不生成相应的 Model 文件。
 3. 属性有 `getter` 和 `setter` 方法。如果类型是 `Boolean` 并且变量名以 `is`开头，则 `getter` 的方法名直接使用属性名。
 4. 属性的修饰符为 `private`，`getter` 和 `setter` 的修饰符是 `public`。
@@ -49,7 +49,10 @@ public class {{数据类型名}} {
     private boolean hasMore;
     private String name;
     // 因为所有的 Model 都在同个目录中，所以不需要导入 CustomModel
-    private CustomModel customModel;
+    // a. 如果 CustomModel 是数组类型, 则:
+    //  1. 如果数组元素是基本类型 String(Number, Boolean同理), 则写作: private String[] customModelFieldName;
+    //  2. 否则按照数组元素的类型, 递归执行上述规则.
+    // b. 如果 CustomModel 是哈希对象, 则写作: private CustomModel customModelFieldName;
     // 其他情况：List<Double>, List<Boolean>, List<Author>, etc...
     // 注意：数组元素的类型如果是数字或者布尔，则首字母大写
     private List<String> array;
@@ -180,7 +183,9 @@ public class {{请求类名}}HttpTask extends BaseHttpStringRequestTask {
     //    b. 如果可变类型字段为 Number 类型，则返回 Double.class。
     //    c. 如果可变类型字段为 Boolean 类型，则返回 Boolean.class。
     //    d. 如果可变类型字段为自定义类型 CustomModel，则返回 CustomModel.class。
-    //    e. 如果可变类型字段是数组，则根据数组元素的类型，执行上述规则。
+    //    e. 如果可变类型字段是数组，则:
+    //      i.  如果数组元素是 String，Number，Boolean 或者 自定义类型 CustomModel，则分别返回 String[].class，Double[].class，Boolean[].class 或者 CustomModel[].class。
+    //      ii. 如果数组元素是数组(二维数组)，则根据二维数组的元素类型，递归执行规则 e。例如，如果二维数组的元素是 String, 则返回 String[][].class。
     // 3. 如果返回值为一个导入的自定义类型 CustomModel（但不是 ResultData），则返回：CustomModel.class。
     // 4. 如果返回值只有一个字段，则根据它的类型，按规则 2 执行。
     // 5. 如果返回值的字段个数大于 1, 则返回 `Object.class`。
