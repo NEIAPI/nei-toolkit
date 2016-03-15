@@ -55,7 +55,13 @@ public class {{数据类型名}} {
     //  2. 否则按照数组元素的类型, 递归执行上述规则.
     // b. 如果 CustomModel 是哈希对象, 则写作: private CustomModel customModelFieldName;
 
-    // 如果字段是数组类型的, 按上面 CustomModel 的规则 a 处理.
+    // 如果字段是数组类型的, 按上面 CustomModel 的规则 a 处理
+    // todo: 规则之后可能会有调整, 2016.3.15
+    // 按需求方的要求, 如果是一维数组, 为了兼容现在已经在使用的项目, 仍旧按下述规则处理:
+    // List<Double>, List<Boolean>, List<Author>, etc...
+    // 注意：数组元素的类型如果是数字或者布尔，则首字母大写
+    private List<String> array;
+    // 如果数组大于一维, 则按上面 CustomModel 的规则 a 处理
 
     // day 在 NEI 中定义为枚举类型，将其转换为 `String`
     private String day;
