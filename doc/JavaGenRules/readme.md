@@ -48,14 +48,15 @@ public class {{数据类型名}} {
     private boolean isMine;
     private boolean hasMore;
     private String name;
+    // 自定义类型的字段按下述规则处理:
     // 因为所有的 Model 都在同个目录中，所以不需要导入 CustomModel
-    // a. 如果 CustomModel 是数组类型, 则:
+    // a. 如果 CustomModel 本身是数组类型, 则:
     //  1. 如果数组元素是基本类型 String(Number, Boolean同理), 则写作: private String[] customModelFieldName;
     //  2. 否则按照数组元素的类型, 递归执行上述规则.
     // b. 如果 CustomModel 是哈希对象, 则写作: private CustomModel customModelFieldName;
-    // 其他情况：List<Double>, List<Boolean>, List<Author>, etc...
-    // 注意：数组元素的类型如果是数字或者布尔，则首字母大写
-    private List<String> array;
+
+    // 如果字段是数组类型的, 按上面 CustomModel 的规则 a 处理.
+
     // day 在 NEI 中定义为枚举类型，将其转换为 `String`
     private String day;
 
