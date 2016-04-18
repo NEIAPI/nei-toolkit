@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 'use strict';
 if (process.version < 'v4.2.1') {
     console.log('请将Node更新至4.2.1及以上版本，可以使用nvm在本地安装并管理多个Node版本。');
