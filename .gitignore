@@ -4,3 +4,4 @@ node_modules
 build
 doc/**/bak.zip
 lib/nei/mobile/java
+project_template/genresult

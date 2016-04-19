@@ -118,6 +118,10 @@ class Main {
             let Builder = require(name);
             let builder = new Builder(config);
             builder[action](data);
+        }, () => {
+            // 如果从 nei 上下载数据失败, 构建空工程
+            _logger.warn('Error happened while loading data from nei, start building empty project...');
+            this.buildEmpty(config);
         });
     }
 
