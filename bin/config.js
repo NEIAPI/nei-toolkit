@@ -130,7 +130,7 @@ module.exports = {
         },
         {
             "q": "mcss",
-            "m": "是否需要生成 mcss 代码, 默认是 true",
+            "m": "是否需要生成 mcss 代码",
             "d": true,
             "f": "w"
         },
@@ -217,7 +217,7 @@ module.exports = {
         "使用说明：",
         "nei update [IDS] [参数]",
         "",
-        "[IDS]\t\t\tNEI平台中对应的项目ID，多个项目ID用逗号分隔，不传则表示更新所有已生成的项目",
+        "[IDS]\t\t\tNEI平台中对应的项目 ID，多个项目 ID 用逗号分隔，不传则表示更新所有已生成的项目",
         "",
         "参数说明：",
         "%p",
@@ -242,11 +242,16 @@ module.exports = {
             "j": "w",
             "q": "overwrite",
             "d": false,
-            "m": "是否覆盖已存在的 MOCK 数据文件，默认不覆盖"
+            "m": "是否覆盖已存在的 mock 数据文件，默认不覆盖"
         },
         {
             "q": "tag",
             "m": "只更新含有指定 tag 的模板, 默认全部更新"
+        },
+        {
+            "q": "view", // see @issues#3
+            "m": "是否需要更新页面的模板文件和相应的 js 模块代码",
+            "d": true
         }
     ],
     "mock": [
