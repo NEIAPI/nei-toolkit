@@ -156,7 +156,7 @@ nei build [IDS] [参数]
 | 无 | --namePrefix | HT | 生成的文件名、类名的前缀，默认为 HT |
 | 无 | --reqHeaders | Requests | 包含所有数据请求的头文件名称，不带类名的前缀 |
 | 无 | --modelHeaders | Models | 包含所有数据模型的头文件名称，不带类名的前缀 |
-| 无 | --resOnly |  | 更新项目文件时，是否只更新 NEI 上的资源文件 |
+| 无 | --updateProject | false | 是否将模板文件夹下的文件添加到 Xcode 工程中 |
 
 >以下参数在生成 mobile 项目的 Java 模型和请求文件时特有： 
 

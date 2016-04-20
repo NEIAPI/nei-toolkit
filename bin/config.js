@@ -187,8 +187,9 @@ module.exports = {
             "f": "mo"
         },
         {
-            "q": "resOnly",
-            "m": "更新项目文件时，是否只更新 NEI 上的资源文件",
+            "q": "updateProject",
+            "d": false,
+            "m": "是否将模板文件夹下的文件添加到Xcode工程中",
             "f": "mo"
         },
         "",
