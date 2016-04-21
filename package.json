@@ -34,6 +34,7 @@
     "should": "^4.3.0"
   },
   "dependencies": {
+    "jtr": "huntbao/jtr",
     "swig": ">=1.4.2",
     "xcode": "^0.8.2"
   },

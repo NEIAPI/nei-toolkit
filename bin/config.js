@@ -134,6 +134,12 @@ module.exports = {
             "d": true,
             "f": "w"
         },
+        {
+            "q": "bower",
+            "m": "是否需要安装 bower 依赖",
+            "d": true,
+            "f": "w"
+        },
         "",
         "以下参数对于使用 mobile 模板的项目特有：",
         {

@@ -5,6 +5,8 @@ if (process.version < 'v4.2.1') {
     console.log('请将Node更新至4.2.1及以上版本，可以使用nvm在本地安装并管理多个Node版本。');
     process.exit(1);
 }
+var jtr = require('jtr');
+var path = require('path');
 var main = require('../main');
 var Args = require('../lib/util/args');
 var splitChars = /[,;，；]/;
@@ -80,6 +82,10 @@ var options = {
         opt.action = 'mobile';
         this.format(opt.action, opt);
         run.call(this, opt.action, event);
+    },
+    server: function (event) {
+        var config = require('../webapp/nei.10835/jtr.js');
+        jtr(config);
     }
 };
 
