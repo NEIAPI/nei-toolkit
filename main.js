@@ -7,6 +7,8 @@
 
 let fs = require('fs');
 let util = require('util');
+let path = require('path');
+var jtr = require('jtr');
 let _fs = require('./lib/util/file');
 let _path = require('./lib/util/path');
 let _io = require('./lib/util/io');
@@ -198,6 +200,52 @@ class Main {
             let builder = new (require(`./lib/nei/mobile.${lang}.js`))(config);
             builder.model(data);
         });
+    }
+
+    /**
+     * start mock server
+     * @param  {object}  config - config object
+     * @return {undefined}
+     */
+    server(config) {
+        let dir = path.join(__dirname, config.path);
+        let tryStartServer = (configPath) => {
+            if (_fs.exist(configPath)) {
+                jtr(require(configPath));
+            } else {
+                _logger.warn(`can't find jtr config file`);
+            }
+        }
+        console.log(dir)
+        if (_fs.exist(dir)) {
+            if (config.id) {
+                let jtrConfigPath = path.join(dir, `nei.${config.id}/jtr.js`);
+                tryStartServer(jtrConfigPath);
+            } else {
+                // try to find jtr config file in `nei.{pid}` dir
+                let list = fs.readdirSync(dir);
+                let configFileFound = false;
+                for(let i = 0, l = list.length; i < l; i++) {
+                    let p = `${dir}/${list[i]}`;
+                    if (_fs.isdir(p)) {
+                        if (list[i].match(/nei/)) {
+                            configFileFound = true;
+                            tryStartServer(`${p}/jtr.js`);
+                            break;
+                        }
+                    } else if (list[i] === 'jtr.js') {
+                        configFileFound = true;
+                        tryStartServer(p);
+                        break;
+                    }
+                }
+                if (!configFileFound) {
+                    _logger.warn(`can't find jtr config file`)
+                }
+            }
+        } else {
+            _logger.warn(`project directory(${dir}) does not exist`)
+        }
     }
 }
 

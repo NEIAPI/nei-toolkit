@@ -137,7 +137,7 @@ module.exports = {
         {
             "q": "bower",
             "m": "是否需要安装 bower 依赖",
-            "d": true,
+            "d": false,
             "f": "w"
         },
         "",
@@ -407,6 +407,32 @@ module.exports = {
             "q": "reqPackage",
             "d": "hthttp.httptask",
             "m": "http请求的相对包名"
+        }
+    ],
+    "server": [
+        "使用说明：",
+        "nei server [<ID>] [参数]",
+        "",
+        "<ID>\t\t\tNEI 平台中对应的项目 ID",
+        "",
+        "参数说明：",
+        "%p",
+        "",
+        "使用举例：",
+        "nei server",
+        "nei server 234567 -p ./webapp"
+    ],
+    "server-params": [
+        {
+            "j": "h",
+            "q": "help",
+            "m": "显示 server 命令帮助信息"
+        },
+        {
+            "j": "p",
+            "q": "path",
+            "d": "./",
+            "m": "项目根路径"
         }
     ]
 };
