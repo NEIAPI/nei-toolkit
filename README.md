@@ -198,6 +198,7 @@ nei update [IDS] [参数]
 | -p | --project | ./ | 指定项目目录，默认为当前目录 |
 | -w | --overwrite | false | 是否覆盖已存在的测试数据文件，默认不覆盖 |
 | 无 | --tag | | 只更新含有指定 tag 的模板, 默认全部更新 |
+| 无 | --view | true | 是否需要更新页面的模板文件和相应的 js 模块代码 |
 
 使用范例：
 
@@ -318,6 +319,36 @@ nei mobile 2345
 
 ```bash
 nei mobile 23456798 -l java -o /path/to/output/
+```
+
+## server
+启动内置的本地模拟容器
+
+```bash
+nei server [ID] [参数]
+```
+
+其中 [ID] 是 NEI 平台中对应的项目 id
+
+>针对 `nei server` 指令可用的参数包括：
+
+| 简写 | 全称 | 默认值 | 描述 |
+| :--- | :--- | :--- | :--- |
+| -h | --help | | 显示 mobile 命令帮助信息 |
+| -p | --path | | 项目的根路径 |
+
+使用范例
+
+假设使用 `build` 命令生成的工程根路径是 webapp, 项目 id 是 12345, 则可以使用下面的命令启动模拟容器:
+
+```bash
+nei server [12345] -p ./webapp
+```
+
+也可以这样:
+```bash
+cd webapp
+nei server [12345]
 ```
 
 # 版本历史
