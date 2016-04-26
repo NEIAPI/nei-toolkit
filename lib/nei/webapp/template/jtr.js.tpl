@@ -14,7 +14,7 @@ module.exports = {
       {%- if rule.list -%}
       "{{rule.method}} {{rule.path}}": {type: '{{rule.type}}', name: '{{rule.name}}', index: 0, list: {{rule.list}}}{% if !loop.last %},{% endif %}
       {%- else -%}
-      "{{rule.method}} {{rule.path}}": {id: '{{rule.id}}', type: '{{rule.type}}', path: '{{rule.method.toLowerCase() + rule.path}}'}{% if !loop.last %},{% endif %}
+      "{{rule.method}} {{rule.path}}": {id: '{{rule.id}}', type: '{{rule.type}}', path: '{{rule.method.toLowerCase() + rule.mockDataPath}}'}{% if !loop.last %},{% endif %}
       {%- endif -%}
       {%- endfor %}
     },
@@ -22,7 +22,7 @@ module.exports = {
     launch: true,
     /* 端口 */
     port: 8002,
-    /* nei项目的在线数据url */
+    /* nei项目的在线数据url, 没有该字段时使用本地mock数据 */
     neiApi: '{{NEI_MOCK_API}}',
     /* 同步模块mock数据路径 */
     mockTpl: path.join(__dirname, '/{{T_MOCK_ROOT}}'),
