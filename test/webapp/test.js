@@ -35,11 +35,8 @@ describe('nei/webapp', function () {
 
             assert.equal(true, _fs.exist(`${outputRoot}/deploy/release.${pid}.conf`));
             assert.equal(true, _fs.exist(`${outputRoot}/nei.${pid}/JSON/nei-latest.json`));
-            assert.equal(true, _fs.exist(`${outputRoot}/nei.${pid}/puer.js`));
-            assert.equal(true, _fs.exist(`${outputRoot}/nei.${pid}/route.js`));
             assert.equal(true, _fs.exist(`${outputRoot}/nei.${pid}/server.bat`));
             assert.equal(true, _fs.exist(`${outputRoot}/nei.${pid}/server.sh`));
-            assert.equal(true, _fs.exist(`${outputRoot}/nei.${pid}/util.js`));
             assert.equal(true, _fs.exist(`${outputRoot}/src/main/webapp/mcss.json`));
             assert.equal(true, _fs.exist(`${outputRoot}/src/main/webapp/bower.json`));
             assert.equal(true, _fs.exist(`${outputRoot}/src/main/webapp/.bowerrc`));
@@ -58,11 +55,8 @@ describe('nei/webapp', function () {
 
             assert.equal(true, _fs.exist(`${outputRoot}/deploy/release.${pid}.conf`));
             assert.equal(true, _fs.exist(`${outputRoot}/nei.${pid}/JSON/nei-latest.json`));
-            assert.equal(true, _fs.exist(`${outputRoot}/nei.${pid}/puer.js`));
-            assert.equal(true, _fs.exist(`${outputRoot}/nei.${pid}/route.js`));
             assert.equal(true, _fs.exist(`${outputRoot}/nei.${pid}/server.bat`));
             assert.equal(true, _fs.exist(`${outputRoot}/nei.${pid}/server.sh`));
-            assert.equal(true, _fs.exist(`${outputRoot}/nei.${pid}/util.js`));
             assert.equal(true, _fs.exist(`${outputRoot}/src/main/webapp/mcss.json`));
             assert.equal(true, _fs.exist(`${outputRoot}/src/main/webapp/bower.json`));
             assert.equal(true, _fs.exist(`${outputRoot}/src/main/webapp/.bowerrc`));
