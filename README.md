@@ -364,6 +364,13 @@ nei server [12345]
 
 # 版本历史
 
+## 0.3.8   (2016-04-21)
+* nei build 移动端工程时, 如果无法访问 nei 接口, 则生成空的工程
+* nei build 移动端工程时, 去掉 resOnly 参数, 增加 updateProject 参数
+* nei update WEB 工程时, 增加 view 参数, 表示是否更新模板和相应的 js 模块代码
+* 内置本地模拟容器, 通过 nei server 命令启动, 不再生成 util.js, route.js 和 puer.js 这三个文件
+* nei build web 工程时, 增加 bower 参数, 表示是否需要安装 bower 依赖
+    
 ## 0.3.7   (2016-03-24)
 * 生成 Mock 数据时, 默认值为数值 0 时的 bug 修复
 

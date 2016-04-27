@@ -2,3 +2,9 @@ doc
 test
 node_modules
 project_template
+.idea/
+.project
+build
+doc/**/bak.zip
+lib/nei/mobile/java
+webapp
