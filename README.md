@@ -3,11 +3,11 @@
 本工具提供了 [NEI 平台](http://nei.hz.netease.com/) 配套的自动化功能，本工具的主要特性有：
 
 * 支持根据 [NEI 平台](http://nei.hz.netease.com/) 定制生成项目初始结构及代码
-* 支持 [本地容器 PUER](https://github.com/leeluolee/puer) 运行配置自动生成
 * 支持 [NEJ 发布工具](https://github.com/genify/toolkit2) 配置文件自动生成
-* 支持 [Fiddler](http://www.telerik.com/fiddler) 工具代理本地模拟数据，接口配置文件导出
+* 支持 [Fiddler](http://www.telerik.com/fiddler) 和 [Charles](https://www.charlesproxy.com/) 工具代理本地模拟数据，接口配置文件导出
 * 支持自动生成移动端数据模型、请求类代码
 * 支持自动导出模拟数据
+* 集成了本地模拟容器
 
 # 工具使用
 
@@ -47,6 +47,13 @@
 	```bash
 	nei mock 10680
 	```
+	
+5. 启动本地模拟容器, 运行 web 工程:
+
+	```bash
+	nei server
+	```
+	> OS X 下如果有异常请使用 `sudo nei server` 命令启动
 
 # 指令说明
 
@@ -351,6 +358,8 @@ nei server [12345] -p ./webapp
 cd webapp
 nei server [12345]
 ```
+
+> OS X 下如果有异常请使用 `sudo nei server` 命令启动
 
 # 版本历史
 
