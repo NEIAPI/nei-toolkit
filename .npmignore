@@ -7,4 +7,4 @@ project_template
 build
 doc/**/bak.zip
 lib/nei/mobile/java
-webapp
+webapp_pro
