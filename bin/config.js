@@ -15,9 +15,9 @@ module.exports = {
         "命令说明：",
         "build\t\t\t根据 NEI 平台信息构建项目结构",
         "update\t\t\t更新通过 'nei build' 构建的项目",
-        "export\t\t\t导出第三方工具的配置文件",
         "mock\t\t\t根据 NEI 平台信息生成测试数据",
-        "mobile\t\t\t生成移动平台代码"
+        "mobile\t\t\t生成移动平台代码",
+        "server\t\t\t启动本地模拟容器"
     ],
     "-default-params": [
         {
