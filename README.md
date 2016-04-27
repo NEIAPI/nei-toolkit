@@ -1,6 +1,6 @@
 # 工具简介
 
-本工具提供了 [NEI 平台](http://nei.hz.netease.com/) 配套的自动化功能，本工具的主要特性有：
+本工具提供了 NEI 平台配套的自动化功能，本工具的主要特性有：
 
 * 支持根据 [NEI 平台](http://nei.hz.netease.com/) 定制生成项目初始结构及代码
 * 支持 [NEJ 发布工具](https://github.com/genify/toolkit2) 配置文件自动生成
@@ -69,7 +69,7 @@ nei [指令] [参数]
 | :--- | :--- |
 | build  | 根据 NEI 平台信息构建项目结构 |
 | update | 更新通过 `nei build` 构建的项目 |
-| export | 已移除, 不再支持 |
+| export | 已移除, 暂不支持 |
 | mock   | 根据 NEI 平台信息生成测试数据 |
 | mobile | 根据 NEI 平台信息生成移动平台模型和请求代码 |
 | server | 启动本地模拟容器 |
@@ -143,7 +143,8 @@ nei build [IDS] [参数]
 | 无 | --deployRoot | | deploy 文件夹的路径, 相对于 -p 路径, 默认放在 -p 指定路径的根目录 |
 | 无 | --tMockRoot | | template mock 数据文件夹的路径, 相对于 -p 路径, 默认放在 `src/main/webapp/src/mock/` |
 | 无 | --iMockRoot | | interface mock 数据文件夹的路径, 相对于 -p 路径, 默认放在 `src/main/webapp/WEB_INF/views/mock/` |
-| 无 | --mcss | | 是否需要生成 mcss 代码, 默认是 true |
+| 无 | --mcss | true | 是否需要生成 mcss 代码, 默认是 true |
+| 无 | --bower | false | 是否需要安装 bower 依赖, 默认是 false |
 
 >以下参数对于使用 mobile 模板的项目特有：
 
