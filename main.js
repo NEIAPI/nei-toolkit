@@ -208,7 +208,6 @@ class Main {
      * @return {undefined}
      */
     server(config) {
-        let dir = path.join(process.cwd(), config.path);
         let tryStartServer = (configPath) => {
             if (_fs.exist(configPath)) {
                 let options = Object.create(null);
@@ -220,6 +219,11 @@ class Main {
                 _logger.warn(`can't find jtr config file`);
             }
         }
+        if (config.configFile) {
+            let configFilePath = path.join(process.cwd(), config.configFile);
+            return tryStartServer(configFilePath);
+        }
+        let dir = path.join(process.cwd(), config.path);
         if (_fs.exist(dir)) {
             if (config.id) {
                 let jtrConfigPath = path.join(dir, `nei.${config.id}/jtr.js`);
