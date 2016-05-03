@@ -220,6 +220,8 @@ class Main {
             }
         }
         if (config.configFile) {
+            console.log(config.configFile)
+            console.log(process.cwd())
             let configFilePath = path.join(process.cwd(), config.configFile);
             return tryStartServer(configFilePath);
         }
