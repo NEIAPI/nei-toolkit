@@ -211,7 +211,11 @@ class Main {
         let dir = path.join(process.cwd(), config.path);
         let tryStartServer = (configPath) => {
             if (_fs.exist(configPath)) {
-                jtr(require(configPath));
+                let options = Object.create(null);
+                options.config = require(configPath);
+                options.fromNei = true;
+                // start server
+                jtr(options);
             } else {
                 _logger.warn(`can't find jtr config file`);
             }

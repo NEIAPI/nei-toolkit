@@ -1,12 +1,9 @@
 // config file for jtr server
-var path = require('path');
 module.exports = {
-  fromNei: true, // 表示这是nei项目
-  config: {
     /* 根目录 */
-    webRoot: path.join(__dirname, '{{WEB_ROOT}}'),
+    webRoot: '{{WEB_ROOT}}',
     /* 视图目录 */
-    viewRoot: path.join(__dirname, '{{VIEW_ROOT}}'),
+    viewRoot: '{{VIEW_ROOT}}',
     /* 路由 */
     routes: {
       //"ALL /api/*": "INPUT YOUR SEVER HOST",
@@ -25,10 +22,9 @@ module.exports = {
     /* nei项目的在线数据url, 没有该字段时使用本地mock数据 */
     neiApi: '{{NEI_MOCK_API}}',
     /* 同步模块mock数据路径 */
-    mockTpl: path.join(__dirname, '/{{T_MOCK_ROOT}}'),
+    mockTpl: '/{{T_MOCK_ROOT}}',
     /* 异步接口mock数据路径 */
-    mockApi: path.join(__dirname, '/{{I_MOCK_ROOT}}'),
+    mockApi: '/{{I_MOCK_ROOT}}',
     /* 模板后缀 */
     viewExt: '.{{VIEW_EXTENTION}}'
-  }
 };
