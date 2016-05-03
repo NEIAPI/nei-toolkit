@@ -349,17 +349,24 @@ nei server [ID] [参数]
 
 使用范例
 
-假设使用 `build` 命令生成的工程根路径是 webapp, 项目 id 是 12345, 则可以使用下面的命令启动模拟容器:
+假设使用 `build` 命令生成的工程根路径是 webapp, 项目 id 是 12345, 则可以使用下面的任一命令启动模拟容器:
+
+1. 指定工程目录, 此时会查找该目录下第一个类似 nei.xxxx 目录下面的 jtr.js 文件:
 
 ```bash
-nei server [12345]
+nei server -p ./webapp
+```
 
-// 或者:
-nei server [12345] -p ./webapp
+2. 指定项目 id: , 此时会查找当前目录(如果没有指定 -p 参数)下名为 nei.[id] 目录下面的 jtr.js 文件:
 
-// 或者:
+```bash
+nei server 12345
+```
+
+3. 指定配置文件路径, 此时忽略 -p 和 id 参数:
+
+```bash
 nei server -cf ./webapp/nei.12345/jtr.js
-
 ```
 
 > OS X 下如果有异常请使用 `sudo nei server` 命令启动
