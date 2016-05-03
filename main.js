@@ -216,7 +216,7 @@ class Main {
                 // start server
                 jtr(options);
             } else {
-                _logger.warn(`can't find jtr config file`);
+                _logger.warn(`can't find jtr config file at: ${configPath}`);
             }
         }
         if (config.configFile) {
