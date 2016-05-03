@@ -1,3 +1,7 @@
+0.3.9   (2016-05-03)
+    - nei server 增加 --configFile 参数, 表示配置文件的路径
+    - 修复 server.bat, server.command, server.sh 运行错误的问题
+
 0.3.8   (2016-04-27)
     - nei build 移动端工程时, 如果无法访问 nei 接口, 则生成空的工程
     - nei build 移动端工程时, 去掉 resOnly 参数, 增加 updateProject 参数
