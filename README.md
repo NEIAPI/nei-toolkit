@@ -352,13 +352,14 @@ nei server [ID] [参数]
 假设使用 `build` 命令生成的工程根路径是 webapp, 项目 id 是 12345, 则可以使用下面的命令启动模拟容器:
 
 ```bash
-nei server [12345] -p ./webapp
-```
-
-也可以这样:
-```bash
-cd webapp
 nei server [12345]
+
+// 或者:
+nei server [12345] -p ./webapp
+
+// 或者:
+nei server -cf ./webapp/nei.12345/jtr.js
+
 ```
 
 > OS X 下如果有异常请使用 `sudo nei server` 命令启动
