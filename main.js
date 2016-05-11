@@ -113,8 +113,10 @@ class Main {
         let name;
         if (config.template === 'mobile') {
             name = `./lib/nei/mobile.${config.lang}.js`;
+        } else if (config.template === 'node') {
+            name = `./lib/nei/node.js`;
         } else {
-            name = './lib/nei/webapp.js';
+            name = `./lib/nei/webapp.js`;
         }
         this.loadData(config.id, (data) => {
             let Builder = require(name);
@@ -123,20 +125,20 @@ class Main {
         }, () => {
             // 如果从 nei 上下载数据失败, 构建空工程
             _logger.warn('Error happened while loading data from nei, start building empty project...');
-            this.buildEmpty(config);
+            this.buildEmpty(config, name);
         });
     }
 
     /**
      * build empty mobile project
      * @param  {object}  config - config object
+     * @param  {string}  builderFile - builder file path
      * @return {undefined}
      */
-    buildEmpty(config) {
+    buildEmpty(config, builderFile) {
         let cwd = process.cwd() + '/';
         config.outputRoot = _path.absolute(config.project + '/', cwd);
-        let name = `./lib/nei/mobile.${config.lang}.js`;
-        let Builder = require(name);
+        let Builder = require(builderFile);
         let builder = new Builder(config);
         builder.build();
     }
@@ -213,7 +215,7 @@ class Main {
             if (_fs.exist(configPath)) {
                 jtr(require(configPath));
             } else {
-                _logger.warn(`can't find jtr config file`);
+                _logger.warn(`can't find jtr config file at: ${configPath}`);
             }
         }
         if (_fs.exist(dir)) {

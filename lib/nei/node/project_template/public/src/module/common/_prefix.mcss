@@ -1,0 +1,85 @@
+/**
+ * prefixr a __declaration__ with $property and $value
+ * the default vendors is webkit moz ms o
+ */
+$prefixr = ($property, $value , $vendors){
+    $vendors ?= webkit moz ms o;
+    @if $value == null {
+        @return {
+            @return $prefixr($property, $arguments, $vendors);
+        }
+    }
+    @for $vendor of $vendors {
+        #{'-' + $vendor + '-' + $property} : $value;
+    }
+    #{$property} : $value;
+}
+$prefix-properties = 
+    // transition 部分 
+    // 有些需要提取单独处理，不过参数一致
+    transition (webkit moz ms o),
+    transition-delay (webkit moz ms o),
+    transition-property (webkit moz ms o),
+    transition-duration (webkit moz ms o),
+    transition-timing-function (webkit moz ms o),
+
+
+    //animation
+    animation (webkit moz ms o), 
+    animation-delay (webkit moz ms o), 
+    animation-name (webkit moz ms o), 
+    animation-direction (webkit moz ms o), 
+    animation-duration (webkit moz ms o), 
+    animation-fill-mode (webkit moz ms o), 
+    animation-iteration-count (webkit moz ms o), 
+    animation-timing-function (webkit moz ms o), 
+    //column 
+    columns (webkit moz ms o),
+    column-count (webkit moz ms o),
+    column-gap (webkit moz ms o),
+    column-fill (webkit moz ms o),
+    column-rule (webkit moz ms o),
+    column-rule-color (webkit moz ms o),
+    column-rule-style (webkit moz ms o),
+    column-rule-width (webkit moz ms o),
+    column-span (webkit moz ms o),
+    column-width (webkit moz ms o),
+
+    // display-box (mannul create)
+    box-orient (webkit moz ms o),
+    box-sizing (webkit moz ms o),
+    box-pack (webkit moz ms o),
+    box-align (webkit moz ms o),
+    box-direction (webkit moz ms o),
+    box-lines (webkit moz ms o),
+    box-ordinal-group (webkit moz ms o),
+    box-flex (webkit moz ms o),
+    box-flex-group (webkit moz ms o),
+    box-shadow (webkit moz ms o),
+
+
+    // transform
+    transform null,
+    transform-origin null,
+    transform-style null,
+    perspective (webkit moz ms o),
+    perspective-origin (webkit moz ms o),
+
+    //other
+    appearance (webkit moz ms o),
+    backface-visibility (webkit moz ms o),
+    background-clip (webkit moz ms o),
+    background-origin (webkit moz ms o),
+    background-size (webkit moz ms o),
+    border-box (webkit moz ms o),
+    box-shadow (webkit moz ms o),
+    user-select (webkit moz ms o),
+    hyphens (epub moz ms),
+
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/filter
+    filter (moz webkit);
+
+
+@for $vendors, $property in $prefix-properties {
+    define('$'+$property, $prefixr($property, null, $vendors));
+}

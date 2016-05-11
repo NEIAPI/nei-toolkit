@@ -1,0 +1,138 @@
+@abstract '_prefix.mcss';
+/**
+ *  配置信息，在mcss文件顶部用@abstract调用，但不会被解析成css
+ */
+/* 字体 */
+$ff-arial = arial,'simsun';
+$ff-yahei = 'Microsoft YaHei','微软雅黑','宋体',helvetica,'Hiragino Sans GB';
+$ff-simsun = 'simsun',arial;
+
+/* 文字大小 */
+$fs0  = 12px;
+$fs1  = 14px;
+$fs2  = 16px;
+$fs3  = 18px;
+$fs4  = 20px;
+$fs5  = 22px;
+$fs6  = 24px;
+$fs7  = 28px;
+$fs8  = 36px;
+$fs9  = 80px;
+$fs10 = 120px;
+
+/* 文字色 */
+$fc0 = #666;
+$fc1 = #fff;
+$fc2 = #939aa2;
+$fc3 = #999;
+$fc4 = #29addd;
+$fc5 = #333;
+$fc6 = #4e5156;
+$fc7 = #f7f7f7;
+$fc8 = #ccc;
+
+$gray-darker    = l-adjust(#000, 13.5%); // #222
+$gray-dark      = l-adjust(#000, 20%);   // #333
+$gray           = l-adjust(#000, 33.5%); // #555
+$gray-light     = l-adjust(#000, 46.7%); // #777
+$gray-lighter   = l-adjust(#000, 93.5%); // #eee
+
+$brand-primary  = #29addd;      // 深蓝
+$brand-inverse  = #fff;         // 白色
+$brand-success  = #8cc152;      // 绿色
+$brand-info     = #37bc9b;      // 深绿
+$brand-warning  = #f6bb42;      // 橘黄
+$brand-danger   = #da4453;      // 红
+$brand-error    = #fcf7e3;      // 淡黄
+$brand-ninfo    = #d9edf7;      // 淡黄
+
+/* 边框色 */
+$bd-head        = #e9ebf1;      // 头部导航底边
+$bd-select      = #1482cf;      // 项目组选中
+$bd-item        = #ddd;         // 表单元素边框
+$tab-itm        = #ccd1d9;      // 选项卡边框色
+$status-itm     = #eee;         // 进度条状态栏边框色
+
+/* 背景色 */
+$side-bg        = #212429;      // 边栏背景色
+$side-subbg     = #292d32;      // 子目录展开背景色
+$side-selbg     = #3b4047;      // 目录选中背景色
+$body-bg        = #f2f5f9;      // 创建操作类页面内容区
+$tb-trhover     = #f2f2f2;      // 创建操作类表格行
+$tb-trcrt       = #cbcbcb;      // 表格选中
+$tb-trdetail    = #dde5f0;      // 表格详情展开
+$form-bg        = #fff;         // 表单
+$tab-bg         = #e6e9ed;      // 选项卡背景色
+
+/* 全局链接颜色 */
+$link-color         = $brand-primary;
+$link-hover-color   = l-adjust($link-color, -15%);
+
+/* 通用功能 */
+$clearfix = {
+    zoom:1;
+    &:after{display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:".";}
+}
+$inline-block   = {display:inline-block;*display:inline-blockine;*zoom:1;}
+$yahei          = {font-family:$ff-yahei;}
+$simsun         = {font-family:$ff-arial;}
+$justify        = {text-align:justify;text-justify:inter-ideograph;}
+$nowrap         = {word-wrap:normal;white-space:nowrap;}
+$pre            = {overflow:hidden;text-align:left;white-space:pre-wrap;word-wrap:break-word;word-break:break-all;}
+$pre-break-word = {white-space:pre-wrap;word-wrap:break-word;word-break:break-all;}
+$break-word     = {white-space:normal;word-wrap:break-word;word-break:break-all;}
+$ellipsis       = {overflow:hidden;word-wrap:normal;white-space:nowrap;text-overflow:ellipsis;}
+$opacity        = ($oc=0){opacity:$oc;filter:alpha(opacity=round($oc * 100));}
+$hideText       = {overflow:hidden;text-indent:-20000px;}
+$background-radial = ($from,$to){
+    background-image:-webkit-radial-gradient($from,$to);
+    background-image:-moz-radial-gradient($from,$to);
+    background-image:-ms-radial-gradient($from,$to);
+    background-image:-o-radial-gradient($from,$to);
+    background-image:radial-gradient($from,$to);
+}
+$background-linear = ($dir,$from,$to){
+    background-image:-webkit-linear-gradient($dir,$from,$to);
+    background-image:-moz-linear-gradient($dir,$from,$to);
+    background-image:-ms-linear-gradient($dir,$from,$to);
+    background-image:-o-linear-gradient($dir,$from,$to);
+    background-image:linear-gradient($dir,$from,$to);
+}
+$keyframes = ($name, $block){
+    @-webkit-keyframes $name{
+        $block(-webkit-);
+    }
+    @-moz-keyframes $name{
+        $block(-moz-);
+    }
+    @-ms-keyframes $name{
+        $block(-ms-);
+    }
+    @-o-keyframes $name{
+        $block(-o-);
+    }
+    @keyframes $name{
+        $block('');
+    }
+}
+$size = ($width, $height){
+    $height ?= $width;
+    height: $height;
+    width: $width;
+}
+$box-sizing = ($type){
+    -webkit-box-sizing:$type;
+    -moz-box-sizing:$type;
+    box-sizing:$type;
+}
+$shadow = ($color1,$color2){
+    $box-shadow:inset 0 1px 0 $color1,inset 0 2px 0 $color2;
+}
+$shadow-bt = ($color1){
+    $box-shadow:inset 0 -1px 0 $color1;
+}
+$calc = ($num){
+    width: -webkit-calc($num);
+    width: -moz-calc($num);
+    width: calc($num);
+}

@@ -1,0 +1,23 @@
+{
+    "rootPath": "/server/controller",
+    "controllers": [{
+        "path": "/",
+        "handler": "page.index"
+    }, {
+        "path": "/project",
+        "method": "POST",
+        "handler": "project.add"
+    }, {
+        "path": "/project",
+        "method": "DELETE",
+        "handler": "project.del"
+    }, {
+        "path": "/project",
+        "method": "PUT",
+        "handler": "project.update"
+    }, {
+        "path": "/project",
+        "method": "GET",
+        "handler": "project.find"
+    }]
+}

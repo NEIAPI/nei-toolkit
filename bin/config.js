@@ -217,6 +217,38 @@ module.exports = {
             "d": "hthttp.httptask",
             "m": "http请求的相对包名",
             "f": "mj"
+        },
+        "",
+        "以下参数对于使用 Node.js 模板的项目特有：",
+        {
+            "q": "author",
+            "d": "netease",
+            "m": "构建者名称",
+            "f": "n"
+        },
+        {
+            "q": "projectName",
+            "d": "node_project",
+            "m": "项目名称, 请使用小写",
+            "f": "n"
+        },
+        {
+            "q": "mcss",
+            "m": "是否使用 mcss",
+            "d": false,
+            "f": "n"
+        },
+        {
+            "q": "npm",
+            "m": "是否需要自动安装 npm 依赖",
+            "d": false,
+            "f": "n"
+        },
+        {
+            "q": "bower",
+            "m": "是否需要自动安装 nej 和 Regularjs 的 Bower 依赖",
+            "d": false,
+            "f": "n"
         }
     ],
     "update": [

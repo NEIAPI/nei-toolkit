@@ -1,0 +1,24 @@
+{
+  "name": "{{projectName}}",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "node __test__/run_tests.js"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=4.2.0"
+  },
+  "dependencies": {
+    "ejs": "^2.3.1",
+    "node-webserver": "0.0.83"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "mcss": "^0.5.1",
+    "mocha": ">=2.0.1"
+  }
+}
