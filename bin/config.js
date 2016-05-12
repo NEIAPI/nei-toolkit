@@ -54,7 +54,7 @@ module.exports = {
             "j": "c",
             "q": "config",
             "d": "", // `default`
-            "p": true, // `path`
+            "p": true, // `path` 参数, 需要读取它指定文件中的数据, 合并到参数列表中
             "m": "参数配置文件路径，避免命令行参数太多导致书写不便"
         },
         {
@@ -62,33 +62,19 @@ module.exports = {
             "q": "project",
             "d": "./",
             "rp": true, // `relative path` of `config` parameter
-            "m": "指定项目目录，默认为当前目录。"
+            "m": "指定项目目录，默认为当前目录"
         },
         {
             "j": "w",
             "q": "overwrite",
             "d": false,
-            "m": "是否覆盖已存在的 MOCK 数据文件，默认不覆盖"
+            "m": "是否覆盖已存在的 MOCK 数据文件"
         },
         {
             "j": "t",
             "q": "template",
             "d": "webapp",
-            "m": "指定用于构建的模板实现文件，默认使用内建的 webapp 模板构建"
-        },
-        {
-            "j": "tp",
-            "q": "templatePath",
-            "d": "",
-            "rp": true,
-            "m": "模板路径，默认为空，使用时必须指定"
-        },
-        {
-            "j": "tdp",
-            "q": "templateDataPath",
-            "d": "",
-            "rp": true,
-            "m": "模板的数据文件路径，默认为空，文件内容须是有效的 json"
+            "m": "指定用于构建的模板实现文件"
         },
         {
             "j": "pt",
@@ -100,45 +86,45 @@ module.exports = {
         "以下参数对于使用 webapp 模板的项目特有：",
         {
             "q": "engine",
-            "m": "如果使用内建的 webapp 模板构建，此参数用于指定使用的模板引擎，支持内建模板引擎：freemarker、velocity、其他 nodejs 模板引擎，默认为 freemarker 引擎",
-            "f": "w" // `for` `webapp` only
+            "m": "如果使用内建的 webapp 模板构建，此参数用于指定使用的模板引擎，支持内建模板引擎：freemarker、velocity，默认为 freemarker 引擎",
+            "f": "webapp" // for `webapp` only
         },
         {
             "q": "webRoot",
             "m": "如果使用内建的 webapp 模板构建，此参数用于指定 WEBROOT 目录，默认根据 maven 目录结构规范，相对于 -p 路径的 src/main/webapp/",
-            "f": "w"
+            "f": "webapp"
         },
         {
             "q": "viewRoot",
             "m": "如果使用内建的 webapp模板构建，此参数用于指定服务器端视图模板目录，默认根据 maven 目录结构规范，相对于 -p 路径的 src/main/webapp/WEB-INF/views/",
-            "f": "w"
+            "f": "webapp"
         },
         {
             "q": "deployRoot",
             "m": "deploy 文件夹的路径, 相对于 project 参数, 默认放在 project 指定路径的根目录",
-            "f": "w"
+            "f": "webapp"
         },
         {
             "q": "tMockRoot",
             "m": "template mock 数据文件夹的路径, 相对于 project 参数, 默认放在 src/main/webapp/src/mock/",
-            "f": "w"
+            "f": "webapp"
         },
         {
             "q": "iMockRoot",
             "m": "interface mock 数据文件夹的路径, 相对于 project 参数, 默认放在 src/main/webapp/WEB_INF/views/mock/",
-            "f": "w"
+            "f": "webapp"
         },
         {
             "q": "mcss",
             "m": "是否需要生成 mcss 代码",
             "d": true,
-            "f": "w"
+            "f": "webapp"
         },
         {
             "q": "bower",
             "m": "是否需要安装 bower 依赖",
             "d": false,
-            "f": "w"
+            "f": "webapp"
         },
         "",
         "以下参数对于使用 mobile 模板的项目特有：",
@@ -147,30 +133,46 @@ module.exports = {
             "q": "lang",
             "d": "oc",
             "m": "要导出的语言标识，支持的语言有 oc、java 等",
-            "f": "m"  // `for` `mobile` only
+            "f": "mobile"  // `for` `mobile` only
         },
         {
             "q": "author",
             "d": "netease",
             "m": "构建者名称",
-            "f": "m"
+            "f": "mobile"
         },
         {
             "q": "reqAbstract",
             "d": "HTBaseRequest",
             "m": "请求基类名称，不带类名的前缀。如果指定语言是 Java，它的默认值为 BaseHttpStringRequestTask",
-            "f": "m"
+            "f": "mobile"
         },
         {
             "q": "modelAbstract",
             "d": "HTHTTPModel",
             "m": "数据模型基类名称，不带类名的前缀",
-            "f": "m"
+            "f": "mobile"
         },
         {
             "q": "resOut",
             "m": "生成的 NEI 资源相对工程的路径，如不指定，Java 工程的值为'app/src/main/hthttp-gen/'，Objective-C 工程的值为'{产品名}+/NetWork/'",
-            "f": "m"
+            "f": "mobile"
+        },
+        {
+            "j": "tp",
+            "q": "templatePath",
+            "d": "",
+            "rp": true,
+            "m": "模板路径，默认为空，使用时必须指定",
+            "f": "mobile"
+        },
+        {
+            "j": "tdp",
+            "q": "templateDataPath",
+            "d": "",
+            "rp": true,
+            "m": "模板的数据文件路径，默认为空，文件内容须是有效的 json",
+            "f": "mobile"
         },
         "",
         "以下参数在生成 mobile 项目的 Objective-C 模型和请求文件时特有：",
@@ -178,25 +180,25 @@ module.exports = {
             "q": "namePrefix",
             "d": "HT",
             "m": "生成的文件名、类名的前缀，默认为 HT",
-            "f": "mo" // `for` `mobile` `objective-c` only
+            "f": "mobile-oc" // `for` `mobile` `objective-c` only
         },
         {
             "q": "reqHeaders",
             "d": "Requests",
             "m": "包含所有数据请求的头文件名称，不带类名的前缀",
-            "f": "mo"
+            "f": "mobile-oc"
         },
         {
             "q": "modelHeaders",
             "d": "Models",
             "m": "包含所有数据模型的头文件名称，不带类名的前缀",
-            "f": "mo"
+            "f": "mobile-oc"
         },
         {
             "q": "updateProject",
             "d": false,
             "m": "是否将模板文件夹下的文件添加到Xcode工程中",
-            "f": "mo"
+            "f": "mobile-oc"
         },
         "",
         "以下参数在生成 mobile 项目的 Java 模型和请求文件时特有：",
@@ -204,51 +206,57 @@ module.exports = {
             "q": "appPackage",
             "d": "com.netease",
             "m": "应用的包名",
-            "f": "mj" // `for` `mobile` `java` only
+            "f": "mobile-java" // `for` `mobile` `java` only
         },
         {
             "q": "modelPackage",
             "d": "hthttp.model",
             "m": "模型的相对包名",
-            "f": "mj"
+            "f": "mobile-java"
         },
         {
             "q": "reqPackage",
             "d": "hthttp.httptask",
             "m": "http请求的相对包名",
-            "f": "mj"
+            "f": "mobile-java"
         },
         "",
         "以下参数对于使用 Node.js 模板的项目特有：",
         {
+            "q": "engine",
+            "d": "ejs",
+            "m": "模板引擎，如 EJS、Jade、Handlebars、Hogan.js 等，默认为 EJS 引擎",
+            "f": "node" // for `node` only
+        },
+        {
             "q": "author",
             "d": "netease",
             "m": "构建者名称",
-            "f": "n"
+            "f": "node"
         },
         {
             "q": "projectName",
             "d": "node_project",
             "m": "项目名称, 请使用小写",
-            "f": "n"
+            "f": "node"
         },
         {
             "q": "mcss",
             "m": "是否使用 mcss",
             "d": false,
-            "f": "n"
+            "f": "node"
         },
         {
             "q": "npm",
             "m": "是否需要自动安装 npm 依赖",
             "d": false,
-            "f": "n"
+            "f": "node"
         },
         {
             "q": "bower",
             "m": "是否需要自动安装 nej 和 Regularjs 的 Bower 依赖",
             "d": false,
-            "f": "n"
+            "f": "node"
         }
     ],
     "update": [
