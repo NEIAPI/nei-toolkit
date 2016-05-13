@@ -225,7 +225,7 @@ module.exports = {
         {
             "q": "engine",
             "d": "ejs",
-            "m": "模板引擎，如 EJS、Jade、Handlebars、Hogan.js 等，默认为 EJS 引擎",
+            "m": "模板引擎，如 EJS、Jade、Handlebars、Hogan.js 等",
             "f": "node" // for `node` only
         },
         {
