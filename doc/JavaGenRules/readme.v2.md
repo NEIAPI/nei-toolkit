@@ -136,7 +136,7 @@ import {{reqAbstract}};
 // 固定要导入的包
 import com.netease.hearttouch.hthttp.HttpMethod;
 // 如果输入参数（url 参数或者 header）中有数组类型 `dataType[]`, 则导入下面这个包。
-import com.netease.hearttouch.hthttp.utils.ArrayUtil;;
+iimport java.util.Arrays;
 
 // 其他需要导入的包，完整路径，如用到的模型文件等。
 import {{CustomModel}};
@@ -162,7 +162,7 @@ public class {{请求类名}}Request extends {{XXBaseRequest}} {
         //自定义数据类型，用户可以重写toString()方法
         {{paramContainer}}.put("param4", param4.toString());
         // 需要对数组进行转换
-        {{paramContainer}}.put("param5", ArrayUtil.parseArrayToString(param5));
+        {{paramContainer}}.put("param5", Arrays.deepToString(param5));
     }
 
     // getUrl 和 getApi 方法只实现一个。
