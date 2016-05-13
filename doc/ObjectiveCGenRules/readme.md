@@ -163,7 +163,7 @@ NEI 定义中不包括字典类型( `Hash` 表)、`NSDate` 类型，不需要额
 // 该请求的头文件
 #import "{{namePrefix}}{{接口类名}}.h"
 // 固定写死
-#import "NSObject+HTModel.h"
+#import "HTNetworking.h"
 // 返回值中需要用到的 Model 的头文件，带前缀
 #import "{{CustomModel}}.h"
 
@@ -180,19 +180,19 @@ NEI 定义中不包括字典类型( `Hash` 表)、`NSDate` 类型，不需要额
 
 // responseMapping 和 keyPath 方法的实现逻辑如下：
 //  1. 如果输出参数只有一条，如果它的类型为自定义类型，或者它是数组类型且数组元素的类型为自定义类型，则：
-//     a. responseMapping 方法返回：[{{namePrefix}}{{自定义类型名}} defaultResponseMapping]
+//     a. responseMapping 方法返回：[{{namePrefix}}{{自定义类型名}} ht_modelMapping]
 //     b. keyPath 方法返回：@"{{参数名}}"
 //
 //  2. 如果输出参数一个导入的 `ResultData`（即只有一个可变类型字段），则：
-//     a. responseMapping 方法返回：[{{namePrefix}}{{可变类型字段的类型名}} defaultResponseMapping]
+//     a. responseMapping 方法返回：[{{namePrefix}}{{可变类型字段的类型名}} ht_modelMapping]
 //     b. keyPath 方法返回：@"{{可变类型字段的名称}}"
 //
 //  3. 如果输出参数是一个导入的自定义类型（但不是 `ResultData`），则：
-//     a. responseMapping 方法返回：[{{namePrefix}}{{自定义类型名}} defaultResponseMapping]
+//     a. responseMapping 方法返回：[{{namePrefix}}{{自定义类型名}} ht_modelMapping]
 //     b. keyPath 方法返回：nil
 //
 //  4. 如果输出参数有多个并且只有一个自定义类型，则：（相当于 2，不推荐使用）
-//     a. responseMapping 方法返回：[{{namePrefix}}{{自定义类型名}} defaultResponseMapping]
+//     a. responseMapping 方法返回：[{{namePrefix}}{{自定义类型名}} ht_modelMapping]
 //     b. keyPath 方法返回：@"{{自定义类型所对应的属性名}}"
 //
 //  5. 其他情况：

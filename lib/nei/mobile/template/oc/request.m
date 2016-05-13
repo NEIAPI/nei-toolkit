@@ -6,7 +6,7 @@
 //  Auto build by NEI Builder
 
 #import "{{conf.prefix}}{{req.className}}.h"
-#import "NSObject+HTModel.h"
+#import "HTNetworking.h"
 {%- for model in req.reqModels %}
 #import "{{conf.prefix}}{{model}}.h"
 {%- endfor %}
@@ -23,7 +23,7 @@
 }
 
 + (RKMapping *)responseMapping {
-    return {% if req.resModel %}[{{conf.prefix}}{{req.resModel}} defaultResponseMapping]{% else %}nil{% endif %};
+    return {% if req.resModel %}[{{conf.prefix}}{{req.resModel}} ht_modelMapping]{% else %}nil{% endif %};
 }
 
 + (NSString *)keyPath {
