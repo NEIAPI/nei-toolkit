@@ -199,23 +199,6 @@ describe('nei/args', function () {
             done();
         });
 
-        it('Args `filterConfig(key, config)` -> case 15', function (done) {
-            let args = new Args(options);
-            let result = args.filterConfig('build', {
-                project: './project',
-                template: 'mobile',
-                engine: 'freemarker',
-                lang: 'oc'
-            });
-            assert.equal('./project', result.project);
-            assert.equal('mobile', result.template);
-            // engine is for `webapp` only
-            assert.equal(undefined, result.engine);
-            assert.equal('oc', result.lang);
-
-            done();
-        });
-
     });
 
 });
