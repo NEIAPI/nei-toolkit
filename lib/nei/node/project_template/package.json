@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "node __test__/run_tests.js"
+    "start": "node ./app.js",
+    "test": "node ./test/run_tests.js"
   },
   "author": "",
   "license": "UNLICENSED",
