@@ -175,6 +175,17 @@ nei build [IDS] [参数]
 | 无 | --modelPackage | hthttp.model | 模型的相对包名 |
 | 无 | --reqPackage | hthttp.httptask | http 请求的相对包名 |
 
+>以下参数在生成 Node.js 项目时特有： 
+
+| 简写 | 全称 | 默认值 | 描述 |
+| :--- | :--- | :--- | :--- |
+| 无 | --engine | ejs | 模板引擎，如 EJS、Jade、Handlebars、Hogan.js 等 |
+| 无 | --author | netease | 构建者名称 |
+| 无 | --projectName | node_project | 项目名称, 请使用小写 |
+| 无 | --mcss | true | 是否使用 mcss |
+| 无 | --npm | false | 是否需要自动安装 npm 依赖 |
+| 无 | --bower | false | 是否需要自动安装 nej 和 Regularjs 的 Bower 依赖 |
+
 使用范例：
 
 在当前目录下构建两个项目（id 为 23456798 和 452178），并强行覆盖本地模拟数据文件：
