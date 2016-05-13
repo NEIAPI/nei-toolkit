@@ -243,7 +243,7 @@ module.exports = {
         {
             "q": "mcss",
             "m": "是否使用 mcss",
-            "d": false,
+            "d": true,
             "f": "node"
         },
         {
