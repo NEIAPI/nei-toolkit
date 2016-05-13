@@ -1,8 +1,6 @@
 // config file for jtr server
 var path = require('path');
 module.exports = {
-  fromNei: true, // 表示这是nei项目
-  config: {
     /* 根目录 */
     webRoot: path.join(__dirname, '{{WEB_ROOT}}'),
     /* 视图目录 */
@@ -30,5 +28,4 @@ module.exports = {
     mockApi: path.join(__dirname, '/{{I_MOCK_ROOT}}'),
     /* 模板后缀 */
     viewExt: '.{{VIEW_EXTENTION}}'
-  }
 };
