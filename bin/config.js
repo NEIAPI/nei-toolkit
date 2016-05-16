@@ -83,7 +83,7 @@ module.exports = {
             "m": "项目类型"
         },
         "",
-        "以下参数对于使用 webapp 模板的项目特有：",
+        "以下参数对于使用 webapp 模板的项目有效：",
         {
             "q": "engine",
             "m": "如果使用内建的 webapp 模板构建，此参数用于指定使用的模板引擎，支持内建模板引擎：freemarker、velocity，默认为 freemarker 引擎",
@@ -127,7 +127,7 @@ module.exports = {
             "f": "webapp"
         },
         "",
-        "以下参数对于使用 mobile 模板的项目特有：",
+        "以下参数对于使用 mobile 模板的项目有效：",
         {
             "j": "l",
             "q": "lang",
@@ -139,23 +139,6 @@ module.exports = {
             "q": "author",
             "d": "netease",
             "m": "构建者名称",
-            "f": "mobile"
-        },
-        {
-            "q": "reqAbstract",
-            "d": "HTBaseRequest",
-            "m": "请求基类名称，不带类名的前缀。如果指定语言是 Java，它的默认值为 BaseHttpStringRequestTask",
-            "f": "mobile"
-        },
-        {
-            "q": "modelAbstract",
-            "d": "HTHTTPModel",
-            "m": "数据模型基类名称，不带类名的前缀",
-            "f": "mobile"
-        },
-        {
-            "q": "resOut",
-            "m": "生成的 NEI 资源相对工程的路径，如不指定，Java 工程的值为'app/src/main/hthttp-gen/'，Objective-C 工程的值为'{产品名}+/NetWork/'",
             "f": "mobile"
         },
         {
@@ -175,7 +158,19 @@ module.exports = {
             "f": "mobile"
         },
         "",
-        "以下参数在生成 mobile 项目的 Objective-C 模型和请求文件时特有：",
+        "以下参数在生成 mobile 项目的 Objective-C 模型和请求文件时有效：",
+        {
+            "q": "reqAbstract",
+            "d": "HTBaseRequest",
+            "m": "请求基类名称，不带类名的前缀",
+            "f": "mobile-oc"
+        },
+        {
+            "q": "modelAbstract",
+            "d": "HTHTTPModel",
+            "m": "数据模型基类名称，不带类名的前缀",
+            "f": "mobile-oc"
+        },
         {
             "q": "namePrefix",
             "d": "HT",
@@ -200,8 +195,25 @@ module.exports = {
             "m": "是否将模板文件夹下的文件添加到Xcode工程中",
             "f": "mobile-oc"
         },
+        {
+            "q": "resOut",
+            "m": "生成的 NEI 资源相对工程的路径，如不指定，默认值为 {{产品名}}+/NetWork/",
+            "f": "mobile-oc"
+        },
         "",
-        "以下参数在生成 mobile 项目的 Java 模型和请求文件时特有：",
+        "以下参数在生成 mobile 项目的 Java 模型和请求文件时有效：",
+        {
+            "q": "reqAbstract",
+            "d": null,
+            "m": "请求的基类，格式为全路径。若值为 null，则不用生成请求文件",
+            "f": "mobile-java"
+        },
+        {
+            "q": "modelAbstract",
+            "d": null,
+            "m": "模型的基类，没有默认值",
+            "f": "mobile-java"
+        },
         {
             "q": "appPackage",
             "d": "com.netease",
@@ -216,12 +228,18 @@ module.exports = {
         },
         {
             "q": "reqPackage",
-            "d": "hthttp.httptask",
+            "d": "hthttp.request",
             "m": "http请求的相对包名",
             "f": "mobile-java"
         },
+        {
+            "q": "resOut",
+            "d": "app/src/main/hthttp-gen/",
+            "m": "生成的 NEI 资源相对工程的路径",
+            "f": "mobile-java"
+        },
         "",
-        "以下参数对于使用 Node.js 模板的项目特有：",
+        "以下参数对于使用 Node.js 模板的项目有效：",
         {
             "q": "engine",
             "d": "ejs",
@@ -409,7 +427,7 @@ module.exports = {
             "m": "生成的 NEI 资源相对工程的路径，如不指定，语言为 Java 是值为'app/src/main/hthttp-gen/'，语言为 Objective-C 时值为'{产品名}+/NetWork/'"
         },
         "",
-        "以下参数在生成 Objective-C 模型和请求文件时特有：",
+        "以下参数在生成 Objective-C 模型和请求文件时有效：",
         {
             "q": "namePrefix",
             "d": "HT",
@@ -432,7 +450,7 @@ module.exports = {
             "m": "在生成资源文件时，是否强制更新 .pbxproj 工程文件"
         },
         "",
-        "以下参数在生成 Java 模型和请求文件时特有：",
+        "以下参数在生成 Java 模型和请求文件时有效：",
         {
             "q": "appPackage",
             "d": "com.netease",
