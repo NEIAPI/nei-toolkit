@@ -20,7 +20,7 @@ public class {{req.name}} extends {{req.baseClass}} {
     {%- for input in req.inputs -%}
     {{input.whiteSpace}}{{input.typeName}} {{input.name}}{% if loop.last%}) {{'{'}}{% else %},{% endif %}{% if input.description %} // {{input.description}} {% endif %}
     {%- endfor %}{% else %}{{') {'}}{% endif %}
-        super(HttpMethod.{{req.method}});
+        super();
 
         {% for param in req.params -%}
         {{param.container}}.put("{{param.key}}", {{param.valueExp}});{% if param.desc %} // {{param.desc}} {% endif %}
@@ -37,6 +37,11 @@ public class {{req.name}} extends {{req.baseClass}} {
     @Override
     protected String getApi() {
         return {% if req.hasHost %}null{% else %}"{{req.path}}"{% endif %};
+    }
+
+    @Override
+    public String getMethod(){
+        return HttpMethod.{{req.method}};
     }
 
     public Class getModelClass() {

@@ -8,7 +8,6 @@
 * `{{modelPackage}}`，模型的相对包名，默认值为 `hthttp.model`。
 * `{{reqPackage}}`，请求的相对包名，默认值为 `hthttp.request`。
 * `{{reqAbstract}}`，请求的基类，格式为全路径。必选，若不传入该参数，则不用生成请求文件。
-* `{{modelAbstract}}`，模型的基类，没有默认值。
 
 ### 一、NEI 中的数据类型和 Java 语言中的数据类型的对应关系
 | NEI 数据类型  | Java 数据类型 | 说明 |
@@ -37,7 +36,7 @@
 
 NEI 目前支持三种数据类型：`哈希`、`枚举`和`数组`，生成规则分别如下：
 
-##### `哈希` 和 `数组` 类型的生成规则
+##### `哈希` 类型的生成规则
 
 ```java
 
@@ -94,8 +93,8 @@ public interface {{数据类型名}} {
 >注意: 定义枚举类型时使用 `interface`，而不是 `class`，也不是 `enum`。
 
 #### 不支持的情形
-
-NEI 定义中不包括字典类型(比如`Map`、`SparseArray`)、`Date` 类型，不需要额外处理。字典类型一定会组装成为一个 Model; `Date` 会由 `Long` 或者 `String` 来表达。
+* `数组` 类型
+* NEI 定义中不包括字典类型(比如`Map`、`SparseArray`)、`Date` 类型，不需要额外处理。字典类型一定会组装成为一个 Model; `Date` 会由 `Long` 或者 `String` 来表达。
 
 
 ### 三、Request 生成规则

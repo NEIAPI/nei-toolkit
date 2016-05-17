@@ -163,7 +163,7 @@ module.exports = {
             "q": "reqAbstract",
             "d": "HTBaseRequest",
             "m": "请求基类名称，不带类名的前缀",
-            "f": "mobile-oc"
+            "f": "mobile-oc" // `for` `mobile` `objective-c` only
         },
         {
             "q": "modelAbstract",
@@ -175,7 +175,7 @@ module.exports = {
             "q": "namePrefix",
             "d": "HT",
             "m": "生成的文件名、类名的前缀，默认为 HT",
-            "f": "mobile-oc" // `for` `mobile` `objective-c` only
+            "f": "mobile-oc"
         },
         {
             "q": "reqHeaders",
@@ -206,19 +206,13 @@ module.exports = {
             "q": "reqAbstract",
             "d": null,
             "m": "请求的基类，格式为全路径。若值为 null，则不用生成请求文件",
-            "f": "mobile-java"
-        },
-        {
-            "q": "modelAbstract",
-            "d": null,
-            "m": "模型的基类，没有默认值",
-            "f": "mobile-java"
+            "f": "mobile-java" // `for` `mobile` `java` only
         },
         {
             "q": "appPackage",
             "d": "com.netease",
             "m": "应用的包名",
-            "f": "mobile-java" // `for` `mobile` `java` only
+            "f": "mobile-java"
         },
         {
             "q": "modelPackage",

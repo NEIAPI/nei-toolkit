@@ -1,9 +1,10 @@
 {
-	"t": "mobile",
-	"l": "java",
-	"p": "../genresult",
-	"o": "../genresult",
-	"tp": "java/",
-	"tdp": "nei.json",
-	"appPackage": "com.google.template"
+  "t": "mobile",
+  "l": "java",
+  "p": "../genresult",
+  "o": "../genresult",
+  "tp": "java/",
+  "tdp": "nei.json",
+  "appPackage": "com.google.template",
+  "reqAbstract": "com.netease.hthttp.request.BaseRequest"
 }

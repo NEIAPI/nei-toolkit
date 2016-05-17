@@ -17,6 +17,6 @@ public interface {{type.name}} {
      *  {{attr.description}}
      */
     {%- endif -%}
-    public static final String {{attr.vkey}} = "{{attr.name}}";
+    String {{attr.vkey}} = "{{attr.name}}";
     {% endfor %}
 }
