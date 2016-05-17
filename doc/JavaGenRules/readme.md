@@ -102,8 +102,7 @@ public interface {{数据类型名}} {
 * `Request` 类名为 NEI 中的接口类名加 `Request ` 的形式，如 NEI 上的接口类名为 `Login`，则类名为 `LoginRequest`。如果类名本身以 `Request` 或者 `Task` 结尾，则不需要添加。
 * 默认包名为 `{{appPackage}}.{{reqPackage}}`，文件位置为 `{{appPackage展开目录}}/{{reqPackage的展开目录}}`。
 * `Request` 的基类(需继承自 `FormBodyRequest` 或 `JSONBodyRequest` 的类等)用户必须进行配置，即通过命令行传入的 `reqAbstract` 参数指定，且参数值必须是基类的全路径。如基类是 `XXBaseRequest`，则参数值为 `com.netease.XX.XXBaseRequest`。若该参数未配置，则不生成相关接口的 `Request` 类。
-* 由于在 NEI 中无法定义特殊的文件上传请求，故在此先约定 `put` 请求为文件上传。
-* `Request` 的参数，推荐是基本数据类型。若传入的参数是自定义类型 `CustomModel`，则生成的代码会调用 `toString()`方法，因此需要用户重写 `toString()` 方法；若传入的参数是数组，则调用 `com.netease.hearttouch.hthttp.utils.ArrayUtil` 包中的 `ArrayUtil.parseArrayToString()` 方法对数组进行转换。
+* `Request` 的参数，推荐是基本数据类型。若传入的参数是自定义类型 `CustomModel`，则生成的代码会调用 `toString()`方法，因此需要用户重写 `toString()` 方法；若传入的参数是数组，则调用 `import java.util.Arrays ` 包中的 `Arrays.deepToString()` 方法对数组进行转换。。
 
 ##### 普通请求生成规则
 
@@ -190,5 +189,6 @@ public class {{请求类名}}Request extends {{XXBaseRequest}} {
 }
 
 ```
+
 #### 不支持的情形
 目前暂时不提供文件上传请求和文件下载请求的 `Request `类的自动生成。

@@ -116,7 +116,7 @@ describe('nei/mobile', function () {
             builder.build(getTestDataCopy());
 
             assert.equal(true, _fs.exist(`${outputRoot}/nei.${pid}/JSON/nei-latest.json`));
-            assert.equal(true, _fs.exist(`${outputRoot}/app/src/main/hthttp-gen/com/google/template/hthttp/httptask/AddAddressInfoCase2HttpTask.java`));
+            assert.equal(true, _fs.exist(`${outputRoot}/app/src/main/hthttp-gen/com/google/template/hthttp/request/AddAddressInfoCase2Request.java`));
             assert.equal(true, _fs.exist(`${outputRoot}/app/src/main/hthttp-gen/com/google/template/hthttp/model/Address.java`));
 
             done();
