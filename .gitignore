@@ -4,6 +4,6 @@ node_modules
 build
 doc/**/bak.zip
 lib/nei/mobile/java
-project_template/genresult
+project_template_test/genresult
 webapp_pro
 node_pro
