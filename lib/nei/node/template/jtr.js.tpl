@@ -30,6 +30,6 @@ module.exports = {
     mockTpl: path.join(__dirname, '/{{T_MOCK_ROOT}}'),
     /* 异步接口mock数据路径 */
     mockApi: path.join(__dirname, '/{{I_MOCK_ROOT}}'),
-    /* 模板引擎 */
-    viewEngine: '{{VIEW_ENGINE}}'
+    /* 模板后缀 */
+    viewExt: '.{{VIEW_EXTENTION}}'
 };
