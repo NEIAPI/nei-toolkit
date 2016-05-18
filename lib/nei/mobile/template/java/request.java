@@ -35,7 +35,7 @@ public class {{req.name}} extends {{req.baseClass}} {
     {%- endif %}
 
     @Override
-    protected String getApi() {
+    public String getApi() {
         return {% if req.hasHost %}null{% else %}"{{req.path}}"{% endif %};
     }
 

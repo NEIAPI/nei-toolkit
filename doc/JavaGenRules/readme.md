@@ -34,7 +34,7 @@
 * 枚举类型的生成规则稍有不同，详见 [枚举类型的生成规则](#枚举类型的生成规则)。
 * `ResultData` 是约定的应该使用的返回值类型，它包含三个字段：`code(Integer)`、`message(String)` 和 `result(Variable)`，其中定义数据类型的时候 `result` 是可变类型，因此不会生成 `ResultData` 的模型文件。在接口中使用该数据类型时，则需要指定 `result` 的类型。
 
-NEI 目前支持三种数据类型：`哈希`、`枚举`和`数组`，生成规则分别如下：
+NEI 目前支持三种数据类型：`哈希`、`枚举` 和 `数组`，生成规则分别如下：
 
 ##### `哈希` 类型的生成规则
 
@@ -116,7 +116,7 @@ package {{appPackage}}.{{reqPackage}};
 import {{reqAbstract}};
 
 // 固定要导入的包
-import com.netease.hearttouch.hthttp.HttpMethod;
+import com.netease.hearttouch.hthttp.operation.HttpMethod;
 // 如果输入参数（url 参数或者 header）中有数组类型 `DataType[]`, 则导入下面这个包。
 import java.util.Arrays;
 
@@ -155,7 +155,7 @@ public class {{请求类名}}Request extends {{XXBaseRequest}} {
     }
 
     @Override
-    protected String getApi() {
+    public String getApi() {
         return {{requestUrl}};
     }
 

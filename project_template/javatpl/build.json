@@ -6,5 +6,5 @@
   "tp": "java/",
   "tdp": "nei.json",
   "appPackage": "com.google.template",
-  "reqAbstract": "com.netease.hthttp.request.BaseRequest"
+  "reqAbstract": "com.google.template.hthttp.request.BaseRequest"
 }
