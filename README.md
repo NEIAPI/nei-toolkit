@@ -383,6 +383,11 @@ nei server -cf ./webapp/nei.12345/jtr.js
 > OS X 下如果有异常请使用 `sudo nei server` 命令启动
 
 # 版本历史
+## 0.4.0   (2016-05-18)
+* 支持 Node.js 工程生成
+* Java 模型和请求代码的生成规则调整
+* 命令行参数规则调整
+* 其他 bug 修复, 见 issue#6~13
 
 ## 0.3.9   (2016-05-03)
 * nei server 增加 --configFile 参数, 表示配置文件的路径
