@@ -30,7 +30,7 @@ describe('nei/mobile', function () {
 
         it('Build OC project -> case 1', function (done) {
             let config = {
-                config: './project_template/iostpl/build.json',
+                config: './project_template_test/iostpl/build.json',
                 updateProject: true
             };
             let options = {
@@ -97,7 +97,7 @@ describe('nei/mobile', function () {
 
         it('Build Java project -> case 1', function (done) {
             let config = {
-                config: './project_template/javatpl/build.json'
+                config: './project_template_test/javatpl/build.json'
             };
             let options = {
                 message: require('../../bin/config'),
