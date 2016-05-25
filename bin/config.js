@@ -160,10 +160,16 @@ module.exports = {
         "",
         "以下参数在生成 mobile 项目的 Objective-C 模型和请求文件时有效：",
         {
+            "q": "productName",
+            "d": null,
+            "m": "产品名称, 必需",
+            "f": "mobile-oc" // `for` `mobile` `objective-c` only
+        },
+        {
             "q": "reqAbstract",
             "d": "HTBaseRequest",
             "m": "请求基类名称，不带类名的前缀",
-            "f": "mobile-oc" // `for` `mobile` `objective-c` only
+            "f": "mobile-oc"
         },
         {
             "q": "modelAbstract",
@@ -197,7 +203,8 @@ module.exports = {
         },
         {
             "q": "resOut",
-            "m": "生成的 NEI 资源相对工程的路径，如不指定，默认值为 {{产品名}}+/NetWork/",
+            "d": "",
+            "m": "生成的 NEI 资源相对工程的路径，在前面追加 productName 的路径",
             "f": "mobile-oc"
         },
         "",
@@ -434,7 +441,8 @@ module.exports = {
         },
         {
             "q": "resOut",
-            "m": "生成的 NEI 资源相对工程的路径，如不指定，默认值为 {{产品名}}+/NetWork/",
+            "d": "",
+            "m": "生成的 NEI 资源相对工程的路径，在前面追加 productName 的路径",
             "f": "oc"
         },
         {
