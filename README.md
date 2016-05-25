@@ -308,6 +308,7 @@ nei mobile [ID] [参数]
 >以下参数在生成 Objective-C 模型和请求文件时特有：
 
 | 简写 | 全称 | 默认值 | 描述 |
+| :--- | :--- | :--- | :--- |
 | 无 | --reqAbstract | HTBaseRequest | 请求基类名称，不带类名的前缀 |
 | 无 | --modelAbstract | HTHTTPModel | 数据模型基类名称，不带类名的前缀 |
 | 无 | --namePrefix | HT | 生成的文件名、类名的前缀，默认为 HT |
