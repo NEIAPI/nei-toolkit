@@ -31,7 +31,8 @@ describe('nei/mobile', function () {
         it('Build OC project -> case 1', function (done) {
             let config = {
                 config: './project_template_test/iostpl/build.json',
-                updateProject: true
+                updateProject: true,
+                productName: "Yanxuan"
             };
             let options = {
                 message: require('../../bin/config'),
@@ -42,7 +43,7 @@ describe('nei/mobile', function () {
             config = args.format('build', config);
             config.action = 'build';
             config.id = pid;
-            config.project = outputRoot;
+            config.project = outputRoot + '/Yanxuan';
 
             let cwd = process.cwd() + '/';
             config.outputRoot = _path.normalize(_path.absolute(config.project + '/', cwd));
@@ -51,10 +52,10 @@ describe('nei/mobile', function () {
 
             let projectName = 'Yanxuan';
 
-            assert.equal(true, _fs.exist(`${outputRoot}/nei.${pid}/JSON/nei-latest.json`));
-            assert.equal(true, _fs.exist(`${outputRoot}/${projectName}/info.plist`));
+            assert.equal(true, _fs.exist(`${config.outputRoot}/nei.${pid}/JSON/nei-latest.json`));
+            assert.equal(true, _fs.exist(`${config.outputRoot}/${projectName}/info.plist`));
 
-            let projectPath = `${outputRoot}/${projectName}`;
+            let projectPath = `${config.outputRoot}/${projectName}`;
             let projectFilePath = `${projectPath}.xcodeproj/project.pbxproj`;
             let pbxProj = new PbxProj(projectName, projectPath, projectFilePath);
             let rootGroup = pbxProj.getPBXGroupByPath(true, projectName);
