@@ -382,6 +382,14 @@ nei server -cf ./webapp/nei.12345/jtr.js
 > OS X 下如果有异常请使用 `sudo nei server` 命令启动
 
 # 版本历史
+
+## 0.4.4   (2016-05-25)
+* README 文档更新
+* mobile 命令 bug 修复
+* 生成的内置模拟容器的配置文件支持带查询参数的 GET 请求
+* 内置的模拟容器不识别带查询参数的 url 的问题修复
+* 构建 OC 工程时, 增加 productName 参数, 具体见 issue16
+
 ## 0.4.3   (2016-05-20)
 * 模板 mock 数据的文件名错误修复
 
