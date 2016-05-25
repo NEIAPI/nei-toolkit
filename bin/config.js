@@ -406,36 +406,42 @@ module.exports = {
             "d": "netease",
             "m": "构建者名称，默认为 netease"
         },
+        "",
+        "以下参数在生成 Objective-C 模型和请求文件时有效：",
         {
             "q": "reqAbstract",
             "d": "HTBaseRequest",
-            "m": "请求基类名称，不带类名的前缀"
+            "m": "请求基类名称，不带类名的前缀",
+            "f": "oc" // `for` `lang` `objective-c` only
         },
         {
             "q": "modelAbstract",
             "d": "HTHTTPModel",
-            "m": "数据模型基类名称，不带类名的前缀"
+            "m": "数据模型基类名称，不带类名的前缀",
+            "f": "oc"
         },
-        {
-            "q": "resOut",
-            "m": "生成的 NEI 资源相对工程的路径，如不指定，语言为 Java 是值为'app/src/main/hthttp-gen/'，语言为 Objective-C 时值为'{产品名}+/NetWork/'"
-        },
-        "",
-        "以下参数在生成 Objective-C 模型和请求文件时有效：",
         {
             "q": "namePrefix",
             "d": "HT",
-            "m": "生成的文件名、类名的前缀"
+            "m": "生成的文件名、类名的前缀，默认为 HT",
+            "f": "oc"
         },
         {
             "q": "reqHeaders",
             "d": "Requests",
-            "m": "包含所有数据请求的头文件名称，不带类名的前缀"
+            "m": "包含所有数据请求的头文件名称，不带类名的前缀",
+            "f": "oc"
         },
         {
             "q": "modelHeaders",
             "d": "Models",
-            "m": "包含所有数据模型的头文件名称，不带类名的前缀"
+            "m": "包含所有数据模型的头文件名称，不带类名的前缀",
+            "f": "oc"
+        },
+        {
+            "q": "resOut",
+            "m": "生成的 NEI 资源相对工程的路径，如不指定，默认值为 {{产品名}}+/NetWork/",
+            "f": "oc"
         },
         {
             "j": "f",
@@ -446,19 +452,34 @@ module.exports = {
         "",
         "以下参数在生成 Java 模型和请求文件时有效：",
         {
+            "q": "reqAbstract",
+            "d": null,
+            "m": "请求的基类，格式为全路径。若值为 null，则不用生成请求文件",
+            "f": "java" // `for` `lang` `java` only
+        },
+        {
             "q": "appPackage",
             "d": "com.netease",
-            "m": "应用的包名"
+            "m": "应用的包名",
+            "f": "java"
         },
         {
             "q": "modelPackage",
             "d": "hthttp.model",
-            "m": "模型的相对包名"
+            "m": "模型的相对包名",
+            "f": "java"
         },
         {
             "q": "reqPackage",
-            "d": "hthttp.httptask",
-            "m": "http请求的相对包名"
+            "d": "hthttp.request",
+            "m": "http请求的相对包名",
+            "f": "java"
+        },
+        {
+            "q": "resOut",
+            "d": "app/src/main/hthttp-gen/",
+            "m": "生成的 NEI 资源相对工程的路径",
+            "f": "java"
         }
     ],
     "server": [

@@ -10,20 +10,6 @@ var main = require('../main');
 var Args = require('../lib/util/args');
 var splitChars = /[,;，；]/;
 
-// run command for single id
-var run = function (name, event) {
-    var opt = event.options || {};
-    var id = (event.args || [])[0];
-    if (!id) {
-        this.show(name);
-        process.exit(0);
-    } else {
-        opt.id = id;
-        this.format(name, opt);
-        main[name](opt);
-    }
-};
-
 var options = {
     message: require('./config.js'),
     package: require('../package.json'),
@@ -74,13 +60,30 @@ var options = {
         }
     },
     mock: function (event) {
-        run.call(this, 'mock', event);
+        var action = 'mock';
+        var config = event.options || {};
+        var id = (event.args || [])[0];
+        if (!id) {
+            this.show(name);
+            process.exit(0);
+        }
+        config = this.format(action, config);
+        config.action = action;
+        config.id = id;
+        main.mock(config);
     },
     mobile: function (event) {
-        var opt = event.options || {};
-        opt.action = 'mobile';
-        this.format(opt.action, opt);
-        run.call(this, opt.action, event);
+        var action = 'mobile';
+        var config = event.options || {};
+        var id = (event.args || [])[0];
+        if (!id) {
+            this.show(name);
+            process.exit(0);
+        }
+        config = this.format(action, config);
+        config.action = action;
+        config.id = id;
+        main.mobile(config);
     },
     server: function (event) {
         var action = 'server';
@@ -91,6 +94,7 @@ var options = {
         config.id = id;
         main.server(config);
     },
+    // alias for server
     serve: function (event) {
         options.server.call(this, event);
     }
