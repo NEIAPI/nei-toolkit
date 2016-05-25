@@ -119,9 +119,11 @@ nei build [IDS] [参数]
 | :--- | :--- | :--- | :--- |
 | -h | --help |  | 显示 build 命令的帮助信息 |
 | -c | --config | | 参数配置文件路径，优先级低于命令行中的参数 |
-| -p | --project | ./ | 指定项目目录，默认为当前目录 |
 | -t | --template | webapp | 指定用于构建的模板实现文件. 目前支持 `webapp`, `mobile`, `node` 三种类型 |
+| -p | --project | ./ | 指定项目目录，默认为当前目录 |
+| -pt| --projectType | hz.netease | 项目类型 |
 | -w | --overwrite | false | 是否覆盖已存在的测试数据文件 |
+| 无 | --author | netease | 构建者名称 |
 
 >config 参数指定的是一个文件路径, 该文件的内容必须是有效的 json, 比如:
 
@@ -150,37 +152,37 @@ nei build [IDS] [参数]
 
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
-| -tp | --templatePath | | 模板路径，默认为空，使用时必须指定 |
-| -tdp | --templateDataPath | | 模板的数据文件路径，默认为空，文件内容须是有效的 json |
-| -pt | --projectType | hz.netease | 项目类型 |
 | l | --lang | oc | 要导出的语言标识，支持的语言有 oc、java 等 |
-| 无 | --reqAbstract | BaseRequest | 请求基类名称，不带类名的前缀。如果语言是 java，则默认值为 `BaseHttpStringRequestTask` |
-| 无 | --modelAbstract | HTTPModel | 数据模型基类名称，不带类名的前缀 |
-| 无 | --resOut |  | 生成的 NEI 资源相对工程的路径，如不指定，语言为 java 时值为 `app/src/main/hthttp-gen/`，语言为 oc 时值为 `{产品名}+/NetWork/` |
+| tp | --templatePath | | 模板路径，默认为空，使用时必须指定 |
+| tdp| --templateDataPath | | 模板的数据文件路径，默认为空，文件内容须是有效的 json |
 
 >以下参数在生成 mobile 项目的 Objective-C 模型和请求文件时特有：
 
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
+| 无 | --reqAbstract | HTBaseRequest | 请求基类名称，不带类名的前缀 |
+| 无 | --modelAbstract | HTHTTPModel | 数据模型基类名称，不带类名的前缀 |
 | 无 | --namePrefix | HT | 生成的文件名、类名的前缀，默认为 HT |
 | 无 | --reqHeaders | Requests | 包含所有数据请求的头文件名称，不带类名的前缀 |
 | 无 | --modelHeaders | Models | 包含所有数据模型的头文件名称，不带类名的前缀 |
 | 无 | --updateProject | false | 是否将模板文件夹下的文件添加到 Xcode 工程中 |
+| 无 | --resOut | {{产品名}}+/NetWork/ | 生成的 NEI 资源相对工程的路径。如果有值，则第一个路径会作为产品名，否则产品名为空 |
 
 >以下参数在生成 mobile 项目的 Java 模型和请求文件时特有： 
 
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
+| 无 | --reqAbstract | null | 请求的基类，格式为全路径。若值为 null，则不用生成请求文件 |
 | 无 | --appPackage | com.netease | 应用的包名 |
 | 无 | --modelPackage | hthttp.model | 模型的相对包名 |
 | 无 | --reqPackage | hthttp.httptask | http 请求的相对包名 |
+| 无 | --resOut | app/src/main/hthttp-gen/ | 生成的 NEI 资源相对工程的路径 |
 
 >以下参数在生成 Node.js 项目时特有： 
 
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
 | 无 | --engine | ejs | 模板引擎，如 EJS、Jade、Handlebars、Hogan.js 等 |
-| 无 | --author | netease | 构建者名称 |
 | 无 | --projectName | node_project | 项目名称, 请使用小写 |
 | 无 | --mcss | true | 是否使用 mcss |
 | 无 | --npm | false | 是否需要自动安装 npm 依赖 |
@@ -283,10 +285,6 @@ nei mock 233454 -t 2 -o /path/to/output/
 
 ![Charles导入配置](./doc/res/charles.png)
 
-## export
-
-从 `v0.3.2` 开始, 不再支持该功能.
-
 ## mobile
 
 自动生成移动平台数据模型和请求类代码
@@ -304,28 +302,29 @@ nei mobile [ID] [参数]
 | -h | --help | | 显示 mobile 命令帮助信息 |
 | -c | --config | | 参数配置文件路径，优先级低于命令行中的参数 |
 | -o | --output | ./ | 指定输出目录，默认为当前目录 |
-| -l | --lang | oc | 要导出的语言标识，支持的语言有 oc、java 等 |
-| 无 | --author | netease | 注释中作者姓名 |
-| 无 | --reqAbstract | BaseRequest | 请求基类名称，不带类名的前缀。如果语言是 java，则默认值为 `BaseHttpStringRequestTask` |
-| 无 | --modelAbstract | HTTPModel | 数据模型基类名称，不带类名的前缀 |
-| 无 | --resOut |  | 生成的 NEI 资源相对工程的路径，如不指定，语言为 java 时值为 `app/src/main/hthttp-gen/`，语言为 oc 时值为 `{产品名}+/NetWork/` |
+| -l | --lang | oc | 要导出的语言标识，支持的语言有 oc 和 java |
+| 无 | --author | netease | 构建者名称 |
 
 >以下参数在生成 Objective-C 模型和请求文件时特有：
 
 | 简写 | 全称 | 默认值 | 描述 |
-| :--- | :--- | :--- | :--- |
-| -f | --force | false | 是否强制更新 OC 工程的 .pbxproj 文件 |
+| 无 | --reqAbstract | HTBaseRequest | 请求基类名称，不带类名的前缀 |
+| 无 | --modelAbstract | HTHTTPModel | 数据模型基类名称，不带类名的前缀 |
 | 无 | --namePrefix | HT | 生成的文件名、类名的前缀，默认为 HT |
 | 无 | --reqHeaders | Requests | 包含所有数据请求的头文件名称，不带类名的前缀 |
 | 无 | --modelHeaders | Models | 包含所有数据模型的头文件名称，不带类名的前缀 |
+| -f | --force | false | 是否强制更新 OC 工程的 .pbxproj 文件 |
+| 无 | --resOut | {{产品名}}+/NetWork/ | 生成的 NEI 资源相对工程的路径。如果有值，则第一个路径会作为产品名，否则产品名为空  |
 
 >以下参数在生成 Java 模型和请求文件时特有：
 
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
+| 无 | --reqAbstract | null | 请求的基类，格式为全路径。若值为 null，则不用生成请求文件 |
 | 无 | --appPackage | com.netease | 应用的包名 |
 | 无 | --modelPackage | hthttp.model | 模型的相对包名 |
 | 无 | --reqPackage | hthttp.httptask | http 请求的相对包名 |
+| 无 | --resOut | app/src/main/hthttp-gen/ | 生成的 NEI 资源相对工程的路径 |
 
 使用范例
 
