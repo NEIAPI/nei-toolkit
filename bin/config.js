@@ -441,8 +441,8 @@ module.exports = {
         },
         {
             "q": "resOut",
-            "d": "",
-            "m": "生成的 NEI 资源相对工程的路径，在前面追加 productName 的路径",
+            "d": "./",
+            "m": "生成的 NEI 资源相对工程的路径",
             "f": "oc"
         },
         {

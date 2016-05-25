@@ -315,7 +315,7 @@ nei mobile [ID] [参数]
 | 无 | --reqHeaders | Requests | 包含所有数据请求的头文件名称，不带类名的前缀 |
 | 无 | --modelHeaders | Models | 包含所有数据模型的头文件名称，不带类名的前缀 |
 | -f | --force | false | 是否强制更新 OC 工程的 .pbxproj 文件 |
-| 无 | --resOut | {{产品名}}+/NetWork/ | 生成的 NEI 资源相对工程的路径。如果有值，则第一个路径会作为产品名，否则产品名为空  |
+| 无 | --resOut | ./ | 生成的 NEI 资源相对工程的路径 |
 
 >以下参数在生成 Java 模型和请求文件时特有：
 
