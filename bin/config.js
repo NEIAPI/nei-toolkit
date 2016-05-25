@@ -82,6 +82,12 @@ module.exports = {
             "d": "hz.netease",
             "m": "项目类型"
         },
+        {
+            "q": "author",
+            "d": "netease",
+            "m": "构建者名称",
+            "f": "mobile"
+        },
         "",
         "以下参数对于使用 webapp 模板的项目有效：",
         {
@@ -134,12 +140,6 @@ module.exports = {
             "d": "oc",
             "m": "要导出的语言标识，支持的语言有 oc、java 等",
             "f": "mobile"  // `for` `mobile` only
-        },
-        {
-            "q": "author",
-            "d": "netease",
-            "m": "构建者名称",
-            "f": "mobile"
         },
         {
             "j": "tp",
@@ -239,12 +239,6 @@ module.exports = {
             "d": "ejs",
             "m": "模板引擎，如 EJS、Jade、Handlebars、Hogan.js 等",
             "f": "node" // for `node` only
-        },
-        {
-            "q": "author",
-            "d": "netease",
-            "m": "构建者名称",
-            "f": "node"
         },
         {
             "q": "projectName",
@@ -404,7 +398,7 @@ module.exports = {
         {
             "q": "author",
             "d": "netease",
-            "m": "构建者名称，默认为 netease"
+            "m": "构建者名称"
         },
         "",
         "以下参数在生成 Objective-C 模型和请求文件时有效：",

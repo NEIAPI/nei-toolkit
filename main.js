@@ -196,7 +196,7 @@ class Main {
         );
         let lang = config.lang;
         if (!/^(oc|java)$/.test(lang)) {
-            return _logger.error('not supported language %s', lang);
+            return _logger.error(`not supported language "${lang}"`);
         }
         this.loadData(config.id, (data) => {
             let builder = new (require(`./lib/nei/mobile.${lang}.js`))(config);
