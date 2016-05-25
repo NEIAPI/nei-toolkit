@@ -2,9 +2,9 @@
 	"t": "mobile",
 	"l": "oc",
 	"w": true,
-	"p": "../genresult",
+	"p": "",
 	"o": "../genresult",
 	"tp": "HTSingleView/",
 	"tdp": "NEIKey.json",
-	"resOut": "Yanxuan/Common/Network/"
+	"resOut": "Common/Network/"
 }
