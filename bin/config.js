@@ -179,8 +179,8 @@ module.exports = {
         },
         {
             "q": "namePrefix",
-            "d": "HT",
-            "m": "生成的文件名、类名的前缀，默认为 HT",
+            "d": null,
+            "m": "生成的文件名、类名的前缀，必需",
             "f": "mobile-oc"
         },
         {
@@ -423,8 +423,8 @@ module.exports = {
         },
         {
             "q": "namePrefix",
-            "d": "HT",
-            "m": "生成的文件名、类名的前缀，默认为 HT",
+            "d": null,
+            "m": "生成的文件名、类名的前缀，必需",
             "f": "oc"
         },
         {

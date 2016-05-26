@@ -76,15 +76,15 @@ class Main {
      */
     build(config) {
         let cwd = process.cwd() + '/';
-        config.outputRoot = _path.absolute(config.project + '/', cwd);
+        config.outputRoot = _path.normalize(_path.absolute(config.project + '/', cwd));
         if (config.deployRoot) {
-            config.deployRoot = _path.absolute(config.deployRoot + '/', config.outputRoot);
+            config.deployRoot = _path.normalize(_path.absolute(config.deployRoot + '/', config.outputRoot));
         }
         if (config.tMockRoot) {
-            config.tMockRoot = _path.absolute(config.tMockRoot + '/', config.outputRoot);
+            config.tMockRoot = _path.normalize(_path.absolute(config.tMockRoot + '/', config.outputRoot));
         }
         if (config.iMockRoot) {
-            config.iMockRoot = _path.absolute(config.iMockRoot + '/', config.outputRoot);
+            config.iMockRoot = _path.normalize(_path.absolute(config.iMockRoot + '/', config.outputRoot));
         }
         let existNeiConf = `${config.outputRoot}nei.${config.id}/nei.json`;
         let action = config.action;
@@ -191,9 +191,9 @@ class Main {
      */
     mobile(config) {
         let cwd = process.cwd() + '/';
-        config.outputRoot = _path.absolute(
+        config.outputRoot = _path.normalize(_path.absolute(
             config.output + '/', cwd
-        );
+        ));
         let lang = config.lang;
         if (!/^(oc|java)$/.test(lang)) {
             return _logger.error(`not supported language "${lang}"`);

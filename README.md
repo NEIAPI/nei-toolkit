@@ -384,12 +384,17 @@ nei server -cf ./webapp/nei.12345/jtr.js
 
 # 版本历史
 
+## 0.4.5   (2016-05-26)
+* mobile 命令更新 OC 工程的 NEI 资源时，自动查找当前目录下面的 xcodeproj 文件路径, @issue 17
+* 构建 OC 工程 bug 修复, @issue 19
+* 构建 iOS 工程时参数规则调整, @issue 18
+
 ## 0.4.4   (2016-05-25)
 * README 文档更新
 * mobile 命令 bug 修复
 * 生成的内置模拟容器的配置文件支持带查询参数的 GET 请求
 * 内置的模拟容器不识别带查询参数的 url 的问题修复
-* 构建 OC 工程时, 增加 productName 参数, 具体见 issue16
+* 构建 OC 工程时, 增加 productName 参数, @issue16
 
 ## 0.4.3   (2016-05-20)
 * 模板 mock 数据的文件名错误修复
