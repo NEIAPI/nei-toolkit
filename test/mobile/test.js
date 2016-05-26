@@ -32,7 +32,8 @@ describe('nei/mobile', function () {
             let config = {
                 config: './project_template_test/iostpl/build.json',
                 updateProject: true,
-                productName: "Yanxuan"
+                productName: "Yanxuan",
+                namePrefix: "AA"
             };
             let options = {
                 message: require('../../bin/config'),
