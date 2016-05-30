@@ -28,6 +28,12 @@ var options = {
         var id = (event.args || [])[0];
         config = this.format(action, config);
         config.action = action;
+
+        // if id is "0", enter into offline mode
+        if(id === "0") {
+            main.build(config);
+        }
+        else
         if (!id) {
             if (config.template === 'mobile') {
                 // build empty mobile project
@@ -42,6 +48,7 @@ var options = {
                 main.build(config);
             });
         }
+
     },
     update: function (event) {
         var config = event.options || {};

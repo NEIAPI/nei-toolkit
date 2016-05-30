@@ -118,15 +118,23 @@ class Main {
         } else {
             name = `./lib/nei/webapp.js`;
         }
-        this.loadData(config.id, (data) => {
-            let Builder = require(name);
-            let builder = new Builder(config);
-            builder[action](data);
-        }, () => {
+
+        if(config.id === undefined){
             // 如果从 nei 上下载数据失败, 构建空工程
             _logger.warn('Error happened while loading data from nei, start building empty project...');
             this.buildEmpty(config, name);
-        });
+        }
+        else {
+            this.loadData(config.id, (data) => {
+            let Builder = require(name);
+            let builder = new Builder(config);
+            builder[action](data);
+             }, () => {
+                // 如果从 nei 上下载数据失败, 构建空工程
+                _logger.warn('Error happened while loading data from nei, start building empty project...');
+                this.buildEmpty(config, name);
+            });
+        }
     }
 
     /**
@@ -198,10 +206,31 @@ class Main {
         if (!/^(oc|java)$/.test(lang)) {
             return _logger.error(`not supported language "${lang}"`);
         }
-        this.loadData(config.id, (data) => {
-            let builder = new (require(`./lib/nei/mobile.${lang}.js`))(config);
-            builder.model(data);
-        });
+        if(config.id === "0")
+        {
+            // let builder = new (require(`./lib/nei/mobile.${lang}.js`))(config);
+            // // let data = null;
+            // builder.model(null);
+
+
+            let name;
+            if (config.template === 'mobile') {
+                name = `./lib/nei/mobile.${config.lang}.js`;
+            } else if (config.template === 'node') {
+                name = `./lib/nei/node.js`;
+            } else {
+                name = `./lib/nei/webapp.js`;
+            }
+            _logger.warn('Error happened while loading data from nei, start building empty project...');
+            this.buildEmpty(config, name);
+        }
+        else {
+            this.loadData(config.id, (data) => {
+                let builder = new (require(`./lib/nei/mobile.${lang}.js`))(config);
+                builder.model(data);
+            });
+        }
+
     }
 
     /**
