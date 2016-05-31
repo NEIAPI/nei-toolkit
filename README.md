@@ -384,6 +384,10 @@ nei server -cf ./webapp/nei.12345/jtr.js
 
 # 版本历史
 
+## 0.4.6   (2016-05-31)
+* jtr 配置文件优化, @issue 23
+* 枚举类型的 mock 数据优先使用默认值, @issue 24
+
 ## 0.4.5   (2016-05-26)
 * mobile 命令更新 OC 工程的 NEI 资源时，自动查找当前目录下面的 xcodeproj 文件路径, @issue 17
 * 构建 OC 工程 bug 修复, @issue 19
