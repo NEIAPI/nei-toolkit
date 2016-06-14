@@ -384,6 +384,12 @@ nei server -cf ./webapp/nei.12345/jtr.js
 
 # 版本历史
 
+## 0.4.7   (2016-06-14)
+* update 命令 --view 参数无效修复
+* 针对有范云协作特殊处理 PATCH 方式
+* 更新 jtr: 配置文件变化无需重启服务
+* @issue 27 bugfix
+
 ## 0.4.6   (2016-05-31)
 * jtr 配置文件优化, @issue 23
 * 枚举类型的 mock 数据优先使用默认值, @issue 24
