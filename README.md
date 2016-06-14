@@ -140,11 +140,11 @@ nei build [IDS] [参数]
 | 简写 | 全称 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- |
 | 无 | --engine | | 如果使用内建的 webapp 模板构建，此参数用于指定使用的模板引擎，支持内建模板引擎：freemarker、velocity, 默认为 `freemarker` 引擎 |
-| 无 | --webRoot | | 如果使用内建的 webapp 模板构建，此参数用于指定 WEBROOT 目录，默认根据 maven 目录结构规范，相对于 -p 路径的 `src/main/webapp/` |
-| 无 | --viewRoot | | 如果使用内建的 webapp 模板构建，此参数用于指定服务器端视图模板目录，默认根据 maven 目录结构规范，相对于 -p 路径的 `src/main/webapp/WEB-INF/views/` |
-| 无 | --deployRoot | | deploy 文件夹的路径, 相对于 -p 路径, 默认放在 -p 指定路径的根目录 |
-| 无 | --tMockRoot | | template mock 数据文件夹的路径, 相对于 -p 路径, 默认放在 `src/main/webapp/src/mock/` |
-| 无 | --iMockRoot | | interface mock 数据文件夹的路径, 相对于 -p 路径, 默认放在 `src/main/webapp/WEB_INF/views/mock/` |
+| 无 | --webRoot | | 如果使用内建的 webapp 模板构建，此参数用于指定 WEBROOT 目录，如果是相对路径，则是相对于 -p 参数指定的路径, 默认是 `src/main/webapp/` |
+| 无 | --viewRoot | | 如果使用内建的 webapp 模板构建，此参数用于指定服务器端视图模板目录，如果是相对路径，则是相对于 -p 参数指定的路径, 默认是 `src/main/webapp/WEB-INF/views/` |
+| 无 | --deployRoot | | deploy 文件夹的路径, 默认相对于 -p 路径, 放在 -p 指定路径的根目录 |
+| 无 | --tMockRoot | | template mock 数据文件夹的路径, 如果是相对路径，则是相对于 -p 参数指定的路径, 默认是 `src/main/webapp/src/mock/` |
+| 无 | --iMockRoot | | interface mock 数据文件夹的路径, 如果是相对路径，则是相对于 -p 参数指定的路径, 默认是 `src/main/webapp/WEB_INF/views/mock/` |
 | 无 | --mcss | true | 是否需要生成 mcss 代码, 默认是 true |
 | 无 | --bower | false | 是否需要安装 bower 依赖, 默认是 false. 注意: windows 下会报权限错误, 请不要使用该选项. |
 
