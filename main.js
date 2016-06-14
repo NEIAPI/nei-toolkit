@@ -213,7 +213,7 @@ class Main {
         let tryStartServer = (configPath) => {
             if (_fs.exist(configPath)) {
                 let options = Object.create(null);
-                options.config = require(configPath);
+                options.config = configPath;
                 options.fromNei = true;
                 // start server
                 jtr(options);

@@ -1,4 +1,8 @@
-// config file for jtr server
+/*
+ * config file for jtr server
+ * @author {{author}}
+ * Auto build by NEI Builder
+ */
 var path = require('path');
 module.exports = {
     /* 根目录 */
@@ -27,5 +31,7 @@ module.exports = {
     /* 异步接口mock数据路径 */
     mockApi: '{{T_MOCK_ROOT}}',
     /* 模板后缀 */
-    viewExt: '.{{VIEW_EXTENTION}}'
+    viewExt: '.{{VIEW_EXTENSION}}',
+    /* 模板引擎 */
+    engine: '{{VIEW_ENGINE}}'
 };
