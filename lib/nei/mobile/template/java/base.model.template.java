@@ -13,7 +13,7 @@ import java.io.Serializable;
  *   baseModel
  */
 
- public class {{req.baseModel}} extends Serializable{
+ public class {{req.baseModel}} implements Serializable{
 
 
 
