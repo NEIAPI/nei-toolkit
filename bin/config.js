@@ -74,7 +74,7 @@ module.exports = {
         {
 
             "j": "nw",
-            "q": "donotoverwrite",
+            "q": "doNotOverwrite",
             "d": false,
             "m": "是否覆盖已存在的java request 文件"
             
