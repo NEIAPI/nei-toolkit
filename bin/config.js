@@ -72,12 +72,10 @@ module.exports = {
         },
         // "是否覆盖已存在的java request 文件
         {
-
             "j": "nw",
             "q": "doNotOverwrite",
             "d": false,
-            "m": "是否覆盖已存在的java request 文件"
-            
+            "m": "是否覆盖已存在的 java request 文件"
         },
         {
             "j": "t",
