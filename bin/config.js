@@ -70,6 +70,15 @@ module.exports = {
             "d": false,
             "m": "是否覆盖已存在的 MOCK 数据文件"
         },
+        // "是否覆盖已存在的java request 文件
+        {
+
+            "j": "nw",
+            "q": "doNotOverwrite",
+            "d": false,
+            "m": "是否覆盖已存在的java request 文件"
+            
+        },
         {
             "j": "t",
             "q": "template",
@@ -171,6 +180,7 @@ module.exports = {
             "m": "请求基类名称，不带类名的前缀",
             "f": "mobile-oc"
         },
+
         {
             "q": "modelAbstract",
             "d": "HTHTTPModel",
@@ -215,6 +225,14 @@ module.exports = {
             "m": "请求的基类，格式为全路径。若值为 null，则不用生成请求文件",
             "f": "mobile-java" // `for` `mobile` `java` only
         },
+
+        {
+            "q": "baseModelAbstract",
+            "d": null,
+            "m": "请求的基类，格式为全路径。若值为 null，则不用生成请求文件",
+            "f": "mobile-java" // `for` `lang` `java` only
+        },
+
         {
             "q": "appPackage",
             "d": "com.netease",
@@ -456,6 +474,14 @@ module.exports = {
         "以下参数在生成 Java 模型和请求文件时有效：",
         {
             "q": "reqAbstract",
+            "d": null,
+            "m": "请求的基类，格式为全路径。若值为 null，则不用生成请求文件",
+            "f": "java" // `for` `lang` `java` only
+        },
+        ///
+        "以下参数在生成 Java 模型和请求文件时有效：",
+        {
+            "q": "baseModelAbstract",
             "d": null,
             "m": "请求的基类，格式为全路径。若值为 null，则不用生成请求文件",
             "f": "java" // `for` `lang` `java` only

@@ -326,6 +326,7 @@ nei mobile [ID] [参数]
 | 无 | --modelPackage | hthttp.model | 模型的相对包名 |
 | 无 | --reqPackage | hthttp.httptask | http 请求的相对包名 |
 | 无 | --resOut | app/src/main/hthttp-gen/ | 生成的 NEI 资源相对工程的路径 |
+| 无 | --doNotOverwrite | false | 接口更新时,是否覆盖原来的request文件 |
 
 使用范例
 

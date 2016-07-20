@@ -10,17 +10,18 @@ package {{conf.aPkg}}.{{conf.htPkg}};
 {% for pkg in req.pkgs -%}
 import {{pkg}};
 {% endfor %}
+import com.netease.hearttouch.hthttp2.core.HTConnection;
 /**
  *  {{req.desc}}
  */
 public class {{req.name}} extends {{req.baseClass}} {
 
-    public {{req.name}}(
+    public {{req.name}}(HTConnection connection,
     {%- if req.inputs.length > 0 -%}
     {%- for input in req.inputs -%}
     {{input.whiteSpace}}{{input.typeName}} {{input.name}}{% if loop.last%}) {{'{'}}{% else %},{% endif %}{% if input.description %} // {{input.description}} {% endif %}
     {%- endfor %}{% else %}{{') {'}}{% endif %}
-        super();
+        super(connection);
 
         {% for param in req.params -%}
         {{param.container}}.put("{{param.key}}", {{param.valueExp}});{% if param.desc %} // {{param.desc}} {% endif %}

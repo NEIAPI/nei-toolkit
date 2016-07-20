@@ -1,3 +1,11 @@
+0.4.9   (2016-07-20)
+    - 针对java工程, 为所有model类增添可为空的baseModel
+    - 针对java工程, 修改request template，使其支持http2
+    - mobile 命令, 会用swig compile一些隐藏的非template文件,修复了该bug
+    - 针对java工程, 修改request template，使其支持http2
+    - 针对java工程, 删除类名更新后的原request文件, 增加 --doNotOverwrite 参数关闭这一特性
+    - 针对java工程, model 返回值为空时 modelclass 为string
+
 0.4.8   (2016-06-14)
     - 针对有范云协作特殊处理 PATCH 方式: bugfix
 
