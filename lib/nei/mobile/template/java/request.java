@@ -16,12 +16,11 @@ import com.netease.hearttouch.hthttp2.core.HTConnection;
  */
 public class {{req.name}} extends {{req.baseClass}} {
 
-    public {{req.name}}(HTConnection connection,
+    public {{req.name}}(
     {%- if req.inputs.length > 0 -%}
     {%- for input in req.inputs -%}
     {{input.whiteSpace}}{{input.typeName}} {{input.name}}{% if loop.last%}) {{'{'}}{% else %},{% endif %}{% if input.description %} // {{input.description}} {% endif %}
     {%- endfor %}{% else %}{{') {'}}{% endif %}
-        super(connection);
 
         {% for param in req.params -%}
         {{param.container}}.put("{{param.key}}", {{param.valueExp}});{% if param.desc %} // {{param.desc}} {% endif %}
