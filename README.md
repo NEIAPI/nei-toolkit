@@ -177,6 +177,8 @@ nei build [IDS] [参数]
 | 无 | --modelPackage | hthttp.model | 模型的相对包名 |
 | 无 | --reqPackage | hthttp.httptask | http 请求的相对包名 |
 | 无 | --resOut | app/src/main/hthttp-gen/ | 生成的 NEI 资源相对工程的路径 |
+| 无 | --doNotOverwrite | false | 接口更新时,是否覆盖原来的request文件 |
+| 无 | --baseModelAbstract | null | 模型的基类，格式为全路径。若值为 null，则模型不用继承baseModel |
 
 >以下参数在生成 Node.js 项目时特有： 
 
@@ -326,7 +328,8 @@ nei mobile [ID] [参数]
 | 无 | --modelPackage | hthttp.model | 模型的相对包名 |
 | 无 | --reqPackage | hthttp.httptask | http 请求的相对包名 |
 | 无 | --resOut | app/src/main/hthttp-gen/ | 生成的 NEI 资源相对工程的路径 |
-| 无 | --doNotOverwrite | false | 接口更新时,是否覆盖原来的request文件 |
+| 无 | --baseModelAbstract | null | 模型的基类，格式为全路径。若值为 null，则模型不用继承baseModel |
+
 
 使用范例
 
@@ -384,7 +387,14 @@ nei server -cf ./webapp/nei.12345/jtr.js
 > OS X 下如果有异常请使用 `sudo nei server` 命令启动
 
 # 版本历史
-
+##0.4.9   (2016-07-28)
+ * 针对java工程, 为所有model类继承baseModel
+ * 针对java工程, 修改request template，使其支持http2
+ * mobile 命令, 会用swig compile一些隐藏的非template文件,修复了该bug
+ * 针对java工程, 删除类名更新后的原request文件, 增加 --doNotOverwrite 参数关闭这一特性
+ * 针对java工程, model 返回值为空时 modelclass 为string
+ 
+ 
 ## 0.4.8   (2016-06-14)
 * 针对有范云协作特殊处理 PATCH 方式: bugfix
 

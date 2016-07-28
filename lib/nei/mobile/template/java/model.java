@@ -11,10 +11,12 @@ package {{conf.aPkg}}.{{conf.mPkg}};
 import {{loop.key}};
 {%- endfor %}
 
+{% if req.baseModelImport %}import {{req.baseModelImport}}{% endif %};
+
 /**
  *  {{type.description}}
  */
-public class {{type.name}} {% if req.baseModel %} extends {{req.baseModel}}{% endif %}{
+public class {{type.name}} {% if req.baseModel %}extends {{req.baseModel}}{% endif %}{
     {% for attr in type.props %}
     {%- if attr.description -%}
     /**
