@@ -1,18 +1,14 @@
 #!/usr/bin/env node
 
 'use strict';
-if (process.version < 'v4.2.1') {
-    console.log('请将Node更新至4.2.1及以上版本，可以使用nvm在本地安装并管理多个Node版本。');
-    process.exit(1);
-}
-
+var util = require('../lib/util/util');
+util.checkNodeVersion();
 var main = require('../main');
 var Args = require('../lib/util/args');
 var splitChars = /[,;，；]/;
 
 var options = {
     message: require('./config.js'),
-    package: require('../package.json'),
     exit: function (code) {
         if (typeof(code) === 'undefined') {
             code = 0;
@@ -94,9 +90,36 @@ var options = {
         config.id = id;
         main.server(config);
     },
-    // alias for server
-    serve: function (event) {
-        options.server.call(this, event);
+    config: function (event) {
+        var args = event.args;
+        if (!/^(set|get|ls|list)$/.test(args[0])) {
+            this.show('config');
+        } else {
+            switch (args[0]) {
+                case 'set':
+                    if (typeof(args[1]) !== 'undefined') {
+                        util.setLocalConfig(args[1], args[2]);
+                    }
+                    break;
+                case 'get':
+                    if (args[1]) {
+                        this.emit('log', util.getLocalConfig()[args[1]]);
+                    } else {
+                        this.show('config');
+                    }
+                    break;
+                case 'ls':
+                case 'list':
+                    var config = util.getLocalConfig();
+                    var str = '';
+                    Object.keys(config).forEach(function (key) {
+                        str += config[key] + '\n';
+                    });
+                    this.emit('log', str);
+                    break;
+            }
+        }
+        this.emit('exit', 0);
     }
 };
 

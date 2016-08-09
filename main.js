@@ -13,25 +13,23 @@ let _fs = require('./lib/util/file');
 let _path = require('./lib/util/path');
 let _io = require('./lib/util/io');
 let _log = require('./lib/util/logger');
+let _util = require('./lib/util/util');
 let Builder = require('./lib/nei/builder');
 let _logger = _log.logger;
 
 class Main {
 
     /**
-     * load data from nei server
-     * @param {string|number} pid - nei project id
-     * @param {function} callback - load success callback
-     * @param {function} [errorCallback] - load error callback
-     * @return {undefined}
+     * 从 NEI 服务器加载项目数据
+     * @param {string|number} pid - NEI 项目 id
+     * @param {string} key - NEI 项目的唯一标识
+     * @param {function} callback - 加载成功回调
+     * @param {function} [errorCallback] - 加载失败回调
      */
-    loadData(pid, callback, errorCallback) {
-        let api = util.format(
-            (require('./package.json').nei || {}).api,
-            pid
-        );
-        _logger.info('load nei data from %s', api);
-        _io.download(api, (data) => {
+    loadData(pid, key, callback, errorCallback) {
+        let url = _path.normalize(`${_util.getLocalConfig().neihost}/api/projectres/${pid}?key=${encodeURIComponent(key)}`);
+        _logger.info('load nei data from %s', url);
+        _io.download(url, (data) => {
             let json = this.parseData(data);
             if (json) {
                 callback(json);
@@ -63,9 +61,7 @@ class Main {
             return _logger.error('illegal string data from nei %j', json);
         }
         json = json.result;
-        if (!json.timestamp) {
-            return _logger.error('illegal string data from nei %j', json);
-        }
+        json.timestamp = Date.now();
         return json;
     }
 
@@ -118,7 +114,7 @@ class Main {
         } else {
             name = `./lib/nei/webapp.js`;
         }
-        this.loadData(config.id, (data) => {
+        this.loadData(config.id, config.key, (data) => {
             let Builder = require(name);
             let builder = new Builder(config);
             builder[action](data);
