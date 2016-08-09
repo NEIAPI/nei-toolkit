@@ -385,6 +385,14 @@ nei server -cf ./webapp/nei.12345/jtr.js
 
 # 版本历史
 
+## 0.4.9   (2016-08-09)
+* 针对 Java 工程, 为所有 model 类增添可为空的 baseModel
+* 针对 Java 工程, 修改 request template，使其支持 http2
+* mobile 命令, 会用 Swig compile 一些隐藏的非 template 文件,修复了该 bug
+* 针对 Java 工程, 修改request template，使其支持 http2
+* 针对 Java 工程, 删除类名更新后的原 request 文件, 增加 --doNotOverwrite 参数关闭这一特性
+* 针对 Java 工程, model 返回值为空时 modelclass 为string
+
 ## 0.4.8   (2016-06-14)
 * 针对有范云协作特殊处理 PATCH 方式: bugfix
 
