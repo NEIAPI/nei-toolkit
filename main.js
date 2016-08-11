@@ -21,15 +21,19 @@ class Main {
 
     /**
      * 从 NEI 服务器加载项目数据
-     * @param {string|number} pid - NEI 项目 id
-     * @param {string} key - NEI 项目的唯一标识
      * @param {function} callback - 加载成功回调
      * @param {function} [errorCallback] - 加载失败回调
      */
-    loadData(pid, key, callback, errorCallback) {
-        let url = _path.normalize(`${_util.getLocalConfig().neihost}/api/projectres/${pid}?key=${encodeURIComponent(key)}`);
-        _logger.info('load nei data from %s', url);
+    loadData(callback, errorCallback) {
+        let neiHost = _util.getLocalConfig().neihost;
+        let projectId = this.config.id;
+        let projectKey = this.config.key;
+        let specType = this.config.specType || 0;
+        let url = `${neiHost}/api/projectres/${projectId}?key=${encodeURIComponent(projectKey)}&spectype=${specType}`;
+        url = _path.normalize(url);
+        _logger.info('从 NEI 服务器加载数据, 地址: %s', url);
         _io.download(url, (data) => {
+            _logger.info(`数据加载完成, 开始解析数据`);
             let json = this.parseData(data);
             if (json) {
                 callback(json);
@@ -49,16 +53,15 @@ class Main {
      * @return {object|undefined}
      */
     parseData(data) {
-        _logger.info('parse nei string data');
         let json;
         try {
             json = JSON.parse(data);
         } catch (ex) {
-            _logger.debug('string data from nei \n%s', data);
-            return _logger.error('nei string data parsing error\n%s', ex.stack);
+            _logger.debug('NEI 数据 \n%s', data);
+            return _logger.error('NEI 数据解析错误: \n%s', ex.stack);
         }
         if (json.code !== 200) {
-            return _logger.error('illegal string data from nei %j', json);
+            return _logger.error('NEI 数据异常', json);
         }
         json = json.result;
         json.timestamp = Date.now();
@@ -66,22 +69,14 @@ class Main {
     }
 
     /**
-     * build nei project
+     * 构建 nei 工程
      * @param  {object}  config - config object
      * @return {undefined}
      */
     build(config) {
         let cwd = process.cwd() + '/';
+        this.config = config;
         config.outputRoot = _path.normalize(_path.absolute(config.project + '/', cwd));
-        if (config.deployRoot) {
-            config.deployRoot = _path.normalize(_path.absolute(config.deployRoot + '/', config.outputRoot));
-        }
-        if (config.tMockRoot) {
-            config.tMockRoot = _path.normalize(_path.absolute(config.tMockRoot + '/', config.outputRoot));
-        }
-        if (config.iMockRoot) {
-            config.iMockRoot = _path.normalize(_path.absolute(config.iMockRoot + '/', config.outputRoot));
-        }
         let existNeiConf = `${config.outputRoot}nei.${config.id}/nei.json`;
         let action = config.action;
         // check if exists nei.json file
@@ -114,7 +109,7 @@ class Main {
         } else {
             name = `./lib/nei/webapp.js`;
         }
-        this.loadData(config.id, config.key, (data) => {
+        this.loadData((data) => {
             let Builder = require(name);
             let builder = new Builder(config);
             builder[action](data);
@@ -219,7 +214,7 @@ class Main {
         }
         if (config.configFile) {
             let configFilePath = _path.absolute(
-              config.configFile, process.cwd() + '/'
+                config.configFile, process.cwd() + '/'
             );
             return tryStartServer(configFilePath);
         }
@@ -232,7 +227,7 @@ class Main {
                 // try to find jtr config file in `nei.{pid}` dir
                 let list = fs.readdirSync(dir);
                 let configFileFound = false;
-                for(let i = 0, l = list.length; i < l; i++) {
+                for (let i = 0, l = list.length; i < l; i++) {
                     let p = `${dir}/${list[i]}`;
                     if (_fs.isdir(p)) {
                         if (list[i].match(/nei/)) {
