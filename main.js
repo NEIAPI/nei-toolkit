@@ -28,7 +28,9 @@ class Main {
         let neiHost = _util.getLocalConfig().neihost;
         let projectId = this.config.id;
         let projectKey = this.config.key;
-        let specType = this.config.specType || 0;
+        let specType = {
+            web: 0
+        }[this.config.specType];
         let url = `${neiHost}/api/projectres/${projectId}?key=${encodeURIComponent(projectKey)}&spectype=${specType}`;
         url = _path.normalize(url);
         _logger.info('从 NEI 服务器加载数据, 地址: %s', url);
@@ -61,7 +63,7 @@ class Main {
             return _logger.error('NEI 数据解析错误: \n%s', ex.stack);
         }
         if (json.code !== 200) {
-            return _logger.error('NEI 数据异常', json);
+            return _logger.error('NEI 服务器异常', json);
         }
         json = json.result;
         json.timestamp = Date.now();
@@ -76,18 +78,18 @@ class Main {
     build(config) {
         let cwd = process.cwd() + '/';
         this.config = config;
-        config.outputRoot = _path.normalize(_path.absolute(config.project + '/', cwd));
+        config.outputRoot = _path.normalize(_path.absolute(config.output + '/', cwd));
         let existNeiConf = `${config.outputRoot}nei.${config.id}/nei.json`;
         let action = config.action;
-        // check if exists nei.json file
+        // 检查是否已经存在 nei.json 文件
         let msg;
         if (_fs.exist(existNeiConf)) {
             if (action === 'build') {
-                msg = 'use "nei update" to update nei project with id[%s]';
+                msg = '项目已经存在, 请使用 "nei update" 命令更新项目';
             }
         } else {
             if (action === 'update') {
-                msg = 'use "nei build" to build nei project with id[%s]';
+                msg = '请先使用 "nei build" 命令构建项目';
             }
         }
         if (msg) {
