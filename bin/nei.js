@@ -8,6 +8,7 @@ var Args = require('../lib/util/args');
 var splitChars = /[,;，；]/;
 
 var options = {
+    package: require('../package.json'),
     message: require('./config.js'),
     exit: function (code) {
         if (typeof(code) === 'undefined') {
@@ -21,22 +22,12 @@ var options = {
     build: function (event) {
         var action = 'build';
         var config = event.options || {};
-        var id = (event.args || [])[0];
         config = this.format(action, config);
         config.action = action;
-        if (!id) {
-            if (config.template === 'mobile') {
-                // build empty mobile project
-                main.buildEmpty(config);
-            } else {
-                this.show(action);
-                this.emit('exit', 0);
-            }
+        if (!config.key) {
+            this.show(action);
         } else {
-            id.split(splitChars).forEach(function (it) {
-                config.id = it;
-                main.build(config);
-            });
+            main.build(config);
         }
     },
     update: function (event) {

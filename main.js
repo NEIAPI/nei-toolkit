@@ -18,237 +18,192 @@ let Builder = require('./lib/nei/builder');
 let _logger = _log.logger;
 
 class Main {
-
-    /**
-     * 从 NEI 服务器加载项目数据
-     * @param {function} callback - 加载成功回调
-     * @param {function} [errorCallback] - 加载失败回调
-     */
-    loadData(callback, errorCallback) {
-        let neiHost = _util.getLocalConfig().neihost;
-        let projectId = this.config.id;
-        let projectKey = this.config.key;
-        let specType = {
-            web: 0
-        }[this.config.specType];
-        let url = `${neiHost}/api/projectres/${projectId}?key=${encodeURIComponent(projectKey)}&spectype=${specType}`;
-        url = _path.normalize(url);
-        _logger.info('从 NEI 服务器加载数据, 地址: %s', url);
-        _io.download(url, (data) => {
-            _logger.info(`数据加载完成, 开始解析数据`);
-            let json = this.parseData(data);
-            if (json) {
-                callback(json);
-            } else {
-                if (errorCallback) {
-                    errorCallback();
-                } else {
-                    process.exit(1);
-                }
-            }
-        });
-    }
-
-    /**
-     * parse nei string data to json
-     * @param  {string} data - nei string data
-     * @return {object|undefined}
-     */
-    parseData(data) {
-        let json;
-        try {
-            json = JSON.parse(data);
-        } catch (ex) {
-            _logger.debug('NEI 数据 \n%s', data);
-            return _logger.error('NEI 数据解析错误: \n%s', ex.stack);
-        }
-        if (json.code !== 200) {
-            return _logger.error('NEI 服务器异常', json);
-        }
-        json = json.result;
-        json.timestamp = Date.now();
-        return json;
-    }
-
     /**
      * 构建 nei 工程
-     * @param  {object}  config - config object
-     * @return {undefined}
+     * @param  {object}  cliArgs - cliArgs object
      */
-    build(config) {
-        let cwd = process.cwd() + '/';
-        this.config = config;
-        config.outputRoot = _path.normalize(_path.absolute(config.output + '/', cwd));
-        let existNeiConf = `${config.outputRoot}nei.${config.id}/nei.json`;
-        let action = config.action;
-        // 检查是否已经存在 nei.json 文件
-        let msg;
-        if (_fs.exist(existNeiConf)) {
-            if (action === 'build') {
-                msg = '项目已经存在, 请使用 "nei update" 命令更新项目';
-            }
-        } else {
-            if (action === 'update') {
-                msg = '请先使用 "nei build" 命令构建项目';
-            }
-        }
-        if (msg) {
-            _logger.error(msg, config.id);
-            return process.exit(1);
-        }
-        let existConf = {};
-        if (action === 'update') {
-            existConf = require(existNeiConf);
-        } else {
-            existConf.updateTime = 0;
-        }
-        config = Object.assign(existConf, config);
-        let name;
-        if (config.template === 'mobile') {
-            name = `./lib/nei/mobile.${config.lang}.js`;
-        } else if (config.template === 'node') {
-            name = `./lib/nei/node.js`;
-        } else {
-            name = `./lib/nei/webapp.js`;
-        }
-        this.loadData((data) => {
-            let Builder = require(name);
-            let builder = new Builder(config);
-            builder[action](data);
-        }, () => {
-            // 如果从 nei 上下载数据失败, 构建空工程
-            _logger.warn('Error happened while loading data from nei, start building empty project...');
-            this.buildEmpty(config, name);
+    build(cliArgs) {
+        this.cliArgs = cliArgs;
+        this.config = {
+            outputRoot: null, // 输出根目录
+            ds: null // nei 上的数据源
+        };
+        this.loadData((ds) => {
+            this.config.ds = ds;
+            this.checkNEIConfig();
+            new Builder(this.cliArgs, this.config);
         });
-    }
-
-    /**
-     * build empty mobile project
-     * @param  {object}  config - config object
-     * @param  {string}  builderFile - builder file path
-     * @return {undefined}
-     */
-    buildEmpty(config, builderFile) {
-        let cwd = process.cwd() + '/';
-        config.outputRoot = _path.absolute(config.project + '/', cwd);
-        let Builder = require(builderFile);
-        let builder = new Builder(config);
-        builder.build();
     }
 
     /**
      * update nei project
-     * @param  {object}  config - config object
+     * @param  {object}  cliArgs - cliArgs object
      * @return {undefined}
      */
-    update(config) {
+    update(cliArgs) {
         let cwd = process.cwd() + '/';
         let project = _path.absolute(
-            config.project + '/', cwd
+            cliArgs.project + '/', cwd
         );
         let list = fs.readdirSync(project);
         if (!list || !list.length) {
             return _logger.error('no nei project found in %s', project);
         }
         _logger.error('check to update all nei project');
-        // check nei config directory
+        // check nei cliArgs directory
         let reg = /^nei\.([\d]+)$/;
         list.forEach((name) => {
             if (_fs.isdir(project + name + '/') && reg.test(name)) {
-                config.id = RegExp.$1;
-                this.build(config);
+                cliArgs.id = RegExp.$1;
+                this.build(cliArgs);
             }
         });
     }
 
     /**
      * generate mock data
-     * @param  {object}  config - config object
+     * @param  {object}  cliArgs - cliArgs object
      * @return {undefined}
      */
-    mock(config) {
+    mock(cliArgs) {
         let cwd = process.cwd() + '/';
-        config.outputRoot = _path.absolute(
-            config.output + '/', cwd
+        cliArgs.outputRoot = _path.absolute(
+            cliArgs.output + '/', cwd
         );
-        this.loadData(config.id, (data) => {
-            let builder = new Builder(config);
+        this.loadData(cliArgs.id, (data) => {
+            let builder = new Builder(cliArgs);
             builder.mock(data);
         });
     }
 
     /**
      * export mobile models and requests
-     * @param  {object}  config - config object
+     * @param  {object}  cliArgs - cliArgs object
      * @return {undefined}
      */
-    mobile(config) {
+    mobile(cliArgs) {
         let cwd = process.cwd() + '/';
-        config.outputRoot = _path.normalize(_path.absolute(
-            config.output + '/', cwd
+        cliArgs.outputRoot = _path.normalize(_path.absolute(
+            cliArgs.output + '/', cwd
         ));
-        let lang = config.lang;
+        let lang = cliArgs.lang;
         if (!/^(oc|java)$/.test(lang)) {
             return _logger.error(`not supported language "${lang}"`);
         }
-        this.loadData(config.id, (data) => {
-            let builder = new (require(`./lib/nei/mobile.${lang}.js`))(config);
+        this.loadData(cliArgs.id, (data) => {
+            let builder = new (require(`./lib/nei/mobile.${lang}.js`))(cliArgs);
             builder.model(data);
         });
     }
 
     /**
      * start mock server
-     * @param  {object}  config - config object
+     * @param  {object}  cliArgs - cliArgs object
      * @return {undefined}
      */
-    server(config) {
-        let tryStartServer = (configPath) => {
-            if (_fs.exist(configPath)) {
+    server(cliArgs) {
+        let tryStartServer = (cliArgsPath) => {
+            if (_fs.exist(cliArgsPath)) {
                 let options = Object.create(null);
-                options.config = configPath;
+                options.cliArgs = cliArgsPath;
                 options.fromNei = true;
                 // start server
                 jtr(options);
             } else {
-                _logger.warn(`can't find jtr config file at: ${configPath}`);
+                _logger.warn(`can't find jtr cliArgs file at: ${cliArgsPath}`);
             }
         }
-        if (config.configFile) {
-            let configFilePath = _path.absolute(
-                config.configFile, process.cwd() + '/'
+        if (cliArgs.cliArgsFile) {
+            let cliArgsFilePath = _path.absolute(
+                cliArgs.cliArgsFile, process.cwd() + '/'
             );
-            return tryStartServer(configFilePath);
+            return tryStartServer(cliArgsFilePath);
         }
-        let dir = path.join(process.cwd(), config.path);
+        let dir = path.join(process.cwd(), cliArgs.path);
         if (_fs.exist(dir)) {
-            if (config.id) {
-                let jtrConfigPath = path.join(dir, `nei.${config.id}/jtr.js`);
+            if (cliArgs.id) {
+                let jtrConfigPath = path.join(dir, `nei.${cliArgs.id}/jtr.js`);
                 tryStartServer(jtrConfigPath);
             } else {
-                // try to find jtr config file in `nei.{pid}` dir
+                // try to find jtr cliArgs file in `nei.{pid}` dir
                 let list = fs.readdirSync(dir);
-                let configFileFound = false;
+                let cliArgsFileFound = false;
                 for (let i = 0, l = list.length; i < l; i++) {
                     let p = `${dir}/${list[i]}`;
                     if (_fs.isdir(p)) {
                         if (list[i].match(/nei/)) {
-                            configFileFound = true;
+                            cliArgsFileFound = true;
                             tryStartServer(`${p}/jtr.js`);
                             break;
                         }
                     } else if (list[i] === 'jtr.js') {
-                        configFileFound = true;
+                        cliArgsFileFound = true;
                         tryStartServer(p);
                         break;
                     }
                 }
-                if (!configFileFound) {
-                    _logger.warn(`can't find jtr config file`)
+                if (!cliArgsFileFound) {
+                    _logger.warn(`can't find jtr cliArgs file`)
                 }
             }
         } else {
             _logger.warn(`project directory(${dir}) does not exist`)
+        }
+    }
+
+    /**
+     * 从 NEI 服务器加载项目数据
+     * @param {function} callback - 加载成功回调
+     */
+    loadData(callback) {
+        let neiHost = _util.getLocalConfig().neihost;
+        let projectKey = this.cliArgs.key;
+        let specType = {
+            web: 0
+        }[this.cliArgs.specType];
+        let url = `${neiHost}/api/projectres/?key=${encodeURIComponent(projectKey)}&spectype=${specType}`;
+        url = _path.normalize(url);
+        _logger.info('从 NEI 服务器加载数据, 地址: %s', url);
+        _io.download(url, (data) => {
+            _logger.info(`数据加载完成, 开始解析数据`);
+            let json;
+            try {
+                json = JSON.parse(data);
+                if (json.code !== 200) {
+                    _logger.error('NEI 服务器异常', json);
+                    process.exit(1);
+                }
+            } catch (ex) {
+                _logger.debug('NEI 数据 \n%s', data);
+                _logger.error('NEI 数据解析错误: \n%s', ex.stack);
+                process.exit(1);
+            }
+            callback(json.result);
+        });
+    }
+
+    /**
+     * 检测是否存在 nei 配置文件
+     */
+    checkNEIConfig() {
+        let cwd = process.cwd() + '/';
+        let pid = this.config.ds.project.id;
+        this.config.outputRoot = _path.normalize(_path.absolute(this.cliArgs.output + '/', cwd));
+        let neiConfigFile = `${this.config.outputRoot}nei.${pid}/nei.json`;
+        let action = this.cliArgs.action;
+        let errorMsg = null;
+        if (_fs.exist(neiConfigFile)) {
+            if (action === 'build') {
+                errorMsg = '项目 %s 已经存在, 请使用 "nei update" 命令更新项目';
+            }
+        } else {
+            if (action === 'update') {
+                errorMsg = '请先使用 "nei build" 命令构建项目 %s';
+            }
+        }
+        if (errorMsg) {
+            _logger.error(errorMsg, pid);
+            return process.exit(1);
         }
     }
 }
