@@ -29,9 +29,10 @@ module.exports = {
     /* 同步模块mock数据路径 */
     mockTpl: '{{T_MOCK_ROOT}}',
     /* 异步接口mock数据路径 */
-    mockApi: '{{T_MOCK_ROOT}}',
+    mockApi: '{{I_MOCK_ROOT}}',
     /* 模板后缀 */
     viewExt: '.{{VIEW_EXTENSION}}',
     /* 模板引擎 */
     engine: '{{VIEW_ENGINE}}'
 };
+

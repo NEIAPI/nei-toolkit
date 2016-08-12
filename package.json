@@ -1,7 +1,7 @@
 {
   "name": "nei",
   "description": "builder for nei platform",
-  "version": "3.0",
+  "version": "0.5.0",
   "license": "MIT",
   "keywords": [
     "nei",
@@ -37,5 +37,9 @@
     "jtr": "^0.2.4",
     "swig": ">=1.4.2",
     "xcode": "^0.8.2"
+  },
+  "nei": {
+    "mock": "http://nei.hz.netease.com/api/parameter/getTestData?api&type=%s&id=%s",
+    "api": "http://nei.hz.netease.com/api/projectView/getByProjectId?pid=%s"
   }
 }

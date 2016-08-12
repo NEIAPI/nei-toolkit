@@ -385,6 +385,9 @@ nei server -cf ./webapp/nei.12345/jtr.js
 
 # 版本历史
 
+## 0.5.0   (2016-08-12)
+* Web 工程 jtr 配置错误修复
+
 ## 0.4.9   (2016-08-09)
 * 针对 Java 工程, 为所有 model 类增添可为空的 baseModel
 * 针对 Java 工程, 修改 request template，使其支持 http2
