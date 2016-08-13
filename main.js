@@ -20,130 +20,132 @@ let _logger = _log.logger;
 class Main {
     /**
      * 构建 nei 工程
-     * @param  {object}  cliArgs - cliArgs object
+     * @param  {string}  action - 操作命令
+     * @param  {object}  args - args object
      */
-    build(cliArgs) {
-        this.cliArgs = cliArgs;
-        this.config = {
-            outputRoot: null, // 输出根目录
-            ds: null // nei 上的数据源
-        };
+    build(action, args) {
+        this.action = action;
+        this.args = args;
+        this.config = {};
         this.loadData((ds) => {
-            this.config.ds = ds;
-            this.checkNEIConfig();
-            new Builder(this.cliArgs, this.config);
+            let cwd = process.cwd() + '/';
+            this.ds = ds;
+            this.config.outputRoot = _path.normalize(_path.absolute(this.args.output + '/', cwd));
+            this.checkConfig();
+            this.fillArgs();
+            new Builder({
+                config: this.config,
+                args: this.args,
+                ds: this.ds
+            });
         });
     }
 
     /**
      * update nei project
-     * @param  {object}  cliArgs - cliArgs object
-     * @return {undefined}
+     * @param  {object}  args - args object
      */
-    update(cliArgs) {
+    update(args) {
         let cwd = process.cwd() + '/';
         let project = _path.absolute(
-            cliArgs.project + '/', cwd
+            args.project + '/', cwd
         );
         let list = fs.readdirSync(project);
         if (!list || !list.length) {
             return _logger.error('no nei project found in %s', project);
         }
         _logger.error('check to update all nei project');
-        // check nei cliArgs directory
+        // check nei args directory
         let reg = /^nei\.([\d]+)$/;
         list.forEach((name) => {
             if (_fs.isdir(project + name + '/') && reg.test(name)) {
-                cliArgs.id = RegExp.$1;
-                this.build(cliArgs);
+                args.id = RegExp.$1;
+                this.build(args);
             }
         });
     }
 
     /**
      * generate mock data
-     * @param  {object}  cliArgs - cliArgs object
-     * @return {undefined}
+     * @param  {object}  args - args object
      */
-    mock(cliArgs) {
+    mock(args) {
         let cwd = process.cwd() + '/';
-        cliArgs.outputRoot = _path.absolute(
-            cliArgs.output + '/', cwd
+        args.outputRoot = _path.absolute(
+            args.output + '/', cwd
         );
-        this.loadData(cliArgs.id, (data) => {
-            let builder = new Builder(cliArgs);
+        this.loadData(args.id, (data) => {
+            let builder = new Builder(args);
             builder.mock(data);
         });
     }
 
     /**
      * export mobile models and requests
-     * @param  {object}  cliArgs - cliArgs object
-     * @return {undefined}
+     * @param  {object}  args - args object
      */
-    mobile(cliArgs) {
+    mobile(args) {
         let cwd = process.cwd() + '/';
-        cliArgs.outputRoot = _path.normalize(_path.absolute(
-            cliArgs.output + '/', cwd
+        args.outputRoot = _path.normalize(_path.absolute(
+            args.output + '/', cwd
         ));
-        let lang = cliArgs.lang;
+        let lang = args.lang;
         if (!/^(oc|java)$/.test(lang)) {
             return _logger.error(`not supported language "${lang}"`);
         }
-        this.loadData(cliArgs.id, (data) => {
-            let builder = new (require(`./lib/nei/mobile.${lang}.js`))(cliArgs);
+        this.loadData(args.id, (data) => {
+            let builder = new (require(`./lib/nei/mobile.${lang}.js`))(args);
             builder.model(data);
         });
     }
 
     /**
      * start mock server
-     * @param  {object}  cliArgs - cliArgs object
-     * @return {undefined}
+     * @param  {object}  args - args object
      */
-    server(cliArgs) {
-        let tryStartServer = (cliArgsPath) => {
-            if (_fs.exist(cliArgsPath)) {
+    server(args) {
+        let tryStartServer = (argsPath) => {
+            if (_fs.exist(argsPath)) {
                 let options = Object.create(null);
-                options.cliArgs = cliArgsPath;
+                options.args = argsPath;
                 options.fromNei = true;
                 // start server
                 jtr(options);
             } else {
-                _logger.warn(`can't find jtr cliArgs file at: ${cliArgsPath}`);
+                _logger.warn(`can't find jtr args file at: ${argsPath}`);
             }
         }
-        if (cliArgs.cliArgsFile) {
-            let cliArgsFilePath = _path.absolute(
-                cliArgs.cliArgsFile, process.cwd() + '/'
+        if (args.argsFile) {
+            let argsFilePath = _path.absolute(
+                args.argsFile, process.cwd() + '/'
             );
-            return tryStartServer(cliArgsFilePath);
+            return tryStartServer(argsFilePath);
         }
-        let dir = path.join(process.cwd(), cliArgs.path);
+        let dir = path.join(process.cwd(), args.path);
         if (_fs.exist(dir)) {
-            if (cliArgs.id) {
-                let jtrConfigPath = path.join(dir, `nei.${cliArgs.id}/jtr.js`);
+            if (args.id) {
+                let jtrConfigPath = path.join(dir, `nei.${args.id}/jtr.js`);
                 tryStartServer(jtrConfigPath);
             } else {
-                // try to find jtr cliArgs file in `nei.{pid}` dir
+                // try to find jtr args file in `nei.{pid}` dir
                 let list = fs.readdirSync(dir);
-                let cliArgsFileFound = false;
+                let argsFileFound = false;
                 for (let i = 0, l = list.length; i < l; i++) {
                     let p = `${dir}/${list[i]}`;
                     if (_fs.isdir(p)) {
                         if (list[i].match(/nei/)) {
-                            cliArgsFileFound = true;
+                            argsFileFound = true;
                             tryStartServer(`${p}/jtr.js`);
                             break;
                         }
                     } else if (list[i] === 'jtr.js') {
-                        cliArgsFileFound = true;
+                        argsFileFound = true;
                         tryStartServer(p);
                         break;
                     }
                 }
-                if (!cliArgsFileFound) {
-                    _logger.warn(`can't find jtr cliArgs file`)
+                if (!argsFileFound) {
+                    _logger.warn(`can't find jtr args file`)
                 }
             }
         } else {
@@ -157,10 +159,10 @@ class Main {
      */
     loadData(callback) {
         let neiHost = _util.getLocalConfig().neihost;
-        let projectKey = this.cliArgs.key;
+        let projectKey = this.args.key;
         let specType = {
             web: 0
-        }[this.cliArgs.specType];
+        }[this.args.specType];
         let url = `${neiHost}/api/projectres/?key=${encodeURIComponent(projectKey)}&spectype=${specType}`;
         url = _path.normalize(url);
         _logger.info('从 NEI 服务器加载数据, 地址: %s', url);
@@ -185,19 +187,16 @@ class Main {
     /**
      * 检测是否存在 nei 配置文件
      */
-    checkNEIConfig() {
-        let cwd = process.cwd() + '/';
-        let pid = this.config.ds.project.id;
-        this.config.outputRoot = _path.normalize(_path.absolute(this.cliArgs.output + '/', cwd));
+    checkConfig() {
+        let pid = this.ds.project.id;
         let neiConfigFile = `${this.config.outputRoot}nei.${pid}/nei.json`;
-        let action = this.cliArgs.action;
         let errorMsg = null;
         if (_fs.exist(neiConfigFile)) {
-            if (action === 'build') {
+            if (this.action === 'build') {
                 errorMsg = '项目 %s 已经存在, 请使用 "nei update" 命令更新项目';
             }
         } else {
-            if (action === 'update') {
+            if (this.action === 'update') {
                 errorMsg = '请先使用 "nei build" 命令构建项目 %s';
             }
         }
@@ -205,6 +204,42 @@ class Main {
             _logger.error(errorMsg, pid);
             return process.exit(1);
         }
+    }
+
+    /**
+     * 填充参数, 合并项目中的命令行参数设置、规范中的命令行参数
+     */
+    fillArgs() {
+        let spec = this.ds.specs[0];
+        let specArgsConfig = spec.spec.argsConfig;
+        let proArgs = {};
+        (spec.cliargs || []).forEach(function (cliarg) {
+            proArgs[cliarg[key]] = cliarg[value];
+        });
+        let specCliArgDoc = null;
+        let findSpecCliArg = (docs) => {
+            specCliArgDoc = docs.find((doc) => {
+                return doc.id === specArgsConfig;
+            });
+            if (!specCliArgDoc) {
+                docs.forEach((doc) => {
+                    findSpecCliArg(doc.children);
+                });
+            }
+        }
+        let specArgs = {};
+        // 如果规范设置了命令行参数文件
+        if (specArgsConfig) {
+            findSpecCliArg(spec.docs);
+            if (specCliArgDoc) {
+                try {
+                    specArgs = JSON.parse(specCliArgDoc.content);
+                } catch (e) {
+                    _logger.error(`规范设置的命令行参数文件, 它的内容不是有效的 json: ${e}`);
+                }
+            }
+        }
+        this.args = Object.assign({}, specArgs, proArgs, this.args);
     }
 }
 

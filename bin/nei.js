@@ -23,12 +23,11 @@ var options = {
         var action = 'build';
         var config = event.options || {};
         config = this.format(action, config);
-        config.action = action;
         if (!config.key) {
             this.log(`错误: 缺少项目的唯一标识 key, 请到 NEI 网站上的相应项目的"工具设置"中查看该 key 值`);
             this.show(action);
         } else {
-            main.build(config);
+            main.build(action, config);
         }
     },
     update: function (event) {
