@@ -1,0 +1,18 @@
+{
+    "REQUEST_SUCCESS": {"code": 200, "msg": "操作成功"},
+    "CREATED": {"code": 201, "msg": "%s创建成功"},
+    "DELETED": {"code": 204, "msg": "%s已删除"},
+    "HAS_SAME": {"code": 210, "msg": "存在某些字段相同的记录"},
+
+    "BAD_REQUEST": {"code": 400, "msg": "请求无效，参数异常"},
+    "UNAUTHORIZED": {"code": 401, "msg": "请登录"},
+    "FORBIDDEN": {"code": 403, "msg": "没有权限访问"},
+    "NOT_FOUND": {"code": 404, "msg": "资源不存在"},
+    "METHOD_NOT_ALLOWED": {"code": 405, "msg": "请求方法不允许"},
+
+    "SERVER_ERROR": {"code": 500, "msg": "服务器内部错误"},
+
+    "LOGIN_FAILURE": {"code": 4010, "msg": "登录失败"},
+
+    "REG_FAILURE": {"code": 4050, "msg": "注册失败"}
+}

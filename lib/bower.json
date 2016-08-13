@@ -1,0 +1,7 @@
+{
+  "name": "nei-toolkit",
+  "version": "3.0",
+  "dependencies": {
+    "fb-modules": "git+ssh://git@g.hz.netease.com:22222/aps/fb-modules.git"
+  }
+}
