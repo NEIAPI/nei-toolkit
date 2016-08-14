@@ -16,6 +16,7 @@ let _log = require('./lib/util/logger');
 let _util = require('./lib/util/util');
 let Builder = require('./lib/nei/builder');
 let _logger = _log.logger;
+let testData = require('./test/ds_a.json');
 
 class Main {
     /**
@@ -27,7 +28,7 @@ class Main {
         this.action = action;
         this.args = args;
         this.config = {};
-        this.loadData((ds) => {
+        let loadedHandler = (ds) => {
             let cwd = process.cwd() + '/';
             this.ds = ds;
             this.config.outputRoot = _path.normalize(_path.absolute(this.args.output + '/', cwd));
@@ -38,7 +39,9 @@ class Main {
                 args: this.args,
                 ds: this.ds
             });
-        });
+        }
+        //this.loadData(loadedHandler);
+        loadedHandler(testData.result);
     }
 
     /**

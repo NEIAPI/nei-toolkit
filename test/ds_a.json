@@ -227,6 +227,176 @@
     ],
     "datatypes": [
       {
+        "id": 9999,
+        "tag": "系统类型",
+        "tagPinyin": "xi'tong'lei'xing",
+        "type": 1,
+        "name": "File",
+        "format": 6,
+        "description": "文件类型",
+        "groupId": 9999,
+        "projectId": 10000,
+        "progroupId": 10000,
+        "creatorId": 10000,
+        "createTime": 1470730001681,
+        "userRole": null,
+        "params": [],
+        "creator": {
+          "id": 10000,
+          "username": "admin",
+          "realname": "系统管理员",
+          "realnamePinyin": "xi'tong'guan'li'yuan",
+          "email": "nei@corp.netease.com",
+          "createTime": 1470730001435
+        },
+        "group": {
+          "id": 9999,
+          "name": "系统业务分组",
+          "namePinyin": "xi'tong'ye'wu'fen'zu",
+          "description": "系统内置业务分组",
+          "respoId": 10000,
+          "projectId": 10000,
+          "creatorId": 10000,
+          "createTime": 1470730001618
+        }
+      },
+      {
+        "id": 10000,
+        "tag": "系统类型",
+        "tagPinyin": "xi'tong'lei'xing",
+        "type": 1,
+        "name": "Variable",
+        "format": 0,
+        "description": "可变类型",
+        "groupId": 9999,
+        "projectId": 10000,
+        "progroupId": 10000,
+        "creatorId": 10000,
+        "createTime": 1470730001681,
+        "userRole": null,
+        "params": [],
+        "creator": {
+          "id": 10000,
+          "username": "admin",
+          "realname": "系统管理员",
+          "realnamePinyin": "xi'tong'guan'li'yuan",
+          "email": "nei@corp.netease.com",
+          "createTime": 1470730001435
+        },
+        "group": {
+          "id": 9999,
+          "name": "系统业务分组",
+          "namePinyin": "xi'tong'ye'wu'fen'zu",
+          "description": "系统内置业务分组",
+          "respoId": 10000,
+          "projectId": 10000,
+          "creatorId": 10000,
+          "createTime": 1470730001618
+        }
+      },
+      {
+        "id": 10001,
+        "tag": "系统类型",
+        "tagPinyin": "xi'tong'lei'xing",
+        "type": 1,
+        "name": "String",
+        "format": 3,
+        "description": "字符串",
+        "groupId": 9999,
+        "projectId": 10000,
+        "progroupId": 10000,
+        "creatorId": 10000,
+        "createTime": 1470730001681,
+        "userRole": null,
+        "params": [],
+        "creator": {
+          "id": 10000,
+          "username": "admin",
+          "realname": "系统管理员",
+          "realnamePinyin": "xi'tong'guan'li'yuan",
+          "email": "nei@corp.netease.com",
+          "createTime": 1470730001435
+        },
+        "group": {
+          "id": 9999,
+          "name": "系统业务分组",
+          "namePinyin": "xi'tong'ye'wu'fen'zu",
+          "description": "系统内置业务分组",
+          "respoId": 10000,
+          "projectId": 10000,
+          "creatorId": 10000,
+          "createTime": 1470730001618
+        }
+      },
+      {
+        "id": 10002,
+        "tag": "系统类型",
+        "tagPinyin": "xi'tong'lei'xing",
+        "type": 1,
+        "name": "Number",
+        "format": 4,
+        "description": "数值",
+        "groupId": 9999,
+        "projectId": 10000,
+        "progroupId": 10000,
+        "creatorId": 10000,
+        "createTime": 1470730001681,
+        "userRole": null,
+        "params": [],
+        "creator": {
+          "id": 10000,
+          "username": "admin",
+          "realname": "系统管理员",
+          "realnamePinyin": "xi'tong'guan'li'yuan",
+          "email": "nei@corp.netease.com",
+          "createTime": 1470730001435
+        },
+        "group": {
+          "id": 9999,
+          "name": "系统业务分组",
+          "namePinyin": "xi'tong'ye'wu'fen'zu",
+          "description": "系统内置业务分组",
+          "respoId": 10000,
+          "projectId": 10000,
+          "creatorId": 10000,
+          "createTime": 1470730001618
+        }
+      },
+      {
+        "id": 10003,
+        "tag": "系统类型",
+        "tagPinyin": "xi'tong'lei'xing",
+        "type": 1,
+        "name": "Boolean",
+        "format": 5,
+        "description": "布尔",
+        "groupId": 9999,
+        "projectId": 10000,
+        "progroupId": 10000,
+        "creatorId": 10000,
+        "createTime": 1470730001681,
+        "userRole": null,
+        "params": [],
+        "creator": {
+          "id": 10000,
+          "username": "admin",
+          "realname": "系统管理员",
+          "realnamePinyin": "xi'tong'guan'li'yuan",
+          "email": "nei@corp.netease.com",
+          "createTime": 1470730001435
+        },
+        "group": {
+          "id": 9999,
+          "name": "系统业务分组",
+          "namePinyin": "xi'tong'ye'wu'fen'zu",
+          "description": "系统内置业务分组",
+          "respoId": 10000,
+          "projectId": 10000,
+          "creatorId": 10000,
+          "createTime": 1470730001618
+        }
+      },
+      {
         "id": 12376,
         "tag": "",
         "tagPinyin": "",
@@ -239,6 +409,7 @@
         "progroupId": 11061,
         "creatorId": 10382,
         "createTime": 1459842212000,
+        "userRole": 10,
         "params": [
           {
             "id": 123810,
@@ -252,7 +423,7 @@
             "parentId": 12376,
             "parentType": 4,
             "progroupId": 11061,
-            "createTime": "2016-04-14 16:45:08.000",
+            "createTime": 1460623508000,
             "datatypeId": 0,
             "originalType": 0,
             "datatypeName": "",
@@ -270,7 +441,7 @@
             "parentId": 12376,
             "parentType": 4,
             "progroupId": 11061,
-            "createTime": "2016-04-14 16:45:08.000",
+            "createTime": 1460623508000,
             "datatypeId": 0,
             "originalType": 0,
             "datatypeName": "",
@@ -288,7 +459,7 @@
             "parentId": 12376,
             "parentType": 4,
             "progroupId": 11061,
-            "createTime": "2016-04-14 16:45:08.000",
+            "createTime": 1460623508000,
             "datatypeId": 0,
             "originalType": 0,
             "datatypeName": "",
@@ -301,7 +472,7 @@
           "realname": "包勇明",
           "realnamePinyin": "bao'yong'ming",
           "email": "hzbaoyongming@corp.netease.com",
-          "createTime": "2015-08-06 14:25:20.000"
+          "createTime": 1438842320000
         },
         "group": {
           "id": 11442,
@@ -311,7 +482,7 @@
           "respoId": 10382,
           "projectId": 11442,
           "creatorId": 10382,
-          "createTime": "2016-04-05 15:28:59.000"
+          "createTime": 1459841339000
         }
       },
       {
@@ -327,6 +498,7 @@
         "progroupId": 11061,
         "creatorId": 10382,
         "createTime": 1459842264000,
+        "userRole": 10,
         "params": [
           {
             "id": 123813,
@@ -340,7 +512,7 @@
             "parentId": 12377,
             "parentType": 4,
             "progroupId": 11061,
-            "createTime": "2016-04-18 11:12:36.000",
+            "createTime": 1460949156000,
             "datatypeId": 0,
             "originalType": 0,
             "datatypeName": "",
@@ -358,7 +530,7 @@
             "parentId": 12377,
             "parentType": 4,
             "progroupId": 11061,
-            "createTime": "2016-04-18 11:12:36.000",
+            "createTime": 1460949156000,
             "datatypeId": 0,
             "originalType": 0,
             "datatypeName": "",
@@ -376,7 +548,7 @@
             "parentId": 12377,
             "parentType": 4,
             "progroupId": 11061,
-            "createTime": "2016-04-18 11:12:36.000",
+            "createTime": 1460949156000,
             "datatypeId": 0,
             "originalType": 0,
             "datatypeName": "",
@@ -389,7 +561,7 @@
           "realname": "包勇明",
           "realnamePinyin": "bao'yong'ming",
           "email": "hzbaoyongming@corp.netease.com",
-          "createTime": "2015-08-06 14:25:20.000"
+          "createTime": 1438842320000
         },
         "group": {
           "id": 11442,
@@ -399,7 +571,7 @@
           "respoId": 10382,
           "projectId": 11442,
           "creatorId": 10382,
-          "createTime": "2016-04-05 15:28:59.000"
+          "createTime": 1459841339000
         }
       },
       {
@@ -415,6 +587,7 @@
         "progroupId": 11061,
         "creatorId": 10382,
         "createTime": 1459842296000,
+        "userRole": 10,
         "params": [
           {
             "id": 123816,
@@ -428,7 +601,7 @@
             "parentId": 12378,
             "parentType": 4,
             "progroupId": 11061,
-            "createTime": "2016-04-05 15:44:56.000",
+            "createTime": 1459842296000,
             "datatypeId": 0,
             "originalType": 0,
             "datatypeName": "",
@@ -446,7 +619,7 @@
             "parentId": 12378,
             "parentType": 4,
             "progroupId": 11061,
-            "createTime": "2016-04-05 15:44:56.000",
+            "createTime": 1459842296000,
             "datatypeId": 0,
             "originalType": 0,
             "datatypeName": "",
@@ -459,7 +632,7 @@
           "realname": "包勇明",
           "realnamePinyin": "bao'yong'ming",
           "email": "hzbaoyongming@corp.netease.com",
-          "createTime": "2015-08-06 14:25:20.000"
+          "createTime": 1438842320000
         },
         "group": {
           "id": 11443,
@@ -469,7 +642,7 @@
           "respoId": 10382,
           "projectId": 11443,
           "creatorId": 10382,
-          "createTime": "2016-04-05 15:29:19.000"
+          "createTime": 1459841359000
         }
       }
     ],
@@ -1867,7 +2040,16 @@
           "document": "# aaa",
           "creatorId": 10382,
           "createTime": 1470819118354,
-          "argsConfig": 0
+          "argsConfig": 0,
+          "attributes": {
+            "specId": 10029,
+            "engine": 11,
+            "webRoot": 0,
+            "viewRoot": 0,
+            "viewExtension": "ftl",
+            "mockApiRoot": 10113,
+            "mockViewRoot": 10112
+          }
         },
         "varmaps": []
       }
