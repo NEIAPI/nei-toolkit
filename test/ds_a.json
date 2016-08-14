@@ -2024,6 +2024,18 @@
                 "content": "http://nos.netease.com:80/nei/965ba56ff46b32f4fad7a3fd960d5af3?NOSAccessKeyId=f3318b2c1f67409386bb99813a44c778&Expires=9999999999&Signature=j1IYnS8YiOS2XT0hkHT8Uaxv3kPDTdbwm5v8QOr56KQ%3D",
                 "dataSource": 0,
                 "children": []
+              },
+              {
+                "id": 10238,
+                "specId": 10029,
+                "parent": 10099,
+                "type": 1,
+                "name": "fiddler.config",
+                "description": "",
+                "mime": "text/plain",
+                "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<AutoResponder>\n  <State>\n    {%- for rule in ds.interfaceMockRules %}\n    <ResponseRule Match=\"method:{{rule.method}} {{rule.path}}\" Action=\"{{rule.mockFile}}\" Enabled=\"true\" />\n    {%- endfor %}\n  </State>\n</AutoResponder>",
+                "dataSource": 0,
+                "children": []
               }
             ]
           },
