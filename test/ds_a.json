@@ -2047,8 +2047,8 @@
             "webRoot": 0,
             "viewRoot": 0,
             "viewExtension": "ftl",
-            "mockApiRoot": 10113,
-            "mockViewRoot": 10112
+            "mockApiRoot": 10112,
+            "mockViewRoot": 10113
           }
         },
         "varmaps": []
