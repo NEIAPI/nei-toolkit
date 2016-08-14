@@ -1776,7 +1776,20 @@
                     "mime": "text/plain",
                     "content": null,
                     "dataSource": 0,
-                    "children": []
+                    "children": [
+                      {
+                        "id": 10234,
+                        "specId": 10029,
+                        "parent": 10120,
+                        "type": 1,
+                        "name": "{{interface.className}}.java",
+                        "description": "",
+                        "mime": "text/plain",
+                        "content": "",
+                        "dataSource": 0,
+                        "children": []
+                      }
+                    ]
                   },
                   {
                     "id": 10122,
@@ -1975,6 +1988,42 @@
                 "content": "http://nos.netease.com:80/nei/1ec9274d6c1a09b755346c3c83a9c868?NOSAccessKeyId=f3318b2c1f67409386bb99813a44c778&Expires=9999999999&Signature=gwZ4m4xJZkHZ5jhoscFlnMeZ97FcZnBc1qVaLqrytDI%3D",
                 "dataSource": 0,
                 "children": []
+              },
+              {
+                "id": 10235,
+                "specId": 10029,
+                "parent": 10099,
+                "type": 1,
+                "name": "jolly-icons-free.zip",
+                "description": "",
+                "mime": "application/zip",
+                "content": "http://nos.netease.com:80/nei/82c310e36ef25e855ed90141f2568e8a?NOSAccessKeyId=f3318b2c1f67409386bb99813a44c778&Expires=9999999999&Signature=d7wYH%2BiaR6j7IGmsiIC2gx0cgD5KPLdzxAXZs%2FQY6gk%3D",
+                "dataSource": 0,
+                "children": []
+              },
+              {
+                "id": 10236,
+                "specId": 10029,
+                "parent": 10099,
+                "type": 1,
+                "name": "thumb(1).jpg",
+                "description": "",
+                "mime": "image/jpeg",
+                "content": "http://nos.netease.com:80/nei/c6d4cfd8ad63e57f97e506d3d778abd0?NOSAccessKeyId=f3318b2c1f67409386bb99813a44c778&Expires=9999999999&Signature=t%2BCRMsLQ3yz5kxp34atVPlIs26BuTwDHF6R7%2FnW%2B7zA%3D",
+                "dataSource": 0,
+                "children": []
+              },
+              {
+                "id": 10237,
+                "specId": 10029,
+                "parent": 10099,
+                "type": 1,
+                "name": "attachment.php.jpg",
+                "description": "",
+                "mime": "image/jpeg",
+                "content": "http://nos.netease.com:80/nei/965ba56ff46b32f4fad7a3fd960d5af3?NOSAccessKeyId=f3318b2c1f67409386bb99813a44c778&Expires=9999999999&Signature=j1IYnS8YiOS2XT0hkHT8Uaxv3kPDTdbwm5v8QOr56KQ%3D",
+                "dataSource": 0,
+                "children": []
               }
             ]
           },
@@ -2023,7 +2072,7 @@
             "name": "build.json",
             "description": "",
             "mime": "text/plain",
-            "content": "{\n    \"resOut\": \"app/src/main/hthttp-gen/\",\n    \"pid\": {{ds.project.id}}\n}",
+            "content": "{\n    \"resOut\": \"app/src/main/hthttp-gen/\",\n    \"pid\": false\n}",
             "dataSource": 0,
             "children": []
           }
