@@ -13,7 +13,6 @@ let _fs = require('./lib/util/file');
 let _path = require('./lib/util/path');
 let _io = require('./lib/util/io');
 let _log = require('./lib/util/logger');
-let _util = require('./lib/util/util');
 let Builder = require('./lib/nei/builder');
 let _logger = _log.logger;
 let testData = require('./test/ds_a.json');
@@ -21,19 +20,22 @@ let testData = require('./test/ds_a.json');
 class Main {
     /**
      * 构建 nei 工程
+     * @param  {object}  arg - 参数类的实例
      * @param  {string}  action - 操作命令
      * @param  {object}  args - args object
      */
-    build(action, args) {
+    build(arg, action, args) {
         this.action = action;
         this.args = args;
         this.config = {};
         let loadedHandler = (ds) => {
             let cwd = process.cwd() + '/';
             this.ds = ds;
+            this.fillArgs();
+            // 合并完参数后, 需要重新 format 一下
+            this.args = arg.format(this.action, this.args);
             this.config.outputRoot = _path.normalize(_path.absolute(this.args.output + '/', cwd));
             this.checkConfig();
-            this.fillArgs();
             new Builder({
                 config: this.config,
                 args: this.args,
@@ -161,7 +163,7 @@ class Main {
      * @param {function} callback - 加载成功回调
      */
     loadData(callback) {
-        let neiHost = _util.getLocalConfig().neihost;
+        let neiHost = 'http://localhost:9527/';
         let projectKey = this.args.key;
         let specType = {
             web: 0
@@ -216,8 +218,8 @@ class Main {
         let spec = this.ds.specs[0];
         let specArgsConfig = spec.spec.argsConfig;
         let proArgs = {};
-        (spec.cliargs || []).forEach(function (cliarg) {
-            proArgs[cliarg[key]] = cliarg[value];
+        this.ds.cliargs.forEach(function (cliarg) {
+            proArgs[cliarg.key] = cliarg.value;
         });
         let specCliArgDoc = null;
         let findSpecCliArg = (docs) => {
@@ -238,7 +240,7 @@ class Main {
                 try {
                     specArgs = JSON.parse(specCliArgDoc.content);
                 } catch (e) {
-                    _logger.error(`规范设置的命令行参数文件, 它的内容不是有效的 json: ${e}`);
+                    _logger.error(`规范设置的命令行参数文件, 它的内容不是有效的 json, 请检查是否有多余的逗号或者缺少逗号, 键及字符串类型的值是否都使用了英文双引号等: ${e}`);
                 }
             }
         }

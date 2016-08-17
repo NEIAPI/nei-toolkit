@@ -324,41 +324,5 @@ module.exports = {
             "d": "",
             "m": "配置文件路径"
         }
-    ],
-    "config": [
-        "使用说明：",
-        "nei config set <key> <value>",
-        "nei config get <key>",
-        "nei config ls",
-        "",
-        "<key>\t\t\tNEI 本地配置信息的键",
-        "<value>\t\t\tNEI 本地配置信息的值",
-        "",
-        "参数说明：",
-        "%p",
-        "",
-        "使用举例：",
-        "1. 设置 NEI 的服务器地址：",
-        "nei config set neihost http://nei.netease.com",
-        "nei config get neihost"
-    ],
-    "config-params": [
-        {
-            "j": "h",
-            "q": "help",
-            "m": "显示 config 命令帮助信息"
-        },
-        {
-            "q": "set",
-            "m": "设置配置信息的某个值"
-        },
-        {
-            "q": "get",
-            "m": "获取配置信息的某个值"
-        },
-        {
-            "q": "ls",
-            "m": "获取配置信息列表"
-        }
     ]
 };

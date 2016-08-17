@@ -135,7 +135,8 @@ console.log(db.USR_FRM_URS);
 | :--- | :--- |
 | MDL_TYP_NORMAL | 数据类型 - 用户创建的普通数据类型 |
 | MDL_TYP_SYSTEM | 数据类型 - 系统预置类型 |
-| MDL_TYP_HIDDEN | 数据类型 - 系统生成的不可见类型/匿名数据类型 | MDL_FMT_HASH | 数据类型格式 - 哈希表 |
+| MDL_TYP_HIDDEN | 数据类型 - 系统生成的不可见类型/匿名数据类型 | 
+| MDL_FMT_HASH | 数据类型格式 - 哈希表 |
 | MDL_FMT_ENUM | 数据类型格式 - 枚举类型 |
 | MDL_FMT_ARRAY| 数据类型格式 - 数组 |
 | MDL_FMT_STRING | 数据类型格式 - 字符串 |

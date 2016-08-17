@@ -27,7 +27,7 @@ var options = {
             this.log(`错误: 缺少项目的唯一标识 key, 请到 NEI 网站上的相应项目的"工具设置"中查看该 key 值`);
             this.show(action);
         } else {
-            main.build(action, config);
+            main.build(this, action, config);
         }
     },
     update: function (event) {
@@ -80,37 +80,6 @@ var options = {
         config.action = action;
         config.id = id;
         main.server(config);
-    },
-    config: function (event) {
-        var args = event.args;
-        if (!/^(set|get|ls|list)$/.test(args[0])) {
-            this.show('config');
-        } else {
-            switch (args[0]) {
-                case 'set':
-                    if (typeof(args[1]) !== 'undefined') {
-                        util.setLocalConfig(args[1], args[2]);
-                    }
-                    break;
-                case 'get':
-                    if (args[1]) {
-                        this.emit('log', util.getLocalConfig()[args[1]]);
-                    } else {
-                        this.show('config');
-                    }
-                    break;
-                case 'ls':
-                case 'list':
-                    var config = util.getLocalConfig();
-                    var str = '';
-                    Object.keys(config).forEach(function (key) {
-                        str += config[key] + '\n';
-                    });
-                    this.emit('log', str);
-                    break;
-            }
-        }
-        this.emit('exit', 0);
     }
 };
 
