@@ -42,8 +42,8 @@ class Main {
                 ds: this.ds
             });
         }
-        //this.loadData(loadedHandler);
-        loadedHandler(testData.result);
+        this.loadData(loadedHandler);
+        //loadedHandler(testData.result);
     }
 
     /**
