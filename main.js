@@ -8,7 +8,6 @@
 let fs = require('fs');
 let util = require('util');
 let path = require('path');
-var jtr = require('jtr');
 let _fs = require('./lib/util/file');
 let _path = require('./lib/util/path');
 let _io = require('./lib/util/io');

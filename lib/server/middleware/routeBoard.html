@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>JTR: routes viewer </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" user-scalable="no">
+  <style type="text/css">
+  /* reset */
+  body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+  table{border-collapse:collapse;border-spacing:0;}
+  caption,th{text-align:left;}
+  fieldset,img,a img,iframe,html,body{border:0;}
+  li{list-style:none;}
+  address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+  h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+  [hidefocus]{outline:0;}
+  body{word-wrap:break-word;font:18/normal "微软雅黑",arial,simsun;color:#333;background:#fff;}
+  h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}
+  a,button{cursor:pointer;text-decoration: none;}
+  a:hover{color:#888;text-decoration: underline;}
+  a:visited{color: #888;}
+
+  /* module */
+  .g-box {
+    position: relative;
+    width: 80%;
+    margin: 20px auto;
+    background: #CBE9CB;
+  }
+  .title {
+    padding: 20px;
+    font-size: 18px;
+  }
+  .list {
+    padding: 0 20px 20px;
+    list-style-type: circle;
+    font-size: 16px;
+  }
+  .list li {
+    position: relative;
+  }
+  .list a {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 10px 0 50px;
+    color: #000;
+  }
+  .list a:hover {
+    color: #000;
+    text-decoration: none;
+    background: #A7CBA7;
+  }
+  .list .dot {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 10px;
+    height: 10px;
+    background-color: #7F9F95;
+  }
+  </style>
+</head>
+<body>
+  <div class="g-box">
+    <h1 class="title">当前可切换的路由</h1>
+    <ul class="list">
+      <% routes.forEach(function(route) { %>
+      <li>
+        <div class="dot"></div>
+        <a href="<%= route.url %>"><%= route.name %>&nbsp;&nbsp;---->&nbsp;&nbsp;<%= route.url %></a>
+      </li>
+      <% }); %>
+    </ul>
+  </div>
+
+</body>

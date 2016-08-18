@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<AutoResponder>
-  <State>
-    {%- for rule in rules %}
-    <ResponseRule Match="method:{{rule.method}} {{rule.path}}" Action="{{root}}{{rule.mock}}.json" Enabled="true" />
-    {%- endfor %}
-  </State>
-</AutoResponder>

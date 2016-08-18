@@ -1,1 +1,0 @@
-start nei server -cf %~dp0jtr.js
