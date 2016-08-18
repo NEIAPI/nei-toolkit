@@ -13,6 +13,7 @@ let _path = require('./lib/util/path');
 let _io = require('./lib/util/io');
 let _log = require('./lib/util/logger');
 let Builder = require('./lib/nei/builder');
+let server = require('./lib/server/server');
 let _logger = _log.logger;
 let testData = require('./test/ds_a.json');
 
@@ -112,52 +113,47 @@ class Main {
      * @param  {object}  args - args object
      */
     server(args) {
-        let tryStartServer = (argsPath) => {
-            if (_fs.exist(argsPath)) {
-                let options = Object.create(null);
-                options.args = argsPath;
-                options.fromNei = true;
-                // start server
-                jtr(options);
+        let tryStartServer = (configFilePath) => {
+            if (_fs.exist(configFilePath)) {
+                let options = {
+                    configFilePath: configFilePath,
+                    fromNei: true
+                };
+                server(options);
             } else {
-                _logger.warn(`can't find jtr args file at: ${argsPath}`);
+                _logger.warn(`文件不存在: ${configFilePath}`);
             }
         }
-        if (args.argsFile) {
+        if (args.configFile) {
             let argsFilePath = _path.absolute(
-                args.argsFile, process.cwd() + '/'
+                args.configFile, process.cwd() + '/'
             );
             return tryStartServer(argsFilePath);
         }
         let dir = path.join(process.cwd(), args.path);
         if (_fs.exist(dir)) {
-            if (args.id) {
-                let jtrConfigPath = path.join(dir, `nei.${args.id}/jtr.js`);
-                tryStartServer(jtrConfigPath);
-            } else {
-                // try to find jtr args file in `nei.{pid}` dir
-                let list = fs.readdirSync(dir);
-                let argsFileFound = false;
-                for (let i = 0, l = list.length; i < l; i++) {
-                    let p = `${dir}/${list[i]}`;
-                    if (_fs.isdir(p)) {
-                        if (list[i].match(/nei/)) {
-                            argsFileFound = true;
-                            tryStartServer(`${p}/jtr.js`);
-                            break;
-                        }
-                    } else if (list[i] === 'jtr.js') {
+            // 尝试在 `nei.{pid}` 目录中查找 server.config.js 文件
+            let list = fs.readdirSync(dir);
+            let argsFileFound = false;
+            for (let i = 0, l = list.length; i < l; i++) {
+                let p = `${dir}/${list[i]}`;
+                if (_fs.isdir(p)) {
+                    if (list[i].match(/nei/)) {
                         argsFileFound = true;
-                        tryStartServer(p);
+                        tryStartServer(`${p}/server.config.js`);
                         break;
                     }
-                }
-                if (!argsFileFound) {
-                    _logger.warn(`can't find jtr args file`)
+                } else if (list[i] === 'server.config.js') {
+                    argsFileFound = true;
+                    tryStartServer(p);
+                    break;
                 }
             }
+            if (!argsFileFound) {
+                _logger.warn(`没找到服务配置文件`);
+            }
         } else {
-            _logger.warn(`project directory(${dir}) does not exist`)
+            _logger.warn(`项目目录(${dir})不存在`);
         }
     }
 

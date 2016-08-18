@@ -75,10 +75,8 @@ var options = {
     server: function (event) {
         var action = 'server';
         var config = event.options || {};
-        var id = (event.args || [])[0];
         config = this.format(action, config);
         config.action = action;
-        config.id = id;
         main.server(config);
     }
 };
