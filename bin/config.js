@@ -62,9 +62,9 @@ module.exports = {
             "m": "项目的唯一标识"
         },
         {
-            "q": "overwriteMock",
+            "q": "overwrite",
             "d": false,
-            "m": "是否覆盖已存在的 mock 数据文件"
+            "m": "是否覆盖已存在的文件"
         },
         {
             "q": "specType",

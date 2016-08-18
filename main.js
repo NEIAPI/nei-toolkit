@@ -25,25 +25,29 @@ class Main {
      * @param  {object}  args - args object
      */
     build(arg, action, args) {
-        this.action = action;
         this.args = args;
-        this.config = {};
+        this.config = {
+            action: action
+        };
         let loadedHandler = (ds) => {
             let cwd = process.cwd() + '/';
+            this.config.pid = ds.project.id;
             this.ds = ds;
             this.fillArgs();
             // 合并完参数后, 需要重新 format 一下
-            this.args = arg.format(this.action, this.args);
+            this.args = arg.format(this.config.action, this.args);
             this.config.outputRoot = _path.normalize(_path.absolute(this.args.output + '/', cwd));
+            this.config.neiConfigRoot = `${this.config.outputRoot}nei.${this.config.pid}/`;
             this.checkConfig();
-            new Builder({
+            let build = new Builder({
                 config: this.config,
                 args: this.args,
                 ds: this.ds
             });
+            build[action]();
         }
-        this.loadData(loadedHandler);
-        //loadedHandler(testData.result);
+        //this.loadData(loadedHandler);
+        loadedHandler(testData.result);
     }
 
     /**
@@ -193,20 +197,19 @@ class Main {
      * 检测是否存在 nei 配置文件
      */
     checkConfig() {
-        let pid = this.ds.project.id;
-        let neiConfigFile = `${this.config.outputRoot}nei.${pid}/nei.json`;
+        let neiConfigFile = `${this.config.neiConfigRoot}/nei.json`;
         let errorMsg = null;
         if (_fs.exist(neiConfigFile)) {
-            if (this.action === 'build') {
+            if (this.config.action === 'build') {
                 errorMsg = '项目 %s 已经存在, 请使用 "nei update" 命令更新项目';
             }
         } else {
-            if (this.action === 'update') {
-                errorMsg = '请先使用 "nei build" 命令构建项目 %s';
+            if (this.config.action === 'update') {
+                errorMsg = '项目 %s 还未构建, 请先使用 "nei build" 命令构建项目';
             }
         }
         if (errorMsg) {
-            _logger.error(errorMsg, pid);
+            _logger.error(errorMsg, this.config.pid);
             return process.exit(1);
         }
     }
