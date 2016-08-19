@@ -1,72 +1,10 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>JTR: routes viewer </title>
+    <title>页面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" user-scalable="no">
     <style type="text/css">
-        /* reset */
-        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
-            margin: 0;
-            padding: 0;
-        }
-
-        table {
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
-
-        caption, th {
-            text-align: left;
-        }
-
-        fieldset, img, a img, iframe, html, body {
-            border: 0;
-        }
-
-        li {
-            list-style: none;
-        }
-
-        address, caption, cite, code, dfn, em, strong, th, var {
-            font-style: normal;
-            font-weight: normal;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-size: 100%;
-            font-weight: normal;
-        }
-
-        [hidefocus] {
-            outline: 0;
-        }
-
-        body {
-            word-wrap: break-word;
-            font: 18/normal "微软雅黑", arial, simsun;
-            color: #333;
-            background: #fff;
-        }
-
-        h1, h2, h3, h4, h5, h6, em, strong, b {
-            font-weight: bold;
-        }
-
-        a, button {
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: #888;
-            text-decoration: underline;
-        }
-
-        a:visited {
-            color: #888;
-        }
-
         /* module */
         .g-box {
             position: relative;
@@ -82,7 +20,7 @@
 
         .list {
             padding: 0 20px 20px;
-            list-style-type: circle;
+            list-style-type: none;
             font-size: 16px;
         }
 
@@ -116,7 +54,7 @@
 </head>
 <body>
 <div class="g-box">
-    <h1 class="title">当前可切换的路由</h1>
+    <h1 class="title">页面: </h1>
     <ul class="list">
         <% routes.forEach(function(route) { %>
         <li>
@@ -126,5 +64,4 @@
         <% }); %>
     </ul>
 </div>
-
 </body>

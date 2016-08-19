@@ -11,12 +11,12 @@ module.exports = {
     viewRoot: '{{viewRoot}}',
     /* 路由 */
     routes: {
-      //"ALL /api/*": "INPUT YOUR SEVER HOST",
+      //"ALL /api/*": "代理所有接口, 这里输入代理服务器地址",
       {% for rule in rules %}
       {%- if rule.list -%}
-      "{{rule.method}} {{rule.path}}":{name:'{{rule.name}}',index: 0,list:{% autoescape false %}{{rule.list}}{% endautoescape %}}{% if !loop.last %},{% endif %}
+      "{{rule.method}} {{rule.path}}": {name: '{{rule.name}}', index: 0, list: {% autoescape false %}{{rule.list}}{% endautoescape %}}{% if !loop.last %},{% endif %}
       {%- else -%}
-      "{{rule.method}} {{rule.path}}":{path:'{{rule.mockFile}}'}{% if !loop.last %},{% endif %}
+      "{{rule.method}} {{rule.path}}": {path: '{{rule.mockFile}}'}{% if !loop.last %},{% endif %}
       {%- endif -%}
       {%- endfor %}
     },
