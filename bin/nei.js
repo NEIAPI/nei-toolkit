@@ -5,7 +5,6 @@ var util = require('../lib/util/util');
 util.checkNodeVersion();
 var main = require('../main');
 var Args = require('../lib/util/args');
-var splitChars = /[,;，；]/;
 
 var options = {
     package: require('../package.json'),
@@ -31,19 +30,13 @@ var options = {
         }
     },
     update: function (event) {
-        var config = event.options || {};
-        var id = (event.args || [])[0] || '';
         var action = 'update';
+        var config = event.options || {};
         config = this.format(action, config);
-        config.action = action;
-        if (id) {
-            id.split(splitChars).forEach(function (it) {
-                config.id = it;
-                main.build(config);
-            });
+        if (config.key) {
+            main.build(this, action, config);
         } else {
-            // update all project
-            main.update(config);
+            main.update(this, action, config);
         }
     },
     mock: function (event) {

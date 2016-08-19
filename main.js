@@ -10,6 +10,7 @@ let util = require('util');
 let path = require('path');
 let _fs = require('./lib/util/file');
 let _path = require('./lib/util/path');
+let _util = require('./lib/util/util');
 let _io = require('./lib/util/io');
 let _log = require('./lib/util/logger');
 let Builder = require('./lib/nei/builder');
@@ -22,7 +23,7 @@ class Main {
      * 构建 nei 工程
      * @param  {object}  arg - 参数类的实例
      * @param  {string}  action - 操作命令
-     * @param  {object}  args - args object
+     * @param  {object}  args - 命令行参数对象
      */
     build(arg, action, args) {
         this.args = args;
@@ -34,43 +35,44 @@ class Main {
             this.config.pid = ds.project.id;
             this.ds = ds;
             this.fillArgs();
-            // 合并完参数后, 需要重新 format 一下
-            this.args = arg.format(this.config.action, this.args);
+            // 合并完参数后, 需要重新 format 一下, 并且此时需要取默认值
+            this.args = arg.format(this.config.action, this.args, true);
             this.config.outputRoot = _path.normalize(_path.absolute(this.args.output + '/', cwd));
             this.config.neiConfigRoot = `${this.config.outputRoot}nei.${this.config.pid}/`;
             this.checkConfig();
-            let build = new Builder({
+            new Builder({
                 config: this.config,
                 args: this.args,
                 ds: this.ds
             });
-            build[action]();
         }
-        //this.loadData(loadedHandler);
-        loadedHandler(testData.result);
+        this.loadData(loadedHandler);
+        //loadedHandler(testData.result);
     }
 
     /**
-     * update nei project
-     * @param  {object}  args - args object
+     * 更新 nei 工程规范
+     * @param  {object}  arg - 参数类的实例
+     * @param  {string}  action - 操作命令
+     * @param  {object}  args - 命令行参数对象
      */
-    update(args) {
-        let cwd = process.cwd() + '/';
-        let project = _path.absolute(
-            args.project + '/', cwd
-        );
-        let list = fs.readdirSync(project);
-        if (!list || !list.length) {
-            return _logger.error('no nei project found in %s', project);
-        }
-        _logger.error('check to update all nei project');
-        // check nei args directory
-        let reg = /^nei\.([\d]+)$/;
-        list.forEach((name) => {
-            if (_fs.isdir(project + name + '/') && reg.test(name)) {
-                args.id = RegExp.$1;
-                this.build(args);
+    update(arg, action, args) {
+        let dir = path.join(process.cwd(), args.output);
+        let tryReadConfig = (configFilePath) => {
+            if (_fs.exist(configFilePath)) {
+                let config = _util.file2json(configFilePath);
+                args.key = config.args.key;
+                args.specType = config.args.specType;
+                this.build(arg, action, args);
+            } else {
+                _logger.warn(`文件不存在: ${configFilePath}`);
             }
+        }
+        this.findFile(dir, 'nei.json', (result) => {
+            if (result === null) {
+                return _logger.warn(`没找到构建工具的配置文件`);
+            }
+            tryReadConfig(result);
         });
     }
 
@@ -130,31 +132,13 @@ class Main {
             );
             return tryStartServer(argsFilePath);
         }
-        let dir = path.join(process.cwd(), args.path);
-        if (_fs.exist(dir)) {
-            // 尝试在 `nei.{pid}` 目录中查找 server.config.js 文件
-            let list = fs.readdirSync(dir);
-            let argsFileFound = false;
-            for (let i = 0, l = list.length; i < l; i++) {
-                let p = `${dir}/${list[i]}`;
-                if (_fs.isdir(p)) {
-                    if (list[i].match(/nei/)) {
-                        argsFileFound = true;
-                        tryStartServer(`${p}/server.config.js`);
-                        break;
-                    }
-                } else if (list[i] === 'server.config.js') {
-                    argsFileFound = true;
-                    tryStartServer(p);
-                    break;
-                }
+        let dir = path.join(process.cwd(), args.output);
+        this.findFile(dir, 'server.config.js', (result) => {
+            if (result === null) {
+                return _logger.warn(`没找到服务配置文件`);
             }
-            if (!argsFileFound) {
-                _logger.warn(`没找到服务配置文件`);
-            }
-        } else {
-            _logger.warn(`项目目录(${dir})不存在`);
-        }
+            tryStartServer(result);
+        });
     }
 
     /**
@@ -243,6 +227,38 @@ class Main {
             }
         }
         this.args = Object.assign({}, specArgs, proArgs, this.args);
+    }
+
+    /**
+     * 在指定目录下查找指定文件名的文件
+     * @param {string} dir - 指定目录
+     * @param {string} fileName - 指定文件名
+     * @param {function} callback - 找到文件后的回调
+     */
+    findFile(dir, fileName, callback) {
+        if (_fs.exist(dir)) {
+            let list = fs.readdirSync(dir);
+            let found = false;
+            for (let i = 0, l = list.length; i < l; i++) {
+                let p = `${dir}/${list[i]}`;
+                if (_fs.isdir(p)) {
+                    if (list[i].match(/nei/)) {
+                        found = true;
+                        callback(`${p}/${fileName}`);
+                        break;
+                    }
+                } else if (list[i] === fileName) {
+                    found = true;
+                    callback(p);
+                    break;
+                }
+            }
+            if (!found) {
+                callback(null);
+            }
+        } else {
+            _logger.warn(`项目目录(${dir})不存在`);
+        }
     }
 }
 

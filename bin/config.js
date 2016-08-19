@@ -33,16 +33,15 @@ module.exports = {
     ],
     "build": [
         "使用说明：",
-        "nei build <IDS> [参数]",
+        "nei build -key [key]",
         "",
-        "<IDS>\t\t\tNEI 平台中对应的项目 ID，必须输入，多个项目 ID 用逗号分隔",
+        "<key>\t\t\tNEI 平台中项目的唯一 key, 可以在工具设置中查看",
         "",
         "参数说明：",
         "%p",
         "",
         "使用举例：",
-        "nei build 23456798,452178 -w",
-        "nei build 23456798 -p /path/to/project/"
+        "nei build -k xyz"
     ],
     "build-params": [
         {
@@ -75,16 +74,16 @@ module.exports = {
     ],
     "update": [
         "使用说明：",
-        "nei update [IDS] [参数]",
+        "nei update [-k] [key]",
         "",
-        "[IDS]\t\t\tNEI平台中对应的项目 ID，多个项目 ID 用逗号分隔，不传则表示更新所有已生成的项目",
+        "[key]\t\t\tNEI 平台中项目的唯一 key, 可以在工具设置中或者项目目录中的 nei.json 文件中查看",
         "",
         "参数说明：",
         "%p",
         "",
         "使用举例：",
-        "nei update 23456798",
-        "nei update -p /path/to/project/"
+        "nei update -k xyz",
+        "nei update"
     ],
     "update-params": [
         {
@@ -93,24 +92,35 @@ module.exports = {
             "m": "显示 update 命令帮助信息"
         },
         {
-            "j": "p",
-            "q": "project",
+            "j": "o",
+            "q": "output",
             "d": "./",
-            "m": "指定项目目录，默认为当前目录。"
+            "m": "指定项目目录，默认为当前目录"
         },
         {
             "j": "w",
             "q": "overwrite",
             "d": false,
-            "m": "是否覆盖已存在的 mock 数据文件，默认不覆盖"
+            "m": "是否覆盖已存在的文件"
         },
         {
-            "q": "tag",
-            "m": "只更新含有指定 tag 的模板, 默认全部更新"
+            "q": "view",
+            "m": "使用视图列表填充的文件, 是否需要重新生成",
+            "d": true
         },
         {
-            "q": "view", // see @issues#3
-            "m": "是否需要更新页面的模板文件和相应的 js 和 css 模块代码",
+            "q": "interface",
+            "m": "使用异步接口列表填充的文件, 是否需要重新生成",
+            "d": true
+        },
+        {
+            "q": "template",
+            "m": "使用页面模板填充的文件, 是否需要重新生成",
+            "d": true
+        },
+        {
+            "q": "datatype",
+            "m": "使用数据模型填充的文件, 是否需要重新生成",
             "d": true
         }
     ],
@@ -304,8 +314,7 @@ module.exports = {
         "%p",
         "",
         "使用举例：",
-        "nei server",
-        "nei server 234567 -p ./webapp"
+        "nei server -o ./webapp"
     ],
     "server-params": [
         {
@@ -314,10 +323,10 @@ module.exports = {
             "m": "显示 server 命令帮助信息"
         },
         {
-            "j": "p",
-            "q": "path",
+            "j": "o",
+            "q": "output",
             "d": "./",
-            "m": "项目根路径"
+            "m": "已构建项目的根路径"
         },
         {
             "j": "cf",
