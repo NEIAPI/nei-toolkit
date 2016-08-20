@@ -8,7 +8,8 @@
 ## NEI 工程规范介绍
 * [NEI 工程规范介绍](./doc/工程规范介绍.md)
 * [传给模板的数据格式说明](./doc/传给模板的数据格式说明.md)
-* 本工具在渲染文件内容时使用的模板引擎为 [handlebars 模板引擎](http://handlebarsjs.com/) , [Handlebars 辅助函数集说明](./doc/Handlebars辅助函数集.md)
+* [Handlebars](http://handlebarsjs.com/) 是本工具渲染文件内容所使用的模板引擎
+* [Handlebars 辅助函数集说明](./doc/Handlebars辅助函数集.md)
 
 ## 工具使用
 
