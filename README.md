@@ -5,20 +5,20 @@
 * 支持根据 [NEI 平台](http://nei.hz.netease.com/) 定义的工程规范, 生成工程的初始化目录结构
 * 集成了本地模拟容器
 
-# 工具使用
+## 工具使用
 
-## 环境配置
+### 环境配置
 构建工具基于 [Node.js](http://nodejs.org/) 平台，因此需要先安装 Node.js 环境，Node.js 在各平台上的安装配置请参阅官方说明。
 
 >安装的 Node.js 版本须为 v4.2 及以上
 
-## 安装
+### 安装
 
 ```bash
 npm install "NEYouFan/nei-toolkit#dev" –g
 ```
 
-# 指令说明
+## 指令说明
 
 本工具使用时在终端或者命令行输入以下格式指令运行
 
@@ -35,7 +35,7 @@ nei [指令] [参数]
 | server | 启动本地模拟容器 |
 
 
-## build
+### build
 根据在 NEI 平台上定义的工程规范, 生成工程的初始化目录结构，指令的运行格式为：
 
 ```bash
@@ -63,7 +63,7 @@ nei build -k [key]
 nei build -k xyz
 ```
 
-## update
+### update
 
 更新通过 `nei build` 构建的项目，指令的运行格式为：
 
@@ -92,7 +92,7 @@ nei update
 >提示: 可以先在本地创建项目目录, 然后在该目录下使用 `nei build` 和 `nei update` 命令, 使用默认值即可.
 
 
-## server
+### server
 启动内置的本地模拟容器
 
 ```bash
@@ -116,5 +116,12 @@ nei server -o ./mypro
 ```
 
 > OS X 下如果有异常请使用 `sudo nei server` 命令启动
+
+## 历史版本
+[历史版本](./CHANGELOG)
+
+## Licence
+[MIT](./LICENSE)
+
 
 
