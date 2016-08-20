@@ -41,7 +41,6 @@
     "http-proxy": "^1.14.0",
     "node-fmpp": "0.0.6",
     "path-to-regexp": "^1.5.3",
-    "qrcode-npm": "0.0.3",
     "swig": ">=1.4.2",
     "xcode": "^0.8.2"
   }

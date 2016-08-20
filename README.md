@@ -19,7 +19,7 @@
 ### 安装
 
 ```bash
-npm install "NEYouFan/nei-toolkit#dev" –g
+npm install –g "NEYouFan/nei-toolkit#dev"
 ```
 
 ## 指令说明
