@@ -16,7 +16,7 @@ module.exports = {
       {%- if rule.list -%}
       "{{rule.method}} {{rule.path}}": {name: '{{rule.name}}', index: 0, list: {% autoescape false %}{{rule.list}}{% endautoescape %}}{% if !loop.last %},{% endif %}
       {%- else -%}
-      "{{rule.method}} {{rule.path}}": {path: '{{rule.mockFile}}'}{% if !loop.last %},{% endif %}
+      "{{rule.method}} {{rule.path}}": {path: '{{rule.mockFile}}', id: '{{rule.id}}'}{% if !loop.last %},{% endif %}
       {%- endif -%}
       {%- endfor %}
     },

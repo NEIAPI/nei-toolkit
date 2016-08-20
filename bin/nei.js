@@ -39,32 +39,6 @@ var options = {
             main.update(this, action, config);
         }
     },
-    mock: function (event) {
-        var action = 'mock';
-        var config = event.options || {};
-        var id = (event.args || [])[0];
-        if (!id) {
-            this.show(name);
-            process.exit(0);
-        }
-        config = this.format(action, config);
-        config.action = action;
-        config.id = id;
-        main.mock(config);
-    },
-    mobile: function (event) {
-        var action = 'mobile';
-        var config = event.options || {};
-        var id = (event.args || [])[0];
-        if (!id) {
-            this.show(name);
-            process.exit(0);
-        }
-        config = this.format(action, config);
-        config.action = action;
-        config.id = id;
-        main.mobile(config);
-    },
     server: function (event) {
         var action = 'server';
         var config = event.options || {};

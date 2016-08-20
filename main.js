@@ -15,6 +15,7 @@ let _io = require('./lib/util/io');
 let _log = require('./lib/util/logger');
 let Builder = require('./lib/nei/builder');
 let server = require('./lib/server/server');
+let neiDbConst = require('../fb-modules/config/db.json');
 let _logger = _log.logger;
 let testData = require('./test/ds_a.json');
 
@@ -47,6 +48,7 @@ class Main {
             });
         }
         this.loadData(loadedHandler);
+        // 测试数据
         //loadedHandler(testData.result);
     }
 
@@ -73,40 +75,6 @@ class Main {
                 return _logger.warn(`没找到构建工具的配置文件`);
             }
             tryReadConfig(result);
-        });
-    }
-
-    /**
-     * generate mock data
-     * @param  {object}  args - args object
-     */
-    mock(args) {
-        let cwd = process.cwd() + '/';
-        args.outputRoot = _path.absolute(
-            args.output + '/', cwd
-        );
-        this.loadData(args.id, (data) => {
-            let builder = new Builder(args);
-            builder.mock(data);
-        });
-    }
-
-    /**
-     * export mobile models and requests
-     * @param  {object}  args - args object
-     */
-    mobile(args) {
-        let cwd = process.cwd() + '/';
-        args.outputRoot = _path.normalize(_path.absolute(
-            args.output + '/', cwd
-        ));
-        let lang = args.lang;
-        if (!/^(oc|java)$/.test(lang)) {
-            return _logger.error(`not supported language "${lang}"`);
-        }
-        this.loadData(args.id, (data) => {
-            let builder = new (require(`./lib/nei/mobile.${lang}.js`))(args);
-            builder.model(data);
         });
     }
 
@@ -146,11 +114,14 @@ class Main {
      * @param {function} callback - 加载成功回调
      */
     loadData(callback) {
-        let neiHost = 'http://localhost:9527/';
+        let neiHost = 'http://nei.netease.com/';
         let projectKey = this.args.key;
         let specType = {
-            web: 0
-        }[this.args.specType];
+            web: neiDbConst.CMN_TYP_WEB,
+            aos: neiDbConst.CMN_TYP_AOS,
+            ios: neiDbConst.CMN_TYP_IOS,
+            test: neiDbConst.CMN_TYP_TEST
+        }[this.args.specType] || neiDbConst.CMN_TYP_WEB;
         let url = `${neiHost}/api/projectres/?key=${encodeURIComponent(projectKey)}&spectype=${specType}`;
         url = _path.normalize(url);
         _logger.info('从 NEI 服务器加载数据, 地址: %s', url);
