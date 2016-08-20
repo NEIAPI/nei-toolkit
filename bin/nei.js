@@ -33,11 +33,7 @@ var options = {
         var action = 'update';
         var config = event.options || {};
         config = this.format(action, config);
-        if (config.key) {
-            main.build(this, action, config);
-        } else {
-            main.update(this, action, config);
-        }
+        main.update(this, action, config);
     },
     server: function (event) {
         var action = 'server';
