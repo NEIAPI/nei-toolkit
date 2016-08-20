@@ -12,13 +12,13 @@ module.exports = {
     /* 路由 */
     routes: {
       //"ALL /api/*": "代理所有接口, 这里输入代理服务器地址",
-      {% for rule in rules %}
-      {%- if rule.list -%}
-      "{{rule.method}} {{rule.path}}": {name: '{{rule.name}}', index: 0, list: {% autoescape false %}{{rule.list}}{% endautoescape %}}{% if !loop.last %},{% endif %}
-      {%- else -%}
-      "{{rule.method}} {{rule.path}}": {path: '{{rule.mockFile}}', id: {{rule.id}}}{% if !loop.last %},{% endif %}
-      {%- endif -%}
-      {%- endfor %}
+      {{#each rules}}
+      {{#if list}}
+      "{{method}} {{path}}": { name: '{{name}}', index: 0, list: {{{list}}} },
+      {{else}}
+      "{{method}} {{path}}": { path: '{{mockFile}}', id: {{id}} },
+      {{/if}}
+      {{/each}}
     },
     /* 是否自动打开浏览器 */
     launch: true,

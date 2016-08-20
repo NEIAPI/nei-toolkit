@@ -38,10 +38,10 @@
     "ejs": "^2.5.1",
     "express": "^4.14.0",
     "express-velocity": "^1.0.0",
+    "handlebars": "^4.0.5",
     "http-proxy": "^1.14.0",
     "node-fmpp": "0.0.6",
     "path-to-regexp": "^1.5.3",
-    "swig": ">=1.4.2",
     "xcode": "^0.8.2"
   }
 }
