@@ -79,6 +79,7 @@ nei update [-k] [key]
 | :--- | :--- | :--- | :--- |
 | -h | --help  | | 显示 update 命令的帮助信息 |
 | -o | --output | ./ | 指定的项目目录 |
+| -k | --key |  | 项目的唯一标识, 可以在项目的"工具(设置)"中查看 |
 | -w | --overwrite | false | 是否覆盖已存在的文件 |
 
 使用范例：
@@ -117,8 +118,8 @@ nei server -o ./mypro
 
 > OS X 下如果有异常请使用 `sudo nei server` 命令启动
 
-## 历史版本
-[历史版本](./CHANGELOG)
+## 版本更新说明
+[更新说明](./CHANGELOG)
 
 ## Licence
 [MIT](./LICENSE)
