@@ -17,7 +17,7 @@ let Builder = require('./lib/nei/builder');
 let server = require('./lib/server/server');
 let neiDbConst = require('../fb-modules/config/db.json');
 let _logger = _log.logger;
-let testData = require('./test/ds_a.json');
+let testData = require('./test/test_data.json');
 
 class Main {
     /**
@@ -49,7 +49,7 @@ class Main {
         }
         this.loadData(loadedHandler);
         // 测试数据
-        //loadedHandler(testData.result);
+        // loadedHandler(testData.result);
     }
 
     /**

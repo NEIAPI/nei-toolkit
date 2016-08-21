@@ -12,74 +12,60 @@ describe('nei/builder', function () {
         return JSON.parse(JSON.stringify(testData));
     };
 
-    // project id of test data
-    const pid = 11029;
-
-    describe('Mock data', function () {
+    describe('Builder', function () {
         this.timeout(40000);
 
-        const outputRoot = `${_path.normalize(__dirname + '/')}mock/`;
+        const outputRoot = `${_path.normalize(__dirname + '/')}webpro/`;
 
         afterEach(function () {
             _fs.rmdir(outputRoot);
         });
 
-        it('Mock data -> case 1', function (done) {
+        it('builder -> case 1', function (done) {
+            let ds = getTestDataCopy();
+            let args = {
+                output: './webpro',
+                overwrite: true
+            }
             let config = {
-                id: pid,
-                type: 0,
-                fiddler: true,
-                charles: true,
-                outputRoot: outputRoot
-            };
-            let builder = new Builder(config);
-            builder.mock(getTestDataCopy());
+                action: 'build',
+                outputRoot: outputRoot,
+                neiConfigRoot: `${outputRoot}nei.${ds.project.id}/`,
+                pid: ds.project.id
+            }
+            new Builder({
+                config: config,
+                args: args,
+                ds: ds
+            });
 
-            assert.equal(true, _fs.exist(`${outputRoot}/api`));
-            assert.equal(true, _fs.exist(`${outputRoot}/meta`));
-            assert.equal(true, _fs.exist(`${outputRoot}/views`));
-            assert.equal(true, _fs.exist(`${outputRoot}/charles.${pid}.xml`));
-            assert.equal(true, _fs.exist(`${outputRoot}/fiddler.${pid}.farx`));
+            assert.equal(true, _fs.exist(`${outputRoot}/deploy`));
+            assert.equal(true, _fs.exist(`${outputRoot}/doc`));
+            assert.equal(true, _fs.exist(`${outputRoot}/mock.data`));
 
-            done();
-        });
+            assert.equal(true, _fs.exist(`${outputRoot}/mock.data/interface/delete`));
+            assert.equal(true, _fs.exist(`${outputRoot}/mock.data/interface/get`));
+            assert.equal(true, _fs.exist(`${outputRoot}/mock.data/interface/post`));
+            assert.equal(true, _fs.exist(`${outputRoot}/mock.data/interface/put`));
 
-        it('Mock data ->  case 2', function (done) {
-            let config = {
-                id: pid,
-                type: 1,
-                fiddler: false,
-                charles: false,
-                outputRoot: outputRoot
-            };
-            let builder = new Builder(config);
-            builder.mock(getTestDataCopy());
+            assert.equal(true, _fs.exist(`${outputRoot}/mock.data/template/page/detail.js`));
 
-            assert.equal(false, _fs.exist(`${outputRoot}/api`));
-            assert.equal(true, _fs.exist(`${outputRoot}/meta`));
-            assert.equal(false, _fs.exist(`${outputRoot}/views`));
-            assert.equal(false, _fs.exist(`${outputRoot}/charles.${pid}.xml`));
-            assert.equal(false, _fs.exist(`${outputRoot}/fiddler.${pid}.farx`));
+            assert.equal(true, _fs.exist(`${outputRoot}/nei.11443/json/nei-latest.json`));
+            assert.equal(true, _fs.exist(`${outputRoot}/nei.11443/nei.json`));
+            assert.equal(true, _fs.exist(`${outputRoot}/nei.11443/server.config.js`));
 
-            done();
-        });
+            assert.equal(true, _fs.exist(`${outputRoot}/public`));
+            assert.equal(true, _fs.exist(`${outputRoot}/public/src/page/pages/index.js`));
 
-        it('Mock data -> case 3', function (done) {
-            let config = {
-                id: pid,
-                type: 2,
-                fiddler: false,
-                charles: true,
-                outputRoot: outputRoot
-            };
-            let builder = new Builder(config);
-            builder.mock(getTestDataCopy());
+            assert.equal(true, _fs.exist(`${outputRoot}/server/controller/vo/Todo.java`));
 
-            assert.equal(false, _fs.exist(`${outputRoot}/api`));
-            assert.equal(true, _fs.exist(`${outputRoot}/meta`));
-            assert.equal(false, _fs.exist(`${outputRoot}/views`));
-            assert.equal(true, _fs.exist(`${outputRoot}/charles.${pid}.xml`));
-            assert.equal(false, _fs.exist(`${outputRoot}/fiddler.${pid}.farx`));
+            assert.equal(true, _fs.exist(`${outputRoot}/view/pages/index.ftl`));
+
+            assert.equal(true, _fs.exist(`${outputRoot}/.gitignore`));
+            assert.equal(true, _fs.exist(`${outputRoot}/app.js`));
+            assert.equal(true, _fs.exist(`${outputRoot}/gulpfile.js`));
+            assert.equal(true, _fs.exist(`${outputRoot}/gulpfile_sprite.js`));
+            assert.equal(true, _fs.exist(`${outputRoot}/spec.doc.md`));
 
             done();
         });
