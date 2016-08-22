@@ -6,7 +6,8 @@ Handlebars 辅助函数集的 JavaScript 实现文件在[这里](../lib/nei/hand
 
 ## 目前可用的 helper
 
-### raw: 用它包裹的内容按原样输出
+### raw
+用它包裹的内容按原样输出
 
 ```text
 {{{{raw}}}}
@@ -16,7 +17,8 @@ Handlebars 辅助函数集的 JavaScript 实现文件在[这里](../lib/nei/hand
 输出为: {{name}}
 ```
 
-### capFirst: 将首字母大写
+### capFirst
+将首字母大写
 
 ```js
 var data = {
