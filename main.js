@@ -15,7 +15,7 @@ let _io = require('./lib/util/io');
 let _log = require('./lib/util/logger');
 let Builder = require('./lib/nei/builder');
 let server = require('./lib/server/server');
-let neiDbConst = require('../fb-modules/config/db.json');
+let neiDbConst = require('./lib/fb-modules/config/db.json');
 let _logger = _log.logger;
 
 class Main {
