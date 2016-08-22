@@ -56,7 +56,7 @@ class Main {
      * @param  {object}  args - 命令行参数对象
      */
     update(arg, action, args) {
-        let dir = path.join(process.cwd(), args.output);
+        let dir = path.join(process.cwd(), args.output || './');
         let tryReadConfig = (configFilePath) => {
             if (_fs.exist(configFilePath)) {
                 let config = _util.file2json(configFilePath);
