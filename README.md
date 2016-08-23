@@ -58,7 +58,7 @@ nei build -k [key] [参数]
 | -o | --output | ./ | 指定项目的输出目录 |
 | -k | --key |  | 项目的唯一标识, 可以在项目的"工具(设置)"中查看 |
 | -w | --overwrite | false | 是否覆盖已存在的文件 |
-| /  | --specType | web | 要构建的规范类型, 目前支持 web、aos、ios、test 四种类型 |
+| 无 | --specType | web | 要构建的规范类型, 目前支持 web、aos、ios、test 四种类型 |
 
 使用范例：
 
@@ -108,7 +108,7 @@ nei server [参数]
 | :--- | :--- | :--- | :--- |
 | -h | --help | | 显示 mobile 命令帮助信息 |
 | -o | --output | ./ | 已构建项目的输出路径 |
-| / | --configFile | | 本地服务器配置文件路径 |
+| 无 | --configFile | | 本地服务器配置文件路径 |
 
 使用范例
 
