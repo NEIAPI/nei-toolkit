@@ -60,6 +60,7 @@ module.exports = {
             "m": "项目的唯一标识"
         },
         {
+            "j": "w",
             "q": "overwrite",
             "d": false,
             "m": "是否覆盖已存在的文件"
@@ -131,7 +132,6 @@ module.exports = {
             "m": "已构建项目的根路径"
         },
         {
-            "j": "cf",
             "q": "configFile",
             "d": "",
             "m": "本地服务器配置文件路径"
