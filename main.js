@@ -97,7 +97,7 @@ class Main {
             );
             return tryStartServer(argsFilePath);
         }
-        let dir = path.join(process.cwd(), args.output);
+        let dir = path.join(process.cwd(), args.output || '');
         this.findFile(dir, 'server.config.js', (result) => {
             if (result === null) {
                 return _logger.warn(`没找到服务配置文件`);
