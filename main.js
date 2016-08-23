@@ -166,6 +166,10 @@ class Main {
      */
     fillArgs() {
         let spec = this.ds.specs[0];
+        if (!spec) {
+            _logger.error(`项目没找到工程规范, 请检查是否已经给项目指定了规范, 或者 specType 参数值是否正确`);
+            return process.exit(1);
+        }
         let specArgsConfig = spec.spec.argsConfig;
         let proArgs = {};
         this.ds.cliargs.forEach(function (cliarg) {
