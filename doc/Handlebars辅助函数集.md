@@ -17,13 +17,24 @@ Handlebars 辅助函数集的 JavaScript 实现文件在[这里](../lib/nei/hand
 输出为: {{name}}
 ```
 
-### capFirst
+### upperFirst
 将首字母大写
 
 ```js
 var data = {
     "name": "id"
 }
-var template = `{{capFirst name}}`;
+var template = `{{upperFirst name}}`;
 console.log(Handlebars.compile(template)(data)); // 输出: Id
+```
+
+### lowerFirst
+将首字母小写
+
+```js
+var data = {
+    "name": "ProjectGroup"
+}
+var template = `{{lowerFirst name}}`;
+console.log(Handlebars.compile(template)(data)); // 输出: projectGroup
 ```
