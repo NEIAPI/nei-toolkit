@@ -40,7 +40,7 @@ console.log(Handlebars.compile(template)(data)); // 输出: projectGroup
 ```
 
 ### modelNameByList
-获取模型的名称, 如果它是数组, 则使用 `List` 嵌套, 比如二维数组: List<List<String>>
+获取模型的名称, 如果它是数组, 则使用 `List` 嵌套, 比如二维数组: `List<List<String>>`
 
 ```js
 var data = {
@@ -52,7 +52,7 @@ console.log(Handlebars.compile(template)(data)); // 输出: List<List<String>>
 ```
 
 ### modelNameByBracket
-获取模型的名称, 如果它是数组, 则使用 `[]` 嵌套, 比如二维数组: String[][]
+获取模型的名称, 如果它是数组, 则使用 `[]` 嵌套, 比如二维数组: `String[][]`
 
 ```js
 var data = {
