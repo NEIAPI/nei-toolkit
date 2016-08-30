@@ -38,3 +38,27 @@ var data = {
 var template = `{{lowerFirst name}}`;
 console.log(Handlebars.compile(template)(data)); // 输出: projectGroup
 ```
+
+### modelNameByList
+获取模型的名称, 如果它是数组, 则使用 `List` 嵌套, 比如二维数组: List<List<String>>
+
+```js
+var data = {
+    type: 'String',
+    arrDim: 2
+}
+var template = `{{{modelNameByList this}}}`; // 使用三个大括号, 不转义特殊字符 `<` 和 `>`
+console.log(Handlebars.compile(template)(data)); // 输出: List<List<String>>
+```
+
+### modelNameByBracket
+获取模型的名称, 如果它是数组, 则使用 `[]` 嵌套, 比如二维数组: String[][]
+
+```js
+var data = {
+    type: 'String',
+    arrDim: 2
+}
+var template = `{{modelNameByBracket this}}`;
+console.log(Handlebars.compile(template)(data)); // 输出: String[][]
+```
