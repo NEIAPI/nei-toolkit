@@ -1,6 +1,7 @@
 # JavaBean文件模板
 
 ```java
+{{#is datatype.isHash}}
 /**
 {{prettifyComment datatype.description}}
  */
@@ -26,6 +27,7 @@ public class {{datatype.name}} {
     }
     {{/each}}
 }
+{{/if}}
 ```
 
 >说明: prettifyComment、noLineBreak、fieldTypeName、upperFirst 都是 handlebars 的辅助函数, 具体功能请查看文档: [Handlebars 辅助函数集说明](./Handlebars辅助函数集.md)

@@ -17,26 +17,17 @@ Handlebars 辅助函数集的 JavaScript 实现文件在[这里](../lib/nei/hand
 输出为: {{name}}
 ```
 
-### upperFirst
-将首字母大写
+### extname
+以点号分隔字符串后的最后一项, 相当于根据路径取文件的扩展名
 
 ```js
 var data = {
-    "name": "id"
+    path: 'a.b.c'
 }
-var template = `{{upperFirst name}}`;
-console.log(Handlebars.compile(template)(data)); // 输出: Id
-```
 
-### lowerFirst
-将首字母小写
+var template = `{{extname path}}`;
+console.log(Handlebars.compile(template)(data)); // 输出: 'c'
 
-```js
-var data = {
-    "name": "ProjectGroup"
-}
-var template = `{{lowerFirst name}}`;
-console.log(Handlebars.compile(template)(data)); // 输出: projectGroup
 ```
 
 ### fieldTypeName
@@ -66,15 +57,15 @@ console.log(Handlebars.compile(template)(data)); // 输出: List<List<String>>
 
 ```
 
-### prettifyComment
-格式化注释, 在每一行的前面添加 ` * `
+### lowerFirst
+将首字母小写
 
 ```js
 var data = {
-    comment: 'a\nb\nc'
+    "name": "ProjectGroup"
 }
-var template = `{{prettifyComment this}}`;
-console.log(Handlebars.compile(template)(data)); // 输出: ' * a\n * b\n * c'
+var template = `{{lowerFirst name}}`;
+console.log(Handlebars.compile(template)(data)); // 输出: projectGroup
 ```
 
 ### noLineBreak
@@ -91,4 +82,26 @@ console.log(Handlebars.compile(template)(data)); // 输出: 'a,b,c'
 var template = `{{noLineBreak comment sep="*"}}`;
 console.log(Handlebars.compile(template)(data)); // 输出: 'a*b*c'
 
+```
+
+### prettifyComment
+格式化注释, 在每一行的前面添加 ` * `
+
+```js
+var data = {
+    comment: 'a\nb\nc'
+}
+var template = `{{prettifyComment this}}`;
+console.log(Handlebars.compile(template)(data)); // 输出: ' * a\n * b\n * c'
+```
+
+### upperFirst
+将首字母大写
+
+```js
+var data = {
+    "name": "id"
+}
+var template = `{{upperFirst name}}`;
+console.log(Handlebars.compile(template)(data)); // 输出: Id
 ```
