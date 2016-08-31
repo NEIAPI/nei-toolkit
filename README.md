@@ -12,6 +12,7 @@
 * [传给模板的数据格式说明](./doc/传给模板的数据格式说明.md)(重要，必读)
 * [Handlebars](http://handlebarsjs.com/) 是本工具渲染文件内容所使用的模板引擎
 * [Handlebars 辅助函数集说明](./doc/Handlebars辅助函数集.md)
+* [Handlebars 基本语法介绍](./doc/Handlebars基本语法介绍.md)
 
 ## 示例
 * [一步一步教你如何愉快地生成 JavaBean 文件](./doc/一步一步教你如何愉快地生成JavaBean文件.md)
