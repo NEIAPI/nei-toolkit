@@ -56,7 +56,7 @@ console.log(Handlebars.compile(template)(data)); // 输出: String[][]
 template = `{{fieldTypeName this useList=true}}`;
 console.log(Handlebars.compile(template)(data)); // 输出: List<List<String>>
 
-也可以使用下面这种方式:
+// 也可以使用下面这种方式传入参数:
 
 var template = `{{fieldTypeName type=this.type arrDim=this.arrDim}}`;
 console.log(Handlebars.compile(template)(data)); // 输出: String[][]
