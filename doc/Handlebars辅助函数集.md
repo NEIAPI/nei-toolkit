@@ -62,3 +62,25 @@ var data = {
 var template = `{{modelNameByBracket this}}`;
 console.log(Handlebars.compile(template)(data)); // 输出: String[][]
 ```
+
+### prettifyComment
+格式化注释, 在每一行的前面添加 ` * `
+
+```js
+var data = {
+    comment: 'a\nb\nc'
+}
+var template = `{{prettifyComment this}}`;
+console.log(Handlebars.compile(template)(data)); // 输出: ' * a\n * b\n * c'
+```
+
+### noLineBreak
+将换行替换为逗号
+
+```js
+var data = {
+    comment: 'a\nb\nc'
+}
+var template = `{{noLineBreak this}}`;
+console.log(Handlebars.compile(template)(data)); // 输出: 'a,b,c'
+```
