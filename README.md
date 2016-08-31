@@ -14,7 +14,7 @@
 * [Handlebars 辅助函数集说明](./doc/Handlebars辅助函数集.md)
 
 ## 示例模板
-
+* [JavaBean 文件模板](./doc/JavaBean文件模板.md)
 
 ## 工具使用
 
