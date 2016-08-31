@@ -1,7 +1,7 @@
 # JavaBean文件模板
 
 ```java
-{{#is datatype.isHash}}
+{{#if datatype.isHash}}
 /**
 {{prettifyComment datatype.description}}
  */
