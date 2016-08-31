@@ -42,7 +42,7 @@ console.log(Handlebars.compile(template)(data)); // 输出: projectGroup
 ### fieldTypeName
 获取字段的名称, 如果它是数组, 则使用 `[]` 嵌套, 比如二维数组: `String[][]`。
 
-也可能使用 `List` 嵌套, 比如二维数组: List<List<String>>
+也可以使用 `List` 嵌套, 比如二维数组: List<List<String>>
 
 ```js
 var data = {
