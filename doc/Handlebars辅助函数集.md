@@ -78,12 +78,17 @@ console.log(Handlebars.compile(template)(data)); // 输出: ' * a\n * b\n * c'
 ```
 
 ### noLineBreak
-将换行替换为逗号
+将换行替换为逗号(默认)或者自定义分隔符
 
 ```js
 var data = {
     comment: 'a\nb\nc'
 }
-var template = `{{noLineBreak this}}`;
+
+var template = `{{noLineBreak comment}}`;
 console.log(Handlebars.compile(template)(data)); // 输出: 'a,b,c'
+
+var template = `{{noLineBreak comment sep="*"}}`;
+console.log(Handlebars.compile(template)(data)); // 输出: 'a*b*c'
+
 ```
