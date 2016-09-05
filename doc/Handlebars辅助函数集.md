@@ -40,8 +40,8 @@ console.log(Handlebars.compile(template)(data)); // 输出: 'c'
 
 ```
 
-### fieldTypeName
-获取字段的名称, 如果它是数组, 则使用 `[]` 嵌套, 比如二维数组: `String[][]`。
+### typeName
+获取类型名称, 如果它是数组, 则使用 `[]` 嵌套, 比如二维数组: `String[][]`。
 
 也可以使用 `List` 嵌套, 比如二维数组: List<List<String>>
 
@@ -51,18 +51,18 @@ var data = {
     arrDim: 2
 }
 
-var template = `{{fieldTypeName this}}`;
+var template = `{{typeName this}}`;
 console.log(Handlebars.compile(template)(data)); // 输出: String[][]
 
-template = `{{fieldTypeName this useList=true}}`;
+template = `{{typeName this useList=true}}`;
 console.log(Handlebars.compile(template)(data)); // 输出: List<List<String>>
 
 // 也可以使用下面这种方式传入参数:
 
-var template = `{{fieldTypeName type=this.type arrDim=this.arrDim}}`;
+var template = `{{typeName type=this.type arrDim=this.arrDim}}`;
 console.log(Handlebars.compile(template)(data)); // 输出: String[][]
 
-var template = `{{fieldTypeName type=this.type arrDim=this.arrDim useList=true}}`;
+var template = `{{typeName type=this.type arrDim=this.arrDim useList=true}}`;
 console.log(Handlebars.compile(template)(data)); // 输出: List<List<String>>
 
 ```

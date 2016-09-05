@@ -10,12 +10,12 @@ public class {{datatype.name}} {
     {{#if description}}
     // {{noLineBreak description}}
     {{/if}}
-    private {{fieldTypeName this}} {{name}};
+    private {{typeName this}} {{name}};
     {{/each}}
     {{! getter}}
     {{#each datatype.fields}}
 
-    public {{fieldTypeName this}} get{{upperFirst name}} {
+    public {{typeName this}} get{{upperFirst name}} {
         return {{name}};
     }
     {{/each}}
@@ -30,4 +30,4 @@ public class {{datatype.name}} {
 {{/if}}
 ```
 
->说明: prettifyComment、noLineBreak、fieldTypeName、upperFirst 都是 handlebars 的辅助函数, 具体功能请查看文档: [Handlebars 辅助函数集说明](./Handlebars辅助函数集.md)
+>说明: prettifyComment、noLineBreak、typeName、upperFirst 都是 handlebars 的辅助函数, 具体功能请查看文档: [Handlebars 辅助函数集说明](./Handlebars辅助函数集.md)
