@@ -30,16 +30,16 @@ class Main {
         this.config = {
             action: action
         };
+        let cwd = process.cwd() + '/';
+        this.config.outputRoot = _path.normalize(_path.absolute(this.args.output + '/', cwd));
+        this.checkConfig();
         let loadedHandler = (ds) => {
-            let cwd = process.cwd() + '/';
             this.config.pid = ds.project.id;
             this.ds = ds;
             this.fillArgs();
             // 合并完参数后, 需要重新 format 一下, 并且此时需要取默认值
             this.args = arg.format(this.config.action, this.args, true);
-            this.config.outputRoot = _path.normalize(_path.absolute(this.args.output + '/', cwd));
-            this.config.neiConfigRoot = `${this.config.outputRoot}nei.${this.config.pid}/`;
-            this.checkConfig();
+            this.config.neiConfigRoot = `${this.config.outputRoot}nei.${this.config.pid}.${this.args.key}/`;
             new Builder({
                 config: this.config,
                 args: this.args,
@@ -58,18 +58,14 @@ class Main {
     update(arg, action, args) {
         let dir = path.join(process.cwd(), args.output || './');
         let tryReadConfig = (configFilePath) => {
-            if (_fs.exist(configFilePath)) {
-                let config = _util.file2json(configFilePath);
-                args.key = config.args.key;
-                args.specType = config.args.specType;
-                this.build(arg, action, args);
-            } else {
-                _logger.warn(`文件不存在: ${configFilePath}`);
-            }
+            let config = _util.file2json(configFilePath);
+            args.key = config.args.key;
+            args.specType = config.args.specType;
+            this.build(arg, action, args);
         }
         this.findFile(dir, 'nei.json', (result) => {
             if (result === null) {
-                return _logger.warn(`没找到构建工具的配置文件`);
+                return _logger.warn(`没找到构建工具的配置文件, 请使用 nei build 命令构建项目`);
             }
             tryReadConfig(result);
         });
@@ -114,11 +110,11 @@ class Main {
         let neiHost = 'http://nei.netease.com/';
         let projectKey = this.args.key;
         let specType = {
-            web: neiDbConst.CMN_TYP_WEB,
-            aos: neiDbConst.CMN_TYP_AOS,
-            ios: neiDbConst.CMN_TYP_IOS,
-            test: neiDbConst.CMN_TYP_TEST
-        }[this.args.specType] || neiDbConst.CMN_TYP_WEB;
+                web: neiDbConst.CMN_TYP_WEB,
+                aos: neiDbConst.CMN_TYP_AOS,
+                ios: neiDbConst.CMN_TYP_IOS,
+                test: neiDbConst.CMN_TYP_TEST
+            }[this.args.specType] || neiDbConst.CMN_TYP_WEB;
         let url = `${neiHost}/api/projectres/?key=${encodeURIComponent(projectKey)}&spectype=${specType}`;
         url = _path.normalize(url);
         _logger.info('从 NEI 服务器加载数据, 地址: %s', url);
@@ -141,22 +137,33 @@ class Main {
     }
 
     /**
-     * 检测是否存在 nei 配置文件
+     * 检测指定的目录中是否存在 nei 配置文件
      */
     checkConfig() {
-        let neiConfigFile = `${this.config.neiConfigRoot}/nei.json`;
+        let outputDir = this.config.outputRoot;
+        let files = fs.readdirSync(outputDir);
+        let foundConfigFile = null;
+        files.some((filename) => {
+            if (filename.startsWith('nei') && filename.endsWith(this.args.key)) {
+                foundConfigFile = filename;
+                return true;
+            }
+        });
         let errorMsg = null;
-        if (_fs.exist(neiConfigFile)) {
-            if (this.config.action === 'build') {
-                errorMsg = '项目 %s 已经存在, 请使用 "nei update" 命令更新项目';
+        let action = this.config.action;
+        if (foundConfigFile) {
+            if (action === 'build') {
+                errorMsg = '项目 %s 已存在, 请使用 nei update 命令更新项目';
+            } else if (action === 'update') {
+                _logger.debug('更新项目 %s', foundConfigFile);
             }
         } else {
-            if (this.config.action === 'update') {
-                errorMsg = '项目 %s 还未构建, 请先使用 "nei build" 命令构建项目';
+            if (action === 'update') {
+                errorMsg = '没找到通过 nei 构建的项目, 请先使用 nei build 命令构建项目';
             }
         }
         if (errorMsg) {
-            _logger.error(errorMsg, this.config.pid);
+            _logger.error(errorMsg, foundConfigFile);
             return process.exit(1);
         }
     }
@@ -214,7 +221,7 @@ class Main {
             for (let i = 0, l = list.length; i < l; i++) {
                 let p = `${dir}/${list[i]}`;
                 if (_fs.isdir(p)) {
-                    if (list[i].match(/nei/)) {
+                    if (list[i].startsWith('nei')) {
                         found = true;
                         callback(`${p}/${fileName}`);
                         break;
