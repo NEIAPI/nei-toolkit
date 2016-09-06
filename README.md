@@ -27,10 +27,10 @@
 ### 安装
 
 ```bash
-npm install "NEYouFan/nei-toolkit#master" –g
+npm install nei –g
 ```
 
->注意: nei 目前还是测试版本, 没有发布到 npm, 请先使用上述命令安装测试版本, 等稳定后再发到 npm
+>提示: 如果安装失败, 可以尝试命令 `npm install -g nei`
 
 ## 指令说明
 
