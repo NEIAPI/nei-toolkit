@@ -30,7 +30,7 @@
 npm install nei –g
 ```
 
->提示: 如果安装失败, 可以尝试命令 `npm install -g nei`
+>提示: 如果安装不成功, 可以尝试命令 `npm install -g nei`
 
 ## 指令说明
 
