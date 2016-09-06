@@ -1,7 +1,7 @@
 {
   "name": "nei",
   "description": "builder for nei platform",
-  "version": "0.5.0",
+  "version": "3.0.0",
   "license": "MIT",
   "keywords": [
     "nei",
@@ -34,12 +34,14 @@
     "should": "^4.3.0"
   },
   "dependencies": {
-    "jtr": "^0.2.4",
-    "swig": ">=1.4.2",
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.1",
+    "express": "^4.14.0",
+    "express-velocity": "^1.0.0",
+    "handlebars": "^4.0.5",
+    "http-proxy": "^1.14.0",
+    "node-fmpp": "0.0.6",
+    "path-to-regexp": "^1.5.3",
     "xcode": "^0.8.2"
-  },
-  "nei": {
-    "mock": "http://nei.hz.netease.com/api/parameter/getTestData?api&type=%s&id=%s",
-    "api": "http://nei.hz.netease.com/api/projectView/getByProjectId?pid=%s"
   }
 }

@@ -1,8 +1,0 @@
-{
-  "name": "{{projectName}}",
-  "version": "1.0.0",
-  "dependencies": {
-    "nej": "master",
-    "regularjs": "~0.3.0"
-  }
-}

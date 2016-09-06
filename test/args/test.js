@@ -63,12 +63,11 @@ describe('nei/args', function () {
         it('Args exec `build` with param -> case 4', function (done) {
             Object.assign(options, {
                 build: function(event) {
-                    assert.equal(true, event.args[0] === '11029');
-                    assert.equal(true, event.options.p === './project');
+                    assert.equal(true, event.options.k === 'xyz');
                 }
             });
             let args = new Args(options);
-            args.exec(['build', '11029', '-p', './project']);
+            args.exec(['build', '-k', 'xyz']);
 
             done();
         });
@@ -76,89 +75,33 @@ describe('nei/args', function () {
         it('Args exec `update` -> case 5', function (done) {
             Object.assign(options, {
                 update: function(event) {
-                    assert.equal(true, event.args[0] === '11029');
-                    assert.equal(true, event.options.p === './project');
+                    assert.equal(true, event.options.k === 'xyz');
                 }
             });
             let args = new Args(options);
-            args.exec(['update', '11029', '-p', './project']);
+            args.exec(['update', '-k', 'xyz']);
 
             done();
         });
 
-        it('Args exec `export` -> case 6', function (done) {
-            Object.assign(options, {
-                export: function(event) {
-                    assert.equal(true, event.args[0] === '11029');
-                    assert.equal(true, event.options.o === './project');
-                }
-            });
-            let args = new Args(options);
-            args.exec(['export', '11029', '-o', './project']);
-
-            done();
-        });
-
-        it('Args exec `mobile` -> case 7', function (done) {
-            Object.assign(options, {
-                mobile: function(event) {
-                    assert.equal(true, event.args[0] === '11029');
-                    assert.equal(true, event.options.o === './project');
-                }
-            });
-            let args = new Args(options);
-            args.exec(['mobile', '11029', '-o', './project']);
-
-            done();
-        });
-
-        it('Args `checkConfig(config)` -> case 8', function (done) {
-            Object.assign(options, {
-                exit: function (code) {
-                    assert.equal(true, code === 1);
-                }
-            });
-            let args = new Args(options);
-            args.checkConfig({
-                action: 'build',
-                template: 'mobile',
-                lang: 'oc',
-                templateDataPath: ''
-            });
-
-            done();
-        });
-
-        it('Args `checkConfig(config)` -> case 9', function (done) {
-            Object.assign(options, {
-                exit: function (code) {
-                    assert.equal(true, code === 1);
-                }
-            });
-            let args = new Args(options);
-            args.checkConfig({
-                action: 'build',
-                template: 'mobile',
-                lang: 'java',
-                templatePath: ''
-            });
-
-            done();
-        });
-
-        it('Args `format(key, data)` -> case 10', function (done) {
+        it('Args `format(key, data)` -> case 6', function (done) {
             let args = new Args(options);
             let config = args.format('build', {
-                p: './project'
+                k: 'xyz'
             });
-            assert.equal(true, config.project === './project');
-            assert.equal(true, config.template === 'webapp');
-            assert.equal(true, config.overwrite === false);
+            assert.equal(true, config.key === 'xyz');
+            assert.equal(true, config.overwrite === undefined);
 
+            // 设置默认值
+            config = args.format('build', {
+                k: 'xyz'
+            }, true);
+
+            assert.equal(true, config.overwrite === false);
             done();
         });
 
-        it('Args `parse(argv)` -> case 11', function (done) {
+        it('Args `parse(argv)` -> case 7', function (done) {
             let args = new Args(options);
             let argsArr = ['build', '-o', '/path/to/output/'];
             let result = args.parse(argsArr);
@@ -170,7 +113,7 @@ describe('nei/args', function () {
             done();
         });
 
-        it('Args `parse(argv)` -> case 12', function (done) {
+        it('Args `parse(argv)` -> case 8', function (done) {
             let args = new Args(options);
             let argsArr = ['build', 'file.js', '-o', '/path/to/output/'];
             let result = args.parse(argsArr);
@@ -182,7 +125,7 @@ describe('nei/args', function () {
             done();
         });
 
-        it('Args `params(key)` -> case 13', function (done) {
+        it('Args `params(key)` -> case 9', function (done) {
             let args = new Args(options);
             let result = args.params('key is not exist');
             assert.equal('', result);
@@ -190,7 +133,7 @@ describe('nei/args', function () {
             done();
         });
 
-        it('Args `params(key)` -> case 14', function (done) {
+        it('Args `params(key)` -> case 10', function (done) {
             let args = new Args(options);
             let result = args.params('-default').split('\n');
             assert.equal('-v, --version\t\t显示工具版本信息', result[0]);
