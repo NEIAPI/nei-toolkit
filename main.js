@@ -140,7 +140,12 @@ class Main {
      * 检测指定的目录中是否存在 nei 配置文件
      */
     checkConfig() {
+        let action = this.config.action;
         let outputDir = this.config.outputRoot;
+        if (!_fs.exist(outputDir)) {
+            // 目录不存在, update 命令不会走到这里
+            return;
+        }
         let files = fs.readdirSync(outputDir);
         let foundConfigFile = null;
         files.some((filename) => {
@@ -150,7 +155,6 @@ class Main {
             }
         });
         let errorMsg = null;
-        let action = this.config.action;
         if (foundConfigFile) {
             if (action === 'build') {
                 errorMsg = '项目 %s 已存在, 请使用 nei update 命令更新项目';
@@ -236,7 +240,7 @@ class Main {
                 callback(null);
             }
         } else {
-            _logger.warn(`项目目录(${dir})不存在`);
+            _logger.warn(`项目目录 ${dir} 不存在`);
         }
     }
 }
