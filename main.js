@@ -31,7 +31,7 @@ class Main {
             action: action
         };
         let cwd = process.cwd() + '/';
-        this.config.outputRoot = _path.normalize(_path.absolute(this.args.output + '/', cwd));
+        this.config.outputRoot = _path.normalize(_path.absolute((this.args.output || './') + '/', cwd));
         this.checkConfig();
         let loadedHandler = (ds) => {
             this.config.pid = ds.project.id;
