@@ -60,8 +60,8 @@ class Main {
         let projects = this.findProjects(args);
         let buildProject = (neiProjectDir, exitIfNotExist) => {
             let config = _util.file2json(`${neiProjectDir}/nei.json`, exitIfNotExist);
-            args = Object.assign({}, config, args);
-            this.build(arg, action, args);
+            let mergedArgs = Object.assign({}, config.args, args);
+            this.build(arg, action, mergedArgs);
         }
         if (args.key) {
             if (projects.length == 0) {
@@ -116,7 +116,7 @@ class Main {
             if (args.key) {
                 _logger.error(`在 ${dir} 中找到多个 key 为 ${args.key} 的项目, 请检查`);
             } else {
-                _logger.error(`在 ${dir} 中找到多个 nei 项目, 请检查`);
+                _logger.error(`在 ${dir} 中找到多个 nei 项目, 请使用 key 参数指定要启动的项目`);
             }
             return process.exit(1);
         } else {
