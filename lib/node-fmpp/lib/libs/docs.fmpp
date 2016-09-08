@@ -1,0 +1,125 @@
+<#--
+FMPP command-line tool coniguration file, used by the FMPP Ant build 
+"fmppgdoc" task (FMPP Generated parts of the DOCumentation).
+
+Note that normally you should use the fmpp Ant task in Ant builds, but this
+is an exceptional situation, because of the class loading issues caused by
+that we (re)build fmpp.jar, and also because documentation building should
+work without installing FMPP for Ant.
+-->
+
+sourceRoot: src/docs
+outputRoot: build/docs
+logFile: build/docs.fmpp.log
+
+turns: [turn(2, **/*_T2.*), turn(3, **/*_T3.*)]
+removePostfixes: [_T2, _T3]
+modes: [
+  # Information for FMPP developers:
+  ignore(**/README-BUILD.txt)
+  # Saved IcoMoon App selection - not used for anything:
+  ignore(style/fonts/selection.json)
+  
+  # LESS file go through LESS to CSS conversion before FMPP:
+  ignore(style/*.less)
+  
+  copy(style/fonts/**)
+]
+
+borders: [
+    border(
+        '<#include "/include/site.ftl"><#escape x as x?html>', '</#escape>'
+        **/*.html
+    )
+]
+
+data: {
+    basedir: eval('System.getProperties().getProperty("fmpp.home")')
+    license: text(../../LICENSE.txt)
+    html: htmlUtils()
+    stdSettings: eval('
+        Map res = new HashMap();
+        Iterator it = fmpp.setting.Settings.getStandardSettingNames();
+        while (it.hasNext()) {
+            res.put(it.next(), "");
+        }
+        return res;
+    ')
+    online: false
+
+    # Files described with hashes are auto-generated Table of Contents pages.
+    # Other entries are already existing HTML pages, that must use <@page> directive.
+    manualFiles:
+    [{title:"FMPP Manual", file:manual.html,
+            preToc: '<p><b>Updated for FMPP ${pp.version} 
+                    (requires <a href="http://freemarker.org">FreeMarker</a> 
+                    ${pp.freemarkerVersion} or later compatible)</b>
+                    <p><i>Note: The FMPP Manual only covers the framework that FMPP builds around FreeMarker.
+                    FreeMarker is a template engine that is independent of FMPP.
+                    For using FMPP you need to <@fma>know the FreeMarker template language</@fma>.</i></p>'
+            postToc: '<@reportBugs />'
+            keywords: 'manual, help, guide, tutorial, documentation'}
+        installing.html
+        [{title:Basics, file:basics.html}
+            qtour.html
+            overview.html
+        ]
+        [{title:"Core Details", file:details.html}
+            settings.html
+            configfile.html
+            pphash.html
+            dataloader.html
+        ]
+        [{title:Front-ends, file:frontends.html}
+            commandline.html
+            ant.html
+            writefrontend.html
+        ]
+        [{title:"Languages (formats) used", file:languages.html}
+            tdd.html
+            pathpattern.html
+            ftl.html
+            bsh.html
+            properties.html
+        ]
+        [{title:Miscellaneous, file:miscellaneous.html}
+            versions.html
+            reportbug.html
+            tips.html
+            license.html
+        ]
+    ]
+    
+    # Flat list of manual files in ToC order.
+    flattenedManualFiles: eval(r'
+        flatten(List src, List dst) {
+            ln = src.size();
+            for (int i = 0; i < ln; i++) {
+                o = src.get(i);
+                if (o instanceof List) {
+                    flatten(o, dst);
+                } else {
+                    if (o instanceof Map) {
+                        o2 = o.get("file");
+                        if (o2 == null) {
+                            throw new Exception("Key \"file\" is missing from hash " + o);
+                        }
+                        o = o2;
+                    }
+                    dst.add(o);
+                }
+            }
+        }
+
+        ffs = new ArrayList();
+        flatten(mfs, ffs);
+        return ffs;
+        ',
+        {mfs:get(manualFiles)}
+    )
+}
+
+freemarkerIncompatibleImprovements: 2.3.21
+skipUnchanged: static
+timeZone: GMT
+quiet

@@ -1,0 +1,17 @@
+{
+  "name": "fmpp",
+  "version": "0.0.0",
+  "description": "FreeMarker-based file PreProcessor",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freemarker/fmpp"
+  },
+  "homepage": "http://fmpp.sourceforge.net",
+  "dependencies": {
+    "gulp": "^3.8.9",
+    "gulp-autoprefixer": "^1.0.1",
+    "gulp-less": "^1.3.6",
+    "gulp-minify-css": "^0.3.11",
+    "gulp-rename": "^1.2.0"
+  }
+}

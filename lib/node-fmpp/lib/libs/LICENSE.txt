@@ -1,0 +1,70 @@
+Copyright 2014 Attila Szegedi, Daniel Dekany, Jonathan Revusky
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+==============================================================================
+END LICENSE
+
+
+SOFTWARE INCLUDED IN THE FULL FMPP DISTRIBUTION
+
+This section only applies to the full FMPP distribution, not to
+"fmpp.jar" (not to the Maven artifact, net.sourceforge.fmpp:fmpp).
+
+  This product includes software developed by the
+  Apache Software Foundation (http://www.apache.org/).
+
+The full FMPP distribution includes software developed by various parties,
+under various licenses. Below you find the list of these, with their location
+inside the distribution archive.
+
+  The contents of the "bin" directory is derived from Apache Ant, a software
+  developed by the Apache Software Foundation (http://www.apache.org/).
+  It's derived from Ant 1.5, which is under Apache Software License 1.1.
+  Read LICENSE_ANT.txt for more information.
+
+  "lib/resolver.jar" is a binary distribution of Apache xml-commons Resolver,
+  a software developed by the Apache Software Foundation.
+  Xml-commons Resolver is under Apache Software License 2.0.
+  Read LICENSE_RESOLVER.txt for more information.
+
+  "lib/bsh.jar" is a binary distribution of BeanShell.
+  BeanShell is under LGPL (GNU Lesser Public License) license.
+  Visit http://www.beanshell.org for more information.
+
+  "lib/imageinfo.jar" is a binary distribution of ImageInfo, a software
+  developed by Marco Schmidt, who has contributed it to the Public Domain.
+
+  "lib/freemarker.jar" is a binary distribution of FreeMarker.
+  FreeMarker is under Apache License 2.0 (since FreeMarker 2.3.21).
+  Read LICENSE_FREEMARKER.txt for more information.
+
+  "lib/test/junit.jar" is a binary distribution of JUnit 3.8.
+  JUnit 3.8 is under Common Public License Version 1.0.
+  Visit http://www.opensource.org/licenses/cpl1.0.txt  for more
+  information.
+
+  The "icomoon" font files (icomoon.eot, icomoon.svg, icomoon.ttf, and
+  icomoon.woff) under "src/docs/style/fonts/" and "docs/style/fonts/" are
+  generated from Entypo pictograms, version 2.0, by Daniel Bruce
+  (www.entypo.com). Each included pictogram is either licensed under
+  Creative Commons Attribution-ShareAlike 3.0 (CC BY-SA 3.0), or under
+  SIL Open Font License. For more information about these licenses visit
+  http://creativecommons.org/licenses/by-sa/3.0/legalcode" and
+  http://scripts.sil.org/OFL. Note that the fonts are only used as part of
+  the FMPP documentation and the FMPP Web site, thus aren't needed for the
+  operation of the FMPP application.
+
+"lib/fmpp.jar" doesn't contain parts that belong under a different license or
+to a different copyright owner than the main license and copyright owner of
+FMPP (since FMPP 0.9.15).
