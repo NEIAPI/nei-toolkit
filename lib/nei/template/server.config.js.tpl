@@ -14,9 +14,9 @@ module.exports = {
       //"ALL /api/*": "代理所有接口, 这里输入代理服务器地址",
       {{#each rules}}
       {{#if list}}
-      "{{method}} {{path}}": { name: '{{name}}', index: 0, list: {{{list}}} },
+      "{{method}} {{{path}}}": { name: '{{name}}', index: 0, list: {{{list}}} },
       {{else}}
-      "{{method}} {{path}}": { path: '{{mockFile}}', id: {{id}} },
+      "{{method}} {{{path}}}": { path: '{{mockFile}}', id: {{id}} },
       {{/if}}
       {{/each}}
     },

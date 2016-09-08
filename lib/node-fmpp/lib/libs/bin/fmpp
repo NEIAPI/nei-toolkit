@@ -1,0 +1,166 @@
+#! /bin/sh
+
+#   Copyright 2014 Attila Szegedi, Daniel Dekany, Jonathan Revusky
+#  
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#  
+#   http://www.apache.org/licenses/LICENSE-2.0
+#  
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+#
+#   ------------------------------------------------------------------------
+#
+#   This file is a modified version of the file that comes with Ant 1.5.
+#   The original version is copyrighted by The Apache Software Foundation.
+#   The original copyright notice follows:
+#
+#   Copyright (c) 2001-2003 The Apache Software Foundation.  All rights
+#   reserved.
+
+# OS specific support.  $var _must_ be set to either true or false.
+cygwin=false;
+darwin=false;
+case "`uname`" in
+  CYGWIN*) cygwin=true ;;
+  Darwin*) darwin=true ;;
+esac
+
+if [ -z "$FMPP_HOME" ] ; then
+  # try to find FMPP
+  if [ -d /opt/fmpp ] ; then 
+    FMPP_HOME=/opt/fmpp
+  fi
+
+  if [ -d "${HOME}/opt/fmpp" ] ; then 
+    FMPP_HOME="${HOME}/opt/fmpp"
+  fi
+
+  ## resolve links - $0 may be a link to FMPP's home
+  PRG="$0"
+  progname=`basename "$0"`
+  saveddir=`pwd`
+
+  # need this for relative symlinks
+  cd `dirname "$PRG"`
+  
+  while [ -h "$PRG" ] ; do
+    ls=`ls -ld "$PRG"`
+    link=`expr "$ls" : '.*-> \(.*\)$'`
+    if expr "$link" : '.*/.*' > /dev/null; then
+	PRG="$link"
+    else
+	PRG=`dirname "$PRG"`"/$link"
+    fi
+  done
+  
+  FMPP_HOME=`dirname "$PRG"`/..
+
+  cd "$saveddir"
+
+  # make it fully qualified
+  FMPP_HOME=`cd "$FMPP_HOME" && pwd`
+fi
+
+# For Cygwin, ensure paths are in UNIX format before anything is touched
+if $cygwin ; then
+  [ -n "$FMPP_HOME" ] &&
+    FMPP_HOME=`cygpath --unix "$FMPP_HOME"`
+  [ -n "$JAVA_HOME" ] &&
+    JAVA_HOME=`cygpath --unix "$JAVA_HOME"`
+  [ -n "$CLASSPATH" ] &&
+    CLASSPATH=`cygpath --path --unix "$CLASSPATH"`
+fi
+
+# set FMPP_LIB location
+if [ -f "${FMPP_HOME}/lib/fmpp.jar" ] ; then
+  FMPP_LIB="${FMPP_HOME}/lib"
+else
+  if [ -f "${ANT_HOME}/lib/fmpp.jar" ] ; then
+    FMPP_LIB="${ANT_HOME}/lib"
+  else
+    echo "Can't find lib/fmpp.jar. Please either:"
+    echo "  - set the FMPP_HOME correctly, so that FMPP_HOME/lib/fmpp.jar exists."
+    echo "    The current FMPP_HOME was: ${FMPP_HOME}"
+    echo "  - set the ANT_HOME correctly, and copy jar-s required for"
+    echo "    FMPP into the ANT_HOME/lib directory."
+    exit 1
+  fi
+fi
+
+if [ -z "$JAVACMD" ] ; then 
+  if [ -n "$JAVA_HOME"  ] ; then
+    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then 
+      # IBM's JDK on AIX uses strange locations for the executables
+      JAVACMD="$JAVA_HOME/jre/sh/java"
+    else
+      JAVACMD="$JAVA_HOME/bin/java"
+    fi
+  else
+    JAVACMD="$(which java)"
+    if [ -z "$JAVACMD" ] ; then
+      JAVACMD=java
+    fi
+  fi
+fi
+ 
+if [ ! -x "$JAVACMD" ] ; then
+  echo "Java executable not found! Tried: $JAVACMD"
+  echo "Install Java, or if it's already installed, ensure that either:"
+  echo "- a link to <JAVA_HOME>/bin/java is in the PATH,"
+  echo "- or that the JAVA_HOME environment variable is set."
+  exit 1
+fi
+
+if [ -n "$CLASSPATH" ] ; then
+  LOCALCLASSPATH="$CLASSPATH"
+fi
+
+# add in the dependency .jar files
+for i in "${FMPP_LIB}"/*.jar
+do
+  # if the directory is empty, then it will return the input string
+  # this is stupid, so case for it
+  if [ -f "$i" ] ; then
+    if [ -z "$LOCALCLASSPATH" ] ; then
+      LOCALCLASSPATH="$i"
+    else
+      LOCALCLASSPATH="$i":"$LOCALCLASSPATH"
+    fi
+  fi
+done
+
+if [ -n "$JAVA_HOME" ] ; then
+  if [ -f "$JAVA_HOME/lib/tools.jar" ] ; then
+    LOCALCLASSPATH="$LOCALCLASSPATH:$JAVA_HOME/lib/tools.jar"
+  fi
+
+  if [ -f "$JAVA_HOME/lib/classes.zip" ] ; then
+    LOCALCLASSPATH="$LOCALCLASSPATH:$JAVA_HOME/lib/classes.zip"
+  fi
+fi
+
+# For Cygwin, switch paths to Windows format before running java
+if $cygwin; then
+  FMPP_HOME=`cygpath --path --windows "$FMPP_HOME"`
+  JAVA_HOME=`cygpath --path --windows "$JAVA_HOME"`
+  CLASSPATH=`cygpath --path --windows "$CLASSPATH"`
+  LOCALCLASSPATH=`cygpath --path --windows "$LOCALCLASSPATH"`
+  CYGHOME=`cygpath --path --windows "$HOME"`
+fi
+
+if type tput > /dev/null 2>&1; then
+  export FMPP_CONSOLE_COLS="`tput cols`"
+fi
+
+if [ -n "$CYGHOME" ]; then
+  "$JAVACMD" -classpath "$LOCALCLASSPATH" -Dfmpp.home="${FMPP_HOME}" -Dcygwin.user.home="$CYGHOME" $FMPP_OPTS fmpp.tools.CommandLine $FMPP_ARGS "$@"
+else
+  "$JAVACMD" -classpath "$LOCALCLASSPATH" -Dfmpp.home="${FMPP_HOME}" $FMPP_OPTS fmpp.tools.CommandLine $FMPP_ARGS "$@"
+fi
+

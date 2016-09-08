@@ -31,7 +31,7 @@ class Main {
             action: action
         };
         let cwd = process.cwd() + '/';
-        this.config.outputRoot = _path.normalize(_path.absolute(this.args.output + '/', cwd));
+        this.config.outputRoot = _path.normalize(_path.absolute((this.args.output || './') + '/', cwd));
         this.checkConfig();
         let loadedHandler = (ds) => {
             this.config.pid = ds.project.id;
@@ -57,18 +57,34 @@ class Main {
      */
     update(arg, action, args) {
         let dir = path.join(process.cwd(), args.output || './');
-        let tryReadConfig = (configFilePath) => {
-            let config = _util.file2json(configFilePath);
-            args.key = config.args.key;
-            args.specType = config.args.specType;
-            this.build(arg, action, args);
+        let projects = this.findProjects(args);
+        let buildProject = (neiProjectDir, exitIfNotExist) => {
+            let config = _util.file2json(`${neiProjectDir}/nei.json`, exitIfNotExist);
+            let mergedArgs = Object.assign({}, config.args, args);
+            this.build(arg, action, mergedArgs);
         }
-        this.findFile(dir, 'nei.json', (result) => {
-            if (result === null) {
-                return _logger.warn(`没找到构建工具的配置文件, 请使用 nei build 命令构建项目`);
+        if (args.key) {
+            if (projects.length == 0) {
+                _logger.error(`在 ${dir} 中找不到 key 为 ${args.key} 的项目, 请检查`);
+                return process.exit(1);
+            } else if (projects.length > 1) {
+                _logger.error(`存在多个 key 为 ${args.key} 的项目, 请检查`);
+                return process.exit(1);
+            } else {
+                buildProject(projects[0], true);
             }
-            tryReadConfig(result);
-        });
+        } else {
+            if (projects.length > 1) {
+                if (!args.all) {
+                    _logger.error(`存在多个 nei 项目, 请通过 key 参数指定需要更新的项目, 或者使用 --all 参数更新所有项目`);
+                    return process.exit(1);
+                } else {
+                    projects.forEach(buildProject);
+                }
+            } else {
+                buildProject(projects[0], true);
+            }
+        }
     }
 
     /**
@@ -87,19 +103,25 @@ class Main {
                 _logger.warn(`文件不存在: ${configFilePath}`);
             }
         }
-        if (args.configFile) {
-            let argsFilePath = _path.absolute(
-                args.configFile, process.cwd() + '/'
-            );
-            return tryStartServer(argsFilePath);
-        }
-        let dir = path.join(process.cwd(), args.output || '');
-        this.findFile(dir, 'server.config.js', (result) => {
-            if (result === null) {
-                return _logger.warn(`没找到服务配置文件`);
+        let dir = path.join(process.cwd(), args.output || './');
+        let projects = this.findProjects(args);
+        if (projects.length === 0) {
+            if (args.key) {
+                _logger.error(`在 ${dir} 中找不到 key 为 ${args.key} 的项目, 请检查`);
+            } else {
+                _logger.error(`在 ${dir} 中找不到 nei 项目, 请检查`);
             }
-            tryStartServer(result);
-        });
+            return process.exit(1);
+        } else if (projects.length > 1) {
+            if (args.key) {
+                _logger.error(`在 ${dir} 中找到多个 key 为 ${args.key} 的项目, 请检查`);
+            } else {
+                _logger.error(`在 ${dir} 中找到多个 nei 项目, 请使用 key 参数指定要启动的项目`);
+            }
+            return process.exit(1);
+        } else {
+            tryStartServer(`${projects[0]}/server.config.js`);
+        }
     }
 
     /**
@@ -213,35 +235,28 @@ class Main {
     }
 
     /**
-     * 在指定目录下查找指定文件名的文件
-     * @param {string} dir - 指定目录
-     * @param {string} fileName - 指定文件名
-     * @param {function} callback - 找到文件后的回调
+     * 查找指定输出目录下的 nei 项目
      */
-    findFile(dir, fileName, callback) {
-        if (_fs.exist(dir)) {
-            let list = fs.readdirSync(dir);
-            let found = false;
-            for (let i = 0, l = list.length; i < l; i++) {
-                let p = `${dir}/${list[i]}`;
-                if (_fs.isdir(p)) {
-                    if (list[i].startsWith('nei')) {
-                        found = true;
-                        callback(`${p}/${fileName}`);
-                        break;
-                    }
-                } else if (list[i] === fileName) {
-                    found = true;
-                    callback(p);
-                    break;
-                }
-            }
-            if (!found) {
-                callback(null);
-            }
-        } else {
-            _logger.warn(`项目目录 ${dir} 不存在`);
+    findProjects(args) {
+        let dir = path.join(process.cwd(), args.output || './');
+        if (!_fs.exist(dir)) {
+            // 目录不存在, 退出程序
+            _logger.error(`项目目录 ${dir} 不存在, 请检查`);
+            return process.exit(1);
         }
+        let files = fs.readdirSync(dir);
+        let projects = [];
+        files.forEach((file) => {
+            if (args.key) {
+                if (file.startsWith('nei') && file.endsWith(args.key)) {
+                    projects.push(`${dir}/${file}`);
+                }
+            } else if (file.startsWith('nei') && file.length >= 42) {
+                // 疑是 nei 项目, 42 是 nei 配置文件的长度, 考虑到项目有可能会超过 5 位, 这里使用 >=
+                projects.push(`${dir}/${file}`);
+            }
+        });
+        return projects;
     }
 }
 
