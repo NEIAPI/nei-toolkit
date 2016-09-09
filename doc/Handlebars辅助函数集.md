@@ -115,3 +115,11 @@ var data = {
 var template = `{{upperFirst name}}`;
 console.log(Handlebars.compile(template)(data)); // 输出: Id
 ```
+
+### iosProperty
+
+帮助ios工程自动生成property声明. 
+
+```
+{{iosProperty}}    --> 输出:
+```
