@@ -123,7 +123,7 @@ var data = {
     "name": "a-b-c"
 }
 var template = `{{upperFirst name}}`;
-console.log(Handlebars.compile(template)(data)); //输出aBC
+console.log(Handlebars.compile(template)(data)); //输出ABC
 ```
 
 ### hyphenToUnderline
