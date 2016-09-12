@@ -116,6 +116,26 @@ var template = `{{upperFirst name}}`;
 console.log(Handlebars.compile(template)(data)); // 输出: Id
 ```
 
+### hyphenToCamel
+中划线'-'后的字符转大写
+```js
+var data = {
+    "name": "a-b-c"
+}
+var template = `{{upperFirst name}}`;
+console.log(Handlebars.compile(template)(data)); //输出aBC
+```
+
+### hyphenToUnderline
+中划线'-'转下划线'_'
+```js
+var data = {
+    "name": "a-b-c"
+}
+var template = `{{upperFirst name}}`;
+console.log(Handlebars.compile(template)(data)); //输出a_b_c
+```
+
 ### iosProperty
 
 帮助ios工程自动生成property声明. 
