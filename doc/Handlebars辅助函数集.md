@@ -26,7 +26,6 @@ Handlebars 辅助函数集的 JavaScript 实现文件在[这里](../lib/nei/hand
 {{#ifCond var1 '==' var2}}
 ```
 
-
 ### extname
 以点号分隔字符串后的最后一项, 相当于根据路径取文件的扩展名
 
@@ -40,31 +39,63 @@ console.log(Handlebars.compile(template)(data)); // 输出: 'c'
 
 ```
 
-### typeName
-获取类型名称, 如果它是数组, 则使用 `[]` 嵌套, 比如二维数组: `String[][]`。
-
-也可以使用 `List` 嵌套, 比如二维数组: List<List<String>>
-
+### hyphenToCamel
+中划线'-'后的字符转大写
 ```js
 var data = {
-    type: 'String',
-    arrDim: 2
+    "name": "a-b-c"
 }
+var template = `{{hyphenToCamel name}}`;
+console.log(Handlebars.compile(template)(data)); //输出ABC
+```
 
-var template = `{{typeName this}}`;
-console.log(Handlebars.compile(template)(data)); // 输出: String[][]
+### hyphenToUnderline
+中划线'-'转下划线'_'
+```js
+var data = {
+    "name": "a-b-c"
+}
+var template = `{{hyphenToUnderline name}}`;
+console.log(Handlebars.compile(template)(data)); //输出a_b_c
+```
 
-template = `{{typeName this useList=true}}`;
-console.log(Handlebars.compile(template)(data)); // 输出: List<List<String>>
+### iosProperty
 
-// 也可以使用下面这种方式传入参数:
+帮助ios工程自动生成property声明, 需要在规范中将文件选为`数据模型列表填充`, 该函数读取该文件的所有property,依据属性的类型生成声明.
 
-var template = `{{typeName type=this.type arrDim=this.arrDim}}`;
-console.log(Handlebars.compile(template)(data)); // 输出: String[][]
-
-var template = `{{typeName type=this.type arrDim=this.arrDim useList=true}}`;
-console.log(Handlebars.compile(template)(data)); // 输出: List<List<String>>
-
+```
+var data = {
+    "datatype": {
+        "fields":[{
+                   "name": "foo",
+                   "type": "String",
+                   "arrDim": 0,
+                   "format": 3,
+                   "itemIsArray": 0,
+                   "defaultValue": "fooDesc",
+                   "genExp": "",
+                   "description": ""
+                  },
+                 {
+                   "name": "bar",
+                   "type": "customType",
+                   "arrDim": 0,
+                   "format": 1,
+                   "itemIsArray": 0,
+                   "defaultValue": "",
+                   "genExp": "",
+                   "description": "customDesc"
+        }] 
+    }
+}
+{{iosProperty}}    --> 输出:   /**
+                               *  fooDesc
+                               */
+                               @property (nonatomic, copy) String *foo;
+                              /**
+                               *  customDesc
+                               */
+                               @property (nonatomic, strong) customType *bar;
 ```
 
 ### lowerFirst
@@ -105,6 +136,33 @@ var template = `{{prettifyComment this}}`;
 console.log(Handlebars.compile(template)(data)); // 输出: ' * a\n * b\n * c'
 ```
 
+### typeName
+获取类型名称, 如果它是数组, 则使用 `[]` 嵌套, 比如二维数组: `String[][]`。
+
+也可以使用 `List` 嵌套, 比如二维数组: List<List<String>>
+
+```js
+var data = {
+    type: 'String',
+    arrDim: 2
+}
+
+var template = `{{typeName this}}`;
+console.log(Handlebars.compile(template)(data)); // 输出: String[][]
+
+template = `{{typeName this useList=true}}`;
+console.log(Handlebars.compile(template)(data)); // 输出: List<List<String>>
+
+// 也可以使用下面这种方式传入参数:
+
+var template = `{{typeName type=this.type arrDim=this.arrDim}}`;
+console.log(Handlebars.compile(template)(data)); // 输出: String[][]
+
+var template = `{{typeName type=this.type arrDim=this.arrDim useList=true}}`;
+console.log(Handlebars.compile(template)(data)); // 输出: List<List<String>>
+
+```
+
 ### upperFirst
 将首字母大写
 
@@ -114,32 +172,4 @@ var data = {
 }
 var template = `{{upperFirst name}}`;
 console.log(Handlebars.compile(template)(data)); // 输出: Id
-```
-
-### hyphenToCamel
-中划线'-'后的字符转大写
-```js
-var data = {
-    "name": "a-b-c"
-}
-var template = `{{upperFirst name}}`;
-console.log(Handlebars.compile(template)(data)); //输出ABC
-```
-
-### hyphenToUnderline
-中划线'-'转下划线'_'
-```js
-var data = {
-    "name": "a-b-c"
-}
-var template = `{{upperFirst name}}`;
-console.log(Handlebars.compile(template)(data)); //输出a_b_c
-```
-
-### iosProperty
-
-帮助ios工程自动生成property声明. 
-
-```
-{{iosProperty}}    --> 输出:
 ```
