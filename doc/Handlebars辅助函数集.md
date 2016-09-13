@@ -72,9 +72,9 @@ var data = {
                    "arrDim": 0,
                    "format": 3,
                    "itemIsArray": 0,
-                   "defaultValue": "fooDesc",
+                   "defaultValue": "",
                    "genExp": "",
-                   "description": ""
+                   "description": "fooDesc"
                   },
                  {
                    "name": "bar",
