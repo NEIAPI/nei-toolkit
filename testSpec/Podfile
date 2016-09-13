@@ -1,6 +1,0 @@
-platform :ios, '7.0'
-pod 'CocoaLumberjack',  '2.0.1'
-pod 'HTUI', :git => 'https://git.hz.netease.com/git/open/HTIOSUI.git', :branch => 'master'
-pod 'HTCommonUtility', :git => 'https://git.hz.netease.com/git/open/HTCommonUtils.git', :branch => 'master'
-pod 'HTNetworking', :git => 'https://g.hz.netease.com/HeartTouchOpen/HTNetworking.git', :branch => 'master'
-pod 'HTR3', :git => 'https://git.hz.netease.com/git/mobile/HTR3.git'
