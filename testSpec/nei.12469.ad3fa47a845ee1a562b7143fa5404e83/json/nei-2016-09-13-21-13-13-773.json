@@ -1,0 +1,1811 @@
+{
+	"project": {
+		"id": 12469,
+		"type": 0,
+		"logo": "",
+		"name": "todo",
+		"namePinyin": "todo",
+		"description": "",
+		"qbsId": 0,
+		"progroupId": 11626,
+		"creatorId": 11424,
+		"createTime": 1473218558409,
+		"toolKey": "ad3fa47a845ee1a562b7143fa5404e83",
+		"toolSpecWeb": 10012,
+		"toolSpecAos": 0,
+		"toolSpecIos": 10074,
+		"toolSpecTest": 0,
+		"creator": {
+			"id": 11424,
+			"username": "hzzhenglu@corp.netease.com",
+			"realname": "郑璐",
+			"realnamePinyin": "zheng'lu",
+			"email": "hzzhenglu@corp.netease.com",
+			"createTime": 1469162879000
+		},
+		"members": {
+			"observers": [],
+			"developers": [],
+			"testers": [],
+			"admins": [],
+			"owner": [
+				{
+					"progroupId": 11626,
+					"role": 10,
+					"id": 11424,
+					"username": "hzzhenglu@corp.netease.com",
+					"realname": "郑璐",
+					"realnamePinyin": "zheng'lu",
+					"email": "hzzhenglu@corp.netease.com",
+					"createTime": 1469162879000
+				}
+			]
+		}
+	},
+	"templates": [
+		{
+			"id": 11910,
+			"tag": "",
+			"tagPinyin": "",
+			"path": "/page/test",
+			"name": "vime",
+			"namePinyin": "vime",
+			"status": "未开始",
+			"statusPinyin": "wei'kai'shi",
+			"description": "ddd",
+			"respoId": 11424,
+			"groupId": 12476,
+			"projectId": 12469,
+			"progroupId": 11626,
+			"creatorId": 11424,
+			"createTime": 1473233986088,
+			"params": [
+				{
+					"id": 143085,
+					"type": 15530,
+					"name": "sfdf",
+					"isArray": 0,
+					"valExpression": "",
+					"genExpression": "",
+					"description": "",
+					"defaultValue": "",
+					"parentId": 11910,
+					"parentType": 1,
+					"progroupId": 11626,
+					"createTime": 1473233986089,
+					"datatypeId": 0,
+					"originalType": 0,
+					"datatypeName": "",
+					"typeName": "hehe"
+				},
+				{
+					"id": 143086,
+					"type": 10001,
+					"name": "sdfdsfsadf",
+					"isArray": 0,
+					"valExpression": "",
+					"genExpression": "",
+					"description": "",
+					"defaultValue": "",
+					"parentId": 11910,
+					"parentType": 1,
+					"progroupId": 11626,
+					"createTime": 1473233986089,
+					"datatypeId": 0,
+					"originalType": 0,
+					"datatypeName": "",
+					"typeName": "String"
+				}
+			],
+			"respo": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
+			},
+			"creator": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
+			},
+			"group": {
+				"id": 12476,
+				"name": "默认分组",
+				"namePinyin": "mo'ren'fen'zu",
+				"description": "",
+				"respoId": 11424,
+				"projectId": 12469,
+				"creatorId": 11424,
+				"createTime": 1473218558410
+			}
+		}
+	],
+	"datatypes": [
+		{
+			"id": 9999,
+			"tag": "系统类型",
+			"tagPinyin": "xi'tong'lei'xing",
+			"type": 1,
+			"name": "File",
+			"format": 6,
+			"description": "文件类型",
+			"groupId": 9999,
+			"projectId": 10000,
+			"progroupId": 10000,
+			"creatorId": 10000,
+			"createTime": 1473163531384,
+			"params": [],
+			"creator": {
+				"id": 10000,
+				"username": "admin",
+				"realname": "系统管理员",
+				"realnamePinyin": "xi'tong'guan'li'yuan",
+				"email": "nei@corp.netease.com",
+				"createTime": 1473163531340
+			},
+			"group": {
+				"id": 9999,
+				"name": "系统业务分组",
+				"namePinyin": "xi'tong'ye'wu'fen'zu",
+				"description": "系统内置业务分组",
+				"respoId": 10000,
+				"projectId": 10000,
+				"creatorId": 10000,
+				"createTime": 1473163531376
+			}
+		},
+		{
+			"id": 10000,
+			"tag": "系统类型",
+			"tagPinyin": "xi'tong'lei'xing",
+			"type": 1,
+			"name": "Variable",
+			"format": 0,
+			"description": "可变类型",
+			"groupId": 9999,
+			"projectId": 10000,
+			"progroupId": 10000,
+			"creatorId": 10000,
+			"createTime": 1473163531384,
+			"params": [],
+			"creator": {
+				"id": 10000,
+				"username": "admin",
+				"realname": "系统管理员",
+				"realnamePinyin": "xi'tong'guan'li'yuan",
+				"email": "nei@corp.netease.com",
+				"createTime": 1473163531340
+			},
+			"group": {
+				"id": 9999,
+				"name": "系统业务分组",
+				"namePinyin": "xi'tong'ye'wu'fen'zu",
+				"description": "系统内置业务分组",
+				"respoId": 10000,
+				"projectId": 10000,
+				"creatorId": 10000,
+				"createTime": 1473163531376
+			}
+		},
+		{
+			"id": 10001,
+			"tag": "系统类型",
+			"tagPinyin": "xi'tong'lei'xing",
+			"type": 1,
+			"name": "String",
+			"format": 3,
+			"description": "字符串",
+			"groupId": 9999,
+			"projectId": 10000,
+			"progroupId": 10000,
+			"creatorId": 10000,
+			"createTime": 1473163531384,
+			"params": [],
+			"creator": {
+				"id": 10000,
+				"username": "admin",
+				"realname": "系统管理员",
+				"realnamePinyin": "xi'tong'guan'li'yuan",
+				"email": "nei@corp.netease.com",
+				"createTime": 1473163531340
+			},
+			"group": {
+				"id": 9999,
+				"name": "系统业务分组",
+				"namePinyin": "xi'tong'ye'wu'fen'zu",
+				"description": "系统内置业务分组",
+				"respoId": 10000,
+				"projectId": 10000,
+				"creatorId": 10000,
+				"createTime": 1473163531376
+			}
+		},
+		{
+			"id": 10002,
+			"tag": "系统类型",
+			"tagPinyin": "xi'tong'lei'xing",
+			"type": 1,
+			"name": "Number",
+			"format": 4,
+			"description": "数值",
+			"groupId": 9999,
+			"projectId": 10000,
+			"progroupId": 10000,
+			"creatorId": 10000,
+			"createTime": 1473163531384,
+			"params": [],
+			"creator": {
+				"id": 10000,
+				"username": "admin",
+				"realname": "系统管理员",
+				"realnamePinyin": "xi'tong'guan'li'yuan",
+				"email": "nei@corp.netease.com",
+				"createTime": 1473163531340
+			},
+			"group": {
+				"id": 9999,
+				"name": "系统业务分组",
+				"namePinyin": "xi'tong'ye'wu'fen'zu",
+				"description": "系统内置业务分组",
+				"respoId": 10000,
+				"projectId": 10000,
+				"creatorId": 10000,
+				"createTime": 1473163531376
+			}
+		},
+		{
+			"id": 10003,
+			"tag": "系统类型",
+			"tagPinyin": "xi'tong'lei'xing",
+			"type": 1,
+			"name": "Boolean",
+			"format": 5,
+			"description": "布尔",
+			"groupId": 9999,
+			"projectId": 10000,
+			"progroupId": 10000,
+			"creatorId": 10000,
+			"createTime": 1473163531384,
+			"params": [],
+			"creator": {
+				"id": 10000,
+				"username": "admin",
+				"realname": "系统管理员",
+				"realnamePinyin": "xi'tong'guan'li'yuan",
+				"email": "nei@corp.netease.com",
+				"createTime": 1473163531340
+			},
+			"group": {
+				"id": 9999,
+				"name": "系统业务分组",
+				"namePinyin": "xi'tong'ye'wu'fen'zu",
+				"description": "系统内置业务分组",
+				"respoId": 10000,
+				"projectId": 10000,
+				"creatorId": 10000,
+				"createTime": 1473163531376
+			}
+		},
+		{
+			"id": 15530,
+			"tag": "",
+			"tagPinyin": "",
+			"type": 0,
+			"name": "hehe",
+			"format": 0,
+			"description": "test",
+			"groupId": 12476,
+			"projectId": 12469,
+			"progroupId": 11626,
+			"creatorId": 11424,
+			"createTime": 1473232320956,
+			"params": [
+				{
+					"id": 143053,
+					"type": 10001,
+					"name": "ts",
+					"isArray": 0,
+					"valExpression": "",
+					"genExpression": "",
+					"description": "",
+					"defaultValue": "dkljl",
+					"parentId": 15530,
+					"parentType": 4,
+					"progroupId": 11626,
+					"createTime": 1473232320957,
+					"datatypeId": 0,
+					"originalType": 0,
+					"datatypeName": "",
+					"typeName": "String"
+				},
+				{
+					"id": 143355,
+					"type": 15559,
+					"name": "ddfdsfasdf",
+					"isArray": 0,
+					"valExpression": "",
+					"genExpression": "",
+					"description": "",
+					"defaultValue": "",
+					"parentId": 15530,
+					"parentType": 4,
+					"progroupId": 11626,
+					"createTime": 1473335125856,
+					"datatypeId": 0,
+					"originalType": 0,
+					"datatypeName": "",
+					"typeName": "var"
+				}
+			],
+			"creator": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
+			},
+			"group": {
+				"id": 12476,
+				"name": "默认分组",
+				"namePinyin": "mo'ren'fen'zu",
+				"description": "",
+				"respoId": 11424,
+				"projectId": 12469,
+				"creatorId": 11424,
+				"createTime": 1473218558410
+			}
+		},
+		{
+			"id": 15531,
+			"tag": "",
+			"tagPinyin": "",
+			"type": 0,
+			"name": "enummm",
+			"format": 1,
+			"description": "",
+			"groupId": 12476,
+			"projectId": 12469,
+			"progroupId": 11626,
+			"creatorId": 11424,
+			"createTime": 1473235801676,
+			"params": [
+				{
+					"id": 143107,
+					"type": 10001,
+					"name": "ss",
+					"isArray": 0,
+					"valExpression": "",
+					"genExpression": "",
+					"description": "",
+					"defaultValue": "werst",
+					"parentId": 15531,
+					"parentType": 4,
+					"progroupId": 11626,
+					"createTime": 1473235801684,
+					"datatypeId": 0,
+					"originalType": 0,
+					"datatypeName": "",
+					"typeName": "String"
+				},
+				{
+					"id": 143108,
+					"type": 10001,
+					"name": "",
+					"isArray": 0,
+					"valExpression": "",
+					"genExpression": "",
+					"description": "",
+					"defaultValue": "ddd",
+					"parentId": 15531,
+					"parentType": 4,
+					"progroupId": 11626,
+					"createTime": 1473235801684,
+					"datatypeId": 0,
+					"originalType": 0,
+					"datatypeName": "",
+					"typeName": "String"
+				}
+			],
+			"creator": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
+			},
+			"group": {
+				"id": 12476,
+				"name": "默认分组",
+				"namePinyin": "mo'ren'fen'zu",
+				"description": "",
+				"respoId": 11424,
+				"projectId": 12469,
+				"creatorId": 11424,
+				"createTime": 1473218558410
+			}
+		},
+		{
+			"id": 15559,
+			"tag": "",
+			"tagPinyin": "",
+			"type": 0,
+			"name": "var",
+			"format": 0,
+			"description": "",
+			"groupId": 12476,
+			"projectId": 12469,
+			"progroupId": 11626,
+			"creatorId": 11424,
+			"createTime": 1473335108668,
+			"params": [
+				{
+					"id": 143352,
+					"type": 10001,
+					"name": "dfasdf",
+					"isArray": 0,
+					"valExpression": "",
+					"genExpression": "",
+					"description": "",
+					"defaultValue": "",
+					"parentId": 15559,
+					"parentType": 4,
+					"progroupId": 11626,
+					"createTime": 1473335108669,
+					"datatypeId": 0,
+					"originalType": 0,
+					"datatypeName": "",
+					"typeName": "String"
+				},
+				{
+					"id": 143353,
+					"type": 10001,
+					"name": "dsfadf",
+					"isArray": 0,
+					"valExpression": "",
+					"genExpression": "",
+					"description": "",
+					"defaultValue": "",
+					"parentId": 15559,
+					"parentType": 4,
+					"progroupId": 11626,
+					"createTime": 1473335108669,
+					"datatypeId": 0,
+					"originalType": 0,
+					"datatypeName": "",
+					"typeName": "String"
+				},
+				{
+					"id": 143354,
+					"type": 10001,
+					"name": "dsfasfdsf",
+					"isArray": 0,
+					"valExpression": "",
+					"genExpression": "",
+					"description": "",
+					"defaultValue": "",
+					"parentId": 15559,
+					"parentType": 4,
+					"progroupId": 11626,
+					"createTime": 1473335108669,
+					"datatypeId": 0,
+					"originalType": 0,
+					"datatypeName": "",
+					"typeName": "String"
+				}
+			],
+			"creator": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
+			},
+			"group": {
+				"id": 12476,
+				"name": "默认分组",
+				"namePinyin": "mo'ren'fen'zu",
+				"description": "",
+				"respoId": 11424,
+				"projectId": 12469,
+				"creatorId": 11424,
+				"createTime": 1473218558410
+			}
+		}
+	],
+	"pages": [
+		{
+			"id": 12150,
+			"tag": "",
+			"tagPinyin": "",
+			"type": 0,
+			"path": "/usr/page/id",
+			"name": "ddd",
+			"namePinyin": "ddd",
+			"description": "",
+			"className": "",
+			"respoId": 11424,
+			"groupId": 12476,
+			"projectId": 12469,
+			"progroupId": 11626,
+			"creatorId": 11424,
+			"createTime": 1473234028173,
+			"templates": [
+				{
+					"id": 11910,
+					"name": "vime",
+					"path": "/page/test",
+					"tag": "",
+					"tagPinyin": "",
+					"description": "ddd",
+					"createTime": 1473233986088,
+					"projectId": 12469,
+					"progroupId": 11626,
+					"creatorId": 11424,
+					"namePinyin": "vime",
+					"respoId": 11424,
+					"groupId": 12476,
+					"status": "未开始",
+					"creator": {
+						"id": 11424,
+						"username": "hzzhenglu@corp.netease.com",
+						"realname": "郑璐",
+						"realnamePinyin": "zheng'lu",
+						"email": "hzzhenglu@corp.netease.com",
+						"createTime": 1469162879000
+					},
+					"respo": {
+						"id": 11424,
+						"username": "hzzhenglu@corp.netease.com",
+						"realname": "郑璐",
+						"realnamePinyin": "zheng'lu",
+						"email": "hzzhenglu@corp.netease.com",
+						"createTime": 1469162879000
+					},
+					"group": {
+						"id": 12476,
+						"name": "默认分组",
+						"namePinyin": "mo'ren'fen'zu",
+						"description": "",
+						"respoId": 11424,
+						"projectId": 12469,
+						"creatorId": 11424,
+						"createTime": 1473218558410
+					}
+				}
+			],
+			"interfaces": [],
+			"params": [
+				{
+					"id": 143087,
+					"type": 15530,
+					"name": "dfasdf",
+					"isArray": 0,
+					"valExpression": "",
+					"genExpression": "",
+					"description": "",
+					"defaultValue": "",
+					"parentId": 12150,
+					"parentType": 0,
+					"progroupId": 11626,
+					"createTime": 1473234028174,
+					"datatypeId": 0,
+					"originalType": 0,
+					"datatypeName": "",
+					"typeName": "hehe"
+				}
+			],
+			"respo": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
+			},
+			"creator": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
+			},
+			"group": {
+				"id": 12476,
+				"name": "默认分组",
+				"namePinyin": "mo'ren'fen'zu",
+				"description": "",
+				"respoId": 11424,
+				"projectId": 12469,
+				"creatorId": 11424,
+				"createTime": 1473218558410
+			}
+		}
+	],
+	"interfaces": [
+		{
+			"id": 20165,
+			"tag": "",
+			"tagPinyin": "",
+			"name": "test",
+			"namePinyin": "test",
+			"status": "未开始",
+			"statusPinyin": "wei'kai'shi",
+			"path": "/api/test",
+			"type": 0,
+			"method": "GET",
+			"isRest": 0,
+			"className": "test",
+			"description": "",
+			"paramsOrder": "",
+			"respoId": 11424,
+			"groupId": 12476,
+			"projectId": 12469,
+			"progroupId": 11626,
+			"creatorId": 11424,
+			"createTime": 1473234852955,
+			"reqFormat": 0,
+			"resFormat": 0,
+			"respo": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
+			},
+			"creator": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
+			},
+			"group": {
+				"id": 12476,
+				"name": "默认分组",
+				"namePinyin": "mo'ren'fen'zu",
+				"description": "",
+				"respoId": 11424,
+				"projectId": 12469,
+				"creatorId": 11424,
+				"createTime": 1473218558410
+			},
+			"params": {
+				"inputs": [
+					{
+						"id": 143097,
+						"type": 15530,
+						"name": "dddd",
+						"isArray": 0,
+						"valExpression": "",
+						"genExpression": "",
+						"description": "",
+						"defaultValue": "",
+						"parentId": 20165,
+						"parentType": 2,
+						"progroupId": 11626,
+						"createTime": 1473234888208,
+						"datatypeId": 0,
+						"originalType": 0,
+						"datatypeName": "",
+						"typeName": "hehe"
+					},
+					{
+						"id": 143053,
+						"type": 10001,
+						"name": "ts",
+						"isArray": 0,
+						"valExpression": "",
+						"genExpression": "",
+						"description": "",
+						"defaultValue": "dkljl",
+						"parentId": 20165,
+						"parentType": 2,
+						"progroupId": 11626,
+						"createTime": 1473234873076,
+						"datatypeId": 15530,
+						"originalType": 0,
+						"datatypeName": "hehe",
+						"typeName": "String",
+						"originalDatatypeId": 15530
+					},
+					{
+						"id": 143355,
+						"type": 15559,
+						"name": "ddfdsfasdf",
+						"isArray": 0,
+						"valExpression": "",
+						"genExpression": "",
+						"description": "",
+						"defaultValue": "",
+						"parentId": 20165,
+						"parentType": 2,
+						"progroupId": 11626,
+						"createTime": 1473234873076,
+						"datatypeId": 15530,
+						"originalType": 0,
+						"datatypeName": "hehe",
+						"typeName": "var",
+						"originalDatatypeId": 15530
+					}
+				],
+				"outputs": [],
+				"reqHeaders": [],
+				"resHeaders": []
+			},
+			"testcases": []
+		}
+	],
+	"constraints": [],
+	"groups": [
+		{
+			"id": 12476,
+			"type": 1,
+			"name": "默认分组",
+			"namePinyin": "mo'ren'fen'zu",
+			"description": "",
+			"respoId": 11424,
+			"projectId": 12469,
+			"progroupId": 11626,
+			"creatorId": 11424,
+			"createTime": 1473218558410,
+			"respo": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
+			},
+			"creator": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
+			}
+		}
+	],
+	"cliargs": [
+		{
+			"id": 10004,
+			"type": 0,
+			"key": "abstractModel",
+			"value": "baseModel",
+			"projectId": 12469,
+			"progroupId": 11626,
+			"creatorId": 11424,
+			"createTime": 1473337720665,
+			"creator": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
+			}
+		}
+	],
+	"specs": [
+		{
+			"docs": [
+				{
+					"id": 11953,
+					"specId": 10074,
+					"parent": 0,
+					"type": 1,
+					"name": "Podfile",
+					"description": "",
+					"mime": "text/octet-stream",
+					"content": "platform :ios, '7.0'\npod 'CocoaLumberjack',  '2.0.1'\npod 'HTUI', :git => 'https://git.hz.netease.com/git/open/HTIOSUI.git', :branch => 'master'\npod 'HTCommonUtility', :git => 'https://git.hz.netease.com/git/open/HTCommonUtils.git', :branch => 'master'\npod 'HTNetworking', :git => 'https://g.hz.netease.com/HeartTouchOpen/HTNetworking.git', :branch => 'master'\npod 'HTR3', :git => 'https://git.hz.netease.com/git/mobile/HTR3.git'",
+					"dataSource": 0,
+					"children": []
+				},
+				{
+					"id": 11955,
+					"specId": 10074,
+					"parent": 0,
+					"type": 0,
+					"name": "{{project.name}}",
+					"description": "",
+					"mime": "",
+					"content": "",
+					"dataSource": 0,
+					"children": [
+						{
+							"id": 11962,
+							"specId": 10074,
+							"parent": 11955,
+							"type": 0,
+							"name": "AppDelegate",
+							"description": "",
+							"mime": "",
+							"content": "",
+							"dataSource": 0,
+							"children": [
+								{
+									"id": 11988,
+									"specId": 10074,
+									"parent": 11962,
+									"type": 1,
+									"name": "AppDelegate.h",
+									"description": "",
+									"mime": "text/x-c",
+									"content": "//\n//  AppDelegate.h\n//  {{args.productName}}\n//\n//  Created by Bai tianyu on 1/14/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import <UIKit/UIKit.h>\n\n#define {{args.prefix}}APPDELEGATE() ((AppDelegate *)[[UIApplication sharedApplication] delegate])\n\n@interface AppDelegate : UIResponder <UIApplicationDelegate>\n\n@property (strong, nonatomic) UIWindow *window;\n\n@end\n\n",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 11989,
+									"specId": 10074,
+									"parent": 11962,
+									"type": 1,
+									"name": "AppDelegate.m",
+									"description": "",
+									"mime": "text/octet-stream",
+									"content": "//\n//  AppDelegate.m\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/14/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import \"AppDelegate.h\"\n#import \"{{args.prefix}}TabBarController.h\"\n#import \"{{args.prefix}}Networking.h\"\n\n@interface AppDelegate ()\n\n@property (nonatomic, strong) UINavigationController *rootNavigationController;\n\n@end\n\n\n@implementation AppDelegate\n\n- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {\n    // Override point for customization after application launch.\n\n    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];\n    {{Prefix}}TabBarController *mainController = [[{{Prefix}}TabBarController alloc] init];\n    UINavigationController *rootNaviController = [[UINavigationController alloc] initWithRootViewController:mainController];\n    [rootNaviController setNavigationBarHidden:YES animated:NO];\n    \n    self.window.rootViewController = rootNaviController;\n    self.rootNavigationController = rootNaviController;\n    [self.window makeKeyAndVisible];\n    \n    [{{args.prefix}}Networking {{args.prefix}}NetworkingInit];\n    \n    return YES;\n}\n\n- (void)applicationWillResignActive:(UIApplication *)application {\n    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.\n    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.\n}\n\n- (void)applicationDidEnterBackground:(UIApplication *)application {\n    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.\n    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.\n}\n\n- (void)applicationWillEnterForeground:(UIApplication *)application {\n    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.\n}\n\n- (void)applicationDidBecomeActive:(UIApplication *)application {\n    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.\n}\n\n- (void)applicationWillTerminate:(UIApplication *)application {\n    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.\n}\n\n@end\n",
+									"dataSource": 0,
+									"children": []
+								}
+							]
+						},
+						{
+							"id": 11963,
+							"specId": 10074,
+							"parent": 11955,
+							"type": 0,
+							"name": "CommonView",
+							"description": "",
+							"mime": "",
+							"content": "",
+							"dataSource": 0,
+							"children": [
+								{
+									"id": 11990,
+									"specId": 10074,
+									"parent": 11963,
+									"type": 1,
+									"name": "UITableViewCell+{{Prefix}}Line.h",
+									"description": "",
+									"mime": "text/x-c",
+									"content": "//\n//  UITableViewCell+{{Prefix}}Line.h\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/25/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import <UIKit/UIKit.h>\n\n@interface UITableViewCell ({{Prefix}}Line)\n\n- (void){{CategoryPrefix}}_addBottomLineWithLeftOffset:(CGFloat)leftOffset rightOffset:(CGFloat)rightOffset;\n\n- (void){{CategoryPrefix}}_addTopLineWithLeftOffset:(CGFloat)leftOffset rightOffset:(CGFloat)rightOffset;\n\n- (void){{CategoryPrefix}}_removeTopLine;\n\n- (void){{CategoryPrefix}}_removeBottomLine;\n\n@end\n",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 11991,
+									"specId": 10074,
+									"parent": 11963,
+									"type": 1,
+									"name": "UITableViewCell+{{Prefix}}Line.m",
+									"description": "",
+									"mime": "text/octet-stream",
+									"content": "//\n//  UITableViewCell+{{Prefix}}Line.m\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/25/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import <objc/runtime.h>\n#import \"UITableViewCell+{{Prefix}}Line.h\"\n#import \"UIView+{{Prefix}}Line.h\"\n#import \"Masonry.h\"\n\nstatic const char *kTopLineKey;\nstatic const char *kBottomLineKey;\n\n@implementation UITableViewCell ({{Prefix}}Line)\n\n#pragma mark - Public methods.\n\n- (void){{CategoryPrefix}}_addBottomLineWithLeftOffset:(CGFloat)leftOffset rightOffset:(CGFloat)rightOffset {\n    UIView *line = [self {{CategoryPrefix}}_getCellLineByKey:&kBottomLineKey];\n    [line removeFromSuperview];\n    [self.contentView addSubview:line];\n    \n    [line mas_makeConstraints:^(MASConstraintMaker *make) {\n        make.bottom.equalTo(self.contentView);\n        make.left.equalTo(self.contentView).with.offset(leftOffset);\n        make.right.equalTo(self.contentView).with.offset(-rightOffset);\n        make.height.equalTo(@(SINGLE_LINE_WIDTH));\n    }];\n}\n\n- (void){{CategoryPrefix}}_addTopLineWithLeftOffset:(CGFloat)leftOffset rightOffset:(CGFloat)rightOffset {\n    UIView *line = [self {{CategoryPrefix}}_getCellLineByKey:&kTopLineKey];\n    [line removeFromSuperview];\n    [self.contentView addSubview:line];\n    \n    [line mas_makeConstraints:^(MASConstraintMaker *make) {\n        make.top.equalTo(self.contentView);\n        make.left.equalTo(self.contentView).with.offset(leftOffset);\n        make.right.equalTo(self.contentView).with.offset(-rightOffset);\n        make.height.equalTo(@(SINGLE_LINE_WIDTH));\n    }];\n}\n\n- (void){{CategoryPrefix}}_removeTopLine {\n    UIView *line = [self {{CategoryPrefix}}_getCellLineByKey:&kTopLineKey];\n    [line removeFromSuperview];\n}\n\n- (void){{CategoryPrefix}}_removeBottomLine {\n    UIView *line = [self {{CategoryPrefix}}_getCellLineByKey:&kBottomLineKey];\n    [line removeFromSuperview];\n}\n\n\n#pragma mark - Private methods.\n\n- (UIView *){{CategoryPrefix}}_getCellLineByKey:(void *)key {\n    UIView *line = objc_getAssociatedObject(self, key);\n    if (!line) {\n        line = [UIView {{CategoryPrefix}}_line];\n        objc_setAssociatedObject(self, key, line, OBJC_ASSOCIATION_RETAIN_NONATOMIC);\n    }\n    return line;\n}\n\n\n@end\n",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 11992,
+									"specId": 10074,
+									"parent": 11963,
+									"type": 1,
+									"name": "UIView+{{Prefix}}Line.h",
+									"description": "",
+									"mime": "text/x-c",
+									"content": "//\n//  UIView+{{Prefix}}Line.h\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/25/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import <UIKit/UIKit.h>\n\n#define SINGLE_LINE_WIDTH (1.0/UIScreen.mainScreen.scale)\n\ntypedef NS_ENUM(NSInteger, {{Prefix}}LineLocation) {\n    {{Prefix}}LineLocationTop = 0,\n    {{Prefix}}LineLocationLeft,\n    {{Prefix}}LineLocationRight,\n    {{Prefix}}LineLocationBottom\n};\n\n\n@interface UIView ({{Prefix}}Line)\n\n+ (instancetype){{CategoryPrefix}}_line;\n+ (instancetype){{CategoryPrefix}}_lineWithColor:(UIColor *)color;\n\n@end\n",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 11993,
+									"specId": 10074,
+									"parent": 11963,
+									"type": 1,
+									"name": "{{args.prefix}}ControllerLoadingEmptyView.h",
+									"description": "",
+									"mime": "text/x-c",
+									"content": "//\n//  {{Prefix}}ControllerEmptyView.h\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/21/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import <UIKit/UIKit.h>\n\n@interface {{Prefix}}ControllerLoadingEmptyView : UIView\n\n@end\n",
+									"dataSource": 2,
+									"children": []
+								},
+								{
+									"id": 11994,
+									"specId": 10074,
+									"parent": 11963,
+									"type": 1,
+									"name": "UIView+{{Prefix}}Line.m",
+									"description": "",
+									"mime": "text/octet-stream",
+									"content": "//\n//  UIView+{{Prefix}}Line.m\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/25/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import \"UIView+{{Prefix}}Line.h\"\n#import \"UIImage+ImageWithColor.h\"\n\n@implementation UIView ({{Prefix}}Line)\n\n+ (instancetype){{CategoryPrefix}}_line {\n    UIView *line = [[UIView alloc] init];\n    line.frame = CGRectMake(0, 0, SINGLE_LINE_WIDTH, SINGLE_LINE_WIDTH);\n    line.backgroundColor = [UIColor grayColor];\n    return line;\n}\n\n+ (instancetype){{CategoryPrefix}}_lineWithColor:(UIColor *)color {\n    UIView *line = [self {{CategoryPrefix}}_line];\n    line.backgroundColor = color;\n    return line;\n}\n\n@end\n",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 11995,
+									"specId": 10074,
+									"parent": 11963,
+									"type": 1,
+									"name": "{{Prefix}}ControllerLoadingEmptyView.m",
+									"description": "",
+									"mime": "text/octet-stream",
+									"content": "//\n//  {{Prefix}}ControllerEmptyView.m\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/21/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import \"{{Prefix}}ControllerLoadingEmptyView.h\"\n\n@interface {{Prefix}}ControllerLoadingEmptyView ()\n\n@property (nonatomic, strong) UILabel *indicationLabel;\n\n@end\n\n@implementation {{Prefix}}ControllerLoadingEmptyView\n\n#pragma mark - Life cycle.\n\n- (instancetype)initWithFrame:(CGRect)frame {\n    if (self = [super initWithFrame:frame]) {\n        self.backgroundColor = [UIColor whiteColor];\n        [self loadSubViews];\n    }\n    return self;\n}\n\n\n#pragma mark - Load views.\n\n- (void)loadSubViews {\n    _indicationLabel = [[UILabel alloc] init];\n    _indicationLabel.text = @\"暂时没有数据\";\n    _indicationLabel.textColor = [UIColor blackColor];\n    _indicationLabel.font = [UIFont systemFontOfSize:13];\n    [_indicationLabel sizeToFit];\n    _indicationLabel.textAlignment = NSTextAlignmentCenter;\n    [self addSubview:_indicationLabel];\n}\n\n\n#pragma mark - Layout.\n\n- (void)layoutSubviews {\n    [super layoutSubviews];\n    _indicationLabel.center = self.center;\n}\n\n@end\n",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 11996,
+									"specId": 10074,
+									"parent": 11963,
+									"type": 1,
+									"name": "{{Prefix}}ControllerLoadingErrorView.h",
+									"description": "",
+									"mime": "text/x-c",
+									"content": "//\n//  {{Prefix}}ControllerLoadingErrorView.h\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/21/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import <UIKit/UIKit.h>\n\ntypedef NS_ENUM(NSInteger, {{Prefix}}ControllerLoadingErrorState) {\n    {{Prefix}}ControllerLoadingErrorStateNetworkError,\n    {{Prefix}}ControllerLoadingErrorStateLoginError\n};\n\n\n@protocol {{Prefix}}ControllerLoadingErrorDelegate <NSObject>\n\n- (void)controllerLoadingReload;\n\n@end\n\n\n@interface {{Prefix}}ControllerLoadingErrorView : UIView\n\n@property (nonatomic, assign) {{Prefix}}ControllerLoadingErrorState state;\n@property (nonatomic, weak) id<{{Prefix}}ControllerLoadingErrorDelegate> delegate;\n\n@end\n",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 11997,
+									"specId": 10074,
+									"parent": 11963,
+									"type": 1,
+									"name": "{{Prefix}}ControllerLoadingErrorView.m",
+									"description": "",
+									"mime": "text/octet-stream",
+									"content": "//\n//  {{Prefix}}ControllerLoadingErrorView.m\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/21/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import \"{{Prefix}}ControllerLoadingErrorView.h\"\n\n@interface {{Prefix}}ControllerLoadingErrorView ()\n\n@property (nonatomic, strong) UILabel *indicationLabel;\n\n@end\n\n@implementation {{Prefix}}ControllerLoadingErrorView\n\n#pragma mark - Life cycle.\n\n- (instancetype)initWithFrame:(CGRect)frame {\n    if (self = [super initWithFrame:frame]) {\n        [self loadSubViews];\n    }\n    return self;\n}\n\n\n#pragma mark - Load views.\n\n- (void)loadSubViews {\n    _indicationLabel = [[UILabel alloc] init];\n    _indicationLabel.text = @\"加载失败，点击重试\";\n    _indicationLabel.textColor = [UIColor blackColor];\n    _indicationLabel.font = [UIFont systemFontOfSize:13];\n    [_indicationLabel sizeToFit];\n    _indicationLabel.textAlignment = NSTextAlignmentCenter;\n    [self addSubview:_indicationLabel];\n}\n\n\n#pragma mark - Layout.\n\n- (void)layoutSubviews {\n    [super layoutSubviews];\n    _indicationLabel.center = self.center;\n}\n\n\n@end\n",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 11998,
+									"specId": 10074,
+									"parent": 11963,
+									"type": 1,
+									"name": "{{Prefix}}ControllerLoadingView.h",
+									"description": "",
+									"mime": "text/x-c",
+									"content": "//\n//  {{Prefix}}ControllerLoadingView.h\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/21/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import <UIKit/UIKit.h>\n\n@interface {{Prefix}}ControllerLoadingView : UIView\n\n@end\n",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 11999,
+									"specId": 10074,
+									"parent": 11963,
+									"type": 1,
+									"name": "{{Prefix}}ControllerLoadingView.m",
+									"description": "",
+									"mime": "text/octet-stream",
+									"content": "//\n//  {{Prefix}}ControllerLoadingView.m\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/21/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import \"{{Prefix}}ControllerLoadingView.h\"\n\n@interface {{Prefix}}ControllerLoadingView ()\n\n@property (nonatomic, strong) UILabel *indicationLabel;\n\n@end\n\n@implementation {{Prefix}}ControllerLoadingView\n\n#pragma mark - Life cycle.\n\n- (instancetype)initWithFrame:(CGRect)frame {\n    if (self = [super initWithFrame:frame]) {\n        self.backgroundColor = [UIColor whiteColor];\n        [self loadSubViews];\n    }\n    return self;\n}\n\n\n#pragma mark - Load views.\n\n- (void)loadSubViews {\n    _indicationLabel = [[UILabel alloc] init];\n    _indicationLabel.text = @\"正在加载\";\n    _indicationLabel.font = [UIFont systemFontOfSize:13];\n    [_indicationLabel sizeToFit];\n    _indicationLabel.textColor = [UIColor blackColor];\n    _indicationLabel.textAlignment = NSTextAlignmentCenter;\n    [self addSubview:_indicationLabel];\n}\n\n\n#pragma mark - Layout.\n\n- (void)layoutSubviews {\n    [super layoutSubviews];\n    _indicationLabel.center = self.center;\n}\n\n\n@end\n",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 12000,
+									"specId": 10074,
+									"parent": 11963,
+									"type": 1,
+									"name": "{{Prefix}}LoadMoreView.h",
+									"description": "",
+									"mime": "text/x-c",
+									"content": "//\n//  {{Prefix}}LoadMoreView.h\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/18/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import \"HTBottomRightRefreshView.h\"\n\n@interface {{Prefix}}LoadMoreView : HTBottomRightRefreshView\n\n@end\n",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 12001,
+									"specId": 10074,
+									"parent": 11963,
+									"type": 1,
+									"name": "{{Prefix}}LoadMoreView.m",
+									"description": "",
+									"mime": "text/octet-stream",
+									"content": "//\n//  {{Prefix}}LoadMoreView.m\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/18/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import \"{{Prefix}}LoadMoreView.h\"\n\n@interface {{Prefix}}LoadMoreView ()\n\n@end\n\n\n@implementation {{Prefix}}LoadMoreView\n\n#pragma mark - Load views.\n\n- (void)loadSubViews {\n    // Custom your own RefreshView.\n    \n}\n\n- (void)layoutSubviews {\n    [super layoutSubviews];\n    // Layout subviews.\n}\n\n\n#pragma mark - HTRefreshViewDelegate\n\n- (CGFloat)refreshingInset {\n    return 0;\n}\n\n- (CGFloat)refreshableInset {\n    return 0;\n}\n\n- (CGFloat)promptingInset {\n    return self.hiddenRefresh? 0 : 46;\n}\n\n- (void)refreshStateChanged:(HTRefreshState)state {\n    switch (state) {\n        case HTRefreshStateCanEngageRefresh: {\n            \n        }\n            break;\n        case HTRefreshStateDidEngageRefresh:\n\n            break;\n        case HTRefreshStateDidDisengageRefresh: {\n\n        }\n            break;\n        case HTRefreshStateWillEndRefresh: {\n            \n        }\n            break;\n        case HTRefreshStateDidEndRefresh: {\n\n        }\n            break;\n    }\n}\n\n- (void)refreshPercentChanged:(CGFloat)percent\n                       offset:(CGFloat)offset\n                    direction:(HTRefreshDirection)direction {\n    if (direction != HTRefreshDirectionBottom || (direction != HTRefreshDirectionRight)) {\n        return;\n    }\n}\n\n@end",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 12002,
+									"specId": 10074,
+									"parent": 11963,
+									"type": 1,
+									"name": "{{Prefix}}RefreshView.h",
+									"description": "",
+									"mime": "text/x-c",
+									"content": "//\n//  {{Prefix}}RefreshView.h\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/18/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import \"HTTopLeftRefreshView.h\"\n\n@interface {{Prefix}}RefreshView : HTTopLeftRefreshView\n\n@end\n",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 12003,
+									"specId": 10074,
+									"parent": 11963,
+									"type": 1,
+									"name": "{{Prefix}}RefreshView.m",
+									"description": "",
+									"mime": "text/octet-stream",
+									"content": "//\n//  {{Prefix}}RefreshView.m\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/18/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import \"{{Prefix}}RefreshView.h\"\n\n@interface {{Prefix}}RefreshView ()\n\n@end\n\n\n@implementation {{Prefix}}RefreshView\n\n#pragma mark - Load views.\n\n// Custom your own RefreshView.\n- (void)loadSubViews {\n\n}\n\n- (void)layoutSubviews {\n    [super layoutSubviews];\n    // Layout the subviews.\n}\n\n\n#pragma mark - HTRefreshViewDelegate\n\n- (CGFloat)refreshingInset {\n    return 46;\n}\n\n- (CGFloat)refreshableInset {\n    return 46;\n}\n\n- (void)refreshStateChanged:(HTRefreshState)state {\n    switch (state) {\n        case HTRefreshStateCanEngageRefresh: {\n            // Refresh is permitted.\n        }\n            break;\n        case HTRefreshStateDidEngageRefresh:{\n            // Refresh is on going.\n        }\n            break;\n        case HTRefreshStateDidDisengageRefresh: {\n            \n        }\n            break;\n        case HTRefreshStateWillEndRefresh: {\n            \n        }\n            break;\n        case HTRefreshStateDidEndRefresh: {\n            // Refresh is end.\n        }\n            break;\n    }\n}\n\n- (void)refreshPercentChanged:(CGFloat)percent\n                       offset:(CGFloat)offset\n                    direction:(HTRefreshDirection)direction {\n    if (direction != HTRefreshDirectionTop || (direction != HTRefreshDirectionLeft)) {\n        return;\n    }\n}\n\n@end\n",
+									"dataSource": 0,
+									"children": []
+								}
+							]
+						},
+						{
+							"id": 11964,
+							"specId": 10074,
+							"parent": 11955,
+							"type": 0,
+							"name": "CommonViewController",
+							"description": "",
+							"mime": "",
+							"content": "",
+							"dataSource": 0,
+							"children": [
+								{
+									"id": 12004,
+									"specId": 10074,
+									"parent": 11964,
+									"type": 1,
+									"name": "UINavigationController+{{Prefix}}NavigationBar.h",
+									"description": "",
+									"mime": "text/x-c",
+									"content": "//\n//  UINavigationController+{{Prefix}}NavigationBar.h\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/25/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import <UIKit/UIKit.h>\n\n@interface UINavigationController ({{Prefix}}NavigationBar)\n\n- (void){{CategoryPrefix}}_applyDefaultNavigationBarStyle;\n\n@end\n",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 12005,
+									"specId": 10074,
+									"parent": 11964,
+									"type": 1,
+									"name": "UINavigationController+{{Prefix}}NavigationBar.m",
+									"description": "",
+									"mime": "text/octet-stream",
+									"content": "//\n//  UINavigationController+{{Prefix}}NavigationBar.m\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/25/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import \"UINavigationController+{{Prefix}}NavigationBar.h\"\n#import \"UINavigationBar+HT.h\"\n\n@implementation UINavigationController ({{Prefix}}NavigationBar)\n\n- (void){{CategoryPrefix}}_applyDefaultNavigationBarStyle {\n    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];\n    [self.navigationController.navigationBar ht_setBackgroundColor:[UIColor whiteColor]];\n    [self.navigationController.navigationBar setTitleTextAttributes:\n     [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,\n                                                [UIFont systemFontOfSize:13], NSFontAttributeName,\n                                                nil]];\n}\n\n@end\n",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 12006,
+									"specId": 10074,
+									"parent": 11964,
+									"type": 1,
+									"name": "UIViewController+{{Prefix}}Loading.h",
+									"description": "",
+									"mime": "text/x-c",
+									"content": "//\n//  UIViewController+{{Prefix}}Loading.h\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/21/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import <UIKit/UIKit.h>\n#import \"{{Prefix}}ControllerLoadingErrorView.h\"\n\ntypedef void (^{{Prefix}}RetryLoadingBlock)();\n\n@interface UIViewController ({{Prefix}}Loading)<{{Prefix}}ControllerLoadingErrorDelegate>\n\n// Loading.\n- (void){{CategoryPrefix}}_showLoading;\n- (void){{CategoryPrefix}}_hideLoading;\n\n// Loading empty.\n- (void){{CategoryPrefix}}_showLoadingEmpty;\n- (void){{CategoryPrefix}}_hideLoadingEmpty;\n\n// Loading error.\n- (void){{CategoryPrefix}}_showLoadingErrorWithLoadingViewState:({{Prefix}}ControllerLoadingErrorState)state retryBlock:({{Prefix}}RetryLoadingBlock)block;\n\n\n@end\n",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 12007,
+									"specId": 10074,
+									"parent": 11964,
+									"type": 1,
+									"name": "UIViewController+{{Prefix}}Loading.m",
+									"description": "",
+									"mime": "text/octet-stream",
+									"content": "//\n//  UIViewController+{{Prefix}}Loading.m\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/21/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import <objc/runtime.h>\n#import \"UIViewController+{{Prefix}}Loading.h\"\n#import \"{{Prefix}}ControllerLoadingView.h\"\n#import \"{{Prefix}}ControllerLoadingEmptyView.h\"\n#import \"Masonry.h\"\n\nstatic const char *kLoadingKey;\nstatic const char *kLoadingEmptyKey;\nstatic const char *kLoadingErrorKey;\nstatic const char *kRetryBlockKey;\n\n@implementation UIViewController ({{Prefix}}Loading)\n\n#pragma mark - Loading\n\n- (void){{CategoryPrefix}}_showLoading {\n    {{Prefix}}ControllerLoadingView *loadingView = [self {{CategoryPrefix}}_getLoadingView];\n    if (!loadingView.superview) {\n        [self.view addSubview:loadingView];\n    }\n    [self.view bringSubviewToFront:loadingView];\n}\n\n- (void){{CategoryPrefix}}_hideLoading {\n    {{Prefix}}ControllerLoadingView *loadingView = [self {{CategoryPrefix}}_getLoadingView];\n    if (loadingView.superview) {\n        [loadingView removeFromSuperview];\n    }\n}\n\n- ({{Prefix}}ControllerLoadingView *){{CategoryPrefix}}_getLoadingView {\n    {{Prefix}}ControllerLoadingView *loadingView = objc_getAssociatedObject(self, &kLoadingKey);\n    if (!loadingView) {\n        loadingView = [[{{Prefix}}ControllerLoadingView alloc] init];\n        [self.view addSubview:loadingView];\n        objc_setAssociatedObject(self, &kLoadingKey, loadingView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);\n    }\n    \n    [loadingView mas_remakeConstraints:^(MASConstraintMaker *make) {\n        make.size.equalTo(self.view);\n        make.center.equalTo(self.view);\n    }];\n    \n    return loadingView;\n}\n\n\n#pragma mark - Loading empty.\n\n- (void){{CategoryPrefix}}_showLoadingEmpty {\n    {{Prefix}}ControllerLoadingEmptyView *loadingEmptyView = [self {{CategoryPrefix}}_getLoadingEmptyView];\n    if (!loadingEmptyView.superview) {\n        [self.view addSubview:loadingEmptyView];\n    }\n    [self.view bringSubviewToFront:loadingEmptyView];\n}\n\n- (void){{CategoryPrefix}}_hideLoadingEmpty {\n    {{Prefix}}ControllerLoadingEmptyView *loadingEmptyView = [self {{CategoryPrefix}}_getLoadingEmptyView];\n    if (loadingEmptyView.superview) {\n        [loadingEmptyView removeFromSuperview];\n    }\n}\n\n- ({{Prefix}}ControllerLoadingEmptyView *){{CategoryPrefix}}_getLoadingEmptyView {\n    {{Prefix}}ControllerLoadingEmptyView *loadingEmptyView = objc_getAssociatedObject(self, &kLoadingEmptyKey);\n    if (!loadingEmptyView) {\n        loadingEmptyView = [[{{Prefix}}ControllerLoadingEmptyView alloc] init];\n        [self.view addSubview:loadingEmptyView];\n        objc_setAssociatedObject(self, &kLoadingEmptyKey, loadingEmptyView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);\n    }\n    \n    [loadingEmptyView mas_remakeConstraints:^(MASConstraintMaker *make) {\n        make.size.equalTo(self.view);\n        make.center.equalTo(self.view);\n    }];\n    \n    return loadingEmptyView;\n}\n\n\n#pragma mark - Loading error.\n\n- (void){{CategoryPrefix}}_showLoadingErrorWithLoadingViewState:({{Prefix}}ControllerLoadingErrorState)state retryBlock:({{Prefix}}RetryLoadingBlock)block {\n    [self {{CategoryPrefix}}_hideLoading];\n    {{Prefix}}ControllerLoadingErrorView *loadingErrorView = [self {{CategoryPrefix}}_getLoadingErrorView];\n    if (!loadingErrorView.superview) {\n        [self.view addSubview:loadingErrorView];\n    }\n    [self.view bringSubviewToFront:loadingErrorView];\n    \n    loadingErrorView.state = state;\n    objc_setAssociatedObject(self, &kRetryBlockKey, block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);\n}\n\n- (void){{CategoryPrefix}}_hideLoadingError {\n    {{Prefix}}ControllerLoadingErrorView *loadingErrorView = [self {{CategoryPrefix}}_getLoadingErrorView];\n    if (loadingErrorView.superview) {\n        [loadingErrorView removeFromSuperview];\n    }\n}\n\n- ({{Prefix}}ControllerLoadingErrorView *){{CategoryPrefix}}_getLoadingErrorView {\n    {{Prefix}}ControllerLoadingErrorView *loadingErrorView = objc_getAssociatedObject(self, &kLoadingErrorKey);\n    if (!loadingErrorView) {\n        loadingErrorView = [[{{Prefix}}ControllerLoadingErrorView alloc] init];\n        [self.view addSubview:loadingErrorView];\n        objc_setAssociatedObject(self, &kLoadingErrorKey, loadingErrorView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);\n    }\n    \n    [loadingErrorView mas_remakeConstraints:^(MASConstraintMaker *make) {\n        make.size.equalTo(self.view);\n        make.center.equalTo(self.view);\n    }];\n    \n    return loadingErrorView;\n}\n\n\n#pragma mark - {{Prefix}}ControllerLoadingErrorDelegate\n\n- (void)controllerLoadingReload {\n    [self {{CategoryPrefix}}_showLoading];\n    [self {{CategoryPrefix}}_hideLoadingError];\n    {{Prefix}}RetryLoadingBlock retryBlock = objc_getAssociatedObject(self, &kRetryBlockKey);\n    retryBlock();\n}\n\n@end\n",
+									"dataSource": 0,
+									"children": []
+								}
+							]
+						},
+						{
+							"id": 11965,
+							"specId": 10074,
+							"parent": 11955,
+							"type": 0,
+							"name": "Modules",
+							"description": "",
+							"mime": "",
+							"content": "",
+							"dataSource": 0,
+							"children": [
+								{
+									"id": 12008,
+									"specId": 10074,
+									"parent": 11965,
+									"type": 0,
+									"name": "Login",
+									"description": "",
+									"mime": "",
+									"content": "",
+									"dataSource": 0,
+									"children": [
+										{
+											"id": 12068,
+											"specId": 10074,
+											"parent": 12008,
+											"type": 1,
+											"name": "{{Prefix}}LoginView.h",
+											"description": "",
+											"mime": "text/x-c",
+											"content": "//\n//  {{Prefix}}LoginView.h\n//  {{Prefix}}Login\n//\n//  Created by liuchang on 16/4/11.\n//  Copyright © 2016年 Netease. All rights reserved.\n//\n\n#import <UIKit/UIKit.h>\n\n/**\n *  登录窗口，提供用户名和密码的输入窗口，以及自动补全功能\n */\n\n@protocol {{Prefix}}LoginViewDelegate;\n\nNS_ASSUME_NONNULL_BEGIN\n@interface {{Prefix}}LoginView : UIView\n@property (nonatomic, readonly, strong) UITextField *usernameTextField;\n@property (nonatomic, readonly, strong) UITextField *passwordTextField;\n@property (nonatomic, readonly, strong) UIButton    *loginButton;\n@property (nonatomic, readonly, strong) UIButton    *forgetPasswordButton;\n@property (nonatomic, readonly, strong) UIButton    *signUpButton;\n@property (nonatomic, weak) id<{{Prefix}}LoginViewDelegate> delegate;\n\n- (instancetype)initWithFrame:(CGRect)frame\n         parentViewController:(__kindof UIViewController *)parentViewController\n                  suffixArray:(NSArray<NSString *> * _Nullable)suffixArray;\n\n/**\n *  隐藏自动补全列表\n */\n- (void)hideList;\n@end\n\n@protocol {{Prefix}}LoginViewDelegate <NSObject>\n@required\n/**\n *  「登录」按钮回调\n *\n *  @param username username\n *  @param password password\n */\n- (void){{Prefix}}LoginViewLoginButtonPressedWithUsername:(NSString *)username password:(NSString *)password;\n\n@optional\n/**\n *  输入的用户名是否合法。当返回 NO 时，自动补全列表会隐藏。\n *\n *  @param username 用户在 username 框中的输入\n *\n *  @return 用户名是否合法\n */\n- (BOOL){{Prefix}}LoginViewIsUsernameValiad:(NSString *)username;\n\n/**\n *  登录按钮是否可以点击。可以根据「用户名是否合法」、「密码是否达到特定长度」等条件来指定登录按钮是否可以点击。\n *\n *  @param username username\n *  @param password password\n *\n *  @return 登录按钮是否可以点击\n */\n- (BOOL){{Prefix}}LoginViewIsLoginButtonEnabledWithUsername:(NSString *)username password:(NSString *)password;\n\n/**\n *  「忘记密码？」按钮回调\n */\n- (void){{Prefix}}LoginViewForgetPasswordButtonPressed;\n\n/**\n *  「注册」按钮回调\n */\n- (void){{Prefix}}LoginViewSignUpButtonPressed;\n\n/**\n *  用户名输入框内容变化回调\n *\n *  @param loginView         loginView\n *  @param usernameTextField usernameTextField\n */\n- (void){{Prefix}}LoginView:({{Prefix}}LoginView *)loginView usernameChanged:(UITextField *)usernameTextField;\n\n/**\n *  密码输入框变化回调\n *\n *  @param loginView         loginView\n *  @param passwordTextField passwordTextField\n */\n- (void){{Prefix}}LoginView:({{Prefix}}LoginView *)loginView passwordChanged:(UITextField *)passwordTextField;\n@end\nNS_ASSUME_NONNULL_END\n",
+											"dataSource": 0,
+											"children": []
+										},
+										{
+											"id": 12069,
+											"specId": 10074,
+											"parent": 12008,
+											"type": 1,
+											"name": "{{Prefix}}LoginView.m",
+											"description": "",
+											"mime": "text/octet-stream",
+											"content": "//\n//  {{Prefix}}LoginView.m\n//  {{Prefix}}Login\n//\n//  Created by liuchang on 16/4/11.\n//  Copyright © 2016年 Netease. All rights reserved.\n//\n\n#import \"{{Prefix}}LoginView.h\"\n#import \"{{Prefix}}AutoCompleteViewController.h\"\n\n@interface {{Prefix}}LoginView ()<{{Prefix}}AutoCompleteDelegate>\n@property (nonatomic, strong) {{Prefix}}AutoCompleteViewController *autoCompleteVC;\n@end\n\n@implementation {{Prefix}}LoginView\n#pragma mark - Init Method\n- (instancetype)initWithFrame:(CGRect)frame\n         parentViewController:(__kindof UIViewController *)parentViewController\n                  suffixArray:(NSArray<NSString *> *)suffixArray {\n    self = [super initWithFrame:frame];\n    if (self != nil) {\n        _usernameTextField = ({\n            UITextField *textField = [self createTextFieldWithPlaceHolder:@\"邮箱/用户名\"];\n            textField.frame = (CGRect){0, 0, self.frame.size.width, 50};\n            [self addSubview:textField];\n            textField.keyboardType = UIKeyboardTypeEmailAddress;\n            textField.autocapitalizationType = UITextAutocapitalizationTypeNone;\n            [textField addTarget:self action:@selector(usernameChanged:) forControlEvents:UIControlEventEditingChanged];\n            textField;\n        });\n        \n        _passwordTextField  = ({\n            UITextField *textField = [self createTextFieldWithPlaceHolder:@\"密码\"];\n            textField.frame = (CGRect){0, 50, self.frame.size.width, 50};\n            [self addSubview:textField];\n            textField.secureTextEntry = YES;\n            textField.returnKeyType = UIReturnKeyDone;\n            [textField addTarget:self action:@selector(passwordChanged:) forControlEvents:UIControlEventEditingChanged];\n            textField;\n        });\n        \n        _loginButton = ({\n            UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];\n            [button setTitle:@\"登录\" forState:UIControlStateNormal];\n            button.frame = (CGRect){0, 100, self.frame.size.width, 50};\n            [self addSubview:button];\n            [button addTarget:self action:@selector(loginButtonPressed:) forControlEvents:UIControlEventTouchUpInside];\n            button.enabled = NO;\n            button;\n        });\n        \n        _forgetPasswordButton = ({\n            UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];\n            [button setTitle:@\"忘记密码？\" forState:UIControlStateNormal];\n            button.frame = (CGRect){0, 150, 100, 20};\n            [self addSubview:button];\n            [button addTarget:self action:@selector(forgetPasswordButtonPressed:) forControlEvents:UIControlEventTouchUpInside];\n            button;\n        });\n        \n        _signUpButton = ({\n            UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];\n            [button setTitle:@\"注册\" forState:UIControlStateNormal];\n            button.frame = (CGRect){self.frame.size.width - 100, 150, 100, 20};\n            [self addSubview:button];\n            [button addTarget:self action:@selector(signUpButtonPressed:) forControlEvents:UIControlEventTouchUpInside];\n            button;\n        });\n        \n        if (suffixArray == nil) {\n            suffixArray = @[@\"163.com\",\n                            @\"126.com\",\n                            @\"yeah.net\",\n                            @\"vip.163.com\",\n                            @\"vip.126.com\",\n                            @\"188.com\",\n                            @\"vip.188.com\",\n                            @\"qq.com\",\n                            @\"gmail.com\",\n                            @\"sina.com\",];\n        }\n        _autoCompleteVC = [[{{Prefix}}AutoCompleteViewController alloc] initWithFrame:(CGRect){0, _usernameTextField.frame.size.height, _usernameTextField.frame.size.width, 240}\n                                                         parentViewController:parentViewController\n                                                                SuffixesArray:suffixArray\n                                                                     delegate:self];\n        [self addSubview:_autoCompleteVC.view];\n    }\n    return self;\n}\n\n- (UITextField *)createTextFieldWithPlaceHolder:(NSString *)placeHolder {\n    UITextField* textField = [[UITextField alloc] init];\n    \n    textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeHolder\n                                                                      attributes:@{NSForegroundColorAttributeName:[UIColor darkGrayColor]}];\n    \n    textField.textColor = [UIColor darkGrayColor];\n    textField.font = [UIFont systemFontOfSize:15];\n    textField.clearButtonMode = UITextFieldViewModeWhileEditing;\n    \n    return textField;\n}\n\n#pragma mark - Public Methods\n- (void)hideList {\n    _autoCompleteVC.view.hidden = YES;\n}\n\n#pragma mark - Actions\n- (void)usernameChanged:(UITextField *)textField {\n    [self refreshLoginButtonEnabled];\n    \n    BOOL isUsernameValiad = YES;\n    _autoCompleteVC.view.hidden = ({\n        if ([_delegate respondsToSelector:@selector({{Prefix}}LoginViewIsUsernameValiad:)]) {\n            isUsernameValiad = [_delegate {{Prefix}}LoginViewIsUsernameValiad:_usernameTextField.text];\n        }\n        !isUsernameValiad;\n    });\n    \n    // 如果用户名不合法，直接返回\n    if (!isUsernameValiad) {\n        return;\n    }\n    \n    [_autoCompleteVC updateSuggest:textField.text];\n    \n    if ([_delegate respondsToSelector:@selector({{Prefix}}LoginView:usernameChanged:)]) {\n        [_delegate {{Prefix}}LoginView:self usernameChanged:textField];\n    }\n}\n\n- (void)passwordChanged:(UITextField *)textField {\n    [self refreshLoginButtonEnabled];\n    \n    if ([_delegate respondsToSelector:@selector({{Prefix}}LoginView:passwordChanged:)]) {\n        [_delegate {{Prefix}}LoginView:self passwordChanged:textField];\n    }\n}\n\n- (void)loginButtonPressed:(UIButton *)button {\n    if ([_delegate respondsToSelector:@selector({{Prefix}}LoginViewLoginButtonPressedWithUsername:password:)]) {\n        [_delegate {{Prefix}}LoginViewLoginButtonPressedWithUsername:_usernameTextField.text password:_passwordTextField.text];\n    }\n}\n\n- (void)forgetPasswordButtonPressed:(UIButton *)button {\n    if ([_delegate respondsToSelector:@selector({{Prefix}}LoginViewForgetPasswordButtonPressed)]) {\n        [_delegate {{Prefix}}LoginViewForgetPasswordButtonPressed];\n    }\n}\n\n- (void)signUpButtonPressed:(UIButton *)button {\n    if ([_delegate respondsToSelector:@selector({{Prefix}}LoginViewSignUpButtonPressed)]) {\n        [_delegate {{Prefix}}LoginViewSignUpButtonPressed];\n    }\n}\n\n#pragma mark - Delegate，DataSource, Callback Method\n- (void){{Prefix}}AutoCompleteViewController:({{Prefix}}AutoCompleteViewController *)completeViewController\n                           didSelect:(NSString *)suggest {\n    _usernameTextField.text = suggest;\n    [self refreshLoginButtonEnabled];\n}\n\n#pragma mark - Helper Methods\n/**\n *  更新登录按钮是否可点击\n */\n- (void)refreshLoginButtonEnabled {\n    _loginButton.enabled = ({\n        BOOL isEnabled;\n        if ([_delegate respondsToSelector:@selector({{Prefix}}LoginViewIsLoginButtonEnabledWithUsername:password:)]) {\n            isEnabled = [_delegate {{Prefix}}LoginViewIsLoginButtonEnabledWithUsername:_usernameTextField.text password:_passwordTextField.text];\n        } else {\n            isEnabled = _usernameTextField.text.length > 0 && _passwordTextField.text.length > 0;\n        }\n        isEnabled;\n    });\n}\n@end\n",
+											"dataSource": 0,
+											"children": []
+										},
+										{
+											"id": 12070,
+											"specId": 10074,
+											"parent": 12008,
+											"type": 0,
+											"name": "AutoCompleteList",
+											"description": "",
+											"mime": "",
+											"content": "",
+											"dataSource": 0,
+											"children": [
+												{
+													"id": 12119,
+													"specId": 10074,
+													"parent": 12070,
+													"type": 1,
+													"name": "{{Prefix}}AutoCompleteViewController.m",
+													"description": "",
+													"mime": "text/octet-stream",
+													"content": "//\n//  {{Prefix}}AutoCompleteViewController.m\n//  {{Prefix}}Login\n//\n//  Created by liuchang on 16/4/25.\n//  Copyright © 2016年 Netease. All rights reserved.\n//\n\n#import \"{{Prefix}}AutoCompleteViewController.h\"\n#import \"NSArray+{{Prefix}}Collection.h\"\n\n@interface {{Prefix}}AutoCompleteViewController ()<UITableViewDelegate, UITableViewDataSource>\n@property (nonatomic, strong) UITableView *suggestTableView;        // 补全列表\n@property (nonatomic, strong) NSArray<NSString *> *suggestArray;    // 补全列表内容\n@end\n\n@implementation {{Prefix}}AutoCompleteViewController\n#pragma mark - Init Method\n- (instancetype)initWithFrame:(CGRect)frame\n         parentViewController:(__kindof UIViewController *)parentViewController\n                SuffixesArray:(NSArray<NSString *> *)suffixesArray\n                     delegate:(id<{{Prefix}}AutoCompleteDelegate>)delegate {\n    self = [super init];\n    if (self != nil) {\n        self.view.frame = frame;\n        self.view.hidden = YES;\n        \n        [parentViewController addChildViewController:self];\n        [self didMoveToParentViewController:parentViewController];\n        \n        _suffixesArray = [suffixesArray copy];\n        self.delegate = delegate;\n        _suggestArray = [NSArray array];\n        \n        _suggestTableView = ({\n            UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];\n            [self.view addSubview:tableView];\n            tableView.delegate = self;\n            tableView.dataSource = self;\n            tableView.rowHeight = 50;\n            tableView;\n        });\n    }\n    return self;\n}\n\n#pragma mark - Life Cycle\n- (void)viewDidLoad {\n    [super viewDidLoad];\n    // Do any additional setup after loading the view.\n}\n#pragma mark - Public Methods\n- (void)updateSuggest:(NSString *)content {\n    if (content.length == 0) {\n        self.view.hidden = YES;\n        return;\n    }\n    \n    NSArray<NSString *> *email = [content componentsSeparatedByString:@\"@\"];\n    self.view.hidden = (email.count > 2) ? YES : NO;\n    if (email.count > 2) {\n        return;\n    }\n    \n    NSString *prefix = email[0];\n    NSString *suffix = ({\n        NSString *suffix = @\"\";\n        if (email.count > 1) {\n            suffix = email[1];\n        }\n        suffix;\n    });\n    \n    // prefix: zhangsan\n    // suffix: 163.com or \"\"\n    _suggestArray = [self suggestEmailArrayByEmailPrefix:prefix suffix:suffix];\n    if (_suggestArray.count == 0) {\n        self.view.hidden = YES;\n    }\n    if (_suggestArray.count == 1 && [_suggestArray.firstObject isEqualToString:content]) {\n        self.view.hidden = YES;\n    }\n    [_suggestTableView reloadData];\n}\n#pragma mark - Private Methods\n#pragma mark - Delegate，DataSource, Callback Method\n- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {\n    return _suggestArray.count;\n}\n\n- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {\n    NSString *identifierString = @\"autoCompleteCell\";\n    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierString];\n    if (cell == nil) {\n        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifierString];\n    }\n    cell.textLabel.text = _suggestArray[indexPath.row];\n    return cell;\n}\n\n- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {\n    self.view.hidden = YES;\n    if ([_delegate respondsToSelector:@selector({{Prefix}}AutoCompleteViewController:didSelect:)]) {\n        [_delegate {{Prefix}}AutoCompleteViewController:self didSelect:[tableView cellForRowAtIndexPath:indexPath].textLabel.text];\n    }\n}\n#pragma mark - Helper Method\n/**\n *  根据邮箱前缀和邮箱后缀，返回补全的 email 数组。例如，emailPrefix = zhangsan，emailSuffix = @1，则返回@[@\"zhangsan@163.com\", @\"zhangsan@126.com\" ...] 等邮箱开头是 1 的条目。\n *\n *  @param emailPrefix 邮箱前缀\n *  @param emailSuffix 邮箱后缀\n *\n *  @return 自动补全的邮箱条目\n */\n- (NSArray<NSString *> *)suggestEmailArrayByEmailPrefix:(NSString *)emailPrefix suffix:(NSString *)emailSuffix {\n    return [[_suffixesArray {{CategoryPrefix}}_filterWithBlock:^BOOL(NSString * _Nonnull obj, NSUInteger index) {\n        if ([emailSuffix isEqualToString:@\"\"]) {\n            return YES;\n        }\n        return [obj hasPrefix:emailSuffix];\n    }] {{CategoryPrefix}}_mapWithBlock:^id _Nonnull(NSString * _Nonnull obj, NSUInteger index) {\n        return [NSString stringWithFormat:@\"%@@%@\", emailPrefix, obj];\n    }];\n}\n@end\n",
+													"dataSource": 0,
+													"children": []
+												},
+												{
+													"id": 12120,
+													"specId": 10074,
+													"parent": 12070,
+													"type": 1,
+													"name": "{{Prefix}}AutoCompleteViewController.h",
+													"description": "",
+													"mime": "text/x-c",
+													"content": "//\n//  {{Prefix}}AutoCompleteViewController.h\n//  {{Prefix}}Login\n//\n//  Created by liuchang on 16/4/25.\n//  Copyright © 2016年 Netease. All rights reserved.\n//\n\n#import <UIKit/UIKit.h>\n\n/**\n *  提供了自动补全的 view\n */\n\n@protocol {{Prefix}}AutoCompleteDelegate;\n\nNS_ASSUME_NONNULL_BEGIN\n@interface {{Prefix}}AutoCompleteViewController : UIViewController\n@property (nonatomic, readonly) NSArray<NSString *> *suffixesArray;\n@property (nonatomic, weak) id<{{Prefix}}AutoCompleteDelegate> delegate;\n\n- (instancetype)initWithFrame:(CGRect)frame\n         parentViewController:(__kindof UIViewController *)parentViewController\n                SuffixesArray:(NSArray<NSString *> *)suffixesArray\n                     delegate:(id<{{Prefix}}AutoCompleteDelegate>)delegate;\n- (void)updateSuggest:(NSString *)content;\n@end\n\n\n@protocol {{Prefix}}AutoCompleteDelegate <NSObject>\n- (void){{Prefix}}AutoCompleteViewController:({{Prefix}}AutoCompleteViewController *)completeViewController didSelect:(NSString *)suggest;\n@end\nNS_ASSUME_NONNULL_END",
+													"dataSource": 0,
+													"children": []
+												}
+											]
+										},
+										{
+											"id": 12071,
+											"specId": 10074,
+											"parent": 12008,
+											"type": 0,
+											"name": "TimeoutButton",
+											"description": "",
+											"mime": "",
+											"content": "",
+											"dataSource": 0,
+											"children": [
+												{
+													"id": 12121,
+													"specId": 10074,
+													"parent": 12071,
+													"type": 1,
+													"name": "{{Prefix}}TimeoutButton.h",
+													"description": "",
+													"mime": "text/x-c",
+													"content": "//\n//  {{Prefix}}TimeoutButton.h\n//  {{Prefix}}Login\n//\n//  Created by liuchang on 16/5/9.\n//  Copyright © 2016年 Netease. All rights reserved.\n//\n\n#import <UIKit/UIKit.h>\n\nNS_ASSUME_NONNULL_BEGIN\n@class {{Prefix}}TimeoutButton;\n\n/**\n *  {{Prefix}}TimeoutButtonDelegate 协议中的方法，都会在主线程中被调用\n */\n@protocol {{Prefix}}TimeoutButtonDelegate <NSObject>\n- (void){{Prefix}}TimeoutButtonClick:({{Prefix}}TimeoutButton *)button\n                  passedTime:(NSTimeInterval)timePassed\n               remainingTime:(NSTimeInterval)timeRemaining;\n\n- (void){{Prefix}}TimeoutButtonTimeout:({{Prefix}}TimeoutButton *)button;\n@end\n\n@interface {{Prefix}}TimeoutButton : UIButton\n@property (nonatomic, readonly, assign) NSTimeInterval  timeInterval;\n@property (nonatomic, readonly, assign) NSTimeInterval  timeout;\n@property (nonatomic, readonly, assign) NSTimeInterval  timePassed;\n@property (nonatomic, readonly, assign) NSTimeInterval  timeRemaining;\n@property (nonatomic, weak) id<{{Prefix}}TimeoutButtonDelegate> delegate;\n\n@property (nonatomic, assign) BOOL  autoRefreshTextByTimeRemaining;\n\n+ (instancetype)buttonWithType:(UIButtonType)buttonType delegate:(nullable id<{{Prefix}}TimeoutButtonDelegate>)delegate;\n+ (instancetype)buttonWithType:(UIButtonType)buttonType\n                  timeInterval:(NSTimeInterval)timeInterval\n                       timeout:(NSTimeInterval)timeout\n                      delegate:(nullable id<{{Prefix}}TimeoutButtonDelegate>)delegate;\n\n- (void)reset;\n@end\nNS_ASSUME_NONNULL_END",
+													"dataSource": 0,
+													"children": []
+												},
+												{
+													"id": 12122,
+													"specId": 10074,
+													"parent": 12071,
+													"type": 1,
+													"name": "{{Prefix}}TimeoutButton.m",
+													"description": "",
+													"mime": "text/octet-stream",
+													"content": "//\n//  {{Prefix}}TimeoutButton.m\n//  {{Prefix}}Login\n//\n//  Created by liuchang on 16/5/9.\n//  Copyright © 2016年 Netease. All rights reserved.\n//\n\n#import \"{{Prefix}}TimeoutButton.h\"\n\n\n@interface {{Prefix}}TimeoutButton ()\n@property (nonatomic, assign) NSTimeInterval        timeInterval;\n@property (nonatomic, assign) NSTimeInterval        timeout;\n@property (nonatomic, assign) NSTimeInterval        timePassed;\n\n@property (nonatomic, strong) dispatch_source_t     intervalTimer;\n@property (nonatomic, assign) unsigned long long    flag;           // 防止 after block 中调用上一次的 block 而做的随机值\n@end\n\n@implementation {{Prefix}}TimeoutButton\n#pragma mark - Init Method\n+ (instancetype)buttonWithType:(UIButtonType)buttonType {\n    return [self buttonWithType:buttonType timeInterval:1 timeout:60 delegate:nil];\n}\n+ (instancetype)buttonWithType:(UIButtonType)buttonType delegate:(nullable id<{{Prefix}}TimeoutButtonDelegate>)delegate {\n    return [self buttonWithType:buttonType timeInterval:1 timeout:60 delegate:delegate];\n}\n+ (instancetype)buttonWithType:(UIButtonType)buttonType\n                  timeInterval:(NSTimeInterval)timeInterval\n                       timeout:(NSTimeInterval)timeout\n                      delegate:(id<{{Prefix}}TimeoutButtonDelegate>)delegate {\n    {{Prefix}}TimeoutButton *button = ({\n        {{Prefix}}TimeoutButton *button = [super buttonWithType:buttonType];\n        button.timeInterval     = timeInterval;\n        button.timeout          = timeout;\n        button.delegate         = delegate;\n        button.timePassed       = 0;\n        [button addTarget:button action:@selector(selfPressed:) forControlEvents:UIControlEventTouchUpInside];\n        [button createAndSusbendTimer];\n        button;\n    });\n    \n    return button;\n}\n\n/**\n *  创建 timer\n */\n- (void)createAndSusbendTimer {\n    if (self.intervalTimer != nil) {\n        return;\n    }\n    __weak typeof(self) weakSelf = self;\n    _intervalTimer = ({\n        dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());\n        dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, self.timeInterval * NSEC_PER_SEC, 0 * NSEC_PER_SEC);\n        dispatch_source_set_event_handler(timer, ^{\n            weakSelf.timePassed += weakSelf.timeInterval;\n            if ([weakSelf.delegate respondsToSelector:@selector({{Prefix}}TimeoutButtonClick:passedTime:remainingTime:)]) {\n                if (weakSelf.autoRefreshTextByTimeRemaining) {\n                    NSString *text = [NSString stringWithFormat:@\"%ld\", (long)weakSelf.timeRemaining];\n                    [weakSelf setTitle:text forState:UIControlStateDisabled];\n                }\n\n                if (weakSelf.timePassed > 0 && weakSelf.timePassed <= weakSelf.timeout) {\n                    [weakSelf.delegate {{Prefix}}TimeoutButtonClick:weakSelf passedTime:weakSelf.timePassed remainingTime:weakSelf.timeRemaining];\n                }\n            }\n        });\n        timer;\n    });\n}\n\n#pragma mark - Life Cycle\n- (void)dealloc {\n    if (_intervalTimer != nil) {\n        dispatch_source_cancel(_intervalTimer);\n        \n        if (self.enabled) {\n            dispatch_resume(_intervalTimer);\n            _intervalTimer = NULL;\n        }\n    }\n}\n\n#pragma mark - Actions\n- (void)selfPressed:(UIButton *)button {\n    self.enabled = NO;\n\n    dispatch_source_set_timer(self.intervalTimer, DISPATCH_TIME_NOW, self.timeInterval * NSEC_PER_SEC, 0 * NSEC_PER_SEC);\n    dispatch_resume(self.intervalTimer);\n    \n    self.flag = ({\n        u_int32_t ri1 = arc4random();\n        u_int32_t ri2 = arc4random();\n        unsigned long long rl = ri1;\n        rl <<= sizeof(u_int32_t) * 8;\n        rl |= ri2;\n        \n        rl;\n    });\n    NSUInteger flag = self.flag;\n    \n    // 如果点击按钮 -> 调用 reset -> 再次点击按钮，则第一次的 after block 会在第二次点击后被调用，这里做了一个校验：\n    // 每次被点击时，随机生成一个 ull 类型的整数，利用 block 会复制原生类型的特点，在 after block 中判断一次。\n    // 即可避免该问题\n    \n    __weak typeof(self) weakSelf = self;\n    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.timeout * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{\n        if (flag != weakSelf.flag ) {\n            return ;\n        }\n        if (!weakSelf.enabled &&\n            [weakSelf.delegate respondsToSelector:@selector({{Prefix}}TimeoutButtonTimeout:)]) {\n            [weakSelf.delegate {{Prefix}}TimeoutButtonTimeout:weakSelf];\n        }\n        [weakSelf reset];\n    });\n}\n\n#pragma mark - Public Methods\n/**\n *  暂停\n */\n- (void)pause {\n    \n}\n\n/**\n *  继续\n */\n- (void)countinue {\n    \n}\n\n/**\n *  恢复到未被点击状态\n */\n- (void)reset {\n    // 处于计时状态时才进行处理\n    if (!self.enabled) {\n        self.enabled = YES;\n        self.timePassed = 0;\n        dispatch_suspend(self.intervalTimer);\n    }\n}\n#pragma mark - Delegate，DataSource, Callback Method\n#pragma mark - Getter And Setter\n- (NSTimeInterval)timeRemaining {\n    return self.timeout - self.timePassed;\n}\n\n@end\n",
+													"dataSource": 0,
+													"children": []
+												}
+											]
+										},
+										{
+											"id": 12072,
+											"specId": 10074,
+											"parent": 12008,
+											"type": 0,
+											"name": "Utilities",
+											"description": "",
+											"mime": "",
+											"content": "",
+											"dataSource": 0,
+											"children": [
+												{
+													"id": 12123,
+													"specId": 10074,
+													"parent": 12072,
+													"type": 1,
+													"name": "NSArray+{{Prefix}}Collection.h",
+													"description": "",
+													"mime": "text/x-c",
+													"content": "//\n//  NSArray+{{Prefix}}Collection.h\n//  {{Prefix}}Login\n//\n//  Created by liuchang on 16/4/26.\n//  Copyright © 2016年 Netease. All rights reserved.\n//\n\n#import <Foundation/Foundation.h>\n\n\nNS_ASSUME_NONNULL_BEGIN\n@interface NSArray<__covariant ObjectType> ({{Prefix}}Map)\ntypedef _Nonnull id (^{{Prefix}}MapBlock)(ObjectType obj, NSUInteger index);\ntypedef BOOL (^{{Prefix}}FilterBlock)(ObjectType obj, NSUInteger index);\ntypedef _Nonnull ObjectType (^{{Prefix}}ReduceBlock)(ObjectType firstObj, ObjectType secondObj);\n\n- (NSArray<ObjectType> *){{CategoryPrefix}}_mapWithBlock:({{Prefix}}MapBlock)block;\n- (NSArray<ObjectType> *){{CategoryPrefix}}_filterWithBlock:({{Prefix}}FilterBlock)block;\n- (ObjectType){{CategoryPrefix}}_reduceWithBlock:({{Prefix}}ReduceBlock)block;\n@end\nNS_ASSUME_NONNULL_END",
+													"dataSource": 0,
+													"children": []
+												},
+												{
+													"id": 12124,
+													"specId": 10074,
+													"parent": 12072,
+													"type": 1,
+													"name": "NSArray+{{Prefix}}Colledtion.m",
+													"description": "",
+													"mime": "text/octet-stream",
+													"content": "//\n//  NSArray+{{Prefix}}Collection\n//  {{Prefix}}Login\n//\n//  Created by liuchang on 16/4/26.\n//  Copyright © 2016年 Netease. All rights reserved.\n//\n\n#import \"NSArray+{{Prefix}}Collection.h\"\n\n@implementation NSArray ({{Prefix}}Map)\n- (NSArray *){{CategoryPrefix}}_mapWithBlock:({{Prefix}}MapBlock)block {\n    if (block == nil) {\n        return nil; // or self?\n    }\n    \n    NSMutableArray *array = [NSMutableArray array];\n    [self enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {\n        id ret = block(obj, idx);\n        if (ret != nil) {\n            [array addObject:ret];\n        }\n    }];\n    \n    return array;\n}\n\n- (NSArray *){{CategoryPrefix}}_filterWithBlock:({{Prefix}}FilterBlock)block {\n    if (block == nil) {\n        return nil; // or self?\n    }\n    \n    NSMutableArray *array = [NSMutableArray array];\n    [self enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {\n        if (block(obj, idx)) {\n            [array addObject:obj];\n        }\n    }];\n    \n    return array;\n}\n\n- (id){{CategoryPrefix}}_reduceWithBlock:({{Prefix}}ReduceBlock)block {\n    if (block == nil) {\n        return nil;\n    }\n    \n    __block id ret = self.firstObject;\n    \n    NSArray *arr = [self {{CategoryPrefix}}_filterWithBlock:^BOOL(id  _Nonnull obj, NSUInteger index) {\n        return index != 0;\n    }];\n                    \n    [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {\n        ret = block(ret, obj);\n    }];\n    \n    return ret;\n}\n@end\n",
+													"dataSource": 0,
+													"children": []
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": 12009,
+									"specId": 10074,
+									"parent": 11965,
+									"type": 0,
+									"name": "Main",
+									"description": "",
+									"mime": "",
+									"content": "",
+									"dataSource": 0,
+									"children": [
+										{
+											"id": 12073,
+											"specId": 10074,
+											"parent": 12009,
+											"type": 1,
+											"name": "{{Prefix}}TabBarController.h",
+											"description": "",
+											"mime": "text/x-c",
+											"content": "//\n//  {{Prefix}}TabBarController.h\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/14/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import <UIKit/UIKit.h>\n\n@interface {{Prefix}}TabBarController : UITabBarController\n\n@end\n\n",
+											"dataSource": 0,
+											"children": []
+										},
+										{
+											"id": 12074,
+											"specId": 10074,
+											"parent": 12009,
+											"type": 1,
+											"name": "{{Prefix}}TabBarController.m",
+											"description": "",
+											"mime": "application/octet-stream",
+											"content": "http://nos.netease.com:80/nei/6303d4b4848f7e1d170eba163223d5c7?NOSAccessKeyId=f3318b2c1f67409386bb99813a44c778&Expires=9999999999&Signature=ZJCfStLWLcaro6x561ydd8eLX1Rvlg5Uh7W4ja0Ufg8%3D",
+											"dataSource": 0,
+											"children": []
+										},
+										{
+											"id": 12075,
+											"specId": 10074,
+											"parent": 12009,
+											"type": 1,
+											"name": "{{Prefix}}TabBarItem.h",
+											"description": "",
+											"mime": "text/x-c",
+											"content": "//\n//  {{Prefix}}TabBarItem.h\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/18/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import \"HTSegmentsView.h\"\n\n@interface {{Prefix}}TabBarItem : HTSegmentsCellView\n\n- (instancetype)initWithTitle:(NSString*)title\n                         icon:(NSString*)icon\n                 selectedIcon:(NSString*)selectedIcon;\n\n@end\n",
+											"dataSource": 0,
+											"children": []
+										},
+										{
+											"id": 12076,
+											"specId": 10074,
+											"parent": 12009,
+											"type": 1,
+											"name": "{{Prefix}}TabBarItem.m",
+											"description": "",
+											"mime": "text/octet-stream",
+											"content": "//\n//  {{Prefix}}TabBarItem.m\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/18/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import \"{{Prefix}}TabBarItem.h\"\n#import \"NSObject+HTSafeObserver.h\"\n\n@interface {{Prefix}}TabBarItem ()\n\n@property (nonatomic, strong) UILabel *titleLabel;\n@property (nonatomic, strong) UIImageView *iconImageView;\n\n@property (nonatomic, copy) NSString *title;\n@property (nonatomic, copy) NSString *icon;\n@property (nonatomic, copy) NSString *selectedIcon;\n\n@end\n\n\n@implementation {{Prefix}}TabBarItem\n\n#pragma mark - Life cycle.\n\n- (instancetype)initWithTitle:(NSString *)title icon:(NSString *)icon selectedIcon:(NSString *)selectedIcon {\n    if (self = [super initWithFrame:CGRectZero]) {\n        _title = title;\n        _icon = icon;\n        _selectedIcon = selectedIcon;\n        \n        [self loadSubviews];\n        \n        [self ht_addObserver:self\n                  forKeyPath:@\"selected\"\n                     options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld\n                     context:nil];\n    }\n    return self;\n}\n\n- (instancetype)initWithFrame:(CGRect)frame {\n    if (self = [self initWithTitle:nil icon:nil selectedIcon:nil]) {\n        \n    }\n    return self;\n}\n\n\n#pragma mark - Load views.\n\n- (void)loadSubviews {\n    _titleLabel = [UILabel new];\n    _titleLabel.text = _title;\n    _titleLabel.textAlignment = NSTextAlignmentCenter;\n    _titleLabel.font = [UIFont systemFontOfSize:12];\n    [self addSubview:_titleLabel];\n    \n    _iconImageView = [UIImageView new];\n    _iconImageView.image = [UIImage imageNamed:_icon];\n    [self addSubview:_iconImageView];\n    \n    [self selectedChanged];\n}\n\n\n#pragma mark - Layout.\n\n- (void)layoutSubviews {\n    [super layoutSubviews];\n    \n    _titleLabel.frame = CGRectMake(0, CGRectGetHeight(self.frame) - 5 - 12, CGRectGetWidth(self.frame), 12);\n\n    CGFloat iconImageWidth = _iconImageView.image.size.width;\n    CGFloat iconImageHeight = _iconImageView.image.size.height;\n    _iconImageView.frame = CGRectMake((CGRectGetWidth(self.frame) - iconImageWidth)/2,\n                                      4.5,\n                                      iconImageWidth,\n                                      iconImageHeight);\n}\n\n\n#pragma mark - KVO.\n\n- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {\n    if ([keyPath isEqualToString:@\"selected\"]) {\n        [self selectedChanged];\n    }\n}\n\n- (void)selectedChanged {\n    if ([self isSelected]) {\n        _titleLabel.textColor = [UIColor redColor];\n        _iconImageView.image = [UIImage imageNamed:_selectedIcon];\n    } else {\n        _titleLabel.textColor = [UIColor blackColor];\n        _iconImageView.image = [UIImage imageNamed:_icon];\n    }\n}\n\n\n@end\n",
+											"dataSource": 0,
+											"children": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": 11966,
+							"specId": 10074,
+							"parent": 11955,
+							"type": 0,
+							"name": "Network",
+							"description": "",
+							"mime": "",
+							"content": "",
+							"dataSource": 0,
+							"children": [
+								{
+									"id": 12010,
+									"specId": 10074,
+									"parent": 11966,
+									"type": 1,
+									"name": "{{Prefix}}Networking.h",
+									"description": "",
+									"mime": "text/x-c",
+									"content": "//\n//  {{Prefix}}Networking.h\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/15/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import <Foundation/Foundation.h>\n\n/*!\n 一般 App 有三种服务器环境\n \n @{{Prefix}}NetworkDevEnv     开发环境\n @{{Prefix}}NetworkOnlineEnv  线上环境\n @{{Prefix}}NetworkPreEnv     预发布环境\n */\ntypedef NS_ENUM(NSInteger, {{Prefix}}NetworkHostEnv) {\n    /// 开发环境\n    {{Prefix}}NetworkDevEnv,\n    /// 线上环境\n    {{Prefix}}NetworkOnlineEnv,\n    /// 预发布环境\n    {{Prefix}}NetworkPreEnv\n};\n\n\n@interface {{Prefix}}Networking : NSObject\n\n/// 初始化网络配置\n+ (void){{Prefix}}NetworkingInit;\n/// 获取当前服务器环境\n+ ({{Prefix}}NetworkHostEnv)hostEnv;\n\n@end\n",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 12011,
+									"specId": 10074,
+									"parent": 11966,
+									"type": 1,
+									"name": "{{Prefix}}Networking.m",
+									"description": "",
+									"mime": "text/octet-stream",
+									"content": "//\n//  {{Prefix}}Networking.m\n//  {{ProductName}}\n//\n//  Created by Bai tianyu on 1/15/16.\n//  Copyright © 2016 Netease. All rights reserved.\n//\n\n#import \"{{Prefix}}Networking.h\"\n#import \"HTNetworking.h\"\n#import <objc/runtime.h>\n\nstatic NSString * const k{{Prefix}}DevBaseURL = @\"\";\nstatic NSString * const k{{Prefix}}PreBaseURL = @\"\";\nstatic NSString * const k{{Prefix}}OnlineBaseURL = @\"\";\n\n@implementation {{Prefix}}Networking\n\n+ ({{Prefix}}NetworkHostEnv)hostEnv {\n    NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];\n    NSString* version = [infoDict objectForKey:@\"UseHostEnvironment\"];\n\n    if ([version isEqualToString:@\"online\"]) {\n        return {{Prefix}}NetworkOnlineEnv;\n    } else if ([version isEqualToString:@\"dev\"]) {\n        return {{Prefix}}NetworkDevEnv;\n    } else if ([version isEqualToString:@\"pre\"]) {\n        return {{Prefix}}NetworkPreEnv;\n    }\n    \n    return {{Prefix}}NetworkOnlineEnv;\n}\n\n+ (void){{Prefix}}NetworkingInit {\n    NSURL *baseURL = [NSURL URLWithString:[self getBaseUrlString]];\n    RKObjectManager *manager = HTNetworkingInit(baseURL);\n    manager.requestSerializationMIMEType = RKMIMETypeJSON;\n}\n\n+ (NSString *)getBaseUrlString {\n    switch ([self hostEnv]) {\n        case {{Prefix}}NetworkDevEnv:\n            return k{{Prefix}}DevBaseURL;\n            break;\n        case {{Prefix}}NetworkPreEnv:\n            return k{{Prefix}}PreBaseURL;\n            break;\n        case {{Prefix}}NetworkOnlineEnv:\n            return k{{Prefix}}OnlineBaseURL;\n            break;\n    }\n}\n\n@end\n",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 12012,
+									"specId": 10074,
+									"parent": 11966,
+									"type": 0,
+									"name": "Mock",
+									"description": "",
+									"mime": "",
+									"content": "",
+									"dataSource": 0,
+									"children": [
+										{
+											"id": 12077,
+											"specId": 10074,
+											"parent": 12012,
+											"type": 1,
+											"name": "CopyMockFiles.sh",
+											"description": "",
+											"mime": "text/x-sh",
+											"content": "#!/bin/sh\nset -e\n\nRESOURCES_TO_COPY=${PODS_ROOT}/resources-to-copy-${TARGETNAME}.txt\n> \"$RESOURCES_TO_COPY\"\n\ninstall_resource()\n{\n  case $1 in\n    /*)\n      echo \"install Json: $1\"\n      echo \"$1\" >> \"$RESOURCES_TO_COPY\"\n      ;;\n    *)\n      echo \"${PODS_ROOT}/$1\"\n      echo \"${PODS_ROOT}/$1\" >> \"$RESOURCES_TO_COPY\"\n      ;;\n  esac\n}\n\nif [[ \"$CONFIGURATION\" == \"Debug\" ]]; then\n    Mock_Folder=\"${SRCROOT}/{{ProductName}}/Network/Mock/\"\n    filelist=`ls -1 $Mock_Folder`\n\n    for filename in $filelist ; do\n        if [ \"${filename##*.}\" = \"json\" ]; then\n            fullpath=$Mock_Folder$filename\n            echo json: $fullpath\n            install_resource $fullpath\n        fi\n    done\nfi\n\nmkdir -p \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\"\nrsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from=\"$RESOURCES_TO_COPY\" / \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\"\nif [[ \"${ACTION}\" == \"install\" ]]; then\n  mkdir -p \"${INSTALL_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\"\n  rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from=\"$RESOURCES_TO_COPY\" / \"${INSTALL_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\"\nfi\nrm -f \"$RESOURCES_TO_COPY\"\n",
+											"dataSource": 0,
+											"children": []
+										}
+									]
+								},
+								{
+									"id": 12013,
+									"specId": 10074,
+									"parent": 11966,
+									"type": 0,
+									"name": "Reachability",
+									"description": "",
+									"mime": "",
+									"content": "",
+									"dataSource": 0,
+									"children": [
+										{
+											"id": 12078,
+											"specId": 10074,
+											"parent": 12013,
+											"type": 1,
+											"name": "{{Prefix}}Reachability.h",
+											"description": "",
+											"mime": "text/x-c",
+											"content": "/*\n Copyright (c) 2011, Tony Million.\n All rights reserved.\n \n Redistribution and use in source and binary forms, with or without\n modification, are permitted provided that the following conditions are met:\n \n 1. Redistributions of source code must retain the above copyright notice, this\n list of conditions and the following disclaimer.\n \n 2. Redistributions in binary form must reproduce the above copyright notice,\n this list of conditions and the following disclaimer in the documentation\n and/or other materials provided with the distribution.\n \n THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\n AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE\n LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\n CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF\n SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\n CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE\n POSSIBILITY OF SUCH DAMAGE. \n */\n\n#import <Foundation/Foundation.h>\n#import <SystemConfiguration/SystemConfiguration.h>\n\n//! Project version number for MacOSReachability.\nFOUNDATION_EXPORT double {{Prefix}}ReachabilityVersionNumber;\n\n//! Project version string for MacOSReachability.\nFOUNDATION_EXPORT const unsigned char {{Prefix}}ReachabilityVersionString[];\n\n/** \n * Create NS_ENUM macro if it does not exist on the targeted version of iOS or OS X.\n *\n * @see http://nshipster.com/ns_enum-ns_options/\n **/\n#ifndef NS_ENUM\n#define NS_ENUM(_type, _name) enum _name : _type _name; enum _name : _type\n#endif\n\nextern NSString *const k{{Prefix}}ReachabilityChangedNotification;\n\ntypedef NS_ENUM(NSInteger, NetworkStatus) {\n    // Apple NetworkStatus Compatible Names.\n    NotReachable = 0,\n    ReachableViaWiFi = 2,\n    ReachableViaWWAN = 1\n};\n\n@class {{Prefix}}Reachability;\n\ntypedef void (^NetworkReachable)({{Prefix}}Reachability * reachability);\ntypedef void (^NetworkUnreachable)({{Prefix}}Reachability * reachability);\ntypedef void (^NetworkReachability)({{Prefix}}Reachability * reachability, SCNetworkConnectionFlags flags);\n\n\n@interface {{Prefix}}Reachability : NSObject\n\n@property (nonatomic, copy) NetworkReachable    reachableBlock;\n@property (nonatomic, copy) NetworkUnreachable  unreachableBlock;\n@property (nonatomic, copy) NetworkReachability reachabilityBlock;\n\n@property (nonatomic, assign) BOOL reachableOnWWAN;\n\n\n+(instancetype)reachabilityWithHostname:(NSString*)hostname;\n// This is identical to the function above, but is here to maintain\n//compatibility with Apples original code. (see .m)\n+(instancetype)reachabilityWithHostName:(NSString*)hostname;\n+(instancetype)reachabilityForInternetConnection;\n+(instancetype)reachabilityWithAddress:(void *)hostAddress;\n+(instancetype)reachabilityForLocalWiFi;\n\n-(instancetype)initWithReachabilityRef:(SCNetworkReachabilityRef)ref;\n\n-(BOOL)startNotifier;\n-(void)stopNotifier;\n\n-(BOOL)isReachable;\n-(BOOL)isReachableViaWWAN;\n-(BOOL)isReachableViaWiFi;\n\n// WWAN may be available, but not active until a connection has been established.\n// WiFi may require a connection for VPN on Demand.\n-(BOOL)isConnectionRequired; // Identical DDG variant.\n-(BOOL)connectionRequired; // Apple's routine.\n// Dynamic, on demand connection?\n-(BOOL)isConnectionOnDemand;\n// Is user intervention required?\n-(BOOL)isInterventionRequired;\n\n-(NetworkStatus)currentReachabilityStatus;\n-(SCNetworkReachabilityFlags)reachabilityFlags;\n-(NSString*)currentReachabilityString;\n-(NSString*)currentReachabilityFlags;\n\n@end\n",
+											"dataSource": 0,
+											"children": []
+										},
+										{
+											"id": 12079,
+											"specId": 10074,
+											"parent": 12013,
+											"type": 1,
+											"name": "{{Prefix}}Reachability.m",
+											"description": "",
+											"mime": "text/octet-stream",
+											"content": "/*\n Copyright (c) 2011, Tony Million.\n All rights reserved.\n \n Redistribution and use in source and binary forms, with or without\n modification, are permitted provided that the following conditions are met:\n \n 1. Redistributions of source code must retain the above copyright notice, this\n list of conditions and the following disclaimer.\n \n 2. Redistributions in binary form must reproduce the above copyright notice,\n this list of conditions and the following disclaimer in the documentation\n and/or other materials provided with the distribution.\n \n THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\n AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE\n LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\n CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF\n SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\n CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE\n POSSIBILITY OF SUCH DAMAGE. \n */\n\n#import \"{{Prefix}}Reachability.h\"\n\n#import <sys/socket.h>\n#import <netinet/in.h>\n#import <netinet6/in6.h>\n#import <arpa/inet.h>\n#import <ifaddrs.h>\n#import <netdb.h>\n\n\nNSString *const k{{Prefix}}ReachabilityChangedNotification = @\"k{{Prefix}}ReachabilityChangedNotification\";\n\n\n@interface {{Prefix}}Reachability ()\n\n@property (nonatomic, assign) SCNetworkReachabilityRef  reachabilityRef;\n@property (nonatomic, strong) dispatch_queue_t          reachabilitySerialQueue;\n@property (nonatomic, strong) id                        reachabilityObject;\n\n-(void)reachabilityChanged:(SCNetworkReachabilityFlags)flags;\n-(BOOL)isReachableWithFlags:(SCNetworkReachabilityFlags)flags;\n\n@end\n\n\nstatic NSString *reachabilityFlags(SCNetworkReachabilityFlags flags) \n{\n    return [NSString stringWithFormat:@\"%c%c %c%c%c%c%c%c%c\",\n#if\tTARGET_OS_IPHONE\n            (flags & kSCNetworkReachabilityFlagsIsWWAN)               ? 'W' : '-',\n#else\n            'X',\n#endif\n            (flags & kSCNetworkReachabilityFlagsReachable)            ? 'R' : '-',\n            (flags & kSCNetworkReachabilityFlagsConnectionRequired)   ? 'c' : '-',\n            (flags & kSCNetworkReachabilityFlagsTransientConnection)  ? 't' : '-',\n            (flags & kSCNetworkReachabilityFlagsInterventionRequired) ? 'i' : '-',\n            (flags & kSCNetworkReachabilityFlagsConnectionOnTraffic)  ? 'C' : '-',\n            (flags & kSCNetworkReachabilityFlagsConnectionOnDemand)   ? 'D' : '-',\n            (flags & kSCNetworkReachabilityFlagsIsLocalAddress)       ? 'l' : '-',\n            (flags & kSCNetworkReachabilityFlagsIsDirect)             ? 'd' : '-'];\n}\n\n// Start listening for reachability notifications on the current run loop\nstatic void TMReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void* info) \n{\n#pragma unused (target)\n\n    {{Prefix}}Reachability *reachability = ((__bridge {{Prefix}}Reachability*)info);\n\n    // We probably don't need an autoreleasepool here, as GCD docs state each queue has its own autorelease pool,\n    // but what the heck eh?\n    @autoreleasepool \n    {\n        [reachability reachabilityChanged:flags];\n    }\n}\n\n\n@implementation {{Prefix}}Reachability\n\n#pragma mark - Class Constructor Methods\n\n+(instancetype)reachabilityWithHostName:(NSString*)hostname\n{\n    return [{{Prefix}}Reachability reachabilityWithHostname:hostname];\n}\n\n+(instancetype)reachabilityWithHostname:(NSString*)hostname\n{\n    SCNetworkReachabilityRef ref = SCNetworkReachabilityCreateWithName(NULL, [hostname UTF8String]);\n    if (ref) \n    {\n        id reachability = [[self alloc] initWithReachabilityRef:ref];\n\n        return reachability;\n    }\n    \n    return nil;\n}\n\n+(instancetype)reachabilityWithAddress:(void *)hostAddress\n{\n    SCNetworkReachabilityRef ref = SCNetworkReachabilityCreateWithAddress(kCFAllocatorDefault, (const struct sockaddr*)hostAddress);\n    if (ref) \n    {\n        id reachability = [[self alloc] initWithReachabilityRef:ref];\n        \n        return reachability;\n    }\n    \n    return nil;\n}\n\n+(instancetype)reachabilityForInternetConnection\n{\n    struct sockaddr_in zeroAddress;\n    bzero(&zeroAddress, sizeof(zeroAddress));\n    zeroAddress.sin_len = sizeof(zeroAddress);\n    zeroAddress.sin_family = AF_INET;\n    \n    return [self reachabilityWithAddress:&zeroAddress];\n}\n\n+(instancetype)reachabilityForLocalWiFi\n{\n    struct sockaddr_in localWifiAddress;\n    bzero(&localWifiAddress, sizeof(localWifiAddress));\n    localWifiAddress.sin_len            = sizeof(localWifiAddress);\n    localWifiAddress.sin_family         = AF_INET;\n    // IN_LINKLOCALNETNUM is defined in <netinet/in.h> as 169.254.0.0\n    localWifiAddress.sin_addr.s_addr    = htonl(IN_LINKLOCALNETNUM);\n    \n    return [self reachabilityWithAddress:&localWifiAddress];\n}\n\n\n// Initialization methods\n\n-(instancetype)initWithReachabilityRef:(SCNetworkReachabilityRef)ref\n{\n    self = [super init];\n    if (self != nil) \n    {\n        self.reachableOnWWAN = YES;\n        self.reachabilityRef = ref;\n\n        // We need to create a serial queue.\n        // We allocate this once for the lifetime of the notifier.\n\n        self.reachabilitySerialQueue = dispatch_queue_create(\"com.tonymillion.reachability\", NULL);\n    }\n    \n    return self;    \n}\n\n-(void)dealloc\n{\n    [self stopNotifier];\n\n    if(self.reachabilityRef)\n    {\n        CFRelease(self.reachabilityRef);\n        self.reachabilityRef = nil;\n    }\n\n\tself.reachableBlock          = nil;\n    self.unreachableBlock        = nil;\n    self.reachabilityBlock       = nil;\n    self.reachabilitySerialQueue = nil;\n}\n\n#pragma mark - Notifier Methods\n\n// Notifier \n// NOTE: This uses GCD to trigger the blocks - they *WILL NOT* be called on THE MAIN THREAD\n// - In other words DO NOT DO ANY UI UPDATES IN THE BLOCKS.\n//   INSTEAD USE dispatch_async(dispatch_get_main_queue(), ^{UISTUFF}) (or dispatch_sync if you want)\n\n-(BOOL)startNotifier\n{\n    // allow start notifier to be called multiple times\n    if(self.reachabilityObject && (self.reachabilityObject == self))\n    {\n        return YES;\n    }\n\n\n    SCNetworkReachabilityContext    context = { 0, NULL, NULL, NULL, NULL };\n    context.info = (__bridge void *)self;\n\n    if(SCNetworkReachabilitySetCallback(self.reachabilityRef, TMReachabilityCallback, &context))\n    {\n        // Set it as our reachability queue, which will retain the queue\n        if(SCNetworkReachabilitySetDispatchQueue(self.reachabilityRef, self.reachabilitySerialQueue))\n        {\n            // this should do a retain on ourself, so as long as we're in notifier mode we shouldn't disappear out from under ourselves\n            // woah\n            self.reachabilityObject = self;\n            return YES;\n        }\n        else\n        {\n#ifdef DEBUG\n            NSLog(@\"SCNetworkReachabilitySetDispatchQueue() failed: %s\", SCErrorString(SCError()));\n#endif\n\n            // UH OH - FAILURE - stop any callbacks!\n            SCNetworkReachabilitySetCallback(self.reachabilityRef, NULL, NULL);\n        }\n    }\n    else\n    {\n#ifdef DEBUG\n        NSLog(@\"SCNetworkReachabilitySetCallback() failed: %s\", SCErrorString(SCError()));\n#endif\n    }\n\n    // if we get here we fail at the internet\n    self.reachabilityObject = nil;\n    return NO;\n}\n\n-(void)stopNotifier\n{\n    // First stop, any callbacks!\n    SCNetworkReachabilitySetCallback(self.reachabilityRef, NULL, NULL);\n    \n    // Unregister target from the GCD serial dispatch queue.\n    SCNetworkReachabilitySetDispatchQueue(self.reachabilityRef, NULL);\n\n    self.reachabilityObject = nil;\n}\n\n#pragma mark - reachability tests\n\n// This is for the case where you flick the airplane mode;\n// you end up getting something like this:\n//Reachability: WR ct-----\n//Reachability: -- -------\n//Reachability: WR ct-----\n//Reachability: -- -------\n// We treat this as 4 UNREACHABLE triggers - really apple should do better than this\n\n#define testcase (kSCNetworkReachabilityFlagsConnectionRequired | kSCNetworkReachabilityFlagsTransientConnection)\n\n-(BOOL)isReachableWithFlags:(SCNetworkReachabilityFlags)flags\n{\n    BOOL connectionUP = YES;\n    \n    if(!(flags & kSCNetworkReachabilityFlagsReachable))\n        connectionUP = NO;\n    \n    if( (flags & testcase) == testcase )\n        connectionUP = NO;\n    \n#if\tTARGET_OS_IPHONE\n    if(flags & kSCNetworkReachabilityFlagsIsWWAN)\n    {\n        // We're on 3G.\n        if(!self.reachableOnWWAN)\n        {\n            // We don't want to connect when on 3G.\n            connectionUP = NO;\n        }\n    }\n#endif\n    \n    return connectionUP;\n}\n\n-(BOOL)isReachable\n{\n    SCNetworkReachabilityFlags flags;  \n    \n    if(!SCNetworkReachabilityGetFlags(self.reachabilityRef, &flags))\n        return NO;\n    \n    return [self isReachableWithFlags:flags];\n}\n\n-(BOOL)isReachableViaWWAN \n{\n#if\tTARGET_OS_IPHONE\n\n    SCNetworkReachabilityFlags flags = 0;\n    \n    if(SCNetworkReachabilityGetFlags(self.reachabilityRef, &flags))\n    {\n        // Check we're REACHABLE\n        if(flags & kSCNetworkReachabilityFlagsReachable)\n        {\n            // Now, check we're on WWAN\n            if(flags & kSCNetworkReachabilityFlagsIsWWAN)\n            {\n                return YES;\n            }\n        }\n    }\n#endif\n    \n    return NO;\n}\n\n-(BOOL)isReachableViaWiFi \n{\n    SCNetworkReachabilityFlags flags = 0;\n    \n    if(SCNetworkReachabilityGetFlags(self.reachabilityRef, &flags))\n    {\n        // Check we're reachable\n        if((flags & kSCNetworkReachabilityFlagsReachable))\n        {\n#if\tTARGET_OS_IPHONE\n            // Check we're NOT on WWAN\n            if((flags & kSCNetworkReachabilityFlagsIsWWAN))\n            {\n                return NO;\n            }\n#endif\n            return YES;\n        }\n    }\n    \n    return NO;\n}\n\n\n// WWAN may be available, but not active until a connection has been established.\n// WiFi may require a connection for VPN on Demand.\n-(BOOL)isConnectionRequired\n{\n    return [self connectionRequired];\n}\n\n-(BOOL)connectionRequired\n{\n    SCNetworkReachabilityFlags flags;\n\t\n\tif(SCNetworkReachabilityGetFlags(self.reachabilityRef, &flags))\n    {\n\t\treturn (flags & kSCNetworkReachabilityFlagsConnectionRequired);\n\t}\n    \n    return NO;\n}\n\n// Dynamic, on demand connection?\n-(BOOL)isConnectionOnDemand\n{\n\tSCNetworkReachabilityFlags flags;\n\t\n\tif (SCNetworkReachabilityGetFlags(self.reachabilityRef, &flags))\n    {\n\t\treturn ((flags & kSCNetworkReachabilityFlagsConnectionRequired) &&\n\t\t\t\t(flags & (kSCNetworkReachabilityFlagsConnectionOnTraffic | kSCNetworkReachabilityFlagsConnectionOnDemand)));\n\t}\n\t\n\treturn NO;\n}\n\n// Is user intervention required?\n-(BOOL)isInterventionRequired\n{\n    SCNetworkReachabilityFlags flags;\n\t\n\tif (SCNetworkReachabilityGetFlags(self.reachabilityRef, &flags))\n    {\n\t\treturn ((flags & kSCNetworkReachabilityFlagsConnectionRequired) &&\n\t\t\t\t(flags & kSCNetworkReachabilityFlagsInterventionRequired));\n\t}\n\t\n\treturn NO;\n}\n\n\n#pragma mark - reachability status stuff\n\n-(NetworkStatus)currentReachabilityStatus\n{\n    if([self isReachable])\n    {\n        if([self isReachableViaWiFi])\n            return ReachableViaWiFi;\n        \n#if\tTARGET_OS_IPHONE\n        return ReachableViaWWAN;\n#endif\n    }\n    \n    return NotReachable;\n}\n\n-(SCNetworkReachabilityFlags)reachabilityFlags\n{\n    SCNetworkReachabilityFlags flags = 0;\n    \n    if(SCNetworkReachabilityGetFlags(self.reachabilityRef, &flags)) \n    {\n        return flags;\n    }\n    \n    return 0;\n}\n\n-(NSString*)currentReachabilityString\n{\n\tNetworkStatus temp = [self currentReachabilityStatus];\n\t\n\tif(temp == ReachableViaWWAN)\n\t{\n        // Updated for the fact that we have CDMA phones now!\n\t\treturn NSLocalizedString(@\"Cellular\", @\"\");\n\t}\n\tif (temp == ReachableViaWiFi) \n\t{\n\t\treturn NSLocalizedString(@\"WiFi\", @\"\");\n\t}\n\t\n\treturn NSLocalizedString(@\"No Connection\", @\"\");\n}\n\n-(NSString*)currentReachabilityFlags\n{\n    return reachabilityFlags([self reachabilityFlags]);\n}\n\n#pragma mark - Callback function calls this method\n\n-(void)reachabilityChanged:(SCNetworkReachabilityFlags)flags\n{\n    if([self isReachableWithFlags:flags])\n    {\n        if(self.reachableBlock)\n        {\n            self.reachableBlock(self);\n        }\n    }\n    else\n    {\n        if(self.unreachableBlock)\n        {\n            self.unreachableBlock(self);\n        }\n    }\n    \n    if(self.reachabilityBlock)\n    {\n        self.reachabilityBlock(self, flags);\n    }\n    \n    // this makes sure the change notification happens on the MAIN THREAD\n    dispatch_async(dispatch_get_main_queue(), ^{\n        [[NSNotificationCenter defaultCenter] postNotificationName:k{{Prefix}}ReachabilityChangedNotification\n                                                            object:self];\n    });\n}\n\n#pragma mark - Debug Description\n\n- (NSString *) description\n{\n    NSString *description = [NSString stringWithFormat:@\"<%@: %#x (%@)>\",\n                             NSStringFromClass([self class]), (unsigned int) self, [self currentReachabilityFlags]];\n    return description;\n}\n\n@end\n",
+											"dataSource": 0,
+											"children": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": 11967,
+							"specId": 10074,
+							"parent": 11955,
+							"type": 0,
+							"name": "Resources",
+							"description": "",
+							"mime": "",
+							"content": "",
+							"dataSource": 0,
+							"children": [
+								{
+									"id": 12014,
+									"specId": 10074,
+									"parent": 11967,
+									"type": 0,
+									"name": "Assets.xcassets",
+									"description": "",
+									"mime": "",
+									"content": "",
+									"dataSource": 0,
+									"children": [
+										{
+											"id": 12080,
+											"specId": 10074,
+											"parent": 12014,
+											"type": 1,
+											"name": "Contents.json",
+											"description": "",
+											"mime": "text/json",
+											"content": "{\n  \"info\" : {\n    \"version\" : 1,\n    \"author\" : \"xcode\"\n  }\n}",
+											"dataSource": 0,
+											"children": []
+										},
+										{
+											"id": 12081,
+											"specId": 10074,
+											"parent": 12014,
+											"type": 0,
+											"name": "AppIcon.appiconset",
+											"description": "",
+											"mime": "",
+											"content": "",
+											"dataSource": 0,
+											"children": [
+												{
+													"id": 12125,
+													"specId": 10074,
+													"parent": 12081,
+													"type": 1,
+													"name": "Contents.json",
+													"description": "",
+													"mime": "text/json",
+													"content": "{\n  \"images\" : [\n    {\n      \"idiom\" : \"iphone\",\n      \"size\" : \"29x29\",\n      \"scale\" : \"2x\"\n    },\n    {\n      \"idiom\" : \"iphone\",\n      \"size\" : \"29x29\",\n      \"scale\" : \"3x\"\n    },\n    {\n      \"idiom\" : \"iphone\",\n      \"size\" : \"40x40\",\n      \"scale\" : \"2x\"\n    },\n    {\n      \"idiom\" : \"iphone\",\n      \"size\" : \"40x40\",\n      \"scale\" : \"3x\"\n    },\n    {\n      \"idiom\" : \"iphone\",\n      \"size\" : \"60x60\",\n      \"scale\" : \"2x\"\n    },\n    {\n      \"idiom\" : \"iphone\",\n      \"size\" : \"60x60\",\n      \"scale\" : \"3x\"\n    }\n  ],\n  \"info\" : {\n    \"version\" : 1,\n    \"author\" : \"xcode\"\n  }\n}",
+													"dataSource": 0,
+													"children": []
+												}
+											]
+										},
+										{
+											"id": 12082,
+											"specId": 10074,
+											"parent": 12014,
+											"type": 0,
+											"name": "LaunchImage.launchimage",
+											"description": "",
+											"mime": "",
+											"content": "",
+											"dataSource": 0,
+											"children": [
+												{
+													"id": 12126,
+													"specId": 10074,
+													"parent": 12082,
+													"type": 1,
+													"name": "Contents.json",
+													"description": "",
+													"mime": "text/json",
+													"content": "{\n  \"images\" : [\n    {\n      \"orientation\" : \"portrait\",\n      \"idiom\" : \"iphone\",\n      \"extent\" : \"full-screen\",\n      \"minimum-system-version\" : \"8.0\",\n      \"subtype\" : \"736h\",\n      \"scale\" : \"3x\"\n    },\n    {\n      \"orientation\" : \"landscape\",\n      \"idiom\" : \"iphone\",\n      \"extent\" : \"full-screen\",\n      \"minimum-system-version\" : \"8.0\",\n      \"subtype\" : \"736h\",\n      \"scale\" : \"3x\"\n    },\n    {\n      \"orientation\" : \"portrait\",\n      \"idiom\" : \"iphone\",\n      \"extent\" : \"full-screen\",\n      \"minimum-system-version\" : \"8.0\",\n      \"subtype\" : \"667h\",\n      \"scale\" : \"2x\"\n    },\n    {\n      \"orientation\" : \"portrait\",\n      \"idiom\" : \"iphone\",\n      \"extent\" : \"full-screen\",\n      \"minimum-system-version\" : \"7.0\",\n      \"scale\" : \"2x\"\n    },\n    {\n      \"orientation\" : \"portrait\",\n      \"idiom\" : \"iphone\",\n      \"extent\" : \"full-screen\",\n      \"minimum-system-version\" : \"7.0\",\n      \"subtype\" : \"retina4\",\n      \"scale\" : \"2x\"\n    },\n    {\n      \"orientation\" : \"portrait\",\n      \"idiom\" : \"iphone\",\n      \"extent\" : \"full-screen\",\n      \"scale\" : \"1x\"\n    },\n    {\n      \"orientation\" : \"portrait\",\n      \"idiom\" : \"iphone\",\n      \"extent\" : \"full-screen\",\n      \"scale\" : \"2x\"\n    },\n    {\n      \"orientation\" : \"portrait\",\n      \"idiom\" : \"iphone\",\n      \"extent\" : \"full-screen\",\n      \"subtype\" : \"retina4\",\n      \"scale\" : \"2x\"\n    }\n  ],\n  \"info\" : {\n    \"version\" : 1,\n    \"author\" : \"xcode\"\n  }\n}",
+													"dataSource": 0,
+													"children": []
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": 11968,
+							"specId": 10074,
+							"parent": 11955,
+							"type": 0,
+							"name": "Supporting Files",
+							"description": "",
+							"mime": "",
+							"content": "",
+							"dataSource": 0,
+							"children": [
+								{
+									"id": 12015,
+									"specId": 10074,
+									"parent": 11968,
+									"type": 1,
+									"name": "main.m",
+									"description": "",
+									"mime": "cannot",
+									"content": "http://nos.netease.com:80/nei/8d6625bf1c843136c21d7bc3236811d9?NOSAccessKeyId=f3318b2c1f67409386bb99813a44c778&Expires=9999999999&Signature=2eKqanSX0fyJmN5dW%2B95DV3aa24uSGhVZcYZolwHLpc%3D",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 12016,
+									"specId": 10074,
+									"parent": 11968,
+									"type": 1,
+									"name": "{{ProductName}}.plist",
+									"description": "",
+									"mime": "cannot",
+									"content": "http://nos.netease.com:80/nei/dad074ae98af140df4213ac7eff27dec?NOSAccessKeyId=f3318b2c1f67409386bb99813a44c778&Expires=9999999999&Signature=uAife2x65gG%2FaEpjE3Yn7pSaUNnBI5xKo1xQdHrpGtE%3D",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 12017,
+									"specId": 10074,
+									"parent": 11968,
+									"type": 0,
+									"name": "Base.lproj",
+									"description": "",
+									"mime": "",
+									"content": "",
+									"dataSource": 0,
+									"children": [
+										{
+											"id": 12083,
+											"specId": 10074,
+											"parent": 12017,
+											"type": 1,
+											"name": "Localizable.strings",
+											"description": "",
+											"mime": "cannot",
+											"content": "http://nos.netease.com:80/nei/4ffd501fd02cb02f5dfb1706e2955d5b?NOSAccessKeyId=f3318b2c1f67409386bb99813a44c778&Expires=9999999999&Signature=edD3KI1UAfPwkdHl%2FXJ1KG7ihmGrGqg9H1rHLJVOLwI%3D",
+											"dataSource": 0,
+											"children": []
+										}
+									]
+								},
+								{
+									"id": 12018,
+									"specId": 10074,
+									"parent": 11968,
+									"type": 0,
+									"name": "Configuration",
+									"description": "",
+									"mime": "",
+									"content": "",
+									"dataSource": 0,
+									"children": [
+										{
+											"id": 12084,
+											"specId": 10074,
+											"parent": 12018,
+											"type": 1,
+											"name": "share.xcconfig",
+											"description": "",
+											"mime": "cannot",
+											"content": "http://nos.netease.com:80/nei/da98a9c7317ffb8e3ac3f2084f74b53c?NOSAccessKeyId=f3318b2c1f67409386bb99813a44c778&Expires=9999999999&Signature=jIkFLLgsg5rDfD922hbFDIkf1YUP37LwXWPv%2BGiUCUc%3D",
+											"dataSource": 0,
+											"children": []
+										},
+										{
+											"id": 12085,
+											"specId": 10074,
+											"parent": 12018,
+											"type": 1,
+											"name": "{{Prefix}}AppStore.xcconfig",
+											"description": "",
+											"mime": "cannot",
+											"content": "http://nos.netease.com:80/nei/baa6b3e1e7da4a627d80e4bfc227f0b6?NOSAccessKeyId=f3318b2c1f67409386bb99813a44c778&Expires=9999999999&Signature=HbcFSB8VD0XX7tL%2BEdbqHCwXj%2FwRgU5hpBDo3rExbjw%3D",
+											"dataSource": 0,
+											"children": []
+										},
+										{
+											"id": 12086,
+											"specId": 10074,
+											"parent": 12018,
+											"type": 1,
+											"name": "{{Prefix}}Debug.xcconfig",
+											"description": "",
+											"mime": "cannot",
+											"content": "http://nos.netease.com:80/nei/d40595544a9689c9896a24164b2304f7?NOSAccessKeyId=f3318b2c1f67409386bb99813a44c778&Expires=9999999999&Signature=GXuVD45b01LyxWeDdtQ5ycZyk98yuJZN9UMqnCz0Ts4%3D",
+											"dataSource": 0,
+											"children": []
+										},
+										{
+											"id": 12087,
+											"specId": 10074,
+											"parent": 12018,
+											"type": 1,
+											"name": "{{Prefix}}Release.xcconfig",
+											"description": "",
+											"mime": "cannot",
+											"content": "http://nos.netease.com:80/nei/19a346e545f8912f8f98e11f5355ea94?NOSAccessKeyId=f3318b2c1f67409386bb99813a44c778&Expires=9999999999&Signature=3QNimXciFy4wg9BzbwNrQ21o7CMmselcrs1My9ubaa8%3D",
+											"dataSource": 0,
+											"children": []
+										}
+									]
+								},
+								{
+									"id": 12019,
+									"specId": 10074,
+									"parent": 11968,
+									"type": 0,
+									"name": "en.lproj",
+									"description": "",
+									"mime": "",
+									"content": "",
+									"dataSource": 0,
+									"children": [
+										{
+											"id": 12088,
+											"specId": 10074,
+											"parent": 12019,
+											"type": 1,
+											"name": "Localizable.strings",
+											"description": "",
+											"mime": "cannot",
+											"content": "http://nos.netease.com:80/nei/949971c556bbf5646ed24f5ca949553b?NOSAccessKeyId=f3318b2c1f67409386bb99813a44c778&Expires=9999999999&Signature=VKANrQhmP2hIqXTROh4aCj9B8orFQ6yUAAx8aZaYeCQ%3D",
+											"dataSource": 0,
+											"children": []
+										}
+									]
+								},
+								{
+									"id": 12020,
+									"specId": 10074,
+									"parent": 11968,
+									"type": 0,
+									"name": "zh-Hans.lproj",
+									"description": "",
+									"mime": "",
+									"content": "",
+									"dataSource": 0,
+									"children": [
+										{
+											"id": 12089,
+											"specId": 10074,
+											"parent": 12020,
+											"type": 1,
+											"name": "Localizable.strings",
+											"description": "",
+											"mime": "cannot",
+											"content": "http://nos.netease.com:80/nei/c691c9329edc4374ece29351ecf8f222?NOSAccessKeyId=f3318b2c1f67409386bb99813a44c778&Expires=9999999999&Signature=wzRafDCmAIRfbksSnRwFUGCO%2F0lmuhK4GMC7cXhrY3E%3D",
+											"dataSource": 0,
+											"children": []
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": 11956,
+					"specId": 10074,
+					"parent": 0,
+					"type": 0,
+					"name": "{{project.name}}.xcodeproj",
+					"description": "",
+					"mime": "",
+					"content": "",
+					"dataSource": 0,
+					"children": [
+						{
+							"id": 11969,
+							"specId": 10074,
+							"parent": 11956,
+							"type": 1,
+							"name": "project.pbxproj",
+							"description": "",
+							"mime": "text/octet-stream",
+							"content": "// !$*UTF8*$!\n{\n\tarchiveVersion = 1;\n\tclasses = {\n\t};\n\tobjectVersion = 46;\n\tobjects = {\n\n/* Begin PBXBuildFile section */\n\t\t30CBEE26344BE33EE8F268B6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC378061B5D8F995526D266 /* libPods.a */; };\n\t\t33634CEE1C577561001D2B2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33634CC01C577561001D2B2C /* AppDelegate.m */; };\n\t\t33634CF01C577561001D2B2C /* UITableViewCell+{{Prefix}}Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 33634CC61C577561001D2B2C /* UITableViewCell+{{Prefix}}Line.m */; };\n\t\t33634CF11C577561001D2B2C /* UIView+{{Prefix}}Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 33634CC81C577561001D2B2C /* UIView+{{Prefix}}Line.m */; };\n\t\t33634CF21C577561001D2B2C /* {{Prefix}}ControllerLoadingEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33634CCA1C577561001D2B2C /* {{Prefix}}ControllerLoadingEmptyView.m */; };\n\t\t33634CF31C577561001D2B2C /* {{Prefix}}ControllerLoadingErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33634CCC1C577561001D2B2C /* {{Prefix}}ControllerLoadingErrorView.m */; };\n\t\t33634CF41C577561001D2B2C /* {{Prefix}}ControllerLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33634CCE1C577561001D2B2C /* {{Prefix}}ControllerLoadingView.m */; };\n\t\t33634CF51C577561001D2B2C /* {{Prefix}}LoadMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33634CD01C577561001D2B2C /* {{Prefix}}LoadMoreView.m */; };\n\t\t33634CF61C577561001D2B2C /* {{Prefix}}RefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33634CD21C577561001D2B2C /* {{Prefix}}RefreshView.m */; };\n\t\t33634CF71C577561001D2B2C /* UINavigationController+{{Prefix}}NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 33634CD51C577561001D2B2C /* UINavigationController+{{Prefix}}NavigationBar.m */; };\n\t\t33634CF81C577561001D2B2C /* UIViewController+{{Prefix}}Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = 33634CD71C577561001D2B2C /* UIViewController+{{Prefix}}Loading.m */; };\n\t\t33634CF91C577561001D2B2C /* {{Prefix}}TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33634CDC1C577561001D2B2C /* {{Prefix}}TabBarController.m */; };\n\t\t33634CFA1C577561001D2B2C /* {{Prefix}}TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 33634CDE1C577561001D2B2C /* {{Prefix}}TabBarItem.m */; };\n\t\t33634CFB1C577561001D2B2C /* {{Prefix}}Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 33634CE21C577561001D2B2C /* {{Prefix}}Reachability.m */; };\n\t\t33634CFC1C577561001D2B2C /* {{Prefix}}Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 33634CE41C577561001D2B2C /* {{Prefix}}Networking.m */; };\n\t\t33634D011C577561001D2B2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33634CEC1C577561001D2B2C /* main.m */; };\n\t\t33634D041C577A1F001D2B2C /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 33634D031C577A1F001D2B2C /* Podfile */; };\n\t\t33634D061C577A5D001D2B2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33634D051C577A5D001D2B2C /* Assets.xcassets */; };\n\t\t33634D161C57D6D9001D2B2C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33634D181C57D6D9001D2B2C /* Localizable.strings */; };\n\t\t58AA4A421CE9BDC6009D1571 /* {{Prefix}}AutoCompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AA4A391CE9BDC6009D1571 /* {{Prefix}}AutoCompleteViewController.m */; };\n\t\t58AA4A431CE9BDC6009D1571 /* {{Prefix}}LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AA4A3B1CE9BDC6009D1571 /* {{Prefix}}LoginView.m */; };\n\t\t58AA4A441CE9BDC6009D1571 /* {{Prefix}}TimeoutButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AA4A3E1CE9BDC6009D1571 /* {{Prefix}}TimeoutButton.m */; };\n\t\t58AA4A451CE9BDC6009D1571 /* NSArray+{{Prefix}}Colledtion.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AA4A411CE9BDC6009D1571 /* NSArray+{{Prefix}}Colledtion.m */; };\n/* End PBXBuildFile section */\n\n/* Begin PBXFileReference section */\n\t\t33634CA41C576C9B001D2B2C /* {{ProductName}}.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = \"{{ProductName}}.app\"; sourceTree = BUILT_PRODUCTS_DIR; };\n\t\t33634CBF1C577561001D2B2C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = \"<group>\"; };\n\t\t33634CC01C577561001D2B2C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = \"<group>\"; };\n\t\t33634CC51C577561001D2B2C /* UITableViewCell+{{Prefix}}Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = \"UITableViewCell+{{Prefix}}Line.h\"; sourceTree = \"<group>\"; };\n\t\t33634CC61C577561001D2B2C /* UITableViewCell+{{Prefix}}Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = \"UITableViewCell+{{Prefix}}Line.m\"; sourceTree = \"<group>\"; };\n\t\t33634CC71C577561001D2B2C /* UIView+{{Prefix}}Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = \"UIView+{{Prefix}}Line.h\"; sourceTree = \"<group>\"; };\n\t\t33634CC81C577561001D2B2C /* UIView+{{Prefix}}Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = \"UIView+{{Prefix}}Line.m\"; sourceTree = \"<group>\"; };\n\t\t33634CC91C577561001D2B2C /* {{Prefix}}ControllerLoadingEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = \"{{Prefix}}ControllerLoadingEmptyView.h\"; sourceTree = \"<group>\"; };\n\t\t33634CCA1C577561001D2B2C /* {{Prefix}}ControllerLoadingEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = \"{{Prefix}}ControllerLoadingEmptyView.m\"; sourceTree = \"<group>\"; };\n\t\t33634CCB1C577561001D2B2C /* {{Prefix}}ControllerLoadingErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = \"{{Prefix}}ControllerLoadingErrorView.h\"; sourceTree = \"<group>\"; };\n\t\t33634CCC1C577561001D2B2C /* {{Prefix}}ControllerLoadingErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = \"{{Prefix}}ControllerLoadingErrorView.m\"; sourceTree = \"<group>\"; };\n\t\t33634CCD1C577561001D2B2C /* {{Prefix}}ControllerLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = \"{{Prefix}}ControllerLoadingView.h\"; sourceTree = \"<group>\"; };\n\t\t33634CCE1C577561001D2B2C /* {{Prefix}}ControllerLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = \"{{Prefix}}ControllerLoadingView.m\"; sourceTree = \"<group>\"; };\n\t\t33634CCF1C577561001D2B2C /* {{Prefix}}LoadMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = \"{{Prefix}}LoadMoreView.h\"; sourceTree = \"<group>\"; };\n\t\t33634CD01C577561001D2B2C /* {{Prefix}}LoadMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = \"{{Prefix}}LoadMoreView.m\"; sourceTree = \"<group>\"; };\n\t\t33634CD11C577561001D2B2C /* {{Prefix}}RefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = \"{{Prefix}}RefreshView.h\"; sourceTree = \"<group>\"; };\n\t\t33634CD21C577561001D2B2C /* {{Prefix}}RefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = \"{{Prefix}}RefreshView.m\"; sourceTree = \"<group>\"; };\n\t\t33634CD41C577561001D2B2C /* UINavigationController+{{Prefix}}NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = \"UINavigationController+{{Prefix}}NavigationBar.h\"; sourceTree = \"<group>\"; };\n\t\t33634CD51C577561001D2B2C /* UINavigationController+{{Prefix}}NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = \"UINavigationController+{{Prefix}}NavigationBar.m\"; sourceTree = \"<group>\"; };\n\t\t33634CD61C577561001D2B2C /* UIViewController+{{Prefix}}Loading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = \"UIViewController+{{Prefix}}Loading.h\"; sourceTree = \"<group>\"; };\n\t\t33634CD71C577561001D2B2C /* UIViewController+{{Prefix}}Loading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = \"UIViewController+{{Prefix}}Loading.m\"; sourceTree = \"<group>\"; };\n\t\t33634CDB1C577561001D2B2C /* {{Prefix}}TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = \"{{Prefix}}TabBarController.h\"; sourceTree = \"<group>\"; };\n\t\t33634CDC1C577561001D2B2C /* {{Prefix}}TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = \"{{Prefix}}TabBarController.m\"; sourceTree = \"<group>\"; };\n\t\t33634CDD1C577561001D2B2C /* {{Prefix}}TabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = \"{{Prefix}}TabBarItem.h\"; sourceTree = \"<group>\"; };\n\t\t33634CDE1C577561001D2B2C /* {{Prefix}}TabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = \"{{Prefix}}TabBarItem.m\"; sourceTree = \"<group>\"; };\n\t\t33634CE11C577561001D2B2C /* {{Prefix}}Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = \"{{Prefix}}Reachability.h\"; sourceTree = \"<group>\"; };\n\t\t33634CE21C577561001D2B2C /* {{Prefix}}Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = \"{{Prefix}}Reachability.m\"; sourceTree = \"<group>\"; };\n\t\t33634CE31C577561001D2B2C /* {{Prefix}}Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = \"{{Prefix}}Networking.h\"; sourceTree = \"<group>\"; };\n\t\t33634CE41C577561001D2B2C /* {{Prefix}}Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = \"{{Prefix}}Networking.m\"; sourceTree = \"<group>\"; };\n\t\t33634CE81C577561001D2B2C /* share.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = share.xcconfig; sourceTree = \"<group>\"; };\n\t\t33634CE91C577561001D2B2C /* {{Prefix}}AppStore.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = \"{{Prefix}}AppStore.xcconfig\"; sourceTree = \"<group>\"; };\n\t\t33634CEA1C577561001D2B2C /* {{Prefix}}Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = \"{{Prefix}}Debug.xcconfig\"; sourceTree = \"<group>\"; };\n\t\t33634CEB1C577561001D2B2C /* {{Prefix}}Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = \"{{Prefix}}Release.xcconfig\"; sourceTree = \"<group>\"; };\n\t\t33634CEC1C577561001D2B2C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = \"<group>\"; };\n\t\t33634CED1C577561001D2B2C /* {{ProductName}}.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = \"{{ProductName}}.plist\"; sourceTree = \"<group>\"; };\n\t\t33634D031C577A1F001D2B2C /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };\n\t\t33634D051C577A5D001D2B2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = \"<group>\"; };\n\t\t33634D171C57D6D9001D2B2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = \"<group>\"; };\n\t\t33634D191C57D6DB001D2B2C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = \"<group>\"; };\n\t\t33634D1A1C57D6E4001D2B2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = \"zh-Hans\"; path = \"zh-Hans.lproj/Localizable.strings\"; sourceTree = \"<group>\"; };\n\t\t58AA4A381CE9BDC6009D1571 /* {{Prefix}}AutoCompleteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = \"{{Prefix}}AutoCompleteViewController.h\"; sourceTree = \"<group>\"; };\n\t\t58AA4A391CE9BDC6009D1571 /* {{Prefix}}AutoCompleteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = \"{{Prefix}}AutoCompleteViewController.m\"; sourceTree = \"<group>\"; };\n\t\t58AA4A3A1CE9BDC6009D1571 /* {{Prefix}}LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = \"{{Prefix}}LoginView.h\"; sourceTree = \"<group>\"; };\n\t\t58AA4A3B1CE9BDC6009D1571 /* {{Prefix}}LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = \"{{Prefix}}LoginView.m\"; sourceTree = \"<group>\"; };\n\t\t58AA4A3D1CE9BDC6009D1571 /* {{Prefix}}TimeoutButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = \"{{Prefix}}TimeoutButton.h\"; sourceTree = \"<group>\"; };\n\t\t58AA4A3E1CE9BDC6009D1571 /* {{Prefix}}TimeoutButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = \"{{Prefix}}TimeoutButton.m\"; sourceTree = \"<group>\"; };\n\t\t58AA4A401CE9BDC6009D1571 /* NSArray+{{Prefix}}Collection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = \"NSArray+{{Prefix}}Collection.h\"; sourceTree = \"<group>\"; };\n\t\t58AA4A411CE9BDC6009D1571 /* NSArray+{{Prefix}}Colledtion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = \"NSArray+{{Prefix}}Colledtion.m\"; sourceTree = \"<group>\"; };\n\t\tB5B027BF1EEAC8FBCF2A79A1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = \"Pods/Target Support Files/Pods/Pods.release.xcconfig\"; sourceTree = \"<group>\"; };\n\t\tD80A9F532C0BD0EF5CEAE31B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = \"Pods/Target Support Files/Pods/Pods.debug.xcconfig\"; sourceTree = \"<group>\"; };\n\t\tEDC378061B5D8F995526D266 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };\n/* End PBXFileReference section */\n\n/* Begin PBXFrameworksBuildPhase section */\n\t\t33634CA11C576C9B001D2B2C /* Frameworks */ = {\n\t\t\tisa = PBXFrameworksBuildPhase;\n\t\t\tbuildActionMask = 2147483647;\n\t\t\tfiles = (\n\t\t\t\t30CBEE26344BE33EE8F268B6 /* libPods.a in Frameworks */,\n\t\t\t);\n\t\t\trunOnlyForDeploymentPostprocessing = 0;\n\t\t};\n/* End PBXFrameworksBuildPhase section */\n\n/* Begin PBXGroup section */\n\t\t33634C9B1C576C9B001D2B2C = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\t33634CA61C576C9B001D2B2C /* {{ProductName}} */,\n\t\t\t\t33634CA51C576C9B001D2B2C /* Products */,\n\t\t\t\t78CC5A924810420B1A2047F9 /* Pods */,\n\t\t\t\tE2DF6B4B2CA3D946F1117FEB /* Frameworks */,\n\t\t\t);\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n\t\t33634CA51C576C9B001D2B2C /* Products */ = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\t33634CA41C576C9B001D2B2C /* {{ProductName}}.app */,\n\t\t\t);\n\t\t\tname = Products;\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n\t\t33634CA61C576C9B001D2B2C /* {{ProductName}} */ = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\t33634CBE1C577561001D2B2C /* AppDelegate */,\n\t\t\t\t33634CC31C577561001D2B2C /* CommonUtil */,\n\t\t\t\t33634CC41C577561001D2B2C /* CommonView */,\n\t\t\t\t33634CD31C577561001D2B2C /* CommonViewController */,\n\t\t\t\t33634CD81C577561001D2B2C /* Modules */,\n\t\t\t\t33634CDF1C577561001D2B2C /* Network */,\n\t\t\t\t33634CE51C577561001D2B2C /* Resources */,\n\t\t\t\t33634CE61C577561001D2B2C /* Supporting Files */,\n\t\t\t);\n\t\t\tpath = \"{{ProductName}}\";\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n\t\t33634CBE1C577561001D2B2C /* AppDelegate */ = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\t33634CBF1C577561001D2B2C /* AppDelegate.h */,\n\t\t\t\t33634CC01C577561001D2B2C /* AppDelegate.m */,\n\t\t\t);\n\t\t\tpath = AppDelegate;\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n\t\t33634CC31C577561001D2B2C /* CommonUtil */ = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t);\n\t\t\tpath = CommonUtil;\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n\t\t33634CC41C577561001D2B2C /* CommonView */ = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\t33634CC51C577561001D2B2C /* UITableViewCell+{{Prefix}}Line.h */,\n\t\t\t\t33634CC61C577561001D2B2C /* UITableViewCell+{{Prefix}}Line.m */,\n\t\t\t\t33634CC71C577561001D2B2C /* UIView+{{Prefix}}Line.h */,\n\t\t\t\t33634CC81C577561001D2B2C /* UIView+{{Prefix}}Line.m */,\n\t\t\t\t33634CC91C577561001D2B2C /* {{Prefix}}ControllerLoadingEmptyView.h */,\n\t\t\t\t33634CCA1C577561001D2B2C /* {{Prefix}}ControllerLoadingEmptyView.m */,\n\t\t\t\t33634CCB1C577561001D2B2C /* {{Prefix}}ControllerLoadingErrorView.h */,\n\t\t\t\t33634CCC1C577561001D2B2C /* {{Prefix}}ControllerLoadingErrorView.m */,\n\t\t\t\t33634CCD1C577561001D2B2C /* {{Prefix}}ControllerLoadingView.h */,\n\t\t\t\t33634CCE1C577561001D2B2C /* {{Prefix}}ControllerLoadingView.m */,\n\t\t\t\t33634CCF1C577561001D2B2C /* {{Prefix}}LoadMoreView.h */,\n\t\t\t\t33634CD01C577561001D2B2C /* {{Prefix}}LoadMoreView.m */,\n\t\t\t\t33634CD11C577561001D2B2C /* {{Prefix}}RefreshView.h */,\n\t\t\t\t33634CD21C577561001D2B2C /* {{Prefix}}RefreshView.m */,\n\t\t\t);\n\t\t\tpath = CommonView;\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n\t\t33634CD31C577561001D2B2C /* CommonViewController */ = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\t33634CD41C577561001D2B2C /* UINavigationController+{{Prefix}}NavigationBar.h */,\n\t\t\t\t33634CD51C577561001D2B2C /* UINavigationController+{{Prefix}}NavigationBar.m */,\n\t\t\t\t33634CD61C577561001D2B2C /* UIViewController+{{Prefix}}Loading.h */,\n\t\t\t\t33634CD71C577561001D2B2C /* UIViewController+{{Prefix}}Loading.m */,\n\t\t\t);\n\t\t\tpath = CommonViewController;\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n\t\t33634CD81C577561001D2B2C /* Modules */ = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\t58AA4A361CE9BDC6009D1571 /* Login */,\n\t\t\t\t33634CDA1C577561001D2B2C /* Main */,\n\t\t\t);\n\t\t\tpath = Modules;\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n\t\t33634CDA1C577561001D2B2C /* Main */ = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\t33634CDB1C577561001D2B2C /* {{Prefix}}TabBarController.h */,\n\t\t\t\t33634CDC1C577561001D2B2C /* {{Prefix}}TabBarController.m */,\n\t\t\t\t33634CDD1C577561001D2B2C /* {{Prefix}}TabBarItem.h */,\n\t\t\t\t33634CDE1C577561001D2B2C /* {{Prefix}}TabBarItem.m */,\n\t\t\t);\n\t\t\tpath = Main;\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n\t\t33634CDF1C577561001D2B2C /* Network */ = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\t33634CE01C577561001D2B2C /* Reachability */,\n\t\t\t\t33634CE31C577561001D2B2C /* {{Prefix}}Networking.h */,\n\t\t\t\t33634CE41C577561001D2B2C /* {{Prefix}}Networking.m */,\n\t\t\t);\n\t\t\tpath = Network;\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n\t\t33634CE01C577561001D2B2C /* Reachability */ = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\t33634CE11C577561001D2B2C /* {{Prefix}}Reachability.h */,\n\t\t\t\t33634CE21C577561001D2B2C /* {{Prefix}}Reachability.m */,\n\t\t\t);\n\t\t\tpath = Reachability;\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n\t\t33634CE51C577561001D2B2C /* Resources */ = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\t33634D051C577A5D001D2B2C /* Assets.xcassets */,\n\t\t\t);\n\t\t\tpath = Resources;\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n\t\t33634CE61C577561001D2B2C /* Supporting Files */ = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\t33634D031C577A1F001D2B2C /* Podfile */,\n\t\t\t\t33634CE71C577561001D2B2C /* Configuration */,\n\t\t\t\t33634CEC1C577561001D2B2C /* main.m */,\n\t\t\t\t33634CED1C577561001D2B2C /* {{ProductName}}.plist */,\n\t\t\t\t33634D181C57D6D9001D2B2C /* Localizable.strings */,\n\t\t\t);\n\t\t\tpath = \"Supporting Files\";\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n\t\t33634CE71C577561001D2B2C /* Configuration */ = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\t33634CE81C577561001D2B2C /* share.xcconfig */,\n\t\t\t\t33634CE91C577561001D2B2C /* {{Prefix}}AppStore.xcconfig */,\n\t\t\t\t33634CEA1C577561001D2B2C /* {{Prefix}}Debug.xcconfig */,\n\t\t\t\t33634CEB1C577561001D2B2C /* {{Prefix}}Release.xcconfig */,\n\t\t\t);\n\t\t\tpath = Configuration;\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n\t\t58AA4A361CE9BDC6009D1571 /* Login */ = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\t58AA4A3A1CE9BDC6009D1571 /* {{Prefix}}LoginView.h */,\n\t\t\t\t58AA4A3B1CE9BDC6009D1571 /* {{Prefix}}LoginView.m */,\n\t\t\t\t58AA4A371CE9BDC6009D1571 /* AutoCompleteList */,\n\t\t\t\t58AA4A3C1CE9BDC6009D1571 /* TimeoutButton */,\n\t\t\t\t58AA4A3F1CE9BDC6009D1571 /* Utilities */,\n\t\t\t);\n\t\t\tpath = Login;\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n\t\t58AA4A371CE9BDC6009D1571 /* AutoCompleteList */ = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\t58AA4A381CE9BDC6009D1571 /* {{Prefix}}AutoCompleteViewController.h */,\n\t\t\t\t58AA4A391CE9BDC6009D1571 /* {{Prefix}}AutoCompleteViewController.m */,\n\t\t\t);\n\t\t\tpath = AutoCompleteList;\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n\t\t58AA4A3C1CE9BDC6009D1571 /* TimeoutButton */ = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\t58AA4A3D1CE9BDC6009D1571 /* {{Prefix}}TimeoutButton.h */,\n\t\t\t\t58AA4A3E1CE9BDC6009D1571 /* {{Prefix}}TimeoutButton.m */,\n\t\t\t);\n\t\t\tpath = TimeoutButton;\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n\t\t58AA4A3F1CE9BDC6009D1571 /* Utilities */ = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\t58AA4A401CE9BDC6009D1571 /* NSArray+{{Prefix}}Collection.h */,\n\t\t\t\t58AA4A411CE9BDC6009D1571 /* NSArray+{{Prefix}}Colledtion.m */,\n\t\t\t);\n\t\t\tpath = Utilities;\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n\t\t78CC5A924810420B1A2047F9 /* Pods */ = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\tD80A9F532C0BD0EF5CEAE31B /* Pods.debug.xcconfig */,\n\t\t\t\tB5B027BF1EEAC8FBCF2A79A1 /* Pods.release.xcconfig */,\n\t\t\t);\n\t\t\tname = Pods;\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n\t\tE2DF6B4B2CA3D946F1117FEB /* Frameworks */ = {\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\tEDC378061B5D8F995526D266 /* libPods.a */,\n\t\t\t);\n\t\t\tname = Frameworks;\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n/* End PBXGroup section */\n\n/* Begin PBXNativeTarget section */\n\t\t33634CA31C576C9B001D2B2C /* {{ProductName}} */ = {\n\t\t\tisa = PBXNativeTarget;\n\t\t\tbuildConfigurationList = 33634CBB1C576C9B001D2B2C /* Build configuration list for PBXNativeTarget \"{{ProductName}}\" */;\n\t\t\tbuildPhases = (\n\t\t\t\tF30E197E4CECC7E3CD119006 /* Check Pods Manifest.lock */,\n\t\t\t\t33634CA01C576C9B001D2B2C /* Sources */,\n\t\t\t\t33634CA11C576C9B001D2B2C /* Frameworks */,\n\t\t\t\t33634CA21C576C9B001D2B2C /* Resources */,\n\t\t\t\t2FE123E9F7E48616C1709B61 /* Copy Pods Resources */,\n\t\t\t\tE64AA0611CE96D6B0023D771 /* Copy Mock Files */,\n\t\t\t);\n\t\t\tbuildRules = (\n\t\t\t);\n\t\t\tdependencies = (\n\t\t\t);\n\t\t\tname = \"{{ProductName}}\";\n\t\t\tproductName = \"{{ProductName}}\";\n\t\t\tproductReference = 33634CA41C576C9B001D2B2C /* {{ProductName}}.app */;\n\t\t\tproductType = \"com.apple.product-type.application\";\n\t\t};\n/* End PBXNativeTarget section */\n\n/* Begin PBXProject section */\n\t\t33634C9C1C576C9B001D2B2C /* Project object */ = {\n\t\t\tisa = PBXProject;\n\t\t\tattributes = {\n\t\t\t\tLastUpgradeCheck = 0720;\n\t\t\t\tORGANIZATIONNAME = Netease;\n\t\t\t\tTargetAttributes = {\n\t\t\t\t\t33634CA31C576C9B001D2B2C = {\n\t\t\t\t\t\tCreatedOnToolsVersion = 7.2;\n\t\t\t\t\t};\n\t\t\t\t};\n\t\t\t};\n\t\t\tbuildConfigurationList = 33634C9F1C576C9B001D2B2C /* Build configuration list for PBXProject \"{{ProductName}}\" */;\n\t\t\tcompatibilityVersion = \"Xcode 3.2\";\n\t\t\tdevelopmentRegion = English;\n\t\t\thasScannedForEncodings = 0;\n\t\t\tknownRegions = (\n\t\t\t\ten,\n\t\t\t\tBase,\n\t\t\t\t\"zh-Hans\",\n\t\t\t);\n\t\t\tmainGroup = 33634C9B1C576C9B001D2B2C;\n\t\t\tproductRefGroup = 33634CA51C576C9B001D2B2C /* Products */;\n\t\t\tprojectDirPath = \"\";\n\t\t\tprojectRoot = \"\";\n\t\t\ttargets = (\n\t\t\t\t33634CA31C576C9B001D2B2C /* {{ProductName}} */,\n\t\t\t);\n\t\t};\n/* End PBXProject section */\n\n/* Begin PBXResourcesBuildPhase section */\n\t\t33634CA21C576C9B001D2B2C /* Resources */ = {\n\t\t\tisa = PBXResourcesBuildPhase;\n\t\t\tbuildActionMask = 2147483647;\n\t\t\tfiles = (\n\t\t\t\t33634D061C577A5D001D2B2C /* Assets.xcassets in Resources */,\n\t\t\t\t33634D161C57D6D9001D2B2C /* Localizable.strings in Resources */,\n\t\t\t\t33634D041C577A1F001D2B2C /* Podfile in Resources */,\n\t\t\t);\n\t\t\trunOnlyForDeploymentPostprocessing = 0;\n\t\t};\n/* End PBXResourcesBuildPhase section */\n\n/* Begin PBXShellScriptBuildPhase section */\n\t\t2FE123E9F7E48616C1709B61 /* Copy Pods Resources */ = {\n\t\t\tisa = PBXShellScriptBuildPhase;\n\t\t\tbuildActionMask = 2147483647;\n\t\t\tfiles = (\n\t\t\t);\n\t\t\tinputPaths = (\n\t\t\t);\n\t\t\tname = \"Copy Pods Resources\";\n\t\t\toutputPaths = (\n\t\t\t);\n\t\t\trunOnlyForDeploymentPostprocessing = 0;\n\t\t\tshellPath = /bin/sh;\n\t\t\tshellScript = \"\\\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\\\"\\n\";\n\t\t\tshowEnvVarsInLog = 0;\n\t\t};\n\t\tE64AA0611CE96D6B0023D771 /* Copy Mock Files */ = {\n\t\t\tisa = PBXShellScriptBuildPhase;\n\t\t\tbuildActionMask = 2147483647;\n\t\t\tfiles = (\n\t\t\t);\n\t\t\tinputPaths = (\n\t\t\t);\n\t\t\tname = \"Copy Mock Files\";\n\t\t\toutputPaths = (\n\t\t\t);\n\t\t\trunOnlyForDeploymentPostprocessing = 0;\n\t\t\tshellPath = /bin/sh;\n\t\t\tshellScript = \"\\\"${SRCROOT}/{{ProductName}}/Network/Mock/CopyMockFiles.sh\\\"\";\n\t\t\tshowEnvVarsInLog = 0;\n\t\t};\n\t\tF30E197E4CECC7E3CD119006 /* Check Pods Manifest.lock */ = {\n\t\t\tisa = PBXShellScriptBuildPhase;\n\t\t\tbuildActionMask = 2147483647;\n\t\t\tfiles = (\n\t\t\t);\n\t\t\tinputPaths = (\n\t\t\t);\n\t\t\tname = \"Check Pods Manifest.lock\";\n\t\t\toutputPaths = (\n\t\t\t);\n\t\t\trunOnlyForDeploymentPostprocessing = 0;\n\t\t\tshellPath = /bin/sh;\n\t\t\tshellScript = \"diff \\\"${PODS_ROOT}/../Podfile.lock\\\" \\\"${PODS_ROOT}/Manifest.lock\\\" > /dev/null\\nif [[ $? != 0 ]] ; then\\n    cat << EOM\\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\\nEOM\\n    exit 1\\nfi\\n\";\n\t\t\tshowEnvVarsInLog = 0;\n\t\t};\n/* End PBXShellScriptBuildPhase section */\n\n/* Begin PBXSourcesBuildPhase section */\n\t\t33634CA01C576C9B001D2B2C /* Sources */ = {\n\t\t\tisa = PBXSourcesBuildPhase;\n\t\t\tbuildActionMask = 2147483647;\n\t\t\tfiles = (\n\t\t\t\t33634CFA1C577561001D2B2C /* {{Prefix}}TabBarItem.m in Sources */,\n\t\t\t\t33634CF61C577561001D2B2C /* {{Prefix}}RefreshView.m in Sources */,\n\t\t\t\t33634CF71C577561001D2B2C /* UINavigationController+{{Prefix}}NavigationBar.m in Sources */,\n\t\t\t\t33634CEE1C577561001D2B2C /* AppDelegate.m in Sources */,\n\t\t\t\t58AA4A431CE9BDC6009D1571 /* {{Prefix}}LoginView.m in Sources */,\n\t\t\t\t58AA4A451CE9BDC6009D1571 /* NSArray+{{Prefix}}Colledtion.m in Sources */,\n\t\t\t\t33634CFB1C577561001D2B2C /* {{Prefix}}Reachability.m in Sources */,\n\t\t\t\t33634CF21C577561001D2B2C /* {{Prefix}}ControllerLoadingEmptyView.m in Sources */,\n\t\t\t\t58AA4A421CE9BDC6009D1571 /* {{Prefix}}AutoCompleteViewController.m in Sources */,\n\t\t\t\t33634CF01C577561001D2B2C /* UITableViewCell+{{Prefix}}Line.m in Sources */,\n\t\t\t\t58AA4A441CE9BDC6009D1571 /* {{Prefix}}TimeoutButton.m in Sources */,\n\t\t\t\t33634CFC1C577561001D2B2C /* {{Prefix}}Networking.m in Sources */,\n\t\t\t\t33634CF91C577561001D2B2C /* {{Prefix}}TabBarController.m in Sources */,\n\t\t\t\t33634CF81C577561001D2B2C /* UIViewController+{{Prefix}}Loading.m in Sources */,\n\t\t\t\t33634D011C577561001D2B2C /* main.m in Sources */,\n\t\t\t\t33634CF41C577561001D2B2C /* {{Prefix}}ControllerLoadingView.m in Sources */,\n\t\t\t\t33634CF31C577561001D2B2C /* {{Prefix}}ControllerLoadingErrorView.m in Sources */,\n\t\t\t\t33634CF51C577561001D2B2C /* {{Prefix}}LoadMoreView.m in Sources */,\n\t\t\t\t33634CF11C577561001D2B2C /* UIView+{{Prefix}}Line.m in Sources */,\n\t\t\t);\n\t\t\trunOnlyForDeploymentPostprocessing = 0;\n\t\t};\n/* End PBXSourcesBuildPhase section */\n\n/* Begin PBXVariantGroup section */\n\t\t33634D181C57D6D9001D2B2C /* Localizable.strings */ = {\n\t\t\tisa = PBXVariantGroup;\n\t\t\tchildren = (\n\t\t\t\t33634D171C57D6D9001D2B2C /* Base */,\n\t\t\t\t33634D191C57D6DB001D2B2C /* en */,\n\t\t\t\t33634D1A1C57D6E4001D2B2C /* zh-Hans */,\n\t\t\t);\n\t\t\tname = Localizable.strings;\n\t\t\tsourceTree = \"<group>\";\n\t\t};\n/* End PBXVariantGroup section */\n\n/* Begin XCBuildConfiguration section */\n\t\t33634CB91C576C9B001D2B2C /* Debug */ = {\n\t\t\tisa = XCBuildConfiguration;\n\t\t\tbaseConfigurationReference = 33634CEA1C577561001D2B2C /* {{Prefix}}Debug.xcconfig */;\n\t\t\tbuildSettings = {\n\t\t\t\tALWAYS_SEARCH_USER_PATHS = NO;\n\t\t\t\tCLANG_CXX_LANGUAGE_STANDARD = \"gnu++0x\";\n\t\t\t\tCLANG_CXX_LIBRARY = \"libc++\";\n\t\t\t\tCLANG_ENABLE_MODULES = YES;\n\t\t\t\tCLANG_ENABLE_OBJC_ARC = YES;\n\t\t\t\tCLANG_WARN_BOOL_CONVERSION = YES;\n\t\t\t\tCLANG_WARN_CONSTANT_CONVERSION = YES;\n\t\t\t\tCLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;\n\t\t\t\tCLANG_WARN_EMPTY_BODY = YES;\n\t\t\t\tCLANG_WARN_ENUM_CONVERSION = YES;\n\t\t\t\tCLANG_WARN_INT_CONVERSION = YES;\n\t\t\t\tCLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;\n\t\t\t\tCLANG_WARN_UNREACHABLE_CODE = YES;\n\t\t\t\tCLANG_WARN__DUPLICATE_METHOD_MATCH = YES;\n\t\t\t\t\"CODE_SIGN_IDENTITY[sdk=iphoneos*]\" = \"iPhone Developer\";\n\t\t\t\tCOPY_PHASE_STRIP = NO;\n\t\t\t\tDEBUG_INFORMATION_FORMAT = dwarf;\n\t\t\t\tENABLE_STRICT_OBJC_MSGSEND = YES;\n\t\t\t\tENABLE_TESTABILITY = YES;\n\t\t\t\tGCC_C_LANGUAGE_STANDARD = gnu99;\n\t\t\t\tGCC_DYNAMIC_NO_PIC = NO;\n\t\t\t\tGCC_NO_COMMON_BLOCKS = YES;\n\t\t\t\tGCC_OPTIMIZATION_LEVEL = 0;\n\t\t\t\tGCC_PREPROCESSOR_DEFINITIONS = (\n\t\t\t\t\t\"DEBUG=1\",\n\t\t\t\t\t\"$(inherited)\",\n\t\t\t\t);\n\t\t\t\tGCC_WARN_64_TO_32_BIT_CONVERSION = YES;\n\t\t\t\tGCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;\n\t\t\t\tGCC_WARN_UNDECLARED_SELECTOR = YES;\n\t\t\t\tGCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;\n\t\t\t\tGCC_WARN_UNUSED_FUNCTION = YES;\n\t\t\t\tGCC_WARN_UNUSED_VARIABLE = YES;\n\t\t\t\tIPHONEOS_DEPLOYMENT_TARGET = 9.2;\n\t\t\t\tMTL_ENABLE_DEBUG_INFO = YES;\n\t\t\t\tONLY_ACTIVE_ARCH = YES;\n\t\t\t\tSDKROOT = iphoneos;\n\t\t\t};\n\t\t\tname = Debug;\n\t\t};\n\t\t33634CBA1C576C9B001D2B2C /* Release */ = {\n\t\t\tisa = XCBuildConfiguration;\n\t\t\tbaseConfigurationReference = 33634CEB1C577561001D2B2C /* {{Prefix}}Release.xcconfig */;\n\t\t\tbuildSettings = {\n\t\t\t\tALWAYS_SEARCH_USER_PATHS = NO;\n\t\t\t\tCLANG_CXX_LANGUAGE_STANDARD = \"gnu++0x\";\n\t\t\t\tCLANG_CXX_LIBRARY = \"libc++\";\n\t\t\t\tCLANG_ENABLE_MODULES = YES;\n\t\t\t\tCLANG_ENABLE_OBJC_ARC = YES;\n\t\t\t\tCLANG_WARN_BOOL_CONVERSION = YES;\n\t\t\t\tCLANG_WARN_CONSTANT_CONVERSION = YES;\n\t\t\t\tCLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;\n\t\t\t\tCLANG_WARN_EMPTY_BODY = YES;\n\t\t\t\tCLANG_WARN_ENUM_CONVERSION = YES;\n\t\t\t\tCLANG_WARN_INT_CONVERSION = YES;\n\t\t\t\tCLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;\n\t\t\t\tCLANG_WARN_UNREACHABLE_CODE = YES;\n\t\t\t\tCLANG_WARN__DUPLICATE_METHOD_MATCH = YES;\n\t\t\t\t\"CODE_SIGN_IDENTITY[sdk=iphoneos*]\" = \"iPhone Developer\";\n\t\t\t\tCOPY_PHASE_STRIP = NO;\n\t\t\t\tDEBUG_INFORMATION_FORMAT = \"dwarf-with-dsym\";\n\t\t\t\tENABLE_NS_ASSERTIONS = NO;\n\t\t\t\tENABLE_STRICT_OBJC_MSGSEND = YES;\n\t\t\t\tGCC_C_LANGUAGE_STANDARD = gnu99;\n\t\t\t\tGCC_NO_COMMON_BLOCKS = YES;\n\t\t\t\tGCC_WARN_64_TO_32_BIT_CONVERSION = YES;\n\t\t\t\tGCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;\n\t\t\t\tGCC_WARN_UNDECLARED_SELECTOR = YES;\n\t\t\t\tGCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;\n\t\t\t\tGCC_WARN_UNUSED_FUNCTION = YES;\n\t\t\t\tGCC_WARN_UNUSED_VARIABLE = YES;\n\t\t\t\tIPHONEOS_DEPLOYMENT_TARGET = 9.2;\n\t\t\t\tMTL_ENABLE_DEBUG_INFO = NO;\n\t\t\t\tSDKROOT = iphoneos;\n\t\t\t\tVALIDATE_PRODUCT = YES;\n\t\t\t};\n\t\t\tname = Release;\n\t\t};\n\t\t33634CBC1C576C9B001D2B2C /* Debug */ = {\n\t\t\tisa = XCBuildConfiguration;\n\t\t\tbaseConfigurationReference = 33634CEA1C577561001D2B2C /* {{Prefix}}Debug.xcconfig */;\n\t\t\tbuildSettings = {\n\t\t\t\tASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;\n\t\t\t\tASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;\n\t\t\t\tINFOPLIST_FILE = \"{{ProductName}}/Supporting Files/{{ProductName}}.plist\";\n\t\t\t\tIPHONEOS_DEPLOYMENT_TARGET = 7.0;\n\t\t\t\tLD_RUNPATH_SEARCH_PATHS = \"$(inherited) @executable_path/Frameworks\";\n\t\t\t\tPRODUCT_BUNDLE_IDENTIFIER = \"com.netease.{{ProductName}}\";\n\t\t\t\tPRODUCT_NAME = \"$(TARGET_NAME)\";\n\t\t\t};\n\t\t\tname = Debug;\n\t\t};\n\t\t33634CBD1C576C9B001D2B2C /* Release */ = {\n\t\t\tisa = XCBuildConfiguration;\n\t\t\tbaseConfigurationReference = 33634CEB1C577561001D2B2C /* {{Prefix}}Release.xcconfig */;\n\t\t\tbuildSettings = {\n\t\t\t\tASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;\n\t\t\t\tASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;\n\t\t\t\tINFOPLIST_FILE = \"{{ProductName}}/Supporting Files/{{ProductName}}.plist\";\n\t\t\t\tIPHONEOS_DEPLOYMENT_TARGET = 7.0;\n\t\t\t\tLD_RUNPATH_SEARCH_PATHS = \"$(inherited) @executable_path/Frameworks\";\n\t\t\t\tPRODUCT_BUNDLE_IDENTIFIER = \"com.netease.{{ProductName}}\";\n\t\t\t\tPRODUCT_NAME = \"$(TARGET_NAME)\";\n\t\t\t};\n\t\t\tname = Release;\n\t\t};\n\t\t33634D071C579387001D2B2C /* AppStore */ = {\n\t\t\tisa = XCBuildConfiguration;\n\t\t\tbaseConfigurationReference = 33634CE91C577561001D2B2C /* {{Prefix}}AppStore.xcconfig */;\n\t\t\tbuildSettings = {\n\t\t\t\tALWAYS_SEARCH_USER_PATHS = NO;\n\t\t\t\tCLANG_CXX_LANGUAGE_STANDARD = \"gnu++0x\";\n\t\t\t\tCLANG_CXX_LIBRARY = \"libc++\";\n\t\t\t\tCLANG_ENABLE_MODULES = YES;\n\t\t\t\tCLANG_ENABLE_OBJC_ARC = YES;\n\t\t\t\tCLANG_WARN_BOOL_CONVERSION = YES;\n\t\t\t\tCLANG_WARN_CONSTANT_CONVERSION = YES;\n\t\t\t\tCLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;\n\t\t\t\tCLANG_WARN_EMPTY_BODY = YES;\n\t\t\t\tCLANG_WARN_ENUM_CONVERSION = YES;\n\t\t\t\tCLANG_WARN_INT_CONVERSION = YES;\n\t\t\t\tCLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;\n\t\t\t\tCLANG_WARN_UNREACHABLE_CODE = YES;\n\t\t\t\tCLANG_WARN__DUPLICATE_METHOD_MATCH = YES;\n\t\t\t\t\"CODE_SIGN_IDENTITY[sdk=iphoneos*]\" = \"iPhone Developer\";\n\t\t\t\tCOPY_PHASE_STRIP = NO;\n\t\t\t\tDEBUG_INFORMATION_FORMAT = dwarf;\n\t\t\t\tENABLE_STRICT_OBJC_MSGSEND = YES;\n\t\t\t\tENABLE_TESTABILITY = YES;\n\t\t\t\tGCC_C_LANGUAGE_STANDARD = gnu99;\n\t\t\t\tGCC_DYNAMIC_NO_PIC = NO;\n\t\t\t\tGCC_NO_COMMON_BLOCKS = YES;\n\t\t\t\tGCC_OPTIMIZATION_LEVEL = 0;\n\t\t\t\tGCC_PREPROCESSOR_DEFINITIONS = (\n\t\t\t\t\t\"DEBUG=1\",\n\t\t\t\t\t\"$(inherited)\",\n\t\t\t\t);\n\t\t\t\tGCC_WARN_64_TO_32_BIT_CONVERSION = YES;\n\t\t\t\tGCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;\n\t\t\t\tGCC_WARN_UNDECLARED_SELECTOR = YES;\n\t\t\t\tGCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;\n\t\t\t\tGCC_WARN_UNUSED_FUNCTION = YES;\n\t\t\t\tGCC_WARN_UNUSED_VARIABLE = YES;\n\t\t\t\tIPHONEOS_DEPLOYMENT_TARGET = 9.2;\n\t\t\t\tMTL_ENABLE_DEBUG_INFO = YES;\n\t\t\t\tONLY_ACTIVE_ARCH = YES;\n\t\t\t\tSDKROOT = iphoneos;\n\t\t\t};\n\t\t\tname = AppStore;\n\t\t};\n\t\t33634D081C579387001D2B2C /* AppStore */ = {\n\t\t\tisa = XCBuildConfiguration;\n\t\t\tbaseConfigurationReference = 33634CE91C577561001D2B2C /* {{Prefix}}AppStore.xcconfig */;\n\t\t\tbuildSettings = {\n\t\t\t\tASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;\n\t\t\t\tASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;\n\t\t\t\tINFOPLIST_FILE = \"{{ProductName}}/Supporting Files/{{ProductName}}.plist\";\n\t\t\t\tIPHONEOS_DEPLOYMENT_TARGET = 7.0;\n\t\t\t\tLD_RUNPATH_SEARCH_PATHS = \"$(inherited) @executable_path/Frameworks\";\n\t\t\t\tPRODUCT_BUNDLE_IDENTIFIER = \"com.netease.{{ProductName}}\";\n\t\t\t\tPRODUCT_NAME = \"$(TARGET_NAME)\";\n\t\t\t};\n\t\t\tname = AppStore;\n\t\t};\n/* End XCBuildConfiguration section */\n\n/* Begin XCConfigurationList section */\n\t\t33634C9F1C576C9B001D2B2C /* Build configuration list for PBXProject \"{{ProductName}}\" */ = {\n\t\t\tisa = XCConfigurationList;\n\t\t\tbuildConfigurations = (\n\t\t\t\t33634CB91C576C9B001D2B2C /* Debug */,\n\t\t\t\t33634D071C579387001D2B2C /* AppStore */,\n\t\t\t\t33634CBA1C576C9B001D2B2C /* Release */,\n\t\t\t);\n\t\t\tdefaultConfigurationIsVisible = 0;\n\t\t\tdefaultConfigurationName = Release;\n\t\t};\n\t\t33634CBB1C576C9B001D2B2C /* Build configuration list for PBXNativeTarget \"{{ProductName}}\" */ = {\n\t\t\tisa = XCConfigurationList;\n\t\t\tbuildConfigurations = (\n\t\t\t\t33634CBC1C576C9B001D2B2C /* Debug */,\n\t\t\t\t33634D081C579387001D2B2C /* AppStore */,\n\t\t\t\t33634CBD1C576C9B001D2B2C /* Release */,\n\t\t\t);\n\t\t\tdefaultConfigurationIsVisible = 0;\n\t\t\tdefaultConfigurationName = Release;\n\t\t};\n/* End XCConfigurationList section */\n\t};\n\trootObject = 33634C9C1C576C9B001D2B2C /* Project object */;\n}\n",
+							"dataSource": 0,
+							"children": []
+						},
+						{
+							"id": 11970,
+							"specId": 10074,
+							"parent": 11956,
+							"type": 0,
+							"name": "project.xcworkspace",
+							"description": "",
+							"mime": "",
+							"content": "",
+							"dataSource": 0,
+							"children": [
+								{
+									"id": 12021,
+									"specId": 10074,
+									"parent": 11970,
+									"type": 1,
+									"name": "contents.xcworkspacedata",
+									"description": "",
+									"mime": "text/octet-stream",
+									"content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Workspace\n   version = \"1.0\">\n   <FileRef\n      location = \"self:{{project.name}}.xcodeproj\">\n   </FileRef>\n</Workspace>\n",
+									"dataSource": 0,
+									"children": []
+								},
+								{
+									"id": 12022,
+									"specId": 10074,
+									"parent": 11970,
+									"type": 0,
+									"name": "xcshareddata",
+									"description": "",
+									"mime": "",
+									"content": "",
+									"dataSource": 0,
+									"children": [
+										{
+											"id": 12090,
+											"specId": 10074,
+											"parent": 12022,
+											"type": 1,
+											"name": "{{project.name}}.xcscmblueprint",
+											"description": "",
+											"mime": "text/octet-stream",
+											"content": "{\n  \"DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey\" : \"1B7D6E4126AF643B7FB0AE3CB8043A03F5154698\",\n  \"DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey\" : {\n\n  },\n  \"DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey\" : {\n    \"1B7D6E4126AF643B7FB0AE3CB8043A03F5154698\" : 0,\n    \"69FAA05B3A77C46FE5572304313AC3A4D877368C\" : 0\n  },\n  \"DVTSourceControlWorkspaceBlueprintIdentifierKey\" : \"34C729CD-1F5A-4269-A4A4-5B436A84A33A\",\n  \"DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey\" : {\n    \"1B7D6E4126AF643B7FB0AE3CB8043A03F5154698\" : \"nei_mobile\\/\",\n    \"69FAA05B3A77C46FE5572304313AC3A4D877368C\" : \"\"\n  },\n  \"DVTSourceControlWorkspaceBlueprintNameKey\" : \"{{project.name}}\",\n  \"DVTSourceControlWorkspaceBlueprintVersion\" : 204,\n  \"DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey\" : \"模板\\/模板工程\\/完整Xcode工程模板\\/HTTemplate\\/{{project.name}}.xcodeproj\",\n  \"DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey\" : [\n    {\n      \"DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey\" : \"https:\\/\\/g.hz.netease.com\\/HeartTouchOpen\\/nei_mobile.git\",\n      \"DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey\" : \"com.apple.dt.Xcode.sourcecontrol.Git\",\n      \"DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey\" : \"1B7D6E4126AF643B7FB0AE3CB8043A03F5154698\"\n    },\n    {\n      \"DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey\" : \"https:\\/\\/github.com\\/HaloCXQ\\/ImagesStore.git\",\n      \"DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey\" : \"com.apple.dt.Xcode.sourcecontrol.Git\",\n      \"DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey\" : \"69FAA05B3A77C46FE5572304313AC3A4D877368C\"\n    }\n  ]\n}",
+											"dataSource": 0,
+											"children": []
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": 12135,
+					"specId": 10074,
+					"parent": 0,
+					"type": 1,
+					"name": "config",
+					"description": "",
+					"mime": "text/json",
+					"content": "",
+					"dataSource": 0,
+					"children": []
+				}
+			],
+			"spec": {
+				"id": 10074,
+				"type": 2,
+				"isShare": 0,
+				"isSystem": 0,
+				"name": "HTTouchTest",
+				"namePinyin": "HTTouchTest",
+				"language": 32,
+				"description": "",
+				"document": null,
+				"argsConfig": 12135,
+				"creatorId": 11424,
+				"createTime": 1473766622526
+			},
+			"varmaps": [
+				{
+					"id": 10000,
+					"type": 0,
+					"parentId": 10074,
+					"parentType": 2,
+					"orgName": "projectName",
+					"varName": "todo",
+					"creatorId": 11424,
+					"createTime": 1473219486472,
+					"creator": {
+						"id": 11424,
+						"email": "hzzhenglu@corp.netease.com",
+						"username": "hzzhenglu@corp.netease.com",
+						"createTime": 1469162879000
+					}
+				}
+			]
+		}
+	]
+}
