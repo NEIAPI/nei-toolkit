@@ -14,8 +14,9 @@
 * [Handlebars 辅助函数集说明](./doc/Handlebars辅助函数集.md)
 
 ## 教程
-* [一步一步教你如何愉快地生成 JavaBean 文件](./doc/一步一步教你如何愉快地生成JavaBean文件.md)
+* [NEI 基本概念介绍](./doc/NEI基本概念介绍.md)
 * [老项目迁移到 NEI 上的说明](./doc/老项目的迁移说明.md)
+* [一步一步教你如何愉快地生成 JavaBean 文件](./doc/一步一步教你如何愉快地生成JavaBean文件.md)
 * [JavaBean 文件的示例模板](./doc/JavaBean文件的示例模板.md)
 
 ## 工具使用
