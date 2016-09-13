@@ -26,7 +26,7 @@
 * 响应头
 * 响应参数: 参数的名称、类型、默认值、生成规则等
 
-定义好以上信息后，后端就可以按照定义来实现这个接口。
+定义好以上信息后，后端就可以按照定义来实现这个接口，NEI 也提供了测试功能以验证接口的输出数据是否完成和定义的一致，保证接口的正确性。
 
 对于前端来说，此时就缺少一个可访问的接口服务: 按照定义的输入数据得到定义的输出数据。
 
@@ -46,11 +46,11 @@ nei build -k 717a630f6033dfe235c73a4e6dac16e3 -o ./todoweb
 
 这个 TodoWeb 项目是在 NEI 上面创建的，该项目共有 5 个接口:
 
-* 获取todo列表:             GET /api/todos
-* 添加todo:                POST /api/todos
-* 批量更新todo的完成状态:    PATCH /api/todos
-* 删除单个 todo:            DELETE /api/todos/:todoId
-* 更新单个todo的内容:        PATCH /api/todos/:todoId
+* 获取todo列表:             `GET /api/todos`
+* 添加todo:                `POST /api/todos`
+* 批量更新todo的完成状态:    `PATCH /api/todos`
+* 删除单个 todo:            `DELETE /api/todos/:todoId`
+* 更新单个todo的内容:        `PATCH /api/todos/:todoId`
 
 然后运行下面的命令启动本地模拟容器:
 
