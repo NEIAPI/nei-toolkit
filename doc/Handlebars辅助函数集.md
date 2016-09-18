@@ -49,6 +49,16 @@ var template = `{{hyphenToCamel name}}`;
 console.log(Handlebars.compile(template)(data)); //输出ABC
 ```
 
+### camelToHyphen
+hyphenToCamel的反函数，将大写字符转为小写并以中划线'-'分开
+```js
+var data = {
+    "name": "AbcDefGhi"
+}
+var template = `{{camelToHyphen name}}`;
+console.log(Handlebars.compile(template)(data)); //输出abc-def-ghi
+```
+
 ### hyphenToUnderline
 中划线'-'转下划线'_'
 ```js
