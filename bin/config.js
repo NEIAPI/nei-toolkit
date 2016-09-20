@@ -31,15 +31,17 @@ module.exports = {
     ],
     "build": [
         "使用说明：",
-        "nei build -k [key]",
+        "nei build (-pk|-sk) [key] ",
         "",
-        "<key>\t\t\tNEI 平台中项目的唯一 key, 可以在工具设置中查看",
+        "<key>\t\t\tNEI 平台中项目的唯一 key",
         "",
-        "参数说明：",
+        "参数说明：\t-pk 表示构建项目，其key在项目的工具设置中可以查到",
+        "        \t-sk 表示构建规范，其key在规范的规范设置中可以查到",
         "%p",
         "",
         "使用举例：",
-        "nei build -k xyz"
+        "nei build -pk xyz",
+        "nei build -sk zyx"
     ],
     "build-params": [
         {
@@ -54,10 +56,16 @@ module.exports = {
             "m": "指定工程输出目录, 默认为当前目录"
         },
         {
-            "j": "k",
-            "q": "key",
+            "j": "pk",
+            "q": "projectKey",
             "d": "",
-            "m": "项目的唯一标识"
+            "m": "指定工程唯一标识"
+        },
+        {
+            "j": "sk",
+            "q": "specificationKey",
+            "d":"",
+            "m": "指定规范唯一标识"
         },
         {
             "j": "w",

@@ -34,7 +34,7 @@ class Main {
         this.config.outputRoot = _path.normalize(_path.absolute((this.args.output || './') + '/', cwd));
         this.checkConfig();
         let loadedHandler = (ds) => {
-            this.config.pid = ds.project.id;
+            this.config.pid = ds.project&&ds.project.id;
             this.ds = ds;
             this.fillArgs();
             // 合并完参数后, 需要重新 format 一下, 并且此时需要取默认值
@@ -129,15 +129,22 @@ class Main {
      * @param {function} callback - 加载成功回调
      */
     loadData(callback) {
-        let neiHost = 'http://nei.netease.com/';
-        let projectKey = this.args.key;
-        let specType = {
-                web: neiDbConst.CMN_TYP_WEB,
-                aos: neiDbConst.CMN_TYP_AOS,
-                ios: neiDbConst.CMN_TYP_IOS,
-                test: neiDbConst.CMN_TYP_TEST
-            }[this.args.specType] || neiDbConst.CMN_TYP_WEB;
-        let url = `${neiHost}/api/projectres/?key=${encodeURIComponent(projectKey)}&spectype=${specType}`;
+        let neiHost = 'http://localhost:8082/';
+        let url;
+        if(this.args.hasOwnProperty('specificationKey')){
+            let specificationKey = this.args.specificationKey;
+            url = `${neiHost}/api/specificationres/?key=${encodeURIComponent(specificationKey)}`;
+        }else {
+            let projectKey = this.args.projectKey;
+            let specType = {
+                  web: neiDbConst.CMN_TYP_WEB,
+                  aos: neiDbConst.CMN_TYP_AOS,
+                  ios: neiDbConst.CMN_TYP_IOS,
+                  test: neiDbConst.CMN_TYP_TEST
+              }[this.args.specType] || neiDbConst.CMN_TYP_WEB;
+    
+            url = `${neiHost}/api/projectres/?key=${encodeURIComponent(projectKey)}&spectype=${specType}`;
+        }
         url = _path.normalize(url);
         _logger.info('从 NEI 服务器加载数据, 地址: %s', url);
         _io.download(url, (data) => {
@@ -157,7 +164,7 @@ class Main {
             callback(json.result);
         });
     }
-
+    
     /**
      * 检测指定的目录中是否存在 nei 配置文件
      */
@@ -193,7 +200,7 @@ class Main {
             return process.exit(1);
         }
     }
-
+    
     /**
      * 填充参数, 合并项目中的命令行参数设置、规范中的命令行参数
      */
@@ -205,7 +212,7 @@ class Main {
         }
         let specArgsConfig = spec.spec.argsConfig;
         let proArgs = {};
-        this.ds.cliargs.forEach(function (cliarg) {
+        this.ds.cliargs&&this.ds.cliargs.forEach(function (cliarg) {
             proArgs[cliarg.key] = cliarg.value;
         });
         let specCliArgDoc = null;
@@ -233,7 +240,7 @@ class Main {
         }
         this.args = Object.assign({}, specArgs, proArgs, this.args);
     }
-
+    
     /**
      * 查找指定输出目录下的 nei 项目
      */
