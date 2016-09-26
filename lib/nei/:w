@@ -47,19 +47,10 @@ Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
 
 /**
  * 获取以点号分隔字符串后的最后一项, 相当于根据路径取文件的扩展名
- * @param {string} str
- * @return {string}
- *
- * @example
- *      Handlebars.compile('{{extname "hello.js"}}')() // => "js"
- *      Handlebars.compile('{{extname "hellojs"}}')() // => ""
- *      Handlebars.compile('{{extname "hellojs."}}')() // => ""
- *      Handlebars.compile('{{extname "hello.util.js"}}')() // => "js"
  */
-function extname(str) {
-    return str.substr(str.lastIndexOf('.')).substr(1);
-}
-Handlebars.registerHelper('extname', extname);
+Handlebars.registerHelper('extname', function (str) {
+    return str.substr(str.lastIndexOf('.') + 1);
+});
 
 /**
  * 获取模型名称, 如果它是数组, 默认使用 `[]` 嵌套, 比如二维数组: String[][]
@@ -109,69 +100,49 @@ Handlebars.registerHelper('typeName', function (model, options) {
 
 /**
  * 中划线'-' 转下划线'_'
- * @param {string} str
- * @return {string}
+ * @param {String} str
+ * @return {String}
  *
  * @example
  *      Handlebars.compile('{{hyphenToUnderline "a---b-c"}}')() // => "a_b_c"
  *      Handlebars.compile('{{hyphenToUnderline "---a-b-c"}}')() // => "_a_b_c"
- *      Handlebars.compile('{{hyphenToUnderline "a-b-c--"}}')() // => "a_b_c_"
+ *      Handlebars.compile('{{hyphenToUnderline "a-b-c"}}')() // => "a_b_c"
+ * a-b-c    >>>>    a_b_c
+ * a---b-c  >>>>    a_b_c
+ * --a-b--c-- >>>>    _a_b_c_
  */
 function hyphenToUnderline(str){
     return str.split(/-+/).join('_');
 }
-Handlebars.registerHelper('hyphenToUnderline',hyphenToUnderline);
+Handlebars.registerHelper('hyphenToUnderline', function(str){
+});
 
 /**
  * 中划线'-'后的字符转大写
- * @param {string} str
- * @return {string}
- * @example
- *      Handlebars.compile('{{hyphenToCamel "--a-b-c--"}}')() // => "ABC"
- *      Handlebars.compile('{{hyphenToCamel "a---b---c"}}')() // => "ABC"
+ * a-b-c        >>>>    ABC
+ * a----b--c    >>>>    ABC
  *
  */
-function hyphenToCamel(str) {
+Handlebars.registerHelper('hyphenToCamel', function(str) {
     return str.split('-').map(x=>{
         return x.charAt(0).toUpperCase() + x.slice(1);
     }).join('');
-}
-Handlebars.registerHelper('hyphenToCamel', hyphenToCamel);
+});
 
 /**
  * hyphenToCamel的反函数，将大写字符转为小写并以中划线'-'分开
- * @param {string} str
- * @return {string}
- *
- * @example
- *      Handlebars.compile('{{camelToHyphen "AbcDefGhi"}}')() // => "abc-def-ghi"
- *      Handlebars.compile('{{camelToHyphen "abcDEF"}}')() // => "abc-d-e-f"
- *      Handlebars.compile('{{camelToHyphen "abc--DEF"}}')() // => "abc-d-e-f"
- *      Handlebars.compile('{{camelToHyphen "abc--DEF--"}}')() // => "abc-d-e-f-"
- *
+ * AbcDefGhi    >>>>    abc-def-ghi
  */
-function camelToHyphen(str) {
-    return  str.split(/([A-Z][^A-Z]*)/g).filter(x=>{return x!= ''})
-                .map(x=>{return x.toLowerCase()}).join('-').replace(/-+/g, '-');
-}
-Handlebars.registerHelper('camelToHyphen', camelToHyphen);
+Handlebars.registerHelper('camelToHyphen', function (str) {
+    return  str.match(/[A-Z][^A-Z]*/g).map(x=>{return x.toLowerCase()}).join('-');
+});
 
 /**
  * 首字母小写
- * @param {string} str
- * @return {string}
- *
- * @example
- *      Handlebars.compile('{{lowerFirst "abcDEF"}}')() // => "abcDEF"
- *      Handlebars.compile('{{lowerFirst "AbcDEF"}}')() // => "abcDEF"
- *      Handlebars.compile('{{lowerFirst "-AbcDEF"}}')() // => "-AbcDEF"
- *      Handlebars.compile('{{lowerFirst "A"}}')() // => "a"
- *      Handlebars.compile('{{lowerFirst ""}}')() // => ""
  */
-function lowerFirst(str) {
+Handlebars.registerHelper('lowerFirst', function (str) {
     return str.charAt(0).toLowerCase() + str.slice(1);
-}
-Handlebars.registerHelper('lowerFirst', lowerFirst);
+});
 
 /**
  * 将换行替换为逗号(默认)或者自定义分隔符
@@ -191,21 +162,10 @@ Handlebars.registerHelper('prettifyComment', function (str) {
 
 /**
  * 首字母大写
- * @param {string} str
- * @return {string}
- *
- * @example
- *      Handlebars.compile('{{upperFirst "abcDEF"}}')() // => "AbcDEF"
- *      Handlebars.compile('{{upperFirst "AbcDEF"}}')() // => "AbcDEF"
- *      Handlebars.compile('{{upperFirst "-abcDEF"}}')() // => "-abcDEF"
- *      Handlebars.compile('{{upperFirst "a"}}')() // => "A"
- *      Handlebars.compile('{{upperFirst ""}}')() // => ""
-
  */
-function upperFirst(str) {
+Handlebars.registerHelper('upperFirst', function (str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
-}
-Handlebars.registerHelper('upperFirst', upperFirst);
+});
 
 Handlebars.registerHelper('iosProperty', function(datatype, hasPrefix){
     let isObject= function (obj) {
