@@ -59,7 +59,7 @@ class Main {
         let dir = path.join(process.cwd(), args.output || './');
         let projects = this.findProjects(args);
         let buildProject = (neiProjectDir, exitIfNotExist) => {
-            let config = _util.file2json(`${neiProjectDir}/nei.json`, exitIfNotExist);
+            let config = _util.file2json(`${neiProjectDir}/nei.json`, exitIfNotExist, "未找到nei.json文件，请检查，建议使用nei build重新构建");
             let mergedArgs = Object.assign({}, config.args, args);
             this.build(arg, action, mergedArgs);
         }
@@ -86,7 +86,7 @@ class Main {
             }
         }
     }
-
+    
     /**
      * start mock server
      * @param  {object}  args - args object
@@ -123,7 +123,7 @@ class Main {
             tryStartServer(`${projects[0]}/server.config.js`);
         }
     }
-
+    
     /**
      * 从 NEI 服务器加载项目数据
      * @param {function} callback - 加载成功回调
@@ -142,7 +142,7 @@ class Main {
                   ios: neiDbConst.CMN_TYP_IOS,
                   test: neiDbConst.CMN_TYP_TEST
               }[this.args.specType] || neiDbConst.CMN_TYP_WEB;
-    
+            
             url = `${neiHost}/api/projectres/?key=${encodeURIComponent(projectKey)}&spectype=${specType}`;
         }
         url = _path.normalize(url);
@@ -164,7 +164,7 @@ class Main {
             callback(json.result);
         });
     }
-
+    
     /**
      * 检测指定的目录中是否存在 nei 配置文件
      */
@@ -175,14 +175,23 @@ class Main {
             // 目录不存在, update 命令不会走到这里
             return;
         }
-        let files = fs.readdirSync(outputDir);
+        let result = {};
+        _fs.walk(outputDir,
+          filename=>{
+              if(path.basename(filename) === 'nei.json')
+                  result['file'] = true;
+              return filename;
+          },
+          dirname=>{
+              let basename = path.basename(dirname);
+              if(basename.startsWith('nei') && basename.endsWith(this.args.projectKey||this.args.specificationKey))
+                  result['dir'] = basename;
+              return dirname;
+          }, result);
         let foundConfigFile = null;
-        files.some((filename) => {
-            if (filename.startsWith('nei') && filename.endsWith(this.args.key)) {
-                foundConfigFile = filename;
-                return true;
-            }
-        });
+        if(result['file'] && result['dir']){
+            foundConfigFile = result['dir'];
+        }
         let errorMsg = null;
         if (foundConfigFile) {
             if (action === 'build') {
@@ -200,7 +209,7 @@ class Main {
             return process.exit(1);
         }
     }
-
+    
     /**
      * 填充参数, 合并项目中的命令行参数设置、规范中的命令行参数
      */
@@ -240,7 +249,7 @@ class Main {
         }
         this.args = Object.assign({}, specArgs, proArgs, this.args);
     }
-
+    
     /**
      * 查找指定输出目录下的 nei 项目
      */
