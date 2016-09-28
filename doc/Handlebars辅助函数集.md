@@ -2,7 +2,21 @@
 
 Handlebars 辅助函数集的 JavaScript 实现文件在[这里](../lib/nei/handlebars.util.js)
 
-有自定义需求的可以提 issue 或者发 pull request 或者联系本工具作者
+有自定义需求的可以在nei平台上在规范中将文件选择为`自定义handlebars辅助函数`即可。
+
+## 如何撰写自定义Handlebars辅助函数
+
+Handlerbars通过`registerHelper`函数向handlerbars注入辅助函数，其代码形式如下所示
+
+```JavaScript
+Handlebars.registerHelper('JSONStringify', function (obj) {
+    return JSON.stringify(obj, null, '\t');
+});
+```
+
+可以看到，该辅助函数JSONStringify接收一个参数obj，将该obj序列化为字符串，返回。用户可以通过
+将规范中的js文件标记为`自定义handlebars辅助函数`，从而增强模板的能力。更多的示例可参考nei-toolkit
+定义的辅助函数[实现文件](../lib/nei/handlebars.util.js)以及Handlebars[官方文档](http://handlebarsjs.com/#helpers)
 
 ## 目前可用的 helper
 
