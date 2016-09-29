@@ -56,15 +56,15 @@ module.exports = {
             "m": "指定工程输出目录, 默认为当前目录"
         },
         {
-            "j": "pk",
-            "q": "projectKey",
+            "j": "k",
+            "q": "key",
             "d": "",
             "m": "指定工程唯一标识"
         },
         {
             "j": "sk",
-            "q": "specificationKey",
-            "d":"",
+            "q": "specKey",
+            "d": "",
             "m": "指定规范唯一标识"
         },
         {
