@@ -129,7 +129,7 @@ class Main {
      * @param {function} callback - 加载成功回调
      */
     loadData(callback) {
-        let neiHost = 'http://localhost:8082/';
+        let neiHost = 'http://nei.netease.com/';
         let url;
         if(this.args.hasOwnProperty('specKey')){
             let specKey = this.args.specKey;
