@@ -30,14 +30,14 @@ console.log(NEI.ALPHA_LOWER_CASE_CHARS);
 ## 可以调用的方法:
 
 * [NEI.id()](#id)
-* [NEI.str(len，min，chars)](#strlen-min-chars)
-* [NEI.chinese(len，min)](#chineselen-min)
+* [NEI.str(len, min, chars)](#strlen-min-chars)
+* [NEI.chinese(len, min)](#chineselen-min)
 * [NEI.email()](#email)
 * [NEI.url(protocol)](#urlprotocol)
-* [NEI.num(max，min)](#nu(max-min)
+* [NEI.num(max, min)](#numax-min)
 * [NEI.bool()](#bool)
 * [NEI.var()](#var)
-* [NEI.repeat(num，arrEleGenFunc，...arrEleGenFuncArgs)](#repeatnum-arrelegenfunc-arrelegenfuncargs))
+* [NEI.repeat(num, arrEleGenFunc, ...arrEleGenFuncArgs)](#repeatnum-arrelegenfunc-arrelegenfuncargs))
 
 ### id()
 返回一个唯一数值标识，用法:
@@ -46,7 +46,7 @@ console.log(NEI.ALPHA_LOWER_CASE_CHARS);
 console.log(NEI.id()); // 输出随机数值，保证在当前 mock 结果中是唯一的
 ```
 
-### str(len，min，chars)
+### str(len, min, chars)
 返回一个随机字符串，参数说明:
 
 | 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
@@ -61,7 +61,7 @@ console.log(NEI.id()); // 输出随机数值，保证在当前 mock 结果中是
 console.log(NEI.str()); // 输出随机字符串
 ```
 
-### chinese(len，min)
+### chinese(len, min)
 返回一个随机中文字符串，参数说明:
 
 | 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
@@ -97,7 +97,7 @@ console.log(NEI.email()); // 输出随机邮箱地址
 console.log(NEI.url()); // 输出随机 url 地址
 ```
 
-### num(max，min)
+### num(max, min)
 返回一个随机数字，参数说明:
 
 | 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
@@ -129,7 +129,7 @@ console.log(NEI.bool()); // 输出随机布尔值
 console.log(NEI.var()); // 输出随机类型的值
 ```
 
-### repeat(num，arrEleGenFunc，...arrEleGenFuncArgs)
+### repeat(num, arrEleGenFunc, ...arrEleGenFuncArgs)
 
 返回指定元素个数的数组。只对数组类型的参数有效。参数说明:
 
@@ -144,7 +144,7 @@ console.log(NEI.var()); // 输出随机类型的值
 
 ```js
 console.log(NEI.repeat(10)); // 输出有 10 个元素的数组
-console.log(NEI.repeat(10，NEI.url，'https')); // 输出一个数组，它有 10 个元素，每个元素是一个 url 地址，并且 url 的协议是 https
+console.log(NEI.repeat(10, NEI.url, 'https')); // 输出一个数组，它有 10 个元素，每个元素是一个 url 地址，并且 url 的协议是 https
 ```
 
 
