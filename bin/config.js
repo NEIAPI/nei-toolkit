@@ -77,6 +77,11 @@ module.exports = {
             "q": "specType",
             "d": "web",
             "m": "工程规范类型, 支持 web、aos、ios、test 四种类型"
+        },
+        {
+            "q": "iosProjectPath",
+            "d": "",
+            "m": "iOS工程使用，指定iOS工程路径"
         }
     ],
     "update": [
