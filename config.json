@@ -1,0 +1,23 @@
+{
+    "dataModel" : {
+        "baseClass":"JYSBaseModelObject",
+        "imports": [
+            "#import <JYSBaseService/JYSBaseModelObject.h>"
+            ],
+        "imports_imp": [
+            "#import <MJExtension/MJExtension.h>"
+        ]
+    },
+    "serviceClass": {
+        "baseClass":"JYSBaseService",
+        "imports":[
+            "#import <JYSBaseService/JYSBaseService.h>"
+            ],
+        "imports_imp":[
+            "#import <MJExtension/MJExtension.h>",
+            "#import <JYFNetworking/JYFNetworking.h>"
+            ]
+    },
+    "modulePrefix" : "JYS",
+    "modulePostfix" : "Service"
+}
