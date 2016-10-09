@@ -1,6 +1,6 @@
 # NEI 平台系统预置的规则函数集
 
-为了方便用户生成 mock 数据，NEI 平台预置了一些可以直接使用的常量和方法。为了不和用户自定义的规则函数产生冲突，它们都放在 `NEI` 名字空间里面。
+为了方便用户生成自定义的 mock 数据，NEI 平台预置了一些可以直接使用的常量和方法。为了不和用户自定义的规则函数产生冲突，它们都放在 `NEI` 名字空间里面。
 
 ## 可以使用的常量
 
@@ -24,20 +24,20 @@ console.log(NEI.ALPHA_LOWER_CASE_CHARS);
 
 ### NORMAL_CHINESE_CHARS
 
-常见的中文汉字，共有 2500 个，来源: [http://xh.5156edu.com/page/z6214m5618j18739.html](http://xh.5156edu.com/page/z6214m5618j18739.html)
+常见的中文汉字，共有 2500 个
 
 
 ## 可以调用的方法:
 
 * [NEI.id()](#id)
-* [NEI.str(len, min, chars)](#strlen-min-chars)
-* [NEI.chinese(len, min)](#chineselen-min)
+* [NEI.str()](#str)
+* [NEI.chinese()](#chinese)
 * [NEI.email()](#email)
-* [NEI.url(protocol)](#urlprotocol)
-* [NEI.num(max, min)](#numax-min)
+* [NEI.url()](#url)
+* [NEI.num()](#num)
 * [NEI.bool()](#bool)
 * [NEI.var()](#var)
-* [NEI.repeat(num, arrEleGenFunc, ...arrEleGenFuncArgs)](#repeatnum-arrelegenfunc-arrelegenfuncargs))
+* [NEI.repeat()](#repeat))
 
 ### id()
 返回一个唯一数值标识，用法:
