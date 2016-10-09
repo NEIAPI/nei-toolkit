@@ -51,7 +51,7 @@ console.log(NEI.id()); // 输出随机数值，保证在当前 mock 结果中是
 
 | 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- | :--- |
-| len | Number | 否 | 10 | 需要生成的字符串长度，如果有 min 参数，则它表示最大长度 |
+| len | Number | 否 | 10 | 字符串长度，如果有 min 参数，则它表示最大长度 |
 | min | Number | 否 | 无 | 字符串最小长度 |
 | chars | String | 否 | ALPHA_NUMERIC_CHARS | 字符串集 |
 
