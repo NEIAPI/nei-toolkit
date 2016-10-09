@@ -34,7 +34,7 @@ console.log(NEI.ALPHA_LOWER_CASE_CHARS);
 * [NEI.chinese(len, min)](#chineselen-min)
 * [NEI.email()](#email)
 * [NEI.url(protocol)](#urlprotocol)
-* [NEI.num(max, min)](#numax-min)
+* [NEI.num(max, min)](#nummax-min)
 * [NEI.bool()](#bool)
 * [NEI.var()](#var)
 * [NEI.repeat(num, arrEleGenFunc, ...arrEleGenFuncArgs)](#repeatnum-arrelegenfunc-arrelegenfuncargs))
