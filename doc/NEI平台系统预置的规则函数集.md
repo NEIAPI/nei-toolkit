@@ -1,12 +1,12 @@
 # NEI 平台系统预置的规则函数集
 
-为了方便用户生成 mock 数据, NEI 平台预置了一些可以直接使用的常量和方法。为了不和用户自定义的规则函数产生冲突, 它们都放在 `NEI` 名字空间里面。
+为了方便用户生成 mock 数据，NEI 平台预置了一些可以直接使用的常量和方法。为了不和用户自定义的规则函数产生冲突，它们都放在 `NEI` 名字空间里面。
 
 ## 可以使用的常量
 
 ### ALPHA_NUMERIC_CHARS
 
-数字和大小写英文字符集, 它的值为:
+数字和大小写英文字符集，它的值为:
 
 ```js
 console.log(NEI.ALPHA_NUMERIC_CHARS);
@@ -15,7 +15,7 @@ console.log(NEI.ALPHA_NUMERIC_CHARS);
 
 ### ALPHA_LOWER_CASE_CHARS
 
-小写英文字符集, 它的值为:
+小写英文字符集，它的值为:
 
 ```js
 console.log(NEI.ALPHA_LOWER_CASE_CHARS);
@@ -24,34 +24,34 @@ console.log(NEI.ALPHA_LOWER_CASE_CHARS);
 
 ### NORMAL_CHINESE_CHARS
 
-常见的中文汉字, 共有 2500 个, 来源: [http://xh.5156edu.com/page/z6214m5618j18739.html](http://xh.5156edu.com/page/z6214m5618j18739.html)
+常见的中文汉字，共有 2500 个，来源: [http://xh.5156edu.com/page/z6214m5618j18739.html](http://xh.5156edu.com/page/z6214m5618j18739.html)
 
 
 ## 可以调用的方法:
 
-[NEI.id()](#id())
-[NEI.str(len, min, chars)](#str(len, min, chars))
-[NEI.chinese(len, min)](#chinese(len, min))
-[NEI.email()](#email())
-[NEI.url(protocol)](#url(protocol))
-[NEI.num(max, min)](#num(max, min))
-[NEI.bool()](#bool())
-[NEI.var()](#var())
-[NEI.repeat(num, arrEleGenFunc, ...arrEleGenFuncArgs)](#repeat(num, arrEleGenFunc, ...arrEleGenFuncArgs))
+* [NEI.id()](#id)
+* [NEI.str(len，min，chars)](#strlen-min-chars)
+* [NEI.chinese(len，min)](#chineselen-min)
+* [NEI.email()](#email)
+* [NEI.url(protocol)](#urlprotocol)
+* [NEI.num(max，min)](#nu(max-min)
+* [NEI.bool()](#bool)
+* [NEI.var()](#var)
+* [NEI.repeat(num，arrEleGenFunc，...arrEleGenFuncArgs)](#repeatnum-arrelegenfunc-arrelegenfuncargs))
 
 ### id()
-返回一个唯一数值标识, 用法:
+返回一个唯一数值标识，用法:
 
 ```js
-console.log(NEI.id()); // 输出随机数值, 保证在当前 mock 结果中是唯一的
+console.log(NEI.id()); // 输出随机数值，保证在当前 mock 结果中是唯一的
 ```
 
-### str(len, min, chars)
-返回一个随机字符串, 参数说明:
+### str(len，min，chars)
+返回一个随机字符串，参数说明:
 
 | 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- | :--- |
-| len | Number | 否 | 10 | 需要生成的字符串长度, 如果有 min 参数, 则它表示最大长度 |
+| len | Number | 否 | 10 | 需要生成的字符串长度，如果有 min 参数，则它表示最大长度 |
 | min | Number | 否 | 无 | 字符串最小长度 |
 | chars | String | 否 | ALPHA_NUMERIC_CHARS | 字符串集 |
 
@@ -61,12 +61,12 @@ console.log(NEI.id()); // 输出随机数值, 保证在当前 mock 结果中是�
 console.log(NEI.str()); // 输出随机字符串
 ```
 
-### chinese(len, min)
-返回一个随机中文字符串, 参数说明:
+### chinese(len，min)
+返回一个随机中文字符串，参数说明:
 
 | 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- | :--- |
-| len | Number | 否 | 10 | 需要生成的字符串长度, 如果有 min 参数, 则它表示最大长度 |
+| len | Number | 否 | 10 | 需要生成的字符串长度，如果有 min 参数，则它表示最大长度 |
 | min | Number | 否 | 无 | 字符串最小长度 |
 
 使用方法:
@@ -76,7 +76,7 @@ console.log(NEI.chinese()); // 输出随机中文字符串
 ```
 
 ### email()
-返回一个随机邮箱地址, 参数: 无
+返回一个随机邮箱地址，参数: 无
 
 使用方法:
 
@@ -85,7 +85,7 @@ console.log(NEI.email()); // 输出随机邮箱地址
 ```
 
 ### url(protocol)
-返回一个随机 url 地址, 参数说明:
+返回一个随机 url 地址，参数说明:
 
 | 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- | :--- |
@@ -97,8 +97,8 @@ console.log(NEI.email()); // 输出随机邮箱地址
 console.log(NEI.url()); // 输出随机 url 地址
 ```
 
-### num(max, min)
-返回一个随机数字, 参数说明:
+### num(max，min)
+返回一个随机数字，参数说明:
 
 | 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
 | :--- | :--- | :--- | :--- | :--- |
@@ -112,7 +112,7 @@ console.log(NEI.num()); // 输出随机数字
 ```
 
 ### bool()
-返回一个随机布尔值, 参数: 无
+返回一个随机布尔值，参数: 无
 
 使用方法:
 
@@ -121,7 +121,7 @@ console.log(NEI.bool()); // 输出随机布尔值
 ```
 
 ### var()
-返回一个随机类型的值（调用 str、num 或者 bool 方法）,  它的参数会传给相应的函数
+返回一个随机类型的值（调用 str、num 或者 bool 方法）， 它的参数会传给相应的函数
 
 使用方法:
 
@@ -129,7 +129,7 @@ console.log(NEI.bool()); // 输出随机布尔值
 console.log(NEI.var()); // 输出随机类型的值
 ```
 
-### repeat(num, arrEleGenFunc, ...arrEleGenFuncArgs)
+### repeat(num，arrEleGenFunc，...arrEleGenFuncArgs)
 
 返回指定元素个数的数组。只对数组类型的参数有效。参数说明:
 
@@ -144,7 +144,7 @@ console.log(NEI.var()); // 输出随机类型的值
 
 ```js
 console.log(NEI.repeat(10)); // 输出有 10 个元素的数组
-console.log(NEI.repeat(10, NEI.url, 'https')); // 输出一个数组, 它有 10 个元素, 每个元素是一个 url 地址, 并且 url 的协议是 https
+console.log(NEI.repeat(10，NEI.url，'https')); // 输出一个数组，它有 10 个元素，每个元素是一个 url 地址，并且 url 的协议是 https
 ```
 
 
