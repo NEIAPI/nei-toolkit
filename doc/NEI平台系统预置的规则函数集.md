@@ -30,14 +30,14 @@ console.log(NEI.ALPHA_LOWER_CASE_CHARS);
 ## 可以调用的方法:
 
 * [NEI.id()](#id)
-* [NEI.str()](#str)
-* [NEI.chinese()](#chinese)
+* [NEI.str(len, min, chars)](#strlen-min-chars)
+* [NEI.chinese(len, min)](#chineselen-min)
 * [NEI.email()](#email)
-* [NEI.url()](#url)
-* [NEI.num()](#num)
+* [NEI.url(protocol)](#urlprotocol)
+* [NEI.num(max, min)](#numax-min)
 * [NEI.bool()](#bool)
 * [NEI.var()](#var)
-* [NEI.repeat()](#repeat))
+* [NEI.repeat(num, arrEleGenFunc, ...arrEleGenFuncArgs)](#repeatnum-arrelegenfunc-arrelegenfuncargs))
 
 ### id()
 返回一个唯一数值标识，用法:
