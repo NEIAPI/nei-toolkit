@@ -1,7 +1,7 @@
 {
   "name": "nei",
   "description": "builder for nei platform",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "license": "MIT",
   "keywords": [
     "nei",
@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/NEYouFan/nei-toolkit/",
   "scripts": {
-    "test": "node test/run_tests.js"
+    "test": "node test/run_tests.js && npm run jsdoctest",
+    "jsdoctest": "mocha --require jsdoctest `find lib src source -name \"*.js\"`"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,9 @@
     "url": "https://github.com/NEYouFan/nei-toolkit/issues"
   },
   "devDependencies": {
-    "mocha": ">=2.0.1",
+    "chai": "^3.5.0",
+    "jsdoctest": "^1.7.0",
+    "mocha": "^3.0.2",
     "should": "^4.3.0"
   },
   "dependencies": {

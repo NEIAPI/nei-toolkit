@@ -66,6 +66,7 @@
     "SPC_DTS_DATATYPE"  : 2,
     "SPC_DTS_TEMPLATE"  : 3,
     "SPC_DTS_WEBVIEW"   : 4,
+    "SPC_DTS_HANDLEBAR" : 5,
 
     "PRG_TYP_NORMAL"    : 0,
     "PRG_TYP_DEFAULT"   : 1,

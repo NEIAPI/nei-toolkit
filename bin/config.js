@@ -31,15 +31,17 @@ module.exports = {
     ],
     "build": [
         "使用说明：",
-        "nei build -k [key]",
+        "nei build (-pk|-sk) [key] ",
         "",
-        "<key>\t\t\tNEI 平台中项目的唯一 key, 可以在工具设置中查看",
+        "<key>\t\t\tNEI 平台中项目的唯一 key",
         "",
-        "参数说明：",
+        "参数说明：\t-pk 表示构建项目，其key在项目的工具设置中可以查到",
+        "        \t-sk 表示构建规范，其key在规范的规范设置中可以查到",
         "%p",
         "",
         "使用举例：",
-        "nei build -k xyz"
+        "nei build -pk xyz",
+        "nei build -sk zyx"
     ],
     "build-params": [
         {
@@ -57,7 +59,13 @@ module.exports = {
             "j": "k",
             "q": "key",
             "d": "",
-            "m": "项目的唯一标识"
+            "m": "指定工程唯一标识"
+        },
+        {
+            "j": "sk",
+            "q": "specKey",
+            "d": "",
+            "m": "指定规范唯一标识"
         },
         {
             "j": "w",
@@ -69,6 +77,11 @@ module.exports = {
             "q": "specType",
             "d": "web",
             "m": "工程规范类型, 支持 web、aos、ios、test 四种类型"
+        },
+        {
+            "q": "iosProjectPath",
+            "d": "",
+            "m": "iOS工程使用，指定iOS工程路径"
         }
     ],
     "update": [

@@ -34,12 +34,12 @@ class Main {
         this.config.outputRoot = _path.normalize(_path.absolute((this.args.output || './') + '/', cwd));
         this.checkConfig();
         let loadedHandler = (ds) => {
-            this.config.pid = ds.project.id;
+            this.config.pid = ds.project&&ds.project.id || ds.specs&&ds.specs[0]&&ds.specs[0]["spec"]["id"];
             this.ds = ds;
             this.fillArgs();
             // 合并完参数后, 需要重新 format 一下, 并且此时需要取默认值
             this.args = arg.format(this.config.action, this.args, true);
-            this.config.neiConfigRoot = `${this.config.outputRoot}nei.${this.config.pid}.${this.args.key}/`;
+            this.config.neiConfigRoot = `${this.config.outputRoot}nei.${this.config.pid}.${this.args.key|| this.args.specKey}/`;
             new Builder({
                 config: this.config,
                 args: this.args,
@@ -59,7 +59,7 @@ class Main {
         let dir = path.join(process.cwd(), args.output || './');
         let projects = this.findProjects(args);
         let buildProject = (neiProjectDir, exitIfNotExist) => {
-            let config = _util.file2json(`${neiProjectDir}/nei.json`, exitIfNotExist);
+            let config = _util.file2json(`${neiProjectDir}/nei.json`, exitIfNotExist, "未找到nei.json文件，请检查，建议使用nei build重新构建");
             let mergedArgs = Object.assign({}, config.args, args);
             this.build(arg, action, mergedArgs);
         }
@@ -86,7 +86,7 @@ class Main {
             }
         }
     }
-
+    
     /**
      * start mock server
      * @param  {object}  args - args object
@@ -123,21 +123,28 @@ class Main {
             tryStartServer(`${projects[0]}/server.config.js`);
         }
     }
-
+    
     /**
      * 从 NEI 服务器加载项目数据
      * @param {function} callback - 加载成功回调
      */
     loadData(callback) {
         let neiHost = 'http://nei.netease.com/';
-        let projectKey = this.args.key;
-        let specType = {
-                web: neiDbConst.CMN_TYP_WEB,
-                aos: neiDbConst.CMN_TYP_AOS,
-                ios: neiDbConst.CMN_TYP_IOS,
-                test: neiDbConst.CMN_TYP_TEST
-            }[this.args.specType] || neiDbConst.CMN_TYP_WEB;
-        let url = `${neiHost}/api/projectres/?key=${encodeURIComponent(projectKey)}&spectype=${specType}`;
+        let url;
+        if(this.args.hasOwnProperty('specKey')){
+            let specKey = this.args.specKey;
+            url = `${neiHost}/api/specificationres/?key=${encodeURIComponent(specKey)}`;
+        }else {
+            let key = this.args.key;
+            let specType = {
+                  web: neiDbConst.CMN_TYP_WEB,
+                  aos: neiDbConst.CMN_TYP_AOS,
+                  ios: neiDbConst.CMN_TYP_IOS,
+                  test: neiDbConst.CMN_TYP_TEST
+              }[this.args.specType] || neiDbConst.CMN_TYP_WEB;
+            
+            url = `${neiHost}/api/projectres/?key=${encodeURIComponent(key)}&spectype=${specType}`;
+        }
         url = _path.normalize(url);
         _logger.info('从 NEI 服务器加载数据, 地址: %s', url);
         _io.download(url, (data) => {
@@ -157,7 +164,7 @@ class Main {
             callback(json.result);
         });
     }
-
+    
     /**
      * 检测指定的目录中是否存在 nei 配置文件
      */
@@ -168,14 +175,23 @@ class Main {
             // 目录不存在, update 命令不会走到这里
             return;
         }
-        let files = fs.readdirSync(outputDir);
+        let result = {};
+        _fs.walk(outputDir,
+          filename=>{
+              if(path.basename(filename) === 'nei.json')
+                  result['file'] = true;
+              return filename;
+          },
+          dirname=>{
+              let basename = path.basename(dirname);
+              if(basename.startsWith('nei') && basename.endsWith(this.args.key||this.args.specKey))
+                  result['dir'] = basename;
+              return dirname;
+          }, result);
         let foundConfigFile = null;
-        files.some((filename) => {
-            if (filename.startsWith('nei') && filename.endsWith(this.args.key)) {
-                foundConfigFile = filename;
-                return true;
-            }
-        });
+        if(result['file'] && result['dir']){
+            foundConfigFile = result['dir'];
+        }
         let errorMsg = null;
         if (foundConfigFile) {
             if (action === 'build') {
@@ -193,7 +209,7 @@ class Main {
             return process.exit(1);
         }
     }
-
+    
     /**
      * 填充参数, 合并项目中的命令行参数设置、规范中的命令行参数
      */
@@ -205,7 +221,7 @@ class Main {
         }
         let specArgsConfig = spec.spec.argsConfig;
         let proArgs = {};
-        this.ds.cliargs.forEach(function (cliarg) {
+        this.ds.cliargs&&this.ds.cliargs.forEach(function (cliarg) {
             proArgs[cliarg.key] = cliarg.value;
         });
         let specCliArgDoc = null;
@@ -233,7 +249,7 @@ class Main {
         }
         this.args = Object.assign({}, specArgs, proArgs, this.args);
     }
-
+    
     /**
      * 查找指定输出目录下的 nei 项目
      */
