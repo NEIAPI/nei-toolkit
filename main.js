@@ -86,7 +86,7 @@ class Main {
             }
         }
     }
-    
+
     /**
      * start mock server
      * @param  {object}  args - args object
@@ -123,7 +123,7 @@ class Main {
             tryStartServer(`${projects[0]}/server.config.js`);
         }
     }
-    
+
     /**
      * 从 NEI 服务器加载项目数据
      * @param {function} callback - 加载成功回调
@@ -142,7 +142,7 @@ class Main {
                   ios: neiDbConst.CMN_TYP_IOS,
                   test: neiDbConst.CMN_TYP_TEST
               }[this.args.specType] || neiDbConst.CMN_TYP_WEB;
-            
+
             url = `${neiHost}/api/projectres/?key=${encodeURIComponent(key)}&spectype=${specType}`;
         }
         url = _path.normalize(url);
@@ -164,7 +164,7 @@ class Main {
             callback(json.result);
         });
     }
-    
+
     /**
      * 检测指定的目录中是否存在 nei 配置文件
      */
@@ -209,7 +209,7 @@ class Main {
             return process.exit(1);
         }
     }
-    
+
     /**
      * 填充参数, 合并项目中的命令行参数设置、规范中的命令行参数
      */
@@ -249,7 +249,7 @@ class Main {
         }
         this.args = Object.assign({}, specArgs, proArgs, this.args);
     }
-    
+
     /**
      * 查找指定输出目录下的 nei 项目
      */
