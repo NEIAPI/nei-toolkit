@@ -131,6 +131,11 @@ module.exports = {
             "q": "spec",
             "d": false,
             "m": "是否更新规范中的普通文件和文件夹, 以数据填充的文件不在此列"
+        },
+        {
+            "q":"pbxForce",
+            "d": false,
+            "m": "是否强制pbx更新"
         }
     ],
     "server": [
