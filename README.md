@@ -71,6 +71,7 @@ nei build -k [key] [参数]
 | -h | --help |  | 显示 build 命令的帮助信息 |
 | -o | --output | ./ | 指定项目的输出目录 |
 | -k | --key |  | 项目的唯一标识，可以在项目的"工具(设置)"中查看 |
+| -sk| --specKey |  | 规范的唯一标识，可以在规范的"规范设置"中查看 |
 | -w | --overwrite | false | 是否覆盖已存在的文件，需要下载的文件不在此列，如果需要重新下载，请先将本地的文件删除 |
 | 无 | --specType | web | 要构建的规范类型，目前支持 web、aos、ios、test 四种类型 |
 
@@ -81,6 +82,14 @@ nei build -k [key] [参数]
 ```bash
 nei build -k xyz
 ```
+
+规范也可以独立于项目生成脚手架文件, 在当前目录下构建 key 为 xyz 的规范：
+
+```bash
+nei build -sk xyz
+```
+
+>注意: 如果 k 和 sk 参数同时存在, 系统会优先考虑 sk 参数
 
 ### update
 
