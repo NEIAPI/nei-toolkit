@@ -31,15 +31,16 @@ class Main {
             action: action
         };
         let cwd = process.cwd() + '/';
-        this.config.outputRoot = _path.normalize(_path.absolute((this.args.output || './') + '/', cwd));
         this.checkConfig();
         let loadedHandler = (ds) => {
-            this.config.pid = ds.project&&ds.project.id || ds.specs&&ds.specs[0]&&ds.specs[0]["spec"]["id"];
+            this.config.pid = ds.project && ds.project.id || ds.specs && ds.specs[0] && ds.specs[0]["spec"]["id"];
             this.ds = ds;
             this.fillArgs();
             // 合并完参数后, 需要重新 format 一下, 并且此时需要取默认值
             this.args = arg.format(this.config.action, this.args, true);
-            this.config.neiConfigRoot = `${this.config.outputRoot}nei.${this.config.pid}.${this.args.key|| this.args.specKey}/`;
+            // output 的参数有可能写在项目或者规范中, 这里重新计算
+            this.config.outputRoot = _path.normalize(_path.absolute((this.args.output || './') + '/', cwd));
+            this.config.neiConfigRoot = `${this.config.outputRoot}nei.${this.config.pid}.${this.args.key || this.args.specKey}/`;
             new Builder({
                 config: this.config,
                 args: this.args,
@@ -129,19 +130,19 @@ class Main {
      * @param {function} callback - 加载成功回调
      */
     loadData(callback) {
-        let neiHost = 'http://nei.netease.com/';
+        let neiHost = 'https://nei.netease.com/';
         let url;
-        if(this.args.hasOwnProperty('specKey')){
+        if (this.args.hasOwnProperty('specKey')) {
             let specKey = this.args.specKey;
             url = `${neiHost}/api/specificationres/?key=${encodeURIComponent(specKey)}`;
-        }else {
+        } else {
             let key = this.args.key;
             let specType = {
-                  web: neiDbConst.CMN_TYP_WEB,
-                  aos: neiDbConst.CMN_TYP_AOS,
-                  ios: neiDbConst.CMN_TYP_IOS,
-                  test: neiDbConst.CMN_TYP_TEST
-              }[this.args.specType] || neiDbConst.CMN_TYP_WEB;
+                    web: neiDbConst.CMN_TYP_WEB,
+                    aos: neiDbConst.CMN_TYP_AOS,
+                    ios: neiDbConst.CMN_TYP_IOS,
+                    test: neiDbConst.CMN_TYP_TEST
+                }[this.args.specType] || neiDbConst.CMN_TYP_WEB;
 
             url = `${neiHost}/api/projectres/?key=${encodeURIComponent(key)}&spectype=${specType}`;
         }
@@ -177,19 +178,19 @@ class Main {
         }
         let result = {};
         _fs.walk(outputDir,
-          filename=>{
-              if(path.basename(filename) === 'nei.json')
-                  result['file'] = true;
-              return filename;
-          },
-          dirname=>{
-              let basename = path.basename(dirname);
-              if(basename.startsWith('nei') && basename.endsWith(this.args.key||this.args.specKey))
-                  result['dir'] = basename;
-              return dirname;
-          }, result);
+            filename=> {
+                if (path.basename(filename) === 'nei.json')
+                    result['file'] = true;
+                return filename;
+            },
+            dirname=> {
+                let basename = path.basename(dirname);
+                if (basename.startsWith('nei') && basename.endsWith(this.args.key || this.args.specKey))
+                    result['dir'] = basename;
+                return dirname;
+            }, result);
         let foundConfigFile = null;
-        if(result['file'] && result['dir']){
+        if (result['file'] && result['dir']) {
             foundConfigFile = result['dir'];
         }
         let errorMsg = null;
@@ -221,7 +222,7 @@ class Main {
         }
         let specArgsConfig = spec.spec.argsConfig;
         let proArgs = {};
-        this.ds.cliargs&&this.ds.cliargs.forEach(function (cliarg) {
+        this.ds.cliargs && this.ds.cliargs.forEach(function (cliarg) {
             proArgs[cliarg.key] = cliarg.value;
         });
         let specCliArgDoc = null;
