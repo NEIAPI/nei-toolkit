@@ -147,4 +147,19 @@ console.log(NEI.repeat(10)); // 输出有 10 个元素的数组
 console.log(NEI.repeat(10, NEI.url, 'https')); // 输出一个数组，它有 10 个元素，每个元素是一个 url 地址，并且 url 的协议是 https
 ```
 
+### loop(num, arrRepeatNum)
+
+当存在循环引用的时候（比如树型结构的数据）, 指定 mock 数据的生成层数。参数说明:
+
+| 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
+| :--- | :--- | :--- | :--- | :--- |
+| num | Number | 否 | 3 | 指定 mock 数据的生成层数 |
+| arrRepeatNum | Number | 否 | 3 | 如果参数属性是数组, 则指定数组的元素个数 |
+
+使用方法:
+
+```js
+console.log(NEI.loop(3)); // 当存在循环引用时（比如树型结构的数据）, 生成 3 层数据
+```
+
 
