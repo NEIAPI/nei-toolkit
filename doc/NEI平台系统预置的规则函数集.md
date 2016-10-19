@@ -38,6 +38,7 @@ console.log(NEI.ALPHA_LOWER_CASE_CHARS);
 * [NEI.bool()](#bool)
 * [NEI.var()](#var)
 * [NEI.repeat(num, arrEleGenFunc, ...arrEleGenFuncArgs)](#repeatnum-arrelegenfunc-arrelegenfuncargs))
+* [NEI.loop(num, arrRepeatNum)](#repeatnum-arrrepeatnum))
 
 ### id()
 返回一个唯一数值标识，用法:
