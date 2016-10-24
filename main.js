@@ -38,9 +38,10 @@ class Main {
             this.fillArgs();
             // 合并完参数后, 需要重新 format 一下, 并且此时需要取默认值
             this.args = arg.format(this.config.action, this.args, true);
-            // output 的参数有可能写在项目或者规范中, 这里重新计算
+            // output 的参数有可能写在项目或者规范中, 这里重新计算, 然后还需要重新检查
             this.config.outputRoot = _path.normalize(_path.absolute((this.args.output || './') + '/', cwd));
             this.config.neiConfigRoot = `${this.config.outputRoot}nei.${this.config.pid}.${this.args.key || this.args.specKey}/`;
+            this.checkConfig();
             new Builder({
                 config: this.config,
                 args: this.args,
@@ -130,7 +131,7 @@ class Main {
      * @param {function} callback - 加载成功回调
      */
     loadData(callback) {
-        let neiHost = 'https://nei.netease.com/';
+        let neiHost = 'http://localhost:9527/';
         let url;
         if (this.args.hasOwnProperty('specKey')) {
             let specKey = this.args.specKey;
