@@ -153,5 +153,8 @@ nei server -o ./mypro
 ## Licence
 [MIT](./LICENSE)
 
+## 感谢
+感谢[网易云](http://www.163yun.com/)提供的云服务, 目前 [NEI](https://nei.netease.com) 已经托管在网易云上。
+
 
 
