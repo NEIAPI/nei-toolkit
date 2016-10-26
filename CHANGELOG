@@ -1,3 +1,7 @@
+3.1.6   (2016-10-26)
+    - worker 移除 console 对象
+    - 接口的 getOutputModel 方法 bug 修复
+
 3.1.5   (2016-10-24)
     - mock 服务重构
     - iOS 工程修复了一些 bug
