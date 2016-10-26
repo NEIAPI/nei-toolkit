@@ -14,14 +14,14 @@ public class {{datatype.name}} {
     {{! getter}}
     {{#each datatype.fields}}
 
-    public {{typeName this}} get{{upperFirst name}} {
+    public {{typeName this}} get{{upperFirst name}}() {
         return {{name}};
     }
     {{/each}}
     {{! setter}}
     {{#each datatype.fields}}
 
-    public void set{{upperFirst name}} {
+    public void set{{upperFirst name}} ({{typeName this}} {{name}}) {
         this.{{name}} = {{name}};
     }
     {{/each}}
