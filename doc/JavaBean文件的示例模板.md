@@ -21,7 +21,7 @@ public class {{datatype.name}} {
     {{! setter}}
     {{#each datatype.fields}}
 
-    public void set{{upperFirst name}} ({{typeName this}} {{name}}) {
+    public void set{{upperFirst name}}({{typeName this}} {{name}}) {
         this.{{name}} = {{name}};
     }
     {{/each}}
