@@ -19,6 +19,7 @@
 * [老项目迁移到 NEI 上的说明](./doc/老项目的迁移说明.md)
 * [一步一步教你如何愉快地生成 JavaBean 文件](./doc/一步一步教你如何愉快地生成JavaBean文件.md)
 * [JavaBean 文件的示例模板](./doc/JavaBean文件的示例模板.md)
+* [NEI 平台规则函数使用说明](./doc/NEI平台规则函数使用说明.md)
 * [NEI 平台系统预置的规则函数集](./doc/NEI平台系统预置的规则函数集.md)
 
 ## 工具使用
@@ -151,6 +152,9 @@ nei server -o ./mypro
 
 ## Licence
 [MIT](./LICENSE)
+
+## 感谢
+感谢[网易云](http://www.163yun.com/)提供的云服务, 目前 [NEI](https://nei.netease.com) 已经托管在网易云上。
 
 
 
