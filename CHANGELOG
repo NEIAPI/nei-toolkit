@@ -1,3 +1,6 @@
+3.1.7   (2016-10-26)
+    - 接口的 getOutputModel 方法 bug 修复
+
 3.1.6   (2016-10-26)
     - worker 移除 console 对象
     - 接口的 getOutputModel 方法 bug 修复
