@@ -2,7 +2,7 @@
 
 ## 先创建规范
 
-1. 在 [NEI 平台](http://nei.netease.com) 上点击“工程规范 -> 新建规范”，输入规范名称，比如 TodoSpec，点击“保存”
+1. 在 [NEI 平台](https://nei.netease.com) 上点击“工程规范 -> 新建规范”，输入规范名称，比如 TodoSpec，点击“保存”
 
 2. 点击“工程结构”，新建一个文件，文件名为 `{{datatype.name}}`，在右边选择“数据模型列表填充”
 

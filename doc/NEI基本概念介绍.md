@@ -9,7 +9,7 @@
 * [业务分组](#业务分组)
 * [工程规范](#工程规范)
 
-接口管理平台（Netease Easy Interface），简称 [NEI](http://nei.netease.com/)。
+接口管理平台（Netease Easy Interface），简称 [NEI](https://nei.netease.com/)。
 
 NEI 虽然叫接口管理平台，但其实不只是管理接口，它可以管理整个产品，也具备项目脚手架的功能。本文介绍 NEI 的设计理念和一些名词的含义。
 

@@ -7,7 +7,7 @@
 let util = require('util');
 let _io = require('../lib/util/io');
 
-let api = `http://nei.netease.com/api/projectres/?key=466597d96cabbc951515ef763c2b1213&spectype=0`;
+let api = `https://nei.netease.com/api/projectres/?key=466597d96cabbc951515ef763c2b1213&spectype=0`;
 
 console.info(`load nei data from ${api}`);
 
