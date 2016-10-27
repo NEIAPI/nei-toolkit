@@ -156,5 +156,15 @@ nei server -o ./mypro
 ## 感谢
 感谢[网易云](http://www.163yun.com/)提供的云服务, 目前 [NEI](https://nei.netease.com) 已经托管在网易云上。
 
+## 讨论组:
+
+NEI 用户交流 QQ 群(453281988):
+
+![QQ 群](./doc/res/nei_qq.jpeg)
+
+NEI 用户交流微信群:
+
+![QQ 群](./doc/res/nei_wechat.jpeg)
+
 
 
