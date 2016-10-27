@@ -162,9 +162,5 @@ NEI 用户交流 QQ 群(453281988):
 
 ![QQ 群](./doc/res/nei_qq.jpeg)
 
-NEI 用户交流微信群:
-
-![QQ 群](./doc/res/nei_wechat.jpeg)
-
 
 
