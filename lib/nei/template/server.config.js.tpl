@@ -24,6 +24,10 @@ module.exports = {
     launch: true,
     /* 端口 */
     port: 8002,
+    /* 是否使用 nei 提供的在线 mock 数据 */
+    online: false,
+    /* 项目的 key */
+    projectKey: '{{projectKey}}',
     /* 同步模块mock数据路径 */
     mockTpl: '{{mockViewRoot}}',
     /* 异步接口mock数据路径 */
