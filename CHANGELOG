@@ -1,3 +1,7 @@
+3.2.0   (2016-11-06)
+    - 模板 mock 数据多了一层 json，bug 修复
+    - 更新时，server.config.js 中的 `launch`、`port`、`online` 三个字段如果已经存在，则不更新
+
 3.1.9   (2016-11-02)
     - mock 数据支持从 nei 网站获取
     - 生成的异步接口的 mock 数据, 支持 afterScript 参数
