@@ -21,11 +21,11 @@ module.exports = {
       {{/each}}
     },
     /* 是否自动打开浏览器 */
-    launch: true,
+    launch: {{launch}},
     /* 端口 */
-    port: 8002,
+    port: {{port}},
     /* 是否使用 nei 提供的在线 mock 数据 */
-    online: false,
+    online: {{online}},
     /* 项目的 key */
     projectKey: '{{projectKey}}',
     /* 同步模块mock数据路径 */
