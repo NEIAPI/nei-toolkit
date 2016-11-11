@@ -33,7 +33,7 @@ esac
 
 if [ -z "$FMPP_HOME" ] ; then
   # try to find FMPP
-  if [ -d /opt/fmpp ] ; then 
+  if [ -d /opt/fmpp ] ; then
     FMPP_HOME=/opt/fmpp
   fi
 
@@ -93,9 +93,9 @@ else
   fi
 fi
 
-if [ -z "$JAVACMD" ] ; then 
+if [ -z "$JAVACMD" ] ; then
   if [ -n "$JAVA_HOME"  ] ; then
-    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then 
+    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
       # IBM's JDK on AIX uses strange locations for the executables
       JAVACMD="$JAVA_HOME/jre/sh/java"
     else
@@ -108,7 +108,7 @@ if [ -z "$JAVACMD" ] ; then
     fi
   fi
 fi
- 
+
 if [ ! -x "$JAVACMD" ] ; then
   echo "Java executable not found! Tried: $JAVACMD"
   echo "Install Java, or if it's already installed, ensure that either:"
@@ -163,4 +163,6 @@ if [ -n "$CYGHOME" ]; then
 else
   "$JAVACMD" -classpath "$LOCALCLASSPATH" -Dfmpp.home="${FMPP_HOME}" $FMPP_OPTS fmpp.tools.CommandLine $FMPP_ARGS "$@"
 fi
+
+echo "$LOCALCLASSPATH";
 
