@@ -35,5 +35,14 @@ module.exports = {
     /* 模板后缀 */
     viewExt: '.{{viewExt}}',
     /* 模板引擎 */
-    engine: '{{engine}}'
+    engine: '{{engine}}',
+    /* fmpp 配置 */
+    //fmpp: {
+    //    /* 自定义 jar 的路径*/
+    //    jarDir: '',
+    //    /* 暴露给模板的名称和jar中包名的对应关系 */
+    //    jarConfig: {
+    //        [暴露给模板的名称]: [jar中包名] // 比如: `HighlightUtil: 'yueduutil.HighlightUtil'`
+    //    }
+    //}
 };
