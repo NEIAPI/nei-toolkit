@@ -36,7 +36,7 @@ module.exports = {
     viewExt: '.{{viewExt}}',
     /* 模板引擎 */
     engine: '{{engine}}',
-    /* fmpp 配置 */
+    /* 打开下面的 fmpp 配置，可以在模板中调用自定义 jar 包中的方法 */
     //fmpp: {
     //    /* 自定义 jar 的路径*/
     //    jarDir: '',
