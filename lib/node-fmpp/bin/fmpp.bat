@@ -32,12 +32,12 @@ set FMPP_SCRIPT_DIR=%~dp0
 rem --------------------------------
 rem Collect cmd line args
 rem --------------------------------
-set FMPP_CMD_LINE_ARGS=%1
-if ""%1""=="""" goto endArgs
+set FMPP_CMD_LINE_ARGS=%2
+if ""%2""=="""" goto endArgs
 :nextArg
 shift
-if ""%1"" == """" goto endArgs
-set FMPP_CMD_LINE_ARGS=%FMPP_CMD_LINE_ARGS% %1
+if ""%2"" == """" goto endArgs
+set FMPP_CMD_LINE_ARGS=%FMPP_CMD_LINE_ARGS% %2
 goto nextArg
 :endArgs
 
