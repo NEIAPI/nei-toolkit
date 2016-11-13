@@ -28,6 +28,7 @@ if exist "%HOME%\fmpprc_pre.bat" call "%HOME%\fmpprc_pre.bat"
 if "%OS%"=="Windows_NT" @setlocal
 
 set FMPP_SCRIPT_DIR=%~dp0
+set FMPP_CUSTOM_JARS_DIR=%1
 
 rem --------------------------------
 rem Collect cmd line args
@@ -184,7 +185,7 @@ goto end
 :libdirFound
 if "%FMPP_BAT_DEBUG%" == "on" echo [DEBUG] FMPP_LIB_DIR: %FMPP_LIB_DIR%
 set LOCALCLASSPATH=%CLASSPATH%
-for %%i in ("%FMPP_LIB_DIR%\*.jar") do call "%FMPP_LCP_CMD%" %%i
+for %%i in ("%FMPP_LIB_DIR%\*.jar", "%FMPP_CUSTOM_JARS_DIR%\*.jar") do call "%FMPP_LCP_CMD%" %%i
 if exist "%JAVA_HOME%\lib\tools.jar" call "%FMPP_LCP_CMD%" %JAVA_HOME%\lib\tools.jar
 if "%FMPP_BAT_DEBUG%" == "on" echo [DEBUG] LOCALCLASSPATH: %LOCALCLASSPATH%
 
