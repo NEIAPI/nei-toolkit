@@ -33,7 +33,7 @@ esac
 
 if [ -z "$FMPP_HOME" ] ; then
   # try to find FMPP
-  if [ -d /opt/fmpp ] ; then 
+  if [ -d /opt/fmpp ] ; then
     FMPP_HOME=/opt/fmpp
   fi
 
@@ -93,9 +93,9 @@ else
   fi
 fi
 
-if [ -z "$JAVACMD" ] ; then 
+if [ -z "$JAVACMD" ] ; then
   if [ -n "$JAVA_HOME"  ] ; then
-    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then 
+    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
       # IBM's JDK on AIX uses strange locations for the executables
       JAVACMD="$JAVA_HOME/jre/sh/java"
     else
@@ -108,7 +108,7 @@ if [ -z "$JAVACMD" ] ; then
     fi
   fi
 fi
- 
+
 if [ ! -x "$JAVACMD" ] ; then
   echo "Java executable not found! Tried: $JAVACMD"
   echo "Install Java, or if it's already installed, ensure that either:"
@@ -122,7 +122,7 @@ if [ -n "$CLASSPATH" ] ; then
 fi
 
 # add in the dependency .jar files
-for i in "${FMPP_LIB}"/*.jar
+for i in "${FMPP_LIB}"/*.jar "$1"/*.jar
 do
   # if the directory is empty, then it will return the input string
   # this is stupid, so case for it
@@ -134,6 +134,8 @@ do
     fi
   fi
 done
+
+shift
 
 if [ -n "$JAVA_HOME" ] ; then
   if [ -f "$JAVA_HOME/lib/tools.jar" ] ; then
