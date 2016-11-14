@@ -36,13 +36,26 @@ module.exports = {
     viewExt: '.{{viewExt}}',
     /* 模板引擎 */
     engine: '{{engine}}',
-    /* 打开下面的 fmpp 配置，可以在模板中调用自定义 jar 包中的方法 */
+    /* 打开下面的 fmpp 配置，可以在模板中调用自定义 jar 包中的类 */
+    {{#if fmpp}}
+    fmpp: {
+        /* 自定义 jar 的路径*/
+        jarDir: "{{fmpp.jarDir}}",
+        /* 暴露给模板的类实例名称和 jar 中的类名(带包名)的对应关系 */
+        jarConfig: {
+            {{#each fmpp.jarConfig}}
+            "{{@key}}": "{{this}}"
+            {{/each}}
+        }
+    }
+    {{else}}
     //fmpp: {
     //    /* 自定义 jar 的路径*/
     //    jarDir: '',
-    //    /* 暴露给模板的名称和jar中包名的对应关系 */
+    //    /* 暴露给模板的类实例名称和 jar 中的类名(带包名)的对应关系 */
     //    jarConfig: {
-    //        [暴露给模板的名称]: [jar中包名] // 比如: `HighlightUtil: 'yueduutil.HighlightUtil'`
+    //        [暴露给模板的类实例名称]: [类名] // 比如: HighlightUtil: 'yueduutil.HighlightUtil'
     //    }
     //}
+    {{/if}}
 };
