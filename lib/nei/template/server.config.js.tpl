@@ -39,7 +39,7 @@ module.exports = {
     /* 打开下面的 fmpp 配置，可以在模板中调用自定义 jar 包中的类 */
     {{#if fmpp}}
     fmpp: {
-        /* 自定义 jar 的路径*/
+        /* 存放自定义 jar 的目录 */
         jarDir: "{{fmpp.jarDir}}",
         /* 暴露给模板的类实例名称和 jar 中的类名(带包名)的对应关系 */
         jarConfig: {
@@ -50,7 +50,7 @@ module.exports = {
     }
     {{else}}
     //fmpp: {
-    //    /* 自定义 jar 的路径*/
+    //    /* 存放自定义 jar 的目录*/
     //    jarDir: '',
     //    /* 暴露给模板的类实例名称和 jar 中的类名(带包名)的对应关系 */
     //    jarConfig: {
