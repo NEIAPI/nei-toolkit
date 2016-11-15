@@ -39,6 +39,12 @@ npm install nei –g
 
 >提示2: 如果已经安装过 nei, 请使用更新命令 `npm update nei -g`
 
+>提示3: 也可以安装某个分支，比如安装 `dev` 分支的命令如下:
+
+```bash
+sudo npm install "NEYouFan/nei-toolkit#dev" -g
+```
+
 ## 指令说明
 
 本工具使用时在终端或者命令行输入以下格式指令运行
