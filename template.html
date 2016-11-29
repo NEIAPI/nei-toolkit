@@ -1,0 +1,40 @@
+package com.netease.nei.example
+
+import com.netease.nei.example.something.is.constant;
+import com.netease.nei.example.but.you.can.generator.dynamiclly.whatever;
+import com.netease.nei.example.ResponseView;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+
+/**
+*  This is comments for the class.
+*  Now preserved.
+*
+*  @author {{args.author}}
+*/
+
+
+@Controller
+public class  {{className}} {
+
+{{#each interfaces}}
+    /**
+    * {{beautifiedDescription description}}
+    *
+    */
+    @RequestMapping(value="{{path}}", method=RequestMethod.{{method}})
+    @ResponseBody
+    public ResponseView {{methodName}} ( HttpServletRequest request, HttpServletResponse response,
+    {{getRequestParamsOrBodies this}}) {
+    // start func body
+    return ;
+    }
+{{/each}}
+}
