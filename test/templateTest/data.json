@@ -1,0 +1,7 @@
+{
+  "author": "abner",
+  "date": "now",
+  "numbers": [1,2,3,4],
+  "input": "this should be replace",
+  "test": "justATest"
+}
