@@ -1,3 +1,0 @@
-{{author}}
-{{input}}
-{{helloworld "haha"}}
