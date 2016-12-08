@@ -138,6 +138,43 @@ module.exports = {
             "m": "是否强制pbx更新"
         }
     ],
+    "template": [
+        "使用说明：",
+        "nei template -p ",
+        "",
+        "参数说明",
+        "%p",
+        ""
+    ],
+    "template-params": [
+        {
+            "j": 'p',
+            "q": 'path',
+            "m": '本地模板路径，必须指定'
+        },
+        {
+            "j":  'o',
+            "q":  'output',
+            "d":  './',
+            "m":  '输出路径，默认为当前路径'
+        },
+        {
+            "j":  'd',
+            "q":  'data',
+            "m":  '数据文件路径'
+        },
+        {
+            "j":  'b',
+            "q":  'handlebars',
+            "m":  '自定义handlebars辅助函数文件路径'
+        },
+        {
+            "j":  'w',
+            "q":  'overwrite',
+            "m":  '是否覆盖已存在的文件，默认为false',
+            "d":  'false'
+        }
+    ],
     "server": [
         "使用说明：",
         "nei server [参数]",

@@ -17,6 +17,7 @@ let Builder = require('./lib/nei/builder');
 let server = require('./lib/server/server');
 let neiDbConst = require('./lib/fb-modules/config/db.json');
 let _logger = _log.logger;
+let Template =  require('./lib/nei/template');
 
 class Main {
     /**
@@ -49,6 +50,17 @@ class Main {
             });
         }
         this.loadData(loadedHandler);
+    }
+    
+    /**
+     *
+     */
+    template(arg, data){
+        if(!arg.path){
+            _logger.error(`未指定本地模板路径，请通过nei template -h 查看帮助`);
+            return;
+        }
+        new Template(arg, data).build();
     }
 
     /**

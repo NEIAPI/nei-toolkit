@@ -41,6 +41,16 @@ var options = {
         config = this.format(action, config);
         config.action = action;
         main.server(config);
+    },
+    template: function (event) {
+        var action = 'template';
+        var config = event.options || {};
+        var data = Object.assign({}, config);
+        config = this.format(action, config);
+        ["p", "o", "d","b", "w"].forEach((item)=>{
+            delete data[item];
+        });
+        main.template(config, data);
     }
 };
 
