@@ -176,7 +176,7 @@ nei template [参数]
 ```json
 {
   "project":{
-    "name" : "test",
+    "name" : "test",
     "version" : "0.0.1"
   },
   "author":{
