@@ -153,6 +153,39 @@ nei server -o ./mypro
 
 > OS X 下如果有异常请使用 `sudo nei server` 命令启动
 
+
+### template
+使用本地数据解析模板。通过指定本地模板文件以及数据文件，能够将模板解析得到输出文件。目前支持的模板语言为[handlebars](http://handlebarsjs.com/)。
+
+```bash
+nei template [参数]
+```
+
+`nei template` 指令可用的参数包括:
+
+| 简写 | 全称 | 默认值 | 描述 |
+| :--- | :--- | :--- | :--- |
+| -h | --help | | 显示 template 命令帮助信息 |
+| -o | --output | ./ | 输出路径 |
+| -p | --path |  | 本地模板路径，必须指定 |
+| -d | --data |  | 数据json文件路径,可选 |
+| -b | --handlebars |  | 自定义handlebars辅助函数文件路径,可选 |
+| -w | --overwrite | false | 是否覆盖已存在的文件 |
+
+用户可以指定数据文件，如`data.json`的文件内容如下:
+```json
+{
+  "project":{
+    "name" : "test",
+    "version" : "0.0.1"
+  },
+  "author":{
+    "Netease"
+  }
+}
+```
+然后用户就可以在模板文件中访问到数据中的数据，如`{{project.name}}`就能够解析为`test`。用户同样可以指定本地handlebars辅助文件，如果用户有多个辅助函数，需要将这些都写到一个文件中，自定义辅助函数的写法与上文一致，参照[此链接](https://github.com/NEYouFan/nei-toolkit/blob/master/doc/Handlebars%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0%E9%9B%86.md#如何撰写自定义handlebars辅助函数)相同。 
+
 ## 版本更新说明
 [更新说明](./CHANGELOG)
 
