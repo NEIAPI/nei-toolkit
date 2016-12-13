@@ -161,12 +161,12 @@ module.exports = {
         {
             "j":  'd',
             "q":  'data',
-            "m":  '数据文件路径'
+            "m":  '数据文件路径,可选'
         },
         {
             "j":  'b',
             "q":  'handlebars',
-            "m":  '自定义handlebars辅助函数文件路径'
+            "m":  '自定义handlebars辅助函数文件路径，可选'
         },
         {
             "j":  'w',
