@@ -41,10 +41,10 @@ NEI 构建提供了完成这个功能的本地模拟容器，先通过 `nei buil
 登陆NEI，点击左边的项目管理，选择一个项目进入。在NEI中，存在着资源和页面的概念，资源包括异步接口、页面模板、数据模型、规则函数等可以复用的东西。定义的异步接口和页面能够由NEI-toolkit的server命令调用，作为充当本地模拟server容器。Server命令主要提供两个功能：1.页面的路由，从而充当一个静态服务器容器 2. 接口的Mock服务器。
 
 在已建好的NEI项目中，制定一个工程规范，如下图所示:
-![指定工程规范](./doc/res/nei-set-spec.png)
+![指定工程规范](./res/nei-set-spec.png)
 
 #### 如果需要使用接口的Mock服务的话，需要指定一个`接口MOCK数据根路径`， 如下图所示:
-![设置mock根路径](./doc/res/nei-set-mock-dir.png)
+![设置mock根路径](./res/nei-set-mock-dir.png)
 
 该规范将interface文件夹设置为`接口MOCK数据根路径`。
 
