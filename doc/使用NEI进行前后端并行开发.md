@@ -38,7 +38,17 @@ NEI 构建提供了完成这个功能的本地模拟容器，先通过 `nei buil
 
 ## 示例
 
-大家可以通过以下命令生成 TodoWeb 项目:
+登陆NEI，点击左边的项目管理，选择一个项目进入。在NEI中，存在着资源和页面的概念，资源包括异步接口、页面模板、数据模型、规则函数等可以复用的东西。定义的异步接口和页面能够由NEI-toolkit的server命令调用，作为充当本地模拟server容器。Server命令主要提供两个功能：1.页面的路由，从而充当一个静态服务器容器 2. 接口的Mock服务器。
+
+在已建好的NEI项目中，制定一个工程规范，如下图所示:
+![指定工程规范](./res/nei-set-spec.png)
+
+## 如果需要使用接口的Mock服务的话，需要指定一个`接口MOCK数据根路径`， 如下图所示:
+![设置mock根路径](./res/nei-set-mock-dir.png)
+
+该规范将interface文件夹设置为`接口MOCK数据根路径`。
+
+如此操作之后，大家就可以通过以下命令生成 TodoWeb 项目:
 
 ```bash
 nei build -k 717a630f6033dfe235c73a4e6dac16e3 -o ./todoweb
@@ -61,6 +71,7 @@ nei server -k 717a630f6033dfe235c73a4e6dac16e3 -o ./todoweb
 此时会自动打开浏览器，并会列出 TodoWeb 项目可以访问的页面地址。
 
 点击 `index` 页面，打开的是空白页面，大家可以试着修改 view 或者 view 中引入的 javascript 代码，此时定义的所有异步接口都是可以调用的。
+如果需要单独访问异步接口的话，比如说`GET /api/todos`这个接口，就可以在浏览器中直接访问`http://localhost:8002/api/todos`(假设nei server分配到的端口是8002)，该接口的mock数据就能展现出来了。
 
 ## 脚手架
 
