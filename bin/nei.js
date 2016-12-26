@@ -46,7 +46,7 @@ var options = {
         var action = 'template';
         var config = event.options || {};
         var data = Object.assign({}, config);
-        config = this.format(action, config);
+        config = this.format(action, config, true); // 最后一个true表明需要使用默认参数填充
         ["p", "o", "d","b", "w"].forEach((item)=>{
             delete data[item];
         });
