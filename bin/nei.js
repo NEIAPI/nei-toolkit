@@ -4,6 +4,8 @@
 var util = require('../lib/util/util');
 util.checkNodeVersion();
 var main = require('../main');
+let logger = require('../lib/util/logger');
+
 var Args = require('../lib/util/args');
 
 var options = {
@@ -17,6 +19,9 @@ var options = {
     },
     log: function (msg) {
         console.log(msg);
+    },
+    setLogLevel: function (logLevel) {// 设置logger的显示级别，因为使用单例，共享logger对象
+        logger.logger.setLevel(logLevel);
     },
     build: function (event) {
         var action = 'build';
