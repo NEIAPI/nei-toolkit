@@ -15,7 +15,8 @@
 
 ## 教程
 * [NEI 基本概念介绍](./doc/NEI基本概念介绍.md)
-* [使用 NEI 进行前后端并行开发(包括Mock功能)](./doc/使用NEI进行前后端并行开发.md)
+* [使用 NEI 进行前后端并行开发](./doc/使用NEI进行前后端并行开发.md)
+* [使用 NEI 实现接口Mock服务](./doc/使用NEI进行前后端并行开发.md#如果需要使用接口的mock服务的话需要指定一个接口mock数据根路径-如下图所示)
 * [老项目迁移到 NEI 上的说明](./doc/老项目的迁移说明.md)
 * [一步一步教你如何愉快地生成 JavaBean 文件](./doc/一步一步教你如何愉快地生成JavaBean文件.md)
 * [JavaBean 文件的示例模板](./doc/JavaBean文件的示例模板.md)
@@ -198,6 +199,12 @@ ProductName和Prefix这两个参数就会作为数据传入到模板中，其等
 }
 ```
 如果同时指定了数据文件，将会执行merge操作，其中命令行参数指定的方式优先于数据json文件方式。
+### 设置输出信息级别
+共设有"all"、"debug"、"info"、"warn"、"error"、"off"等日志级别，级别顺序由大到小，通过`--logLevel`指定一个级别之后，比该级别小的日志级别信息都将会显示出来，比如：
+```bash
+nei build -k xxxxxxxx --logLevel info
+```
+那么所有info以下级别(即warn、error)级别的信息都将会显示出来。当指定为off的时候，所有日志信息都将关闭。
 ## 版本更新说明
 [更新说明](./CHANGELOG)
 

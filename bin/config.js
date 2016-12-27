@@ -27,6 +27,10 @@ module.exports = {
             "j": "h",
             "q": "help",
             "m": "显示指定命令的帮助信息"
+        },
+        {
+            "q": "logLevel",
+            "m": "设置输出控制台信息级别"
         }
     ],
     "build": [

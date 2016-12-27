@@ -1,6 +1,6 @@
 //
 //  main.m
-//  {{args.ProductName}}
+//  {{args.Prefix}}{{args.ProductName}}
 //
 //  Created by Baitianyu on 05/12/2016.
 //  Copyright © 2016 Netease. All rights reserved.

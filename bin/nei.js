@@ -4,6 +4,8 @@
 var util = require('../lib/util/util');
 util.checkNodeVersion();
 var main = require('../main');
+let logger = require('../lib/util/logger');
+
 var Args = require('../lib/util/args');
 
 var options = {
@@ -17,6 +19,9 @@ var options = {
     },
     log: function (msg) {
         console.log(msg);
+    },
+    setLogLevel: function (logLevel) {// 设置logger的显示级别，因为使用单例，共享logger对象
+        logger.logger.setLevel(logLevel);
     },
     build: function (event) {
         var action = 'build';
@@ -46,7 +51,7 @@ var options = {
         var action = 'template';
         var config = event.options || {};
         var data = Object.assign({}, config);
-        config = this.format(action, config);
+        config = this.format(action, config, true); // 最后一个true表明需要使用默认参数填充
         ["p", "o", "d","b", "w"].forEach((item)=>{
             delete data[item];
         });
