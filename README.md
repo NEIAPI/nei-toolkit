@@ -199,6 +199,12 @@ ProductName和Prefix这两个参数就会作为数据传入到模板中，其等
 }
 ```
 如果同时指定了数据文件，将会执行merge操作，其中命令行参数指定的方式优先于数据json文件方式。
+### 设置输出信息级别
+共设有"all"、"debug"、"info"、"warn"、"error"、"off"等日志级别，级别顺序由大到小，通过`--logLevel`指定一个级别之后，比该级别小的日志级别信息都将会显示出来，比如：
+```bash
+nei build -k xxxxxxxx --logLevel info
+```
+那么所有info以下级别(即warn、error)级别的信息都将会显示出来。当指定为off的时候，所有日志信息都将关闭。
 ## 版本更新说明
 [更新说明](./CHANGELOG)
 
