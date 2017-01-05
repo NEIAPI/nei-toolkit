@@ -1,3 +1,6 @@
+3.3.1
+    - 提升node-xcode依赖包，解决call overflow错误
+    - 修改node-fmpp的tmpDir策略，解决必须要用sudo运行server的问题
 3.3.0   (2016-12-26)
     - 修正nei template默认参数的bug
     - 修正nei平台上定义接口不以"/"起始路由找不到的错误
