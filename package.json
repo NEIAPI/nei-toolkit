@@ -1,7 +1,7 @@
 {
   "name": "nei",
   "description": "builder for nei platform",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "license": "MIT",
   "keywords": [
     "nei",
@@ -45,6 +45,6 @@
     "http-proxy": "^1.14.0",
     "istextorbinary": "^2.1.0",
     "path-to-regexp": "^1.5.3",
-    "xcode": "^0.8.2"
+    "xcode": "^0.9.0"
   }
 }
