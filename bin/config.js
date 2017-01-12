@@ -196,10 +196,6 @@ module.exports = {
       "m": "显示 server 命令帮助信息"
     },
     {
-      "q": "https",
-      "m": "使用 https 模式"
-    },
-    {
       "j": "o",
       "q": "output",
       "d": "./",

@@ -39,6 +39,8 @@ module.exports = {
     port: {{port}},
     /* 是否使用 nei 提供的在线 mock 数据 */
     online: {{online}},
+    /* 是否使用 nei 提供的https服务器 */
+    https: {{https}},
     /* 项目的 key */
     projectKey: '{{projectKey}}',
     /* 同步模块mock数据路径 */
