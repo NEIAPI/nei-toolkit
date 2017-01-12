@@ -106,11 +106,12 @@ class Main {
      * @param  {object}  args - args object
      */
     server(args) {
-        let tryStartServer = (configFilePath) => {
+        let tryStartServer = (configFilePath, args) => {
             if (_fs.exist(configFilePath)) {
                 let options = {
                     configFilePath: configFilePath,
-                    fromNei: true
+                    fromNei: true,
+                    https: args.https
                 };
                 server(options);
             } else {
@@ -134,7 +135,7 @@ class Main {
             }
             return process.exit(1);
         } else {
-            tryStartServer(`${projects[0]}/server.config.js`);
+            tryStartServer(`${projects[0]}/server.config.js`, args);
         }
     }
 

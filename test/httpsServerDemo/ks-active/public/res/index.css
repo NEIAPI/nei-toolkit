@@ -1,0 +1,266 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    color: rgb(51, 51, 51);
+    font: 12px/1.14 helvetica, "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, 宋体, 宋体;
+    outline: 0px;
+    transition: all ease 0.3s;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.g-top{
+    height: 70px;
+}
+.g-head{
+    overflow: hidden;
+    height: 496px;
+}
+.g-boby{
+    width: 1000px;
+    margin: 0px auto;
+}
+.m-banner {
+    width: 100%;
+    position: relative;
+}
+.m-banner .imglist{
+    width: 200%;
+    height: 496px;
+    transition: all ease 0.5s;
+}
+.m-banner .ml{
+    margin-left: -100%;
+}
+.m-banner .ctr{
+    position: absolute;
+    top:420px;
+    width: 50px;
+    height: 10px;
+    left: 50%;
+    transform: translateX(-25px);
+
+}
+.m-banner .ctr span{
+    display: inline-block;
+    margin: 0px 5px;
+    width: 10px;
+    height: 10px;
+    background: #ab4f45;
+    cursor: pointer;
+    border-radius: 100%;
+}
+.m-banner .ctr .active{
+    background: #fff;
+}
+.m-banner .imglist li{
+    float: left;
+    height: 496px;
+    width: 50%;
+}
+.wrap-tag{
+    height: 70px;
+    width: 100%;
+}
+.m-tag ul {
+    width: 100%;
+    display: flex;
+    border: 2px solid #d36155;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.m-tag ul li{
+    flex: 1;
+    height:70px;
+    line-height: 70px;
+    font-size: 24px;
+    border-left: 1px solid #d36155;
+    text-align: center;
+    color: #d36155;
+    cursor: pointer;
+}
+.m-tag ul .active{
+    background: #d36155;
+    color: #fff;
+}
+.m-tag ul li:last-child{
+    margin-right: -1px;
+}
+.m-tag ul li:first-child{
+    border-left: none;
+}
+.m-tag-fixed{
+    position: fixed;
+    top:72px;
+    z-index: 99;
+    background: #fff;
+    width: 1000px;
+    -webkit-animation-name:fixed-down;-webkit-animation-duration:0.7s;
+}
+.m-aclist .actitle{
+    padding: 40px 0px;
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+}
+.m-aclist .aclist{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: -20px 0px 0px -20px;
+}
+.m-aclist .aclist li{
+    width: 235px;
+    height: 335px;
+    margin: 20px 0px 0px 20px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
+}
+.m-aclist .aclist .alink{
+    display: block;
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+}
+
+.m-aclist .wrap{
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+.m-aclist .wrap:first-child{
+    margin-top: 0px;
+}
+#M .wrap{
+    width: 1000px;
+    margin: 0px auto;
+    margin-top: -30px;
+}
+.m-aclist .aclist img{
+    height: 185px;
+    width: 100%;
+    border-radius: 3px;
+}
+.m-aclist .alink .title{
+    width: 100%;
+    box-sizing: border-box;
+    height: 100px;
+    position: absolute;
+    bottom:0px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    padding: 40px 10px 0px 10px;
+    background:url("/res/image/title_shade.png") no-repeat ;
+
+}
+.m-aclist .alink em{
+    height: 50px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.m-aclist .alink .pic-box{
+    width: 100%;
+    height: 185px;
+    overflow: hidden;
+    position: relative;
+}
+.m-aclist .adetail{
+    padding-top: 10px;
+    text-align: center;
+}
+.m-aclist .adetail p{
+    line-height: 26px;
+    color: #999;
+    font-size: 14px;
+}
+.m-aclist .adetail p:first-child{
+    color: #333;
+}
+.m-aclist .adetail p span{
+    padding: 0px 2px;
+}
+.full-wrap{
+    width: 100vw;
+    position: relative;
+    padding-top: 40px;
+    left:50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: 75px;
+    background:#f5f5f7 url("/res/image/bg.png") repeat-x ;
+    background-position-y:-30px ;
+}
+/*
+按钮元件
+*/
+.u-active-btn{
+    display: inline-block;
+    margin: 0px auto;
+    margin-top: 20px;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #f9c833;
+    border-radius: 20px;
+    padding-left: 50px;
+    box-sizing: border-box;
+    font-size: 18px;
+    color: #000;
+    text-align: left;
+    cursor: pointer;
+    background: #f9c833 url("/res/image/jt.png") 25px center no-repeat;
+}
+.u-active-btn-disable{
+    background-color: #d2d2d2;
+    cursor: default;
+}
+@-webkit-keyframes fixed-down{
+    0%{top:0px;}
+    100%{top:72px;}
+}
+.fadedown{}
