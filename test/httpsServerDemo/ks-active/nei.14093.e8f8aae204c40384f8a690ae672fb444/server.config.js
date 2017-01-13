@@ -18,6 +18,10 @@ module.exports = {
       "GET /annual/blog/2016": { path: 'get/annual/blog/2016/data', id: 24306 },
       "GET /annual/2016": { name: '年度评选页面', index: 0, list: [{"id":12518,"path":"active"}] },
     },
+    customRoutes: {
+	"a": "test",
+	"b": "test"
+},
     /* api 响应头 */
     apiResHeaders: {
         'Access-Control-Allow-Origin': '*',
