@@ -1,6 +1,12 @@
+3.3.2   (2017-01-13)
+    - 支持Https
+    - 增加server.config.js中的customRoutes字段
+    - 增加监听功能，自动刷新浏览器
+
 3.3.1   (2017-01-05)
     - 提升node-xcode依赖包，解决call overflow错误,提升性能
     - 修改node-fmpp的tmpDir策略，解决必须要用sudo运行server的问题
+
 3.3.0   (2016-12-26)
     - 修正nei template默认参数的bug
     - 修正nei平台上定义接口不以"/"起始路由找不到的错误
