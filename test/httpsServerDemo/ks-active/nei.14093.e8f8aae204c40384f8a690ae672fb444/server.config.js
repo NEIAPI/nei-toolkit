@@ -19,9 +19,12 @@ module.exports = {
       "GET /annual/2016": { name: '年度评选页面', index: 0, list: [{"id":12518,"path":"active"}] },
     },
     customRoutes: {
-	"a": "test",
-	"b": "test"
-},
+        "GET /index": { name: 'index', index: 0, list: [{"id":12518,"path":"active"}] },
+        "GET /api/rule": { path: 'get/api/rule/data', id: 24451 },
+        "POST /annual/blog/vote": { path: 'post/annual/blog/vote/data', id: 24272 },
+        "GET /annual/blog/2016": { path: 'get/annual/blog/2016/data', id: 24306 },
+        "GET /annual/2016": { name: '年度评选页面', index: 0, list: [{"id":12518,"path":"active"}] },
+    },
     /* api 响应头 */
     apiResHeaders: {
         'Access-Control-Allow-Origin': '*',
