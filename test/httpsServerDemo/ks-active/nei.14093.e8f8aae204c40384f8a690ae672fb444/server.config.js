@@ -29,7 +29,7 @@ module.exports = {
     /* 是否使用 nei 提供的在线 mock 数据 */
     online: false,
     /* 是否使用 nei 提供的https服务器 */
-    https: false,
+    https: true,
     /* 项目的 key */
     projectKey: 'e8f8aae204c40384f8a690ae672fb444',
     /* 同步模块mock数据路径 */
