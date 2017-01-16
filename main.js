@@ -110,7 +110,7 @@ class Main {
             if (_fs.exist(configFilePath)) {
                 let options = {
                     configFilePath: configFilePath,
-                    fromNei: true
+                    fromNei: true,
                 };
                 server(options);
             } else {
