@@ -37,7 +37,7 @@ module.exports = {
     launch: {{launch}},
     /* 端口 */
     port: {{port}},
-    /* 是否使用 https 协议 */
+    /* 是否使用 https 协议，设为true的时候表示启用 */
     https: {{https}},
     /* 是否使用 nei 提供的在线 mock 数据 */
     online: {{online}},
