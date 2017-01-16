@@ -20,7 +20,15 @@ module.exports = {
       {{/if}}
       {{/each}}
     },
-    customRoutes: {{{customRoutes}}},
+    customRoutes: {
+        {{#each customRoutes}}
+        {{#if list}}
+        "{{method}} {{{path}}}": { name: '{{name}}', index: 0, list: {{{list}}} },
+        {{else}}
+        "{{method}} {{{path}}}": { path: '{{mockFile}}', id: {{id}} },
+        {{/if}}
+        {{/each}}
+    },
     /* api 响应头 */
     {{#if apiResHeaders}}
     apiResHeaders: {
