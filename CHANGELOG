@@ -1,7 +1,7 @@
-3.3.2   (2017-01-13)
+3.3.2   (2017-01-16)
     - 支持Https
-    - 增加server.config.js中的customRoutes字段
-    - 增加监听功能，自动刷新浏览器
+    - 修复文件夹名使用handlebar自定义函数引起的findConfig报错
+
 
 3.3.1   (2017-01-05)
     - 提升node-xcode依赖包，解决call overflow错误,提升性能
