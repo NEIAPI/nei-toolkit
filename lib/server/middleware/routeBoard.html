@@ -17,9 +17,13 @@
             padding: 20px;
             font-size: 18px;
         }
+        .group{
+            font-size: 16px;
+            padding: 0px 0 0 38px;
+        }
 
         .list {
-            padding: 0 20px 20px;
+            padding: 0 40px 20px;
             list-style-type: none;
             font-size: 16px;
         }
@@ -50,18 +54,50 @@
             height: 10px;
             background-color: #7F9F95;
         }
+
+        .g-box-half{
+            width:48%;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .disabled{
+            pointer-events: none;
+            cursor: default;
+            opacity: 0.6;
+        }
+
     </style>
 </head>
 <body>
 <div class="g-box">
-    <h1 class="title">页面: </h1>
-    <ul class="list">
-        <% routes.forEach(function(route) { %>
-        <li>
-            <div class="dot"></div>
-            <a href="<%= route.url %>"><%= route.name %>&nbsp;&nbsp;---->&nbsp;&nbsp;<%= route.url %></a>
-        </li>
+    <div class="g-box-half">
+        <h1 class="title">接口: </h1>
+        <% apis.forEach(function(group) {%>
+        <h2 class="group"> <%= group.group %> </h2>
+        <ul class="list">
+            <% group.apis.forEach(function(api) { %>
+            <li>
+                <div class="dot"></div>
+                <% if(api.isGet) { %>
+                <a href="<%= api.url %>"><%= api.name %></a>
+                <% }else { %>
+                <a href="#" class="disabled"><%= api.name %></a>
+                <% } %>
+            </li>
+            <% }); %>
+        </ul>
         <% }); %>
-    </ul>
+    </div>
+     <div class="g-box-half">
+        <h1 class="title">页面: </h1>
+        <ul class="list">
+            <% routes.forEach(function(route) { %>
+            <li>
+                <div class="dot"></div>
+                <a href="<%= route.url %>"><%= route.name %>&nbsp;&nbsp;---->&nbsp;&nbsp;<%= route.url %></a>
+            </li>
+            <% }); %>
+        </ul>
+    </div>
 </div>
 </body>
