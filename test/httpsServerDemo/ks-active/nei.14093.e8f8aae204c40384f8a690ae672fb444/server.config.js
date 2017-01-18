@@ -13,15 +13,14 @@ module.exports = {
     routes: {
       //"ALL /api/*": "代理所有接口, 这里输入代理服务器地址",
       "GET /index": { name: 'index', index: 0, list: [{"id":12518,"path":"active"}] },
-      "GET /api/rule": { path: 'get/api/rule/data', id: 24451, group: '测试' },
+      "GET /api/rule:id": { path: 'get/api/rule/_/id/data', id: 24451, group: '测试' },
       "POST /annual/blog/vote": { path: 'post/annual/blog/vote/data', id: 24272, group: '默认分组' },
       "GET /annual/blog/2016": { path: 'get/annual/blog/2016/data', id: 24306, group: '默认分组' },
       "GET /annual/2016": { name: '年度评选页面', index: 0, list: [{"id":12518,"path":"active"}] },
     },
     /* api 响应头 */
     apiResHeaders: {
-        // 可跨域访问
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
     },
     /* 是否自动打开浏览器 */
     launch: true,

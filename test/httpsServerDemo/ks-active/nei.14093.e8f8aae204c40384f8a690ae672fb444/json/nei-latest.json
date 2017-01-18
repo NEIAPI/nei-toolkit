@@ -1987,7 +1987,7 @@
 			"namePinyin": "testRule",
 			"status": "未开始",
 			"statusPinyin": "wei'kai'shi",
-			"path": "/api/rule",
+			"path": "/api/rule:id",
 			"type": 0,
 			"method": "GET",
 			"isRest": 0,
@@ -2032,7 +2032,26 @@
 			},
 			"params": {
 				"inputs": [],
-				"outputs": [],
+				"outputs": [
+					{
+						"id": 199142,
+						"type": 10001,
+						"name": "id",
+						"isArray": 0,
+						"valExpression": "",
+						"genExpression": "",
+						"description": "",
+						"defaultValue": "12",
+						"parentId": 24451,
+						"parentType": 3,
+						"progroupId": 13046,
+						"createTime": 1484641923663,
+						"datatypeId": 0,
+						"originalType": 0,
+						"datatypeName": "",
+						"typeName": "String"
+					}
+				],
 				"reqHeaders": [],
 				"resHeaders": []
 			},
