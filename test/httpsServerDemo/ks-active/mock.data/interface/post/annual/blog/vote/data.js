@@ -1,3 +1,3 @@
-module.exports = function (json) {
+module.exports = function (json, req) {
 	return json;
 }

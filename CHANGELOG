@@ -1,3 +1,10 @@
+3.3.3   (2017-01-18)
+    - 增加iOS端build参数iosAssemble
+    - 将request注入filter中间件中
+    - 接口在线mock时，优先采用method加路径
+    - 解决跨域OPTIONS请求问题
+    - 修复代理未设置用户头的bug
+
 3.3.2   (2017-01-16)
     - 支持Https
     - 修复文件夹名使用handlebar自定义函数引起的findConfig报错

@@ -40,6 +40,18 @@
 					"email": "hzshaochunfei@corp.netease.com",
 					"createTime": 1438339533000,
 					"portrait": ""
+				},
+				{
+					"progroupId": 13046,
+					"role": 9,
+					"loginTime": 1484634171642,
+					"id": 11424,
+					"username": "hzzhenglu@corp.netease.com",
+					"realname": "郑璐",
+					"realnamePinyin": "zheng'lu",
+					"email": "hzzhenglu@corp.netease.com",
+					"createTime": 1469162879000,
+					"portrait": ""
 				}
 			],
 			"owner": [
@@ -1975,7 +1987,7 @@
 			"namePinyin": "testRule",
 			"status": "未开始",
 			"statusPinyin": "wei'kai'shi",
-			"path": "/api/rule",
+			"path": "/api/rule:id",
 			"type": 0,
 			"method": "GET",
 			"isRest": 0,
@@ -1983,7 +1995,7 @@
 			"description": "",
 			"paramsOrder": "",
 			"respoId": 10391,
-			"groupId": 14561,
+			"groupId": 14867,
 			"projectId": 14093,
 			"progroupId": 13046,
 			"creatorId": 10391,
@@ -2009,18 +2021,37 @@
 				"createTime": 1438911823000
 			},
 			"group": {
-				"id": 14561,
-				"name": "默认分组",
-				"namePinyin": "mo'ren'fen'zu",
+				"id": 14867,
+				"name": "测试",
+				"namePinyin": "ce'shi",
 				"description": "",
-				"respoId": 10391,
+				"respoId": 11424,
 				"projectId": 14093,
-				"creatorId": 10391,
-				"createTime": 1482976923356
+				"creatorId": 11424,
+				"createTime": 1484634211669
 			},
 			"params": {
 				"inputs": [],
-				"outputs": [],
+				"outputs": [
+					{
+						"id": 199142,
+						"type": 10001,
+						"name": "id",
+						"isArray": 0,
+						"valExpression": "",
+						"genExpression": "",
+						"description": "",
+						"defaultValue": "12",
+						"parentId": 24451,
+						"parentType": 3,
+						"progroupId": 13046,
+						"createTime": 1484641923663,
+						"datatypeId": 0,
+						"originalType": 0,
+						"datatypeName": "",
+						"typeName": "String"
+					}
+				],
 				"reqHeaders": [],
 				"resHeaders": []
 			},
@@ -2055,6 +2086,34 @@
 				"realnamePinyin": "li'hao'liang",
 				"email": "hzlihaoliang@corp.netease.com",
 				"createTime": 1438911823000
+			}
+		},
+		{
+			"id": 14867,
+			"type": 0,
+			"name": "测试",
+			"namePinyin": "ce'shi",
+			"description": "",
+			"respoId": 11424,
+			"projectId": 14093,
+			"progroupId": 13046,
+			"creatorId": 11424,
+			"createTime": 1484634211669,
+			"respo": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
+			},
+			"creator": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
 			}
 		}
 	],

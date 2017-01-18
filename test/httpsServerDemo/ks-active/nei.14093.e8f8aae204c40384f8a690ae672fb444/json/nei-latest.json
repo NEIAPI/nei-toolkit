@@ -40,6 +40,18 @@
 					"email": "hzshaochunfei@corp.netease.com",
 					"createTime": 1438339533000,
 					"portrait": ""
+				},
+				{
+					"progroupId": 13046,
+					"role": 9,
+					"loginTime": 1484634171642,
+					"id": 11424,
+					"username": "hzzhenglu@corp.netease.com",
+					"realname": "郑璐",
+					"realnamePinyin": "zheng'lu",
+					"email": "hzzhenglu@corp.netease.com",
+					"createTime": 1469162879000,
+					"portrait": ""
 				}
 			],
 			"owner": [
@@ -1975,7 +1987,7 @@
 			"namePinyin": "testRule",
 			"status": "未开始",
 			"statusPinyin": "wei'kai'shi",
-			"path": "/api/rule",
+			"path": "/api/rule:id",
 			"type": 0,
 			"method": "GET",
 			"isRest": 0,
@@ -1983,7 +1995,7 @@
 			"description": "",
 			"paramsOrder": "",
 			"respoId": 10391,
-			"groupId": 14561,
+			"groupId": 14867,
 			"projectId": 14093,
 			"progroupId": 13046,
 			"creatorId": 10391,
@@ -2009,18 +2021,37 @@
 				"createTime": 1438911823000
 			},
 			"group": {
-				"id": 14561,
-				"name": "默认分组",
-				"namePinyin": "mo'ren'fen'zu",
+				"id": 14867,
+				"name": "测试",
+				"namePinyin": "ce'shi",
 				"description": "",
-				"respoId": 10391,
+				"respoId": 11424,
 				"projectId": 14093,
-				"creatorId": 10391,
-				"createTime": 1482976923356
+				"creatorId": 11424,
+				"createTime": 1484634211669
 			},
 			"params": {
 				"inputs": [],
-				"outputs": [],
+				"outputs": [
+					{
+						"id": 199142,
+						"type": 10001,
+						"name": "id",
+						"isArray": 0,
+						"valExpression": "",
+						"genExpression": "",
+						"description": "",
+						"defaultValue": "12",
+						"parentId": 24451,
+						"parentType": 3,
+						"progroupId": 13046,
+						"createTime": 1484641923663,
+						"datatypeId": 0,
+						"originalType": 0,
+						"datatypeName": "",
+						"typeName": "String"
+					}
+				],
 				"reqHeaders": [],
 				"resHeaders": []
 			},
@@ -2055,6 +2086,34 @@
 				"realnamePinyin": "li'hao'liang",
 				"email": "hzlihaoliang@corp.netease.com",
 				"createTime": 1438911823000
+			}
+		},
+		{
+			"id": 14867,
+			"type": 0,
+			"name": "测试",
+			"namePinyin": "ce'shi",
+			"description": "",
+			"respoId": 11424,
+			"projectId": 14093,
+			"progroupId": 13046,
+			"creatorId": 11424,
+			"createTime": 1484634211669,
+			"respo": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
+			},
+			"creator": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
 			}
 		}
 	],
@@ -2192,137 +2251,5 @@
 			"varmaps": [],
 			"jarConfig": []
 		}
-	],
-	"spec": {
-		"docs": [
-			{
-				"id": 20498,
-				"specId": 10361,
-				"parent": 0,
-				"type": 0,
-				"name": "mock.data",
-				"description": "",
-				"mime": "",
-				"content": "",
-				"dataSource": 0,
-				"children": [
-					{
-						"id": 20504,
-						"specId": 10361,
-						"parent": 20498,
-						"type": 0,
-						"name": "interface",
-						"description": "",
-						"mime": "",
-						"content": "",
-						"dataSource": 0,
-						"children": []
-					},
-					{
-						"id": 20505,
-						"specId": 10361,
-						"parent": 20498,
-						"type": 0,
-						"name": "template",
-						"description": "",
-						"mime": "",
-						"content": "",
-						"dataSource": 0,
-						"children": []
-					}
-				]
-			},
-			{
-				"id": 20499,
-				"specId": 10361,
-				"parent": 0,
-				"type": 0,
-				"name": "public",
-				"description": "",
-				"mime": "",
-				"content": "",
-				"dataSource": 0,
-				"children": [
-					{
-						"id": 20506,
-						"specId": 10361,
-						"parent": 20499,
-						"type": 0,
-						"name": "res",
-						"description": "",
-						"mime": "",
-						"content": "",
-						"dataSource": 0,
-						"children": []
-					},
-					{
-						"id": 20507,
-						"specId": 10361,
-						"parent": 20499,
-						"type": 0,
-						"name": "src",
-						"description": "",
-						"mime": "",
-						"content": "",
-						"dataSource": 0,
-						"children": []
-					}
-				]
-			},
-			{
-				"id": 20502,
-				"specId": 10361,
-				"parent": 0,
-				"type": 0,
-				"name": "view",
-				"description": "",
-				"mime": "",
-				"content": "",
-				"dataSource": 0,
-				"children": [
-					{
-						"id": 20513,
-						"specId": 10361,
-						"parent": 20502,
-						"type": 1,
-						"name": "{{template.filename}}.{{spec.viewExt}}",
-						"description": "",
-						"mime": "text/octet-stream",
-						"content": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"user-scalable=no, width=device-width\">\n    <meta name=\"description\" content=\"<%= description %>\"/>\n    <meta name=\"keywords\" content=\"<%= description %>\"/>\n    <title><%= title %></title>\n    <link href=\"/src/module/common/base.css\" rel=\"stylesheet\"/>\n    <link href=\"/src/page/{{template.filename}}.css\" rel=\"stylesheet\"/>\n</head>\n<body>\n<!-- @DEFINE -->\n<script src=\"/src/lib/nej/src/define.js?pro=../src/\"></script>\n<script>\n    NEJ.define([\n        'pro/page/{{template.filename}}'\n    ], function (m) {\n        m._$$Module._$allocate();\n    });\n</script>\n</body>\n</html>",
-						"dataSource": 3,
-						"children": []
-					}
-				]
-			}
-		],
-		"spec": {
-			"id": 10361,
-			"type": 0,
-			"isShare": 0,
-			"isSystem": 0,
-			"name": "ck-active",
-			"namePinyin": "ck-active",
-			"language": 11,
-			"description": "",
-			"document": null,
-			"argsConfig": 12997,
-			"creatorId": 10391,
-			"createTime": 1482986666927,
-			"toolKey": "d4e75b6be2ceb9c04e7f13db20876ada",
-			"helpersConfig": 0,
-			"isLock": 0,
-			"attributes": {
-				"specId": 10361,
-				"engine": 11,
-				"webRoot": 20499,
-				"viewRoot": 20502,
-				"viewExtension": "ftl",
-				"mockApiRoot": 20504,
-				"mockViewRoot": 20505,
-				"jarRoot": 0
-			}
-		},
-		"varmaps": [],
-		"jarConfig": []
-	}
+	]
 }

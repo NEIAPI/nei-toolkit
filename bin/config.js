@@ -86,6 +86,11 @@ module.exports = {
       "q": "iosProjectPath",
       "d": "",
       "m": "iOS工程使用，指定iOS工程路径"
+    },
+    {
+      "q": "iosAssemble",
+      "d": false,
+      "m": "iOS集成Mock数据，将类名指定为mock文件名"
     }
   ],
   "update": [
