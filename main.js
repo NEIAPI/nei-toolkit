@@ -197,10 +197,14 @@ class Main {
                     result['file'] = true;
                 return filename;
             },
-            dirname=> {
+          (dirname, r, level)=> {
+                if(level > 1){
+                    return false;
+                }
                 let basename = path.basename(dirname);
-                if (basename.startsWith('nei') && basename.endsWith(this.args.key || this.args.specKey))
+                if (basename.startsWith('nei') && basename.endsWith(this.args.key || this.args.specKey)){
                     result['dir'] = basename;
+                }
                 return dirname;
             }, result);
         let foundConfigFile = null;
