@@ -206,7 +206,7 @@ class Main {
                     result['dir'] = basename;
                 }
                 return dirname;
-            }, result);
+            }, result,0);
         let foundConfigFile = null;
         if (result['file'] && result['dir']) {
             foundConfigFile = result['dir'];
