@@ -11,7 +11,7 @@ module.exports = {
     viewRoot: '/Users/abnerzheng/netease/nei-toolkit/test/httpsServerDemo/ks-active/view/',
     /* 路由 */
     routes: {
-      "ALL /api/*": 'http://localhost;8082/',
+      // "ALL /api/*": 'http://localhost:8082/',
       "GET /index": { name: 'index', index: 0, list: [{"id":12518,"path":"active"}] },
       "GET /api/rule:id": { path: 'get/api/rule/_/id/data', id: 24451, group: '测试' },
       "POST /annual/blog/vote": { path: 'post/annual/blog/vote/data', id: 24272, group: '默认分组' },
