@@ -2050,6 +2050,217 @@
 						"originalType": 0,
 						"datatypeName": "",
 						"typeName": "String"
+					},
+					{
+						"id": 201317,
+						"type": 10001,
+						"name": "test",
+						"isArray": 0,
+						"valExpression": "",
+						"genExpression": "Mock.Random.id()",
+						"description": "",
+						"defaultValue": "",
+						"parentId": 24451,
+						"parentType": 3,
+						"progroupId": 13046,
+						"createTime": 1485240650406,
+						"datatypeId": 0,
+						"originalType": 0,
+						"datatypeName": "",
+						"typeName": "String"
+					}
+				],
+				"reqHeaders": [],
+				"resHeaders": []
+			},
+			"testcases": []
+		},
+		{
+			"id": 25161,
+			"tag": "",
+			"tagPinyin": "",
+			"name": "extends",
+			"namePinyin": "extends",
+			"status": "未开始",
+			"statusPinyin": "wei'kai'shi",
+			"path": "/test/api/:id",
+			"type": 0,
+			"method": "GET",
+			"isRest": 0,
+			"className": "",
+			"description": "",
+			"paramsOrder": "",
+			"respoId": 11424,
+			"groupId": 14867,
+			"projectId": 14093,
+			"progroupId": 13046,
+			"creatorId": 11424,
+			"createTime": 1484738544779,
+			"reqFormat": 0,
+			"resFormat": 0,
+			"beforeScript": null,
+			"afterScript": null,
+			"respo": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
+			},
+			"creator": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
+			},
+			"group": {
+				"id": 14867,
+				"name": "测试",
+				"namePinyin": "ce'shi",
+				"description": "",
+				"respoId": 11424,
+				"projectId": 14093,
+				"creatorId": 11424,
+				"createTime": 1484634211669
+			},
+			"params": {
+				"inputs": [],
+				"outputs": [
+					{
+						"id": 199961,
+						"type": 10001,
+						"name": "test",
+						"isArray": 0,
+						"valExpression": "",
+						"genExpression": "",
+						"description": "",
+						"defaultValue": "",
+						"parentId": 25161,
+						"parentType": 3,
+						"progroupId": 13046,
+						"createTime": 1484738560647,
+						"datatypeId": 0,
+						"originalType": 0,
+						"datatypeName": "",
+						"typeName": "String"
+					}
+				],
+				"reqHeaders": [],
+				"resHeaders": []
+			},
+			"testcases": []
+		},
+		{
+			"id": 26319,
+			"tag": "",
+			"tagPinyin": "",
+			"name": "文件上传测试",
+			"namePinyin": "wen'jian'shang'chuan'ce'shi",
+			"status": "未开始",
+			"statusPinyin": "wei'kai'shi",
+			"path": "/test/upload",
+			"type": 0,
+			"method": "POST",
+			"isRest": 0,
+			"className": "fileUploadTest",
+			"description": "",
+			"paramsOrder": "",
+			"respoId": 11424,
+			"groupId": 14867,
+			"projectId": 14093,
+			"progroupId": 13046,
+			"creatorId": 11424,
+			"createTime": 1488262509057,
+			"reqFormat": 0,
+			"resFormat": 0,
+			"beforeScript": null,
+			"afterScript": null,
+			"respo": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
+			},
+			"creator": {
+				"id": 11424,
+				"username": "hzzhenglu@corp.netease.com",
+				"realname": "郑璐",
+				"realnamePinyin": "zheng'lu",
+				"email": "hzzhenglu@corp.netease.com",
+				"createTime": 1469162879000
+			},
+			"group": {
+				"id": 14867,
+				"name": "测试",
+				"namePinyin": "ce'shi",
+				"description": "",
+				"respoId": 11424,
+				"projectId": 14093,
+				"creatorId": 11424,
+				"createTime": 1484634211669
+			},
+			"params": {
+				"inputs": [
+					{
+						"id": 210527,
+						"type": 9999,
+						"name": "test",
+						"isArray": 0,
+						"valExpression": "",
+						"genExpression": "",
+						"description": "",
+						"defaultValue": "",
+						"parentId": 26319,
+						"parentType": 2,
+						"progroupId": 13046,
+						"createTime": 1488262531670,
+						"datatypeId": 0,
+						"originalType": 0,
+						"datatypeName": "",
+						"typeName": "File"
+					},
+					{
+						"id": 210528,
+						"type": 10001,
+						"name": "name",
+						"isArray": 0,
+						"valExpression": "",
+						"genExpression": "",
+						"description": "",
+						"defaultValue": "",
+						"parentId": 26319,
+						"parentType": 2,
+						"progroupId": 13046,
+						"createTime": 1488262532205,
+						"datatypeId": 0,
+						"originalType": 0,
+						"datatypeName": "",
+						"typeName": "String"
+					}
+				],
+				"outputs": [
+					{
+						"id": 210530,
+						"type": 10002,
+						"name": "result",
+						"isArray": 0,
+						"valExpression": "",
+						"genExpression": "",
+						"description": "",
+						"defaultValue": "1",
+						"parentId": 26319,
+						"parentType": 3,
+						"progroupId": 13046,
+						"createTime": 1488262850907,
+						"datatypeId": 0,
+						"originalType": 0,
+						"datatypeName": "",
+						"typeName": "Number"
 					}
 				],
 				"reqHeaders": [],
@@ -2237,19 +2448,165 @@
 				"toolKey": "d4e75b6be2ceb9c04e7f13db20876ada",
 				"helpersConfig": 0,
 				"isLock": 0,
+				"engine": 11,
+				"webRoot": 20499,
+				"viewRoot": 20502,
+				"viewExtension": "ftl",
+				"mockApiRoot": 20504,
+				"mockViewRoot": 20505,
+				"jarRoot": 0,
 				"attributes": {
 					"specId": 10361,
-					"engine": 11,
-					"webRoot": 20499,
 					"viewRoot": 20502,
-					"viewExtension": "ftl",
+					"webRoot": 20499,
 					"mockApiRoot": 20504,
 					"mockViewRoot": 20505,
-					"jarRoot": 0
+					"jarRoot": 0,
+					"engine": 11,
+					"viewExtension": "ftl"
 				}
 			},
 			"varmaps": [],
 			"jarConfig": []
 		}
-	]
+	],
+	"spec": {
+		"docs": [
+			{
+				"id": 20498,
+				"specId": 10361,
+				"parent": 0,
+				"type": 0,
+				"name": "mock.data",
+				"description": "",
+				"mime": "",
+				"content": "",
+				"dataSource": 0,
+				"children": [
+					{
+						"id": 20504,
+						"specId": 10361,
+						"parent": 20498,
+						"type": 0,
+						"name": "interface",
+						"description": "",
+						"mime": "",
+						"content": "",
+						"dataSource": 0,
+						"children": []
+					},
+					{
+						"id": 20505,
+						"specId": 10361,
+						"parent": 20498,
+						"type": 0,
+						"name": "template",
+						"description": "",
+						"mime": "",
+						"content": "",
+						"dataSource": 0,
+						"children": []
+					}
+				]
+			},
+			{
+				"id": 20499,
+				"specId": 10361,
+				"parent": 0,
+				"type": 0,
+				"name": "public",
+				"description": "",
+				"mime": "",
+				"content": "",
+				"dataSource": 0,
+				"children": [
+					{
+						"id": 20506,
+						"specId": 10361,
+						"parent": 20499,
+						"type": 0,
+						"name": "res",
+						"description": "",
+						"mime": "",
+						"content": "",
+						"dataSource": 0,
+						"children": []
+					},
+					{
+						"id": 20507,
+						"specId": 10361,
+						"parent": 20499,
+						"type": 0,
+						"name": "src",
+						"description": "",
+						"mime": "",
+						"content": "",
+						"dataSource": 0,
+						"children": []
+					}
+				]
+			},
+			{
+				"id": 20502,
+				"specId": 10361,
+				"parent": 0,
+				"type": 0,
+				"name": "view",
+				"description": "",
+				"mime": "",
+				"content": "",
+				"dataSource": 0,
+				"children": [
+					{
+						"id": 20513,
+						"specId": 10361,
+						"parent": 20502,
+						"type": 1,
+						"name": "{{template.filename}}.{{spec.viewExt}}",
+						"description": "",
+						"mime": "text/octet-stream",
+						"content": "<!DOCTYPE html>\n<html>\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"user-scalable=no, width=device-width\">\n    <meta name=\"description\" content=\"<%= description %>\"/>\n    <meta name=\"keywords\" content=\"<%= description %>\"/>\n    <title><%= title %></title>\n    <link href=\"/src/module/common/base.css\" rel=\"stylesheet\"/>\n    <link href=\"/src/page/{{template.filename}}.css\" rel=\"stylesheet\"/>\n</head>\n<body>\n<!-- @DEFINE -->\n<script src=\"/src/lib/nej/src/define.js?pro=../src/\"></script>\n<script>\n    NEJ.define([\n        'pro/page/{{template.filename}}'\n    ], function (m) {\n        m._$$Module._$allocate();\n    });\n</script>\n</body>\n</html>",
+						"dataSource": 3,
+						"children": []
+					}
+				]
+			}
+		],
+		"spec": {
+			"id": 10361,
+			"type": 0,
+			"isShare": 0,
+			"isSystem": 0,
+			"name": "ck-active",
+			"namePinyin": "ck-active",
+			"language": 11,
+			"description": "",
+			"document": null,
+			"argsConfig": 12997,
+			"creatorId": 10391,
+			"createTime": 1482986666927,
+			"toolKey": "d4e75b6be2ceb9c04e7f13db20876ada",
+			"helpersConfig": 0,
+			"isLock": 0,
+			"engine": 11,
+			"webRoot": 20499,
+			"viewRoot": 20502,
+			"viewExtension": "ftl",
+			"mockApiRoot": 20504,
+			"mockViewRoot": 20505,
+			"jarRoot": 0,
+			"attributes": {
+				"specId": 10361,
+				"viewRoot": 20502,
+				"webRoot": 20499,
+				"mockApiRoot": 20504,
+				"mockViewRoot": 20505,
+				"jarRoot": 0,
+				"engine": 11,
+				"viewExtension": "ftl"
+			}
+		},
+		"varmaps": [],
+		"jarConfig": []
+	}
 }

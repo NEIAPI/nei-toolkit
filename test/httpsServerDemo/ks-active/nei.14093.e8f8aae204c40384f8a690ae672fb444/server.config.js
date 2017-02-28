@@ -11,18 +11,18 @@ module.exports = {
     viewRoot: '/Users/abnerzheng/netease/nei-toolkit/test/httpsServerDemo/ks-active/view/',
     /* 路由 */
     routes: {
-      // "ALL /api/*": 'http://localhost:8082/',
+      //"ALL /api/*": "代理所有接口, 这里输入代理服务器地址",
+      "POST /test/upload": { path: 'post/test/upload/data', id: 26319, group: '测试' },
+      "GET /test/api/:id": { path: 'get/test/api/_/id/data', id: 25161, group: '测试' },
       "GET /index": { name: 'index', index: 0, list: [{"id":12518,"path":"active"}] },
       "GET /api/rule:id": { path: 'get/api/rule/_/id/data', id: 24451, group: '测试' },
       "POST /annual/blog/vote": { path: 'post/annual/blog/vote/data', id: 24272, group: '默认分组' },
       "GET /annual/blog/2016": { path: 'get/annual/blog/2016/data', id: 24306, group: '默认分组' },
-      "OPTIONS /annual/blog/vote": { path: 'post/annual/blog/vote/data', id: 24272, group: '默认分组' },
       "GET /annual/2016": { name: '年度评选页面', index: 0, list: [{"id":12518,"path":"active"}] },
     },
     /* api 响应头 */
     apiResHeaders: {
-        // 可跨域访问
-        'Access-Control-Allow-Origin': 'test'
+        'Access-Control-Allow-Origin': 'test',
     },
     /* 是否自动打开浏览器 */
     launch: true,
