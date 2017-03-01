@@ -10,5 +10,5 @@ webapp_pro
 node_pro
 /rm_test.sh
 testSpec
-/test/templateTest/output/
+/test/template-test/output/
 /Hello/
