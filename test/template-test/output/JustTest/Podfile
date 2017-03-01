@@ -1,0 +1,27 @@
+# coding: utf-8
+platform :ios, '7.0'
+
+target :JustTest do
+    pod 'HTToast' , :git=>'https://g.hz.netease.com/HTIOSUI/HTToast.git'
+    pod 'HTBadgeTextView' , :git=>'https://g.hz.netease.com/HTIOSUI/HTBadgeTextView.git'
+    pod 'UniversalRouter' , :git=>'https://g.hz.netease.com/HTIOSUI/UniversalRouter.git'
+    pod 'HTR3' , :git=>'https://g.hz.netease.com/HeartTouchOpen/HTR3.git'
+    pod 'HTPageControllerView' , :git=>'https://g.hz.netease.com/HTIOSUI/HTPageControllerView.git'
+    pod 'HTImageView' , :git=>'https://g.hz.netease.com/HTIOSUI/HTImageView.git'
+    pod 'HTSegmentView', :git => 'https://g.hz.netease.com/HTIOSUI/HTSegmentView.git'
+    pod 'HTRefreshView' , :git=>'https://g.hz.netease.com/HTIOSUI/HTRefreshView.git'
+    pod 'HTCommonUtility', :git => 'https://g.hz.netease.com/HeartTouchOpen/HTCommonUtils.git', :branch => 'master'
+    pod 'HTNetworking', :git => 'https://g.hz.netease.com/HeartTouchOpen/HTNetworking.git’, :branch => 'master'
+    pod 'HTSegmentView', :git => 'https://g.hz.netease.com/HTIOSUI/HTSegmentView.git'
+    pod 'UITableView+FDTemplateLayoutCell', '~> 1.4'
+    pod 'BlocksKit' ,  '~>2.2.5'
+    pod 'IQKeyboardManager' , '~>3.3.7'
+    pod 'MBProgressHUD', '~> 1.0.0'
+    pod 'MGSwipeTableCell', '1.5.1'
+    pod 'Masonry'
+    pod 'HTAssetsPicker' , :git=>'https://g.hz.netease.com/HTIOSUI/HTAssetsPicker.git'
+    pod 'HTTableViewDataSourceDelegate', :git => 'https://g.hz.netease.com/HeartTouchOpen/HTTableViewDataSourceDelegate.git', :branch => 'master'
+    pod 'SDWebImage/WebP'
+    pod 'libwebp', '~>0.4.3'
+    pod 'pop', '1.0.7'
+end

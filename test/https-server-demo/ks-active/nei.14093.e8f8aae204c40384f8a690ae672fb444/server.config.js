@@ -6,9 +6,9 @@
 var path = require('path');
 module.exports = {
     /* 根目录 */
-    webRoot: '/Users/abnerzheng/netease/nei-toolkit/test/httpsServerDemo/ks-active/public/',
+    webRoot: '/Users/abnerzheng/netease/nei-toolkit/test/https-server-demo/ks-active/public/',
     /* 视图目录 */
-    viewRoot: '/Users/abnerzheng/netease/nei-toolkit/test/httpsServerDemo/ks-active/view/',
+    viewRoot: '/Users/abnerzheng/netease/nei-toolkit/test/https-server-demo/ks-active/view/',
     /* 路由 */
     routes: {
       //"ALL /api/*": "代理所有接口, 这里输入代理服务器地址",
@@ -35,9 +35,9 @@ module.exports = {
     /* 项目的 key */
     projectKey: 'e8f8aae204c40384f8a690ae672fb444',
     /* 同步模块mock数据路径 */
-    mockTpl: '/Users/abnerzheng/netease/nei-toolkit/test/httpsServerDemo/ks-active/mock.data/template/',
+    mockTpl: '/Users/abnerzheng/netease/nei-toolkit/test/https-server-demo/ks-active/mock.data/template/',
     /* 异步接口mock数据路径 */
-    mockApi: '/Users/abnerzheng/netease/nei-toolkit/test/httpsServerDemo/ks-active/mock.data/interface/',
+    mockApi: '/Users/abnerzheng/netease/nei-toolkit/test/https-server-demo/ks-active/mock.data/interface/',
     /* 模板后缀 */
     viewExt: '.ftl',
     /* 模板引擎 */
