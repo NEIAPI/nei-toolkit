@@ -18,6 +18,7 @@ let server = require('./lib/server/server');
 let neiDbConst = require('./lib/fb-modules/config/db.json');
 let _logger = _log.logger;
 let Template =  require('./lib/nei/template');
+let Ci = require('./lib/ci/ci');
 
 class Main {
     /**
@@ -61,6 +62,13 @@ class Main {
             return;
         }
         new Template(arg, data).build();
+    }
+  
+    /**
+     * 持续集成测试
+     */
+    ci(arg, data){
+        new Ci(arg, data).run();
     }
 
     /**

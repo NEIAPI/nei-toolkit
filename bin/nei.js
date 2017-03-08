@@ -56,6 +56,11 @@ var options = {
             delete data[item];
         });
         main.template(config, data);
+    },
+    ci: function (event) {
+      var action = 'ci'
+      var config = event.options || {};
+      main.ci(config, data);
     }
 };
 

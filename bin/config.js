@@ -15,7 +15,8 @@ module.exports = {
     "命令说明：",
     "build\t\t\t根据 NEI 平台信息构建项目结构",
     "update\t\t\t更新通过 'nei build' 构建的项目",
-    "server\t\t\t启动本地模拟容器"
+    "server\t\t\t启动本地模拟容器",
+    "ci\t\t\t接口测试的持续集成"
   ],
   "-default-params": [
     {
@@ -182,6 +183,25 @@ module.exports = {
       "q": 'overwrite',
       "m": '是否覆盖已存在的文件，默认为false',
       "d": 'false'
+    }
+  ],
+  "ci":[
+    "使用说明：",
+    "nei ci -k [key] ",
+    "",
+    "<key>\t\t\tNEI 平台中项目的唯一 key",
+    "",
+    "参数说明：\t-k 表示构建项目，其key在项目的工具设置中可以查到",
+    "%p",
+    "",
+    "使用举例：",
+    "nei build -k xyz",
+  ],
+  "ci-params":[
+    {
+      "j": "h",
+      "q": "help",
+      "m": "显示 server 命令帮助信息"
     }
   ],
   "server": [
