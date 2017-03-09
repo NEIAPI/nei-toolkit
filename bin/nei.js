@@ -58,9 +58,9 @@ var options = {
         main.template(config, data);
     },
     ci: function (event) {
-      var action = 'ci'
       var config = event.options || {};
-      main.ci(config, data);
+      config = this.format('ci', config, true);
+      main.ci(config);
     }
 };
 

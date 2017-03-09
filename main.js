@@ -67,8 +67,11 @@ class Main {
     /**
      * 持续集成测试
      */
-    ci(arg, data){
-        new Ci(arg, data).run();
+    ci(arg){
+      this.args = arg;
+      this.loadData(data => {
+          new Ci(data).run();
+      });
     }
 
     /**
