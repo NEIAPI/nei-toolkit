@@ -24,6 +24,9 @@
 * [NEI 平台规则函数使用说明](./doc/NEI平台规则函数使用说明.md)
 * [NEI 平台系统预置的规则函数集](./doc/NEI平台系统预置的规则函数集.md)
 
+## 插件
+* [Android Studio 插件](./doc/android_studio.md)
+
 ## 工具使用
 
 ### 环境配置
@@ -62,6 +65,7 @@ nei [指令] [参数]
 | build  | 根据在 NEI 平台上定义的工程规范，生成工程的初始化目录结构 |
 | update | 更新通过 `nei build` 构建的项目 |
 | server | 启动本地模拟容器 |
+| template | 使用本地数据解析模板 |
 
 
 ### build
