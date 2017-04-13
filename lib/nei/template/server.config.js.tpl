@@ -35,12 +35,16 @@ module.exports = {
     {{/if}}
     /* 是否自动打开浏览器 */
     launch: {{launch}},
+    /* 自动打开的页面地址 */
+    openUrl: '{{openUrl}}',
     /* 端口 */
     port: {{port}},
     /* 是否使用 https 协议，设为true的时候表示启用 */
     https: {{https}},
     /* 是否使用 nei 提供的在线 mock 数据 */
     online: {{online}},
+    /* 是否监听静态文件和模板文件的变化并自动刷新浏览器 */
+    reload: {{reload}},
     /* 项目的 key */
     projectKey: '{{projectKey}}',
     /* 同步模块mock数据路径 */
