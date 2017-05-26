@@ -48,6 +48,14 @@ module.exports = {
     online: {{online}},
     /* 是否监听静态文件和模板文件的变化并自动刷新浏览器 */
     reload: {{reload}},
+    watchingFiles: {
+        /* 需要即时编译的文件, 前提是 reload 为 true */
+        compilers: {
+            mcss: {{watchingFiles.compilers.mcss}}
+        },
+        /* 不用监听的文件，支持通配符 */
+        ignored: '{{watchingFiles.ignored}}'
+    },
     /* 项目的 key */
     projectKey: '{{projectKey}}',
     /* 同步模块mock数据路径 */

@@ -1,7 +1,7 @@
 {
   "name": "nei",
   "description": "builder for nei platform",
-  "version": "3.4.6",
+  "version": "3.4.7",
   "license": "MIT",
   "keywords": [
     "nei",
@@ -46,6 +46,7 @@
     "handlebars": "^4.0.5",
     "http-proxy": "^1.14.0",
     "istextorbinary": "^2.1.0",
+    "mcss": "^0.5.1",
     "minimatch": "^3.0.3",
     "mockjs": "^1.0.1-beta3",
     "path-to-regexp": "^1.5.3",
