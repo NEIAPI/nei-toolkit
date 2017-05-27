@@ -53,7 +53,7 @@ module.exports = {
         /* 需要即时编译的文件, 前提是 reload 为 true */
         compilers: {
             /* 值为 mcss 的配置选项, 默认为 false，即不编译 mcss 文件 */
-            mcss: {{watchingFiles.compilers.mcss}}
+            mcss: {{{JSONStringify watchingFiles.compilers.mcss}}}
         },
         /* 不用监听的文件，支持通配符 */
         ignored: '{{watchingFiles.ignored}}'
