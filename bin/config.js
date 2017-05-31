@@ -83,12 +83,12 @@ module.exports = {
       "m": "工程规范类型, 支持 web、aos、ios、test 四种类型"
     },
     {
-      "q": "tag",
+      "q": "tags",
       "m": "生成指定tag的数据接口"
     },
     {
       "q": "ids",
-      "m": "按照接口id生成， 格式为id1,id2,id3"
+      "m": "按照接口id生成， 格式为123 或者 111,112,113(以逗号间隔的串)"
     },
     {
       "q": "iosProjectPath",
@@ -153,7 +153,12 @@ module.exports = {
       "q": "pbxForce",
       "d": false,
       "m": "是否强制pbx更新"
+    },
+    {
+      "q": "add",
+      "m": "添加独立生成的接口, 格式为123 或者 111,112,113(以逗号间隔的串)"
     }
+
   ],
   "template": [
     "使用说明：",

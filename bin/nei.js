@@ -13,10 +13,14 @@ var Args = require('../lib/util/args');
  * @param config
  */
 function formatArrayArgs(config) {
-  ["ids", "tags"].forEach(key => {
+  ["ids", "tags", "add"].forEach(key => {
     if (config[key]) {
       try {
-        config[key] = JSON.parse(`[${config[key]}]`);
+        if(key == "tags"){
+          config[key] = config[key].split(",");
+        }else {
+          config[key] = JSON.parse(`[${config[key]}]`);
+        }
       } catch (e) {
         logger.log("error",{message:`输入${key}有误，请确定输入为数字，或以','分割的数字`});
         process.exit(-1); // 直接退出进程
@@ -57,6 +61,7 @@ var options = {
     var config = event.options || {};
     formatArrayArgs(config);
     config = this.format(action, config);
+
     main.update(this, action, config);
   },
   server: function (event) {
