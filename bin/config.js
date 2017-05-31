@@ -83,6 +83,14 @@ module.exports = {
       "m": "工程规范类型, 支持 web、aos、ios、test 四种类型"
     },
     {
+      "q": "tag",
+      "m": "生成指定tag的数据接口"
+    },
+    {
+      "q": "ids",
+      "m": "按照接口id生成， 格式为id1,id2,id3"
+    },
+    {
       "q": "iosProjectPath",
       "d": "",
       "m": "iOS工程使用，指定iOS工程路径"
