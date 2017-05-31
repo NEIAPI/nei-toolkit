@@ -8,6 +8,10 @@ let logger = require('../lib/util/logger');
 
 var Args = require('../lib/util/args');
 
+/**
+ * 处理args中的数组情况
+ * @param config
+ */
 function formatArrayArgs(config) {
   ["ids", "tags"].forEach(key => {
     if (config[key]) {
@@ -15,7 +19,7 @@ function formatArrayArgs(config) {
         config[key] = JSON.parse(`[${config[key]}]`);
       } catch (e) {
         logger.log("error",{message:`输入${key}有误，请确定输入为数字，或以','分割的数字`});
-        process.exit(-1);
+        process.exit(-1); // 直接退出进程
       }
     }
   });
