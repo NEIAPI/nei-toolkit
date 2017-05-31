@@ -56,7 +56,8 @@ module.exports = {
             mcss: {{{JSONStringify watchingFiles.compilers.mcss}}}
         },
         /* 不用监听的文件，支持通配符 */
-        ignored: '{{watchingFiles.ignored}}'
+        {{!-- {{没有忽略的文件时，不要传 ignored 参数}} --}}
+        {{#if watchingFiles.ignored}}ignored: '{{watchingFiles.ignored}}' {{else}}//ignored: '**/*.css'{{/if}}
     },
     /* 项目的 key */
     projectKey: '{{projectKey}}',
