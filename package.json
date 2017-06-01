@@ -1,7 +1,7 @@
 {
   "name": "nei",
   "description": "builder for nei platform",
-  "version": "3.4.8",
+  "version": "3.5.0",
   "license": "MIT",
   "keywords": [
     "nei",
@@ -51,6 +51,7 @@
     "mockjs": "^1.0.1-beta3",
     "path-to-regexp": "^1.5.3",
     "socket.io": "^1.7.3",
-    "xcode": "^0.9.0"
+    "xcode": "^0.9.0",
+    "glob": "latest"
   }
 }
