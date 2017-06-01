@@ -20,6 +20,42 @@ module.exports = {
       {{/if}}
       {{/each}}
     },
+    /* 注入给页面的模型数据的服务器配置 */
+    {{#if modelServer}}
+    modelServer: {
+        // 完整的主机地址，包括协议、主机名、端口
+        host: '{{modelServer.host}}',
+        // 查询参数
+        queries: {{{JSONStringify modelServer.queries}}},
+        // 自定义请求头
+        headers: {{{JSONStringify modelServer.headers}}},
+        // path 可以是字符串，也可以是函数；默认不用传，即使用 host + 页面path + queries 的值
+        // 如果是函数，则使用函数的返回值，传给函数的参数 options 是一个对象，它包含 host、path（页面的path）、queries、headers 等参数
+        // 如果 path 的值为假值，则使用 host + 页面path + queries 的值；
+        // 如果 path 的值是相对地址，则会在前面加上 host
+        {{#if modelServer.path}}
+        path: {{{FunctionStringify modelServer.path}}}
+        {{else}}
+        // path: function (options) {
+        //
+        // }
+        {{/if}}
+    },
+    {{else}}
+    // modelServer: {
+    //     // 完整的主机地址，包括协议、主机名、端口
+    //     host: '',
+    //     // 查询参数，键值对
+    //     queries: {},
+    //     // 自定义请求头，键值对
+    //     headers: {},
+    //     // path 可以是字符串，也可以是函数；默认不用传，即使用 host + 页面path + queries 的值
+    //     // 如果是函数，则使用函数的返回值，传给函数的参数 options 是一个对象，它包含 host、path（页面path）、queries、headers 等参数
+    //     // 如果 path 的值为假值，则使用 host + 页面path + queries 的值；
+    //     // 如果 path 的值是相对地址，则会在前面加上 host
+    //     // path: '',
+    // },
+    {{/if}}
     /* api 响应头 */
     {{#if apiResHeaders}}
     apiResHeaders: {
@@ -48,13 +84,16 @@ module.exports = {
     online: {{online}},
     /* 是否监听静态文件和模板文件的变化并自动刷新浏览器 */
     reload: {{reload}},
+    /* 文件监听的选项 */
     watchingFiles: {
         /* 需要即时编译的文件, 前提是 reload 为 true */
         compilers: {
-            mcss: {{watchingFiles.compilers.mcss}}
+            /* 值为 mcss 的配置选项, 默认为 false，即不编译 mcss 文件 */
+            mcss: {{{JSONStringify watchingFiles.compilers.mcss}}}
         },
         /* 不用监听的文件，支持通配符 */
-        ignored: '{{watchingFiles.ignored}}'
+        {{!-- {{没有忽略的文件时，不要传 ignored 参数}} --}}
+        {{#if watchingFiles.ignored}}ignored: '{{watchingFiles.ignored}}' {{else}}//ignored: '**/*.css'{{/if}}
     },
     /* 项目的 key */
     projectKey: '{{projectKey}}',
