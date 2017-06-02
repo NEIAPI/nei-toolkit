@@ -40,9 +40,11 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "chokidar": "^1.6.1",
+    "colors": "^1.1.2",
     "ejs": "^2.5.1",
     "express": "^4.14.0",
     "express-velocity": "^1.0.0",
+    "glob": "latest",
     "handlebars": "^4.0.5",
     "http-proxy": "^1.14.0",
     "istextorbinary": "^2.1.0",
@@ -51,7 +53,6 @@
     "mockjs": "^1.0.1-beta3",
     "path-to-regexp": "^1.5.3",
     "socket.io": "^1.7.3",
-    "xcode": "^0.9.0",
-    "glob": "latest"
+    "xcode": "^0.9.0"
   }
 }

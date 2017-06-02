@@ -75,6 +75,9 @@ class Main {
     let buildProject = (neiProjectDir, exitIfNotExist) => {
       let config = _util.file2json(`${neiProjectDir}/nei.json`, exitIfNotExist, "未找到nei.json文件，请检查，建议使用nei build重新构建");
       let mergedArgs = Object.assign({}, config.args, args);
+      if(mergedArgs.add){// 只有update支持add,这里可能会有重复，由builder里去重
+        mergedArgs.ids = mergedArgs.ids.concat(mergedArgs.add);
+      }
       this.build(arg, action, mergedArgs);
     }
     if (args.key) {
