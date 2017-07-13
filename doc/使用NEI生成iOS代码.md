@@ -104,7 +104,7 @@ Note：请应用开发人员不要直接修改该规范，可以拷贝一份后�
 	
 甚至，可以更进一步，在命令行参数配置文件里指定参数`-iosProjectPath`如下图，这样在输命令的时候就可以省略掉该参数了.
 
-![image](iosres/iOSProjectPath.jpg)	
+![image](iosres/iosProjectPath.jpg)
 
 ## 五 高级功能
 
