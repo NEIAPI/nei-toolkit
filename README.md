@@ -23,7 +23,6 @@
 * [JavaBean 文件的示例模板](./doc/JavaBean文件的示例模板.md)
 * [NEI 平台规则函数使用说明](./doc/NEI平台规则函数使用说明.md)
 * [NEI 平台系统预置的规则函数集](./doc/NEI平台系统预置的规则函数集.md)
-* [NEI 平台系统预置的规则函数集](./doc/NEI平台系统预置的规则函数集.md)
 * [使用 NEI 生成 iOS 代码](./doc/使用NEI生成iOS代码.md)
 
 ## 插件
