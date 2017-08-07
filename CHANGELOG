@@ -1,3 +1,8 @@
+3.5.6  (2017-8-7)
+    - 新功能: mock response类型为文件, 返回一张图片
+    - 修复response选为object时，构建工具解析为字符串的bug
+    - 修复apiResHeader的bug
+
 3.5.5  (2017-6-21)
     - 修复直接使用Array<Object>构建失败的情况
 

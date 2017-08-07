@@ -19,6 +19,7 @@
 </li>
 <li><a href="#orgheadline8">1.5. 静态服务器配置</a></li>
 <li><a href="#orgheadline9">1.6. 上传mock功能</a></li>
+<li><a href="#orgheadline9">1.7. 配置后端跨域功能</a></li>
 </ul>
 </li>
 </ul>
@@ -110,3 +111,11 @@ Mock是对接口的模拟服务。 首先我们需要创建需要使用的接口
 ## 上传mock功能<a id="orgheadline9"></a>
 
 在你执行上面的构建命令构建该demo工程后，你可以运行看看。该项目在启动后，有个index页面，其中实现了文件上传的mock功能。因为一般都是本地启用mock服务器，因此上传的速度极快，为保证mock效果，建议通过chrome或Charles等代理将网速限制慢些。如果你有兴趣的话，欢迎玩玩。
+
+## 配置后端跨域功能
+
+在前后端开发中，跨域是个头疼的问题，有些时候，用户可能就只需要mock功能，而不希望应用同时挂在nei toolkit，这样，应用和mock server的服务器就不再是同一个域，此时就会有跨域问题。解决该问题有两种方法:
+
+1. 配置fiddler、charles等代理服务器，将特定接口代理到mock 服务器中
+2. nei toolkit 提供了一个简便的方法，通过向http加入跨域头，以实现跨域访问。 即只需要将生成的server.config.js中的apiResHeader中的注释取消掉，就可以实现跨域访问了。
+

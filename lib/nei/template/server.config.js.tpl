@@ -15,6 +15,8 @@ module.exports = {
       {{#each rules}}
       {{#if list}}
       "{{method}} {{{path}}}": { name: '{{name}}', index: 0, list: {{{list}}} },
+      {{else if isFile}}
+      "{{method}} {{{path}}}": { path: '{{mockFile}}', id: {{id}}, group: '{{{group}}}',isFile: {{isFile}} },
       {{else}}
       "{{method}} {{{path}}}": { path: '{{mockFile}}', id: {{id}}, group: '{{{group}}}' },
       {{/if}}
