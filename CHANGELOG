@@ -1,3 +1,6 @@
+3.5.7  (2017-8-8)
+    - 修复bug:修复接口代理到其他http地址时出现的handle.data为underfined的bug
+
 3.5.6  (2017-8-7)
     - 新功能: mock response类型为文件, 返回一张图片
     - 修复response选为object时，构建工具解析为字符串的bug
