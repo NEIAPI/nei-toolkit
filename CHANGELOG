@@ -1,3 +1,6 @@
+3.5.8  (2017-8-24)
+    - 修复bug: modelServer 中的 path 应该是页面的 path
+
 3.5.7  (2017-8-8)
     - 修复bug:修复接口代理到其他http地址时出现的handle.data为underfined的bug
 
