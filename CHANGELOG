@@ -1,3 +1,6 @@
+3.5.9  (2017-8-28)
+    - 修复bug: proxy的changeOriginHost需要改为true，这样才能改写http 请求头里的header
+
 3.5.8  (2017-8-24)
     - 修复bug: modelServer 中的 path 应该是页面的 path
 
