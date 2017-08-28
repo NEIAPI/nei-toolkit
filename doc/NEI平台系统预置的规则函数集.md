@@ -2,7 +2,6 @@
 
 为了方便用户生成自定义的 mock 数据，NEI 平台预置了一些可以直接使用的常量和方法。为了不和用户自定义的规则函数产生冲突，它们都放在 `NEI` 名字空间里面。
 
-为了方便用户生成自定义的 mock 数据，NEI 平台预置了一些可以直接使用的常量和方法。为了不和用户自定义的规则函数产生冲突，它们都放在 `NEI` 名字空间里面。
 ## 目前NEI已支持[mockjs](http://mockjs.com/)的函数了。在NEI网站的生成规则以及规则函数的定义中可以直接使用。Mockjs支持的具体函数参考[Mockjs 示例](http://mockjs.com/examples.html)。
 
 说明： mockjs里的Random函数统一放在Mock命名空间中，即通过Mock.Random可以访问到Random中的函数。
