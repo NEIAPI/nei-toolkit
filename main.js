@@ -135,7 +135,7 @@ class Main {
       } else if(args.all){
         // 合并启动服务器
         let routes= {};
-        let temp
+        let temp = {};
         projects.forEach(it => {
           try {
             temp =  require(`${it}/server.config.js`);
@@ -148,6 +148,7 @@ class Main {
         let options = {
           configFilePath: temp,
           fromNei: true,
+          watchConfigPaths: projects.map(it=>`${it}/server.config.js`)
         };
         server(options);
       } else {
