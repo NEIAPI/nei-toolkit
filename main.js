@@ -78,7 +78,7 @@ class Main {
       if(mergedArgs.add){// 只有update支持add,这里可能会有重复，由builder里去重
         mergedArgs.ids = mergedArgs.ids.concat(mergedArgs.add);
       }
-      this.build(arg, action, mergedArgs);
+      new Main().build(arg, action, mergedArgs);
     }
     if (args.key) {
       if (projects.length == 0) {
@@ -132,10 +132,28 @@ class Main {
     } else if (projects.length > 1) {
       if (args.key) {
         _logger.error(`在 ${dir} 中找到多个 key 为 ${args.key} 的项目, 请检查`);
+      } else if(args.all){
+        // 合并启动服务器
+        let routes= {};
+        let temp
+        projects.forEach(it => {
+          try {
+            temp =  require(`${it}/server.config.js`);
+            Object.assign(routes, temp.routes);
+          }catch(e){
+            _logger.error(`找不到文件${it}/server.config.js`);
+          }
+        });
+        temp.routes = routes;
+        let options = {
+          configFilePath: temp,
+          fromNei: true,
+        };
+        server(options);
       } else {
-        _logger.error(`在 ${dir} 中找到多个 nei 项目, 请使用 key 参数指定要启动的项目`);
+        _logger.error(`在 ${dir} 中找到多个 nei 项目, 请使用 key 参数指定要启动的项目, 或使用--all选项合并路由`);
+        return process.exit(1);
       }
-      return process.exit(1);
     } else {
       tryStartServer(`${projects[0]}/server.config.js`);
     }
