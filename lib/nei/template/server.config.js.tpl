@@ -103,6 +103,8 @@ module.exports = {
     mockTpl: '{{mockViewRoot}}',
     /* 异步接口mock数据路径 */
     mockApi: '{{mockApiRoot}}',
+    /* 是否修改代理的host */
+    changeOrigin: true,
     /* 模板后缀 */
     viewExt: '.{{viewExt}}',
     /* 模板引擎 */
