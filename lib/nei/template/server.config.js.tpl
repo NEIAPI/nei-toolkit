@@ -11,16 +11,16 @@ module.exports = {
     viewRoot: '{{viewRoot}}',
     /* 路由 */
     routes: {
-      //"ALL /api/*": "代理所有接口, 这里输入代理服务器地址",
-      {{#each rules}}
-      {{#if list}}
-      "{{method}} {{{path}}}": { name: '{{name}}', index: 0, list: {{{list}}} },
-      {{else if isFile}}
-      "{{method}} {{{path}}}": { path: '{{mockFile}}', id: {{id}}, group: '{{{group}}}',isFile: {{isFile}} },
-      {{else}}
-      "{{method}} {{{path}}}": { path: '{{mockFile}}', id: {{id}}, group: '{{{group}}}' },
-      {{/if}}
-      {{/each}}
+        //"ALL /api/*": "代理所有接口, 这里输入代理服务器地址",
+{{#each rules}}
+{{#if list}}
+        "{{method}} {{{path}}}": { name: '{{name}}', index: 0, list: {{{list}}} },
+{{else if isFile}}
+        "{{method}} {{{path}}}": { path: '{{mockFile}}', id: {{id}}, group: '{{{group}}}',isFile: {{isFile}} },
+{{else}}
+        "{{method}} {{{path}}}": { path: '{{mockFile}}', id: {{id}}, group: '{{{group}}}' },
+{{/if}}
+{{/each}}
     },
     /* 注入给页面的模型数据的服务器配置 */
     {{#if modelServer}}
