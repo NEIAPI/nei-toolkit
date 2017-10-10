@@ -41,6 +41,7 @@
     "body-parser": "^1.15.2",
     "chokidar": "^1.6.1",
     "colors": "^1.1.2",
+    "cors": "^2.8.4",
     "ejs": "^2.5.1",
     "express": "^4.14.0",
     "express-velocity": "^1.0.0",
