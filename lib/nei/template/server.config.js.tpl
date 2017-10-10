@@ -67,11 +67,6 @@ module.exports = {
     },
     {{else}}
     apiResHeaders: {
-        // 设置可跨域访问时，取消注释以下内容, 并按需要配置
-        // 'Access-Control-Allow-Origin': 'http://localhost:8080',
-        // 'Access-Control-Allow-Credentials': 'true',
-        // 'Access-Control-Allow-Headers': 'Content-Type',
-        // 'Access-Control-Allow-Methods': 'GET, POST, HEAD, OPTIONS, PUT, DELETE, PATCH'
     },
     {{/if}}
     /* 是否自动打开浏览器 */
