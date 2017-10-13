@@ -1,3 +1,8 @@
+3.6.0  (2017-10-12)
+	- 支持nei server --all 指令，合并多个工程router提供mock服务
+	- 修复bug， 重复监听文件修改
+	- 使用cors库支持自动跨域，不再需要配置跨域头了
+
 3.5.9  (2017-8-28)
     - 修复bug: proxy的changeOriginHost需要改为true，这样才能改写http 请求头里的header
 
