@@ -1,0 +1,10 @@
+sourceRoot: test
+outputRoot: test
+sourceRoot: src
+outputRoot: out
+dataRoot: src/data
+logFile: log.fmpp
+outputEncoding: utf-8
+data: {
+ json(data3.json)
+}
