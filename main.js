@@ -75,7 +75,7 @@ class Main {
     let buildProject = (neiProjectDir, exitIfNotExist) => {
       let config = _util.file2json(`${neiProjectDir}/nei.json`, exitIfNotExist, "未找到nei.json文件，请检查，建议使用nei build重新构建");
       let mergedArgs = Object.assign({}, config.args, args);
-      if(mergedArgs.add){// 只有update支持add,这里可能会有重复，由builder里去重
+      if (mergedArgs.add) {// 只有update支持add,这里可能会有重复，由builder里去重
         mergedArgs.ids = mergedArgs.ids.concat(mergedArgs.add);
       }
       new Main().build(arg, action, mergedArgs);
@@ -109,18 +109,19 @@ class Main {
    * @param  {object}  args - args object
    */
   server(args) {
+    let dir = path.join(process.cwd(), args.output || './');
     let tryStartServer = (configFilePath) => {
       if (_fs.exist(configFilePath)) {
         let options = {
           configFilePath: configFilePath,
           fromNei: true,
+          targetDir: dir
         };
         server(options);
       } else {
         _logger.warn(`文件不存在: ${configFilePath}`);
       }
     }
-    let dir = path.join(process.cwd(), args.output || './');
     let projects = this.findProjects(args);
     if (projects.length === 0) {
       if (args.key) {
@@ -132,15 +133,15 @@ class Main {
     } else if (projects.length > 1) {
       if (args.key) {
         _logger.error(`在 ${dir} 中找到多个 key 为 ${args.key} 的项目, 请检查`);
-      } else if(args.all){
+      } else if (args.all) {
         // 合并启动服务器
-        let routes= {};
+        let routes = {};
         let temp = {};
         projects.forEach(it => {
           try {
-            temp =  require(`${it}/server.config.js`);
+            temp = require(`${it}/server.config.js`);
             Object.assign(routes, temp.routes);
-          }catch(e){
+          } catch (e) {
             _logger.error(`找不到文件${it}/server.config.js`);
           }
         });
@@ -148,7 +149,8 @@ class Main {
         let options = {
           configFilePath: temp,
           fromNei: true,
-          watchConfigPaths: projects.map(it=>`${it}/server.config.js`)
+          watchConfigPaths: projects.map(it => `${it}/server.config.js`),
+          targetDir: dir
         };
         server(options);
       } else {
@@ -166,7 +168,6 @@ class Main {
    */
   loadData(callback) {
     let neiHost = 'https://nei.netease.com/';
-    // let neiHost = 'http://localhost:8082/';
     let url;
     if (this.args.hasOwnProperty('specKey')) {
       let specKey = this.args.specKey;
@@ -174,11 +175,11 @@ class Main {
     } else {
       let key = this.args.key;
       let specType = {
-          web: neiDbConst.CMN_TYP_WEB,
-          aos: neiDbConst.CMN_TYP_AOS,
-          ios: neiDbConst.CMN_TYP_IOS,
-          test: neiDbConst.CMN_TYP_TEST
-        }[this.args.specType] || neiDbConst.CMN_TYP_WEB;
+        web: neiDbConst.CMN_TYP_WEB,
+        aos: neiDbConst.CMN_TYP_AOS,
+        ios: neiDbConst.CMN_TYP_IOS,
+        test: neiDbConst.CMN_TYP_TEST
+      }[this.args.specType] || neiDbConst.CMN_TYP_WEB;
 
       url = `${neiHost}/api/projectres/?key=${encodeURIComponent(key)}&spectype=${specType}`;
     }
