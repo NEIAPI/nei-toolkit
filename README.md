@@ -1,101 +1,62 @@
-# 说明
+# 工具简介
 
-> 为了能够让`nei-toolkit`在前后端分离实战中起到的作用更加贴切、更加符合实际使用场景。该分支的基本策略就是修复原有功能的缺陷以及渐进增强功能特点。
+本工具是[NEI 接口管理平台](https://nei.netease.com/)自动化构建工具，主要功能有：
 
-注: 此分支`edu-fmpp`是以分支`fmpp`为基础进行完善和定制的. 如有需要可访问原有[仓库地址](https://github.com/NEYouFan/nei-toolkit)
+* 根据 NEI 平台定义的工程规范，生成工程的初始化目录结构
+* 自动集成在 NEI 上定义的资源: 页面、异步接口、数据模型、页面模板、业务分组等
+* 本地模拟容器
 
-### 特点
+## NEI 工程规范介绍
 
-* 以交互命令行的方式来一键切换前后端分离开发模式
-* 开放自定义配置文件入口，实现一次配置永久生效。(可以放心update，注释信息丢不了.)
-* `build|server`命令开放`--port`、`--reload`、`--launch`等命令参数，
-    * server相比build的配置参数的作用效果优先级更高。
-    * build的参数设置是持久到默认配置文件的，也就是磁盘上。
-* `server`命令额外添加`--proxy-model`、`--proxy-routes`、`--user-agent`、`--mode-on`、`--dev-domain`等命令参数配置，具体使用可查看下面文档.
-* 优化mock静态页，增加快速索引入口
+* [NEI 工程规范介绍](./doc/工程规范介绍.md)
+* [传给模板的数据格式说明](./doc/传给模板的数据格式说明.md)(**重要，必读**)
+* [Handlebars](http://handlebarsjs.com/) 是本工具渲染文件内容所使用的模板引擎
+* [Handlebars 辅助函数集说明](./doc/Handlebars辅助函数集.md)
+
+## 教程
+* [NEI 基本概念介绍](./doc/NEI基本概念介绍.md)
+* [使用 NEI 进行前后端并行开发](./doc/使用NEI进行前后端并行开发.md)
+* [使用 NEI 实现接口Mock服务](./doc/使用NEI进行前后端并行开发.md#如果需要使用接口的mock服务的话需要指定一个接口mock数据根路径-如下图所示)
+* [从零开始使用nei构建Mock服务器,以及配置跨域头](./doc/从零开始使用nei构建Mock服务器以及配置跨域头.md)
+* [如何配置配置代理服务器](./doc/如何配置代理服务器.md)
+* [老项目迁移到 NEI 上的说明](./doc/老项目的迁移说明.md)
+* [一步一步教你如何愉快地生成 JavaBean 文件](./doc/一步一步教你如何愉快地生成JavaBean文件.md)
+* [JavaBean 文件的示例模板](./doc/JavaBean文件的示例模板.md)
+* [NEI 平台规则函数使用说明](./doc/NEI平台规则函数使用说明.md)
+* [NEI 平台系统预置的规则函数集](./doc/NEI平台系统预置的规则函数集.md)
+* [使用 NEI 生成 iOS 代码](./doc/使用NEI生成iOS代码.md)
+
+## 插件
+* [Android Studio 插件](./doc/android_studio.md)
+
+## 工具使用
+
+### 环境配置
+构建工具基于 [Node.js](http://nodejs.org/) 平台，因此需要先安装 Node.js 环境，Node.js 在各平台上的安装配置请参阅官方说明。
+
+>安装的 Node.js 版本须为 v4.2 及以上
 
 ### 安装
 
 ```bash
-npm install "techbirds/nei-toolkit#edu-fmpp" -g
+npm install nei –g
 ```
 
-> 安装以后需要删除原有项目中mock目录，然后重新build下.
+>提示1: 如果安装不成功, 可以尝试命令 `npm install -g nei`
 
-## 最佳实践
+>提示2: 如果已经安装过 nei, 请使用更新命令 `npm update nei -g`
 
-> 以`中M`后台工程作为范例
-
-Ⅰ. 在工程中自定义配置文件`${projectRootDir}/nei.config.js`:
-
-```js
-var path = require('path');
-module.exports = {
-  /* 代理路由 */
-  proxyRoutes: {
-    "ALL /web/j/*": "http://www.icourse163.org",
-    "ALL /dwr/call/plaincall/*": "http://www.icourse163.org",
-  },
-  /* 注入给页面的模型数据的服务器配置 */
-  modelServer: {
-    // 完整的主机地址，包括协议、主机名、端口
-    host: 'http://www.icourse163.org',
-    // 查询参数
-    queries: {
-      "format": "json"
-    },
-    // 自定义请求头
-    headers: {},
-    // path 可以是字符串，也可以是函数；默认不用传，即使用 host + 页面path + queries 的值
-    // 如果是函数，则使用函数的返回值，传给函数的参数 options 是一个对象，它包含 host、path（页面的path）、queries、headers 等参数
-    // 如果 path 的值为假值，则使用 host + 页面path + queries 的值；
-    // 如果 path 的值是相对地址，则会在前面加上 host
-    path: function (option) {
-      "use strict";
-      if ((/index\.htm/).test(option.path)) {
-        return "/";
-      } else {
-        return false;
-      }
-    }
-  }
-};
-```
-
-Ⅱ. 定义`NPM Script`
-
-```json
-"scripts": {
-    "server": "nei server -o mock/admin -n admin -i ./nei.config.js -d l.icourse163.org -mo",
-    "build": "nei build -k 5651e86a86c141c7b8a32de7c8e1e60f -o mock/admin",
-    "update": "nei update -o mock/admin -w true"
-    ...
-}
-```
-
->  1. 只保留`NEI`相关的脚本.
->  2. 注意自定义配置文件必须以字符串的形式进行输入
-
-Ⅲ. 执行`NPM Script`
+>提示3: 也可以安装某个分支，比如安装 `dev` 分支的命令如下:
 
 ```bash
-npm run server
+sudo npm install "NEYouFan/nei-toolkit#dev" -g
 ```
 
-> 提醒: 如果需要远程mock，提前需要开启vpn、host.
+>提示4：如果安装失败，可能是网络超时引起的，可以试着使用下面的命令安装：
 
-示例1(本地mock)([Full Size](https://github.com/techbirds/nei-toolkit/raw/edu-fmpp/doc/res/server.gif))
-
-![path](./doc/res/server.gif)
-
-示例2(远程mock)([Full Size](https://github.com/techbirds/nei-toolkit/raw/edu-fmpp/doc/res/server2.gif))
-
-![path](./doc/res/server2.gif)
-
-示例2(mock页操作)([Full Size](https://github.com/techbirds/nei-toolkit/raw/edu-fmpp/doc/res/mock.gif))
-
-![path](./doc/res/mock.gif)
-
+```bash
+sudo npm install nei -g --registry=https://registry.npm.taobao.org
+```
 
 ## 指令说明
 
@@ -131,9 +92,6 @@ nei build -k [key] [参数]
 | -h | --help |  | 显示 build 命令的帮助信息 |
 | -o | --output | ./ | 指定项目的输出目录 |
 | -k | --key |  | 项目的唯一标识，可以在项目的"工具(设置)"中查看 |
-| -r :new: | --reload |  | 是否开启监听静态文件和模板文件的变化并自动刷新浏览器,默认是关闭的. |
-| -l :new: | --launch |  | 是否自动打开浏览器,默认是启动的. |
-| -p :new: | --port |  | 端口,默认为8002 |
 | -sk| --specKey |  | 规范的唯一标识，可以在规范的"规范设置"中查看 |
 | -w | --overwrite | false | 是否覆盖已存在的文件，需要下载的文件不在此列，如果需要重新下载，请先将本地的文件删除 |
 | 无 | --specType | web | 要构建的规范类型，目前支持 web、aos、ios、test 四种类型 |
@@ -143,37 +101,16 @@ nei build -k [key] [参数]
 在当前目录下构建 key 为 xyz 的项目：
 
 ```bash
-nei build -k xyz -o mock/demo 
+nei build -k xyz
 ```
 
-注: build中的`-r`,`-l`的配置最终能持久到配置文件. 这点是不同于server中的`-r`,`-l`.
-
-### server
-
-启动内置的本地模拟容器
+规范也可以独立于项目生成脚手架文件, 在当前目录下构建 key 为 xyz 的规范：
 
 ```bash
-nei server [参数]
+nei build -sk xyz
 ```
 
-`nei server` 指令可用的参数包括：
-
-| 简写 | 全称 | 默认值 | 描述 |
-| :--- | :--- | :--- | :--- |
-| -h | --help | | 显示 server 命令帮助信息 |
-| -o | --output | ./ | 已构建项目的输出路径 |
-| -k | --key |  | 需要启动的项目的唯一标识 |
-| -n :new: | --name |  | 应用名称,默认app |
-| -r :new: | --reload |  | 是否启用监听静态文件和模板文件的变化并自动刷新浏览器,默认是关闭监听的. |
-| -l :new: | --launch |  | 是否自动打开浏览器,默认是启动的. |
-| -p :new: | --port |  | 端口,默认为8002 |
-| -i :new: | --config-path |  | 用户自定义配置文件路径,默认为build初始生成的server.config.js文件，用户定义的配置优先级比默认配置高|
-| -d :new: | --dev-domain |  | 用户自定义开发域名,通常是代理域名的子域名,默认是localhost.|
-| -mo :new: | --mode-on |  | 是否启用开发模式选择,默认关闭的 |
-| -pm :new: | --proxy-model |  | 是否启用远程代理模型数据,默认打开 |
-| -pr :new: | --proxy-routes |  | 是否启用远程代理异步接口数据,默认打开 |
-| -ua :new: | --user-agent |  | 客户端标识,默认为值pc,此外还可以取值为mobile. |
-
+>注意: 如果 k 和 sk 参数同时存在, 系统会优先考虑 sk 参数
 
 ### update
 
@@ -194,7 +131,6 @@ nei update [参数]
 | -w | --overwrite | false | 是否覆盖已存在的文件，需要下载的文件不在此列，如果需要重新下载，请先将本地的文件删除 |
 | 无 | --spec | false | 是否更新规范中的普通文件和文件夹，以数据填充的文件不在此列 |
 
-
 使用范例：
 
 更新当前目录下通过 `nei build` 生成的项目
@@ -206,22 +142,96 @@ nei update
 >提示: 可以先在本地创建项目目录，然后在该目录下使用 `nei build` 和 `nei update` 命令，使用默认值即可.
 
 
+### server
+启动内置的本地模拟容器
+
+```bash
+nei server [参数]
+```
+
+`nei server` 指令可用的参数包括：
+
+| 简写 | 全称 | 默认值 | 描述 |
+| :--- | :--- | :--- | :--- |
+| -h | --help | | 显示 server 命令帮助信息 |
+| -o | --output | ./ | 已构建项目的输出路径 |
+| -k | --key |  | 需要启动的项目的唯一标识 |
+
+使用范例
+
+启动目录为 ./mypro 下的项目:
+
+```bash
+nei server -o ./mypro
+```
+
+> OS X 下如果有异常请使用 `sudo nei server` 命令启动
+
+
 ### template
+使用本地数据解析模板。通过指定本地模板文件以及数据文件，能够将模板解析得到输出文件。目前支持的模板语言为[handlebars](http://handlebarsjs.com/)。
 
-[详细查看](https://github.com/NEYouFan/nei-toolkit)
+```bash
+nei template [参数]
+```
 
-## FAQ
+`nei template` 指令可用的参数包括:
 
-1. 暂不支持Windows下`Git Bash`的命令行交互效果. [Git Bash support on Windows](https://github.com/SBoudrias/Inquirer.js/issues/570)
-2. Mac OS X下执行命令遇到权限问题，可以考虑尝试在命令前面加`sudo`  
+| 简写 | 全称 | 默认值 | 描述 |
+| :--- | :--- | :--- | :--- |
+| -h | --help | | 显示 template 命令帮助信息 |
+| -o | --output | ./ | 输出路径 |
+| -p | --path |  | 本地模板路径，必须指定 |
+| -d | --data |  | 数据json文件路径,可选 |
+| -b | --handlebars |  | 自定义handlebars辅助函数文件路径,可选 |
+| -w | --overwrite | false | 是否覆盖已存在的文件 |
+
+用户可以指定数据文件，如`data.json`的文件内容如下:
+```json
+{
+  "project":{
+    "name" : "test",
+    "version" : "0.0.1"
+  },
+  "author":{
+    "Netease"
+  }
+}
+```
+然后用户就可以在模板文件中访问到数据中的数据，如`{{project.name}}`就能够解析为`test`。用户同样可以指定本地handlebars辅助文件，如果用户有多个辅助函数，需要将这些都写到一个文件中，自定义辅助函数的写法与上文一致，参照[此链接](https://github.com/NEYouFan/nei-toolkit/blob/master/doc/Handlebars%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0%E9%9B%86.md#如何撰写自定义handlebars辅助函数)相同。 另外用户也可以不通过指定数据json文件来传入数据，可以通过命令行直接传入数据参数，如：
+```bash
+nei template -ProductName Test -Prefix HT [其他参数]
+```
+ProductName和Prefix这两个参数就会作为数据传入到模板中，其等同于
+```json
+{
+  "args":{
+    "ProductName" : "Test",
+    "Prefix":  "HT"
+  }
+}
+```
+如果同时指定了数据文件，将会执行merge操作，其中命令行参数指定的方式优先于数据json文件方式。
+### 设置输出信息级别
+共设有"all"、"debug"、"info"、"warn"、"error"、"off"等日志级别，级别顺序由大到小，通过`--logLevel`指定一个级别之后，比该级别小的日志级别信息都将会显示出来，比如：
+```bash
+nei build -k xxxxxxxx --logLevel info
+```
+那么所有info以下级别(即warn、error)级别的信息都将会显示出来。当指定为off的时候，所有日志信息都将关闭。
+## 版本更新说明
+[更新说明](./CHANGELOG)
+
+## Licence
+[MIT](./LICENSE)
 
 ## 感谢
+感谢[网易云](http://www.163yun.com/)提供的云服务, 目前 [NEI](https://nei.netease.com) 已经托管在网易云上。
 
-* [NEI](https://nei.netease.com)
-* [NEI-Toolkit](https://github.com/NEYouFan/nei-toolkit)
+## 讨论组:
 
-## 联系
+NEI 用户交流 QQ 群(453281988):
 
-此分支目前由`hzwangdong5@corp.netease.com`维护，有任何问题可以popo他.
+![QQ 群](./doc/res/nei_qq.jpeg)
+
 
 
