@@ -52,6 +52,12 @@ npm install nei –g
 sudo npm install "NEYouFan/nei-toolkit#dev" -g
 ```
 
+>提示4：如果安装失败，可能是网络超时引起的，可以试着使用下面的命令安装：
+
+```bash
+sudo npm install nei -g --registry=https://registry.npm.taobao.org
+```
+
 ## 指令说明
 
 本工具使用时在终端或者命令行输入以下格式指令运行
