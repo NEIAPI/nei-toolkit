@@ -13,7 +13,9 @@ module.exports = {
     routes: {
         //"ALL /api/*": "代理所有接口, 这里输入代理服务器地址",
 {{#each rules}}
-{{#if list}}
+{{#if value}}
+        "{{method}} {{{path}}}": '{{value}}',
+{{else if list}}
         "{{method}} {{{path}}}": { name: '{{name}}', index: 0, list: {{{list}}} },
 {{else if isFile}}
         "{{method}} {{{path}}}": { path: '{{mockFile}}', id: {{id}}, group: '{{{group}}}',isFile: {{isFile}} },
