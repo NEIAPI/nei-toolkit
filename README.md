@@ -6,6 +6,9 @@
 * 自动集成在 NEI 上定义的资源: 页面、异步接口、数据模型、页面模板、业务分组等
 * 本地模拟容器
 
+## 视频教程
+* [NEI 视频教程](https://nei.netease.com/tutorial)
+
 ## NEI 工程规范介绍
 
 * [NEI 工程规范介绍](./doc/工程规范介绍.md)
@@ -50,6 +53,12 @@ npm install nei –g
 
 ```bash
 sudo npm install "NEYouFan/nei-toolkit#dev" -g
+```
+
+>提示4：如果安装失败，可能是网络超时引起的，可以试着使用下面的命令安装：
+
+```bash
+sudo npm install nei -g --registry=https://registry.npm.taobao.org
 ```
 
 ## 指令说明
