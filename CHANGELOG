@@ -1,3 +1,6 @@
+3.6.2  (2017-11-02)
+	- 增加系统规则函数 NEI.null 的支持
+
 3.6.1  (2017-10-27)
 	- server.config.js 配置的路径(webRoot、viewRoot、mockTpl、mockApi)支持相对路径
 
