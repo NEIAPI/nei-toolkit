@@ -13,12 +13,12 @@
         "tag": "数据模型的标签，多个标签以逗号分隔",
         "params": [
             {
-                "name": "字段名称",
-                "typeName": "字段类型",
-                "description": "字段描述",
+                "name": "字段的名称",
+                "type": "字段的类型",
+                "description": "字段的描述",
                 "defaultValue": "字段的默认值",
                 "genExpression": "字段的生成规则",
-                "isArray": "字段是否为数组, 1 表示是，0 表示否"
+                "isArray": "字段是否为数组, 值是整数，1 表示是，0 表示否"
             }
         ]
     }
