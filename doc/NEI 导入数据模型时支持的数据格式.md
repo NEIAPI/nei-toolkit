@@ -4,21 +4,21 @@
 
 > 注：单个数据模型中的 params 表示该数据模型的字段，它是一个数组，数组的每一项表示一个字段
 
-```js
+```json
 [
     {
-        name: '数据模型的名称',
-        format: '数据模型的类别, 值是整数，比如 0 表示哈希，见下文解释',
-        description: '数据模型的描述',
-        tag: '数据模型的标签，多个标签以逗号分隔'
-        params: [
+        "name": "数据模型的名称",
+        "format": "数据模型的类别, 值是整数，比如 0 表示哈希，见下文解释",
+        "description": "数据模型的描述",
+        "tag": "数据模型的标签，多个标签以逗号分隔",
+        "params": [
             {
-                name: '字段名称',
-                typeName: '字段类型',
-                description: '字段描述',
-                defaultValue: '字段的默认值',
-                genExpression: '字段的生成规则',
-                isArray: '字段是否为数组, 1 表示是，0 表示否',
+                "name": "字段名称",
+                "typeName": "字段类型",
+                "description": "字段描述",
+                "defaultValue": "字段的默认值",
+                "genExpression": "字段的生成规则",
+                "isArray": "字段是否为数组, 1 表示是，0 表示否"
             }
         ]
     }
