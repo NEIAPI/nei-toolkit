@@ -16,7 +16,7 @@
 
 提示2: 如果已经安装过 nei, 请使用更新命令 `npm update nei -g`
 
-更多详细命令以及所依赖的版本请参见[nei-toolkie](https://github.com/NEYouFan/nei-toolkit)
+更多详细命令以及所依赖的版本请参见[nei-toolkit]ttps://github.com/NEYouFan/nei-toolkit)
 
 ## 二 编辑工程规范
 
@@ -39,7 +39,7 @@ Note：请应用开发人员不要直接修改该规范，可以拷贝一份后�
 
 ![image](iosres/Project规范设置.png)
 
-也可以设置与项目相关的命令行参数来覆盖iOS规范中指定的默认命令汗参数，如图：
+也可以设置与项目相关的命令行参数来覆盖iOS规范中指定的默认命令行参数，如图：
 
 ![image](iosres/Project命令行参数设置.png)
 
