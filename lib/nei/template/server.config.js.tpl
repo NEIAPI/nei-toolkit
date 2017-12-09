@@ -9,6 +9,13 @@ module.exports = {
     webRoot: '{{webRoot}}',
     /* 视图目录 */
     viewRoot: '{{viewRoot}}',
+    /* 代理路由 */
+    proxyRoutes:{
+      //"ALL /web/j/*": 'http://www.icourse163.org',
+      {{#each proxyRoutes}}
+      "{{@key}}": "{{this}}",
+      {{/each}}
+    },
     /* 路由 */
     routes: {
         //"ALL /api/*": "代理所有接口, 这里输入代理服务器地址",
