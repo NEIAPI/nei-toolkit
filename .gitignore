@@ -12,3 +12,7 @@ node_pro
 testSpec
 /test/template-test/output/
 /Hello/
+mock
+nei.*
+.vscode
+

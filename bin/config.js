@@ -17,8 +17,7 @@ module.exports = {
     "update\t\t\t更新通过 'nei build' 构建的项目",
     "server\t\t\t启动本地模拟容器"
   ],
-  "-default-params": [
-    {
+  "-default-params": [{
       "j": "v", // `jian(简称)`
       "q": "version", // `quan(全称)`
       "m": "显示工具版本信息" // `comment`
@@ -47,8 +46,7 @@ module.exports = {
     "nei build -pk xyz",
     "nei build -sk zyx"
   ],
-  "build-params": [
-    {
+  "build-params": [{
       "j": "h",
       "q": "help",
       "m": "显示 build 命令帮助信息"
@@ -76,6 +74,24 @@ module.exports = {
       "q": "overwrite",
       "d": false,
       "m": "是否覆盖已存在的文件, 需要下载的文件不在此列, 如果需要重新下载, 请先将本地的文件删除"
+    },
+    {
+      "j": "r",
+      "q": "reload",
+      "d": true,
+      "m": "是否监听静态文件和模板文件的变化并自动刷新浏览器"
+    },
+    {
+      "j": "l",
+      "q": "launch",
+      "d": true,
+      "m": "是否自动打开浏览器"
+    },
+    {
+      "j": "p",
+      "q": "port",
+      "d": 8002,
+      "m": "是否自动打开浏览器"
     },
     {
       "q": "specType",
@@ -114,8 +130,7 @@ module.exports = {
     "nei update -k xyz",
     "nei update"
   ],
-  "update-params": [
-    {
+  "update-params": [{
       "j": "h",
       "q": "help",
       "m": "显示 update 命令帮助信息"
@@ -168,8 +183,7 @@ module.exports = {
     "%p",
     ""
   ],
-  "template-params": [
-    {
+  "template-params": [{
       "j": 'p',
       "q": 'path',
       "m": '本地模板路径，必须指定'
@@ -207,8 +221,7 @@ module.exports = {
     "使用举例：",
     "nei server -o ./webapp"
   ],
-  "server-params": [
-    {
+  "server-params": [{
       "j": "h",
       "q": "help",
       "m": "显示 server 命令帮助信息"
