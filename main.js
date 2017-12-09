@@ -115,7 +115,8 @@ class Main {
         let options = {
           configFilePath: configFilePath,
           fromNei: true,
-          targetDir: dir
+          targetDir: dir,
+          args: args
         };
         server(options);
       } else {
@@ -150,7 +151,8 @@ class Main {
           configFilePath: temp,
           fromNei: true,
           watchConfigPaths: projects.map(it => `${it}/server.config.js`),
-          targetDir: dir
+          targetDir: dir,
+          args: args
         };
         server(options);
       } else {

@@ -12,6 +12,7 @@ module.exports = {
     /* 代理路由 */
     proxyRoutes:{
       //"ALL /web/j/*": 'http://www.icourse163.org',
+      //"ALL /dwr/call/plaincall/*": 'http://www.icourse163.org',
       {{#each proxyRoutes}}
       "{{@key}}": "{{this}}",
       {{/each}}
@@ -53,19 +54,32 @@ module.exports = {
         {{/if}}
     },
     {{else}}
-    // modelServer: {
-    //     // 完整的主机地址，包括协议、主机名、端口
-    //     host: '',
-    //     // 查询参数，键值对
-    //     queries: {},
-    //     // 自定义请求头，键值对
-    //     headers: {},
-    //     // path 可以是字符串，也可以是函数；默认不用传，即使用 host + 页面path + queries 的值
-    //     // 如果是函数，则使用函数的返回值，传给函数的参数 options 是一个对象，它包含 host、path（页面path）、queries、headers 等参数
-    //     // 如果 path 的值为假值，则使用 host + 页面path + queries 的值；
-    //     // 如果 path 的值是相对地址，则会在前面加上 host
-    //     // path: '',
-    // },
+    modelServer: {
+         // 完整的主机地址，包括协议、主机名、端口
+         host: 'http://www.icourse163.org',
+         // 查询参数，键值对
+         queries: {
+           "format": "json",
+           // "id":24001
+         },
+         // 自定义请求头，键值对
+         headers: {
+            // "User-Agent":"Mozilla/5.0 (Linux; Android 4.4.4; HTC D820u Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.89 Mobile Safari/537.36"
+         },
+         // path 可以是字符串，也可以是函数；默认不用传，即使用 host + 页面path + queries 的值
+         // 如果是函数，则使用函数的返回值，传给函数的参数 options 是一个对象，它包含 host、path（页面path）、queries、headers 等参数
+         // 如果 path 的值为假值，则使用 host + 页面path + queries 的值；
+         // 如果 path 的值是相对地址，则会在前面加上 host
+         // path: '',
+         path: function (option) {
+            "use strict";
+            if ((/index\.htm/).test(option.path)) {
+                return "/";
+            } else {
+                return false;
+            }
+        }
+    },
     {{/if}}
     /* api 响应头 */
     {{#if apiResHeaders}}
