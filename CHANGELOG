@@ -5,7 +5,7 @@ fmpp-mooc  (2017-12-09)
     * 再也不需要在不同场景(不同终端类型的切换、远程和本地mock模式的切换)下来回修改`server.config.js`了，通过命令行的方式一键即可切换。
     * 开放了部分配置选项，更贴近实际使用场景，譬如`--port`、`--reload`、`--launch`等
 
-	- build开放`--port`、`--reload`、`--launch`等命令参数配置，详细可查看[参数说明](./README.md).
+  - build开放`--port`、`--reload`、`--launch`等命令参数配置，详细可查看[参数说明](./README.md).
   - server新增`--port`、`--reload`、`--launch`、`--proxy-model`、`--proxy-routes`、`--user-agent`等命令参数配置，详细可查看[参数说明](./README.md).
 
 3.6.1  (2017-10-27)
