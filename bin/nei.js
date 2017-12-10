@@ -5,8 +5,8 @@ var util = require('../lib/util/util');
 util.checkNodeVersion();
 var main = require('../main');
 let logger = require('../lib/util/logger');
-
-var Args = require('../lib/util/args');
+let Args = require('../lib/util/args');
+let inquirer = require('inquirer');
 
 /**
  * 处理args中的数组情况
@@ -16,13 +16,15 @@ function formatArrayArgs(config) {
   ["ids", "tags", "add"].forEach(key => {
     if (config[key]) {
       try {
-        if(key == "tags"){
+        if (key == "tags") {
           config[key] = config[key].split(",");
-        }else {
+        } else {
           config[key] = JSON.parse(`[${config[key]}]`);
         }
       } catch (e) {
-        logger.log("error",{message:`输入${key}有误，请确定输入为数字，或以','分割的数字`});
+        logger.log("error", {
+          message: `输入${key}有误，请确定输入为数字，或以','分割的数字`
+        });
         process.exit(-1); // 直接退出进程
       }
     }
@@ -33,7 +35,7 @@ var options = {
   package: require('../package.json'),
   message: require('./config.js'),
   exit: function (code) {
-    if (typeof(code) === 'undefined') {
+    if (typeof (code) === 'undefined') {
       code = 0;
     }
     process.exit(code);
@@ -41,7 +43,7 @@ var options = {
   log: function (msg) {
     console.log(msg);
   },
-  setLogLevel: function (logLevel) {// 设置logger的显示级别，因为使用单例，共享logger对象
+  setLogLevel: function (logLevel) { // 设置logger的显示级别，因为使用单例，共享logger对象
     logger.logger.setLevel(logLevel);
   },
   build: function (event) {
@@ -69,14 +71,57 @@ var options = {
     var config = event.options || {};
     config = this.format(action, config);
     config.action = action;
-    main.server(config);
+
+    if(config['mode-on']){
+      inquirer
+      .prompt([{
+        type: 'list',
+        message: '请选择开发模式:\n',
+        name: 'mode',
+        choices: [{
+            name: '1. 本地mock模式 + pc',
+            value: 1
+          },
+          {
+            name: '2. 远程mock模式 + pc',
+            value: 2
+          },
+          {
+            name: '3. 远程mock模式 + mobile',
+            value: 3
+          }
+        ]
+      }])
+      .then(function (value) {
+        switch (value.mode) {
+          case 1:
+            config['proxy-routes'] = false;
+            config['proxy-model'] = false;
+            config['user-agent'] = 'pc';
+            break;
+          case 2:
+            config['proxy-routes'] = true;
+            config['proxy-model'] = true;
+            config['user-agent'] = 'pc';
+            break;
+          case 3:
+            config['proxy-routes'] = true;
+            config['proxy-model'] = true;
+            config['user-agent'] = 'mobile';
+            break;
+        }
+        main.server(config);
+      });
+    }else{
+      main.server(config);
+    }
   },
   template: function (event) {
     var action = 'template';
     var config = event.options || {};
     var data = Object.assign({}, config);
     config = this.format(action, config, true); // 最后一个true表明需要使用默认参数填充
-    ["p", "o", "d","b", "w"].forEach((item)=>{
+    ["p", "o", "d", "b", "w"].forEach((item) => {
       delete data[item];
     });
     main.template(config, data);

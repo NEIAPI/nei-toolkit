@@ -263,6 +263,12 @@ module.exports = {
       "m": "端口,默认为8002"
     },
     {
+      "j": "mo",
+      "q": "mode-on",
+      "d": "false",
+      "m": "是否启用开发模式选择,默认关闭"
+    },
+    {
       "j": "pm",
       "q": "proxy-model",
       "d": true,

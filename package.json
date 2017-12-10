@@ -49,6 +49,7 @@
     "glob": "latest",
     "handlebars": "^4.0.5",
     "http-proxy": "^1.14.0",
+    "inquirer": "^4.0.1",
     "istextorbinary": "^2.1.0",
     "mcss": "^0.5.1",
     "minimatch": "^3.0.3",
