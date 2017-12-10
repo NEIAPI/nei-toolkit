@@ -75,7 +75,7 @@ class Main {
     let buildProject = (neiProjectDir, exitIfNotExist) => {
       let config = _util.file2json(`${neiProjectDir}/nei.json`, exitIfNotExist, "未找到nei.json文件，请检查，建议使用nei build重新构建");
       let mergedArgs = Object.assign({}, config.args, args);
-      if(mergedArgs.add){// 只有update支持add,这里可能会有重复，由builder里去重
+      if (mergedArgs.add) { // 只有update支持add,这里可能会有重复，由builder里去重
         mergedArgs.ids = mergedArgs.ids.concat(mergedArgs.add);
       }
       new Main().build(arg, action, mergedArgs);
@@ -118,6 +118,7 @@ class Main {
           targetDir: dir,
           args: args
         };
+        args.project = projects[0];
         server(options);
       } else {
         _logger.warn(`文件不存在: ${configFilePath}`);
@@ -321,5 +322,3 @@ class Main {
 }
 
 module.exports = new Main();
-
-
