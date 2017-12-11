@@ -1,28 +1,20 @@
-# 工具简介
+# 由来
 
-本工具是[NEI 接口管理平台](https://nei.netease.com/)自动化构建工具，主要功能有：
+> 为了能够让`nei-toolkit`在前后端分离实战中起到的作用更加贴切、更加符合实际使用场景。该分支的基本策略就是修复原有功能的缺陷以及渐进增强功能特点。
 
-## 工具使用
+注: 此分支`edu-fmpp`是以分支`fmpp`为基础进行完善和定制的. 如有需要可访问原有[仓库地址](https://github.com/NEYouFan/nei-toolkit)
 
-### 环境配置
-构建工具基于 [Node.js](http://nodejs.org/) 平台，因此需要先安装 Node.js 环境，Node.js 在各平台上的安装配置请参阅官方说明。
+### 特点
 
->安装的 Node.js 版本须为 v4.2 及以上
+> 通过命令行或者命令行交互的形式替换频繁修改`server.config.js`的机制.
+
+* `build|server`命令开放`--port`、`--reload`、`--launch`等命令参数配置，具体使用可查看下面文档
+* `server`命令新增`--launch`、`--proxy-model`、`--proxy-routes`、`--user-agent`、`--mode-on`等命令参数配置，具体使用可查看下面文档
 
 ### 安装
 
 ```bash
-npm install nei –g
-```
-
->提示1: 如果安装不成功, 可以尝试命令 `npm install -g nei`
-
->提示2: 如果已经安装过 nei, 请使用更新命令 `npm update nei -g`
-
->提示3: 也可以安装某个分支，比如安装 `dev` 分支的命令如下:
-
-```bash
-sudo npm install "NEYouFan/nei-toolkit#dev" -g
+npm install "techbirds/nei-toolkit#edu-fmpp" -g
 ```
 
 ## 指令说明
@@ -82,6 +74,46 @@ nei build -sk xyz
 
 >注意: 如果 k 和 sk 参数同时存在, 系统会优先考虑 sk 参数
 
+### server
+
+启动内置的本地模拟容器
+
+```bash
+nei server [参数]
+```
+
+`nei server` 指令可用的参数包括：
+
+| 简写 | 全称 | 默认值 | 描述 |
+| :--- | :--- | :--- | :--- |
+| -h | --help | | 显示 server 命令帮助信息 |
+| -o | --output | ./ | 已构建项目的输出路径 |
+| -k | --key |  | 需要启动的项目的唯一标识 |
+| -n | --name |  | 应用名称,默认app |
+| -r | --reload |  | 是否监听静态文件和模板文件的变化并自动刷新浏览器,默认是监听的. |
+| -l | --launch |  | 是否自动打开浏览器,默认是启动的. |
+| -p | --port |  | 端口,默认为8002 |
+| -mo | --mode-on |  | 是否启用开发模式选择,默认关闭的 |
+| -pm | --proxy-model |  | 是否启用远程代理模型数据,默认打开 |
+| -pr | --proxy-routes |  | 是否启用远程代理异步接口数据,默认打开 |
+| -ua | --user-agent |  | 客户端标识,默认为值pc,此外还可以取值为mobile. |
+
+
+使用范例
+
+启动目录为 ./demo 下的项目:
+
+```bash
+nei server  -o mock/demo -r false -l false -pm false -p 8002 -pr true  -ua pc -name demo -mo
+```
+
+> OS X 下如果有异常请使用 `sudo nei server` 命令启动
+
+效果示例
+
+![path](./doc/res/server.gif)
+
+
 ### update
 
 更新通过 `nei build` 构建的项目，指令的运行格式为：
@@ -111,41 +143,6 @@ nei update
 ```
 
 >提示: 可以先在本地创建项目目录，然后在该目录下使用 `nei build` 和 `nei update` 命令，使用默认值即可.
-
-
-### server
-启动内置的本地模拟容器
-
-```bash
-nei server [参数]
-```
-
-`nei server` 指令可用的参数包括：
-
-| 简写 | 全称 | 默认值 | 描述 |
-| :--- | :--- | :--- | :--- |
-| -h | --help | | 显示 server 命令帮助信息 |
-| -o | --output | ./ | 已构建项目的输出路径 |
-| -k | --key |  | 需要启动的项目的唯一标识 |
-| -n | --name |  | 应用名称,默认app |
-| -r | --reload |  | 是否监听静态文件和模板文件的变化并自动刷新浏览器,默认是监听的. |
-| -l | --launch |  | 是否自动打开浏览器,默认是启动的. |
-| -p | --port |  | 端口,默认为8002 |
-| -mo | --mode-on |  | 是否启用开发模式选择,默认关闭的 |
-| -pm | --proxy-model |  | 是否启用远程代理模型数据,默认打开 |
-| -pr | --proxy-routes |  | 是否启用远程代理异步接口数据,默认打开 |
-| -ua | --user-agent |  | 客户端标识,默认为值pc,此外还可以取值为mobile. |
-
-
-使用范例
-
-启动目录为 ./mypro 下的项目:
-
-```bash
-nei server -o ./mypro
-```
-
-> OS X 下如果有异常请使用 `sudo nei server` 命令启动
 
 
 ### template
@@ -198,20 +195,14 @@ ProductName和Prefix这两个参数就会作为数据传入到模板中，其等
 nei build -k xxxxxxxx --logLevel info
 ```
 那么所有info以下级别(即warn、error)级别的信息都将会显示出来。当指定为off的时候，所有日志信息都将关闭。
-## 版本更新说明
-[更新说明](./CHANGELOG)
 
-## Licence
-[MIT](./LICENSE)
+## 感谢
 
-## 感谢
-感谢[网易云](http://www.163yun.com/)提供的云服务, 目前 [NEI](https://nei.netease.com) 已经托管在网易云上。
+* [NEI](https://nei.netease.com)
+* [NEI-Toolkit](https://github.com/NEYouFan/nei-toolkit)
 
-## 讨论组:
+## 联系
 
-NEI 用户交流 QQ 群(453281988):
-
-![QQ 群](./doc/res/nei_qq.jpeg)
-
+此分支目前由`hzwangdong5@corp.netease.com`维护，有任何问题可以popo他.
 
 
