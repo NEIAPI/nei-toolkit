@@ -15,4 +15,5 @@ testSpec
 mock
 nei.*
 .vscode
+npm-debug.log
 
