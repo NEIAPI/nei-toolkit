@@ -263,6 +263,12 @@ module.exports = {
       "m": "端口,默认为8002"
     },
     {
+      "j": "i",
+      "q": "config-path",
+      "d": '',
+      "m": "用户自定义配置文件路径,默认为build初始生成的server.config.js文件"
+    },
+    {
       "j": "mo",
       "q": "mode-on",
       "d": "false",

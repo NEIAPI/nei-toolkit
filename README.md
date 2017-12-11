@@ -6,10 +6,11 @@
 
 ### 特点
 
-> 通过命令行或者命令行交互的形式替换频繁修改`server.config.js`的机制.
+> 交互命令行的方式来一键切换前后端分离模式
 
-* `build|server`命令开放`--port`、`--reload`、`--launch`等命令参数配置，具体使用可查看下面文档
-* `server`命令新增`--launch`、`--proxy-model`、`--proxy-routes`、`--user-agent`、`--mode-on`等命令参数配置，具体使用可查看下面文档
+* `build|server`命令开放`--port`、`--reload`、`--launch`等命令参数配置，具体使用可查看下面文档.
+* `server`命令新增`--launch`、`--proxy-model`、`--proxy-routes`、`--user-agent`、`--mode-on`等命令参数配置，具体使用可查看下面文档.
+* `server`新增`--config-path`选项，用以开放自定义`server.config.js`配置的入口,轻松做到让`server.config.js`跟着项目走.
 
 ### 安装
 
@@ -93,23 +94,63 @@ nei server [参数]
 | -r :new: | --reload |  | 是否监听静态文件和模板文件的变化并自动刷新浏览器,默认是监听的. |
 | -l :new: | --launch |  | 是否自动打开浏览器,默认是启动的. |
 | -p :new: | --port |  | 端口,默认为8002 |
+| -i :new: | --config-path |  | 用户自定义配置文件路径,默认为build初始生成的server.config.js文件，用户定义的配置优先级比默认配置高|
 | -mo :new: | --mode-on |  | 是否启用开发模式选择,默认关闭的 |
 | -pm :new: | --proxy-model |  | 是否启用远程代理模型数据,默认打开 |
 | -pr :new: | --proxy-routes |  | 是否启用远程代理异步接口数据,默认打开 |
 | -ua :new: | --user-agent |  | 客户端标识,默认为值pc,此外还可以取值为mobile. |
 
+#### 范例一 命令行交互式选择开发模式
 
-使用范例
-
-启动目录为 ./demo 下的项目:
+> 启动目录为 ./demo 下的项目:
 
 ```bash
 nei server  -o mock/demo -r false -l false -pm false -p 8002 -pr true  -ua pc -name demo -mo
 ```
 
-> OS X 下如果有异常请使用 `sudo nei server` 命令启动
+#### 范例二 
 
-效果示例
+工程自定义配置文件`${projectRootDir}/nei.config.js`:
+
+```js
+var path = require('path');
+module.exports = {
+  /* 代理路由 */
+  proxyRoutes: {
+    "ALL /web/j/*": "http://www.icourse163.org",
+    "ALL /dwr/call/plaincall/*": "http://www.icourse163.org",
+  },
+  /* 注入给页面的模型数据的服务器配置 */
+  modelServer: {
+    // 完整的主机地址，包括协议、主机名、端口
+    host: 'http://www.icourse163.org',
+    // 查询参数
+    queries: {
+      "format": "json"
+    },
+    // 自定义请求头
+    headers: {},
+    // path 可以是字符串，也可以是函数；默认不用传，即使用 host + 页面path + queries 的值
+    // 如果是函数，则使用函数的返回值，传给函数的参数 options 是一个对象，它包含 host、path（页面的path）、queries、headers 等参数
+    // 如果 path 的值为假值，则使用 host + 页面path + queries 的值；
+    // 如果 path 的值是相对地址，则会在前面加上 host
+    path: function (option) {
+      "use strict";
+      if ((/index\.htm/).test(option.path)) {
+        return "/";
+      } else {
+        return false;
+      }
+    }
+  }
+};
+```
+
+```
+nei server  -o mock/demo -r false -l false -pm false -p 8002 -pr true  -ua pc -name demo -mo -i ./nei.config.js
+```
+
+#### 效果示例
 
 ![path](./doc/res/server.gif)
 
@@ -146,55 +187,12 @@ nei update
 
 
 ### template
-使用本地数据解析模板。通过指定本地模板文件以及数据文件，能够将模板解析得到输出文件。目前支持的模板语言为[handlebars](http://handlebarsjs.com/)。
 
-```bash
-nei template [参数]
-```
+[详细查看](https://github.com/NEYouFan/nei-toolkit)
 
-`nei template` 指令可用的参数包括:
+## FAQ
 
-| 简写 | 全称 | 默认值 | 描述 |
-| :--- | :--- | :--- | :--- |
-| -h | --help | | 显示 template 命令帮助信息 |
-| -o | --output | ./ | 输出路径 |
-| -p | --path |  | 本地模板路径，必须指定 |
-| -d | --data |  | 数据json文件路径,可选 |
-| -b | --handlebars |  | 自定义handlebars辅助函数文件路径,可选 |
-| -w | --overwrite | false | 是否覆盖已存在的文件 |
 
-用户可以指定数据文件，如`data.json`的文件内容如下:
-```json
-{
-  "project":{
-    "name" : "test",
-    "version" : "0.0.1"
-  },
-  "author":{
-    "Netease"
-  }
-}
-```
-然后用户就可以在模板文件中访问到数据中的数据，如`{{project.name}}`就能够解析为`test`。用户同样可以指定本地handlebars辅助文件，如果用户有多个辅助函数，需要将这些都写到一个文件中，自定义辅助函数的写法与上文一致，参照[此链接](https://github.com/NEYouFan/nei-toolkit/blob/master/doc/Handlebars%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0%E9%9B%86.md#如何撰写自定义handlebars辅助函数)相同。 另外用户也可以不通过指定数据json文件来传入数据，可以通过命令行直接传入数据参数，如：
-```bash
-nei template -ProductName Test -Prefix HT [其他参数]
-```
-ProductName和Prefix这两个参数就会作为数据传入到模板中，其等同于
-```json
-{
-  "args":{
-    "ProductName" : "Test",
-    "Prefix":  "HT"
-  }
-}
-```
-如果同时指定了数据文件，将会执行merge操作，其中命令行参数指定的方式优先于数据json文件方式。
-### 设置输出信息级别
-共设有"all"、"debug"、"info"、"warn"、"error"、"off"等日志级别，级别顺序由大到小，通过`--logLevel`指定一个级别之后，比该级别小的日志级别信息都将会显示出来，比如：
-```bash
-nei build -k xxxxxxxx --logLevel info
-```
-那么所有info以下级别(即warn、error)级别的信息都将会显示出来。当指定为off的时候，所有日志信息都将关闭。
 
 ## 感谢
 
