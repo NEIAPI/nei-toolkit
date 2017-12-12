@@ -3,7 +3,6 @@
     <head>
       <meta name="referrer" content="origin">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="shortcut icon" href="favicon.ico">
       <title>NEI</title>
       <style>
         body {
@@ -377,11 +376,56 @@
     
         #search{
           float: right;
+          width: 20%;
+        }
+
+        .search-animation{
+          -webkit-transition: width .35s ease-in-out;
+          transition: width .35s ease-in-out;
+        }
+
+        #search:focus{
           width: 50%;
         }
 
         body{
           margin:0px;
+        }
+
+        .spec{
+          float: right;
+          font-size: 10pt;
+          margin-left: 5px;
+        }
+
+        .spec a{
+          color: black;
+        }
+
+        .access a{
+          color: black;
+        }
+
+        .access{
+          float: right;
+          font-size: 10pt;
+        }
+
+        .container{
+          width: 100%;
+        }
+
+        .container tbody{
+          width: 100%;
+          padding-right: 20px;
+        }
+
+        .athing:hover{
+          background-color: #fff;
+        }
+
+        .athing .title2{
+          padding-right: 20px;
         }
 
       </style>
@@ -410,23 +454,23 @@
               </table>
             </td>
           </tr>
-          <tr style="height:10px"></tr>
+          <tr style="height:5px"></tr>
           <tr>
             <td>
-              <table border="0" cellpadding="0" cellspacing="0" class="itemlist">
-    
-    
+              <table border="0" cellpadding="0" cellspacing="0" class="container">
                 <% list.forEach(function(item,index) {%>
                   <tr class='athing'>
                     <td align="right" valign="top" class="title">
                       <span class="rank">
                         <%=++index %>.</span>
                     </td>
-                    <td class="title">
+                    <td class="title title2">
                       <% if(item.isApi) { %>
                         <a href="<%= item.url %>" target="_blank" class="storylink" rel="nofollow" style="color:black">
                           <%= item.name %>
                         </a>
+                        <span class="spec"><a target="_blank" href="https://nei.netease.com/interface/detail/?pid=<%=projectId%>&id=<%=item.id%>">详情</a></span>
+                        <span class="access"><a target="_blank" href="<%= item.url %>">访问</a></span>
                         <div class="sitebit comhead">
                             <%=item.url%></div>
                         <% }else { %>
@@ -434,7 +478,11 @@
                             <%= item.name %>
                           </a>
                           <span class="sitebit comhead">
-                              <%=item.url%></span>
+                            <%=item.url%></span>
+                            <span class="spec">
+                              <a target="_blank" href="https://nei.netease.com/page/detail/?pid=<%=projectId%>&id=<%=item.id%>">详情</a>
+                            </span>
+                            <span class="access"><a target="_blank" href="<%= item.url %>">访问</a></span>
                           <% } %>
                             
                     </td>
@@ -494,6 +542,7 @@
       $(function () {
     
         $("input").focus();
+        $("input").addClass('.search-animation');
     
         var ss = <%-JSON.stringify(list)%>
         
