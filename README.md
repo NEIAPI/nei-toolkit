@@ -12,6 +12,7 @@
     * server相比build的配置参数的作用效果优先级更高。
     * build的参数设置是持久到默认配置文件的，也就是磁盘上。
 * `server`命令额外添加`--proxy-model`、`--proxy-routes`、`--user-agent`、`--mode-on`、`--dev-domain`等命令参数配置，具体使用可查看下面文档.
+* 优化mock静态页，增加快速索引入口
 
 ### 安装
 
