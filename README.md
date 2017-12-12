@@ -11,7 +11,7 @@
 * `build|server`命令开放`--port`、`--reload`、`--launch`等命令参数，
     * server相比build的配置参数的作用效果优先级更高。
     * build的参数设置是持久到默认配置文件的，也就是磁盘上。
-* `server`命令额外添加`--proxy-model`、`--proxy-routes`、`--user-agent`、`--mode-on`等命令参数配置，具体使用可查看下面文档.
+* `server`命令额外添加`--proxy-model`、`--proxy-routes`、`--user-agent`、`--mode-on`、`--dev-domain`等命令参数配置，具体使用可查看下面文档.
 
 ### 安装
 
@@ -97,15 +97,7 @@ nei server [参数]
 | -pr :new: | --proxy-routes |  | 是否启用远程代理异步接口数据,默认打开 |
 | -ua :new: | --user-agent |  | 客户端标识,默认为值pc,此外还可以取值为mobile. |
 
-#### 范例一 命令行交互式选择开发模式
-
-> 启动目录为 ./demo 下的项目:
-
-```bash
-nei server  -o mock/demo -r false -l false -pm false -p 8002 -pr true  -ua pc -name demo -mo
-```
-
-#### 范例二 
+#### 范例
 
 在工程中自定义配置文件`${projectRootDir}/nei.config.js`:
 
@@ -144,12 +136,12 @@ module.exports = {
 ```
 
 ```
-nei server  -o mock/demo -r false -l false -pm false -p 8002 -pr true  -ua pc -name demo -mo -i './nei.config.js'
+nei server  -o mock/demo -pm false -p 8002 -pr true  -ua pc -name demo -mo -i './nei.config.js' -d l.icourse163.org
 ```
 
 >! 注意自定义配置文件必须以字符串的形式进行输入
 
-#### 效果示例
+示例([full size](https://github.com/techbirds/nei-toolkit/raw/edu-fmpp/doc/res/server.gif))
 
 ![path](./doc/res/server.gif)
 
