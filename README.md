@@ -7,7 +7,7 @@
 ### 特点
 
 * 以交互命令行的方式来一键切换前后端分离开发模式
-* 开放自定义配置文件入口，实现一次配置永久生效。这里你放心update，注释信息丢不了。
+* 开放自定义配置文件入口，实现一次配置永久生效。(可以放心update，注释信息丢不了.)
 * `build|server`命令开放`--port`、`--reload`、`--launch`等命令参数，
     * server相比build的配置参数的作用效果优先级更高。
     * build的参数设置是持久到默认配置文件的，也就是磁盘上。
@@ -142,8 +142,10 @@ module.exports = {
 ```
 
 ```
-nei server  -o mock/demo -r false -l false -pm false -p 8002 -pr true  -ua pc -name demo -mo -i ./nei.config.js
+nei server  -o mock/demo -r false -l false -pm false -p 8002 -pr true  -ua pc -name demo -mo -i './nei.config.js'
 ```
+
+注意自定义配置文件必须以字符串的形式进行输入
 
 #### 效果示例
 
@@ -189,6 +191,7 @@ nei update
 
 1. 暂不支持Windows下`Git Bash`的命令行交互效果. [Git Bash support on Windows](https://github.com/SBoudrias/Inquirer.js/issues/570)
 2. Mac OS X下执行命令遇到权限问题，可以考虑尝试在命令前面加`sudo`  
+3. 代理模式出现问题后，优先确定vpn开了吗？host绑定了吗?
 
 ## 感谢
 
