@@ -377,7 +377,13 @@
     
         #search{
           float: right;
+          width: 50%;
         }
+
+        body{
+          margin:0px;
+        }
+
       </style>
     </head>
     
@@ -392,7 +398,7 @@
                     <span class="pagetop">
                       <b class="hnname">
                         <span style="color:#fff">NEI Mock</span>
-                        <input type="text" name="q" id="search" placeholder="input search">
+                        <input type="text" name="q" id="search" placeholder="search">
                       </b>
                     </span>
                   </td>
@@ -421,13 +427,16 @@
                         <a href="<%= item.url %>" target="_blank" class="storylink" rel="nofollow" style="color:black">
                           <%= item.name %>
                         </a>
+                        <div class="sitebit comhead">
+                            <%=item.url%></div>
                         <% }else { %>
                           <a href="<%= item.url %>" target="_blank" class="storylink" rel="nofollow" style="color:black">PAGE
                             <%= item.name %>
                           </a>
+                          <span class="sitebit comhead">
+                              <%=item.url%></span>
                           <% } %>
-                            <span class="sitebit comhead">(
-                              <%=item.url%>)</span>
+                            
                     </td>
                   </tr>
                   <tr class="spacer" style="height:5px"></tr>
