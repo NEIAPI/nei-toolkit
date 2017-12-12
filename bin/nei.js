@@ -110,6 +110,7 @@ var options = {
             config['user-agent'] = 'mobile';
             break;
         }
+        config['mode'] = value.mode;
         main.server(config);
       });
     }else{

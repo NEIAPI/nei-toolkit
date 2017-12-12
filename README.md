@@ -91,6 +91,7 @@ nei server [参数]
 | -l :new: | --launch |  | 是否自动打开浏览器,默认是启动的. |
 | -p :new: | --port |  | 端口,默认为8002 |
 | -i :new: | --config-path |  | 用户自定义配置文件路径,默认为build初始生成的server.config.js文件，用户定义的配置优先级比默认配置高|
+| -d :new: | --dev-domain |  | 用户自定义开发域名,通常是代理域名的子域名,默认是localhost.|
 | -mo :new: | --mode-on |  | 是否启用开发模式选择,默认关闭的 |
 | -pm :new: | --proxy-model |  | 是否启用远程代理模型数据,默认打开 |
 | -pr :new: | --proxy-routes |  | 是否启用远程代理异步接口数据,默认打开 |

@@ -269,6 +269,12 @@ module.exports = {
       "m": "用户自定义配置文件路径,默认为build初始生成的server.config.js文件"
     },
     {
+      "j": "d",
+      "q": "dev-domain",
+      "d": 'localhost',
+      "m": "用户自定义开发域名,通常是代理域名的子域名,默认是localhost."
+    },
+    {
       "j": "mo",
       "q": "mode-on",
       "d": "false",
