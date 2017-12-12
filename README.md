@@ -53,7 +53,7 @@ nei build -k [key] [参数]
 | -h | --help |  | 显示 build 命令的帮助信息 |
 | -o | --output | ./ | 指定项目的输出目录 |
 | -k | --key |  | 项目的唯一标识，可以在项目的"工具(设置)"中查看 |
-| -r :new: | --reload |  | 是否监听静态文件和模板文件的变化并自动刷新浏览器,默认是监听的. |
+| -r :new: | --reload |  | 是否开启监听静态文件和模板文件的变化并自动刷新浏览器,默认是关闭的. |
 | -l :new: | --launch |  | 是否自动打开浏览器,默认是启动的. |
 | -p :new: | --port |  | 端口,默认为8002 |
 | -sk| --specKey |  | 规范的唯一标识，可以在规范的"规范设置"中查看 |
@@ -65,7 +65,8 @@ nei build -k [key] [参数]
 在当前目录下构建 key 为 xyz 的项目：
 
 ```bash
-nei build -k xyz -o mock/demo -r false -l false
+nei build -k xyz -o mock/demo -l false  # 关闭打开浏览器，默认关闭监听文件变更
+nei build -k xyz -o mock/demo -r true   # 手动设置打开监听文件变更,默认打开浏览器
 ```
 
 注: build中的`-r`,`-l`的配置最终能持久到配置文件. 这点是不同于server中的`-r`,`-l`.
@@ -86,7 +87,7 @@ nei server [参数]
 | -o | --output | ./ | 已构建项目的输出路径 |
 | -k | --key |  | 需要启动的项目的唯一标识 |
 | -n :new: | --name |  | 应用名称,默认app |
-| -r :new: | --reload |  | 是否监听静态文件和模板文件的变化并自动刷新浏览器,默认是监听的. |
+| -r :new: | --reload |  | 是否启用监听静态文件和模板文件的变化并自动刷新浏览器,默认是关闭监听的. |
 | -l :new: | --launch |  | 是否自动打开浏览器,默认是启动的. |
 | -p :new: | --port |  | 端口,默认为8002 |
 | -i :new: | --config-path |  | 用户自定义配置文件路径,默认为build初始生成的server.config.js文件，用户定义的配置优先级比默认配置高|
@@ -105,7 +106,7 @@ nei server  -o mock/demo -r false -l false -pm false -p 8002 -pr true  -ua pc -n
 
 #### 范例二 
 
-工程自定义配置文件`${projectRootDir}/nei.config.js`:
+在工程中自定义配置文件`${projectRootDir}/nei.config.js`:
 
 ```js
 var path = require('path');
@@ -145,7 +146,7 @@ module.exports = {
 nei server  -o mock/demo -r false -l false -pm false -p 8002 -pr true  -ua pc -name demo -mo -i './nei.config.js'
 ```
 
-注意自定义配置文件必须以字符串的形式进行输入
+>! 注意自定义配置文件必须以字符串的形式进行输入
 
 #### 效果示例
 
