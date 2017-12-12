@@ -6,11 +6,12 @@
 
 ### 特点
 
-> 交互命令行的方式来一键切换前后端分离模式
-
-* `build|server`命令开放`--port`、`--reload`、`--launch`等命令参数配置，具体使用可查看下面文档.
-* `server`命令新增`--launch`、`--proxy-model`、`--proxy-routes`、`--user-agent`、`--mode-on`等命令参数配置，具体使用可查看下面文档.
-* `server`新增`--config-path`选项，用以开放自定义`server.config.js`配置的入口,轻松做到让`server.config.js`跟着项目走.
+* 以交互命令行的方式来一键切换前后端分离开发模式
+* 开放自定义配置文件入口，实现一次配置永久生效。这里你放心update，注释信息丢不了。
+* `build|server`命令开放`--port`、`--reload`、`--launch`等命令参数，
+    * server相比build的配置参数的作用效果优先级更高。
+    * build的参数设置是持久到默认配置文件的，也就是磁盘上。
+* `server`命令额外添加`--proxy-model`、`--proxy-routes`、`--user-agent`、`--mode-on`等命令参数配置，具体使用可查看下面文档.
 
 ### 安装
 
@@ -64,16 +65,10 @@ nei build -k [key] [参数]
 在当前目录下构建 key 为 xyz 的项目：
 
 ```bash
-nei build -k xyz
+nei build -k xyz -o mock/demo -r false -l false
 ```
 
-规范也可以独立于项目生成脚手架文件, 在当前目录下构建 key 为 xyz 的规范：
-
-```bash
-nei build -sk xyz
-```
-
->注意: 如果 k 和 sk 参数同时存在, 系统会优先考虑 sk 参数
+注: build中的`-r`,`-l`的配置最终能持久到配置文件. 这点是不同于server中的`-r`,`-l`.
 
 ### server
 

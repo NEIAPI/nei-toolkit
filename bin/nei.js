@@ -76,18 +76,18 @@ var options = {
       inquirer
       .prompt([{
         type: 'list',
-        message: '请选择开发模式:\n',
+        message: '请选择开发模式:',
         name: 'mode',
         choices: [{
-            name: '1. 本地mock模式 + pc',
+            name: '本地mock模式',
             value: 1
           },
           {
-            name: '2. 远程mock模式 + pc',
+            name: '远程mock模式 + pc',
             value: 2
           },
           {
-            name: '3. 远程mock模式 + mobile',
+            name: '远程mock模式 + mobile',
             value: 3
           }
         ]
