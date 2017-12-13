@@ -214,13 +214,13 @@ nei update
 1. 暂不支持Windows下`Git Bash`的命令行交互效果. [Git Bash support on Windows](https://github.com/SBoudrias/Inquirer.js/issues/570)
 2. Mac OS X下执行命令遇到权限问题，可以考虑尝试在命令前面加`sudo`  
 
-## 感谢
+## 感谢
 
 * [NEI](https://nei.netease.com)
 * [NEI-Toolkit](https://github.com/NEYouFan/nei-toolkit)
 
-## 联系
+## 联系
 
-此分支目前由`hzwangdong5@corp.netease.com`维护，有任何问题可以popo他.
+此分支目前由`hzwangdong5@corp.netease.com`维护，有任何问题可以popo他.
 
 
