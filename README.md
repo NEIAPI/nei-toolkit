@@ -221,6 +221,6 @@ nei update
 
 ## 联系
 
-此分支目前由`hzwangdong5@corp.netease.com`维护，有任何问题可以popo他.
+此分支目前由`hzwangdong5@corp.netease.com`维护，有任何问题可以popo他.
 
 
