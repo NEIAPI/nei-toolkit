@@ -26,7 +26,7 @@ npm install "techbirds/nei-toolkit#edu-fmpp" -g
 
 > 以`中M`后台工程作为范例
 
-1. 在工程中自定义配置文件`${projectRootDir}/nei.config.js`:
+Ⅰ. 在工程中自定义配置文件`${projectRootDir}/nei.config.js`:
 
 ```js
 var path = require('path');
@@ -62,7 +62,7 @@ module.exports = {
 };
 ```
 
-2. 定义`NPM Script`
+Ⅱ. 定义`NPM Script`
 
 ```json
 "scripts": {
@@ -76,7 +76,7 @@ module.exports = {
 >  1. 只保留`NEI`相关的脚本.
 >  2. 注意自定义配置文件必须以字符串的形式进行输入
 
-3. 执行`NPM Script`
+Ⅲ. 执行`NPM Script`
 
 ```bash
 npm run server
