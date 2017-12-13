@@ -66,8 +66,7 @@ nei build -k [key] [参数]
 在当前目录下构建 key 为 xyz 的项目：
 
 ```bash
-nei build -k xyz -o mock/demo -l false  # 关闭打开浏览器，默认关闭监听文件变更
-nei build -k xyz -o mock/demo -r true   # 手动设置打开监听文件变更,默认打开浏览器
+nei build -k xyz -o mock/demo 
 ```
 
 注: build中的`-r`,`-l`的配置最终能持久到配置文件. 这点是不同于server中的`-r`,`-l`.
@@ -98,9 +97,11 @@ nei server [参数]
 | -pr :new: | --proxy-routes |  | 是否启用远程代理异步接口数据,默认打开 |
 | -ua :new: | --user-agent |  | 客户端标识,默认为值pc,此外还可以取值为mobile. |
 
-#### 范例
+#### 以`中M`后台工程作为范例
 
-在工程中自定义配置文件`${projectRootDir}/nei.config.js`:
+
+
+1. 在工程中自定义配置文件`${projectRootDir}/nei.config.js`:
 
 ```js
 var path = require('path');
@@ -136,15 +137,39 @@ module.exports = {
 };
 ```
 
-```
-nei server  -o mock/demo -pm false -p 8002 -pr true  -ua pc -name demo -mo -i './nei.config.js' -d l.icourse163.org
+2. 定义`NPM Script`
+
+```json
+"scripts": {
+    "server": "nei server -o mock/admin -n admin -i ./nei.config.js -d l.icourse163.org -mo",
+    "build": "nei build -k 5651e86a86c141c7b8a32de7c8e1e60f -o mock/admin",
+    "update": "nei update -o mock/admin -w true"
+    ...
+}
 ```
 
->! 注意自定义配置文件必须以字符串的形式进行输入
+>  1. 只保留`NEI`相关的脚本.
+>  2. 注意自定义配置文件必须以字符串的形式进行输入
 
-示例([full size](https://github.com/techbirds/nei-toolkit/raw/edu-fmpp/doc/res/server.gif))
+3. 执行`NPM Script`
+
+```bash
+npm run server
+```
+
+> 提醒: 如果需要远程mock，提前需要开启vpn、host.
+
+示例1(本地mock)([Full Size](https://github.com/techbirds/nei-toolkit/raw/edu-fmpp/doc/res/server.gif))
 
 ![path](./doc/res/server.gif)
+
+示例2(远程mock)([Full Size](https://github.com/techbirds/nei-toolkit/raw/edu-fmpp/doc/res/server2.gif))
+
+![path](./doc/res/server2.gif)
+
+示例2(mock页操作)([Full Size](https://github.com/techbirds/nei-toolkit/raw/edu-fmpp/doc/res/mock.gif))
+
+![path](./doc/res/mock.gif)
 
 
 ### update
@@ -186,7 +211,6 @@ nei update
 
 1. 暂不支持Windows下`Git Bash`的命令行交互效果. [Git Bash support on Windows](https://github.com/SBoudrias/Inquirer.js/issues/570)
 2. Mac OS X下执行命令遇到权限问题，可以考虑尝试在命令前面加`sudo`  
-3. 代理模式出现问题后，优先确定vpn开了吗？host绑定了吗?
 
 ## 感谢
 
