@@ -22,6 +22,81 @@ npm install "techbirds/nei-toolkit#edu-fmpp" -g
 
 > 安装以后需要删除原有项目中mock目录，然后重新build下.
 
+## 最佳实践
+
+> 以`中M`后台工程作为范例
+
+1. 在工程中自定义配置文件`${projectRootDir}/nei.config.js`:
+
+```js
+var path = require('path');
+module.exports = {
+  /* 代理路由 */
+  proxyRoutes: {
+    "ALL /web/j/*": "http://www.icourse163.org",
+    "ALL /dwr/call/plaincall/*": "http://www.icourse163.org",
+  },
+  /* 注入给页面的模型数据的服务器配置 */
+  modelServer: {
+    // 完整的主机地址，包括协议、主机名、端口
+    host: 'http://www.icourse163.org',
+    // 查询参数
+    queries: {
+      "format": "json"
+    },
+    // 自定义请求头
+    headers: {},
+    // path 可以是字符串，也可以是函数；默认不用传，即使用 host + 页面path + queries 的值
+    // 如果是函数，则使用函数的返回值，传给函数的参数 options 是一个对象，它包含 host、path（页面的path）、queries、headers 等参数
+    // 如果 path 的值为假值，则使用 host + 页面path + queries 的值；
+    // 如果 path 的值是相对地址，则会在前面加上 host
+    path: function (option) {
+      "use strict";
+      if ((/index\.htm/).test(option.path)) {
+        return "/";
+      } else {
+        return false;
+      }
+    }
+  }
+};
+```
+
+2. 定义`NPM Script`
+
+```json
+"scripts": {
+    "server": "nei server -o mock/admin -n admin -i ./nei.config.js -d l.icourse163.org -mo",
+    "build": "nei build -k 5651e86a86c141c7b8a32de7c8e1e60f -o mock/admin",
+    "update": "nei update -o mock/admin -w true"
+    ...
+}
+```
+
+>  1. 只保留`NEI`相关的脚本.
+>  2. 注意自定义配置文件必须以字符串的形式进行输入
+
+3. 执行`NPM Script`
+
+```bash
+npm run server
+```
+
+> 提醒: 如果需要远程mock，提前需要开启vpn、host.
+
+示例1(本地mock)([Full Size](https://github.com/techbirds/nei-toolkit/raw/edu-fmpp/doc/res/server.gif))
+
+![path](./doc/res/server.gif)
+
+示例2(远程mock)([Full Size](https://github.com/techbirds/nei-toolkit/raw/edu-fmpp/doc/res/server2.gif))
+
+![path](./doc/res/server2.gif)
+
+示例2(mock页操作)([Full Size](https://github.com/techbirds/nei-toolkit/raw/edu-fmpp/doc/res/mock.gif))
+
+![path](./doc/res/mock.gif)
+
+
 ## 指令说明
 
 本工具使用时在终端或者命令行输入以下格式指令运行
@@ -98,80 +173,6 @@ nei server [参数]
 | -pm :new: | --proxy-model |  | 是否启用远程代理模型数据,默认打开 |
 | -pr :new: | --proxy-routes |  | 是否启用远程代理异步接口数据,默认打开 |
 | -ua :new: | --user-agent |  | 客户端标识,默认为值pc,此外还可以取值为mobile. |
-
-#### 以`中M`后台工程作为范例
-
-
-
-1. 在工程中自定义配置文件`${projectRootDir}/nei.config.js`:
-
-```js
-var path = require('path');
-module.exports = {
-  /* 代理路由 */
-  proxyRoutes: {
-    "ALL /web/j/*": "http://www.icourse163.org",
-    "ALL /dwr/call/plaincall/*": "http://www.icourse163.org",
-  },
-  /* 注入给页面的模型数据的服务器配置 */
-  modelServer: {
-    // 完整的主机地址，包括协议、主机名、端口
-    host: 'http://www.icourse163.org',
-    // 查询参数
-    queries: {
-      "format": "json"
-    },
-    // 自定义请求头
-    headers: {},
-    // path 可以是字符串，也可以是函数；默认不用传，即使用 host + 页面path + queries 的值
-    // 如果是函数，则使用函数的返回值，传给函数的参数 options 是一个对象，它包含 host、path（页面的path）、queries、headers 等参数
-    // 如果 path 的值为假值，则使用 host + 页面path + queries 的值；
-    // 如果 path 的值是相对地址，则会在前面加上 host
-    path: function (option) {
-      "use strict";
-      if ((/index\.htm/).test(option.path)) {
-        return "/";
-      } else {
-        return false;
-      }
-    }
-  }
-};
-```
-
-2. 定义`NPM Script`
-
-```json
-"scripts": {
-    "server": "nei server -o mock/admin -n admin -i ./nei.config.js -d l.icourse163.org -mo",
-    "build": "nei build -k 5651e86a86c141c7b8a32de7c8e1e60f -o mock/admin",
-    "update": "nei update -o mock/admin -w true"
-    ...
-}
-```
-
->  1. 只保留`NEI`相关的脚本.
->  2. 注意自定义配置文件必须以字符串的形式进行输入
-
-3. 执行`NPM Script`
-
-```bash
-npm run server
-```
-
-> 提醒: 如果需要远程mock，提前需要开启vpn、host.
-
-示例1(本地mock)([Full Size](https://github.com/techbirds/nei-toolkit/raw/edu-fmpp/doc/res/server.gif))
-
-![path](./doc/res/server.gif)
-
-示例2(远程mock)([Full Size](https://github.com/techbirds/nei-toolkit/raw/edu-fmpp/doc/res/server2.gif))
-
-![path](./doc/res/server2.gif)
-
-示例2(mock页操作)([Full Size](https://github.com/techbirds/nei-toolkit/raw/edu-fmpp/doc/res/mock.gif))
-
-![path](./doc/res/mock.gif)
 
 
 ### update
