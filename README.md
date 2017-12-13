@@ -20,6 +20,8 @@
 npm install "techbirds/nei-toolkit#edu-fmpp" -g
 ```
 
+> 安装以后需要删除原有项目中mock目录，然后重新build下.
+
 ## 指令说明
 
 本工具使用时在终端或者命令行输入以下格式指令运行
