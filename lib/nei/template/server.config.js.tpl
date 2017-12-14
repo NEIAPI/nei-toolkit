@@ -38,7 +38,7 @@ module.exports = {
         // 如果 path 的值为假值，则使用 host + 页面path + queries 的值；
         // 如果 path 的值是相对地址，则会在前面加上 host
         {{#if modelServer.path}}
-        path: {{{FunctionStringify modelServer.path}}}
+        path: {{{modelServer.path}}}
         {{else}}
         // path: function (options) {
         //
