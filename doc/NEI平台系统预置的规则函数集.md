@@ -167,4 +167,14 @@ console.log(NEI.repeat(10, NEI.url, 'https')); // 输出一个数组，它有 10
 console.log(NEI.loop(3)); // 当存在循环引用时（比如树型结构的数据）, 生成 3 层数据
 ```
 
+### null
+
+返回 null 值
+
+使用方法:
+
+```js
+console.log(NEI.null());
+```
+
 
