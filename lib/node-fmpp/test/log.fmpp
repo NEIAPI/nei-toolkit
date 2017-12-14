@@ -1,0 +1,15 @@
+FMPP log file
+Log file created: Fri Oct 27 17:53:57 CST 2017
+
+===============================================================================
+PROCESSING SESSION STARTED: Fri Oct 27 17:53:57 CST 2017
+FMPP version: 0.9.15 (using FreeMarker 2.3.21)
+
+===============================================================================
+END OF PROCESSING SESSION
+
+Summary:
+4 executed + 0 xmlRendered + 0 copied = 4 successfully processed
+0 failed, 0 warning(s)
+Time elapsed: 0.367 seconds
+===============================================================================
