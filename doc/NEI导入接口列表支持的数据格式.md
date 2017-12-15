@@ -48,17 +48,17 @@ export class Datatype{
 
 | 属性        | 含义                                                                           |
 | :---        | :---                                                                           |
-| name        | 该数据类型的名称，当为空的时候， 为匿名类型。 详细请看[匿名类型](####匿名类型) |
+| name        | 该数据类型的名称，当为空的时候， 为匿名类型。 详细请看[匿名类型](#匿名类型) |
 | description | 该数据类型的介绍                                                               |
-| format      | 枚举值，参看 [DatatypeFormatEnum](####DatatypeFormatEnum)                      |
-| params      | 即该数据模型包含的所有参数数组,每一项的详细定义为[Parameter](####Parameter)    |
+| format      | 枚举值，参看 [DatatypeFormatEnum](#DatatypeFormatEnum)                      |
+| params      | 即该数据模型包含的所有参数数组,每一项的详细定义为[Parameter](#Parameter)    |
 | tag         | 该数据模型的分组(目前未实现该功能，暂且忽略该字段)                             |
-| type        | 枚举值，参看 [DatatypeTypeEnum](####DatatypeTypeEnum)                          |
-| id          | 可选值,在创建[匿名类型](###匿名类型)时候需要，其他情况下忽略该字段             |
+| type        | 枚举值，参看 [DatatypeTypeEnum](#DatatypeTypeEnum)                          |
+| id          | 可选值,在创建[匿名类型](#匿名类型)时候需要，其他情况下忽略该字段             |
 
 #### DatatypeTypeEnum
 
-该值是对数据类型分类的定义，在NEI中，数据模型分为系统预置的系统类型、用户创建的数据类型以及 [匿名类型](###匿名类型)。
+该值是对数据类型分类的定义，在NEI中，数据模型分为系统预置的系统类型、用户创建的数据类型以及 [匿名类型](#匿名类型)。
 所有值如下:
 
 |   值 | 含义               |
@@ -89,7 +89,7 @@ export class Parameter {
 | :---          | :---                                                                                            |
 | name          | 该数据参数的名称，可以为空                                                                      |
 | description   | 该数据类型的介绍, 可以用空                                                                      |
-| datatypeName  | 导入类型的数据模型名字,详细看 [导入类型](###导入类型)                                           |
+| datatypeName  | 导入类型的数据模型名字,详细看 [导入类型](#导入类型)                                           |
 | defaultValue  | 该参数的默认值,请转换为字符串                                                                   |
 | genExpression | 该参数的生成方法，用于生成mock数据，可以忽略                                                    |
 | isArray       | 表明该参数是不是一个数组                                                                        |
@@ -135,9 +135,9 @@ export class NEIInterfaceBean {
 | :---        | :---                                                         |
 | name        | 该接口的名称，不能为空                                       |
 | description | 该接口的介绍, 不能为空                                       |
-| method      | 枚举值，参看 [InterfaceMethodEnum](####InterfaceMethodEnum)  |
+| method      | 枚举值，参看 [InterfaceMethodEnum](#InterfaceMethodEnum)  |
 | tags        | 接口分组，目前未实现该功能                                   |
-| param       | 接口的参数，详看[NeiInterfaceParams](####NeiInterfaceParams) |
+| param       | 接口的参数，详看[NeiInterfaceParams](#NeiInterfaceParams) |
 | path        | 该接口访问路径                                               |
 | className   | 该接口的代码映射                                             |
 
@@ -164,8 +164,8 @@ export class NeiInterfaceParams{
 
 | 属性    | 含义                                                    |
 | :---    | :---                                                    |
-| inputs  | 该接口的请求参数, 其定义参看 [Parameter](####Parameter) |
-| outputs | 该接口的响应参数, 其定义参看 [Parameter](####Parameter) |
+| inputs  | 该接口的请求参数, 其定义参看 [Parameter](#Parameter) |
+| outputs | 该接口的响应参数, 其定义参看 [Parameter](#Parameter) |
 
 
 
