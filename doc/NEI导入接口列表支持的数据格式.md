@@ -66,7 +66,6 @@ export class Datatype{
 |    0 | 用户创建的数据类型 |
 |    1 | 系统类型           |
 |    2 | 匿名类型           |
-|      |                    |
 
 所以在一般情况下，你设为0即可
 
@@ -167,7 +166,7 @@ export class NeiInterfaceParams{
 | :---    | :---                                                    |
 | inputs  | 该接口的请求参数, 其定义参看 [Parameter](####Parameter) |
 | outputs | 该接口的响应参数, 其定义参看 [Parameter](####Parameter) |
-|         |                                                         |
+
 
 
 ### 匿名类型
