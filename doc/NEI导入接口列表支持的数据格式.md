@@ -25,7 +25,7 @@ Swagger格式目前支持yaml格式的文件导入。 暂时*还不(马上就要
 }
 ```
 
-这里以及下文均使用了TypeScript定义, 即":"的右边是该值的类型定义。比如说上面的"datatypes"， 他是一个NEIDatatype类型的数组。
+这里以及下文均使用了TypeScript定义, 即":"的右边是该值的类型定义。比如说上面的"datatypes"， 他是一个[NEIDatatype](#NEIDatatype)类型的数组, interfaces是一个[NEIInterface](#NEIInterface)类型的数组
 
 你最终是要导出一个类似这样的json。
 下面对各个类进行定义。
