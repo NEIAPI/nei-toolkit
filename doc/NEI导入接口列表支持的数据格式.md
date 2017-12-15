@@ -11,57 +11,51 @@ Swagger格式目前支持yaml格式的文件导入。 暂时*还不(马上就要
 如果你的项目并不是使用swagger这类标准来定义接口， 此时要批量导入接口和数据类型定义，除了转换为Swagger标准(如果你熟悉它的话)，你也可以直接生成我们NEI的数据格式来实现该功能。下面将详细介绍该格式。
 
 ### 格式
+
 #### 最外层数据
 
-```json
+```text
 {
-  "datatypes": Array<[NEIDatatype](#NEIDatatype)>,
-  "interfaces": Array<[NEIInterface](#NEIInterface)>
+  "datatypes": Array<NEIDatatype>,
+  "interfaces": Array<NEIInterface>
 }
 ```
 
-你最终是要导出一个类似这样的json。
+这里以及下文均使用了TypeScript定义, 即":"的右边是该值的类型定义。比如说上面的"datatypes"， 他是一个NEIDatatype类型的数组。
 
-#### NEIDatatype
+你最终是要导出一个类似这样的json。
+下面对各个类进行定义。
+
+#### NEIDatatype 类
+
+```TypeScript
 export class Datatype{
-    description: string;
-    format: number;
     name: string;
+    description: string;
+    format: DatatypeFormatEnum;
     params: Array<Parameter>;
     tag: string;
     type: number = 0;
     id?: number;
 }
-
-
-
-> 注：支持批量导入，数组的每一项表示一个数据模型
-
-> 注：单个数据模型中的 params 表示该数据模型的字段，它是一个数组，数组的每一项表示一个字段
-
-```json
-[
-    {
-        "name": "数据模型的名称",
-        "format": "数据模型的类别, 值是整数，比如 0 表示哈希，见下文解释",
-        "description": "数据模型的描述",
-        "tag": "数据模型的标签，多个标签以逗号分隔",
-        "params": [
-            {
-                "name": "字段的名称",
-                "type": "字段的类型",
-                "description": "字段的描述",
-                "defaultValue": "字段的默认值",
-                "genExpression": "字段的生成规则",
-                "isArray": "字段是否为数组, 值是整数，1 表示是，0 表示否"
-            }
-        ]
-    }
-]
 ```
 
-数据模型可以是哈希，也可以是数组等，使用 `format` 来表示，具体含义如下：
+这里对每一项进行说明，
 
+| 熟悉 | 含义 |
+| :--- | :--- |
+| name | 该数据类型的名称，当为空的时候， 为匿名类型。 详细请看[匿名类型](####匿名类型) |
+| description | 该数据类型的介绍 |
+| format | 枚举值，参看 [DatatypeFormatEnum](####DatatypeFormatEnum)  |
+| 3 | 字符 |
+| 4 | 数值 |
+| 5 | 布尔 |
+| 6 | 文件 |
+
+#### DatatypeFormatEnum
+
+该值是对数据类型自身类型的定义,在NEI上,对于一个数据模型来说，他有Hash、 Enum、File等类型。
+所有值如下:
 | 值 | 含义 |
 | :--- | :--- |
 | 0 | 映射 |
@@ -71,4 +65,36 @@ export class Datatype{
 | 4 | 数值 |
 | 5 | 布尔 |
 | 6 | 文件 |
+
+
+
+
+
+> 注：支持批量导入，数组的每一项表示一个数据模型
+
+> 注：单个数据模型中的 params 表示该数据模型的字段，它是一个数组，数组的每一项表示一个字段
+
+```json
+[
+{
+"name": "数据模型的名称",
+"format": "数据模型的类别, 值是整数，比如 0 表示哈希，见下文解释",
+"description": "数据模型的描述",
+"tag": "数据模型的标签，多个标签以逗号分隔",
+"params": [
+{
+"name": "字段的名称",
+"type": "字段的类型",
+"description": "字段的描述",
+"defaultValue": "字段的默认值",
+"genExpression": "字段的生成规则",
+"isArray": "字段是否为数组, 值是整数，1 表示是，0 表示否"
+}
+]
+}
+]
+```
+
+数据模型可以是哈希，也可以是数组等，使用 `format` 来表示，具体含义如下：
+
 kk
