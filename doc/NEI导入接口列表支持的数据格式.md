@@ -25,12 +25,12 @@ Swagger格式目前支持yaml格式的文件导入。 暂时*还不(马上就要
 }
 ```
 
-这里以及下文均使用了TypeScript定义, 即":"的右边是该值的类型定义。比如说上面的"datatypes"， 他是一个[NEIDatatype](#NEIDatatype)类型的数组, interfaces是一个[NEIInterface](#NEIInterface)类型的数组
+这里以及下文均使用了TypeScript定义, 即":"的右边是该值的类型定义。比如说上面的"datatypes"， 他是一个[NEIDatatype](#neidatatype)类型的数组, interfaces是一个[NEIInterface](#neiinterface)类型的数组
 
 你最终是要导出一个类似这样的json。
 下面对各个类进行定义。
 
-#### NEIDatatype 类
+#### NEIDatatype
 
 ```TypeScript
 export class Datatype{
@@ -50,10 +50,10 @@ export class Datatype{
 | :---        | :---                                                                           |
 | name        | 该数据类型的名称，当为空的时候， 为匿名类型。 详细请看[匿名类型](#匿名类型) |
 | description | 该数据类型的介绍                                                               |
-| format      | 枚举值，参看 [DatatypeFormatEnum](#DatatypeFormatEnum)                      |
-| params      | 即该数据模型包含的所有参数数组,每一项的详细定义为[Parameter](#Parameter)    |
+| format      | 枚举值，参看 [DatatypeFormatEnum](#datatypeformatenum)                      |
+| params      | 即该数据模型包含的所有参数数组,每一项的详细定义为[Parameter](#parameter)    |
 | tag         | 该数据模型的分组(目前未实现该功能，暂且忽略该字段)                             |
-| type        | 枚举值，参看 [DatatypeTypeEnum](#DatatypeTypeEnum)                          |
+| type        | 枚举值，参看 [DatatypeTypeEnum](#datatypetypeenum)                          |
 | id          | 可选值,在创建[匿名类型](#匿名类型)时候需要，其他情况下忽略该字段             |
 
 #### DatatypeTypeEnum
@@ -135,9 +135,9 @@ export class NEIInterfaceBean {
 | :---        | :---                                                         |
 | name        | 该接口的名称，不能为空                                       |
 | description | 该接口的介绍, 不能为空                                       |
-| method      | 枚举值，参看 [InterfaceMethodEnum](#InterfaceMethodEnum)  |
+| method      | 枚举值，参看 [InterfaceMethodEnum](#interfacemethodenum)  |
 | tags        | 接口分组，目前未实现该功能                                   |
-| param       | 接口的参数，详看[NeiInterfaceParams](#NeiInterfaceParams) |
+| param       | 接口的参数，详看[NeiInterfaceParams](#neiinterfaceparams) |
 | path        | 该接口访问路径                                               |
 | className   | 该接口的代码映射                                             |
 
@@ -164,8 +164,8 @@ export class NeiInterfaceParams{
 
 | 属性    | 含义                                                    |
 | :---    | :---                                                    |
-| inputs  | 该接口的请求参数, 其定义参看 [Parameter](#Parameter) |
-| outputs | 该接口的响应参数, 其定义参看 [Parameter](#Parameter) |
+| inputs  | 该接口的请求参数, 其定义参看 [Parameter](#parameter) |
+| outputs | 该接口的响应参数, 其定义参看 [Parameter](#parameter) |
 
 
 
