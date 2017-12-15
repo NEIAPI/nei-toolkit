@@ -104,6 +104,7 @@ export class Parameter {
 
 该值是对数据类型自身类型的定义,在NEI上,对于一个数据模型来说，他有Hash、 Enum、File等类型。
 所有值如下:
+
 |   值 | 含义 |
 | :--- | :--- |
 |    0 | 映射 |
@@ -127,25 +128,46 @@ export class NEIInterfaceBean {
     tags: string;
     params: NeiInterfaceParams;
     path: string;
-    resFormat: number;
 }
 ```
 下面对各个属性进行介绍
 
-| 属性          | 含义                                                                                            |
-| :---          | :---                                                                                            |
-| name          | 该接口的名称，不能为空                                                                          |
-| description   | 该接口的介绍, 不能为空                                                                          |
-| method        | 枚举值，参看 [InterfaceMethodEnum](####InterfaceMethodEnum)         |
-| defaultValue  | 该参数的默认值,请转换为字符串                                                                   |
-| genExpression | 该参数的生成方法，用于生成mock数据，可以忽略                                                    |
-| isArray       | 表明该参数是不是一个数组                                                                        |
-| required      | 表明该参数是否必须                                                                              |
-| type          | 该值只在创建匿名类型的时候需要，为匿名类型的id，即上面的NEIDatetype.id                          |
-| typeName      | 该值的类型定义，比如系统类型"string", "number", "boolean", 以及本json创建的所有NEIDatatype.name |
-
+| 属性        | 含义                                                         |
+| :---        | :---                                                         |
+| name        | 该接口的名称，不能为空                                       |
+| description | 该接口的介绍, 不能为空                                       |
+| method      | 枚举值，参看 [InterfaceMethodEnum](####InterfaceMethodEnum)  |
+| tags        | 接口分组，目前未实现该功能                                   |
+| param       | 接口的参数，详看[NeiInterfaceParams](####NeiInterfaceParams) |
+| path        | 该接口访问路径                                               |
+| className   | 该接口的代码映射                                             |
 
 #### InterfaceMethodEnum
-即HTTP方法，其取值为下(必须为大写):
 
-GET/POST/HEAD/PATCH/PUT/DELETE。
+即HTTP方法，String类型,其取值为下(必须为大写):
+
+- GET
+- POST
+- HEAD
+- PATCH
+- PUT
+- DELETE。
+
+
+#### NeiInterfaceParams
+
+其定义如下:
+
+export class NeiInterfaceParams{
+    inputs: Array<Parameter> = [];
+    outputs: Array<Parameter> = [];
+}
+
+| 属性    | 含义                                                    |
+| :---    | :---                                                    |
+| inputs  | 该接口的请求参数, 其定义参看 [Parameter](####Parameter) |
+| outputs | 该接口的响应参数, 其定义参看 [Parameter](####Parameter) |
+|         |                                                         |
+
+详细的样例请看，
+如果你也是使用TypeScript, 你可以使用， 方便获取上诉定义(依赖Swagger Parser NPM包)
