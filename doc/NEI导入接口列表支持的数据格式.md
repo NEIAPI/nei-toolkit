@@ -90,7 +90,7 @@ export class Parameter {
 | :---          | :---                                                                                            |
 | name          | 该数据参数的名称，可以为空                                                                      |
 | description   | 该数据类型的介绍, 可以用空                                                                      |
-| datatypeName  | 枚举值，参看 [DatatypeFormatEnum](####DatatypeFormatEnum)                                       |
+| datatypeName  | 导入类型的数据模型名字,详细看 [导入类型](###导入类型)                                           |
 | defaultValue  | 该参数的默认值,请转换为字符串                                                                   |
 | genExpression | 该参数的生成方法，用于生成mock数据，可以忽略                                                    |
 | isArray       | 表明该参数是不是一个数组                                                                        |
@@ -169,5 +169,13 @@ export class NeiInterfaceParams{
 | outputs | 该接口的响应参数, 其定义参看 [Parameter](####Parameter) |
 |         |                                                         |
 
-详细的样例请看，
-如果你也是使用TypeScript, 你可以使用， 方便获取上诉定义(依赖Swagger Parser NPM包)
+
+### 匿名类型
+匿名类型是当你不想为一个嵌套的hash map创建一个单独的数据类型而设的。 在NEI平台上，表现形式为将一个参数设置为Object类型，此时你就能继续定义这个Object的键值了。 在导入文件格式中，使用了一个比较triky的方法。你需要为这个NEIDatatype设置一个小于0的id，同时将它的name设为""(空字符串), type字段设为2。 之后在每一个应用该数据模型的地方设置type为该小于0的id值。详细看样例。
+
+### 导入类型
+NEI上可以实现导入类型。我们需要对每一个param加上datatypeName, 这样就能够将这些参数归类在一起。 详细看样例。
+
+
+详细的样例请看[importExample](https://github.com/NEYouFan/nei-toolkit/blob/master/doc/res/importExample.json)。
+如果你也是使用TypeScript, 你可以使用这个[定义文件](https://github.com/NEYouFan/nei-toolkit/blob/master/doc/res/NEIInterfaceBean.ts),方便获取上诉定义(依赖Swagger Parser NPM包)
