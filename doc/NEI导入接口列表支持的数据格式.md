@@ -170,7 +170,61 @@ export class NeiInterfaceParams{
 
 
 ### 匿名类型
-匿名类型是当你不想为一个嵌套的hash map创建一个单独的数据类型而设的。 在NEI平台上，表现形式为将一个参数设置为Object类型，此时你就能继续定义这个Object的键值了。 在导入文件格式中，使用了一个比较triky的方法。你需要为这个NEIDatatype设置一个小于0的id，同时将它的name设为""(空字符串), type字段设为2。 之后在每一个应用该数据模型的地方设置type为该小于0的id值。详细看样例。
+匿名类型是当你不想为一个嵌套的hash map创建一个单独的数据类型而设的。 在NEI平台上，表现形式为将一个参数设置为Object类型，此时你就能继续定义这个Object的键值了。如下图所示:
+![匿名类型](./res/annoymousDS.jpg)
+ 在导入文件格式中，使用了一个比较tricky的方法。你需要为这个NEIDatatype设置一个小于0的id，同时将它的name设为""(空字符串), type字段设为2。 之后在每一个应用该数据模型的地方设置type为该小于0的id值。截图中对应的生成json如下，需要注意的是，第一个匿名类型的id设为-1，使用该匿名类型的result的type设为该id, 即-1。
+
+```json
+{
+  "datatypes": [{
+ 	  "type": 2,
+ 	  "format": 0,
+ 	  "name": "",
+ 	  "id": -1,
+ 	  "params": [{
+ 		"isArray": false,
+ 		"name": "user",
+ 		"required": true,
+ 		"description": "",
+ 		"typeName": "string",
+ 		"type": 10001
+ 	  },{
+ 	    "isArray": false,
+ 		"name": "age",
+ 		"required": true,
+ 		"description": "The type of copyright: C = the copyright, P = the sound recording (performance) copyright.",
+ 		"typeName": "integer",
+ 		"type": 10002
+ 		}
+ 	  ]
+ 	},{
+     	"type": 2,
+     	"format": 0,
+     	"name": "",
+     	"params": [ {
+     	  "isArray": false,
+     	   "name": "result",
+     	   "required": true,
+     	   "description": "The copyright text for this album.",
+     	   "type": -1 // !import
+     	},{
+     	  "isArray": false,
+     	  "name": "type",
+     	  "required": true,
+     	  "description": "",
+     	   "typeName": "string",
+     	   "type": 10001
+     	},{
+           "isArray": false,
+           "name": "message",
+           "required": true,
+           "description": "",
+           "typeName": "string",
+           "type": 10001
+     	}]
+    }]
+}
+```
 
 ### 导入类型
 NEI上可以实现导入类型。我们需要对每一个param加上datatypeName, 这样就能够将这些参数归类在一起。 详细看样例。
