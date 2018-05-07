@@ -29,6 +29,7 @@
 * [NEI 平台系统预置的规则函数集](./doc/NEI平台系统预置的规则函数集.md)
 * [NEI 平台系统批量导入接口及格式说明](./doc/NEI导入接口列表支持的数据格式.md)
 * [使用 NEI 生成 iOS 代码](./doc/使用NEI生成iOS代码.md)
+* [查看项目文档并导出为PDF](./doc/查看项目文档并导出为pdf.md)
 
 ## 插件
 * [Android Studio 插件](./doc/android_studio.md)
