@@ -1,3 +1,8 @@
+3.7.0  (2018-06-11)
+	- freemarker 文件解析错误时，会检测 Java 环境是否安装
+	- Mock data: 生成规则如果直接以 Mock.js 的 Mock 对象开头，都不额外处理 @mock_data.js
+	- Node 版本检测错误修复: @issues81
+
 3.6.9  (2018-01-10)
 	- revert 生成规则的修改
 
