@@ -3,7 +3,7 @@ NEI 目前已经发布了获取 API Mock 数据的在线接口，可以跨域调
 ## 请求地址
 
 ```html
-https://nei.netease.com/api/apimock/:projectKey/:apiPath?v=:interfaceVersionName
+https://nei.netease.com/api/apimock/:projectKey/:apiPath?v=:apiVersionName
 ```
 
 ## 参数说明
@@ -12,7 +12,7 @@ https://nei.netease.com/api/apimock/:projectKey/:apiPath?v=:interfaceVersionName
 | :--- | :--- | :--- | :--- |
 | projectKey | String | 是 | 项目的唯一标识 Key，在项目的设置中查看 |
 | apiPath | String | 是 | NEI 中定义的接口地址 |
-| interfaceVersionName | String | 否 | 接口的版本名称 |
+| apiVersionName | String | 否 | 接口的版本名称 |
 
 > 注意：
 > - 请求的 method 必须和 NEI 中的定义保持一致。
