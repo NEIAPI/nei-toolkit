@@ -8,11 +8,11 @@ https://nei.netease.com/api/apimock/:projectKey/:apiPath?v=:interfaceVersionName
 
 ## 参数说明
 
-名称 | 类型 | 是否必需 | 说明
---- | --- | ---
-projectKey | String | 是 | 项目的唯一标识 Key，在项目的设置中查看
-apiPath | String | 是 | NEI 中定义的接口地址
-interfaceVersionName | String | 否 | 接口的版本名称
+| 名称 | 类型 | 是否必需 | 说明 |
+| :--- | :--- | :--- |
+| projectKey | String | 是 | 项目的唯一标识 Key，在项目的设置中查看 |
+| apiPath | String | 是 | NEI 中定义的接口地址 |
+| interfaceVersionName | String | 否 | 接口的版本名称 |
 
 > 注意：
 > - 请求的 method 必须和 NEI 中的定义保持一致。
