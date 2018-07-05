@@ -45,3 +45,8 @@ fetch(url, {
   console.log(json);
 });
 ```
+
+## 异常情况说明
+
+- 如果生成 Mock 数据的过程中有错误发生，则会把错误信息放在响应结果的 `_nei_apimock_error` 字段中。比如生成规则的代码有语法错误等。
+- 如果生成 Mock 数据花费的时间超过 1000 毫秒，则会报超时错误，此时响应结果是 `Script execution timed out.`。比如生成规则中有死循环。
