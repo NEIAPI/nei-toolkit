@@ -90,3 +90,11 @@ fetch(url, {
 
 - 如果生成 Mock 数据的过程中有错误发生，则会把错误信息放在响应结果的 `_nei_apimock_error` 字段中。比如生成规则的代码有语法错误等。
 - 如果生成 Mock 数据花费的时间超过 1000 毫秒，则会报超时错误，此时响应结果是 `Script execution timed out.`。比如生成规则中有死循环。
+
+## FAQ
+
+Q：在线接口返回 403 没权限是怎么回事？
+
+A：
+1. 请检查接口的发送方式是否正确，注意，在浏览器中直接访问是 `GET` 方式，其他方式需要使用其他工具，比如 [phosphorus](<https://nei.netease.com/phosphorus>)。
+2. 请检查项目的 Key 是否正确。
