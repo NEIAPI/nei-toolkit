@@ -71,7 +71,7 @@ export class Datatype{
 
 #### Parameter
 类型定义如下:
-
+```
 export class Parameter {
     name: string = "";
     description: string="";
@@ -84,6 +84,7 @@ export class Parameter {
     type?: number;
     typeName: string;
 }
+```
 
 | 属性          | 含义                                                                                            |
 | :---          | :---                                                                                            |
