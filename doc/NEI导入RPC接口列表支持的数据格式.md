@@ -12,5 +12,6 @@ NEI 平台目前支持 Rpc Controller 文件 和 NEI 自定义的开放标准来
 
 ## FAQ
 Q：我的 RPC Controller 文件解析失败怎么办？
+
 A：首先请遵守业界比较通用的做法规范，如果还是解析失败，请在 [RPC_to_JSON](https://github.com/huntbao/rpc_to_json) 这个库中提 issue，NEI 的开发人员会尽可能地来实现大家的需求。
 
