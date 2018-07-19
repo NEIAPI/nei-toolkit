@@ -177,58 +177,59 @@ export class NeiInterfaceParams{
 
 ```json
 {
-  "datatypes": [{
- 	  "type": 2,
- 	  "format": 0,
- 	  "name": "",
- 	  "id": -1,
- 	  "params": [{
- 		"isArray": false,
- 		"name": "user",
- 		"required": true,
- 		"description": "",
- 		"typeName": "string",
- 		"type": 10001
+  "datatypes": [
+		{
+			"type": 2,
+			"format": 0,
+			"name": "",
+			"id": -1,
+			"params": [{
+			"isArray": false,
+			"name": "user",
+			"required": true,
+			"description": "",
+			"typeName": "string",
+			"type": 10001
  	  },{
  	    "isArray": false,
- 		"name": "age",
- 		"required": true,
- 		"description": "The type of copyright: C = the copyright, P = the sound recording (performance) copyright.",
- 		"typeName": "integer",
- 		"type": 10002
- 		}
+			"name": "age",
+			"required": true,
+			"description": "The type of copyright: C = the copyright, P = the sound recording (performance) copyright.",
+			"typeName": "integer",
+			"type": 10002
+			}
  	  ]
  	},{
-     	"type": 2,
-     	"format": 0,
-     	"name": "",
-     	"params": [ {
-     	  "isArray": false,
-     	   "name": "result",
-     	   "required": true,
-     	   "description": "The copyright text for this album.",
-     	   "type": -1 // !import
-     	},{
-     	  "isArray": false,
-     	  "name": "type",
-     	  "required": true,
-     	  "description": "",
-     	   "typeName": "string",
-     	   "type": 10001
-     	},{
-           "isArray": false,
-           "name": "message",
-           "required": true,
-           "description": "",
-           "typeName": "string",
-           "type": 10001
-     	}]
-    }]
+		"type": 2,
+		"format": 0,
+		"name": "",
+		"params": [ {
+			"isArray": false,
+			"name": "result",
+			"required": true,
+			"description": "The copyright text for this album.",
+			"type": -1 // !import
+		},{
+			"isArray": false,
+			"name": "type",
+			"required": true,
+			"description": "",
+			 "typeName": "string",
+			 "type": 10001
+		},{
+			 "isArray": false,
+			 "name": "message",
+			 "required": true,
+			 "description": "",
+			 "typeName": "string",
+			 "type": 10001
+		}]
+	}]
 }
 ```
 
 ### 导入类型
-NEI上可以实现导入类型。我们需要对每一个param加上datatypeName, 这样就能够将这些参数归类在一起。 详细看样例。
+NEI上可以实现导入类型。我们需要对每一个 param 加上 datatypeName, 这样就能够将这些参数归类在一起。 详细看样例。
 
 
 详细的样例请看[importExample](https://github.com/NEYouFan/nei-toolkit/blob/master/doc/res/importExample.json)。
