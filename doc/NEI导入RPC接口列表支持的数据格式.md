@@ -218,24 +218,6 @@ NEI 平台目前支持 Rpc Controller 文件 和 NEI 自定义的开放标准来
   "datatypes": [
     {
       "name": "RpcResult"
-    },
-    {
-      "name": "RpcResult"
-    },
-    {
-      "name": "RpcResult"
-    },
-    {
-      "name": "RpcResult"
-    },
-    {
-      "name": "RpcResult"
-    },
-    {
-      "name": "RpcResult"
-    },
-    {
-      "name": "RpcResult"
     }
   ]
 }
