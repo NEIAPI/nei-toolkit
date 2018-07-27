@@ -33,6 +33,7 @@
 * [查看项目文档并导出为 PDF](./doc/查看项目文档并导出为pdf.md)
 * [调用在线 API Mock 接口说明](./doc/调用在线APIMock接口说明.md)
 * [查看项目的 Key](./doc/查看项目的Key.md)
+* [NEI 平台系统接口测试使用说明](./doc/NEI平台接口测试使用说明.md)
 
 ## 插件
 * [Android Studio 插件](./doc/android_studio.md)
