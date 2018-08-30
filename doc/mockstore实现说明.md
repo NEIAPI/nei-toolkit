@@ -1,4 +1,4 @@
-# MockStore
+# MockStore 具体实现逻辑
 
 - [Mock数据持久化](#Mock数据持久化)
 - [Connect](#Connect)
