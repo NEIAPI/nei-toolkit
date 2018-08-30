@@ -70,9 +70,9 @@ POST /api/users/123
 
 ## 代码示例以及实现文档
 
-MockStore 一共支持 11 种场景，具体写法请参考 [MockStore 代码示例](./mockstore示例代码.md)
+MockStore 一共支持 11 种场景，具体的调用方式和说明请参考 [MockStore 代码示例](./mockstore示例代码.md)。
 
-在编写具体的代码时，MockStore 也考虑到了较多的实际场景，比如参数的传递并不会只限制特定的方式，具体实现逻辑请查看 [MockStore 实现说明](./mockstore实现说明.md)
+在编写具体的代码时，MockStore 也考虑到了较多的实际场景，比如参数的传递并不会只限制特定的方式，具体实现逻辑请查看 [MockStore 实现说明](./mockstore实现说明.md)。
 
 ## FAQ
 
