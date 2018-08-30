@@ -249,7 +249,7 @@ const options = arguments[0];
 {
   req: {
     method: '[请求方式]',
-    query: '[请求的查询参数],
+    query: '[请求的查询参数]',
     body: '[请求体]',
     apiPath: '[在 NEI 平台上面定义的接口路径]',
     url: '[请求的完整 url]',
