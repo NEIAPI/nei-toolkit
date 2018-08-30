@@ -153,7 +153,7 @@ loadAll();
 - `limit`：每页的数据数量
 - `total`：是否返回总数
 
-在 [User-获取所有用户-支持分页](https://nei.netease.com/interface/detail/?pid=18754&id=130038) 的 请求信息 设置页面，添加上面两个参数：
+在 [User-获取所有用户-支持分页](https://nei.netease.com/interface/detail/?pid=18754&id=130038) 的 请求信息 设置页面，添加上面三个参数：
 
 ![](./mockstore/load_all_users_paging.png)
 
@@ -430,7 +430,7 @@ updateAll();
 ```js
 const host = 'https://nei.netease.com';
 const projectKey = 'b209329e46daae533ac0649051abcba9';
-const url = `${host}/api/apimock/${projectKey}/api/todos?partial`;
+const url = `${host}/api/apimock/${projectKey}/api/todos?bat`;
 const sendData = {
   items: [
     {
@@ -538,3 +538,5 @@ function removeAll() {
 
 removeAll();
 ```
+
+以上就是所有 11 种情况的代码示例，欢迎大家试用！
