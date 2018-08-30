@@ -100,8 +100,8 @@ function create() {
     }
   }).then((res) => {
     return res.json();
-  }).then((user) => {
-    console.log(JSON.stringify(user));
+  }).then((data) => {
+    console.log(JSON.stringify(data));
   });
 }
 
@@ -131,8 +131,8 @@ function loadAll() {
     }
   }).then((res) => {
     return res.json();
-  }).then((user) => {
-    console.log(JSON.stringify(user));
+  }).then((data) => {
+    console.log(JSON.stringify(data));
   });
 }
 
@@ -203,8 +203,8 @@ function loadOfPaging() {
     }
   }).then((res) => {
     return res.json();
-  }).then((user) => {
-    console.log(JSON.stringify(user));
+  }).then((data) => {
+    console.log(JSON.stringify(data));
   });
 }
 
@@ -272,8 +272,8 @@ function create() {
     }
   }).then((res) => {
     return res.json();
-  }).then((user) => {
-    console.log(JSON.stringify(user));
+  }).then((data) => {
+    console.log(JSON.stringify(data));
   });
 }
 
@@ -325,8 +325,8 @@ function create() {
     }
   }).then((res) => {
     return res.json();
-  }).then((user) => {
-    console.log(JSON.stringify(user));
+  }).then((data) => {
+    console.log(JSON.stringify(data));
   });
 }
 
@@ -355,8 +355,8 @@ function loadList() {
     }
   }).then((res) => {
     return res.json();
-  }).then((user) => {
-    console.log(JSON.stringify(user));
+  }).then((data) => {
+    console.log(JSON.stringify(data));
   });
 }
 
@@ -385,8 +385,8 @@ function update() {
     }
   }).then((res) => {
     return res.json();
-  }).then((user) => {
-    console.log(JSON.stringify(user));
+  }).then((data) => {
+    console.log(JSON.stringify(data));
   });
 }
 
@@ -414,8 +414,8 @@ function updateAll() {
     }
   }).then((res) => {
     return res.json();
-  }).then((user) => {
-    console.log(JSON.stringify(user));
+  }).then((data) => {
+    console.log(JSON.stringify(data));
   });
 }
 
@@ -454,8 +454,8 @@ function updateList() {
     }
   }).then((res) => {
     return res.json();
-  }).then((user) => {
-    console.log(JSON.stringify(user));
+  }).then((data) => {
+    console.log(JSON.stringify(data));
   });
 }
 
@@ -480,8 +480,8 @@ function remove() {
     }
   }).then((res) => {
     return res.json();
-  }).then((user) => {
-    console.log(JSON.stringify(user));
+  }).then((data) => {
+    console.log(JSON.stringify(data));
   });
 }
 
@@ -505,8 +505,8 @@ function removeList() {
     }
   }).then((res) => {
     return res.json();
-  }).then((user) => {
-    console.log(JSON.stringify(user));
+  }).then((data) => {
+    console.log(JSON.stringify(data));
   });
 }
 
