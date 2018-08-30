@@ -63,7 +63,7 @@ MockStore 是通用的解决方案，除了对数据模型的 `id` 字段有强�
 
 MockStore 已经考虑到了这种场景，就是使用前置业务逻辑脚本的功能，在将数据保存到数据库之前对数据进行修改，下面我们来看一下怎么实现。
 
-在 [User-新建](https://nei.netease.com/interface/detail/mockstore/?pid=18744&id=41073) 的 MockStore 设置页面，按照如下设置：
+在 [User-新建](https://nei.netease.com/interface/detail/mockstore/?pid=18754&id=41126) 的 MockStore 设置页面，按照如下设置：
 
 ![](./mockstore/create_user.png)
 
@@ -112,7 +112,7 @@ create();
 
 #### 加载所有用户
 
-在 [User-获取所有用户](https://nei.netease.com/interface/detail/mockstore/?pid=18744&id=41073) 的 MockStore 设置页面，按照如下设置：
+在 [User-获取所有用户](https://nei.netease.com/interface/detail/mockstore/?pid=18754&id=130037) 的 MockStore 设置页面，按照如下设置：
 
 ![](./mockstore/load_all_users.png)
 
@@ -153,7 +153,7 @@ loadAll();
 - `limit`：每页的数据数量
 - `total`：是否返回总数
 
-在 [User-获取所有用户-支持分页](https://nei.netease.com/interface/detail/?pid=18744&id=119705) 的 请求信息 设置页面，添加上面两个参数：
+在 [User-获取所有用户-支持分页](https://nei.netease.com/interface/detail/?pid=18754&id=130038) 的 请求信息 设置页面，添加上面两个参数：
 
 ![](./mockstore/load_all_users_paging.png)
 
@@ -161,11 +161,11 @@ loadAll();
 
 对于客户端工程师来说，不用管 MockStore 后端是如何分页的，只要最终返回的数据满足要求即可。所以可以在 MockStore 返回数据前进行一层处理，也就是借助于后置业务逻辑脚本实现分页的需求。
 
-下面是 [User-获取所有用户-支持分页](https://nei.netease.com/interface/detail/res/?pid=18744&id=119705) 的 响应结果 定义：
+下面是 [User-获取所有用户-支持分页](https://nei.netease.com/interface/detail/res/?pid=18754&id=130038) 的 响应结果 定义：
 
 ![](./mockstore/load_all_users_paging_res.png)
 
-在 [User-获取所有用户-支持分页](https://nei.netease.com/interface/detail/mockstore/?pid=18744&id=119705) 的 MockStore 设置页面，按照如下设置：
+在 [User-获取所有用户-支持分页](https://nei.netease.com/interface/detail/mockstore/?pid=18754&id=130038) 的 MockStore 设置页面，按照如下设置：
 
 ![](./mockstore/load_all_users_paging_ms.png)
 
@@ -223,7 +223,7 @@ loadOfPaging();
 
 再考虑到实际场景，一般来说，数据库中有专门存储 User 的表，也有专门存储 Group 的表，Group 表中不会直接保存 creator，只要保存 creatorId 就可以，这是关系型数据库设计的基本知识。所以，我们也来模拟这种场景，保存的时候，我们只设置 creatorId，在返回的时候再通过后置业务逻辑脚本设置 creator 字段信息。
 
-下面是[Group-新建](https://nei.netease.com/interface/detail/?pid=18744&id=119708)的 MockStore 设置：
+下面是[Group-新建](https://nei.netease.com/interface/detail/mockstore/?pid=18754&id=130033)的 MockStore 设置：
 
 ![](./mockstore/create_group.png)
 
@@ -531,8 +531,8 @@ function removeAll() {
     }
   }).then((res) => {
     return res.json();
-  }).then((user) => {
-    console.log(JSON.stringify(user));
+  }).then((data) => {
+    console.log(JSON.stringify(data));
   });
 }
 
