@@ -1,3 +1,5 @@
+# MockStore 在线接口调用说明
+
 NEI 目前已经发布了获取 API Mock 数据的在线接口，可以跨域调用，方便开发人员在本地测试接口，现说明如下：
 
 ## 请求地址
@@ -66,30 +68,11 @@ POST /api/users/123
 
 则只有接口 A 匹配，因为接口 B 中的查询参数 `lock` 在实际请求中不存在，匹配失败。所以最终匹配的是接口 A。
 
-
-## 调用示例
-下面演示获取 TodoDemo 项目的 `Todo-获取列表` 接口的响应结果 Mock 数据，这个接口的地址是 `/api/todos/`，请求方式是 `GET`，最终的请求代码如下：
-
-```js
-const apiMockUrl = 'https://nei.netease.com/api/apimock/';
-const projectKey = 'b209329e46daae533ac0649051abcba9';
-const apiPath = '/api/todos/';
-const apiMethod = 'GET';
-const url = `${apiMockUrl}${projectKey}${apiPath}`;
-fetch(url, {
-  method: apiMethod
-}).then((res) => {
-  return res.json();
-}).then((json) => {
-  // mock 数据
-  console.log(json);
-});
-```
-
 ## 异常情况说明
 
 - 如果生成 Mock 数据的过程中有错误发生，则会把错误信息放在响应结果的 `_nei_apimock_error` 字段中。比如生成规则的代码有语法错误等。
 - 如果生成 Mock 数据花费的时间超过 1000 毫秒，则会报超时错误，此时响应结果是 `Script execution timed out.`。比如生成规则中有死循环。
+- 前置或者后置业务逻辑脚本有异常。
 
 ## FAQ
 
@@ -97,3 +80,15 @@ fetch(url, {
 
 1. 请检查接口的发送方式是否正确，注意，在浏览器中直接访问是 `GET` 方式，其他方式需要使用其他工具，比如 [phosphorus](<https://nei.netease.com/phosphorus>)。
 2. 请检查项目的 Key 是否正确。
+
+>有些字段前端无法发送，比如数据模型的 createTime 字段，这种情况如何解决？
+
+1. 可以使用前置业务逻辑脚本对请求发送过来的数据进行修改，可以参考 [MockStore 示例代码文档](./doc/mockstore示例代码.md#创建单个分组)。
+
+>可以对请求参数做基本的检验吗？
+
+1. 可以使用前置业务逻辑脚本对请求参数做基本的检验，检测到有不合法的参数可以直接报错返回，可以参考[MockStore 实现细节文档](./doc/mockstore实现文档.md#前置业务逻辑脚本)。
+
+>可以实现分页的需求？
+
+1. 可以使用后置业务逻辑脚本，在返回数据之前根据请求的查询参数信息，返回用户要想要的分页数据，可以参考 [MockStore 示例代码文档](./doc/mockstore示例代码.md#加载所有用户-支持分页)。
