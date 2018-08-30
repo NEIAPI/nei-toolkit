@@ -322,7 +322,7 @@ const options = arguments[0];
 
 获取关联数据模型的所在路径，可以有多条路径，比如创建用户的接口，最常见的返回值为：
 
-```json
+```html
 {
   code: { Number },
   message: { String },
@@ -330,7 +330,7 @@ const options = arguments[0];
 }
 ```
 但返回值也可以是任意的，比如:
-```json
+```html
 {
   code: { Number },
   message: { String },
@@ -340,7 +340,7 @@ const options = arguments[0];
 }
 ```
 或者：
-```json
+```html
 {
   code: { Number },
   message: { String },
@@ -352,7 +352,7 @@ const options = arguments[0];
 > 其中 XUser 是一个扩展后的 User 对象，也就是它导入了 User。
 
 或者：
-```json
+```html
 {
   code: { Number },
   message: { String },
@@ -360,7 +360,7 @@ const options = arguments[0];
 }
 ```
 或者：
-```json
+```html
 {
   data: { User },
   data1: { User },
