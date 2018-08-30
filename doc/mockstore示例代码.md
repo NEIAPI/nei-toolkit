@@ -4,14 +4,14 @@
 - [加载所有用户](#加载所有用户)
 - [加载所有用户-支持分页](#加载所有用户-支持分页)
 - [创建单个分组](#创建单个分组)
-- [按照数组数据批量创建Todo](#按照数组数据批量创建Todo)
-- [加载多个Todo](#加载多个Todo)
-- [修改单个Todo](#修改单个Todo)
-- [修改所有Todo](#修改所有Todo)
-- [修改多个Todo](#修改多个Todo)
-- [删除单个Todo](#删除单个Todo)
-- [删除多个Todo](#删除多个Todo)
-- [删除所有Todo](#删除所有Todo)
+- [按照数组数据批量创建Todo](#按照数组数据批量创建todo)
+- [加载多个Todo](#加载多个todo)
+- [修改单个Todo](#修改单个todo)
+- [修改所有Todo](#修改所有todo)
+- [修改多个Todo](#修改多个todo)
+- [删除单个Todo](#删除单个todo)
+- [删除多个Todo](#删除多个todo)
+- [删除所有Todo](#删除所有todo)
 
 本文以 NEI 的官方 Demo 项目 [Todo](https://nei.netease.com/project?pid=18754) 为例，演示如何操作 Mock 数据。
 

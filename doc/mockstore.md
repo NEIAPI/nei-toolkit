@@ -40,6 +40,6 @@ MockStore 实现功能的补充说明：
 - NEI 平台之前已经提供的根据数据模型批量创建 CRUD 接口的时候，创建完的接口会自动和数据模型关联，并且也会设置好关联类型。
 
 MockStore 的功能就介绍到这里，在使用它之前还请阅读：
-  - [MockStore 在线接口](./doc/mockstore在线接口.md)
-  - [MockStore 实现说明](./doc/mockstore实现说明.md)
-  - [MockStore 示例代码](./doc/mockstore示例代码.md)
+  - [MockStore 在线接口](./mockstore在线接口.md)
+  - [MockStore 实现说明](./mockstore实现说明.md)
+  - [MockStore 示例代码](./mockstore示例代码.md)
