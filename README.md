@@ -36,6 +36,8 @@
   - [MockStore 示例代码](./doc/mockstore示例代码.md)
 * [查看项目的 Key](./doc/查看项目的Key.md)
 * [NEI 平台系统接口测试使用说明](./doc/NEI平台接口测试使用说明.md)
+  - [NEI 平台系统测试集使用说明](./doc/NEI平台测试集使用说明.md)
+  - [NEI 平台系统依赖测试使用说明](./doc/NEI平台依赖测试使用说明.md)
 
 ## FAQ
 * [常见问题](./doc/faq.md)
