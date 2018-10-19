@@ -29,7 +29,7 @@
 * [NEI 平台系统预置的规则函数集](./doc/NEI平台系统预置的规则函数集.md)
 * [NEI 平台系统批量导入 HTTP 接口及格式说明](./doc/NEI导入HTTP接口列表支持的数据格式.md)
 * [NEI 平台系统批量导入 RPC 接口及格式说明](./doc/NEI导入RPC接口列表支持的数据格式.md)
-* [NEI 平台系统批量导入测试用例及格式说明](./doc/NEI导入测试用例列表支持的数据格式.md)
+* [在NEI中导入接口的测试用例](./doc/在NEI中导入接口的测试用例.md)
 * [使用 NEI 生成 iOS 代码](./doc/使用NEI生成iOS代码.md)
 * [查看项目文档并导出为 PDF](./doc/查看项目文档并导出为pdf.md)
 * [MockStore 功能介绍](./doc/mockstore.md)
