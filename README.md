@@ -39,6 +39,7 @@
 * [NEI 平台系统接口测试使用说明](./doc/NEI平台接口测试使用说明.md)
   - [NEI 平台系统测试集使用说明](./doc/NEI平台测试集使用说明.md)
   - [NEI 平台系统依赖测试使用说明](./doc/NEI平台依赖测试使用说明.md)
+  - [如何查看实际发送的数据](./doc/NEI平台接口测试发送数据查看.md)
 * [NEI 平台HTTP接口规范配置说明](./doc/NEI平台HTTP接口规范配置说明.md)
 * [NEI Chrome插件使用指南](./doc/NEI-Chrome插件使用指南.md)
 
