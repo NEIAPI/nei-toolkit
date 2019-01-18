@@ -6,9 +6,9 @@
 var path = require('path');
 module.exports = {
     /* 根目录 */
-    webRoot: '{{webRoot}}',
+    webRoot: {{{webRoot}}},
     /* 视图目录 */
-    viewRoot: '{{viewRoot}}',
+    viewRoot: {{{viewRoot}}},
     /* 路由 */
     routes: {
         //"ALL /api/*": "代理所有接口, 这里输入代理服务器地址",
@@ -105,9 +105,9 @@ module.exports = {
     /* 项目的 key */
     projectKey: '{{projectKey}}',
     /* 同步模块mock数据路径 */
-    mockTpl: '{{mockViewRoot}}',
+    mockTpl: {{{mockViewRoot}}},
     /* 异步接口mock数据路径 */
-    mockApi: '{{mockApiRoot}}',
+    mockApi: {{{mockApiRoot}}},
     /* 是否修改代理的host */
     changeOrigin: true,
     /* 模板后缀 */
