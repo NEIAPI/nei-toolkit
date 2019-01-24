@@ -34,7 +34,7 @@
 * [查看项目文档并导出为 PDF](./doc/查看项目文档并导出为pdf.md)
 * [MockStore 功能介绍](./doc/mockstore.md)
   - [MockStore 实现说明](./doc/mockstore实现说明.md)
-  - [MockStore 实现说明](./doc/RPC在线Mock接口调用说明.md)
+  - [RPC 在线 Mock 接口调用说明](./doc/RPC在线Mock接口调用说明.md)
   - [MockStore 示例代码](./doc/mockstore示例代码.md)
 * [查看项目的 Key](./doc/查看项目的Key.md)
 * [NEI 平台系统接口测试使用说明](./doc/NEI平台接口测试使用说明.md)

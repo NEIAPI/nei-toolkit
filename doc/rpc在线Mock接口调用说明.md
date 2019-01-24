@@ -63,7 +63,7 @@ com-netease-usertool-api-appcustomconfigrpcservice-updateconfig
 
 >能否模拟接口响应延时
 
--可以。在接口详情页面中可以设置延时时间，也就是 `Mock 请求延时响应毫秒数` 的值，它是一个毫秒数值。
+- 可以。在接口详情页面中可以设置延时时间，也就是 `Mock 请求延时响应毫秒数` 的值，它是一个毫秒数值。
 
 
 
