@@ -15,7 +15,7 @@ POST https://nei.netease.com/api/rpcmock/:projectKey/:apiPath
 | 名称 | 类型 | 是否必需 | 说明 |
 | :--- | :--- | :--- | :--- |
 | projectKey | String | 是 | 项目的唯一标识 Key，在项目的设置中查看 |
-| apiPath | String | 是 | 见[下面的说明](#apiPath 计算规则) |
+| apiPath | String | 是 | 见[下面的说明](#apipath-计算规则) |
 
 > 注意：
 > - 如果找到多个符合要求的接口，则返回第一个找到的接口，结果可能是随机的。
