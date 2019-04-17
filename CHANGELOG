@@ -1,3 +1,6 @@
+3.7.6  (2019-04-17)
+	- 传给工程模板的数据中，ds.datatypes 列表中需要包括 Object 类型
+
 3.7.5  (2018-08-31)
 	- server.config.js 的 ignored 字段支持正则
 	- 输出的接口数据中增加 status 字段
