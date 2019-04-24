@@ -4,15 +4,26 @@ NEI 目前已经发布了获取接口响应结果的 Mock 数据的在线接口�
 
 ## 请求地址
 
+Mock 地址一：
+
 ```html
 https://nei.netease.com/api/apimock/:projectKey/:apiPath
 ```
+
+Mock 地址二：
+
+```html
+https://nei.netease.com/api/apimock-v2/:progroupKey/:apiPath
+```
+
+>说明：Mock 地址一，是在某个项目中查找匹配的接口，查找速度快，推荐使用。Mock 地址二，是在某个项目组中查找匹配的接口，由于项目组中的数量可能会很多，所以查找速度比较慢，具体要看项目组中的接口数量。如果想在同个工程中调用多个项目中的接口，此时可以使用“Mock 地址二”，因为在同个项目组的接口，前面部分`https://nei.netease.com/api/apimock-v2/:progroupKey/`都是一样的，配置起来很方便。
 
 ## 参数说明
 
 | 名称 | 类型 | 是否必需 | 说明 |
 | :--- | :--- | :--- | :--- |
 | projectKey | String | 是 | 项目的唯一标识 Key，在项目的设置中查看 |
+| progroupKey | String | 是 | 项目组的唯一标识 Key，在项目组的设置中查看 |
 | apiPath | String | 是 | NEI 中定义的接口地址 |
 
 > 注意：
