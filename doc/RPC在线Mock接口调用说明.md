@@ -4,23 +4,36 @@
 
 ## 请求地址
 
+Mock 地址一：
+
 ```html
 POST https://nei.netease.com/api/rpcmock/:projectKey/:apiPath
 ```
 
+
+Mock 地址二：
+
+```html
+POST https://nei.netease.com/api/rpcmock-v2/:progroupKey/:apiPath
+```
+
 > 注意，接口只支持以 `POST` 方式调用
+
+> 说明：Mock 地址一，是在某个项目中查找匹配的接口，查找速度快，推荐使用。Mock 地址二，是在某个项目组中查找匹配的接口，由于项目组中接口的数量可能会很多，所以查找速度比较慢，具体要看项目组中的接口数量。如果想在同个工程中调用多个项目中的接口，此时可以使用“Mock 地址二”，因为在同个项目组中的接口，请求地址的前缀`https://nei.netease.com/api/apimock-v2/:progroupKey/`都是一样的，配置起来很方便。
 
 ## 参数说明
 
 | 名称 | 类型 | 是否必需 | 说明 |
 | :--- | :--- | :--- | :--- |
 | projectKey | String | 是 | 项目的唯一标识 Key，在项目的设置中查看 |
+| progroupKey | String | 是 | 项目组的唯一标识 Key，在项目组的设置中查看 |
 | apiPath | String | 是 | 见[下面的说明](#apipath-计算规则) |
 
 > 注意：
 > - 如果找到多个符合要求的接口，则返回第一个找到的接口，结果可能是随机的。
 > - 返回的 Mock 数据已经持久化。
 > - projectKey 是项目的唯一标识，查看方式：[查看项目的 Key](./查看项目的Key.md)。
+> - progroupKey 是项目组的唯一标识，查看方式是类似的。
 
 ## apiPath 计算规则
 
