@@ -73,4 +73,77 @@ class Rule {
 ]
 ```
 
+
+### 接口出入参规范
+
+通过定义接口出入参规范，你可以对 NEI 项目组中某一类接口的出入参进行校验。接口出入参规范的数据类型的 `TypeScript` 定义如下
+```ts
+interface InterfaceSchema {
+    [interfaceSchemaName: string]: {
+        reqMethod?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE' | 'HEAD',
+        req?: object,
+        res?: object
+    }
+}
+```
+
+| 参数名 | 说明 |
+| ----- | ---- |
+| interfaceSchemaName | 接口出入参规范的名称 |
+| reqMethod | 接口的请求类型 |
+| req | 请求参数规范：为一个 [JSON Schema](http://json-schema.org/latest/json-schema-validation.html) 对象，你也可参考 NEI 所使用的 JSON Schema 校验库 [AJV 的文档](https://ajv.js.org/) 来了解如何书写该对象 |
+| res | 响应参数规范：为一个 [JSON Schema](http://json-schema.org/latest/json-schema-validation.html) 对象，你也可参考 NEI 所使用的 JSON Schema 校验库 [AJV 的文档](https://ajv.js.org/) 来了解如何书写该对象 |
+
+#### 示例
+
+如我们希望规范下面的`分页`类型的接口入参
+```js
+{
+  "page": {
+    "from": 1, // 必选。 原页
+    "to": 1, // 必选。 去向页
+    "size": 5, // 必选。 每页数量
+    "cursor": "3232" // 可选。游标
+  }
+}
+```
+那么我们即可定义`接口出入参规范`为如下的 `JSON`
+```json
+{
+    "分页": {
+        req: {
+            "type": "object",
+            "required": [
+                "page"
+            ],
+            "properties": {
+                "page": {
+                    "type": "object",
+                    "required": [
+                        "from",
+                        "to",
+                        "size",
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "from": {
+                            "type": "number"
+                        },
+                        "to": {
+                            "type": "number"
+                        },
+                        "size": {
+                            "type": "number"
+                        },
+                        "cursor": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
 * 注意，定义了该规范，则该项目组定义接口时的响应参数都必须严格遵守该规范。不允许有多余的参数创建，对于一些定义时间晚于该规范创建的接口（指只要上述任意规范进行创建即为创建），若原接口已经存在不符合规范的参数定义，可以先删除再重新定义。
