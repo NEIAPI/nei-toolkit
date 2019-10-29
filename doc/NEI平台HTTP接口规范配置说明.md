@@ -76,7 +76,7 @@ class Rule {
 
 ### 接口出入参规范
 
-通过定义接口出入参规范，你可以对 NEI 项目组中某一类接口的出入参进行校验。接口出入参规范的数据类型的 `TypeScript` 定义如下
+通过定义接口出入参规范，你可以对 NEI 项目组中某一类接口的出入参进行校验。接口出入参规范数据类型的 `TypeScript` 定义如下
 ```ts
 interface InterfaceSchema {
     [interfaceSchemaName: string]: {
@@ -91,12 +91,12 @@ interface InterfaceSchema {
 | ----- | ---- |
 | interfaceSchemaName | 接口出入参规范的名称 |
 | reqMethod | 接口的请求类型 |
-| req | 请求参数规范：为一个 [JSON Schema](http://json-schema.org/latest/json-schema-validation.html) 对象，你也可参考 NEI 所使用的 JSON Schema 校验库 [AJV 的文档](https://ajv.js.org/) 来了解如何书写该对象 |
-| res | 响应参数规范：为一个 [JSON Schema](http://json-schema.org/latest/json-schema-validation.html) 对象，你也可参考 NEI 所使用的 JSON Schema 校验库 [AJV 的文档](https://ajv.js.org/) 来了解如何书写该对象 |
+| req | 请求参数规范：为一个 [JSON Schema](http://json-schema.org/latest/json-schema-validation.html) 对象，你也可参考 NEI 所使用的 JSON Schema 校验库 [AJV](https://ajv.js.org/) 的文档来了解如何书写该对象 |
+| res | 响应参数规范：为一个 [JSON Schema](http://json-schema.org/latest/json-schema-validation.html) 对象，你也可参考 NEI 所使用的 JSON Schema 校验库 [AJV](https://ajv.js.org/) 的文档来了解如何书写该对象 |
 
 #### 示例
 
-如我们希望规范下面的`分页`类型的接口入参
+如我们希望规范下面`分页`类型的接口入参
 ```js
 {
   "page": {
@@ -111,7 +111,7 @@ interface InterfaceSchema {
 ```json
 {
     "分页": {
-        req: {
+        "req": {
             "type": "object",
             "required": [
                 "page"
