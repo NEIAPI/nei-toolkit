@@ -3,7 +3,7 @@ NEI平台目前支持Swagger和NEI自定义的开放标准来批量导入接口�
 ## Swagger格式导入
 
 Swagger格式目前支持yaml格式的文件导入。 暂时*还不(马上就要)支持json格式*的Swagger接口导入。
-在导入Swagger接口前， 如果不是类似于Swagger服务自动生成而是自己手写(或修改)的, 请先到[Swagger editor](https://swagger.io/swagger-editor/)中检查该规范，确保没有错误。目前导入功能的错误提示还比较弱，如果浏览器的console日志不能定位到问题，猪场同事请联系NEI团队，其他用户欢迎直接发邮件给我，邮件地址为: abnerzheng@gmail.com.
+在导入Swagger接口前， 如果不是类似于Swagger服务自动生成而是自己手写(或修改)的, 请先到[Swagger editor](https://swagger.io/swagger-editor/)中检查该规范，确保没有错误。
 
 
 ## NEI自定义标准批量导入接口
@@ -79,7 +79,6 @@ export class Parameter {
     defaultValue?: string;
     genExpression?: string; // 预留
     isArray: boolean = false;
-    isObject?: boolean;
     required: boolean = true;
     type?: number;
     typeName: string;
@@ -138,7 +137,7 @@ export class NEIInterfaceBean {
 | description | 该接口的介绍, 不能为空                                       |
 | method      | 枚举值，参看 [InterfaceMethodEnum](#interfacemethodenum)  |
 | tags        | 接口分组，目前未实现该功能                                   |
-| param       | 接口的参数，详看[NeiInterfaceParams](#neiinterfaceparams) |
+| params      | 接口的参数，详看[NeiInterfaceParams](#neiinterfaceparams) |
 | path        | 该接口访问路径                                               |
 | className   | 该接口的代码映射                                             |
 
@@ -151,7 +150,7 @@ export class NEIInterfaceBean {
 - HEAD
 - PATCH
 - PUT
-- DELETE。
+- DELETE
 
 
 #### NeiInterfaceParams
