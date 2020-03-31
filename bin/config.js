@@ -99,6 +99,12 @@ module.exports = {
       "q": "iosAssemble",
       "d": false,
       "m": "iOS集成Mock数据，将类名指定为mock文件名"
+    },
+    {
+      "j": "s",
+      "q": "server",
+      "d": "https://nei.netease.com/",
+      "m": "数据源的服务器地址"
     }
   ],
   "update": [
@@ -145,6 +151,12 @@ module.exports = {
       "m": "是否覆盖已存在的文件, 需要下载的文件不在此列, 如果需要重新下载, 请先将本地的文件删除"
     },
     {
+      "j": "s",
+      "q": "server",
+      "d": "https://nei.netease.com",
+      "m": "数据源的服务器地址"
+    },
+    {
       "q": "spec",
       "d": false,
       "m": "是否更新规范中的普通文件和文件夹, 以数据填充的文件不在此列"
@@ -158,7 +170,6 @@ module.exports = {
       "q": "add",
       "m": "添加独立生成的接口, 格式为123 或者 111,112,113(以逗号间隔的串)"
     }
-
   ],
   "template": [
     "使用说明：",

@@ -81,6 +81,8 @@ module.exports = {
     https: {{https}},
     /* 是否使用 nei 提供的在线 mock 数据 */
     online: {{online}},
+    /* nei 在线服务器域名，默认为 https://nei.netease.com */
+    onlineServer: {{onlineServer}},
     /* 是否监听静态文件和模板文件的变化并自动刷新浏览器 */
     reload: {{reload}},
     /* 文件监听的选项 */
