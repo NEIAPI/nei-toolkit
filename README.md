@@ -117,7 +117,7 @@ nei build -k [key] [参数]
 | -sk| --specKey |  | 规范的唯一标识，可以在规范的"规范设置"中查看 |
 | -w | --overwrite | false | 是否覆盖已存在的文件，需要下载的文件不在此列，如果需要重新下载，请先将本地的文件删除 |
 | 无 | --specType | web | 要构建的规范类型，目前支持 web、aos、ios、test 四种类型 |
-| -s | --server | https://nei.netease | 数据源服务器 |
+| -s | --server | https://nei.netease.com | 数据源服务器 |
 
 使用范例：
 
@@ -153,7 +153,7 @@ nei update [参数]
 | -a | --all | false | 是否更新指定目录下面的所有项目，前提是没有指定的 key |
 | -w | --overwrite | false | 是否覆盖已存在的文件，需要下载的文件不在此列，如果需要重新下载，请先将本地的文件删除 |
 | 无 | --spec | false | 是否更新规范中的普通文件和文件夹，以数据填充的文件不在此列 |
-| -s | --server | https://nei.netease | 数据源服务器 |
+| -s | --server | https://nei.netease.com | 数据源服务器 |
 
 使用范例：
 
