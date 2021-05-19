@@ -127,6 +127,8 @@ export class NEIInterfaceBean {
     tags: string;
     params: NeiInterfaceParams;
     path: string;
+    reqFormat: DatatypeFormatEnum;
+    resFormat: DatatypeFormatEnum;
 }
 ```
 下面对各个属性进行介绍
@@ -140,6 +142,8 @@ export class NEIInterfaceBean {
 | params      | 接口的参数，详看[NeiInterfaceParams](#neiinterfaceparams) |
 | path        | 该接口访问路径                                               |
 | className   | 该接口的代码映射                                             |
+| reqFormat   | 请求参数类型，枚举值，参看 [DatatypeFormatEnum](#datatypeformatenum)  |
+| resFormat   | 响应参数类型，枚举值，参看 [DatatypeFormatEnum](#datatypeformatenum)  |
 
 #### InterfaceMethodEnum
 
