@@ -181,53 +181,61 @@ export class NeiInterfaceParams{
 ```json
 {
   "datatypes": [
-		{
-			"type": 2,
-			"format": 0,
-			"name": "",
-			"id": -1,
-			"params": [{
-			"isArray": false,
-			"name": "user",
-			"required": true,
-			"description": "",
-			"typeName": "string",
-			"type": 10001
- 	  },{
- 	    "isArray": false,
-			"name": "age",
-			"required": true,
-			"description": "The type of copyright: C = the copyright, P = the sound recording (performance) copyright.",
-			"typeName": "integer",
-			"type": 10002
-			}
- 	  ]
- 	},{
-		"type": 2,
-		"format": 0,
-		"name": "",
-		"params": [ {
-			"isArray": false,
-			"name": "result",
-			"required": true,
-			"description": "The copyright text for this album.",
-			"type": -1 // !import
-		},{
-			"isArray": false,
-			"name": "type",
-			"required": true,
-			"description": "",
-			 "typeName": "string",
-			 "type": 10001
-		},{
-			 "isArray": false,
-			 "name": "message",
-			 "required": true,
-			 "description": "",
-			 "typeName": "string",
-			 "type": 10001
-		}]
-	}]
+    {
+      "type": 2,
+      "format": 0,
+      "name": "",
+      "id": -1,
+      "params": [
+        {
+          "isArray": false,
+          "name": "user",
+          "required": true,
+          "description": "",
+          "typeName": "string",
+          "type": 10001
+        },
+        {
+          "isArray": false,
+          "name": "age",
+          "required": true,
+          "description": "The type of copyright: C = the copyright, P = the sound recording (performance) copyright.",
+          "typeName": "integer",
+          "type": 10002
+        }
+      ]
+    },
+    {
+      "type": 2,
+      "format": 0,
+      "name": "",
+      "params": [
+        {
+          "isArray": false,
+          "name": "result",
+          "required": true,
+          "description": "The copyright text for this album.",
+          "type": -1 // !import
+        },
+        {
+          "isArray": false,
+          "name": "type",
+          "required": true,
+          "description": "",
+          "typeName": "string",
+          "type": 10001
+        },
+        {
+          "isArray": false,
+          "name": "message",
+          "required": true,
+          "description": "",
+          "typeName": "string",
+          "type": 10001
+        }
+      ]
+    }
+  ]
 }
 ```
 
