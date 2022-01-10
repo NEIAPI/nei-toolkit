@@ -56,5 +56,8 @@
     "socket.io": "^1.7.3",
     "xcode": "^0.9.0",
     "semver": "latest"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
