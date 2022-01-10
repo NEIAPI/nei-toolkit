@@ -1,3 +1,6 @@
+3.8.0  (2022-01-10)
+	- 锁定 colors 版本，原因见 https://mp.weixin.qq.com/s/ybkj3AaZRJSdtyZIcXjG6Q
+
 3.7.9  (2022-01-10)
 	- 修复 ftl 模板渲染 List 不符合 JSON 格式问题
 
