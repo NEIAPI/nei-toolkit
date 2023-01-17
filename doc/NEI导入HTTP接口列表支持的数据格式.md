@@ -2,7 +2,6 @@ NEI平台目前支持Swagger和NEI自定义的开放标准来批量导入接口�
 
 ## Swagger格式导入
 
-Swagger格式目前支持yaml格式的文件导入。 暂时*还不(马上就要)支持json格式*的Swagger接口导入。
 在导入Swagger接口前， 如果不是类似于Swagger服务自动生成而是自己手写(或修改)的, 请先到[Swagger editor](https://swagger.io/swagger-editor/)中检查该规范，确保没有错误。
 
 
