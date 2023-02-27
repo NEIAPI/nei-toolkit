@@ -191,16 +191,14 @@ export class NeiInterfaceParams{
           "name": "user",
           "required": true,
           "description": "",
-          "typeName": "string",
-          "type": 10001
+          "typeName": "string"
         },
         {
           "isArray": false,
           "name": "age",
           "required": true,
           "description": "The type of copyright: C = the copyright, P = the sound recording (performance) copyright.",
-          "typeName": "integer",
-          "type": 10002
+          "typeName": "number"
         }
       ]
     },
@@ -221,16 +219,14 @@ export class NeiInterfaceParams{
           "name": "type",
           "required": true,
           "description": "",
-          "typeName": "string",
-          "type": 10001
+          "typeName": "string"
         },
         {
           "isArray": false,
           "name": "message",
           "required": true,
           "description": "",
-          "typeName": "string",
-          "type": 10001
+          "typeName": "string"
         }
       ]
     }
