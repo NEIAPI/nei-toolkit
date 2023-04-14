@@ -79,8 +79,8 @@ export class Parameter {
     genExpression?: string; // 预留
     isArray: boolean = false;
     required: boolean = true;
-    type?: number;
-    typeName: string;
+    type: number;
+    typeName?: string;
 }
 ```
 
@@ -93,10 +93,19 @@ export class Parameter {
 | genExpression | 该参数的生成方法，用于生成mock数据，可以忽略                                                    |
 | isArray       | 表明该参数是不是一个数组                                                                        |
 | required      | 表明该参数是否必须                                                                              |
-| type          | 该值只在创建匿名类型的时候需要，为匿名类型的id，即上面的NEIDatetype.id                          |
-| typeName      | 该值的类型定义，比如系统类型"string", "number", "boolean", 以及本json创建的所有NEIDatatype.name |
+| type          | 该值在创建匿名类型的时候需要，为匿名类型的id，即上面的 NEIDatetype.id；如果typeName为系统类型，则type也需要传  |
+| typeName      | 该值的类型定义，比如系统类型"String", "Number", "Boolean", 以及本json创建的所有NEIDatatype.name |
 
-这里需要注意typeName的时候，typeName实现了复用数据类型的作用，你可以创建一堆数据模型，然后在文中引用这个数据类型的name。数据模型直接的依赖顺序不需要考虑，即A写在B前面，A也能应用B。
+注意:
+1. 当typeName为系统类型时，需要传type，系统类型和type值的对应关系如下
+|   typeName | type |
+| :--- | :--- |
+|    String | 10001 |
+|    Number | 10002 |
+|    Boolean | 10003 |
+|    Variable | 10000 |
+|    File | 9999 |
+3. 使用typeName的时候，typeName实现了复用数据类型的作用，你可以创建一堆数据模型，然后在文中引用这个数据类型的name。数据模型直接的依赖顺序不需要考虑，即A写在B前面，A也能应用B。
 
 #### DatatypeFormatEnum
 
