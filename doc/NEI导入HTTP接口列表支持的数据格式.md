@@ -98,6 +98,7 @@ export class Parameter {
 
 注意:
 1. 当typeName为系统类型时，需要传type，系统类型和type值的对应关系如下
+
 |   typeName | type |
 | :--- | :--- |
 |    String | 10001 |
@@ -105,7 +106,8 @@ export class Parameter {
 |    Boolean | 10003 |
 |    Variable | 10000 |
 |    File | 9999 |
-3. 使用typeName的时候，typeName实现了复用数据类型的作用，你可以创建一堆数据模型，然后在文中引用这个数据类型的name。数据模型直接的依赖顺序不需要考虑，即A写在B前面，A也能应用B。
+
+2. 使用typeName的时候，typeName实现了复用数据类型的作用，你可以创建一堆数据模型，然后在文中引用这个数据类型的name。数据模型直接的依赖顺序不需要考虑，即A写在B前面，A也能应用B。
 
 #### DatatypeFormatEnum
 
