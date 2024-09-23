@@ -26,7 +26,7 @@
 
 #### 使用教程
 1. 安装插件
-    - 插件地址： [nei-chrome-devtoos](https://chrome.google.com/webstore/detail/nei-chrome-devtools/lhkoddlalkcnmmnjkfjaaohbfeinckjn?hl=zh-CN)
+    - 插件地址： [nei-chrome-devtoos](https://chrome.google.com/webstore/detail/nei-chrome-devtools/lhkoddlalkcnmmnjkfjaaohbfeinckjn?hl=zh-CN)，也可以使用源码安装 https://github.com/amibug/nei-chrome-devtools
 2. 新建项目(ps: 需要先登录，未登录会打开nei登录页面)，输入pid后会先显示该项目下所有的项目分组和接口 
     - 项目ID指的是项目链接中pid参数对应的值 https://nei.netease.com/project?pid=${pid}
     ![](https://p1.music.126.net/8G0u3GzZboJe7iZjeV3mvA==/109951163732240573.png)
